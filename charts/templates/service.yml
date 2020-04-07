@@ -9,7 +9,7 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30708
+      nodePort: 30709
       name: tcp
   selector:
     run: tribeca-cep-ui
