@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tribeca-cep-ui
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: tribeca-cep-ui
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      run: tribeca-cep-ui
+  template:
+    metadata:
+      labels:
+        run: tribeca-cep-ui
+    spec:
+      containers:
+      - name: tribeca-cep-ui
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "10Mi"
+            cpu: "40m"
+          limits:
+            memory: "20Mi"
+            cpu: "80m"

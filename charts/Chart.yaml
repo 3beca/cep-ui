@@ -1,0 +1,7 @@
+apiVersion: v1
+name: tribeca-cep-ui
+version: 0.0.1
+keywords:
+  - tribeca
+  - cep
+  - ui
