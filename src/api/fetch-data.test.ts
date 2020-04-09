@@ -136,6 +136,29 @@ describe(
         );
 
         it(
+            'return an ErrorAPI when request return 400 without body',
+            async () => {
+                server.get('/error400').reply(400);
+                const req: RequestGetData = {
+                    url: 'https://testserver/error400',
+                    method: 'GET',
+                    headers: {'content-type': 'application/json'}
+                }; 
+
+                const response = await fetchData<{}, {}>(req);
+
+                expect(isErrorApi(response)).toBe(true);
+                expect(response.status).toBe(400);
+                const data = response as unknown as ErrorAPI;
+                expect(data).toEqual({
+                    status: 400,
+                    error: 'Error from https://testserver/error400',
+                    message: 'Unknown error'
+                });
+            }
+        );
+
+        it(
             'return an ErrorAPI when request return 500',
             async () => {
                 server.get('/error400').reply(500, {status: 500, error: 'Error500', message: 'Message Error 500'});

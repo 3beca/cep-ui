@@ -41,6 +41,28 @@ describe(
         );
 
         it(
+            'getEventList should return a list of EventTypes without pagination info',
+            async () => {
+                const expectedResult: EventTypeList = {
+                    results: [
+                        {id: 'id1', name: 'name1', url: 'url1', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()},
+                        {id: 'id2', name: 'name2', url: 'url2', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()},
+                        {id: 'id2', name: 'name2', url: 'url2', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()}
+                    ]
+                };
+                server.get(EVENT_TYPE_URL + `/?page=1&pageSize=10`).reply(200, expectedResult);
+
+                const result = await api.getEventTypeList();
+
+                expect(isErrorApi(result)).toBe(false);
+                const response = result as ResponseData<EventTypeList>;
+                expect(response.status).toBe(200);
+                expect(response.data).toEqual(expectedResult);
+                expect(1).toBe(1);
+            }
+        );
+
+        it(
             'getEventList should return an ErrorAPI when it fails',
             async () => {
                 const page = 1;

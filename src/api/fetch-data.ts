@@ -45,9 +45,9 @@ export const fetchData = async <B extends Body, R extends Body>(config: RequestD
         }
         else {
             return {
-                status: data.statusCode || status,
-                error: data.error || `Error from ${url}`,
-                message: data.message
+                status: (data && data.statusCode) || status,
+                error: (data && data.error) || `Error from ${url}`,
+                message: (data && data.message) || 'Unknown error'
             };
         }
     }

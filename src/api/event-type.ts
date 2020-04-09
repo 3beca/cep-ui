@@ -44,7 +44,7 @@ export const deleteEventType = (config: RequestInfo) => async (eventTypeIds: str
     return Promise.all(requests);
 };
 export type EventTypeApi = {
-    getEventTypeList(page: number, size: number): Promise<ResponseData<EventTypeList>|ErrorAPI>;
+    getEventTypeList(page?: number, size?: number): Promise<ResponseData<EventTypeList>|ErrorAPI>;
     deleteEventType(eventTypeIds: string|string[]): Promise<(ResponseEmptyData|ErrorAPI)[]>;
 };
 export const EventTypeApi = (): EventTypeApi => {

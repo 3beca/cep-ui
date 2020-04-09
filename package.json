@@ -20,7 +20,7 @@
   "scripts": {
     "start": "chmod +x ./env.sh && ./env.sh && mv -f env-config.js ./public/ && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll=true",
     "eject": "react-scripts eject",
     "test-ci": "CI=true react-scripts test --env=jsdom --collect-coverage"
   },
