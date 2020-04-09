@@ -1,19 +1,19 @@
+import nock from 'nock';
 import {
     EventTypeApi,
     EventTypeList,
-    isErrorApi,
-    EventType
+    isErrorApi
 } from './event-type';
 import { ResponseData, ErrorAPI, ResponseEmptyData } from './fetch-data';
+import { BASE_URL, EVENT_TYPE_URL } from './config';
 
 describe(
     'EventType API',
     () => {
         let api: EventTypeApi;
-        // const url = 'https://testserver';
-        // const server = nock(url).defaultReplyHeaders({ 'access-control-allow-origin': '*' });
-        // // Skip Preflight CORS OPTION request
-        // nock(url).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*' }).persist();
+        const server = nock(BASE_URL).defaultReplyHeaders({ 'access-control-allow-origin': '*' });
+        // Skip Preflight CORS OPTION request
+        nock(BASE_URL).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*' }).persist();
 
         beforeAll(() => api = EventTypeApi());
 
@@ -28,6 +28,7 @@ describe(
                         {id: 'id2', name: 'name2', url: 'url2', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()}
                     ]
                 };
+                server.get(EVENT_TYPE_URL + `/?page=${page}&pageSize=${size}`).reply(200, expectedResult);
 
                 const result = await api.getEventTypeList(page, size);
 
@@ -44,6 +45,7 @@ describe(
             async () => {
                 const page = 1;
                 const size = 'ten' as unknown as number;
+                server.get(EVENT_TYPE_URL + `/?page=${page}&pageSize=${size}`).reply(400, {statusCode: 400, error: 'Bad Request', message: 'querystring.pageSize should be integer'});
 
                 const result = await api.getEventTypeList(page, size);
 
@@ -58,26 +60,15 @@ describe(
         );
 
         it(
-            'deleteEvent should return 204 when it works',
+            'deleteEvent should return one ErrorAPI when eventTypeId is not valid',
             async () => {
-                const eventType = {id: '5e8dffc9c906fefd9e7b2486'} as EventType;
+                const eventTypeId = 'invalidid';
+                server.delete(EVENT_TYPE_URL + `/${eventTypeId}`).reply(500, {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'});
 
-                const result = await api.deleteEventType(eventType);
+                const results = await api.deleteEventType(eventTypeId);
 
-                expect(isErrorApi(result)).toBe(false);
-                const response = result as ResponseEmptyData;
-                expect(response.status).toBe(204);
-                expect(response.data).toBe(undefined);
-            }
-        );
-
-        it(
-            'deleteEvent should return 204 when it works',
-            async () => {
-                const eventType = {id: 'invalidid'} as EventType;
-
-                const result = await api.deleteEventType(eventType);
-
+                expect(results.length).toBe(1);
+                const result = results[0];
                 expect(isErrorApi(result)).toBe(true);
                 const error = result as ErrorAPI;
                 expect(error).toEqual({
@@ -89,18 +80,124 @@ describe(
         );
 
         it(
-            'deleteEvent should return 204 when it works',
+            'deleteEvent should return an ErrorAPI when eventTypeId is undefined',
             async () => {
-                const eventType = {} as EventType;
+                const eventTypeId = undefined as unknown as string;
 
-                const result = await api.deleteEventType(eventType);
+                const results = await api.deleteEventType(eventTypeId);
 
+                expect(results.length).toBe(1);
+
+                const result = results[0];
                 expect(isErrorApi(result)).toBe(true);
                 const error = result as ErrorAPI;
                 expect(error).toEqual({
                     status: 500,
                     error: 'Missing EventType id',
-                    message: expect.stringContaining('is an invalid EventType')
+                    message: 'eventTypeIds is an invalid EventTypeId value or array'
+                });
+            }
+        );
+
+        it(
+            'deleteEvent should return two ErrorAPI when eventTypeIds are not valid',
+            async () => {
+                const eventTypeIds = ['invalidid1', 'invalid2'];
+                server.delete(EVENT_TYPE_URL + `/${eventTypeIds[0]}`).reply(500, {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'});
+                server.delete(EVENT_TYPE_URL + `/${eventTypeIds[1]}`).reply(500, {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'});
+
+
+                const results = await api.deleteEventType(eventTypeIds);
+
+                expect(results.length).toBe(2);
+
+                const result = results[0];
+                expect(isErrorApi(result)).toBe(true);
+                const error = result as ErrorAPI;
+                expect(error).toEqual({
+                    status: 500,
+                    error: 'Internal Server Error',
+                    message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                });
+
+                const result2 = results[1];
+                expect(isErrorApi(result2)).toBe(true);
+                const error2 = result as ErrorAPI;
+                expect(error2).toEqual({
+                    status: 500,
+                    error: 'Internal Server Error',
+                    message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                });
+            }
+        );
+
+        it(
+            'deleteEvent should return one 204 empty response when eventTypeId is valid ',
+            async () => {
+                const eventTypeId = '5e8dffc9c906fefd9e7b2486';
+                server.delete(EVENT_TYPE_URL + `/${eventTypeId}`).reply(204);
+
+                const results = await api.deleteEventType(eventTypeId);
+
+                expect(results.length).toBe(1);
+                
+                const result = results[0];
+                expect(isErrorApi(result)).toBe(false);
+                const response = result as ResponseEmptyData;
+                expect(response.status).toBe(204);
+                expect(response.data).toBe(undefined);
+            }
+        );
+
+        it(
+            'deleteEvent should return two 204 empty response when eventTypeIds are valid ',
+            async () => {
+                const eventTypeIds = ['5e8dffc9c906fefd9e7b2486', '5e8dffd0c906fe54737b2487'];
+                server.delete(EVENT_TYPE_URL + `/${eventTypeIds[0]}`).reply(204);
+                server.delete(EVENT_TYPE_URL + `/${eventTypeIds[1]}`).reply(204);
+
+                const results = await api.deleteEventType(eventTypeIds);
+
+                expect(results.length).toBe(2);
+                
+                const result = results[0];
+                expect(isErrorApi(result)).toBe(false);
+                const response = result as ResponseEmptyData;
+                expect(response.status).toBe(204);
+                expect(response.data).toBe(undefined);
+                
+                const result2 = results[0];
+                expect(isErrorApi(result2)).toBe(false);
+                const response2 = result as ResponseEmptyData;
+                expect(response2.status).toBe(204);
+                expect(response2.data).toBe(undefined);
+            }
+        );
+
+        it(
+            'deleteEvent should return one 204 empty response and one ErrorAPI when eventTypeIds are valid e invalid ',
+            async () => {
+                const eventTypeIds = ['5e8dffc9c906fefd9e7b2486', 'invalidid'];
+                server.delete(EVENT_TYPE_URL + `/${eventTypeIds[0]}`).reply(204);
+                server.delete(EVENT_TYPE_URL + `/${eventTypeIds[1]}`).reply(500, {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'});
+
+                const results = await api.deleteEventType(eventTypeIds);
+
+                expect(results.length).toBe(2);
+
+                const result = results[0];
+                expect(isErrorApi(result)).toBe(false);
+                const response = result as ResponseEmptyData;
+                expect(response.status).toBe(204);
+                expect(response.data).toBe(undefined);
+
+                const result2 = results[1];
+                expect(isErrorApi(result2)).toBe(true);
+                const error2 = result2 as ErrorAPI;
+                expect(error2).toEqual({
+                    status: 500,
+                    error: 'Internal Server Error',
+                    message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
                 });
             }
         );

@@ -5,10 +5,11 @@ import {
     ErrorAPI,
     ResponseEmptyData
 } from './fetch-data';
-import { BASE_URL } from './config';
+import {
+    BASE_URL,
+    EVENT_TYPE_URL
+} from './config';
 export * from './fetch-data';
-
-export const EventTypeList = '/admin/event-types';
 
 export type EventType = {
     name: string;
@@ -23,31 +24,34 @@ export type EventTypeList = {
     prev?: string | undefined;
 };
 export const getEventTypeList = (config: RequestInfo) => async (page: number = 1, size: number = 10): Promise<ResponseData<EventTypeList>|ErrorAPI> => {
-    const url = `${config.url}${EventTypeList}/?page=${page}&pageSize=${size}`;
-    console.log('getEventTypeList URL', url);
+    const url = `${config.url}${EVENT_TYPE_URL}/?page=${page}&pageSize=${size}`;
     return await fetchData<undefined, EventTypeList>({...config, url, method: 'GET'});
 };
-export const deleteEventType = (config: RequestInfo) => async (eventType: EventType): Promise<ResponseEmptyData|ErrorAPI> => {
-    if(!eventType || typeof eventType.id !== 'string') {
-        return {
+export const deleteEventType = (config: RequestInfo) => async (eventTypeIds: string|string[]): Promise<(ResponseEmptyData|ErrorAPI)[]> => {
+    const eventTypesArray = (Array.isArray(eventTypeIds)) ? eventTypeIds : [eventTypeIds];
+    if(!eventTypeIds || eventTypesArray.length < 1) {
+        return [{
             status: 500,
             error: 'Missing EventType id',
-            message: `${eventType} is an invalid EventType`
-        };
+            message: 'eventTypeIds is an invalid EventTypeId value or array'
+        }];
     }
-    const url = `${config.url}${EventTypeList}/${eventType.id}`;
-    console.log('deleteEventType URL', url);
-    return await fetchData<undefined, undefined>({...config, url, method: 'DELETE', headers: {}});
+    const requests = [];
+    for (const eventTypeId of eventTypesArray) {
+        const url = `${config.url}${EVENT_TYPE_URL}/${eventTypeId}`;
+        requests.push(fetchData<undefined, undefined>({...config, url, method: 'DELETE'}));
+    }
+    return Promise.all(requests);
 };
 export type EventTypeApi = {
     getEventTypeList(page: number, size: number): Promise<ResponseData<EventTypeList>|ErrorAPI>;
-    deleteEventType(eventType: EventType): Promise<ResponseEmptyData|ErrorAPI>;
+    deleteEventType(eventTypeIds: string|string[]): Promise<(ResponseEmptyData|ErrorAPI)[]>;
 };
 export const EventTypeApi = (): EventTypeApi => {
     const config: RequestInfo = {
         url: BASE_URL,
         method: 'GET',
-        headers: {'content-type': 'application/json'}
+        headers: {}
     };
     return {
         getEventTypeList: getEventTypeList(config),
