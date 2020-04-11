@@ -4,6 +4,6 @@ import AppBar from './index';
 
 test('renders TitleBar withou crash', () => {
     const { getByText } = render(<AppBar />);
-    const linkElement = getByText(/CEP Service by 3beca/i);
+    const linkElement = getByText(/CEP Service/i);
     expect(linkElement).toBeInTheDocument();
 });

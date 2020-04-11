@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import CEPList from './index';
+import EventTypeList from './index';
 
-test('CEPList mount without crash', () => {
-    const { getByText } = render(<CEPList />);
+test('EventTypeList mount without crash', () => {
+    const { getByText } = render(<EventTypeList />);
     const linkElement = getByText(/Listado de Reglas CEP/i);
     expect(linkElement).toBeInTheDocument();
 });

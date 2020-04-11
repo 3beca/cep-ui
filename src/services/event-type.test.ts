@@ -2,9 +2,9 @@ import nock from 'nock';
 import {
     EventTypeApi,
     EventTypeList,
-    isErrorApi
+    EventTypeError,
 } from './event-type';
-import { ResponseData, ErrorAPI, ResponseEmptyData } from './fetch-data';
+import { APIResponseData, APIError, APIResponseEmptyData, isAPIError } from '../fetch-api';
 import { BASE_URL, EVENT_TYPE_URL } from './config';
 
 describe(
@@ -32,8 +32,8 @@ describe(
 
                 const result = await api.getEventTypeList(page, size);
 
-                expect(isErrorApi(result)).toBe(false);
-                const response = result as ResponseData<EventTypeList>;
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<EventTypeList>;
                 expect(response.status).toBe(200);
                 expect(response.data).toEqual(expectedResult);
                 expect(1).toBe(1);
@@ -54,8 +54,8 @@ describe(
 
                 const result = await api.getEventTypeList();
 
-                expect(isErrorApi(result)).toBe(false);
-                const response = result as ResponseData<EventTypeList>;
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<EventTypeList>;
                 expect(response.status).toBe(200);
                 expect(response.data).toEqual(expectedResult);
                 expect(1).toBe(1);
@@ -63,7 +63,7 @@ describe(
         );
 
         it(
-            'getEventList should return an ErrorAPI when it fails',
+            'getEventList should return an APIError when it fails',
             async () => {
                 const page = 1;
                 const size = 'ten' as unknown as number;
@@ -71,18 +71,22 @@ describe(
 
                 const result = await api.getEventTypeList(page, size);
 
-                expect(isErrorApi(result)).toBe(true);
-                const error = result as ErrorAPI;
+                expect(isAPIError(result)).toBe(true);
+                const error = result as APIError<EventTypeError>;
                 expect(error).toEqual({
-                    status: 400,
-                    error: 'Bad Request',
-                    message: 'querystring.pageSize should be integer'
+                    errorCode: 400,
+                    errorMessage: 'Error from http://localhost:123/admin/event-types/?page=1&pageSize=ten',
+                    error: {
+                        statusCode: 400,
+                        error: 'Bad Request',
+                        message: 'querystring.pageSize should be integer'
+                    }
                 });
             }
         );
 
         it(
-            'deleteEvent should return one ErrorAPI when eventTypeId is not valid',
+            'deleteEvent should return one APIError when eventTypeId is not valid',
             async () => {
                 const eventTypeId = 'invalidid';
                 server.delete(EVENT_TYPE_URL + `/${eventTypeId}`).reply(500, {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'});
@@ -91,18 +95,22 @@ describe(
 
                 expect(results.length).toBe(1);
                 const result = results[0];
-                expect(isErrorApi(result)).toBe(true);
-                const error = result as ErrorAPI;
+                expect(isAPIError(result)).toBe(true);
+                const error = result as APIError<EventTypeError>;
                 expect(error).toEqual({
-                    status: 500,
-                    error: 'Internal Server Error',
-                    message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    errorCode: 500,
+                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid',
+                    error: {
+                        statusCode: 500,
+                        error: 'Internal Server Error',
+                        message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    }
                 });
             }
         );
 
         it(
-            'deleteEvent should return an ErrorAPI when eventTypeId is undefined',
+            'deleteEvent should return an APIError when eventTypeId is undefined',
             async () => {
                 const eventTypeId = undefined as unknown as string;
 
@@ -111,18 +119,22 @@ describe(
                 expect(results.length).toBe(1);
 
                 const result = results[0];
-                expect(isErrorApi(result)).toBe(true);
-                const error = result as ErrorAPI;
+                expect(isAPIError(result)).toBe(true);
+                const error = result as APIError<EventTypeError>;
                 expect(error).toEqual({
-                    status: 500,
-                    error: 'Missing EventType id',
-                    message: 'eventTypeIds is an invalid EventTypeId value or array'
+                    errorCode: 500,
+                    errorMessage: '',
+                    error: {
+                        statusCode: 500,
+                        error: 'Missing EventType id',
+                        message: 'eventTypeIds is an invalid EventTypeId value or array'
+                    }
                 });
             }
         );
 
         it(
-            'deleteEvent should return two ErrorAPI when eventTypeIds are not valid',
+            'deleteEvent should return two APIError when eventTypeIds are not valid',
             async () => {
                 const eventTypeIds = ['invalidid1', 'invalid2'];
                 server.delete(EVENT_TYPE_URL + `/${eventTypeIds[0]}`).reply(500, {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'});
@@ -134,21 +146,29 @@ describe(
                 expect(results.length).toBe(2);
 
                 const result = results[0];
-                expect(isErrorApi(result)).toBe(true);
-                const error = result as ErrorAPI;
+                expect(isAPIError(result)).toBe(true);
+                const error = result as APIError<EventTypeError>;
                 expect(error).toEqual({
-                    status: 500,
-                    error: 'Internal Server Error',
-                    message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    errorCode: 500,
+                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid1',
+                    error: {
+                        statusCode: 500,
+                        error: 'Internal Server Error',
+                        message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    }
                 });
 
                 const result2 = results[1];
-                expect(isErrorApi(result2)).toBe(true);
-                const error2 = result as ErrorAPI;
+                expect(isAPIError(result2)).toBe(true);
+                const error2 = result as APIError<EventTypeError>;
                 expect(error2).toEqual({
-                    status: 500,
-                    error: 'Internal Server Error',
-                    message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    errorCode: 500,
+                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid1',
+                    error: {
+                        statusCode: 500,
+                        error: 'Internal Server Error',
+                        message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    }
                 });
             }
         );
@@ -164,8 +184,8 @@ describe(
                 expect(results.length).toBe(1);
                 
                 const result = results[0];
-                expect(isErrorApi(result)).toBe(false);
-                const response = result as ResponseEmptyData;
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseEmptyData;
                 expect(response.status).toBe(204);
                 expect(response.data).toBe(undefined);
             }
@@ -183,21 +203,21 @@ describe(
                 expect(results.length).toBe(2);
                 
                 const result = results[0];
-                expect(isErrorApi(result)).toBe(false);
-                const response = result as ResponseEmptyData;
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseEmptyData;
                 expect(response.status).toBe(204);
                 expect(response.data).toBe(undefined);
                 
                 const result2 = results[0];
-                expect(isErrorApi(result2)).toBe(false);
-                const response2 = result as ResponseEmptyData;
+                expect(isAPIError(result2)).toBe(false);
+                const response2 = result as APIResponseEmptyData;
                 expect(response2.status).toBe(204);
                 expect(response2.data).toBe(undefined);
             }
         );
 
         it(
-            'deleteEvent should return one 204 empty response and one ErrorAPI when eventTypeIds are valid e invalid ',
+            'deleteEvent should return one 204 empty response and one APIError when eventTypeIds are valid e invalid ',
             async () => {
                 const eventTypeIds = ['5e8dffc9c906fefd9e7b2486', 'invalidid'];
                 server.delete(EVENT_TYPE_URL + `/${eventTypeIds[0]}`).reply(204);
@@ -208,63 +228,24 @@ describe(
                 expect(results.length).toBe(2);
 
                 const result = results[0];
-                expect(isErrorApi(result)).toBe(false);
-                const response = result as ResponseEmptyData;
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseEmptyData;
                 expect(response.status).toBe(204);
                 expect(response.data).toBe(undefined);
 
                 const result2 = results[1];
-                expect(isErrorApi(result2)).toBe(true);
-                const error2 = result2 as ErrorAPI;
+                expect(isAPIError(result2)).toBe(true);
+                const error2 = result2 as APIError<EventTypeError>;
                 expect(error2).toEqual({
-                    status: 500,
-                    error: 'Internal Server Error',
-                    message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    errorCode: 500,
+                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid',
+                    error: {
+                        statusCode: 500,
+                        error: 'Internal Server Error',
+                        message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                    }
                 });
             }
         );
     }
 );
-
-/*
-results: [
-    {
-    name: 'waterot-cieza',
-    id: '5e2da76f66983926c343dbbf',
-    url: 'https://cep.tribeca.ovh:443/events/5e2da76f66983926c343dbbf',
-    createdAt: '2020-01-26T14:51:27.071Z',
-    updatedAt: '2020-01-26T14:51:27.071Z'
-    },
-    {
-    name: 'waterot-caravaca-2',
-    id: '5e4aa7370c20ff3faab7c7d2',
-    url: 'https://cep.tribeca.ovh:443/events/5e4aa7370c20ff3faab7c7d2',
-    createdAt: '2020-02-17T14:46:15.530Z',
-    updatedAt: '2020-02-17T14:46:15.530Z'
-    }
-]
-
-Response {
-status: 500,
-error: 'Invalid request https://cep2.tribeca.ovh/admin/event-types?page=1&pageSize=10',
-message: 'Network request failed'
-}
-
-Response {
-status: 400,
-error: 'Bad Request',
-message: 'querystring.pageSize should be integer'
-}
-
-Response {
-status: 201,
-data: {
-    name: 'testtesttest',
-    id: '5e8dde21c906fe81e27b235c',
-    url: 'https://cep.tribeca.ovh:443/events/5e8dde21c906fe81e27b235c',
-    createdAt: '2020-04-08T14:22:25.311Z',
-    updatedAt: '2020-04-08T14:22:25.311Z'
-}
-}
-
-*/
