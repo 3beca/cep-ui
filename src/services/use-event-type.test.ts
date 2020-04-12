@@ -1,4 +1,3 @@
-import nock from 'nock';
 import {renderHook} from '@testing-library/react-hooks'
 import {
     useGetEventList
@@ -10,14 +9,13 @@ import {
 import {
     EventTypeList, EventTypeError
 } from './event-type';
+import {setupNock} from '../test-utils';
 
 describe(
     'useFetchData',
     () => {
         const url = BASE_URL;
-        const server = nock(url).defaultReplyHeaders({ 'access-control-allow-origin': '*' });
-        // Skip Preflight CORS OPTION request
-        nock(url).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*' }).persist();
+        const server = setupNock(url);
 
         it(
             'should receive a valid response and a error and keep last good response',

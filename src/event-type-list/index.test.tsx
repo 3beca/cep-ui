@@ -7,3 +7,8 @@ test('EventTypeList mount without crash', () => {
     const linkElement = getByText(/Listado de Reglas CEP/i);
     expect(linkElement).toBeInTheDocument();
 });
+
+test('EventTypeList snapshot', () => {
+    const { container } = render(<EventTypeList />);
+    expect(container).toMatchSnapshot();
+});

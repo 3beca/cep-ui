@@ -1,4 +1,3 @@
-import nock from 'nock';
 import {
     EventTypeApi,
     EventTypeList,
@@ -6,14 +5,13 @@ import {
 } from './event-type';
 import { APIResponseData, APIError, APIResponseEmptyData, isAPIError } from '../fetch-api';
 import { BASE_URL, EVENT_TYPE_URL } from './config';
+import {setupNock} from '../test-utils';
 
 describe(
     'EventType API',
     () => {
         let api: EventTypeApi;
-        const server = nock(BASE_URL).defaultReplyHeaders({ 'access-control-allow-origin': '*' });
-        // Skip Preflight CORS OPTION request
-        nock(BASE_URL).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*' }).persist();
+        const server = setupNock(BASE_URL);
 
         beforeAll(() => api = EventTypeApi());
 

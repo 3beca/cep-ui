@@ -49,8 +49,8 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                             <TableRow>
                                 <TableCell padding='checkbox'><Checkbox/></TableCell>
                                 <TableCell align='center'>Dos</TableCell>
-                                <TableCell align='right'>{new Date().toLocaleString()}</TableCell>
-                                <TableCell align='right'>{new Date().toLocaleString()}</TableCell>
+                                <TableCell align='right'>{new Date('2020-01-01T10:10:10Z').toLocaleString()}</TableCell>
+                                <TableCell align='right'>{new Date('2020-01-01T11:11:11Z').toLocaleString()}</TableCell>
                             </TableRow>
                             <TableLoadingView show={isLoading} colSpan={4}/>
                         </TableBody>

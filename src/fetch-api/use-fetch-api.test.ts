@@ -1,16 +1,14 @@
-import nock from 'nock';
 import {renderHook, act} from '@testing-library/react-hooks'
 import { fetchApi } from './fetch-api';
 import { useFetchApi, APIFetchQuery } from './use-fetch-api';
 import { nextTick } from 'process';
+import {setupNock} from '../test-utils';
 
 describe(
     'useFetchData',
     () => {
         const url = 'https://use-fetch-api';
-        const server = nock(url).defaultReplyHeaders({ 'access-control-allow-origin': '*' });
-        // Skip Preflight CORS OPTION request
-        nock(url).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*' }).persist();
+        const server = setupNock(url);
 
         it(
             'should receive a valid response and a error and keep last good response',

@@ -1,8 +1,6 @@
-export type APIHeaders = {[key:string]: string;};
 export type APIRequestInfo = {
     method: 'GET'|'POST'|'PUT'|'DELETE';
-    headers?: APIHeaders;
-};
+} & Omit<RequestInit, 'body'>;
 export type APIBody = object | undefined;
 export type APIRequestData<T extends APIBody> = {
     body?: T;

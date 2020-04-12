@@ -1,4 +1,4 @@
-import nock from 'nock';
+import {setupNock} from '../test-utils';
 import {
     fetchApi,
     APIRequestGetData,
@@ -13,9 +13,7 @@ describe(
     'fetchApi should',
     () => {
         const url = 'https://testserver';
-        const server = nock(url).defaultReplyHeaders({ 'access-control-allow-origin': '*' });
-        // Skip Preflight CORS OPTION request
-        nock(url).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*' }).persist();
+        const server = setupNock(url);
 
         it(
             'should return APIError when RequestInfo is invalid',

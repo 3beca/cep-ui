@@ -7,3 +7,8 @@ test('renders App without crash', () => {
     const linkElement = getByText(/CEP UI/i);
     expect(linkElement).toBeInTheDocument();
 });
+
+test('App snapshot', () => {
+    const { container } = render(<App />);
+    expect(container).toMatchSnapshot();
+});
