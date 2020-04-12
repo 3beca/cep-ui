@@ -59,7 +59,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                 <TablePagination
                     component='div'
                     rowsPerPageOptions={[5, 10, 20]}
-                    count={100}
+                    count={hasNextPage ? size + 1 : size}
                     rowsPerPage={size}
                     page={page - 1}
                     onChangePage={(ev, page) => onChangePage(page)}

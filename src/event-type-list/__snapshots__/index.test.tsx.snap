@@ -204,7 +204,7 @@ exports[`EventTypeList snapshot 1`] = `
           <p
             class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
           >
-            1-10 of 100
+            1-10 of 10
           </p>
           <div
             class="MuiTablePagination-actions"
@@ -234,8 +234,9 @@ exports[`EventTypeList snapshot 1`] = `
             </button>
             <button
               aria-label="Next page"
-              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-              tabindex="0"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
               title="Next page"
               type="button"
             >
@@ -253,9 +254,6 @@ exports[`EventTypeList snapshot 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </div>

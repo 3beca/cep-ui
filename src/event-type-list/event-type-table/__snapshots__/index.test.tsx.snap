@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventTypeTable snapshot while loading with previous data 1`] = `
+exports[`EventTypeTable snapshot while loading with previous data and pagination 1`] = `
 <div>
   <div
     class="makeStyles-root-430"
@@ -200,7 +200,7 @@ exports[`EventTypeTable snapshot while loading with previous data 1`] = `
         <p
           class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          6-10 of 100
+          6-6 of 6
         </p>
         <div
           class="MuiTablePagination-actions"
@@ -232,8 +232,9 @@ exports[`EventTypeTable snapshot while loading with previous data 1`] = `
           </button>
           <button
             aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
             title="Next page"
             type="button"
           >
@@ -251,9 +252,6 @@ exports[`EventTypeTable snapshot while loading with previous data 1`] = `
                 />
               </svg>
             </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
           </button>
         </div>
       </div>
@@ -262,7 +260,7 @@ exports[`EventTypeTable snapshot while loading with previous data 1`] = `
 </div>
 `;
 
-exports[`EventTypeTable snapshot while loading without previous data 1`] = `
+exports[`EventTypeTable snapshot while loading without data 1`] = `
 <div>
   <div
     class="makeStyles-root-573"
@@ -462,7 +460,7 @@ exports[`EventTypeTable snapshot while loading without previous data 1`] = `
         <p
           class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          1-5 of 100
+          1-5 of 5
         </p>
         <div
           class="MuiTablePagination-actions"
@@ -492,8 +490,9 @@ exports[`EventTypeTable snapshot while loading without previous data 1`] = `
           </button>
           <button
             aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
             title="Next page"
             type="button"
           >
@@ -511,9 +510,6 @@ exports[`EventTypeTable snapshot while loading without previous data 1`] = `
                 />
               </svg>
             </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
           </button>
         </div>
       </div>
@@ -708,7 +704,7 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
         <p
           class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          6-10 of 100
+          6-6 of 6
         </p>
         <div
           class="MuiTablePagination-actions"
@@ -740,8 +736,9 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
           </button>
           <button
             aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
             title="Next page"
             type="button"
           >
@@ -759,9 +756,6 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                 />
               </svg>
             </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
           </button>
         </div>
       </div>
@@ -970,7 +964,7 @@ exports[`EventTypeTable snapshot without data 1`] = `
         <p
           class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          1-10 of 100
+          1-10 of 10
         </p>
         <div
           class="MuiTablePagination-actions"
@@ -1000,8 +994,9 @@ exports[`EventTypeTable snapshot without data 1`] = `
           </button>
           <button
             aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
             title="Next page"
             type="button"
           >
@@ -1019,9 +1014,6 @@ exports[`EventTypeTable snapshot without data 1`] = `
                 />
               </svg>
             </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
           </button>
         </div>
       </div>

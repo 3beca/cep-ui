@@ -41,7 +41,7 @@ test('EventTypeTable snapshot with data and pagination', () => {
     expect(container).toMatchSnapshot();
 });
 
-test('EventTypeTable snapshot while loading with previous data', () => {
+test('EventTypeTable snapshot while loading with previous data and pagination', () => {
     const { container } = render(
         <EventTypeTable
             eventTypeList={generateListWith(5, true, true)}
@@ -53,7 +53,7 @@ test('EventTypeTable snapshot while loading with previous data', () => {
     expect(container).toMatchSnapshot();
 });
 
-test('EventTypeTable snapshot while loading without previous data', () => {
+test('EventTypeTable snapshot while loading without data', () => {
     const { container } = render(
         <EventTypeTable
             eventTypeList={generateListWith(0, false, false)}
@@ -67,19 +67,37 @@ test('EventTypeTable snapshot while loading without previous data', () => {
 
 test('EventTypeTable should render 5 items in page 2and pagination prev and next enabled', () => {
     const onChangePage = jest.fn();
-    const {getByText, getByTitle} = render(
+    const {getByText, getByTitle, getByLabelText, rerender} = render(
         <EventTypeTable
-            eventTypeList={generateListWith(5, true, true)}
+            eventTypeList={undefined}
             isLoading={false}
-            page={2}
+            page={1}
             size={5}
             onChangePage={onChangePage}
         />
     );
     const prevButton = getByTitle('Previous page') as HTMLButtonElement;
     const nextButton = getByTitle('Next page') as HTMLButtonElement;
+    const rowsPerPage = getByLabelText('Rows per page:');
 
-    expect(prevButton.disabled).toBe(false);
+    expect(prevButton.disabled).toBe(true);
+    expect(nextButton.disabled).toBe(true);
+    expect(rowsPerPage).toHaveTextContent('5');
+    //expect(getByText('6-10 of 100')).toHaveTextContent('2');
+
+    // Rerender with new data
+    rerender(
+        <EventTypeTable
+            eventTypeList={generateListWith(5, true, true)}
+            isLoading={false}
+            page={1}
+            size={5}
+            onChangePage={onChangePage}
+        />
+    );
+
+    expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(false);
+    expect(rowsPerPage).toHaveTextContent('5');
     expect(getByText('6-10 of 100')).toHaveTextContent('2');
 });
