@@ -1,22 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import EventTypeTable from './index';
-import { EventTypeList } from '../../services/event-type';
+import { generateEventTypeListWith } from '../../test-utils';
 
-const generateListWith = (many: number = 5, next = false, prev = false) => {
-    const list: EventTypeList = {
-        results: Array(many).map((_, idx) => ({
-            id: idx + '',
-            name: 'Elemento ' + idx,
-            url: 'http://cep/elemento' + idx,
-            createdAt: '2020-01-01T10:10:10.123Z',
-            updatedAt: '2020-01-01T10:10:10.123Z'
-        }))
-    };
-    if (prev) list.prev = 'http://cep/?page=prev';
-    if (next) list.next = 'http://cep/?page=next';
-    return list;
-};
+
 
 test('EventTypeTable mount without crash', () => {
     const { getByText } = render(<EventTypeTable />);
@@ -32,7 +19,7 @@ test('EventTypeTable snapshot without data', () => {
 test('EventTypeTable snapshot with data and pagination', () => {
     const { container } = render(
         <EventTypeTable
-            eventTypeList={generateListWith(5, true, true)}
+            eventTypeList={generateEventTypeListWith(5, true, true)}
             isLoading={false}
             page={2}
             size={5}
@@ -44,7 +31,7 @@ test('EventTypeTable snapshot with data and pagination', () => {
 test('EventTypeTable snapshot while loading with previous data and pagination', () => {
     const { container } = render(
         <EventTypeTable
-            eventTypeList={generateListWith(5, true, true)}
+            eventTypeList={generateEventTypeListWith(5, true, true)}
             isLoading={true}
             page={2}
             size={5}
@@ -56,7 +43,7 @@ test('EventTypeTable snapshot while loading with previous data and pagination', 
 test('EventTypeTable snapshot while loading without data', () => {
     const { container } = render(
         <EventTypeTable
-            eventTypeList={generateListWith(0, false, false)}
+            eventTypeList={generateEventTypeListWith(0, false, false)}
             isLoading={true}
             page={1}
             size={5}
@@ -88,7 +75,7 @@ test('EventTypeTable should render 5 items in page 2and pagination prev and next
     // Rerender with new data
     rerender(
         <EventTypeTable
-            eventTypeList={generateListWith(5, true, true)}
+            eventTypeList={generateEventTypeListWith(5, true, true)}
             isLoading={false}
             page={1}
             size={5}

@@ -5,7 +5,7 @@ import {
 } from './event-type';
 import { APIResponseData, APIError, APIResponseEmptyData, isAPIError } from '../fetch-api';
 import { BASE_URL, EVENT_TYPE_URL } from './config';
-import {setupNock} from '../test-utils';
+import {setupNock, generateEventTypeListWith} from '../test-utils';
 
 describe(
     'EventType API',
@@ -20,12 +20,8 @@ describe(
             async () => {
                 const page = 1;
                 const size = 10;
-                const expectedResult: EventTypeList = {
-                    results: [
-                        {id: 'id1', name: 'name1', url: 'url1', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()},
-                        {id: 'id2', name: 'name2', url: 'url2', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()}
-                    ]
-                };
+                const expectedResult = generateEventTypeListWith();
+
                 server.get(EVENT_TYPE_URL + `/?page=${page}&pageSize=${size}`).reply(200, expectedResult);
 
                 const result = await api.getEventTypeList(page, size);
@@ -41,13 +37,7 @@ describe(
         it(
             'getEventList should return a list of EventTypes without pagination info',
             async () => {
-                const expectedResult: EventTypeList = {
-                    results: [
-                        {id: 'id1', name: 'name1', url: 'url1', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()},
-                        {id: 'id2', name: 'name2', url: 'url2', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()},
-                        {id: 'id2', name: 'name2', url: 'url2', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()}
-                    ]
-                };
+                const expectedResult = generateEventTypeListWith();
                 server.get(EVENT_TYPE_URL + `/?page=1&pageSize=10`).reply(200, expectedResult);
 
                 const result = await api.getEventTypeList();
