@@ -69,6 +69,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                             <TableRow>
                                 <TableCell padding='checkbox' component='th'><Checkbox className={styles.mainCheck} color='default' disabled={isLoading}/></TableCell>
                                 <TableCell align='center'><Typography className={styles.headText}>Event Type Name</Typography></TableCell>
+                                <TableCell align='center'><Typography className={styles.headText}>URL</Typography></TableCell>
                                 <TableCell align='right'><Typography className={styles.headText}>Last updated</Typography></TableCell>
                                 <TableCell align='right'><Typography className={styles.headText}>Created At</Typography></TableCell>
                             </TableRow>

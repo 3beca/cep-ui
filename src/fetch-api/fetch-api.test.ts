@@ -19,7 +19,7 @@ describe(
             'should return APIError when RequestInfo is invalid',
             async () => {
                 const url = undefined as unknown as string;
-                const req: APIRequestGetData = {} as unknown as APIRequestGetData; 
+                const req: APIRequestGetData = {} as unknown as APIRequestGetData;
 
                 const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
@@ -35,7 +35,7 @@ describe(
             'should return APIError when RequestInfo is a invalid string',
             async () => {
                 const url = 'invalidurl';
-                const req: APIRequestGetData = {} as unknown as APIRequestGetData; 
+                const req: APIRequestGetData = {} as unknown as APIRequestGetData;
 
                 const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
@@ -52,7 +52,7 @@ describe(
             async () => {
                 server.get('/oknomethod').reply(200);
                 const url = 'https://testserver/oknomethod'
-                const req: APIRequestGetData = {} as unknown as APIRequestGetData; 
+                const req: APIRequestGetData = {} as unknown as APIRequestGetData;
 
                 const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
@@ -71,7 +71,7 @@ describe(
                 const req: APIRequestGetData = {
                     method: 'GET',
                     headers: {'content-type': 'application/json'}
-                }; 
+                };
 
                 const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
@@ -90,7 +90,7 @@ describe(
                 const req: APIRequestGetData = {
                     method: 'GET',
                     headers: {'content-type': 'application/json'}
-                }; 
+                };
 
                 const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
@@ -110,7 +110,7 @@ describe(
                     method: 'POST',
                     headers: {'content-type': 'application/json'},
                     body: {}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, undefined>(url, req);
 
@@ -130,7 +130,7 @@ describe(
                     method: 'PUT',
                     headers: {'content-type': 'application/json'},
                     body: {}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, undefined>(url, req);
                 expect(isAPIError(response)).toBe(false);
@@ -149,7 +149,7 @@ describe(
                     method: 'DELETE',
                     headers: {'content-type': 'application/json'},
                     body: {}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, undefined>(url, req);
                 expect(isAPIError(response)).toBe(false);
@@ -168,7 +168,7 @@ describe(
                 const req: APIRequestGetData = {
                     method: 'GET',
                     headers: {'content-type': 'application/json'}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, typeof serverResponse>(url, req);
                 expect(isAPIError(response)).toBe(true);
@@ -191,7 +191,7 @@ describe(
                 const req: APIRequestGetData = {
                     method: 'GET',
                     headers: {'content-type': 'application/json'}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, undefined>(url, req);
 
@@ -212,7 +212,7 @@ describe(
                 const req: APIRequestGetData = {
                     method: 'GET',
                     headers: {'content-type': 'application/json'}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, typeof serverResponse>(url, req);
                 expect(isAPIError(response)).toBe(true);
@@ -235,7 +235,7 @@ describe(
                 const req: APIRequestGetData = {
                     method: 'GET',
                     headers: {'content-type': 'application/json'}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, undefined>(url, req);
                 expect(isAPIError(response)).toBe(true);
@@ -254,7 +254,7 @@ describe(
                 const req: APIRequestGetData = {
                     method: 'GET',
                     headers: {'content-type': 'application/json'}
-                }; 
+                };
 
                 const response = await fetchApi<{}, {}, undefined>(url, req);
                 expect(isAPIError(response)).toBe(true);
