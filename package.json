@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=true --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
-    "test-ci": "CI=true react-scripts test --env=jest-environment-jsdom-sixteen --collect-coverage"
+    "test-ci": "CI=true react-scripts test --env=jest-environment-jsdom-sixteen --collect-coverage -u"
   },
   "eslintConfig": {
     "extends": "react-app"
