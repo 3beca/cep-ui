@@ -27,7 +27,7 @@ export const fetchApi = async <B extends APIBody, R extends APIBody, E extends A
     try {
         const response = await fetch(url, options);
         const status = response.status;
-        let data = undefined;
+        let data;
         try {
             data = await response.json();
         }

@@ -178,7 +178,7 @@ test('EventTypeTable render items and can navigate by pages', async () => {
 
     expect(prevButton.disabled).toBe(false);
     expect(nextButton.disabled).toBe(true);
-    expect(rowsPerPage).toHaveTextContent('5');    
+    expect(rowsPerPage).toHaveTextContent('5');
 });
 
 test('EventTypeTable render 5 elements and header', async () => {

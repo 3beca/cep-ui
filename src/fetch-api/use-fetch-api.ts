@@ -80,4 +80,3 @@ export const useFetchApi = <R, E>(query: APIFetchQuery<R, E>) => {
 };
 
 export default useFetchApi;
-  

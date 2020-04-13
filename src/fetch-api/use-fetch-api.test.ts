@@ -30,7 +30,7 @@ describe(
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.data).toBe(undefined);
-                
+
                 // Wait to response Query
                 await waitForNextUpdate();
 
@@ -48,7 +48,7 @@ describe(
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.data).toEqual({status: 200, data: {response: 'Query received'}});
-                
+
                 // Wait to response Query
                 await waitForNextUpdate();
 
@@ -65,7 +65,7 @@ describe(
         it(
             'should return an error when query fails to fetch api',
             async () => {
-                const req: APIFetchQuery<{response: string}, {message: string}> = () => fetchApi<undefined, {response: string}, {message: string}>('https://unknownserver', { method: 'GET' })  
+                const req: APIFetchQuery<{response: string}, {message: string}> = () => fetchApi<undefined, {response: string}, {message: string}>('https://unknownserver', { method: 'GET' })
                 const {result, waitForNextUpdate} = renderHook(() => useFetchApi(req));
 
                 expect(result.current.isLoading).toBe(false);
@@ -96,7 +96,7 @@ describe(
         it(
             'should not update when receive a query function that return undefined',
             async () => {
-                const req: APIFetchQuery<{response: string}, {message: string}> = () => undefined; 
+                const req: APIFetchQuery<{response: string}, {message: string}> = () => undefined;
                 const {result} = renderHook(() => useFetchApi(req));
 
                 expect(result.current.isLoading).toBe(false);
@@ -117,7 +117,7 @@ describe(
         it(
             'should not update when receive a query function that return null',
             async () => {
-                const req: APIFetchQuery<{response: string}, {message: string}> = () => null; 
+                const req: APIFetchQuery<{response: string}, {message: string}> = () => null;
                 const {result} = renderHook(() => useFetchApi(req));
 
                 expect(result.current.isLoading).toBe(false);
@@ -143,7 +143,7 @@ describe(
         it(
             'should update to same state when receive a query thar resolve in undefined',
             async () => {
-                const req: APIFetchQuery<{response: string}, {message: string}> = () => fakeFetch(); 
+                const req: APIFetchQuery<{response: string}, {message: string}> = () => fakeFetch();
                 const {result, waitForNextUpdate} = renderHook(() => useFetchApi(req));
 
                 expect(result.current.isLoading).toBe(false);

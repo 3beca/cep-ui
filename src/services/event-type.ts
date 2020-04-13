@@ -29,7 +29,7 @@ export type EventTypeError = {
 };
 export const getEventTypeList = (baseURL: string, config: APIRequestInfo) => async (page: number = 1, size: number = 10): Promise<APIResponseData<EventTypeList>|APIError<EventTypeError>> => {
     const url = `${baseURL}${EVENT_TYPE_URL}/?page=${page}&pageSize=${size}`;
-    return await fetchApi<undefined, EventTypeList, EventTypeError>(url, {...config, method: 'GET'});
+    return fetchApi<undefined, EventTypeList, EventTypeError>(url, {...config, method: 'GET'});
 };
 export const deleteEventType = (baseURL: string, config: APIRequestInfo) => async (eventTypeIds: string|string[]): Promise<(APIResponseEmptyData|APIError<EventTypeError>)[]> => {
     const eventTypesArray = (Array.isArray(eventTypeIds)) ? eventTypeIds : [eventTypeIds];
