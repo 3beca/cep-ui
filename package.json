@@ -21,9 +21,9 @@
   "scripts": {
     "start": "chmod +x ./env.sh && ./env.sh && mv -f env-config.js ./public/ && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --watchAll=true",
+    "test": "react-scripts test --coverage --watchAll=true --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
-    "test-ci": "CI=true react-scripts test --env=jsdom --collect-coverage"
+    "test-ci": "CI=true react-scripts test --env=jest-environment-jsdom-sixteen --collect-coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^3.2.1",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "nock": "^12.0.3"
   },
   "jest": {

@@ -8,16 +8,43 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
 import Checkbox from '@material-ui/core/Checkbox';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
 
 import { useStyles } from './styles';
+import { EventTypeList, EventType } from '../../services/event-type';
 
-export const TableLoadingView: React.FC<{show: boolean; colSpan: number;}> = ({show = false, colSpan= 4}) => show ? <TableRow><TableCell colSpan={colSpan} style={{backgroundColor: 'pink'}}><Typography align='center'>Loading...</Typography></TableCell></TableRow> : null;
+const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
+    if (!show) return null;
+    return (
+        <div
+            data-testid='loading-view-row'>
+            <div
+                style={{backgroundColor: 'pink'}}>
+                    <Typography align='center'>Loading...</Typography>
+            </div>
+        </div>
+    );
+};
+
+const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
+    if (!show) return null;
+    return (
+        <div
+            data-testid='empty-view-row'>
+            <div>
+                    <Typography align='center'>No Event Types created yet!</Typography>
+            </div>
+        </div>
+    );
+};
 
 export type EventTypeTableProps = {
-    eventTypeList?: any;
+    eventTypeList?: EventTypeList;
     page?: number;
     size?: number;
     isLoading?: boolean;
+    isEmpty?: boolean;
     onChangePage?(page: number):void;
 };
 export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
@@ -26,10 +53,11 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
         page = 1,
         size = 10,
         isLoading = true,
+        isEmpty = true,
         onChangePage=()=>{}
     }) => {
         const styles = useStyles();
-        const events = eventTypeList ? eventTypeList.results : [];
+        const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
         const hasNextPage = !!eventTypeList?.next;
         const hasPrevPage = !!eventTypeList?.prev;
         return (
@@ -46,23 +74,31 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            <TableRow>
-                                <TableCell padding='checkbox'><Checkbox/></TableCell>
-                                <TableCell align='center'>Dos</TableCell>
-                                <TableCell align='right'>{new Date('2020-01-01T10:10:10Z').toLocaleString()}</TableCell>
-                                <TableCell align='right'>{new Date('2020-01-01T11:11:11Z').toLocaleString()}</TableCell>
-                            </TableRow>
-                            <TableLoadingView show={isLoading} colSpan={4}/>
+                            {
+                                events.map((eventType: EventType) => (
+                                    <TableRow key={eventType.id}>
+                                        <TableCell padding='checkbox'><Checkbox/></TableCell>
+                                        <TableCell align='center'>{eventType.name}</TableCell>
+                                        <TableCell align='center'>{eventType.url}<IconButton><EditIcon fontSize='small'/></IconButton></TableCell>
+                                        <TableCell align='right'>{new Date(eventType.updatedAt).toLocaleString()}</TableCell>
+                                        <TableCell align='right'>{new Date(eventType.createdAt).toLocaleString()}</TableCell>
+                                    </TableRow>
+                                ))
+                            }
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <TableEmptyView show={!isLoading && isEmpty}/>
+                <TableLoadingView show={isLoading}/>
                 <TablePagination
                     component='div'
                     rowsPerPageOptions={[5, 10, 20]}
-                    count={hasNextPage ? size + 1 : size}
+                    count={-1}
                     rowsPerPage={size}
                     page={page - 1}
-                    onChangePage={(ev, page) => onChangePage(page)}
+                    nextIconButtonProps={{disabled: !hasNextPage}}
+                    backIconButtonProps={{disabled: !hasPrevPage}}
+                    onChangePage={(ev, page) => onChangePage(page + 1)}
                 />
             </div>
         );
