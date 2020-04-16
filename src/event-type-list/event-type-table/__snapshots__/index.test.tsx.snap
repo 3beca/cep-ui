@@ -53,13 +53,23 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
               </span>
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
               scope="col"
             >
               <p
                 class="MuiTypography-root makeStyles-headText-412 MuiTypography-body1"
               >
                 Event Type Name
+              </p>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-412 MuiTypography-body1"
+              >
+                URL
               </p>
             </th>
             <th
@@ -123,12 +133,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 0
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento0
               <button
@@ -202,12 +213,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 1
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento1
               <button
@@ -281,12 +293,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 2
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento2
               <button
@@ -360,12 +373,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 3
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento3
               <button
@@ -439,12 +453,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 4
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento4
               <button
@@ -657,13 +672,23 @@ exports[`EventTypeTable snapshot while loading without data 1`] = `
               </span>
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
               scope="col"
             >
               <p
                 class="MuiTypography-root makeStyles-headText-555 MuiTypography-body1"
               >
                 Event Type Name
+              </p>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-555 MuiTypography-body1"
+              >
+                URL
               </p>
             </th>
             <th
@@ -862,13 +887,23 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
               </span>
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
               scope="col"
             >
               <p
                 class="MuiTypography-root makeStyles-headText-269 MuiTypography-body1"
               >
                 Event Type Name
+              </p>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-269 MuiTypography-body1"
+              >
+                URL
               </p>
             </th>
             <th
@@ -932,12 +967,13 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 0
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento0
               <button
@@ -1011,12 +1047,13 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 1
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento1
               <button
@@ -1090,12 +1127,13 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 2
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento2
               <button
@@ -1169,12 +1207,13 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 3
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento3
               <button
@@ -1248,12 +1287,13 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
               </span>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              aria-label="event name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 4
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento4
               <button
@@ -1464,13 +1504,23 @@ exports[`EventTypeTable snapshot without data 1`] = `
               </span>
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
               scope="col"
             >
               <p
                 class="MuiTypography-root makeStyles-headText-136 MuiTypography-body1"
               >
                 Event Type Name
+              </p>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-136 MuiTypography-body1"
+              >
+                URL
               </p>
             </th>
             <th

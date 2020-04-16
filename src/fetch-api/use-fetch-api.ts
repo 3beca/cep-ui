@@ -76,7 +76,7 @@ export const useFetchApi = <R, E>(query: APIFetchQuery<R, E>) => {
         [query]
     );
     const isLoading = response.status === 'PENDING';
-    return {isLoading, data: response.data, error: response.error, request};
+    return {isLoading, response: response.data, error: response.error, request};
 };
 
 export default useFetchApi;

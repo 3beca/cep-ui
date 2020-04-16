@@ -6,9 +6,7 @@ import {
     BASE_URL,
     EVENT_TYPE_URL
 } from './config';
-import {
-    EventTypeList, EventTypeError
-} from './event-type';
+import {EventTypeError} from './event-type';
 import {setupNock, generateEventTypeListWith} from '../test-utils';
 
 describe(
@@ -29,13 +27,13 @@ describe(
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 await waitForNextUpdate();
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toEqual({
+                expect(result.current.response).toEqual({
                     status: 200,
                     data: expectedResult
                 });
@@ -49,7 +47,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toEqual({
+                expect(result.current.response).toEqual({
                     status: 200,
                     data: expectedResult
                 });
@@ -58,7 +56,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toEqual({
+                expect(result.current.response).toEqual({
                     status: 200,
                     data: expectedResultPage2
                 });
@@ -76,7 +74,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toEqual({
+                expect(result.current.response).toEqual({
                     status: 200,
                     data: expectedResultPage2
                 });
@@ -89,7 +87,7 @@ describe(
                     errorMessage: 'Error from http://localhost:123/admin/event-types/?page=one&pageSize=10',
                     error: expectedResultPageError
                 });
-                expect(result.current.data).toEqual({
+                expect(result.current.response).toEqual({
                     status: 200,
                     data: expectedResultPage2
                 });

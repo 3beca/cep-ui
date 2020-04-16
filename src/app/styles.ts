@@ -8,7 +8,6 @@ export const useStyles = makeStyles(
             flexDirection: 'column'
         }
     })
-  );
+);
 
-  export default useStyles;
-
+ export default useStyles;

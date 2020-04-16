@@ -18,7 +18,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 // Run query
                 server.get('/hooktest').reply(200, {response: 'Query received'});
@@ -29,14 +29,14 @@ describe(
                 // Start Query
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 // Wait to response Query
                 await waitForNextUpdate();
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toEqual({status: 200, data: {response: 'Query received'}});
+                expect(result.current.response).toEqual({status: 200, data: {response: 'Query received'}});
 
                 // Run query
                 server.get('/hooktest').reply(400, {message: 'Error received'});
@@ -47,7 +47,7 @@ describe(
                 // Start Query
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toEqual({status: 200, data: {response: 'Query received'}});
+                expect(result.current.response).toEqual({status: 200, data: {response: 'Query received'}});
 
                 // Wait to response Query
                 await waitForNextUpdate();
@@ -58,7 +58,7 @@ describe(
                     errorMessage: 'Error from https://use-fetch-api/hooktest',
                     error: { message: 'Error received'}
                 });
-                expect(result.current.data).toEqual({status: 200, data: {response: 'Query received'}});
+                expect(result.current.response).toEqual({status: 200, data: {response: 'Query received'}});
             }
         );
 
@@ -70,7 +70,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 act(() => {
                     result.current.request();
@@ -79,7 +79,7 @@ describe(
                 // Start Query
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                  // Wait to response Query
                  await waitForNextUpdate();
@@ -89,7 +89,7 @@ describe(
                     errorCode: 500,
                     errorMessage: 'Error in query Network request failed: https://unknownserver'
                 });
-                 expect(result.current.data).toBe(undefined);
+                 expect(result.current.response).toBe(undefined);
             }
         );
 
@@ -101,7 +101,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 act(() => {
                     result.current.request();
@@ -110,7 +110,7 @@ describe(
                 // Start Query
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
             }
         );
 
@@ -122,7 +122,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 act(() => {
                     result.current.request();
@@ -131,7 +131,7 @@ describe(
                 // Start Query
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
             }
         );
 
@@ -148,7 +148,7 @@ describe(
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 act(() => {
                     result.current.request();
@@ -157,14 +157,14 @@ describe(
                 // Start Query
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
-                expect(result.current.data).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                  // Wait to response Query
                  await waitForNextUpdate();
 
                  expect(result.current.isLoading).toBe(false);
                  expect(result.current.error).toBe(undefined);
-                 expect(result.current.data).toEqual(undefined);
+                 expect(result.current.response).toEqual(undefined);
             }
         );
     }

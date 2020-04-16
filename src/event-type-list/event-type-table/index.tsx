@@ -68,8 +68,8 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                         <TableHead className={styles.head}>
                             <TableRow>
                                 <TableCell padding='checkbox' component='th'><Checkbox className={styles.mainCheck} color='default' disabled={isLoading}/></TableCell>
-                                <TableCell align='center'><Typography className={styles.headText}>Event Type Name</Typography></TableCell>
-                                <TableCell align='center'><Typography className={styles.headText}>URL</Typography></TableCell>
+                                <TableCell align='left'><Typography className={styles.headText}>Event Type Name</Typography></TableCell>
+                                <TableCell align='left'><Typography className={styles.headText}>URL</Typography></TableCell>
                                 <TableCell align='right'><Typography className={styles.headText}>Last updated</Typography></TableCell>
                                 <TableCell align='right'><Typography className={styles.headText}>Created At</Typography></TableCell>
                             </TableRow>
@@ -79,8 +79,8 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                                 events.map((eventType: EventType) => (
                                     <TableRow key={eventType.id}>
                                         <TableCell padding='checkbox'><Checkbox/></TableCell>
-                                        <TableCell align='center'>{eventType.name}</TableCell>
-                                        <TableCell align='center'>{eventType.url}<IconButton><EditIcon fontSize='small'/></IconButton></TableCell>
+                                        <TableCell align='left' aria-label='event name'>{eventType.name}</TableCell>
+                                        <TableCell align='left'>{eventType.url}<IconButton><EditIcon fontSize='small'/></IconButton></TableCell>
                                         <TableCell align='right'>{new Date(eventType.updatedAt).toLocaleString()}</TableCell>
                                         <TableCell align='right'>{new Date(eventType.createdAt).toLocaleString()}</TableCell>
                                     </TableRow>
