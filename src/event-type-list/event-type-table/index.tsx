@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Checkbox from '@material-ui/core/Checkbox';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton';
+import Snackbar from '@material-ui/core/Snackbar';
 
 import { useStyles } from './styles';
 import { EventTypeList, EventType } from '../../services/event-type';
@@ -19,9 +20,8 @@ const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
     return (
         <div
             data-testid='loading-view-row'>
-            <div
-                style={{backgroundColor: 'pink'}}>
-                    <Typography align='center'>Loading...</Typography>
+            <div>
+                <Typography align='center'>Loading...</Typography>
             </div>
         </div>
     );
@@ -33,20 +33,20 @@ const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
         <div
             data-testid='empty-view-row'>
             <div>
-                    <Typography align='center'>No Event Types created yet!</Typography>
+                <Typography align='center'>No Event Types created yet!</Typography>
             </div>
         </div>
     );
 };
-
+export type RowsSizes = 5|10|20;
 export type EventTypeTableProps = {
     eventTypeList?: EventTypeList;
     page?: number;
-    size?: 5|10|20;
+    size?: RowsSizes;
     isLoading?: boolean;
     isEmpty?: boolean;
     onChangePage?(page: number):void;
-    onChangePageSize?(page: number):void;
+    onChangePageSize?(page: RowsSizes):void;
 };
 export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
     ({
@@ -62,15 +62,22 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
         const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
         const hasNextPage = !!eventTypeList?.next;
         const hasPrevPage = !!eventTypeList?.prev;
-
+        const [url, setURL] = React.useState(null);
         const copyToClipboard = React.useCallback(
             (url) => {
                 navigator.clipboard.writeText(url);
+                setURL(url);
             }, []
         );
         return (
             <div className={styles.root}>
                 <span>Table of Event Types</span>
+                <Snackbar
+                    open={!!url}
+                    onClose={() => setURL(null)}
+                    autoHideDuration={2000}
+                    message={`URL ${url} copied!`}
+                />
                 <TableContainer>
                     <Table>
                         <TableHead className={styles.head}>
@@ -109,7 +116,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                     nextIconButtonProps={{disabled: !hasNextPage}}
                     backIconButtonProps={{disabled: !hasPrevPage}}
                     onChangePage={(ev, page) => onChangePage(page + 1)}
-                    onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value))}
+                    onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value) as RowsSizes)}
                     SelectProps={{'aria-label': 'pageSelector'}}
                 />
             </div>

@@ -56,13 +56,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root makeStyles-mainCheck-90"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root makeStyles-mainCheck-90"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -136,13 +136,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -217,13 +217,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -298,13 +298,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -379,13 +379,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -460,13 +460,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -541,13 +541,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -622,13 +622,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -703,13 +703,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -784,13 +784,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""
@@ -865,13 +865,13 @@ exports[`App snapshot 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-118 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-121"
+                        class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
                         type="checkbox"
                         value=""

@@ -1,12 +1,20 @@
 import React from 'react';
-import { render, fireEvent, within } from '@testing-library/react';
+import { render, fireEvent, within, waitFor } from '@testing-library/react';
 import EventTypeTable from './index';
 import { generateEventTypeListWith } from '../../test-utils';
 
-
+jest.mock('@material-ui/core/Snackbar', () => {
+    return ({open, onClose}: {open: boolean, onClose: () => void}): React.ReactElement|null => {
+        if(open) setTimeout(onClose, 0);
+        return open ?
+        (
+            <div aria-label='snackbar-message'>Snackbar Message</div>
+        ) : null;
+    }
+});
 
 test('EventTypeTable mount without crash', () => {
-    const { getByText } = render(<EventTypeTable />);
+    const { getByText } = render(<EventTypeTable/>);
     const linkElement = getByText(/Table of Event Types/i);
     expect(linkElement).toBeInTheDocument();
 });
@@ -181,7 +189,7 @@ test('EventTypeTable render items and can navigate by pages', async () => {
     expect(rowsPerPage).toHaveTextContent('5');
 });
 
-test.skip('EventTypeTable render 5 elements and header', async () => {
+test('EventTypeTable render 5 elements and header', async () => {
     // Render without data
     const {getByTitle, getByLabelText, getByTestId, getAllByRole} = render(
         <EventTypeTable
@@ -283,9 +291,9 @@ test('EventTypeTable render 10 elements when change pageSize', async () => {
     unmount();
 });
 
-test('EventTypeTable should copy url of element to clipboard when click in edit icon', () => {
+test('EventTypeTable should copy url of element to clipboard when click in edit icon', async () => {
     const events = generateEventTypeListWith();
-    const {getAllByLabelText} = render(
+    const {getAllByLabelText, getByLabelText} = render(
         <EventTypeTable
             eventTypeList={events}
             isLoading={false}
@@ -298,6 +306,11 @@ test('EventTypeTable should copy url of element to clipboard when click in edit 
     const elements = getAllByLabelText('copy-icon');
     expect(elements.length).toBe(5);
     fireEvent.click(elements[0]);
+    await waitFor(() => expect(getByLabelText('snackbar-message')).toHaveTextContent(/snackbar message/i));
     expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(1);
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(events.results[0].url);
+});
+
+test('EventTypeTable should keep checked elements and notify on each element checked change', () => {
+
 });
