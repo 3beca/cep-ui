@@ -18,6 +18,7 @@ describe(
         it(
             'should return APIError when RequestInfo is invalid',
             async () => {
+                jest.spyOn(console, 'error').mockImplementation(() => {});
                 const url = undefined as unknown as string;
                 const req: APIRequestGetData = {} as unknown as APIRequestGetData;
 
@@ -28,12 +29,15 @@ describe(
                 expect(error.errorCode).toBe(500);
                 expect(error.errorMessage).toEqual('Error in query Network request failed: undefined');
                 expect(error.error).toBe(undefined);
+                expect(console.error).toHaveBeenCalledTimes(1);
+                (console.error as jest.Mock).mockRestore();
             }
         );
 
         it(
             'should return APIError when RequestInfo is a invalid string',
             async () => {
+                jest.spyOn(console, 'error').mockImplementation(() => {});
                 const url = 'invalidurl';
                 const req: APIRequestGetData = {} as unknown as APIRequestGetData;
 
@@ -44,6 +48,8 @@ describe(
                 expect(error.errorCode).toBe(500);
                 expect(error.errorMessage).toEqual('Error in query Network request failed: invalidurl');
                 expect(error.error).toBe(undefined);
+                expect(console.error).toHaveBeenCalledTimes(1);
+                (console.error as jest.Mock).mockRestore();
             }
         );
 
@@ -249,7 +255,7 @@ describe(
         it(
             'return an APIError when server do not respond',
             async () => {
-                // server.get('/unregisterendpoint').reply(500, {status: 500, error: 'Error500', message: 'Message Error 500'});
+                jest.spyOn(console, 'error').mockImplementation(() => {});
                 const url = 'https://testserver2/unregisterendpoint';
                 const req: APIRequestGetData = {
                     method: 'GET',
@@ -262,6 +268,8 @@ describe(
                 expect(error.errorCode).toBe(500);
                 expect(error.errorMessage).toEqual('Error in query Network request failed: https://testserver2/unregisterendpoint');
                 expect(error.error).toBe(undefined);
+                expect(console.error).toHaveBeenCalledTimes(1);
+                (console.error as jest.Mock).mockRestore();
             }
         );
     }

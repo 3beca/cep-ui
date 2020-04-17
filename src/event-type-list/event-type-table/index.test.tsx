@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, within } from '@testing-library/react';
 import EventTypeTable from './index';
 import { generateEventTypeListWith } from '../../test-utils';
 
@@ -181,7 +181,7 @@ test('EventTypeTable render items and can navigate by pages', async () => {
     expect(rowsPerPage).toHaveTextContent('5');
 });
 
-test('EventTypeTable render 5 elements and header', async () => {
+test.skip('EventTypeTable render 5 elements and header', async () => {
     // Render without data
     const {getByTitle, getByLabelText, getByTestId, getAllByRole} = render(
         <EventTypeTable
@@ -204,4 +204,100 @@ test('EventTypeTable render 5 elements and header', async () => {
     expect(() => getByTestId('empty-view-row')).toThrowError();
     expect(() => getByTestId('loading-view-row')).toThrowError();
     expect(rowsPerPage).toHaveTextContent('5');
+});
+
+test('EventTypeTable render 10 elements when change pageSize', async () => {
+    // Render without data
+    const onChangePageSize = jest.fn();
+    const {rerender, getByTitle, getByLabelText, getByTestId, getAllByRole, unmount} = render(
+        <EventTypeTable
+            eventTypeList={generateEventTypeListWith()}
+            isLoading={false}
+            isEmpty={false}
+            page={1}
+            size={5}
+            onChangePageSize={onChangePageSize}
+        />
+    );
+    const prevButton = getByTitle('Previous page') as HTMLButtonElement;
+    const nextButton = getByTitle('Next page') as HTMLButtonElement;
+    const rowsPerPage = getByLabelText(/rows per page:/i);
+
+    expect(prevButton.disabled).toBe(true);
+    expect(nextButton.disabled).toBe(true);
+    expect(() => getByTestId('empty-view-row')).toThrowError();
+    expect(() => getByTestId('loading-view-row')).toThrowError();
+    expect(getAllByRole('row').length).toBe(6);
+    expect(rowsPerPage).toHaveTextContent('5');
+
+    fireEvent.mouseDown(rowsPerPage);
+    const bound = within(document.getElementById('menu-')!);
+    const options = bound.getAllByRole('option');
+    fireEvent.click(options[1]); // 0->5, 1->10, 2->20
+
+    expect(onChangePageSize).toHaveBeenCalledTimes(1);
+    expect(onChangePageSize).toHaveBeenCalledWith(10);
+
+    rerender(
+        <EventTypeTable
+            eventTypeList={generateEventTypeListWith(10, false, false)}
+            isLoading={false}
+            isEmpty={false}
+            page={1}
+            size={10}
+            onChangePageSize={onChangePageSize}
+        />
+    );
+
+    expect(prevButton.disabled).toBe(true);
+    expect(nextButton.disabled).toBe(true);
+    expect(() => getByTestId('empty-view-row')).toThrowError();
+    expect(() => getByTestId('loading-view-row')).toThrowError();
+    expect(getAllByRole('row').length).toBe(11);
+    expect(rowsPerPage).toHaveTextContent('10');
+
+    fireEvent.mouseDown(rowsPerPage);
+    fireEvent.click(options[2]); // 0->5, 1->10, 2->20
+
+    expect(onChangePageSize).toHaveBeenCalledTimes(2);
+    expect(onChangePageSize).toHaveBeenNthCalledWith(2, 20);
+
+    rerender(
+        <EventTypeTable
+            eventTypeList={generateEventTypeListWith(20, false, false)}
+            isLoading={false}
+            isEmpty={false}
+            page={1}
+            size={20}
+            onChangePageSize={onChangePageSize}
+        />
+    );
+
+    expect(prevButton.disabled).toBe(true);
+    expect(nextButton.disabled).toBe(true);
+    expect(() => getByTestId('empty-view-row')).toThrowError();
+    expect(() => getByTestId('loading-view-row')).toThrowError();
+    expect(getAllByRole('row').length).toBe(21);
+    expect(rowsPerPage).toHaveTextContent('20');
+
+    unmount();
+});
+
+test('EventTypeTable should copy url of element to clipboard when click in edit icon', () => {
+    const events = generateEventTypeListWith();
+    const {getAllByLabelText} = render(
+        <EventTypeTable
+            eventTypeList={events}
+            isLoading={false}
+            isEmpty={false}
+            page={1}
+            size={5}
+        />
+    );
+
+    const elements = getAllByLabelText('copy-icon');
+    expect(elements.length).toBe(5);
+    fireEvent.click(elements[0]);
+    expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(1);
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(events.results[0].url);
 });

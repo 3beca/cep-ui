@@ -72,6 +72,7 @@ describe(
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.response).toBe(undefined);
 
+                jest.spyOn(console, 'error').mockImplementation(() => {});
                 act(() => {
                     result.current.request();
                 });
@@ -90,6 +91,8 @@ describe(
                     errorMessage: 'Error in query Network request failed: https://unknownserver'
                 });
                  expect(result.current.response).toBe(undefined);
+                 expect(console.error).toHaveBeenCalledTimes(1);
+                (console.error as jest.Mock).mockRestore();
             }
         );
 

@@ -42,10 +42,11 @@ const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
 export type EventTypeTableProps = {
     eventTypeList?: EventTypeList;
     page?: number;
-    size?: number;
+    size?: 5|10|20;
     isLoading?: boolean;
     isEmpty?: boolean;
     onChangePage?(page: number):void;
+    onChangePageSize?(page: number):void;
 };
 export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
     ({
@@ -54,12 +55,19 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
         size = 10,
         isLoading = true,
         isEmpty = true,
-        onChangePage=()=>{}
+        onChangePage=()=>{},
+        onChangePageSize=()=>{}
     }) => {
         const styles = useStyles();
         const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
         const hasNextPage = !!eventTypeList?.next;
         const hasPrevPage = !!eventTypeList?.prev;
+
+        const copyToClipboard = React.useCallback(
+            (url) => {
+                navigator.clipboard.writeText(url);
+            }, []
+        );
         return (
             <div className={styles.root}>
                 <span>Table of Event Types</span>
@@ -80,7 +88,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                                     <TableRow key={eventType.id}>
                                         <TableCell padding='checkbox'><Checkbox/></TableCell>
                                         <TableCell align='left' aria-label='event name'>{eventType.name}</TableCell>
-                                        <TableCell align='left'>{eventType.url}<IconButton><EditIcon fontSize='small'/></IconButton></TableCell>
+                                        <TableCell align='left'>{eventType.url}<IconButton aria-label='copy-icon' onClick={() => copyToClipboard(eventType.url)}><EditIcon fontSize='small'/></IconButton></TableCell>
                                         <TableCell align='right'>{new Date(eventType.updatedAt).toLocaleString()}</TableCell>
                                         <TableCell align='right'>{new Date(eventType.createdAt).toLocaleString()}</TableCell>
                                     </TableRow>
@@ -92,6 +100,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                 <TableEmptyView show={!isLoading && isEmpty}/>
                 <TableLoadingView show={isLoading}/>
                 <TablePagination
+                    role='paginator'
                     component='div'
                     rowsPerPageOptions={[5, 10, 20]}
                     count={-1}
@@ -100,6 +109,8 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                     nextIconButtonProps={{disabled: !hasNextPage}}
                     backIconButtonProps={{disabled: !hasPrevPage}}
                     onChangePage={(ev, page) => onChangePage(page + 1)}
+                    onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value))}
+                    SelectProps={{'aria-label': 'pageSelector'}}
                 />
             </div>
         );

@@ -174,6 +174,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento0
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -254,6 +255,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento1
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -334,6 +336,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento2
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -414,6 +417,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento3
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -494,6 +498,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento4
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -574,6 +579,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento5
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -654,6 +660,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento6
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -734,6 +741,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento7
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -814,6 +822,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento8
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -894,6 +903,7 @@ exports[`App snapshot 1`] = `
                 >
                   http://cep/elemento9
                   <button
+                    aria-label="copy-icon"
                     class="MuiButtonBase-root MuiIconButton-root"
                     tabindex="0"
                     type="button"
@@ -933,6 +943,7 @@ exports[`App snapshot 1`] = `
         </div>
         <div
           class="MuiTablePagination-root"
+          role="paginator"
         >
           <div
             class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
@@ -946,6 +957,7 @@ exports[`App snapshot 1`] = `
               Rows per page:
             </p>
             <div
+              aria-label="pageSelector"
               class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
             >
               <div
