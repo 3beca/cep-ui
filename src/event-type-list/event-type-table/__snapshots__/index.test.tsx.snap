@@ -36,6 +36,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                     class="PrivateSwitchBase-input-444"
                     data-indeterminate="false"
                     disabled=""
+                    role="element-selector-all"
                     type="checkbox"
                     value=""
                   />
@@ -113,6 +114,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                   <input
                     class="PrivateSwitchBase-input-444"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -194,6 +196,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                   <input
                     class="PrivateSwitchBase-input-444"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -275,6 +278,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                   <input
                     class="PrivateSwitchBase-input-444"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -356,6 +360,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                   <input
                     class="PrivateSwitchBase-input-444"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -437,6 +442,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                   <input
                     class="PrivateSwitchBase-input-444"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -660,6 +666,7 @@ exports[`EventTypeTable snapshot while loading without data 1`] = `
                     class="PrivateSwitchBase-input-587"
                     data-indeterminate="false"
                     disabled=""
+                    role="element-selector-all"
                     type="checkbox"
                     value=""
                   />
@@ -863,8 +870,9 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
               scope="col"
             >
               <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root makeStyles-mainCheck-270"
+                aria-disabled="true"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root makeStyles-mainCheck-270 PrivateSwitchBase-disabled-300 Mui-disabled Mui-disabled Mui-disabled"
+                tabindex="-1"
               >
                 <span
                   class="MuiIconButton-label"
@@ -872,6 +880,8 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                   <input
                     class="PrivateSwitchBase-input-301"
                     data-indeterminate="false"
+                    disabled=""
+                    role="element-selector-all"
                     type="checkbox"
                     value=""
                   />
@@ -886,9 +896,6 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                     />
                   </svg>
                 </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
               </span>
             </th>
             <th
@@ -952,6 +959,7 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                   <input
                     class="PrivateSwitchBase-input-301"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -1033,6 +1041,7 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                   <input
                     class="PrivateSwitchBase-input-301"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -1114,6 +1123,7 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                   <input
                     class="PrivateSwitchBase-input-301"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -1195,6 +1205,7 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                   <input
                     class="PrivateSwitchBase-input-301"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -1276,6 +1287,7 @@ exports[`EventTypeTable snapshot with data and pagination 1`] = `
                   <input
                     class="PrivateSwitchBase-input-301"
                     data-indeterminate="false"
+                    role="element-selector"
                     type="checkbox"
                     value=""
                   />
@@ -1499,6 +1511,7 @@ exports[`EventTypeTable snapshot without data 1`] = `
                     class="PrivateSwitchBase-input-168"
                     data-indeterminate="false"
                     disabled=""
+                    role="element-selector-all"
                     type="checkbox"
                     value=""
                   />

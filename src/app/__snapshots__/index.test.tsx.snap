@@ -64,6 +64,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector-all"
                         type="checkbox"
                         value=""
                       />
@@ -144,6 +145,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -225,6 +227,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -306,6 +309,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -387,6 +391,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -468,6 +473,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -549,6 +555,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -630,6 +637,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -711,6 +719,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -792,6 +801,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />
@@ -873,6 +883,7 @@ exports[`App snapshot 1`] = `
                       <input
                         class="PrivateSwitchBase-input-128"
                         data-indeterminate="false"
+                        role="element-selector"
                         type="checkbox"
                         value=""
                       />

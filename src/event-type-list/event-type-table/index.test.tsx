@@ -311,6 +311,114 @@ test('EventTypeTable should copy url of element to clipboard when click in edit 
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(events.results[0].url);
 });
 
-test('EventTypeTable should keep checked elements and notify on each element checked change', () => {
+test('EventTypeTable should keep checked elements and notify on each element checked change', async () => {
+    const onSelected = jest.fn();
+    const events = generateEventTypeListWith(5, true, false);
+    // First load, nothing selected
+    const {getAllByRole, rerender} = render(
+        <EventTypeTable
+            eventTypeList={events}
+            isLoading={false}
+            isEmpty={false}
+            page={1}
+            size={5}
+            onSelected={onSelected}
+        />
+    );
 
+    const elements = getAllByRole('element-selector');
+
+    expect(elements.length).toBe(5);
+    fireEvent.click(elements[0], {target: {value: true}});
+    expect(onSelected).toHaveBeenCalledTimes(1);
+    expect(onSelected).toHaveBeenCalledWith([events.results[0]]);
+
+    // Unchecked first element
+    fireEvent.click(elements[0], {target: {value: false}});
+    expect(onSelected).toHaveBeenCalledTimes(2);
+    expect(onSelected).toHaveBeenNthCalledWith(2, []);
+
+    // check first, thirsd and fifth elements
+    fireEvent.click(elements[0], {target: {value: true}});
+    expect(onSelected).toHaveBeenCalledTimes(3);
+    expect(onSelected).toHaveBeenNthCalledWith(3, [events.results[0]]);
+
+    fireEvent.click(elements[2], {target: {value: true}});
+    expect(onSelected).toHaveBeenCalledTimes(4);
+    expect(onSelected).toHaveBeenNthCalledWith(4, [events.results[0], events.results[2]]);
+
+    fireEvent.click(elements[4], {target: {value: true}});
+    expect(onSelected).toHaveBeenCalledTimes(5);
+    expect(onSelected).toHaveBeenNthCalledWith(5, [events.results[0], events.results[2], events.results[4]]);
+
+    // uncheck third element
+    fireEvent.click(elements[2], {target: {value: false}});
+    expect(onSelected).toHaveBeenCalledTimes(6);
+    expect(onSelected).toHaveBeenNthCalledWith(6, [events.results[0], events.results[4]]);
+
+    const secondPageOfEvents = generateEventTypeListWith(5, true, false);
+    rerender(
+        <EventTypeTable
+            eventTypeList={secondPageOfEvents}
+            isLoading={false}
+            isEmpty={false}
+            page={2}
+            size={5}
+            onSelected={onSelected}
+        />
+    );
+    // Expect new elements to be unchecked
+    // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar
+    // si un componente Check de MUI está seleccionado o plantear mockearlo
+    elements.map(e => expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.not.stringContaining('Mui-checked')));
+});
+
+test('EventTypeTable should check and uncheck all elements from header check selector', async () => {
+    const onSelected = jest.fn();
+    const events = generateEventTypeListWith(5, true, false);
+    // First load, nothing selected
+    const {getByRole, getAllByRole, rerender} = render(
+        <EventTypeTable
+            eventTypeList={events}
+            isLoading={false}
+            isEmpty={false}
+            page={1}
+            size={5}
+            onSelected={onSelected}
+        />
+    );
+
+    const selectAllChecker = getByRole('element-selector-all');
+    const elements = getAllByRole('element-selector');
+
+    fireEvent.click(selectAllChecker, {target: {value: true}});
+
+    // Check All elements
+    expect(onSelected).toHaveBeenCalledTimes(1);
+    expect(onSelected).toHaveBeenCalledWith([events.results[0], events.results[1], events.results[2], events.results[3], events.results[4]]);
+    elements.map(e => expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.stringContaining('Mui-checked')));
+
+    // Unchecked all elements
+    fireEvent.click(selectAllChecker, {target: {value: false}});
+    expect(onSelected).toHaveBeenCalledTimes(2);
+    expect(onSelected).toHaveBeenNthCalledWith(2, []);
+    elements.map(e => expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.not.stringContaining('Mui-checked')));
+
+    // Rerender with all elements checked, should rerender with empty elements selected
+    fireEvent.click(selectAllChecker, {target: {value: true}});
+    const secondPageOfEvents = generateEventTypeListWith(5, true, false);
+    rerender(
+        <EventTypeTable
+            eventTypeList={secondPageOfEvents}
+            isLoading={false}
+            isEmpty={false}
+            page={2}
+            size={5}
+            onSelected={onSelected}
+        />
+    );
+    // Expect new elements to be unchecked
+    // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar
+    // si un componente Check de MUI está seleccionado o plantear mockearlo
+    elements.map(e => expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.not.stringContaining('Mui-checked')));
 });

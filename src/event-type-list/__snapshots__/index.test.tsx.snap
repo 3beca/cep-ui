@@ -37,6 +37,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector-all"
                       type="checkbox"
                       value=""
                     />
@@ -117,6 +118,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -198,6 +200,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -279,6 +282,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -360,6 +364,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -441,6 +446,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -522,6 +528,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -603,6 +610,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -684,6 +692,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -765,6 +774,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />
@@ -846,6 +856,7 @@ exports[`EventTypeList snapshot 1`] = `
                     <input
                       class="PrivateSwitchBase-input-43"
                       data-indeterminate="false"
+                      role="element-selector"
                       type="checkbox"
                       value=""
                     />

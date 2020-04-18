@@ -47,6 +47,7 @@ export type EventTypeTableProps = {
     isEmpty?: boolean;
     onChangePage?(page: number):void;
     onChangePageSize?(page: RowsSizes):void;
+    onSelected?(selecteds: EventType[]): void;
 };
 export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
     ({
@@ -56,7 +57,8 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
         isLoading = true,
         isEmpty = true,
         onChangePage=()=>{},
-        onChangePageSize=()=>{}
+        onChangePageSize=()=>{},
+        onSelected=()=>{}
     }) => {
         const styles = useStyles();
         const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
@@ -68,6 +70,40 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                 navigator.clipboard.writeText(url);
                 setURL(url);
             }, []
+        );
+        const [selecteds, setSelecteds] = React.useState(new Set<EventType>());
+        React.useEffect(
+            () => {
+                setSelecteds(new Set<EventType>());
+            },
+            [eventTypeList]
+        );
+        const handleSelections = React.useCallback(
+            (checked: boolean, eventType: EventType) => {
+                if(checked) {
+                    selecteds.add(eventType);
+                }
+                else {
+                    selecteds.delete(eventType);
+                }
+                onSelected([...selecteds]);
+                setSelecteds(new Set(selecteds));
+            },
+            [onSelected, selecteds]
+        );
+        const handleAllSelections = React.useCallback(
+            (checked) => {
+                if(checked) {
+                    const allSelecteds = new Set(events);
+                    onSelected(events);
+                    setSelecteds(allSelecteds);
+                }
+                else {
+                    onSelected([]);
+                    setSelecteds(new Set<EventType>());
+                }
+            },
+            [events, onSelected]
         );
         return (
             <div className={styles.root}>
@@ -82,7 +118,14 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                     <Table>
                         <TableHead className={styles.head}>
                             <TableRow>
-                                <TableCell padding='checkbox' component='th'><Checkbox className={styles.mainCheck} color='default' disabled={isLoading}/></TableCell>
+                                <TableCell padding='checkbox' component='th'>
+                                    <Checkbox
+                                        className={styles.mainCheck}
+                                        color='default'
+                                        disabled={isLoading || isEmpty}
+                                        inputProps={{role: 'element-selector-all'}}
+                                        onChange={(ev, checked) => handleAllSelections(checked)}/>
+                                </TableCell>
                                 <TableCell align='left'><Typography className={styles.headText}>Event Type Name</Typography></TableCell>
                                 <TableCell align='left'><Typography className={styles.headText}>URL</Typography></TableCell>
                                 <TableCell align='right'><Typography className={styles.headText}>Last updated</Typography></TableCell>
@@ -93,7 +136,12 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                             {
                                 events.map((eventType: EventType) => (
                                     <TableRow key={eventType.id}>
-                                        <TableCell padding='checkbox'><Checkbox/></TableCell>
+                                        <TableCell padding='checkbox'>
+                                            <Checkbox
+                                                inputProps={{role: 'element-selector'}}
+                                                checked={selecteds.has(eventType)}
+                                                onChange={(ev, checked) => handleSelections(checked, eventType)}/>
+                                        </TableCell>
                                         <TableCell align='left' aria-label='event name'>{eventType.name}</TableCell>
                                         <TableCell align='left'>{eventType.url}<IconButton aria-label='copy-icon' onClick={() => copyToClipboard(eventType.url)}><EditIcon fontSize='small'/></IconButton></TableCell>
                                         <TableCell align='right'>{new Date(eventType.updatedAt).toLocaleString()}</TableCell>
