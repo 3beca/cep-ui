@@ -48,7 +48,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
-      "!src/*.{ts,tsx}"
+      "!src/*.{ts,tsx}",
+      "!src/test-utils/*.{ts,tsx}"
     ]
   }
 }

@@ -1,6 +1,6 @@
 import nock from 'nock';
-import { EventTypeList, EventTypeError } from './services/event-type';
-import { EVENT_TYPE_URL } from './services/config';
+import { EventTypeList, EventTypeError } from '../services/event-type';
+import { EVENT_TYPE_URL } from '../services/config';
 
 export const setupNock = (url: string) => {
     const server = nock(url).defaultReplyHeaders({ 'access-control-allow-origin': '*' });

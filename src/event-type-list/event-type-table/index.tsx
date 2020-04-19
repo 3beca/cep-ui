@@ -2,9 +2,7 @@ import React from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -13,32 +11,15 @@ import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 
 import { useStyles } from './styles';
+import { PaginatedTable } from '../../components/paginated-table';
 import { EventTypeList, EventType } from '../../services/event-type';
 
-const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
-    if (!show) return null;
-    return (
-        <div
-            data-testid='loading-view-row'>
-            <div>
-                <Typography align='center'>Loading...</Typography>
-            </div>
-        </div>
-    );
-};
+import {RowsSizes} from '../../components/paginated-table';
+import {useGetEventList} from '../../services/use-event-type';
+import {useSelectableList} from '../../components/use-selectable-list';
+import {usePagination} from '../../components/use-pagination';
+import {useClipboard} from '../../components/use-clipboard';
 
-const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
-    if (!show) return null;
-    return (
-        <div
-            data-testid='empty-view-row'>
-            <div>
-                <Typography align='center'>No Event Types created yet!</Typography>
-            </div>
-        </div>
-    );
-};
-export type RowsSizes = 5|10|20;
 export type EventTypeTableProps = {
     eventTypeList?: EventTypeList;
     page?: number;
@@ -51,70 +32,43 @@ export type EventTypeTableProps = {
 };
 export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
     ({
-        eventTypeList,
-        page = 1,
-        size = 10,
-        isLoading = true,
-        isEmpty = true,
-        onChangePage=()=>{},
-        onChangePageSize=()=>{},
         onSelected=()=>{}
     }) => {
         const styles = useStyles();
+
+        // Paginator
+        const {page, pageSize, changePage, changePageSize} = usePagination(1, 10);
+        const {response, isLoading} = useGetEventList(page, pageSize);
+        const eventTypeList = response?.data;
         const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
+        const isEmpty = response?.data ? response.data.results.length <= 0 : true
         const hasNextPage = !!eventTypeList?.next;
         const hasPrevPage = !!eventTypeList?.prev;
-        const [url, setURL] = React.useState(null);
-        const copyToClipboard = React.useCallback(
-            (url) => {
-                navigator.clipboard.writeText(url);
-                setURL(url);
-            }, []
-        );
-        const [selecteds, setSelecteds] = React.useState(new Set<EventType>());
-        React.useEffect(
-            () => {
-                setSelecteds(new Set<EventType>());
-            },
-            [eventTypeList]
-        );
-        const handleSelections = React.useCallback(
-            (checked: boolean, eventType: EventType) => {
-                if(checked) {
-                    selecteds.add(eventType);
-                }
-                else {
-                    selecteds.delete(eventType);
-                }
-                onSelected([...selecteds]);
-                setSelecteds(new Set(selecteds));
-            },
-            [onSelected, selecteds]
-        );
-        const handleAllSelections = React.useCallback(
-            (checked) => {
-                if(checked) {
-                    const allSelecteds = new Set(events);
-                    onSelected(events);
-                    setSelecteds(allSelecteds);
-                }
-                else {
-                    onSelected([]);
-                    setSelecteds(new Set<EventType>());
-                }
-            },
-            [events, onSelected]
-        );
+
+        // Clipboard
+        const {text, copy, clear} = useClipboard();
+
+        // Selector
+        const {selectOne, selectAll, selecteds} = useSelectableList(eventTypeList?.results, onSelected);
+
         return (
             <div className={styles.root}>
                 <span>Table of Event Types</span>
                 <Snackbar
-                    open={!!url}
-                    onClose={() => setURL(null)}
+                    open={!!text}
+                    onClose={clear}
                     autoHideDuration={2000}
-                    message={`URL ${url} copied!`}
+                    message={`URL ${text} copied!`}
                 />
-                <TableContainer>
+                <PaginatedTable
+                    page={page}
+                    size={pageSize as RowsSizes}
+                    isLoading={isLoading}
+                    isEmpty={isEmpty}
+                    hasNextPage={hasNextPage}
+                    hasPrevPage={hasPrevPage}
+                    onChangePage={changePage}
+                    onChangePageSize={changePageSize}>
                     <Table>
                         <TableHead className={styles.head}>
                             <TableRow>
@@ -124,7 +78,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                                         color='default'
                                         disabled={isLoading || isEmpty}
                                         inputProps={{role: 'element-selector-all'}}
-                                        onChange={(ev, checked) => handleAllSelections(checked)}/>
+                                        onChange={(ev, checked) => selectAll(checked)}/>
                                 </TableCell>
                                 <TableCell align='left'><Typography className={styles.headText}>Event Type Name</Typography></TableCell>
                                 <TableCell align='left'><Typography className={styles.headText}>URL</Typography></TableCell>
@@ -135,15 +89,15 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                         <TableBody>
                             {
                                 events.map((eventType: EventType) => (
-                                    <TableRow key={eventType.id}>
+                                    <TableRow key={eventType.id} role='element row'>
                                         <TableCell padding='checkbox'>
                                             <Checkbox
                                                 inputProps={{role: 'element-selector'}}
                                                 checked={selecteds.has(eventType)}
-                                                onChange={(ev, checked) => handleSelections(checked, eventType)}/>
+                                                onChange={(ev, checked) => selectOne(checked, eventType)}/>
                                         </TableCell>
-                                        <TableCell align='left' aria-label='event name'>{eventType.name}</TableCell>
-                                        <TableCell align='left'>{eventType.url}<IconButton aria-label='copy-icon' onClick={() => copyToClipboard(eventType.url)}><EditIcon fontSize='small'/></IconButton></TableCell>
+                                        <TableCell align='left' aria-label='element name'>{eventType.name}</TableCell>
+                                        <TableCell align='left'>{eventType.url}<IconButton aria-label='copy-icon' onClick={() => copy(eventType.url)}><EditIcon fontSize='small'/></IconButton></TableCell>
                                         <TableCell align='right'>{new Date(eventType.updatedAt).toLocaleString()}</TableCell>
                                         <TableCell align='right'>{new Date(eventType.createdAt).toLocaleString()}</TableCell>
                                     </TableRow>
@@ -151,22 +105,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                             }
                         </TableBody>
                     </Table>
-                </TableContainer>
-                <TableEmptyView show={!isLoading && isEmpty}/>
-                <TableLoadingView show={isLoading}/>
-                <TablePagination
-                    role='paginator'
-                    component='div'
-                    rowsPerPageOptions={[5, 10, 20]}
-                    count={-1}
-                    rowsPerPage={size}
-                    page={page - 1}
-                    nextIconButtonProps={{disabled: !hasNextPage}}
-                    backIconButtonProps={{disabled: !hasPrevPage}}
-                    onChangePage={(ev, page) => onChangePage(page + 1)}
-                    onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value) as RowsSizes)}
-                    SelectProps={{'aria-label': 'pageSelector'}}
-                />
+                </PaginatedTable>
             </div>
         );
     }

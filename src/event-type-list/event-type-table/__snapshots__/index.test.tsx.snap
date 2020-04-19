@@ -1,628 +1,1038 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventTypeTable snapshot while loading with previous data and pagination 1`] = `
+exports[`EventTypeList snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-410"
+    class="makeStyles-root-1"
   >
     <span>
       Table of Event Types
     </span>
     <div
-      class="MuiTableContainer-root"
-    >
-      <table
-        class="MuiTable-root"
-      >
-        <thead
-          class="MuiTableHead-root makeStyles-head-411"
-        >
-          <tr
-            class="MuiTableRow-root MuiTableRow-head"
-          >
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
-              scope="col"
-            >
-              <span
-                aria-disabled="true"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-441 MuiCheckbox-root makeStyles-mainCheck-413 PrivateSwitchBase-disabled-443 Mui-disabled Mui-disabled Mui-disabled"
-                tabindex="-1"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-444"
-                    data-indeterminate="false"
-                    disabled=""
-                    role="element-selector-all"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-412 MuiTypography-body1"
-              >
-                Event Type Name
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-412 MuiTypography-body1"
-              >
-                URL
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-412 MuiTypography-body1"
-              >
-                Last updated
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-412 MuiTypography-body1"
-              >
-                Created At
-              </p>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="MuiTableBody-root"
-        >
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-441 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-444"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 0
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento0
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-441 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-444"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 1
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento1
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-441 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-444"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 2
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento2
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-441 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-444"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 3
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento3
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-441 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-444"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 4
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento4
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      data-testid="loading-view-row"
-    >
-      <div>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter"
-        >
-          Loading...
-        </p>
-      </div>
-    </div>
-    <div
-      class="MuiTablePagination-root"
-      role="paginator"
+      class="makeStyles-root-5"
     >
       <div
-        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+        class="MuiTableContainer-root"
+      >
+        <table
+          class="MuiTable-root"
+        >
+          <thead
+            class="MuiTableHead-root makeStyles-head-2"
+          >
+            <tr
+              class="MuiTableRow-root MuiTableRow-head"
+            >
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
+                scope="col"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root makeStyles-mainCheck-4"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector-all"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+                >
+                  Event Type Name
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+                >
+                  URL
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+                >
+                  Last updated
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+                >
+                  Created At
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="MuiTableBody-root"
+          >
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 0
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento0
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 1
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento1
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 2
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento2
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 3
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento3
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 4
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento4
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 5
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento5
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 6
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento6
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 7
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento7
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 8
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento8
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-36"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 9
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento9
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="MuiTablePagination-root"
+        role="paginator"
       >
         <div
-          class="MuiTablePagination-spacer"
-        />
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-        >
-          Rows per page:
-        </p>
-        <div
-          aria-label="pageSelector"
-          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+          class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
         >
           <div
-            aria-haspopup="listbox"
-            aria-label="Rows per page:"
-            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-            role="button"
-            tabindex="0"
-          >
-            5
-          </div>
-          <input
-            type="hidden"
-            value="5"
+            class="MuiTablePagination-spacer"
           />
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
           >
-            <path
-              d="M7 10l5 5 5-5z"
-            />
-          </svg>
-        </div>
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-        >
-          6-10 of more than 10
-        </p>
-        <div
-          class="MuiTablePagination-actions"
-        >
-          <button
-            aria-label="Previous page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
-            title="Previous page"
-            type="button"
+            Rows per page:
+          </p>
+          <div
+            aria-label="pageSelector"
+            class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
           >
-            <span
-              class="MuiIconButton-label"
+            <div
+              aria-haspopup="listbox"
+              aria-label="Rows per page:"
+              class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+              role="button"
+              tabindex="0"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
+              10
+            </div>
+            <input
+              type="hidden"
+              value="10"
             />
-          </button>
-          <button
-            aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
-            title="Next page"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+          >
+            1-10 of more than 10
+          </p>
+          <div
+            class="MuiTablePagination-actions"
+          >
+            <button
+              aria-label="Previous page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Previous page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
               >
-                <path
-                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label="Next page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Next page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -630,214 +1040,1489 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
 </div>
 `;
 
-exports[`EventTypeTable snapshot while loading without data 1`] = `
+exports[`EventTypeTable snapshot when empty data 1`] = `
 <div>
   <div
-    class="makeStyles-root-553"
+    class="makeStyles-root-279"
   >
     <span>
       Table of Event Types
     </span>
     <div
-      class="MuiTableContainer-root"
-    >
-      <table
-        class="MuiTable-root"
-      >
-        <thead
-          class="MuiTableHead-root makeStyles-head-554"
-        >
-          <tr
-            class="MuiTableRow-root MuiTableRow-head"
-          >
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
-              scope="col"
-            >
-              <span
-                aria-disabled="true"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-584 MuiCheckbox-root makeStyles-mainCheck-556 PrivateSwitchBase-disabled-586 Mui-disabled Mui-disabled Mui-disabled"
-                tabindex="-1"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-587"
-                    data-indeterminate="false"
-                    disabled=""
-                    role="element-selector-all"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-555 MuiTypography-body1"
-              >
-                Event Type Name
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-555 MuiTypography-body1"
-              >
-                URL
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-555 MuiTypography-body1"
-              >
-                Last updated
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-555 MuiTypography-body1"
-              >
-                Created At
-              </p>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="MuiTableBody-root"
-        />
-      </table>
-    </div>
-    <div
-      data-testid="loading-view-row"
-    >
-      <div>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter"
-        >
-          Loading...
-        </p>
-      </div>
-    </div>
-    <div
-      class="MuiTablePagination-root"
-      role="paginator"
+      class="makeStyles-root-283"
     >
       <div
-        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+        class="MuiTableContainer-root"
+      >
+        <table
+          class="MuiTable-root"
+        >
+          <thead
+            class="MuiTableHead-root makeStyles-head-280"
+          >
+            <tr
+              class="MuiTableRow-root MuiTableRow-head"
+            >
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
+                scope="col"
+              >
+                <span
+                  aria-disabled="true"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-311 MuiCheckbox-root makeStyles-mainCheck-282 PrivateSwitchBase-disabled-313 Mui-disabled Mui-disabled Mui-disabled"
+                  tabindex="-1"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-314"
+                      data-indeterminate="false"
+                      disabled=""
+                      role="element-selector-all"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-281 MuiTypography-body1"
+                >
+                  Event Type Name
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-281 MuiTypography-body1"
+                >
+                  URL
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-281 MuiTypography-body1"
+                >
+                  Last updated
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-281 MuiTypography-body1"
+                >
+                  Created At
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="MuiTableBody-root"
+          />
+        </table>
+      </div>
+      <div
+        data-testid="empty-view-row"
+      >
+        <div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter"
+          >
+            No Elements created yet!
+          </p>
+        </div>
+      </div>
+      <div
+        class="MuiTablePagination-root"
+        role="paginator"
       >
         <div
-          class="MuiTablePagination-spacer"
-        />
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-        >
-          Rows per page:
-        </p>
-        <div
-          aria-label="pageSelector"
-          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+          class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
         >
           <div
-            aria-haspopup="listbox"
-            aria-label="Rows per page:"
-            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-            role="button"
-            tabindex="0"
-          >
-            5
-          </div>
-          <input
-            type="hidden"
-            value="5"
+            class="MuiTablePagination-spacer"
           />
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
           >
-            <path
-              d="M7 10l5 5 5-5z"
+            Rows per page:
+          </p>
+          <div
+            aria-label="pageSelector"
+            class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-label="Rows per page:"
+              class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+              role="button"
+              tabindex="0"
+            >
+              10
+            </div>
+            <input
+              type="hidden"
+              value="10"
             />
-          </svg>
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+          >
+            1-10 of more than 10
+          </p>
+          <div
+            class="MuiTablePagination-actions"
+          >
+            <button
+              aria-label="Previous page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Previous page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label="Next page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Next page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EventTypeTable snapshot when loading first time 1`] = `
+<div>
+  <div
+    class="makeStyles-root-145"
+  >
+    <span>
+      Table of Event Types
+    </span>
+    <div
+      class="makeStyles-root-149"
+    >
+      <div
+        class="MuiTableContainer-root"
+      >
+        <table
+          class="MuiTable-root"
         >
-          1-5 of more than 5
-        </p>
+          <thead
+            class="MuiTableHead-root makeStyles-head-146"
+          >
+            <tr
+              class="MuiTableRow-root MuiTableRow-head"
+            >
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
+                scope="col"
+              >
+                <span
+                  aria-disabled="true"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-177 MuiCheckbox-root makeStyles-mainCheck-148 PrivateSwitchBase-disabled-179 Mui-disabled Mui-disabled Mui-disabled"
+                  tabindex="-1"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-180"
+                      data-indeterminate="false"
+                      disabled=""
+                      role="element-selector-all"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-147 MuiTypography-body1"
+                >
+                  Event Type Name
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-147 MuiTypography-body1"
+                >
+                  URL
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-147 MuiTypography-body1"
+                >
+                  Last updated
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-147 MuiTypography-body1"
+                >
+                  Created At
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="MuiTableBody-root"
+          />
+        </table>
+      </div>
+      <div
+        data-testid="loading-view-row"
+      >
+        <div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter"
+          >
+            Loading...
+          </p>
+        </div>
+      </div>
+      <div
+        class="MuiTablePagination-root"
+        role="paginator"
+      >
         <div
-          class="MuiTablePagination-actions"
+          class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
         >
-          <button
-            aria-label="Previous page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-            disabled=""
-            tabindex="-1"
-            title="Previous page"
-            type="button"
+          <div
+            class="MuiTablePagination-spacer"
+          />
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
           >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-                />
-              </svg>
-            </span>
-          </button>
-          <button
-            aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-            disabled=""
-            tabindex="-1"
-            title="Next page"
-            type="button"
+            Rows per page:
+          </p>
+          <div
+            aria-label="pageSelector"
+            class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
           >
-            <span
-              class="MuiIconButton-label"
+            <div
+              aria-haspopup="listbox"
+              aria-label="Rows per page:"
+              class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+              role="button"
+              tabindex="0"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
+              10
+            </div>
+            <input
+              type="hidden"
+              value="10"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+          >
+            1-10 of more than 10
+          </p>
+          <div
+            class="MuiTablePagination-actions"
+          >
+            <button
+              aria-label="Previous page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Previous page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
               >
-                <path
-                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                />
-              </svg>
-            </span>
-          </button>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label="Next page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Next page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EventTypeTable snapshot while loading with previous data and pagination 1`] = `
+<div>
+  <div
+    class="makeStyles-root-557"
+  >
+    <span>
+      Table of Event Types
+    </span>
+    <div
+      class="makeStyles-root-561"
+    >
+      <div
+        class="MuiTableContainer-root"
+      >
+        <table
+          class="MuiTable-root"
+        >
+          <thead
+            class="MuiTableHead-root makeStyles-head-558"
+          >
+            <tr
+              class="MuiTableRow-root MuiTableRow-head"
+            >
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
+                scope="col"
+              >
+                <span
+                  aria-disabled="true"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root makeStyles-mainCheck-560 PrivateSwitchBase-disabled-591 Mui-disabled Mui-disabled Mui-disabled"
+                  tabindex="-1"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      disabled=""
+                      role="element-selector-all"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-559 MuiTypography-body1"
+                >
+                  Event Type Name
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-559 MuiTypography-body1"
+                >
+                  URL
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-559 MuiTypography-body1"
+                >
+                  Last updated
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-headText-559 MuiTypography-body1"
+                >
+                  Created At
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="MuiTableBody-root"
+          >
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 0
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento0
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 1
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento1
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 2
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento2
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 3
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento3
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 4
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento4
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 5
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento5
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 6
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento6
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 7
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento7
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 8
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento8
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-589 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-592"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 9
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento9
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        data-testid="loading-view-row"
+      >
+        <div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter"
+          >
+            Loading...
+          </p>
+        </div>
+      </div>
+      <div
+        class="MuiTablePagination-root"
+        role="paginator"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+        >
+          <div
+            class="MuiTablePagination-spacer"
+          />
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+          >
+            Rows per page:
+          </p>
+          <div
+            aria-label="pageSelector"
+            class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-label="Rows per page:"
+              class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+              role="button"
+              tabindex="0"
+            >
+              10
+            </div>
+            <input
+              type="hidden"
+              value="10"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+          >
+            11-20 of more than 20
+          </p>
+          <div
+            class="MuiTablePagination-actions"
+          >
+            <button
+              aria-label="Previous page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Previous page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label="Next page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+              tabindex="0"
+              title="Next page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -848,841 +2533,1036 @@ exports[`EventTypeTable snapshot while loading without data 1`] = `
 exports[`EventTypeTable snapshot with data and pagination 1`] = `
 <div>
   <div
-    class="makeStyles-root-267"
+    class="makeStyles-root-413"
   >
     <span>
       Table of Event Types
     </span>
     <div
-      class="MuiTableContainer-root"
-    >
-      <table
-        class="MuiTable-root"
-      >
-        <thead
-          class="MuiTableHead-root makeStyles-head-268"
-        >
-          <tr
-            class="MuiTableRow-root MuiTableRow-head"
-          >
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
-              scope="col"
-            >
-              <span
-                aria-disabled="true"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root makeStyles-mainCheck-270 PrivateSwitchBase-disabled-300 Mui-disabled Mui-disabled Mui-disabled"
-                tabindex="-1"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-301"
-                    data-indeterminate="false"
-                    disabled=""
-                    role="element-selector-all"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-269 MuiTypography-body1"
-              >
-                Event Type Name
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-269 MuiTypography-body1"
-              >
-                URL
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-269 MuiTypography-body1"
-              >
-                Last updated
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-269 MuiTypography-body1"
-              >
-                Created At
-              </p>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="MuiTableBody-root"
-        >
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-301"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 0
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento0
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-301"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 1
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento1
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-301"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 2
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento2
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-301"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 3
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento3
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-          <tr
-            class="MuiTableRow-root"
-          >
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
-            >
-              <span
-                aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-298 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <input
-                    class="PrivateSwitchBase-input-301"
-                    data-indeterminate="false"
-                    role="element-selector"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </span>
-            </td>
-            <td
-              aria-label="event name"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              Elemento 4
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento4
-              <button
-                aria-label="copy-icon"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      data-testid="empty-view-row"
-    >
-      <div>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter"
-        >
-          No Event Types created yet!
-        </p>
-      </div>
-    </div>
-    <div
-      class="MuiTablePagination-root"
-      role="paginator"
+      class="makeStyles-root-417"
     >
       <div
-        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+        class="MuiTableContainer-root"
       >
-        <div
-          class="MuiTablePagination-spacer"
-        />
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        <table
+          class="MuiTable-root"
         >
-          Rows per page:
-        </p>
-        <div
-          aria-label="pageSelector"
-          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
-        >
-          <div
-            aria-haspopup="listbox"
-            aria-label="Rows per page:"
-            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-            role="button"
-            tabindex="0"
+          <thead
+            class="MuiTableHead-root makeStyles-head-414"
           >
-            5
-          </div>
-          <input
-            type="hidden"
-            value="5"
-          />
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M7 10l5 5 5-5z"
-            />
-          </svg>
-        </div>
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-        >
-          6-10 of more than 10
-        </p>
-        <div
-          class="MuiTablePagination-actions"
-        >
-          <button
-            aria-label="Previous page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
-            title="Previous page"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
+            <tr
+              class="MuiTableRow-root MuiTableRow-head"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-          <button
-            aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-            tabindex="0"
-            title="Next page"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`EventTypeTable snapshot without data 1`] = `
-<div>
-  <div
-    class="makeStyles-root-134"
-  >
-    <span>
-      Table of Event Types
-    </span>
-    <div
-      class="MuiTableContainer-root"
-    >
-      <table
-        class="MuiTable-root"
-      >
-        <thead
-          class="MuiTableHead-root makeStyles-head-135"
-        >
-          <tr
-            class="MuiTableRow-root MuiTableRow-head"
-          >
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
-              scope="col"
-            >
-              <span
-                aria-disabled="true"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-165 MuiCheckbox-root makeStyles-mainCheck-137 PrivateSwitchBase-disabled-167 Mui-disabled Mui-disabled Mui-disabled"
-                tabindex="-1"
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
+                scope="col"
               >
                 <span
-                  class="MuiIconButton-label"
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root makeStyles-mainCheck-416"
                 >
-                  <input
-                    class="PrivateSwitchBase-input-168"
-                    data-indeterminate="false"
-                    disabled=""
-                    role="element-selector-all"
-                    type="checkbox"
-                    value=""
-                  />
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
+                  <span
+                    class="MuiIconButton-label"
                   >
-                    <path
-                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector-all"
+                      type="checkbox"
+                      value=""
                     />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
                 </span>
-              </span>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-136 MuiTypography-body1"
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
               >
-                Event Type Name
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-136 MuiTypography-body1"
+                <p
+                  class="MuiTypography-root makeStyles-headText-415 MuiTypography-body1"
+                >
+                  Event Type Name
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
               >
-                URL
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-136 MuiTypography-body1"
+                <p
+                  class="MuiTypography-root makeStyles-headText-415 MuiTypography-body1"
+                >
+                  URL
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
               >
-                Last updated
-              </p>
-            </th>
-            <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-136 MuiTypography-body1"
+                <p
+                  class="MuiTypography-root makeStyles-headText-415 MuiTypography-body1"
+                >
+                  Last updated
+                </p>
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+                scope="col"
               >
-                Created At
-              </p>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="MuiTableBody-root"
-        />
-      </table>
-    </div>
-    <div
-      data-testid="loading-view-row"
-    >
-      <div>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter"
-        >
-          Loading...
-        </p>
+                <p
+                  class="MuiTypography-root makeStyles-headText-415 MuiTypography-body1"
+                >
+                  Created At
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="MuiTableBody-root"
+          >
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 0
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento0
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 1
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento1
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 2
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento2
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 3
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento3
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 4
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento4
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 5
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento5
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 6
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento6
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 7
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento7
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 8
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento8
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+              role="element row"
+            >
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+              >
+                <span
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-445 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <input
+                      class="PrivateSwitchBase-input-448"
+                      data-indeterminate="false"
+                      role="element-selector"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </span>
+              </td>
+              <td
+                aria-label="element name"
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Elemento 9
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                http://cep/elemento9
+                <button
+                  aria-label="copy-icon"
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+              <td
+                class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+              >
+                2020-1-1 11:10:10
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-    <div
-      class="MuiTablePagination-root"
-      role="paginator"
-    >
       <div
-        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+        class="MuiTablePagination-root"
+        role="paginator"
       >
         <div
-          class="MuiTablePagination-spacer"
-        />
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-        >
-          Rows per page:
-        </p>
-        <div
-          aria-label="pageSelector"
-          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+          class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
         >
           <div
-            aria-haspopup="listbox"
-            aria-label="Rows per page:"
-            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-            role="button"
-            tabindex="0"
-          >
-            10
-          </div>
-          <input
-            type="hidden"
-            value="10"
+            class="MuiTablePagination-spacer"
           />
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
           >
-            <path
-              d="M7 10l5 5 5-5z"
+            Rows per page:
+          </p>
+          <div
+            aria-label="pageSelector"
+            class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-label="Rows per page:"
+              class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+              role="button"
+              tabindex="0"
+            >
+              10
+            </div>
+            <input
+              type="hidden"
+              value="10"
             />
-          </svg>
-        </div>
-        <p
-          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-        >
-          1-10 of more than 10
-        </p>
-        <div
-          class="MuiTablePagination-actions"
-        >
-          <button
-            aria-label="Previous page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-            disabled=""
-            tabindex="-1"
-            title="Previous page"
-            type="button"
-          >
-            <span
-              class="MuiIconButton-label"
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-                />
-              </svg>
-            </span>
-          </button>
-          <button
-            aria-label="Next page"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-            disabled=""
-            tabindex="-1"
-            title="Next page"
-            type="button"
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
           >
-            <span
-              class="MuiIconButton-label"
+            1-10 of more than 10
+          </p>
+          <div
+            class="MuiTablePagination-actions"
+          >
+            <button
+              aria-label="Previous page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Previous page"
+              type="button"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
+              <span
+                class="MuiIconButton-label"
               >
-                <path
-                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                />
-              </svg>
-            </span>
-          </button>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label="Next page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Next page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
