@@ -1,6 +1,6 @@
 import React from 'react';
 import TitleBar from './title-bar';
-import EventTypeList from '../event-type-list';
+import EventTypeListPage from '../event-type-list-page';
 import { useStyles } from './styles';
 
 
@@ -10,7 +10,7 @@ export const App: React.FC<{}> = function App() {
         <div className={styles.root}>
             <TitleBar/>
             CEP UI
-            <EventTypeList/>
+            <EventTypeListPage/>
         </div>
     );
 }

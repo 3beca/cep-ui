@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, waitFor, within } from '@testing-library/react';
-import { EventTypeTableProps } from '../event-type-list/event-type-table';
+import { EventTypeTableProps } from '../event-type-list-page/event-type-table';
 import nock from 'nock/types';
 import { EventTypeList, EventTypeError } from '../services/event-type';
 
