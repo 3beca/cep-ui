@@ -2,9 +2,10 @@ import {
     EventTypeApi,
     EventTypeList,
     EventTypeError,
+    EventTypeDeleted,
 } from './event-type';
-import { APIResponseData, APIError, APIResponseEmptyData, isAPIError } from '../fetch-api';
-import { BASE_URL, EVENT_TYPE_URL } from './config';
+import { APIResponseData, APIError, isAPIError } from '../fetch-api';
+import { BASE_URL } from './config';
 import {setupNock, generateEventTypeListWith, serverGetEventTypeList, serverDeleteEventType} from '../test-utils';
 
 describe(
@@ -84,13 +85,13 @@ describe(
 
                 const results = await api.deleteEventType(eventTypeId);
 
-                expect(results.length).toBe(1);
-                const result = results[0];
-                expect(isAPIError(result)).toBe(true);
-                const error = result as APIError<EventTypeError>;
-                expect(error).toEqual({
-                    errorCode: 500,
-                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid',
+                expect(isAPIError(results)).toBe(false);
+                const deleted = results as APIResponseData<EventTypeDeleted[]>;
+                expect(deleted.status).toBe(200);
+                expect(deleted.data.length).toBe(1);
+                expect(deleted.data[0]).toEqual({
+                    id: eventTypeId,
+                    state: 'REJECTED',
                     error: {
                         statusCode: 500,
                         error: 'Internal Server Error',
@@ -105,11 +106,8 @@ describe(
             async () => {
                 const eventTypeId = undefined as unknown as string;
 
-                const results = await api.deleteEventType(eventTypeId);
+                const result = await api.deleteEventType(eventTypeId);
 
-                expect(results.length).toBe(1);
-
-                const result = results[0];
                 expect(isAPIError(result)).toBe(true);
                 const error = result as APIError<EventTypeError>;
                 expect(error).toEqual({
@@ -132,16 +130,17 @@ describe(
                 serverDeleteEventType(server, eventTypeIds[0], 500, response);
                 serverDeleteEventType(server, eventTypeIds[1], 500, response);
 
-                const results = await api.deleteEventType(eventTypeIds);
+                const result = await api.deleteEventType(eventTypeIds);
 
-                expect(results.length).toBe(2);
+                expect(isAPIError(result)).toBe(false);
+                const deleted = result as APIResponseData<EventTypeDeleted[]>;
+                expect(deleted.status).toBe(200);
+                expect(deleted.data.length).toBe(2);
 
-                const result = results[0];
-                expect(isAPIError(result)).toBe(true);
-                const error = result as APIError<EventTypeError>;
+                const error = deleted.data[0];
                 expect(error).toEqual({
-                    errorCode: 500,
-                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid1',
+                    id: eventTypeIds[0],
+                    state: 'REJECTED',
                     error: {
                         statusCode: 500,
                         error: 'Internal Server Error',
@@ -149,12 +148,10 @@ describe(
                     }
                 });
 
-                const result2 = results[1];
-                expect(isAPIError(result2)).toBe(true);
-                const error2 = result as APIError<EventTypeError>;
+                const error2 = deleted.data[1];
                 expect(error2).toEqual({
-                    errorCode: 500,
-                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid1',
+                    id: eventTypeIds[1],
+                    state: 'REJECTED',
                     error: {
                         statusCode: 500,
                         error: 'Internal Server Error',
@@ -170,15 +167,16 @@ describe(
                 const eventTypeId = '5e8dffc9c906fefd9e7b2486';
                 serverDeleteEventType(server, eventTypeId, 204);
 
-                const results = await api.deleteEventType(eventTypeId);
+                const result = await api.deleteEventType(eventTypeId);
 
-                expect(results.length).toBe(1);
-
-                const result = results[0];
                 expect(isAPIError(result)).toBe(false);
-                const response = result as APIResponseEmptyData;
-                expect(response.status).toBe(204);
-                expect(response.data).toBe(undefined);
+                const response = result as APIResponseData<EventTypeDeleted[]>;
+                expect(response.status).toBe(200);
+                expect(response.data.length).toBe(1);
+                expect(response.data[0]).toEqual({
+                    id: eventTypeId,
+                    state: 'DELETED'
+                });
             }
         );
 
@@ -189,21 +187,24 @@ describe(
                 serverDeleteEventType(server, eventTypeIds[0], 204);
                 serverDeleteEventType(server, eventTypeIds[1], 204);
 
-                const results = await api.deleteEventType(eventTypeIds);
+                const result = await api.deleteEventType(eventTypeIds);
 
-                expect(results.length).toBe(2);
-
-                const result = results[0];
                 expect(isAPIError(result)).toBe(false);
-                const response = result as APIResponseEmptyData;
-                expect(response.status).toBe(204);
-                expect(response.data).toBe(undefined);
+                const response = result as APIResponseData<EventTypeDeleted[]>;
+                expect(response.status).toBe(200);
+                expect(response.data.length).toBe(2);
 
-                const result2 = results[0];
-                expect(isAPIError(result2)).toBe(false);
-                const response2 = result as APIResponseEmptyData;
-                expect(response2.status).toBe(204);
-                expect(response2.data).toBe(undefined);
+                const deleted1 = response.data[0];
+                expect(deleted1).toEqual({
+                    id: eventTypeIds[0],
+                    state: 'DELETED'
+                });
+
+                const deleted2 = response.data[1];
+                expect(deleted2).toEqual({
+                    id: eventTypeIds[1],
+                    state: 'DELETED'
+                });
             }
         );
 
@@ -215,22 +216,23 @@ describe(
                 serverDeleteEventType(server, eventTypeIds[0], 204);
                 serverDeleteEventType(server, eventTypeIds[1], 500, responseError);
 
-                const results = await api.deleteEventType(eventTypeIds);
+                const result = await api.deleteEventType(eventTypeIds);
 
-                expect(results.length).toBe(2);
-
-                const result = results[0];
                 expect(isAPIError(result)).toBe(false);
-                const response = result as APIResponseEmptyData;
-                expect(response.status).toBe(204);
-                expect(response.data).toBe(undefined);
+                const response = result as APIResponseData<EventTypeDeleted[]>;
+                expect(response.status).toBe(200);
+                expect(response.data.length).toBe(2);
 
-                const result2 = results[1];
-                expect(isAPIError(result2)).toBe(true);
-                const error2 = result2 as APIError<EventTypeError>;
-                expect(error2).toEqual({
-                    errorCode: 500,
-                    errorMessage: 'Error from http://localhost:123/admin/event-types/invalidid',
+                const deleted1 = response.data[0];
+                expect(deleted1).toEqual({
+                    id: eventTypeIds[0],
+                    state: 'DELETED'
+                });
+
+                const errorDeleted = response.data[1];
+                expect(errorDeleted).toEqual({
+                    id: eventTypeIds[1],
+                    state: 'REJECTED',
                     error: {
                         statusCode: 500,
                         error: 'Internal Server Error',

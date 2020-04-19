@@ -20,3 +20,11 @@ export const useGetEventList = (page: number, size: number) => {
     );
     return {...state, request};
 };
+
+export const useDeleteEventList = (eventIds: string[]|string) => {
+    const req = React.useCallback(
+        () => api.deleteEventType(eventIds),
+        [eventIds]
+    );
+    return useFetchApi(req);
+};
