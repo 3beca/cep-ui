@@ -1,7 +1,35 @@
-import React from 'react';
+import * as React from 'react';
 import { render, fireEvent, within } from '@testing-library/react';
 import PaginatedTable from './index';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import Typography from '@material-ui/core/Typography';
+import TableBody from '@material-ui/core/TableBody';
 
+const SampleTable: React.FC<{rows?: number}> = ({rows = 5}) => {
+    return (
+        <Table>
+            <TableHead>
+                <TableRow role='element header'>
+                    <TableCell align='left'><Typography>Header</Typography></TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+            {
+                (new Array(rows)).map(
+                    (row, index) => (
+                        <TableRow role='element row' key={index}>
+                            <TableCell align='right'><Typography>Data</Typography></TableCell>
+                        </TableRow>
+                    )
+                )
+            }
+        </TableBody>
+    </Table>
+    );
+};
 test('PaginatedTable snapshot without data', () => {
     const { container } = render(<PaginatedTable/>);
     expect(container).toMatchSnapshot();
@@ -13,7 +41,9 @@ test('PaginatedTable snapshot with data and pagination', () => {
             isLoading={false}
             page={2}
             size={5}
-        />
+        >
+            <SampleTable/>
+        </PaginatedTable>
 
     );
     expect(container).toMatchSnapshot();
@@ -25,7 +55,9 @@ test('PaginatedTable snapshot while loading with previous data and pagination', 
             isLoading={true}
             page={2}
             size={5}
-        />
+        >
+            <SampleTable/>
+        </PaginatedTable>
     );
     expect(container).toMatchSnapshot();
 });
@@ -72,7 +104,9 @@ test('PaginatedTable render when loading show the loading view', async () => {
             isEmpty={true}
             page={1}
             size={5}
-        />
+        >
+            <SampleTable/>
+        </PaginatedTable>
     );
 
     const loadingView = getByTestId(/loading-view-row/i);
@@ -98,7 +132,9 @@ test('PaginatedTable render items and can navigate by pages', async () => {
             hasNextPage={true}
             hasPrevPage={false}
             onChangePage={onChangePage}
-        />
+        >
+            <SampleTable/>
+        </PaginatedTable>
     );
     const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
     const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
@@ -122,7 +158,9 @@ test('PaginatedTable render items and can navigate by pages', async () => {
             hasNextPage={true}
             hasPrevPage={true}
             onChangePage={onChangePage}
-        />
+        >
+            <SampleTable/>
+        </PaginatedTable>
     );
 
     expect(prevButton.disabled).toBe(false);
@@ -143,7 +181,9 @@ test('PaginatedTable render items and can navigate by pages', async () => {
             hasNextPage={false}
             hasPrevPage={true}
             onChangePage={onChangePage}
-        />
+        >
+            <SampleTable/>
+        </PaginatedTable>
     );
 
     expect(prevButton.disabled).toBe(false);
@@ -164,7 +204,9 @@ test('PaginatedTable render items and can navigate by pages', async () => {
             hasNextPage={false}
             hasPrevPage={true}
             onChangePage={onChangePage}
-        />
+        >
+            <SampleTable/>
+        </PaginatedTable>
     );
 
     expect(prevButton.disabled).toBe(false);
@@ -209,7 +251,9 @@ test('PaginatedTable render 10 elements when change pageSize', async () => {
             page={1}
             size={10}
             onChangePageSize={onChangePageSize}
-        />
+        >
+            <SampleTable rows={10}/>
+        </PaginatedTable>
     );
 
     expect(prevButton.disabled).toBe(true);
@@ -231,7 +275,9 @@ test('PaginatedTable render 10 elements when change pageSize', async () => {
             page={1}
             size={20}
             onChangePageSize={onChangePageSize}
-        />
+        >
+            <SampleTable rows={20}/>
+        </PaginatedTable>
     );
 
     expect(prevButton.disabled).toBe(true);

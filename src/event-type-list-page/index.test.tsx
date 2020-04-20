@@ -5,7 +5,7 @@ import EventTypeListPage from './index';
 import {BASE_URL} from '../services/config';
 import { runPaginatedTableTest } from '../test-utils/paginated-table-components';
 import { EventTypeList, EventTypeError } from '../services/event-type';
-//import { runSelectableTableTest } from '../test-utils/selectable-table-components';
+import { runSelectableTableTest } from '../test-utils/selectable-table-components';
 
 jest.mock('@material-ui/core/Snackbar', () => {
     return ({open, onClose}: {open: boolean, onClose: () => void}): React.ReactElement|null => {
@@ -31,12 +31,12 @@ runPaginatedTableTest(
     (page: number = 1, pageSize: number = 10, status: number = 200, response: EventTypeList|EventTypeError) => serverGetEventTypeList(setupNock(BASE_URL), page, pageSize, status, response)
 );
 
-// runSelectableTableTest(
-//     'EventTypeListPage',
-//     EventTypeListPage,
-//     generateEventTypeListWith,
-//     (page: number = 1, pageSize: number = 10, status: number = 200, response: EventTypeList|EventTypeError) => serverGetEventTypeList(setupNock(BASE_URL), page, pageSize, status, response)
-// );
+runSelectableTableTest(
+    'EventTypeListPage',
+    EventTypeListPage,
+    generateEventTypeListWith,
+    (page: number = 1, pageSize: number = 10, status: number = 200, response: EventTypeList|EventTypeError) => serverGetEventTypeList(setupNock(BASE_URL), page, pageSize, status, response)
+);
 
 test('EventTypeList should copy url of element to clipboard when click in edit icon', async () => {
     const response = generateEventTypeListWith(10, false, false);

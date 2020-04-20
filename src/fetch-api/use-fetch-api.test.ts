@@ -1,6 +1,6 @@
 import {renderHook, act} from '@testing-library/react-hooks'
 import { fetchApi } from './fetch-api';
-import { useFetchApi, APIFetchQuery } from './use-fetch-api';
+import { useFetchApi, APIFetchQuery, neverForgetAnAction, apiReducer, ApiActions } from './use-fetch-api';
 import { nextTick } from 'process';
 import {setupNock} from '../test-utils';
 
@@ -172,3 +172,12 @@ describe(
         );
     }
 );
+
+test('neverForgetAnAction fails when forget implement an action', () => {
+    expect(() => neverForgetAnAction(undefined as unknown as never)).toThrowError();
+});
+
+test('reducer throw error when action is not defiend', () => {
+    const undefinedAction = {type: 'undefinedaction'} as unknown as ApiActions<undefined, undefined>;
+    expect(() => apiReducer<undefined, undefined>({status: 'IDLE', data: undefined, error: undefined}, undefinedAction)).toThrowError();
+});

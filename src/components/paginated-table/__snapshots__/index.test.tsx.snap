@@ -3,11 +3,38 @@
 exports[`PaginatedTable snapshot while loading with previous data and pagination 1`] = `
 <div>
   <div
-    class="makeStyles-root-199"
+    class="makeStyles-root-220"
   >
     <div
       class="MuiTableContainer-root"
-    />
+    >
+      <table
+        class="MuiTable-root"
+      >
+        <thead
+          class="MuiTableHead-root"
+        >
+          <tr
+            class="MuiTableRow-root MuiTableRow-head"
+            role="element header"
+          >
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1"
+              >
+                Header
+              </p>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="MuiTableBody-root"
+        />
+      </table>
+    </div>
     <div
       data-testid="loading-view-row"
     >
@@ -126,7 +153,7 @@ exports[`PaginatedTable snapshot while loading with previous data and pagination
 exports[`PaginatedTable snapshot while loading without data 1`] = `
 <div>
   <div
-    class="makeStyles-root-298"
+    class="makeStyles-root-340"
   >
     <div
       class="MuiTableContainer-root"
@@ -253,7 +280,34 @@ exports[`PaginatedTable snapshot with data and pagination 1`] = `
   >
     <div
       class="MuiTableContainer-root"
-    />
+    >
+      <table
+        class="MuiTable-root"
+      >
+        <thead
+          class="MuiTableHead-root"
+        >
+          <tr
+            class="MuiTableRow-root MuiTableRow-head"
+            role="element header"
+          >
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1"
+              >
+                Header
+              </p>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="MuiTableBody-root"
+        />
+      </table>
+    </div>
     <div
       data-testid="empty-view-row"
     >

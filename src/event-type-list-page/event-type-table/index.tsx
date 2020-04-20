@@ -22,16 +22,14 @@ import {useClipboard} from '../../components/use-clipboard';
 
 export type EventTypeTableProps = {
     eventTypeList?: EventTypeList;
-    page?: number;
-    size?: RowsSizes;
-    isLoading?: boolean;
-    isEmpty?: boolean;
-    onChangePage?(page: number):void;
-    onChangePageSize?(page: RowsSizes):void;
+    initialPage?: number;
+    initialPageSize?: RowsSizes;
     onSelected?(selecteds: EventType[]): void;
 };
 export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
     ({
+        initialPage = 1,
+        initialPageSize = 10,
         onSelected=()=>{}
     }) => {
         const styles = useStyles();

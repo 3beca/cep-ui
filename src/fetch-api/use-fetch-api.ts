@@ -1,21 +1,21 @@
 import React from 'react';
 import { APIError, APIResponseData, isAPIError } from './fetch-api';
 
-type ApiActionStart = { type: 'START'};
-type ApiActionCancel = { type: 'CANCEL'};
-type ApiActionSuccess<R> = { type: 'SUCCESS'; data: APIResponseData<R>;};
-type ApiActionError<E> = { type: 'ERROR'; error: APIError<E>;};
-type ApiActions<R, E> = ApiActionStart | ApiActionCancel | ApiActionSuccess<R> | ApiActionError<E>;
-type ApiState<R, E> = {
+export type ApiActionStart = { type: 'START'};
+export type ApiActionCancel = { type: 'CANCEL'};
+export type ApiActionSuccess<R> = { type: 'SUCCESS'; data: APIResponseData<R>;};
+export type ApiActionError<E> = { type: 'ERROR'; error: APIError<E>;};
+export type ApiActions<R, E> = ApiActionStart | ApiActionCancel | ApiActionSuccess<R> | ApiActionError<E>;
+export type ApiState<R, E> = {
     status: 'IDLE'|'PENDING'|'RESOLVED'|'REJECTED';
     data: APIResponseData<R>|undefined;
     error: APIError<E>|undefined;
 };
-const neverForgetAnAction = (action: never): never => {
+export const neverForgetAnAction = (action: never): never => {
     throw new Error(`Forget implement action ${action}`);
 };
-type ApiReducer<R, E> = (state: ApiState<R, E>, action: ApiActions<R, E>) => ApiState<R, E>;
-const apiReducer = <R, E>(state: ApiState<R, E>, action: ApiActions<R, E>): ApiState<R, E> => {
+export type ApiReducer<R, E> = (state: ApiState<R, E>, action: ApiActions<R, E>) => ApiState<R, E>;
+export const apiReducer = <R, E>(state: ApiState<R, E>, action: ApiActions<R, E>): ApiState<R, E> => {
     switch(action.type) {
         case 'START': {
             return {
