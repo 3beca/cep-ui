@@ -36,7 +36,8 @@ runSelectableTableTest(
     'EventTypeTable',
     EventTypeTable,
     generateEventTypeListWith,
-    (page: number = 1, pageSize: number = 10, status: number = 200, response: EventTypeList|EventTypeError) => serverGetEventTypeList(setupNock(BASE_URL), page, pageSize, status, response)
+    (page: number = 1, pageSize: number = 10, status: number = 200, response: EventTypeList|EventTypeError) => serverGetEventTypeList(setupNock(BASE_URL), page, pageSize, status, response),
+    true
 );
 
 test('EventTypeTable should copy url of element to clipboard when click in edit icon', async () => {

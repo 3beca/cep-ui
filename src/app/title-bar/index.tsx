@@ -9,7 +9,7 @@ export type TitleBarProps = {};
 export const TitleBar: React.FC<TitleBarProps> = function TitleBar() {
     const styles = useStyles();
     return (
-        <AppBar position='static' className={styles.root}>
+        <AppBar position='fixed' className={styles.root}>
             <Toolbar>
                 <HomeIcon className={styles.icon} fontSize='large'/>
                 <Typography variant='h6' color='inherit' noWrap>

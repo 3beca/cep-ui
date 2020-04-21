@@ -50,8 +50,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
         const {selectOne, selectAll, selecteds} = useSelectableList(eventTypeList?.results, onSelected);
 
         return (
-            <div className={styles.root}>
-                <span>Table of Event Types</span>
+            <>
                 <Snackbar
                     open={!!text}
                     onClose={clear}
@@ -76,6 +75,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                                         color='default'
                                         disabled={isLoading || isEmpty}
                                         inputProps={{role: 'element-selector-all'}}
+                                        checked={selecteds.size === eventTypeList?.results.length}
                                         onChange={(ev, checked) => selectAll(checked)}/>
                                 </TableCell>
                                 <TableCell align='left'><Typography className={styles.headText}>Event Type Name</Typography></TableCell>
@@ -104,7 +104,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                         </TableBody>
                     </Table>
                 </PaginatedTable>
-            </div>
+            </>
         );
     }
 );

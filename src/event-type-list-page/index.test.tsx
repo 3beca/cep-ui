@@ -53,3 +53,24 @@ test('EventTypeList should copy url of element to clipboard when click in edit i
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(response.results[0].url);
 });
 
+test('EventTypeTable should show a delete icon button when have some elelemt selected', async () => {
+    const response = generateEventTypeListWith(10, false, false);
+    serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, response);
+    const {container, getAllByLabelText, getAllByRole, getByLabelText, queryByLabelText} = render(
+        <EventTypeListPage/>
+    );
+    await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(10));
+    const elements = getAllByRole(/element-selector$/);
+    expect(queryByLabelText('delete-icon')).not.toBeInTheDocument();
+
+    // Select second element
+    fireEvent.click(elements[1], {target: {value: true}});
+    expect(getByLabelText('delete-icon')).toBeInTheDocument();
+
+    // snapshot with delete icon visible
+    expect(container).toMatchSnapshot();
+
+    // TODO: click on delete icon should open a delete dialog
+
+});
+

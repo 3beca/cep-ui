@@ -6,24 +6,26 @@ import Typography from '@material-ui/core/Typography';
 import { useStyles } from './styles';
 
 const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
+    const classes = useStyles();
     if (!show) return null;
     return (
         <div
             data-testid='loading-view-row'>
             <div>
-                <Typography align='center'>Loading...</Typography>
+                <Typography align='center' className={classes.loadingView}>Loading...</Typography>
             </div>
         </div>
     );
 };
 
 const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
+    const classes = useStyles();
     if (!show) return null;
     return (
         <div
             data-testid='empty-view-row'>
             <div>
-                <Typography align='center'>No Elements created yet!</Typography>
+                <Typography align='center' className={classes.errorView}>No Elements created yet!</Typography>
             </div>
         </div>
     );
@@ -51,9 +53,8 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
         onChangePageSize=()=>{},
         children
     }) => {
-        const styles = useStyles();
         return (
-            <div className={styles.root}>
+            <>
                 <TableContainer>
                    {children}
                 </TableContainer>
@@ -72,7 +73,7 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
                     onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value) as RowsSizes)}
                     SelectProps={{'aria-label': 'pageSelector'}}
                 />
-            </div>
+            </>
         );
     }
 );
