@@ -37,7 +37,8 @@ export const getEventTypeList = (baseURL: string, config: APIRequestInfo) => asy
     return fetchApi<undefined, EventTypeList, EventTypeError>(url, {...config, method: 'GET'});
 };
 export const deleteEventType = (baseURL: string, config: APIRequestInfo) => async (eventTypeIds: string|string[]): Promise<(APIResponseData<EventTypeDeleted[]>|APIError<EventTypeError>)> => {
-    const eventTypesArray = (Array.isArray(eventTypeIds)) ? eventTypeIds : [eventTypeIds];
+    const eventTypesArray = ((Array.isArray(eventTypeIds)) ? eventTypeIds : [eventTypeIds]).filter(id => !!id);
+
     if(!eventTypeIds || eventTypesArray.length < 1) {
         return {
             errorCode: 500,

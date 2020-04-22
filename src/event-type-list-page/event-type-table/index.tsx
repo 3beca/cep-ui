@@ -6,7 +6,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
 import Checkbox from '@material-ui/core/Checkbox';
-import EditIcon from '@material-ui/icons/Edit';
+import CopyIcon from '@material-ui/icons/FileCopyOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 
@@ -51,12 +51,16 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
 
         return (
             <>
-                <Snackbar
-                    open={!!text}
-                    onClose={clear}
-                    autoHideDuration={2000}
-                    message={`URL ${text} copied!`}
-                />
+                <div className={styles.tabletitle}>
+                    <Toolbar>
+                        <Typography variant='h6' className={styles.tablename}>List of Event Types</Typography>
+                        <IconDialog
+                            show={show}
+                            icon={<DeleteIcon className={styles.deleteIcon} aria-label='delete-icon'/>}>
+                            <DeleteDialog eventTypes={selecteds}/>
+                        </IconDialog>
+                    </Toolbar>
+                </div>
                 <PaginatedTable
                     page={page}
                     size={pageSize as RowsSizes}
@@ -80,8 +84,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                                 </TableCell>
                                 <TableCell align='left'><Typography className={styles.headText}>Event Type Name</Typography></TableCell>
                                 <TableCell align='left'><Typography className={styles.headText}>URL</Typography></TableCell>
-                                <TableCell align='right'><Typography className={styles.headText}>Last updated</Typography></TableCell>
-                                <TableCell align='right'><Typography className={styles.headText}>Created At</Typography></TableCell>
+                                <TableCell align='right'><Typography className={styles.headText}>Created At </Typography></TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -95,8 +98,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                                                 onChange={(ev, checked) => selectOne(checked, eventType)}/>
                                         </TableCell>
                                         <TableCell align='left' aria-label='element name'>{eventType.name}</TableCell>
-                                        <TableCell align='left'>{eventType.url}<IconButton aria-label='copy-icon' onClick={() => copy(eventType.url)}><EditIcon fontSize='small'/></IconButton></TableCell>
-                                        <TableCell align='right'>{new Date(eventType.updatedAt).toLocaleString()}</TableCell>
+                                        <TableCell align='left'>{eventType.url}<IconButton aria-label='copy-icon' onClick={() => copy(eventType.url)}><CopyIcon fontSize='small'/></IconButton></TableCell>
                                         <TableCell align='right'>{new Date(eventType.createdAt).toLocaleString()}</TableCell>
                                     </TableRow>
                                 ))
@@ -104,6 +106,12 @@ export const TableEventType: React.FC<EventTypeTableProps> = React.memo(
                         </TableBody>
                     </Table>
                 </PaginatedTable>
+                <Snackbar
+                    open={!!text}
+                    onClose={clear}
+                    autoHideDuration={2000}
+                    message={`URL ${text} copied!`}
+                />
             </>
         );
     }

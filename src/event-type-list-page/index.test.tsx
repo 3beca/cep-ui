@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor, fireEvent } from '@testing-library/react';
+import { render, waitFor, fireEvent, within } from '@testing-library/react';
 import {setupNock, serverGetEventTypeList, generateEventTypeListWith} from '../test-utils';
 import EventTypeListPage from './index';
 import {BASE_URL} from '../services/config';
@@ -53,7 +53,7 @@ test('EventTypeList should copy url of element to clipboard when click in edit i
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(response.results[0].url);
 });
 
-test('EventTypeTable should show a delete icon button when have some elelemt selected', async () => {
+test('EventTypeTable should show a delete icon button when have some elements selected', async () => {
     const response = generateEventTypeListWith(10, false, false);
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, response);
     const {container, getAllByLabelText, getAllByRole, getByLabelText, queryByLabelText} = render(
@@ -63,14 +63,21 @@ test('EventTypeTable should show a delete icon button when have some elelemt sel
     const elements = getAllByRole(/element-selector$/);
     expect(queryByLabelText('delete-icon')).not.toBeInTheDocument();
 
-    // Select second element
+    // Select second and third element
     fireEvent.click(elements[1], {target: {value: true}});
+    fireEvent.click(elements[2], {target: {value: true}});
     expect(getByLabelText('delete-icon')).toBeInTheDocument();
 
     // snapshot with delete icon visible
     expect(container).toMatchSnapshot();
 
-    // TODO: click on delete icon should open a delete dialog
-
+    // Click on delete icon should open a delete dialog
+    fireEvent.click(getByLabelText('open dialog'));
+    const dialog = within(document.getElementById('icon-dialog')!);
+    dialog.getByLabelText(/title/i);
+    dialog.getByLabelText(/eventtypes to delete/i);
+    expect(dialog.getAllByLabelText(/eventtype to delete/i)).toHaveLength(2);
+    dialog.getByText(/close/i);
+    dialog.getByText(/delete/i);
 });
 
