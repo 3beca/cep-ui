@@ -2,31 +2,32 @@ import React from 'react';
 import TableContainer from '@material-ui/core/TableContainer';
 import TablePagination from '@material-ui/core/TablePagination';
 import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import {NOOP} from '../../utils';
 
 import { useStyles } from './styles';
 
 const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
-    const classes = useStyles();
+    const styles = useStyles();
     if (!show) return null;
     return (
         <div
-            data-testid='loading-view-row'>
+            data-testid='loading-view-row' className={styles.loadingView}>
             <div>
-                <Typography align='center' className={classes.loadingView}>Loading...</Typography>
+                <CircularProgress className={styles.loadingSpinner} />
             </div>
         </div>
     );
 };
 
 const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
-    const classes = useStyles();
+    const styles = useStyles();
     if (!show) return null;
     return (
         <div
-            data-testid='empty-view-row'>
+            data-testid='empty-view-row' >
             <div>
-                <Typography align='center' className={classes.errorView}>No Elements created yet!</Typography>
+                <Typography align='center' className={styles.errorView}>No Elements created yet!</Typography>
             </div>
         </div>
     );
@@ -60,7 +61,7 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
                    {children}
                 </TableContainer>
                 <TableEmptyView show={!isLoading && isEmpty}/>
-                <TableLoadingView show={isLoading}/>
+                <TableLoadingView show={true}/>
                 <TablePagination
                     role='paginator'
                     component='div'

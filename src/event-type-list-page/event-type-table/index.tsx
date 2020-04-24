@@ -17,7 +17,6 @@ import Snackbar from '@material-ui/core/Snackbar';
 import { useStyles } from './styles';
 import { PaginatedTable } from '../../components/paginated-table';
 import { EventType } from '../../services/event-type';
-
 import {RowsSizes} from '../../components/paginated-table';
 import {useGetEventList} from '../../services/use-event-type';
 import {useSelectableList} from '../../components/use-selectable-list';
