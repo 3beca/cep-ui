@@ -33,11 +33,11 @@ exports[`PaginatedTable snapshot while loading with previous data and pagination
     </table>
   </div>
   <div
-    class="makeStyles-loadingView-288"
+    class="makeStyles-loadingView-290"
     data-testid="loading-view-row"
   >
     <div
-      class="MuiCircularProgress-root makeStyles-loadingSpinner-289 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+      class="MuiCircularProgress-root makeStyles-loadingSpinner-291 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
       role="progressbar"
       style="width: 40px; height: 40px;"
     >
@@ -165,11 +165,11 @@ exports[`PaginatedTable snapshot while loading without data 1`] = `
     class="MuiTableContainer-root"
   />
   <div
-    class="makeStyles-loadingView-371"
+    class="makeStyles-loadingView-374"
     data-testid="loading-view-row"
   >
     <div
-      class="MuiCircularProgress-root makeStyles-loadingSpinner-372 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+      class="MuiCircularProgress-root makeStyles-loadingSpinner-375 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
       role="progressbar"
       style="width: 40px; height: 40px;"
     >
@@ -326,13 +326,11 @@ exports[`PaginatedTable snapshot with data and pagination 1`] = `
   <div
     data-testid="empty-view-row"
   >
-    <div>
-      <p
-        class="MuiTypography-root makeStyles-errorView-168 MuiTypography-body1 MuiTypography-alignCenter"
-      >
-        No Elements created yet!
-      </p>
-    </div>
+    <h4
+      class="MuiTypography-root makeStyles-emptyView-170 MuiTypography-h4 MuiTypography-alignCenter"
+    >
+      No Elements created yet!
+    </h4>
   </div>
   <div
     class="MuiTablePagination-root"
