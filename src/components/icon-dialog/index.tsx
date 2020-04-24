@@ -24,7 +24,13 @@ export const IconDialog: React.FC<IconDialogProps> = ({show, icon, onOpen = NOOP
     if(!open && !show) return null;
     if(open) {
         return (
-            <Dialog open={open} onClose={closeDialog} id='icon-dialog'>
+            <Dialog
+                open={open}
+                onClose={closeDialog}
+                id='icon-dialog'
+                scroll='paper'
+                aria-labelledby='icon-dialog-title'
+                aria-describedby='icon-dialog-content'>
                 <IconDialogContext.Provider value={closeDialog} {...props}/>
             </Dialog>
         );

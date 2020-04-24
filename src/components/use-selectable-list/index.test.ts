@@ -1,7 +1,7 @@
 import {renderHook, act} from '@testing-library/react-hooks';
 import {useSelectableList} from './index';
 
-test('useSelectableList should select elements from a list', async () => {
+test('useSelectableList should select and deselect elements from a list without duplicate elements', async () => {
     let listOfElements = ['Elemento1', 'Elemento2', 'Elemento3', 'Elemento4', 'Elemento5'];
     const selectedCallback = jest.fn();
     const {result, rerender} = renderHook(() => useSelectableList(listOfElements, selectedCallback));
@@ -32,6 +32,7 @@ test('useSelectableList should select elements from a list', async () => {
     expect(([...result.current.selecteds])).toEqual([listOfElements[0], listOfElements[3]]);
     expect(selectedCallback).toHaveBeenCalledTimes(4);
     expect(selectedCallback).toHaveBeenNthCalledWith(4, [listOfElements[0], listOfElements[3]]);
+
     // Remove only once
     act(() => result.current.selectOne(false, listOfElements[2]));
     expect(result.current.selecteds.size).toBe(2);
@@ -138,7 +139,7 @@ test('useSelectableList should fire selectAll(true) with empty array when list i
     expect(selectedCallback).toHaveBeenNthCalledWith(2, []);
 });
 
-test('useSelectableList should has the element selected in selecteds SET and not fire onSelected callback', async () => {
+test('useSelectableList should not duplicate element already selected when selectedAll', async () => {
     const array = ['AnyElements', 'MoreElements'];
     const {result} = renderHook(() => useSelectableList(array));
 

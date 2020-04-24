@@ -2,6 +2,7 @@ import React from 'react';
 import TableContainer from '@material-ui/core/TableContainer';
 import TablePagination from '@material-ui/core/TablePagination';
 import Typography from '@material-ui/core/Typography';
+import {NOOP} from '../../utils';
 
 import { useStyles } from './styles';
 
@@ -49,8 +50,8 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
         isEmpty = true,
         hasNextPage = false,
         hasPrevPage = false,
-        onChangePage=()=>{},
-        onChangePageSize=()=>{},
+        onChangePage=NOOP,
+        onChangePageSize=NOOP,
         children
     }) => {
         return (

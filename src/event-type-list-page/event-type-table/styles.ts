@@ -10,6 +10,22 @@ export const useStyles = makeStyles(
         },
         mainCheck: {
             color: 'white'
+        },
+        tabletitle: {
+            flexGrow: 1,
+            flex: 1,
+            backgroundColor: theme.palette.primary.dark,
+            borderStyle: 'solid',
+            borderWidth: 0,
+            borderTopLeftRadius: 12,
+            borderTopRightRadius: 12
+        },
+        tablename: {
+            flexGrow: 1,
+            color: 'white'
+        },
+        deleteIcon: {
+            color: 'white'
         }
     })
   );

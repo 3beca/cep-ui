@@ -13,8 +13,53 @@ export const runSelectableTableTest = (
     SelectableTable: React.FC<EventTypeTableProps>,
     dataGenerator: (size: number, next: boolean, prev: boolean) => EventTypeList,
     serverResponse: (page: number, pageSize: number, status: number, response: EventTypeList|EventTypeError) => nock.Scope,
-    checkInternals: boolean = false
+    checkInternals: boolean = true
 ) => {
+
+    test(`${title} snapshot when no element selected`, async () => {
+        const events = dataGenerator(5, true, false);
+        serverResponse(1, 10, 200, events);
+        const {container, getAllByLabelText, getAllByRole} = render(
+            <SelectableTable/>
+        );
+        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+
+        const elements = getAllByRole(/element-selector$/);
+
+        expect(elements.length).toBe(5);
+        expect(container).toMatchSnapshot();
+    });
+
+    test(`${title} snapshot when one element selected`, async () => {
+        const events = dataGenerator(5, true, false);
+        serverResponse(1, 10, 200, events);
+        // First load, nothing selected
+        const {container, getAllByLabelText, getAllByRole} = render(
+            <SelectableTable/>
+        );
+        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+
+        const elements = getAllByRole(/element-selector$/);
+
+        expect(elements.length).toBe(5);
+        fireEvent.click(elements[0], {target: {value: true}});
+        expect(container).toMatchSnapshot();
+    });
+
+    test(`${title} snapshot when all element selected`, async () => {
+        const events = dataGenerator(5, true, false);
+        serverResponse(1, 10, 200, events);
+        // First load, nothing selected
+        const {container, getAllByLabelText, getByRole} = render(
+            <SelectableTable/>
+        );
+        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+        const selectorAll = getByRole(/element-selector-all$/);
+
+        fireEvent.click(selectorAll, {target: {value: true}});
+        expect(container).toMatchSnapshot();
+    });
+
     test(`${title} should keep checked elements and notify on each element checked change`, async () => {
         const onSelected = jest.fn();
         const events = dataGenerator(5, true, false);

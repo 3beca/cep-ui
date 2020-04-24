@@ -51,12 +51,21 @@ export const runPaginatedTableTest = (
         expect(rowsPerPage).toHaveTextContent('10');
     });
 
-    test(`${title} snapshot with data and pagination`, async () => {
+    test(`${title} snapshot with data and pagination by default`, async () => {
         serverResponse(1, 10, 200, dataGenerator(10, false, false));
         const { container, getAllByLabelText } = render(
             <PaginatedTable/>
         );
         await waitFor(() => getAllByLabelText(/element name/));
+        expect(container).toMatchSnapshot();
+    });
+
+    test(`${title} snapshot with data and custom initial pagination`, async () => {
+        serverResponse(3, 20, 200, dataGenerator(20, false, false));
+        const { container, getAllByLabelText } = render(
+            <PaginatedTable initialPage={3} initialPageSize={20}/>
+        );
+        await waitFor(() => expect(getAllByLabelText(/element name/)).toHaveLength(20));
         expect(container).toMatchSnapshot();
     });
 
@@ -115,7 +124,7 @@ export const runPaginatedTableTest = (
         expect(rowsPerPage).toHaveTextContent('10');
     });
 
-    test('EventTypeTable render 10 elements when change pageSize', async () => {
+    test(`${title} render elements and change pagesize rerender a new set of elements`, async () => {
         serverResponse(1, 10, 200, dataGenerator(10, false, false));
         const {getByTitle, getByLabelText, getByTestId, getAllByLabelText, unmount} = render(
             <PaginatedTable/>
@@ -165,5 +174,4 @@ export const runPaginatedTableTest = (
 
         unmount();
     });
-
 };

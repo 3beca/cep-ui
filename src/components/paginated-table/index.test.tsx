@@ -96,7 +96,7 @@ test('PaginatedTable render without data should show the empty data message', as
 
 });
 
-test('PaginatedTable render when loading show the loading view', async () => {
+test('PaginatedTable render while loading show the loading view', async () => {
     // Render without data
     const {getByTitle, getByLabelText, getByTestId} = render(
         <PaginatedTable
@@ -214,7 +214,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
     expect(rowsPerPage).toHaveTextContent('5');
 });
 
-test('PaginatedTable render 10 elements when change pageSize', async () => {
+test('PaginatedTable render 10 elements when change pageSize to 20', async () => {
     // Render without data
     const onChangePageSize = jest.fn();
     const {rerender, getByTitle, getByLabelText, getByTestId} = render(

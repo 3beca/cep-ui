@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TitleBar snapshot 1`] = `
+exports[`renders TitleBar withou crash and create snapshot 1`] = `
 <div>
   <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-85 mui-fixed MuiPaper-elevation4"
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1 mui-fixed MuiPaper-elevation4"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <svg
         aria-hidden="true"
-        class="MuiSvgIcon-root makeStyles-icon-86 MuiSvgIcon-fontSizeLarge"
+        class="MuiSvgIcon-root makeStyles-icon-2 MuiSvgIcon-fontSizeLarge"
         focusable="false"
         viewBox="0 0 24 24"
       >

@@ -1,9 +1,9 @@
 import React from 'react';
-import {render, fireEvent, waitFor} from '@testing-library/react';
+import {render, fireEvent, waitFor, within} from '@testing-library/react';
 import EventTypeTable from './index';
 import {generateEventTypeListWith} from '../../test-utils';
 import {runPaginatedTableTest} from '../../test-utils/paginated-table-components';
-import {serverGetEventTypeList, setupNock} from '../../test-utils';
+import {serverGetEventTypeList, serverDeleteEventType, setupNock} from '../../test-utils';
 import {BASE_URL} from '../../services/config';
 import {EventTypeList, EventTypeError} from '../../services/event-type';
 import { runSelectableTableTest } from '../../test-utils/selectable-table-components';
@@ -53,4 +53,49 @@ test('EventTypeTable should copy url of element to clipboard when click in edit 
     await waitFor(() => expect(getByLabelText('snackbar-message')).toHaveTextContent(/snackbar message/i));
     expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(1);
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(response.results[0].url);
+});
+
+test('EventTypeTable should show a delete icon button when have some elements selected', async () => {
+    const response = generateEventTypeListWith(10, false, false);
+    serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, response);
+    const {container, getAllByLabelText, getAllByRole, getByLabelText, queryByLabelText, getByTestId, queryByTestId} = render(
+        <EventTypeTable/>
+    );
+    await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(10));
+    const elements = getAllByRole(/element-selector$/);
+    expect(queryByLabelText('delete-icon')).not.toBeInTheDocument();
+
+    // Select second and third element
+    fireEvent.click(elements[1], {target: {value: true}});
+    fireEvent.click(elements[2], {target: {value: true}});
+    expect(getByLabelText('delete-icon')).toBeInTheDocument();
+
+    // snapshot with delete icon visible
+    expect(container).toMatchSnapshot();
+
+    // Click on delete icon should open a delete dialog
+    fireEvent.click(getByLabelText('open dialog'));
+    const dialog = within(document.getElementById('icon-dialog')!);
+    dialog.getByLabelText(/title/i);
+    dialog.getByLabelText(/eventtypes to delete/i);
+    expect(dialog.getAllByLabelText(/eventtype to delete/i)).toHaveLength(2);
+    const closeButton = dialog.getByText(/^close$/i);
+    const deleteButton = dialog.getByText(/^delete$/i);
+
+    // First eventType should be deleted and second rejected
+    serverDeleteEventType(setupNock(BASE_URL), response.results[1].id, 200);
+    serverDeleteEventType(setupNock(BASE_URL), response.results[2].id, 500, {error: 'invalid id', message: 'cannot delete eventtype', statusCode: 400});
+    serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, generateEventTypeListWith(5, false, false));
+
+    fireEvent.click(deleteButton);
+
+    await waitFor(() => expect(dialog.getAllByLabelText(/deleted element/)).toHaveLength(2));
+    getByLabelText(/error message/i);
+    expect(deleteButton).toBeDisabled();
+    await waitFor(() => getByTestId(/loading-view-row/));
+    await waitFor(() => expect(queryByTestId(/loading-view-row/)).not.toBeInTheDocument());
+    await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+    // Close dialog
+    fireEvent.click(closeButton);
+    expect(document.getElementById('icon-dialog')).toBe(null);
 });
