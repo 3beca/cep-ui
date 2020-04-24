@@ -14,6 +14,11 @@ export const useStyles = makeStyles(
         },
         errorView: {
             color: blueGrey.A700
+        },
+        emptyView: {
+            margin: 12,
+            padding: 6,
+            color: theme.palette.primary.dark
         }
     })
   );

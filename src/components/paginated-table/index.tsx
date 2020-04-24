@@ -13,9 +13,7 @@ const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
     return (
         <div
             data-testid='loading-view-row' className={styles.loadingView}>
-            <div>
-                <CircularProgress className={styles.loadingSpinner} />
-            </div>
+             <CircularProgress className={styles.loadingSpinner} />
         </div>
     );
 };
@@ -26,9 +24,7 @@ const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
     return (
         <div
             data-testid='empty-view-row' >
-            <div>
-                <Typography align='center' className={styles.errorView}>No Elements created yet!</Typography>
-            </div>
+            <Typography align='center' className={styles.emptyView} variant='h4'>No Elements created yet!</Typography>
         </div>
     );
 };
@@ -61,7 +57,7 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
                    {children}
                 </TableContainer>
                 <TableEmptyView show={!isLoading && isEmpty}/>
-                <TableLoadingView show={true}/>
+                <TableLoadingView show={isLoading}/>
                 <TablePagination
                     role='paginator'
                     component='div'

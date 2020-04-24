@@ -33,14 +33,27 @@ exports[`PaginatedTable snapshot while loading with previous data and pagination
     </table>
   </div>
   <div
+    class="makeStyles-loadingView-288"
     data-testid="loading-view-row"
   >
-    <div>
-      <p
-        class="MuiTypography-root makeStyles-loadingView-274 MuiTypography-body1 MuiTypography-alignCenter"
+    <div
+      class="MuiCircularProgress-root makeStyles-loadingSpinner-289 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+      role="progressbar"
+      style="width: 40px; height: 40px;"
+    >
+      <svg
+        class="MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
       >
-        Loading...
-      </p>
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
     </div>
   </div>
   <div
@@ -152,14 +165,27 @@ exports[`PaginatedTable snapshot while loading without data 1`] = `
     class="MuiTableContainer-root"
   />
   <div
+    class="makeStyles-loadingView-371"
     data-testid="loading-view-row"
   >
-    <div>
-      <p
-        class="MuiTypography-root makeStyles-loadingView-344 MuiTypography-body1 MuiTypography-alignCenter"
+    <div
+      class="MuiCircularProgress-root makeStyles-loadingSpinner-372 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+      role="progressbar"
+      style="width: 40px; height: 40px;"
+    >
+      <svg
+        class="MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
       >
-        Loading...
-      </p>
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
     </div>
   </div>
   <div
@@ -302,7 +328,7 @@ exports[`PaginatedTable snapshot with data and pagination 1`] = `
   >
     <div>
       <p
-        class="MuiTypography-root makeStyles-errorView-154 MuiTypography-body1 MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-errorView-168 MuiTypography-body1 MuiTypography-alignCenter"
       >
         No Elements created yet!
       </p>
@@ -417,14 +443,27 @@ exports[`PaginatedTable snapshot without data 1`] = `
     class="MuiTableContainer-root"
   />
   <div
+    class="makeStyles-loadingView-2"
     data-testid="loading-view-row"
   >
-    <div>
-      <p
-        class="MuiTypography-root makeStyles-loadingView-2 MuiTypography-body1 MuiTypography-alignCenter"
+    <div
+      class="MuiCircularProgress-root makeStyles-loadingSpinner-3 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+      role="progressbar"
+      style="width: 40px; height: 40px;"
+    >
+      <svg
+        class="MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
       >
-        Loading...
-      </p>
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
     </div>
   </div>
   <div
