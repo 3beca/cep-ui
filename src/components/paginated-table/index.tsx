@@ -69,6 +69,7 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
                     backIconButtonProps={{disabled: !hasPrevPage}}
                     onChangePage={(ev, page) => onChangePage(page + 1)}
                     onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value) as RowsSizes)}
+                    labelDisplayedRows={({page}) => `Page ${page + 1}`}
                     SelectProps={{'aria-label': 'pageSelector'}}
                 />
             </>

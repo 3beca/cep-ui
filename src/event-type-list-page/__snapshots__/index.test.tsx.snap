@@ -75,16 +75,6 @@ exports[`EventTypeList snapshot 1`] = `
               </p>
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-              scope="col"
-            >
-              <p
-                class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
-              >
-                URL
-              </p>
-            </th>
-            <th
               class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
               scope="col"
             >
@@ -151,11 +141,6 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 0
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento0
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -260,11 +245,6 @@ exports[`EventTypeList snapshot 1`] = `
               Elemento 1
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento1
-            </td>
-            <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
             >
               2020-1-1 11:10:10
@@ -365,11 +345,6 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 2
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento2
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -474,11 +449,6 @@ exports[`EventTypeList snapshot 1`] = `
               Elemento 3
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento3
-            </td>
-            <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
             >
               2020-1-1 11:10:10
@@ -579,11 +549,6 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 4
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento4
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -688,11 +653,6 @@ exports[`EventTypeList snapshot 1`] = `
               Elemento 5
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento5
-            </td>
-            <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
             >
               2020-1-1 11:10:10
@@ -793,11 +753,6 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 6
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento6
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -902,11 +857,6 @@ exports[`EventTypeList snapshot 1`] = `
               Elemento 7
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento7
-            </td>
-            <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
             >
               2020-1-1 11:10:10
@@ -1009,11 +959,6 @@ exports[`EventTypeList snapshot 1`] = `
               Elemento 8
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento8
-            </td>
-            <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
             >
               2020-1-1 11:10:10
@@ -1114,11 +1059,6 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               Elemento 9
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-            >
-              http://cep/elemento9
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1228,7 +1168,7 @@ exports[`EventTypeList snapshot 1`] = `
         <p
           class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          1-10 of more than 10
+          Page 1
         </p>
         <div
           class="MuiTablePagination-actions"

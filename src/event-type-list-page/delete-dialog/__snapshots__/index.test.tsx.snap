@@ -352,7 +352,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <span
               class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
             >
-              http://cep/elemento0
+              0
             </span>
           </div>
         </div>
@@ -371,7 +371,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <span
               class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
             >
-              http://cep/elemento1
+              1
             </span>
           </div>
         </div>
@@ -390,7 +390,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <span
               class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
             >
-              http://cep/elemento2
+              2
             </span>
           </div>
         </div>

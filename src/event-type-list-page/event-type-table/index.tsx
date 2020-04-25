@@ -13,7 +13,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import CopyIcon from '@material-ui/icons/FileCopyOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import { useStyles } from './styles';
 import { PaginatedTable } from '../../components/paginated-table';
@@ -36,8 +35,6 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
     onSelected=NOOP
 }) => {
     const styles = useStyles();
-    const mq = useMediaQuery('(min-width:600px)');
-    console.log(mq);
 
     // Paginator
     const {page, pageSize, changePage, changePageSize} = usePagination(initialPage, initialPageSize);
@@ -88,7 +85,6 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                                     onChange={(ev, checked) => selectAll(checked)}/>
                             </TableCell>
                             <TableCell align='left'><Typography className={styles.headText}>Name</Typography></TableCell>
-                            <TableCell align='left'><Typography className={styles.headText}>URL</Typography></TableCell>
                             <TableCell align='right'><Typography className={styles.headText}>Created At</Typography></TableCell>
                             <TableCell align='right'><Typography className={styles.headText}>Actions</Typography></TableCell>
                         </TableRow>
@@ -104,7 +100,6 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                                             onChange={(ev, checked) => selectOne(checked, eventType)}/>
                                     </TableCell>
                                     <TableCell align='left' aria-label='element name'>{eventType.name}</TableCell>
-                                    <TableCell align='left'>{eventType.url}</TableCell>
                                     <TableCell align='right'>{new Date(eventType.createdAt).toLocaleString()}</TableCell>
                                     <TableCell align='right'>
                                         <IconButton aria-label='copy-icon' onClick={() => copy(eventType.url)}><CopyIcon fontSize='small'/></IconButton>

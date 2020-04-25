@@ -72,16 +72,6 @@ exports[`EventTypeList snapshot 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-2 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -148,11 +138,6 @@ exports[`EventTypeList snapshot 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -257,11 +242,6 @@ exports[`EventTypeList snapshot 1`] = `
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -362,11 +342,6 @@ exports[`EventTypeList snapshot 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -471,11 +446,6 @@ exports[`EventTypeList snapshot 1`] = `
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -576,11 +546,6 @@ exports[`EventTypeList snapshot 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -685,11 +650,6 @@ exports[`EventTypeList snapshot 1`] = `
             Elemento 5
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento5
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -790,11 +750,6 @@ exports[`EventTypeList snapshot 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 6
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento6
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -899,11 +854,6 @@ exports[`EventTypeList snapshot 1`] = `
             Elemento 7
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento7
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -1006,11 +956,6 @@ exports[`EventTypeList snapshot 1`] = `
             Elemento 8
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento8
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -1111,11 +1056,6 @@ exports[`EventTypeList snapshot 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 9
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento9
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1225,7 +1165,7 @@ exports[`EventTypeList snapshot 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -1379,16 +1319,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-2723 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -1455,11 +1385,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1564,11 +1489,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -1669,11 +1589,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1778,11 +1693,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -1883,11 +1793,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1992,11 +1897,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             Elemento 5
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento5
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -2097,11 +1997,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 6
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento6
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2206,11 +2101,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             Elemento 7
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento7
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -2313,11 +2203,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             Elemento 8
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento8
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -2418,11 +2303,6 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 9
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento9
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2532,7 +2412,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -2686,16 +2566,6 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-1768 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -2762,11 +2632,6 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2871,11 +2736,6 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -2976,11 +2836,6 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -3085,11 +2940,6 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -3190,11 +3040,6 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -3304,7 +3149,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -3434,16 +3279,6 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-316 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -3525,7 +3360,7 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -3653,16 +3488,6 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-164 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -3759,7 +3584,7 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -3888,16 +3713,6 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-1444 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -3964,11 +3779,6 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -4073,11 +3883,6 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -4178,11 +3983,6 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -4287,11 +4087,6 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -4392,11 +4187,6 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -4506,7 +4296,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -4662,16 +4452,6 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-1606 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -4738,11 +4518,6 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -4847,11 +4622,6 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -4952,11 +4722,6 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -5061,11 +4826,6 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -5166,11 +4926,6 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -5280,7 +5035,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -5410,16 +5165,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-792 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -5486,11 +5231,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -5595,11 +5335,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -5700,11 +5435,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -5809,11 +5539,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -5914,11 +5639,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -6023,11 +5743,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             Elemento 5
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento5
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -6128,11 +5843,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 6
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento6
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -6237,11 +5947,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             Elemento 7
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento7
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -6344,11 +6049,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             Elemento 8
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento8
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -6449,11 +6149,6 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 9
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento9
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -6587,7 +6282,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        11-20 of more than 20
+        Page 2
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -6718,16 +6413,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-630 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -6794,11 +6479,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -6903,11 +6583,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -7008,11 +6683,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -7117,11 +6787,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -7222,11 +6887,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -7331,11 +6991,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 5
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento5
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -7436,11 +7091,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 6
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento6
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -7545,11 +7195,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 7
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento7
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -7650,11 +7295,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 8
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento8
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -7759,11 +7399,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 9
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento9
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -7864,11 +7499,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 10
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento10
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -7973,11 +7603,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 11
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento11
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -8078,11 +7703,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 12
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento12
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -8187,11 +7807,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 13
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento13
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -8292,11 +7907,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 14
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento14
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -8401,11 +8011,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 15
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento15
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -8506,11 +8111,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 16
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento16
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -8615,11 +8215,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 17
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento17
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -8722,11 +8317,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             Elemento 18
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento18
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -8827,11 +8417,6 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 19
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento19
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -8941,7 +8526,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        41-60 of more than 60
+        Page 3
       </p>
       <div
         class="MuiTablePagination-actions"
@@ -9070,16 +8655,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             </p>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
-            scope="col"
-          >
-            <p
-              class="MuiTypography-root makeStyles-headText-468 MuiTypography-body1"
-            >
-              URL
-            </p>
-          </th>
-          <th
             class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
             scope="col"
           >
@@ -9146,11 +8721,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 0
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento0
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -9255,11 +8825,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             Elemento 1
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento1
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -9360,11 +8925,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 2
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento2
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -9469,11 +9029,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             Elemento 3
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento3
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -9574,11 +9129,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 4
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento4
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -9683,11 +9233,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             Elemento 5
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento5
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -9788,11 +9333,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 6
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento6
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -9897,11 +9437,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             Elemento 7
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento7
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -10004,11 +9539,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             Elemento 8
           </td>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento8
-          </td>
-          <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
           >
             2020-1-1 11:10:10
@@ -10109,11 +9639,6 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
           >
             Elemento 9
-          </td>
-          <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
-          >
-            http://cep/elemento9
           </td>
           <td
             class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -10223,7 +9748,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
       <p
         class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
       >
-        1-10 of more than 10
+        Page 1
       </p>
       <div
         class="MuiTablePagination-actions"

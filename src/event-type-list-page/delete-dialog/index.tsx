@@ -63,7 +63,7 @@ const DeleteList: React.FC<{show: boolean; eventTypes?: EventType[]; isLoading: 
                 (et) => (
                     <div key={et.id} aria-label='eventtype to delete' className={styles.elementItem}>
                         <div><Typography variant='h5'>{et.name}</Typography></div>
-                        <div><Typography variant='caption' className={styles.captionText}>{et.url}</Typography></div>
+                        <div><Typography variant='caption' className={styles.captionText}>{et.id}</Typography></div>
                     </div>
                 )
             )
