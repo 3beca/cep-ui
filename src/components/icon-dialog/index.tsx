@@ -10,7 +10,7 @@ export const useIconDialog = () => {
 };
 
 export type IconDialogProps = {show: boolean; icon: React.ReactElement; onOpen?():void, onClose?():void};
-export const IconDialog: React.FC<IconDialogProps> = ({show, icon, onOpen = NOOP, onClose = NOOP, ...props}) => {
+export const IconDialog: React.FC<IconDialogProps> = ({show, icon, onOpen = NOOP, onClose = NOOP, children, ...props}) => {
     const [open, setOpen] = React.useState(false);
     const closeDialog = React.useCallback(() => {
         setOpen(false);
@@ -20,7 +20,6 @@ export const IconDialog: React.FC<IconDialogProps> = ({show, icon, onOpen = NOOP
         setOpen(true);
         onOpen();
     }, [onOpen]);
-
     if(!open && !show) return null;
     if(open) {
         return (
@@ -31,12 +30,12 @@ export const IconDialog: React.FC<IconDialogProps> = ({show, icon, onOpen = NOOP
                 scroll='paper'
                 aria-labelledby='icon-dialog-title'
                 aria-describedby='icon-dialog-content'>
-                <IconDialogContext.Provider value={closeDialog} {...props}/>
+                <IconDialogContext.Provider value={closeDialog} children={children}/>
             </Dialog>
         );
     }
     return (
-        <IconButton aria-label='open dialog' onClick={openDialog}>{icon}</IconButton>
+        <IconButton aria-label='open dialog' onClick={openDialog} {...props}>{icon}</IconButton>
     );
 };
 

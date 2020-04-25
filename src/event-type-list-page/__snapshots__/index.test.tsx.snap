@@ -36,13 +36,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root makeStyles-mainCheck-4"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root makeStyles-mainCheck-4"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector-all"
                     type="checkbox"
@@ -71,7 +71,7 @@ exports[`EventTypeList snapshot 1`] = `
               <p
                 class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
               >
-                Event Type Name
+                Name
               </p>
             </th>
             <th
@@ -91,7 +91,17 @@ exports[`EventTypeList snapshot 1`] = `
               <p
                 class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
               >
-                Created At 
+                Created At
+              </p>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+              >
+                Actions
               </p>
             </th>
           </tr>
@@ -108,13 +118,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -146,6 +156,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento0
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -170,11 +189,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -186,13 +225,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -224,6 +263,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento1
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -248,11 +296,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -264,13 +332,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -302,6 +370,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento2
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -326,11 +403,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -342,13 +439,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -380,6 +477,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento3
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -404,11 +510,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -420,13 +546,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -458,6 +584,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento4
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -482,11 +617,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -498,13 +653,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -536,6 +691,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento5
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -560,11 +724,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -576,13 +760,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -614,6 +798,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento6
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -638,11 +831,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -654,13 +867,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -692,6 +905,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento7
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -716,11 +938,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -732,13 +974,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -770,6 +1012,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento8
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -794,11 +1045,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
           <tr
@@ -810,13 +1081,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-72"
+                    class="PrivateSwitchBase-input-73"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -848,6 +1119,15 @@ exports[`EventTypeList snapshot 1`] = `
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
               http://cep/elemento9
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
               <button
                 aria-label="copy-icon"
                 class="MuiButtonBase-root MuiIconButton-root"
@@ -872,11 +1152,31 @@ exports[`EventTypeList snapshot 1`] = `
                   class="MuiTouchRipple-root"
                 />
               </button>
-            </td>
-            <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
-            >
-              2020-1-1 11:10:10
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root makeStyles-deleteOneIcon-8"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </td>
           </tr>
         </tbody>

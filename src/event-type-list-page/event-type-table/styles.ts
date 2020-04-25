@@ -26,6 +26,9 @@ export const useStyles = makeStyles(
         },
         deleteIcon: {
             color: 'white'
+        },
+        deleteOneIcon: {
+            color: theme.palette.primary.dark
         }
     })
   );

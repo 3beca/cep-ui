@@ -55,6 +55,40 @@ test('EventTypeTable should copy url of element to clipboard when click in edit 
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(response.results[0].url);
 });
 
+test('EventTypeTable should show delete dialog when click in its delete icon', async () => {
+    const response = generateEventTypeListWith(10, false, false);
+    serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, response);
+    const {getAllByLabelText, getByLabelText, getByTestId, queryByTestId} = render(
+        <EventTypeTable/>
+    );
+    await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(10));
+    const elements = getAllByLabelText('delete one dialog');
+    expect(elements.length).toBe(10);
+    fireEvent.click(elements[0]);
+
+    const dialog = within(document.getElementById('icon-dialog')!);
+    dialog.getByLabelText(/title/i);
+    dialog.getByLabelText(/eventtypes to delete/i);
+    expect(dialog.getAllByLabelText(/eventtype to delete/i)).toHaveLength(1);
+    const closeButton = dialog.getByText(/^close$/i);
+    const deleteButton = dialog.getByText(/^delete$/i);
+
+    // First eventType should be deleted and reload list
+    serverDeleteEventType(setupNock(BASE_URL), response.results[0].id, 200);
+    serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, generateEventTypeListWith(5, false, false));
+
+    fireEvent.click(deleteButton);
+
+    await waitFor(() => expect(dialog.getAllByLabelText(/deleted element/)).toHaveLength(1));
+    expect(deleteButton).toBeDisabled();
+    await waitFor(() => getByTestId(/loading-view-row/));
+    await waitFor(() => expect(queryByTestId(/loading-view-row/)).not.toBeInTheDocument());
+    await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+    // Close dialog
+    fireEvent.click(closeButton);
+    expect(document.getElementById('icon-dialog')).toBe(null);
+});
+
 test('EventTypeTable should show a delete icon button when have some elements selected', async () => {
     const response = generateEventTypeListWith(10, false, false);
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, response);
@@ -63,18 +97,18 @@ test('EventTypeTable should show a delete icon button when have some elements se
     );
     await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(10));
     const elements = getAllByRole(/element-selector$/);
-    expect(queryByLabelText('delete-icon')).not.toBeInTheDocument();
+    expect(queryByLabelText('delete selecteds icon')).not.toBeInTheDocument();
 
     // Select second and third element
     fireEvent.click(elements[1], {target: {value: true}});
     fireEvent.click(elements[2], {target: {value: true}});
-    expect(getByLabelText('delete-icon')).toBeInTheDocument();
+    expect(getByLabelText('delete selecteds icon')).toBeInTheDocument();
 
     // snapshot with delete icon visible
     expect(container).toMatchSnapshot();
 
     // Click on delete icon should open a delete dialog
-    fireEvent.click(getByLabelText('open dialog'));
+    fireEvent.click(getByLabelText('delete selecteds dialog'));
     const dialog = within(document.getElementById('icon-dialog')!);
     dialog.getByLabelText(/title/i);
     dialog.getByLabelText(/eventtypes to delete/i);
