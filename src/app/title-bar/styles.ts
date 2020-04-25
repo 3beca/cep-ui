@@ -4,8 +4,7 @@ export const useStyles = makeStyles(
     (theme) => ({
         root: {
             padding: 0,
-            display: 'flex',
-            color: 'white'
+            display: 'flex'
         },
         icon: {
             marginRight: theme.spacing(2)

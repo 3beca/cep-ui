@@ -1,24 +1,33 @@
-import { red, orange, blueGrey, blue } from '@material-ui/core/colors';
+import { red, orange, blue, grey, cyan, deepPurple, blueGrey } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
+
+export const EXTRA_COLORS = {
+  subTitle: grey.A700,
+  ligthText: '#FFF'
+};
 
 // A custom theme for this app
 export const theme = createMuiTheme({
   palette: {
     primary: {
       main: blueGrey.A700,
+      light: EXTRA_COLORS.ligthText,
+      dark: blueGrey.A700,
+      contrastText: 'white'
     },
-    secondary: {
-      main: blue.A700,
-    },
-    warning: {
-      main: orange.A700
-    },
-    error: {
-      main: red.A400,
-    },
+    secondary: blue,
+    success: cyan,
+    warning: orange,
+    error: red,
+    info: deepPurple,
     background: {
-      default: '#fff',
+      default: EXTRA_COLORS.ligthText,
+      paper: EXTRA_COLORS.ligthText
     },
+    type: 'light',
+  },
+  typography: {
+    fontSize: 16
   }
 });
 

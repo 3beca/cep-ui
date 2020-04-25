@@ -1,9 +1,7 @@
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import DeleteIcon from '@material-ui/icons/Delete';
-import IconDialog from '../../components/icon-dialog';
-import DeleteDialog from '../delete-dialog';
+import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -14,6 +12,8 @@ import CopyIcon from '@material-ui/icons/FileCopyOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 
+import IconDialog from '../../components/icon-dialog';
+import DeleteDialog from '../delete-dialog';
 import { useStyles } from './styles';
 import { PaginatedTable } from '../../components/paginated-table';
 import { EventType } from '../../services/event-type';
@@ -85,7 +85,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                                     onChange={(ev, checked) => selectAll(checked)}/>
                             </TableCell>
                             <TableCell align='left'><Typography className={styles.headText}>Name</Typography></TableCell>
-                            <TableCell align='right'><Typography className={styles.headText}>Created At</Typography></TableCell>
+                            <TableCell align='right'><Typography className={styles.headText}>Created</Typography></TableCell>
                             <TableCell align='right'><Typography className={styles.headText}>Actions</Typography></TableCell>
                         </TableRow>
                     </TableHead>
@@ -106,7 +106,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                                         <IconDialog
                                             show={true}
                                             aria-label='delete one dialog'
-                                            icon={<DeleteIcon className={styles.deleteOneIcon} aria-label='delete one icon'/>}>
+                                            icon={<DeleteIcon aria-label='delete one icon'/>}>
                                             <DeleteDialog eventTypesSelecteds={[eventType]} onDeleted={forceReload}/>
                                         </IconDialog>
                                     </TableCell>

@@ -58,7 +58,7 @@ test('EventTypeTable should copy url of element to clipboard when click in edit 
 test('EventTypeTable should show delete dialog when click in its delete icon', async () => {
     const response = generateEventTypeListWith(10, false, false);
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, 200, response);
-    const {getAllByLabelText, getByLabelText, getByTestId, queryByTestId} = render(
+    const {getAllByLabelText, getByTestId, queryByTestId} = render(
         <EventTypeTable/>
     );
     await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(10));

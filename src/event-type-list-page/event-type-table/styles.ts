@@ -6,10 +6,12 @@ export const useStyles = makeStyles(
             backgroundColor: theme.palette.primary.dark
         },
         headText: {
-            color: 'white'
+            color: theme.palette.primary.contrastText,
+            fontWeight: 700,
+            fontSize: theme.typography.fontSize + 2
         },
         mainCheck: {
-            color: 'white'
+            color: theme.palette.primary.contrastText
         },
         tabletitle: {
             flexGrow: 1,
@@ -22,13 +24,10 @@ export const useStyles = makeStyles(
         },
         tablename: {
             flexGrow: 1,
-            color: 'white'
+            color: theme.palette.primary.contrastText
         },
         deleteIcon: {
-            color: 'white'
-        },
-        deleteOneIcon: {
-            color: theme.palette.primary.dark
+            color: theme.palette.primary.contrastText
         }
     })
   );

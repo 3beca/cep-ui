@@ -1,13 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
-import {red, blue, grey} from '@material-ui/core/colors';
+import {EXTRA_COLORS} from '../../theme';
 
 export const useStyles = makeStyles(
     (theme) => ({
         container: {
-            backgroundColor: 'white'
         },
         deleteButton: {
-            color: red.A400
+            color: theme.palette.warning.dark
         },
         dialogContent: {
             overflowY: 'scroll',
@@ -27,13 +26,13 @@ export const useStyles = makeStyles(
             margin: 4
         },
         captionText: {
-            color: grey.A700
+            color: EXTRA_COLORS.subTitle
         },
         errorText: {
-            color: red.A700
+            color: theme.palette.error.dark
         },
         successText: {
-            color: blue.A400
+            color: theme.palette.success.dark
         }
     })
   );
