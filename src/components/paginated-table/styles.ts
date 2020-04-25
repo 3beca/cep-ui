@@ -9,16 +9,20 @@ export const useStyles = makeStyles(
         },
         loadingSpinner: {
             color: theme.palette.primary.dark,
-            margin: 8,
+            margin: 2,
             padding: 8
         },
         errorView: {
             color: blueGrey.A700
         },
         emptyView: {
-            margin: 12,
-            padding: 6,
+            margin: 8,
+            padding: 8,
             color: theme.palette.primary.dark
+        },
+        paginatorRow: {
+            display: 'flex',
+            justifyContent: 'flex-end'
         }
     })
   );

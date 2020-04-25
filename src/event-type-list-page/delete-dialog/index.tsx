@@ -15,7 +15,7 @@ const EmptyMessage: React.FC<{show: boolean;}> = ({show}) => {
     if(!show) return null;
     return (
         <div aria-label='empty message'>
-            <Typography variant='h3'>There are NOT Event Types selected!</Typography>
+            <Typography variant='h6'>There are NOT Event Types selected to be deleted!</Typography>
         </div>
     );
 };
@@ -29,11 +29,11 @@ const ErrorMessage: React.FC<{error: EventTypeError|undefined;}> = ({error}) => 
     );
 };
 
-const Actions: React.FC<{close():void; disableDelete: boolean, deleteEvents():void}> = ({close, disableDelete, deleteEvents}) => {
+const Actions: React.FC<{close():void; disableClose: boolean; disableDelete: boolean, deleteEvents():void}> = ({close, disableClose, disableDelete, deleteEvents}) => {
     const styles = useStyles();
     return (
         <DialogActions aria-label='actions'>
-            <Button onClick={close}>Close</Button>
+            <Button onClick={close} disabled={disableClose}>Close</Button>
             <Button onClick={deleteEvents} disabled={disableDelete} className={styles.deleteButton}>Delete</Button>
         </DialogActions>
     );
@@ -126,7 +126,7 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(({eventTypes
                 <ErrorMessage error={error && error.error}/>
             </DialogContent>
             <LoadingView show={isLoading}/>
-            <Actions close={closeDialog} disableDelete={!hasEventTypes || hasResponse || !!error} deleteEvents={request}/>
+            <Actions close={closeDialog} disableClose={isLoading} disableDelete={!hasEventTypes || hasResponse || !!error} deleteEvents={request}/>
         </div>
     );
 }, () => true);

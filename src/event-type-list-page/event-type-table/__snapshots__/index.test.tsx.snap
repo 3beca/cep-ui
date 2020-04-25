@@ -33,13 +33,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root makeStyles-mainCheck-3"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root makeStyles-mainCheck-3"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -105,13 +105,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -207,13 +207,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -309,13 +309,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -411,13 +411,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -513,13 +513,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -615,13 +615,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -717,13 +717,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -819,13 +819,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -921,13 +921,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1023,13 +1023,13 @@ exports[`EventTypeList snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-69 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-72"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1120,102 +1120,106 @@ exports[`EventTypeList snapshot 1`] = `
     </table>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-46"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        >
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
+          >
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Next page"
-          type="button"
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <span
-            class="MuiIconButton-label"
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              class="MuiIconButton-label"
             >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1225,13 +1229,13 @@ exports[`EventTypeList snapshot 1`] = `
 exports[`EventTypeTable should show a delete icon button when have some elements selected 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-2725"
+    class="makeStyles-tabletitle-2740"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-2726 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-2741 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -1247,7 +1251,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           <svg
             aria-hidden="true"
             aria-label="delete selecteds icon"
-            class="MuiSvgIcon-root makeStyles-deleteIcon-2727"
+            class="MuiSvgIcon-root makeStyles-deleteIcon-2742"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -1269,7 +1273,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-2722"
+        class="MuiTableHead-root makeStyles-head-2737"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -1280,13 +1284,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root makeStyles-mainCheck-2724"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root makeStyles-mainCheck-2739"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -1313,7 +1317,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-2723 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-2738 MuiTypography-body1"
             >
               Name
             </p>
@@ -1323,7 +1327,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-2723 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-2738 MuiTypography-body1"
             >
               Created At
             </p>
@@ -1333,7 +1337,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-2723 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-2738 MuiTypography-body1"
             >
               Actions
             </p>
@@ -1352,13 +1356,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1430,7 +1434,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -1454,13 +1458,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2791 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2811 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1532,7 +1536,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -1556,13 +1560,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2791 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2811 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1634,7 +1638,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -1658,13 +1662,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1736,7 +1740,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -1760,13 +1764,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1838,7 +1842,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -1862,13 +1866,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1940,7 +1944,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -1964,13 +1968,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2042,7 +2046,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -2066,13 +2070,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2144,7 +2148,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -2168,13 +2172,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2246,7 +2250,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -2270,13 +2274,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2790 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2810 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2793"
+                  class="PrivateSwitchBase-input-2813"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2348,7 +2352,7 @@ exports[`EventTypeTable should show a delete icon button when have some elements
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2728"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-2743"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -2367,102 +2371,106 @@ exports[`EventTypeTable should show a delete icon button when have some elements
     </table>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-2782"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        >
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
+          >
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Next page"
-          type="button"
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <span
-            class="MuiIconButton-label"
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              class="MuiIconButton-label"
             >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2472,13 +2480,13 @@ exports[`EventTypeTable should show a delete icon button when have some elements
 exports[`EventTypeTable snapshot when all element selected 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-1770"
+    class="makeStyles-tabletitle-1780"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-1771 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-1781 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -2494,7 +2502,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
           <svg
             aria-hidden="true"
             aria-label="delete selecteds icon"
-            class="MuiSvgIcon-root makeStyles-deleteIcon-1772"
+            class="MuiSvgIcon-root makeStyles-deleteIcon-1782"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -2516,7 +2524,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-1767"
+        class="MuiTableHead-root makeStyles-head-1777"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -2527,13 +2535,13 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1835 MuiCheckbox-root makeStyles-mainCheck-1769 PrivateSwitchBase-checked-1836 Mui-checked"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root makeStyles-mainCheck-1779 PrivateSwitchBase-checked-1851 Mui-checked"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1838"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -2560,7 +2568,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1768 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1778 MuiTypography-body1"
             >
               Name
             </p>
@@ -2570,7 +2578,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1768 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1778 MuiTypography-body1"
             >
               Created At
             </p>
@@ -2580,7 +2588,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1768 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1778 MuiTypography-body1"
             >
               Actions
             </p>
@@ -2599,13 +2607,13 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1835 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1836 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1838"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2677,7 +2685,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1773"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1783"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -2701,13 +2709,13 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1835 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1836 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1838"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2779,7 +2787,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1773"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1783"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -2803,13 +2811,13 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1835 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1836 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1838"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2881,7 +2889,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1773"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1783"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -2905,13 +2913,13 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1835 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1836 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1838"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2983,7 +2991,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1773"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1783"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -3007,13 +3015,13 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1835 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1836 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1838"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3085,7 +3093,7 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1773"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1783"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -3104,104 +3112,108 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
     </table>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-1822"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
         >
-          <span
-            class="MuiIconButton-label"
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-          tabindex="0"
-          title="Next page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </button>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        >
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+            tabindex="0"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3211,13 +3223,13 @@ exports[`EventTypeTable snapshot when all element selected 1`] = `
 exports[`EventTypeTable snapshot when empty data 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-318"
+    class="makeStyles-tabletitle-320"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-319 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-321 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -3230,7 +3242,7 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-315"
+        class="MuiTableHead-root makeStyles-head-317"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -3241,14 +3253,14 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
           >
             <span
               aria-disabled="true"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-383 MuiCheckbox-root makeStyles-mainCheck-317 PrivateSwitchBase-checked-384 Mui-checked PrivateSwitchBase-disabled-385 Mui-disabled Mui-disabled Mui-disabled"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-390 MuiCheckbox-root makeStyles-mainCheck-319 PrivateSwitchBase-checked-391 Mui-checked PrivateSwitchBase-disabled-392 Mui-disabled Mui-disabled Mui-disabled"
               tabindex="-1"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-386"
+                  class="PrivateSwitchBase-input-393"
                   data-indeterminate="false"
                   disabled=""
                   role="element-selector-all"
@@ -3273,7 +3285,7 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-316 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-318 MuiTypography-body1"
             >
               Name
             </p>
@@ -3283,7 +3295,7 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-316 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-318 MuiTypography-body1"
             >
               Created At
             </p>
@@ -3293,7 +3305,7 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-316 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-318 MuiTypography-body1"
             >
               Actions
             </p>
@@ -3309,108 +3321,112 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
     data-testid="empty-view-row"
   >
     <h4
-      class="MuiTypography-root makeStyles-emptyView-412 MuiTypography-h4 MuiTypography-alignCenter"
+      class="MuiTypography-root makeStyles-emptyView-361 MuiTypography-h4 MuiTypography-alignCenter"
     >
       No Elements created yet!
     </h4>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-362"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        >
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
+          >
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Next page"
-          type="button"
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <span
-            class="MuiIconButton-label"
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              class="MuiIconButton-label"
             >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3420,13 +3436,13 @@ exports[`EventTypeTable snapshot when empty data 1`] = `
 exports[`EventTypeTable snapshot when loading first time 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-166"
+    class="makeStyles-tabletitle-167"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-167 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-168 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -3439,7 +3455,7 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-163"
+        class="MuiTableHead-root makeStyles-head-164"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -3450,14 +3466,14 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
           >
             <span
               aria-disabled="true"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-231 MuiCheckbox-root makeStyles-mainCheck-165 PrivateSwitchBase-disabled-233 Mui-disabled Mui-disabled Mui-disabled"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root makeStyles-mainCheck-166 PrivateSwitchBase-disabled-239 Mui-disabled Mui-disabled Mui-disabled"
               tabindex="-1"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-234"
+                  class="PrivateSwitchBase-input-240"
                   data-indeterminate="false"
                   disabled=""
                   role="element-selector-all"
@@ -3482,7 +3498,7 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-164 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-165 MuiTypography-body1"
             >
               Name
             </p>
@@ -3492,7 +3508,7 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-164 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-165 MuiTypography-body1"
             >
               Created At
             </p>
@@ -3502,7 +3518,7 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-164 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-165 MuiTypography-body1"
             >
               Actions
             </p>
@@ -3515,126 +3531,130 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-loadingView-257"
-    data-testid="loading-view-row"
+    class="makeStyles-paginatorRow-209"
   >
     <div
-      class="MuiCircularProgress-root makeStyles-loadingSpinner-258 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-      role="progressbar"
-      style="width: 40px; height: 40px;"
-    >
-      <svg
-        class="MuiCircularProgress-svg"
-        viewBox="22 22 44 44"
-      >
-        <circle
-          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-          cx="44"
-          cy="44"
-          fill="none"
-          r="20.2"
-          stroke-width="3.6"
-        />
-      </svg>
-    </div>
-  </div>
-  <div
-    class="MuiTablePagination-root"
-    role="paginator"
-  >
-    <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="makeStyles-loadingView-205"
+      data-testid="loading-view-row"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        class="MuiCircularProgress-root makeStyles-loadingSpinner-206 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
       >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
-      >
-        <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
-        />
         <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
         >
-          <path
-            d="M7 10l5 5 5-5z"
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
           />
         </svg>
       </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
+    </div>
+    <div
+      class="MuiTablePagination-root"
+      role="paginator"
+    >
       <div
-        class="MuiTablePagination-actions"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
+        <div
+          class="MuiTablePagination-spacer"
+        />
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <span
-            class="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Next page"
-          type="button"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
         >
-          <span
-            class="MuiIconButton-label"
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        >
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
             >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3644,13 +3664,13 @@ exports[`EventTypeTable snapshot when loading first time 1`] = `
 exports[`EventTypeTable snapshot when no element selected 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-1446"
+    class="makeStyles-tabletitle-1454"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-1447 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-1455 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -3663,7 +3683,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-1443"
+        class="MuiTableHead-root makeStyles-head-1451"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -3674,13 +3694,13 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1511 MuiCheckbox-root makeStyles-mainCheck-1445"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root makeStyles-mainCheck-1453"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1514"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -3707,7 +3727,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1444 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1452 MuiTypography-body1"
             >
               Name
             </p>
@@ -3717,7 +3737,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1444 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1452 MuiTypography-body1"
             >
               Created At
             </p>
@@ -3727,7 +3747,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1444 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1452 MuiTypography-body1"
             >
               Actions
             </p>
@@ -3746,13 +3766,13 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1511 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1514"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3824,7 +3844,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1449"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1457"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -3848,13 +3868,13 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1511 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1514"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3926,7 +3946,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1449"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1457"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -3950,13 +3970,13 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1511 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1514"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4028,7 +4048,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1449"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1457"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4052,13 +4072,13 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1511 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1514"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4130,7 +4150,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1449"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1457"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4154,13 +4174,13 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1511 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1514"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4232,7 +4252,7 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1449"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1457"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4251,104 +4271,108 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
     </table>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-1496"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
         >
-          <span
-            class="MuiIconButton-label"
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-          tabindex="0"
-          title="Next page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </button>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        >
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+            tabindex="0"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -4358,13 +4382,13 @@ exports[`EventTypeTable snapshot when no element selected 1`] = `
 exports[`EventTypeTable snapshot when one element selected 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-1608"
+    class="makeStyles-tabletitle-1617"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-1609 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-1618 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -4380,7 +4404,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
           <svg
             aria-hidden="true"
             aria-label="delete selecteds icon"
-            class="MuiSvgIcon-root makeStyles-deleteIcon-1610"
+            class="MuiSvgIcon-root makeStyles-deleteIcon-1619"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -4402,7 +4426,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-1605"
+        class="MuiTableHead-root makeStyles-head-1614"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -4413,13 +4437,13 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1673 MuiCheckbox-root makeStyles-mainCheck-1607"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root makeStyles-mainCheck-1616"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1676"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -4446,7 +4470,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1606 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1615 MuiTypography-body1"
             >
               Name
             </p>
@@ -4456,7 +4480,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1606 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1615 MuiTypography-body1"
             >
               Created At
             </p>
@@ -4466,7 +4490,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1606 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1615 MuiTypography-body1"
             >
               Actions
             </p>
@@ -4485,13 +4509,13 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1673 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1674 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1688 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1676"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4563,7 +4587,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1611"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1620"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4587,13 +4611,13 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1673 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1676"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4665,7 +4689,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1611"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1620"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4689,13 +4713,13 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1673 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1676"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4767,7 +4791,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1611"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1620"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4791,13 +4815,13 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1673 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1676"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4869,7 +4893,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1611"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1620"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4893,13 +4917,13 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1673 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1676"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4971,7 +4995,7 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1611"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-1620"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -4990,104 +5014,108 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
     </table>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-1659"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
         >
-          <span
-            class="MuiIconButton-label"
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-          tabindex="0"
-          title="Next page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </button>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        >
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+            tabindex="0"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -5097,13 +5125,13 @@ exports[`EventTypeTable snapshot when one element selected 1`] = `
 exports[`EventTypeTable snapshot while loading with previous data and pagination 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-794"
+    class="makeStyles-tabletitle-799"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-795 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-800 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -5116,7 +5144,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-791"
+        class="MuiTableHead-root makeStyles-head-796"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -5127,14 +5155,14 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="true"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root makeStyles-mainCheck-793 PrivateSwitchBase-disabled-861 Mui-disabled Mui-disabled Mui-disabled"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root makeStyles-mainCheck-798 PrivateSwitchBase-disabled-871 Mui-disabled Mui-disabled Mui-disabled"
               tabindex="-1"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   disabled=""
                   role="element-selector-all"
@@ -5159,7 +5187,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-792 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-797 MuiTypography-body1"
             >
               Name
             </p>
@@ -5169,7 +5197,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-792 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-797 MuiTypography-body1"
             >
               Created At
             </p>
@@ -5179,7 +5207,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-792 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-797 MuiTypography-body1"
             >
               Actions
             </p>
@@ -5198,13 +5226,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5276,7 +5304,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -5300,13 +5328,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5378,7 +5406,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -5402,13 +5430,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5480,7 +5508,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -5504,13 +5532,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5582,7 +5610,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -5606,13 +5634,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5684,7 +5712,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -5708,13 +5736,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5786,7 +5814,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -5810,13 +5838,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5888,7 +5916,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -5912,13 +5940,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5990,7 +6018,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6014,13 +6042,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6092,7 +6120,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6116,13 +6144,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-859 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-862"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6194,7 +6222,7 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-797"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-802"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6213,128 +6241,132 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
     </table>
   </div>
   <div
-    class="makeStyles-loadingView-885"
-    data-testid="loading-view-row"
+    class="makeStyles-paginatorRow-841"
   >
     <div
-      class="MuiCircularProgress-root makeStyles-loadingSpinner-886 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-      role="progressbar"
-      style="width: 40px; height: 40px;"
-    >
-      <svg
-        class="MuiCircularProgress-svg"
-        viewBox="22 22 44 44"
-      >
-        <circle
-          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-          cx="44"
-          cy="44"
-          fill="none"
-          r="20.2"
-          stroke-width="3.6"
-        />
-      </svg>
-    </div>
-  </div>
-  <div
-    class="MuiTablePagination-root"
-    role="paginator"
-  >
-    <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="makeStyles-loadingView-837"
+      data-testid="loading-view-row"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        class="MuiCircularProgress-root makeStyles-loadingSpinner-838 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
       >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
-      >
-        <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
-        />
         <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
         >
-          <path
-            d="M7 10l5 5 5-5z"
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
           />
         </svg>
       </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 2
-      </p>
+    </div>
+    <div
+      class="MuiTablePagination-root"
+      role="paginator"
+    >
       <div
-        class="MuiTablePagination-actions"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
+        <div
+          class="MuiTablePagination-spacer"
+        />
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <span
-            class="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-          tabindex="0"
-          title="Next page"
-          type="button"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
         >
-          <span
-            class="MuiIconButton-label"
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </button>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        >
+          Page 2
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+            tabindex="0"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -6344,13 +6376,13 @@ exports[`EventTypeTable snapshot while loading with previous data and pagination
 exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-632"
+    class="makeStyles-tabletitle-636"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-633 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-637 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -6363,7 +6395,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-629"
+        class="MuiTableHead-root makeStyles-head-633"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -6374,13 +6406,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root makeStyles-mainCheck-631"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root makeStyles-mainCheck-635"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -6407,7 +6439,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-630 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-634 MuiTypography-body1"
             >
               Name
             </p>
@@ -6417,7 +6449,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-630 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-634 MuiTypography-body1"
             >
               Created At
             </p>
@@ -6427,7 +6459,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-630 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-634 MuiTypography-body1"
             >
               Actions
             </p>
@@ -6446,13 +6478,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6524,7 +6556,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6548,13 +6580,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6626,7 +6658,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6650,13 +6682,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6728,7 +6760,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6752,13 +6784,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6830,7 +6862,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6854,13 +6886,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6932,7 +6964,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -6956,13 +6988,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7034,7 +7066,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7058,13 +7090,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7136,7 +7168,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7160,13 +7192,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7238,7 +7270,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7262,13 +7294,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7340,7 +7372,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7364,13 +7396,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7442,7 +7474,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7466,13 +7498,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7544,7 +7576,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7568,13 +7600,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7646,7 +7678,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7670,13 +7702,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7748,7 +7780,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7772,13 +7804,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7850,7 +7882,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7874,13 +7906,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7952,7 +7984,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -7976,13 +8008,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8054,7 +8086,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8078,13 +8110,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8156,7 +8188,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8180,13 +8212,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8258,7 +8290,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8282,13 +8314,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8360,7 +8392,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8384,13 +8416,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-697 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-700"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8462,7 +8494,7 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-635"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-639"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8481,102 +8513,106 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
     </table>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-678"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          20
-        </div>
-        <input
-          type="hidden"
-          value="20"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        >
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
+          >
+            20
+          </div>
+          <input
+            type="hidden"
+            value="20"
           />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 3
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Next page"
-          type="button"
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <span
-            class="MuiIconButton-label"
+          Page 3
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              class="MuiIconButton-label"
             >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -8586,13 +8622,13 @@ exports[`EventTypeTable snapshot with data and custom initial pagination 1`] = `
 exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
 <div>
   <div
-    class="makeStyles-tabletitle-470"
+    class="makeStyles-tabletitle-473"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-471 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-474 MuiTypography-h6"
       >
         List of Event Types
       </h6>
@@ -8605,7 +8641,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-467"
+        class="MuiTableHead-root makeStyles-head-470"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -8616,13 +8652,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root makeStyles-mainCheck-469"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root makeStyles-mainCheck-472"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -8649,7 +8685,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-468 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-471 MuiTypography-body1"
             >
               Name
             </p>
@@ -8659,7 +8695,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-468 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-471 MuiTypography-body1"
             >
               Created At
             </p>
@@ -8669,7 +8705,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-468 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-471 MuiTypography-body1"
             >
               Actions
             </p>
@@ -8688,13 +8724,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8766,7 +8802,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8790,13 +8826,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8868,7 +8904,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8892,13 +8928,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -8970,7 +9006,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -8994,13 +9030,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -9072,7 +9108,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -9096,13 +9132,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -9174,7 +9210,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -9198,13 +9234,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -9276,7 +9312,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -9300,13 +9336,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -9378,7 +9414,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -9402,13 +9438,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -9480,7 +9516,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -9504,13 +9540,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -9582,7 +9618,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -9606,13 +9642,13 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-535 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-538"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -9684,7 +9720,7 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
                 <svg
                   aria-hidden="true"
                   aria-label="delete one icon"
-                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-473"
+                  class="MuiSvgIcon-root makeStyles-deleteOneIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -9703,102 +9739,106 @@ exports[`EventTypeTable snapshot with data and pagination by default 1`] = `
     </table>
   </div>
   <div
-    class="MuiTablePagination-root"
-    role="paginator"
+    class="makeStyles-paginatorRow-515"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+      class="MuiTablePagination-root"
+      role="paginator"
     >
       <div
-        class="MuiTablePagination-spacer"
-      />
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Rows per page:
-      </p>
-      <div
-        aria-label="pageSelector"
-        class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
       >
         <div
-          aria-haspopup="listbox"
-          aria-label="Rows per page:"
-          class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
-          role="button"
-          tabindex="0"
-        >
-          10
-        </div>
-        <input
-          type="hidden"
-          value="10"
+          class="MuiTablePagination-spacer"
         />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <path
-            d="M7 10l5 5 5-5z"
+          Rows:
+        </p>
+        <div
+          aria-label="pageSelector"
+          class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+        >
+          <div
+            aria-haspopup="listbox"
+            aria-label="Rows:"
+            class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+            role="button"
+            tabindex="0"
+          >
+            10
+          </div>
+          <input
+            type="hidden"
+            value="10"
           />
-        </svg>
-      </div>
-      <p
-        class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
-      >
-        Page 1
-      </p>
-      <div
-        class="MuiTablePagination-actions"
-      >
-        <button
-          aria-label="Previous page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Previous page"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
-              />
-            </svg>
-          </span>
-        </button>
-        <button
-          aria-label="Next page"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
-          disabled=""
-          tabindex="-1"
-          title="Next page"
-          type="button"
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <p
+          class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
         >
-          <span
-            class="MuiIconButton-label"
+          Page 1
+        </p>
+        <div
+          class="MuiTablePagination-actions"
+        >
+          <button
+            aria-label="Previous page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Previous page"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              class="MuiIconButton-label"
             >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label="Next page"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            title="Next page"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

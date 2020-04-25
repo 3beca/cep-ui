@@ -31,7 +31,7 @@ const SampleTable: React.FC<{rows?: number}> = ({rows = 5}) => {
     );
 };
 test('PaginatedTable snapshot without data', () => {
-    const { container } = render(<PaginatedTable/>);
+    const { container } = render(<PaginatedTable isEmpty={true}/>);
     expect(container).toMatchSnapshot();
 });
 
@@ -39,6 +39,21 @@ test('PaginatedTable snapshot with data and pagination', () => {
     const { container } = render(
         <PaginatedTable
             isLoading={false}
+            page={2}
+            size={5}
+        >
+            <SampleTable/>
+        </PaginatedTable>
+
+    );
+    expect(container).toMatchSnapshot();
+});
+
+test('PaginatedTable snapshot reached last page', () => {
+    const { container } = render(
+        <PaginatedTable
+            isLoading={false}
+            isEmpty={true}
             page={2}
             size={5}
         >
@@ -86,7 +101,7 @@ test('PaginatedTable render without data should show the empty data message', as
     const noDataView = getByTestId(/empty-view-row/i);
     const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
     const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
-    const rowsPerPage = getByLabelText(/rows per page:/i);
+    const rowsPerPage = getByLabelText(/^rows:$/i);
 
     expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(true);
@@ -112,7 +127,7 @@ test('PaginatedTable render while loading show the loading view', async () => {
     const loadingView = getByTestId(/loading-view-row/i);
     const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
     const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
-    const rowsPerPage = getByLabelText(/rows per page:/i);
+    const rowsPerPage = getByLabelText(/^rows:$/i);
 
     expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(true);
@@ -138,7 +153,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
     );
     const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
     const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
-    const rowsPerPage = getByLabelText(/rows per page:/i);
+    const rowsPerPage = getByLabelText(/^rows:$/i);
 
     expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(false);
@@ -228,7 +243,7 @@ test('PaginatedTable render 10 elements when change pageSize to 20', async () =>
     );
     const prevButton = getByTitle(/Previous page/) as HTMLButtonElement;
     const nextButton = getByTitle(/Next page/) as HTMLButtonElement;
-    const rowsPerPage = getByLabelText(/rows per page:/i);
+    const rowsPerPage = getByLabelText(/^rows:$/i);
 
     expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(true);

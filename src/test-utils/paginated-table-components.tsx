@@ -21,7 +21,7 @@ export const runPaginatedTableTest = (
         const loadingView = getByTestId(/loading-view-row/i);
         const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
         const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
-        const rowsPerPage = getByLabelText(/rows per page:/i);
+        const rowsPerPage = getByLabelText(/^rows:$/i);
 
         expect(prevButton.disabled).toBe(true);
         expect(nextButton.disabled).toBe(true);
@@ -42,7 +42,7 @@ export const runPaginatedTableTest = (
         const noDataView = getByTestId(/empty-view-row/i);
         const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
         const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
-        const rowsPerPage = getByLabelText(/rows per page:/i);
+        const rowsPerPage = getByLabelText(/^rows:$/i);
 
         expect(prevButton.disabled).toBe(true);
         expect(nextButton.disabled).toBe(true);
@@ -93,7 +93,7 @@ export const runPaginatedTableTest = (
 
         const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
         const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
-        const rowsPerPage = getByLabelText(/rows per page:/i);
+        const rowsPerPage = getByLabelText(/^rows:$/i);
 
         expect(prevButton.disabled).toBe(true);
         expect(nextButton.disabled).toBe(false);
@@ -133,7 +133,7 @@ export const runPaginatedTableTest = (
 
         const prevButton = getByTitle(/Previous page/) as HTMLButtonElement;
         const nextButton = getByTitle(/Next page/) as HTMLButtonElement;
-        const rowsPerPage = getByLabelText(/rows per page:/i);
+        const rowsPerPage = getByLabelText(/^rows:$/i);
 
         expect(prevButton.disabled).toBe(true);
         expect(nextButton.disabled).toBe(true);

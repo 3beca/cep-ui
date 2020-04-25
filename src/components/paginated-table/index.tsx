@@ -18,13 +18,13 @@ const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
     );
 };
 
-const TableEmptyView: React.FC<{show: boolean;}> = ({show}) => {
+const TableEmptyView: React.FC<{show: boolean; page: number}> = ({show, page}) => {
     const styles = useStyles();
     if (!show) return null;
     return (
         <div
             data-testid='empty-view-row' >
-            <Typography align='center' className={styles.emptyView} variant='h4'>No Elements created yet!</Typography>
+            <Typography align='center' className={styles.emptyView} variant='h4'>{page <= 1 ? 'No Elements created yet!' : 'There are no more elements!'}</Typography>
         </div>
     );
 };
@@ -51,27 +51,31 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
         onChangePageSize=NOOP,
         children
     }) => {
+        const styles = useStyles();
         return (
             <>
                 <TableContainer>
                    {children}
                 </TableContainer>
-                <TableEmptyView show={!isLoading && isEmpty}/>
-                <TableLoadingView show={isLoading}/>
-                <TablePagination
-                    role='paginator'
-                    component='div'
-                    rowsPerPageOptions={[5, 10, 20]}
-                    count={-1}
-                    rowsPerPage={size}
-                    page={page - 1}
-                    nextIconButtonProps={{disabled: !hasNextPage}}
-                    backIconButtonProps={{disabled: !hasPrevPage}}
-                    onChangePage={(ev, page) => onChangePage(page + 1)}
-                    onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value) as RowsSizes)}
-                    labelDisplayedRows={({page}) => `Page ${page + 1}`}
-                    SelectProps={{'aria-label': 'pageSelector'}}
-                />
+                <TableEmptyView show={!isLoading && isEmpty} page={page}/>
+                <div className={styles.paginatorRow}>
+                    <TableLoadingView show={isLoading}/>
+                    <TablePagination
+                        role='paginator'
+                        component='div'
+                        rowsPerPageOptions={[5, 10, 20]}
+                        count={-1}
+                        rowsPerPage={size}
+                        page={page - 1}
+                        nextIconButtonProps={{disabled: !hasNextPage}}
+                        backIconButtonProps={{disabled: !hasPrevPage}}
+                        onChangePage={(ev, page) => onChangePage(page + 1)}
+                        onChangeRowsPerPage={(ev) => onChangePageSize(Number(ev.target.value) as RowsSizes)}
+                        labelDisplayedRows={({page}) => `Page ${page + 1}`}
+                        labelRowsPerPage='Rows:'
+                        SelectProps={{'aria-label': 'pageSelector'}}
+                    />
+                </div>
             </>
         );
     }
