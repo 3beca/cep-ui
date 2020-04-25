@@ -10,8 +10,8 @@ export const EXTRA_COLORS = {
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: blueGrey.A700,
-      light: EXTRA_COLORS.ligthText,
+      main: '#329EB6',
+      light: blueGrey.A400,
       dark: blueGrey.A700,
       contrastText: 'white'
     },

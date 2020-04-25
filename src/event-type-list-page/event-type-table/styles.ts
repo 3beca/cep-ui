@@ -16,7 +16,7 @@ export const useStyles = makeStyles(
         tabletitle: {
             flexGrow: 1,
             flex: 1,
-            backgroundColor: theme.palette.primary.dark,
+            backgroundColor: theme.palette.primary.main,
             borderStyle: 'solid',
             borderWidth: 0,
             borderTopLeftRadius: 12,
