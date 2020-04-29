@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
+import {BrowserRouter} from 'react-router-dom';
+import {MainMenuProvider} from './services/main-menu-provider';
 import * as serviceWorker from './serviceWorker';
 
 import App from './app';
@@ -11,7 +13,11 @@ ReactDOM.render(
     <React.StrictMode>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <App />
+            <BrowserRouter>
+                <MainMenuProvider>
+                    <App/>
+                </MainMenuProvider>
+            </BrowserRouter>
         </ThemeProvider>
     </React.StrictMode>,
     document.getElementById('root')

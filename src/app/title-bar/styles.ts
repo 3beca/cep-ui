@@ -7,7 +7,9 @@ export const useStyles = makeStyles(
             display: 'flex'
         },
         icon: {
-            marginRight: theme.spacing(2)
+            marginRight: theme.spacing(2),
+            color: theme.palette.primary.contrastText,
+            fontSize: 32
         }
     })
   );

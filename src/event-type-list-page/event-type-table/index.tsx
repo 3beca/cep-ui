@@ -19,9 +19,9 @@ import { PaginatedTable } from '../../components/paginated-table';
 import { EventType } from '../../services/event-type';
 import {RowsSizes} from '../../components/paginated-table';
 import {useGetEventList} from '../../services/use-event-type';
-import {useSelectableList} from '../../components/use-selectable-list';
-import {usePagination} from '../../components/use-pagination';
-import {useClipboard} from '../../components/use-clipboard';
+import {useSelectableList} from '../../services/use-selectable-list';
+import {usePagination} from '../../services/use-pagination';
+import {useClipboard} from '../../services/use-clipboard';
 import {NOOP} from '../../utils';
 
 export type EventTypeTableProps = {

@@ -8,16 +8,30 @@ exports[`renders TitleBar withou crash and create snapshot 1`] = `
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root makeStyles-icon-2 MuiSvgIcon-fontSizeLarge"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <button
+        aria-label="toggle show menu"
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
       >
-        <path
-          d="M22 5.72l-4.6-3.86-1.29 1.53 4.6 3.86L22 5.72zM7.88 3.39L6.6 1.86 2 5.71l1.29 1.53 4.59-3.85zM12.5 8H11v6l4.75 2.85.75-1.23-4-2.37V8zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root makeStyles-icon-2 MuiSvgIcon-fontSizeLarge"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
         />
-      </svg>
+      </button>
       <h6
         class="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
       >

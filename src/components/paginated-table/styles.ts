@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { blueGrey } from '@material-ui/core/colors';
 
 export const useStyles = makeStyles(
     (theme) => ({
@@ -13,7 +12,7 @@ export const useStyles = makeStyles(
             padding: 8
         },
         errorView: {
-            color: blueGrey.A700
+            color: theme.palette.error.dark
         },
         emptyView: {
             margin: 8,

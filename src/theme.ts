@@ -28,6 +28,10 @@ export const theme = createMuiTheme({
   },
   typography: {
     fontSize: 16
+  },
+  zIndex: {
+    drawer: 1300,
+    appBar: 1301
   }
 });
 
