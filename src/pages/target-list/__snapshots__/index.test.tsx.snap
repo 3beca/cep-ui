@@ -1,0 +1,993 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot TargetListPage 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <div
+      aria-label="table title"
+      class="makeStyles-tabletitle-6"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <h6
+          class="MuiTypography-root makeStyles-tablename-7 MuiTypography-h6"
+        >
+          List of Targets
+        </h6>
+      </div>
+    </div>
+    <div
+      class="MuiTableContainer-root"
+    >
+      <table
+        class="MuiTable-root"
+      >
+        <thead
+          class="MuiTableHead-root makeStyles-head-2"
+        >
+          <tr
+            class="MuiTableRow-root MuiTableRow-head"
+          >
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox"
+              role="columnheader"
+              scope="col"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root makeStyles-mainCheck-4"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector-all"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+              >
+                Name
+              </p>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+              >
+                Created
+              </p>
+            </th>
+            <th
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight"
+              scope="col"
+            >
+              <p
+                class="MuiTypography-root makeStyles-headText-3 MuiTypography-body1"
+              >
+                Actions
+              </p>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="MuiTableBody-root"
+        >
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target0
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target1
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target2
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target3
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target4
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target5
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target6
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target7
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target8
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            aria-label="element row target"
+            class="MuiTableRow-root"
+          >
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox"
+            >
+              <span
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <input
+                    class="PrivateSwitchBase-input-77"
+                    data-indeterminate="false"
+                    role="element-selector"
+                    type="checkbox"
+                    value=""
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </span>
+            </td>
+            <td
+              aria-label="element name"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+            >
+              Elemento Target9
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              2020-1-1 11:10:10
+            </td>
+            <td
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+            >
+              <button
+                aria-label="delete one dialog"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="delete one icon"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="makeStyles-paginatorRow-46"
+    >
+      <div
+        class="MuiTablePagination-root"
+        role="paginator"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular MuiTablePagination-toolbar MuiToolbar-gutters"
+        >
+          <div
+            class="MuiTablePagination-spacer"
+          />
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+          >
+            Rows:
+          </p>
+          <div
+            aria-label="pageSelector"
+            class="MuiInputBase-root MuiTablePagination-input MuiTablePagination-selectRoot"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-label="Rows:"
+              class="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+              role="button"
+              tabindex="0"
+            >
+              10
+            </div>
+            <input
+              type="hidden"
+              value="10"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiTablePagination-selectIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+          <p
+            class="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+          >
+            Page 1
+          </p>
+          <div
+            class="MuiTablePagination-actions"
+          >
+            <button
+              aria-label="Previous page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Previous page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              aria-label="Next page"
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
+              title="Next page"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

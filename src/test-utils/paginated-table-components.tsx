@@ -1,14 +1,13 @@
 import React from 'react';
 import { render, fireEvent, waitFor, within } from '@testing-library/react';
-import { EventTypeTableProps } from '../event-type-list-page/event-type-table';
 import nock from 'nock/types';
-import { EventTypeList, EventTypeError } from '../services/event-type';
+import {ComponentWithUsePaginationProps} from '../services/use-pagination';
 
-export const runPaginatedTableTest = (
+export const runPaginatedTableTest = <R, E>(
     title: string,
-    PaginatedTable: React.FC<EventTypeTableProps>,
-    dataGenerator: (size: number, next: boolean, prev: boolean) => EventTypeList,
-    serverResponse: (page: number, pageSize: number, status: number, response: EventTypeList|EventTypeError) => nock.Scope,
+    PaginatedTable: React.FC<ComponentWithUsePaginationProps>,
+    dataGenerator: (size: number, next: boolean, prev: boolean) => R,
+    serverResponse: (page: number, pageSize: number, status: number, response: R|E) => nock.Scope|void,
 ) => {
 
     test(`${title} snapshot when loading first time`, async () => {
@@ -56,7 +55,7 @@ export const runPaginatedTableTest = (
         const { container, getAllByLabelText } = render(
             <PaginatedTable/>
         );
-        await waitFor(() => getAllByLabelText(/element name/));
+        await waitFor(() => getAllByLabelText(/element row/));
         expect(container).toMatchSnapshot();
     });
 
@@ -65,7 +64,7 @@ export const runPaginatedTableTest = (
         const { container, getAllByLabelText } = render(
             <PaginatedTable initialPage={3} initialPageSize={20}/>
         );
-        await waitFor(() => expect(getAllByLabelText(/element name/)).toHaveLength(20));
+        await waitFor(() => expect(getAllByLabelText(/element row/)).toHaveLength(20));
         expect(container).toMatchSnapshot();
     });
 
@@ -74,7 +73,7 @@ export const runPaginatedTableTest = (
         const { container, getAllByLabelText, getByTitle, getByTestId } = render(
             <PaginatedTable/>
         );
-        await waitFor(() => getAllByLabelText(/element name/));
+        await waitFor(() => getAllByLabelText(/element row/));
         serverResponse(2, 10, 200, dataGenerator(10, true, true));
         const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
         fireEvent.click(nextButton);
@@ -139,7 +138,7 @@ export const runPaginatedTableTest = (
         expect(nextButton.disabled).toBe(true);
         expect(() => getByTestId(/empty-view-row/)).toThrowError();
         expect(() => getByTestId(/loading-view-row/)).toThrowError();
-        expect(getAllByLabelText(/element name/).length).toBe(10);
+        expect(getAllByLabelText(/element row/).length).toBe(10);
         expect(rowsPerPage).toHaveTextContent('10');
 
         serverResponse(1, 5, 200, dataGenerator(5, false, false));
@@ -154,7 +153,7 @@ export const runPaginatedTableTest = (
         expect(nextButton.disabled).toBe(true);
         expect(() => getByTestId(/empty-view-row/)).toThrowError();
         expect(() => getByTestId(/loading-view-row/)).toThrowError();
-        expect(getAllByLabelText(/element name/).length).toBe(5);
+        expect(getAllByLabelText(/element row/).length).toBe(5);
         expect(rowsPerPage).toHaveTextContent('5');
 
         serverResponse(1, 20, 200, dataGenerator(20, false, false));
@@ -169,7 +168,7 @@ export const runPaginatedTableTest = (
         expect(nextButton.disabled).toBe(true);
         expect(() => getByTestId(/empty-view-row/)).toThrowError();
         expect(() => getByTestId(/loading-view-row/)).toThrowError();
-        expect(getAllByLabelText(/element name/).length).toBe(20);
+        expect(getAllByLabelText(/element row/).length).toBe(20);
         expect(rowsPerPage).toHaveTextContent('20');
 
         unmount();

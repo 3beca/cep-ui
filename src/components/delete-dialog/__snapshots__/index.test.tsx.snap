@@ -1,0 +1,606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render a dialog with a list of 4 EventTypes to delete and fail to delete 2 and snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-container-322"
+  >
+    <div
+      aria-label="title"
+      class="MuiDialogTitle-root"
+      id="icon-dialog-title"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h6"
+      >
+        Dialog title
+      </h2>
+    </div>
+    <div
+      class="MuiDialogContent-root makeStyles-dialogContent-324 MuiDialogContent-dividers"
+      id="icon-dialog-content"
+    >
+      <div
+        aria-label="elements deleted"
+        class="makeStyles-elementList-325"
+      >
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-327"
+        >
+          <div
+            aria-label="deleted element"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 0
+            </h5>
+          </div>
+          <div
+            aria-label="success message"
+          >
+            <span
+              class="MuiTypography-root makeStyles-successText-330 MuiTypography-caption"
+            >
+              This entity has been deleted successfuly
+            </span>
+          </div>
+        </div>
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-327"
+        >
+          <div
+            aria-label="deleted element"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 1
+            </h5>
+          </div>
+          <div
+            aria-label="error message"
+          >
+            <span
+              class="MuiTypography-root makeStyles-errorText-329 MuiTypography-caption"
+            >
+              Error: 
+              cannot delete eventtype
+            </span>
+          </div>
+        </div>
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-327"
+        >
+          <div
+            aria-label="deleted element"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 2
+            </h5>
+          </div>
+          <div
+            aria-label="error message"
+          >
+            <span
+              class="MuiTypography-root makeStyles-errorText-329 MuiTypography-caption"
+            >
+              Error: 
+              This element cannot be deleted
+            </span>
+          </div>
+        </div>
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-327"
+        >
+          <div
+            aria-label="deleted element"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 3
+            </h5>
+          </div>
+          <div
+            aria-label="success message"
+          >
+            <span
+              class="MuiTypography-root makeStyles-successText-330 MuiTypography-caption"
+            >
+              This entity has been deleted successfuly
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label="element loader"
+    >
+      <div
+        aria-valuenow="100"
+        class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
+        role="progressbar"
+      >
+        <div
+          class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate"
+          style="transform: translateX(0%);"
+        />
+      </div>
+    </div>
+    <div
+      aria-label="actions"
+      class="MuiDialogActions-root MuiDialogActions-spacing"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Close
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-323 Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Delete
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render a dialog with a list of EventTypes to delete and delete all items and snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-container-215"
+  >
+    <div
+      aria-label="title"
+      class="MuiDialogTitle-root"
+      id="icon-dialog-title"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h6"
+      >
+        Dialog title
+      </h2>
+    </div>
+    <div
+      class="MuiDialogContent-root makeStyles-dialogContent-217 MuiDialogContent-dividers"
+      id="icon-dialog-content"
+    >
+      <div
+        aria-label="elements deleted"
+        class="makeStyles-elementList-218"
+      >
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-220"
+        >
+          <div
+            aria-label="deleted element"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 0
+            </h5>
+          </div>
+          <div
+            aria-label="success message"
+          >
+            <span
+              class="MuiTypography-root makeStyles-successText-223 MuiTypography-caption"
+            >
+              This entity has been deleted successfuly
+            </span>
+          </div>
+        </div>
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-220"
+        >
+          <div
+            aria-label="deleted element"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 1
+            </h5>
+          </div>
+          <div
+            aria-label="success message"
+          >
+            <span
+              class="MuiTypography-root makeStyles-successText-223 MuiTypography-caption"
+            >
+              This entity has been deleted successfuly
+            </span>
+          </div>
+        </div>
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-220"
+        >
+          <div
+            aria-label="deleted element"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 2
+            </h5>
+          </div>
+          <div
+            aria-label="success message"
+          >
+            <span
+              class="MuiTypography-root makeStyles-successText-223 MuiTypography-caption"
+            >
+              This entity has been deleted successfuly
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label="element loader"
+    >
+      <div
+        aria-valuenow="100"
+        class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
+        role="progressbar"
+      >
+        <div
+          class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate"
+          style="transform: translateX(0%);"
+        />
+      </div>
+    </div>
+    <div
+      aria-label="actions"
+      class="MuiDialogActions-root MuiDialogActions-spacing"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Close
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-216 Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Delete
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render a dialog with a list of EventTypes to delete and snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-container-108"
+  >
+    <div
+      aria-label="title"
+      class="MuiDialogTitle-root"
+      id="icon-dialog-title"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h6"
+      >
+        Dialog title
+      </h2>
+    </div>
+    <div
+      class="MuiDialogContent-root makeStyles-dialogContent-110 MuiDialogContent-dividers"
+      id="icon-dialog-content"
+    >
+      <div
+        aria-label="elements to delete"
+        class="makeStyles-elementList-111"
+      >
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-113"
+        >
+          <div>
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 0
+            </h5>
+          </div>
+          <div>
+            <span
+              class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-113"
+        >
+          <div>
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 1
+            </h5>
+          </div>
+          <div>
+            <span
+              class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
+            >
+              1
+            </span>
+          </div>
+        </div>
+        <div
+          aria-label="element to delete"
+          class="makeStyles-elementItem-113"
+        >
+          <div>
+            <h5
+              class="MuiTypography-root MuiTypography-h5"
+            >
+              Elemento 2
+            </h5>
+          </div>
+          <div>
+            <span
+              class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
+            >
+              2
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label="element loader"
+    >
+      <div
+        aria-valuenow="100"
+        class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
+        role="progressbar"
+      >
+        <div
+          class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate"
+          style="transform: translateX(0%);"
+        />
+      </div>
+    </div>
+    <div
+      aria-label="actions"
+      class="MuiDialogActions-root MuiDialogActions-spacing"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Close
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-109"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Delete
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render a dialog with empty message and snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-container-1"
+  >
+    <div
+      aria-label="title"
+      class="MuiDialogTitle-root"
+      id="icon-dialog-title"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h6"
+      >
+        Dialog title
+      </h2>
+    </div>
+    <div
+      class="MuiDialogContent-root makeStyles-dialogContent-3 MuiDialogContent-dividers"
+      id="icon-dialog-content"
+    >
+      <div
+        aria-label="empty message"
+      >
+        <h6
+          class="MuiTypography-root MuiTypography-h6"
+        >
+          There are NOT Elements selected to be deleted!
+        </h6>
+      </div>
+    </div>
+    <div
+      aria-label="element loader"
+    >
+      <div
+        aria-valuenow="100"
+        class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
+        role="progressbar"
+      >
+        <div
+          class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate"
+          style="transform: translateX(0%);"
+        />
+      </div>
+    </div>
+    <div
+      aria-label="actions"
+      class="MuiDialogActions-root MuiDialogActions-spacing"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Close
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-2 Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Delete
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render a dialog with error when evettypes is invalid and snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-container-429"
+  >
+    <div
+      aria-label="title"
+      class="MuiDialogTitle-root"
+      id="icon-dialog-title"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h6"
+      >
+        Dialog title
+      </h2>
+    </div>
+    <div
+      class="MuiDialogContent-root makeStyles-dialogContent-431 MuiDialogContent-dividers"
+      id="icon-dialog-content"
+    >
+      <div
+        aria-label="error message"
+      >
+        <h3
+          class="MuiTypography-root MuiTypography-h3"
+        >
+          id is an invalid id value or array
+        </h3>
+      </div>
+    </div>
+    <div
+      aria-label="element loader"
+    >
+      <div
+        aria-valuenow="100"
+        class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
+        role="progressbar"
+      >
+        <div
+          class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate"
+          style="transform: translateX(0%);"
+        />
+      </div>
+    </div>
+    <div
+      aria-label="actions"
+      class="MuiDialogActions-root MuiDialogActions-spacing"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Close
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-430 Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Delete
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -3,9 +3,11 @@ import {Switch, Route} from 'react-router-dom';
 import { useStyles } from './styles';
 import TitleBar from './title-bar';
 import MenuDrawer from './menu-drawer';
-import EventTypeListPage from '../event-type-list-page';
-import TargetListPage from '../target-list-page/index';
-import NotFoundPage from '../not-found-page';
+import RuleListPage from '../pages/rule-list';
+import EventTypeListPage from '../pages/event-type-list';
+import TargetListPage from '../pages/target-list/index';
+import NotFoundPage from '../pages/not-found';
+import EventLogListPage from '../pages/event-log-list';
 
 export const App: React.FC<{}> = function App() {
     const styles = useStyles();
@@ -16,10 +18,16 @@ export const App: React.FC<{}> = function App() {
             CEP UI
             <Switch>
                 <Route exact path='/'>
+                    <RuleListPage/>
+                </Route>
+                <Route path='/event-types'>
                     <EventTypeListPage/>
                 </Route>
                 <Route path='/targets'>
                     <TargetListPage/>
+                </Route>
+                <Route path='/event-logs'>
+                    <EventLogListPage/>
                 </Route>
                 <Route>
                     <NotFoundPage/>

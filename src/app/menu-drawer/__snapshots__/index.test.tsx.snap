@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MenuDrawer should render menu when open in / and navigate to Event Types, snapshot and back 1`] = `
+<div
+  aria-hidden="true"
+>
+  <div />
+</div>
+`;
+
+exports[`MenuDrawer should render menu when open in / and navigate to Events, snapshot and back 1`] = `
+<div
+  aria-hidden="true"
+>
+  <div />
+</div>
+`;
+
 exports[`MenuDrawer should render menu when open in / and navigate to targets, snapshot and back 1`] = `
 <div
   aria-hidden="true"
@@ -8,7 +24,7 @@ exports[`MenuDrawer should render menu when open in / and navigate to targets, s
 </div>
 `;
 
-exports[`MenuDrawer should render menu when open in / with EventTypes selected and snapshot 1`] = `
+exports[`MenuDrawer should render menu when open in / with Rules selected and snapshot 1`] = `
 <div
   aria-hidden="true"
 >

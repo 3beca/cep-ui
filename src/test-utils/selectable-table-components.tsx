@@ -1,18 +1,18 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import { EventTypeTableProps } from '../event-type-list-page/event-type-table';
 import nock from 'nock/types';
-import { EventTypeList, EventTypeError } from '../services/event-type';
+import { ComponentWithUseSelectableProps } from '../services/use-selectable-list';
+import { ServiceList } from '../services/api';
 
 const expectMUICheckboxChecked = (e: HTMLElement) => expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.stringContaining('Mui-checked'));
 const expectMUICheckboxNotChecked = (e: HTMLElement) => expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.not.stringContaining('Mui-checked'));
 
 
-export const runSelectableTableTest = (
+export const runSelectableTableTest = <R, E>(
     title: string,
-    SelectableTable: React.FC<EventTypeTableProps>,
-    dataGenerator: (size: number, next: boolean, prev: boolean) => EventTypeList,
-    serverResponse: (page: number, pageSize: number, status: number, response: EventTypeList|EventTypeError) => nock.Scope,
+    SelectableTable: React.FC<ComponentWithUseSelectableProps<R>>,
+    dataGenerator: (size: number, next: boolean, prev: boolean) => ServiceList<R>,
+    serverResponse: (page: number, pageSize: number, status: number, response: ServiceList<R>|E) => nock.Scope|void,
     checkInternals: boolean = true
 ) => {
 
