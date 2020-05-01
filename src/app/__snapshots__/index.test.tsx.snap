@@ -3,10 +3,10 @@
 exports[`App render / and navigate to Event Types Page with route /event-types and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-450"
+    class="makeStyles-root-514"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-451 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-515 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -23,7 +23,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-452 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-516 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -45,17 +45,17 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
     </header>
     CEP UI
     <div
-      class="makeStyles-root-613"
+      class="makeStyles-root-702"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-618"
+        class="makeStyles-tabletitle-707"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-619 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-708 MuiTypography-h6"
           >
             List of Event Types
           </h6>
@@ -68,7 +68,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-614"
+            class="MuiTableHead-root makeStyles-head-703"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -80,13 +80,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root makeStyles-mainCheck-616"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root makeStyles-mainCheck-705"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -113,7 +113,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-615 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-704 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -123,7 +123,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-615 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-704 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -133,7 +133,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-615 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-704 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -152,13 +152,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -254,13 +254,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -356,13 +356,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -458,13 +458,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -560,13 +560,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -662,13 +662,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -764,13 +764,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -866,13 +866,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -968,13 +968,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1070,13 +1070,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-652 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-655"
+                      class="PrivateSwitchBase-input-744"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1167,7 +1167,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-624"
+        class="makeStyles-paginatorRow-713"
       >
         <div
           class="MuiTablePagination-root"
@@ -1278,10 +1278,10 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
 exports[`App render / and navigate to Events Log with route /event-logs and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-979"
+    class="makeStyles-root-1093"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-980 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1094 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1298,7 +1298,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-981 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-1095 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1320,7 +1320,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
     </header>
     CEP UI
     <div
-      class="makeStyles-root-1142"
+      class="makeStyles-root-1281"
     >
       <h1>
         Event List
@@ -1393,10 +1393,10 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
 exports[`App render / and navigate to TargetListPage with route /targets and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-718"
+    class="makeStyles-root-807"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-719 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-808 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1413,7 +1413,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-720 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-809 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1435,17 +1435,17 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
     </header>
     CEP UI
     <div
-      class="makeStyles-root-881"
+      class="makeStyles-root-995"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-886"
+        class="makeStyles-tabletitle-1000"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-887 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-1001 MuiTypography-h6"
           >
             List of Targets
           </h6>
@@ -1458,7 +1458,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-882"
+            class="MuiTableHead-root makeStyles-head-996"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -1470,13 +1470,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root makeStyles-mainCheck-884"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root makeStyles-mainCheck-998"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -1503,7 +1503,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-883 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-997 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -1513,7 +1513,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-883 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-997 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -1523,7 +1523,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-883 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-997 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -1542,13 +1542,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1620,13 +1620,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1698,13 +1698,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1776,13 +1776,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1854,13 +1854,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1932,13 +1932,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2010,13 +2010,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2088,13 +2088,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2166,13 +2166,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2244,13 +2244,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-920 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-923"
+                      class="PrivateSwitchBase-input-1037"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2317,7 +2317,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-892"
+        class="makeStyles-paginatorRow-1006"
       >
         <div
           class="MuiTablePagination-root"
@@ -2430,10 +2430,10 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-288"
+    class="makeStyles-root-352"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-289 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-353 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2450,7 +2450,7 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-290 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-354 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2485,10 +2485,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-125"
+    class="makeStyles-root-164"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-126 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-165 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2505,7 +2505,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-127 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-166 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2527,70 +2527,1320 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
     </header>
     CEP UI
     <div
-      class="makeStyles-root-238"
+      class="makeStyles-root-277"
     >
-      <h1>
-        Rules List
-      </h1>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        0
+      <div>
+        <h1>
+          Rules List
+        </h1>
       </div>
-      <div
-        aria-label="element row rules"
+      <button
+        aria-label="add rule"
+        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-279 MuiFab-primary"
+        tabindex="0"
+        type="button"
       >
-        Rule 
-        1
-      </div>
+        <span
+          class="MuiFab-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
       <div
-        aria-label="element row rules"
+        class="makeStyles-gridCards-278"
       >
-        Rule 
-        2
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        3
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        4
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        5
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        6
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        7
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        8
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        9
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 0
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 1
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 2
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 3
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 4
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 5
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 6
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 7
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 8
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 9
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 10
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 11
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 12
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 13
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 14
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 15
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 16
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 17
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 18
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 19
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -2643,68 +3893,1318 @@ exports[`App render with menu closed and snapshot 1`] = `
     <div
       class="makeStyles-root-114"
     >
-      <h1>
-        Rules List
-      </h1>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        0
+      <div>
+        <h1>
+          Rules List
+        </h1>
       </div>
-      <div
-        aria-label="element row rules"
+      <button
+        aria-label="add rule"
+        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-116 MuiFab-primary"
+        tabindex="0"
+        type="button"
       >
-        Rule 
-        1
-      </div>
+        <span
+          class="MuiFab-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
       <div
-        aria-label="element row rules"
+        class="makeStyles-gridCards-115"
       >
-        Rule 
-        2
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        3
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        4
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        5
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        6
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        7
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        8
-      </div>
-      <div
-        aria-label="element row rules"
-      >
-        Rule 
-        9
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 0
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 1
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 2
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 3
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 4
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 5
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 6
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 7
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 8
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 9
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 10
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 11
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 12
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+              >
+                S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 13
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 14
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 15
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 16
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 17
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 18
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+              >
+                T
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 19
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
       </div>
     </div>
   </div>

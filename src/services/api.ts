@@ -43,11 +43,10 @@ export type TargetList = ServiceList<Target>;
 export type TargetError = ServiceError;
 export type TargetDeleted = ServiceDeleted;
 
+export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'none';
 export type Rule = {
     name: string;
-    eventTypeId: string;
-    targetId: string;
-    skipOnConsecutivesMatches: boolean;
+    type: RuleTypes;
 } & Entity & WithDate;
 export type RuleList = ServiceList<Rule>;
 export type RuleError = ServiceError;

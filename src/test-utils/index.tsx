@@ -15,7 +15,9 @@ import {
     TargetError,
     EventTypeList,
     EventTypeError,
-    Entity
+    Entity,
+    Rule,
+    RuleTypes
 } from '../services/api';
 export * from '@testing-library/react';
 
@@ -109,6 +111,28 @@ export const generateTargetListWith = (many: number = 5, next = false, prev = fa
                 id: idx + '',
                 name: 'Elemento Target' + idx,
                 url: 'http://target/elemento' + idx,
+                createdAt: '2020-01-01T10:10:10.123Z',
+                updatedAt: '2020-01-01T10:10:10.123Z'
+            })
+        )
+    };
+    if (prev) list.prev = 'http://cep/?page=prev';
+    if (next) list.next = 'http://cep/?page=next';
+    return list;
+};
+
+const randomType = (): RuleTypes => {
+    const types: RuleTypes[] = ['sliding', 'hopping', 'tumbling', 'none'];
+    const rand = Math.floor(Math.random() * 4);
+    return types[rand];
+};
+export const generateRuleListWith = function generateListWith(many: number = 5, next = false, prev = false): ServiceList<Rule> {
+    const list: ServiceList<Rule> = {
+        results: Array.from({length: many},
+            (_, idx) => ({
+                id: idx + '',
+                name: 'Rule ' + idx,
+                type: randomType(),
                 createdAt: '2020-01-01T10:10:10.123Z',
                 updatedAt: '2020-01-01T10:10:10.123Z'
             })
