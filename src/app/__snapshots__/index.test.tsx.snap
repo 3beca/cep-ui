@@ -2637,9 +2637,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
               >
-                H
+                T
               </div>
             </div>
             <div
@@ -2829,9 +2829,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
               >
-                S
+                N
               </div>
             </div>
             <div
@@ -2893,9 +2893,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -3021,9 +3021,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
               >
-                S
+                T
               </div>
             </div>
             <div
@@ -3085,9 +3085,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
               >
-                S
+                N
               </div>
             </div>
             <div
@@ -3097,6 +3097,134 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
               >
                 Rule 8
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 9
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+              >
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 10
               </span>
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -3160,134 +3288,6 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
               >
-                Rule 9
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                2020-1-1 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
-              >
-                N
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 10
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                2020-1-1 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
-              >
-                N
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
                 Rule 11
               </span>
               <span
@@ -3341,9 +3341,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
               >
-                N
+                T
               </div>
             </div>
             <div
@@ -3469,9 +3469,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
               >
-                H
+                N
               </div>
             </div>
             <div
@@ -3725,9 +3725,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
               >
-                S
+                H
               </div>
             </div>
             <div
@@ -3789,9 +3789,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
               >
-                T
+                S
               </div>
             </div>
             <div
@@ -3937,9 +3937,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                H
+                S
               </div>
             </div>
             <div
@@ -4001,9 +4001,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
               >
-                H
+                N
               </div>
             </div>
             <div
@@ -4065,9 +4065,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                H
+                T
               </div>
             </div>
             <div
@@ -4129,9 +4129,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -4257,9 +4257,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -4321,9 +4321,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -4333,70 +4333,6 @@ exports[`App render with menu closed and snapshot 1`] = `
                 class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
               >
                 Rule 6
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                2020-1-1 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
-              >
-                N
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 7
               </span>
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -4460,7 +4396,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
               >
-                Rule 8
+                Rule 7
               </span>
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -4516,6 +4452,70 @@ exports[`App render with menu closed and snapshot 1`] = `
                 class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
                 S
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 8
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                2020-1-1 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+              >
+                T
               </div>
             </div>
             <div
@@ -4577,9 +4577,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -4641,9 +4641,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
               >
-                T
+                H
               </div>
             </div>
             <div
@@ -4705,9 +4705,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                S
+                T
               </div>
             </div>
             <div
@@ -4769,9 +4769,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                S
+                T
               </div>
             </div>
             <div
@@ -4833,9 +4833,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
               >
-                T
+                H
               </div>
             </div>
             <div
@@ -4961,9 +4961,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
               >
-                T
+                N
               </div>
             </div>
             <div
@@ -5025,9 +5025,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                N
+                T
               </div>
             </div>
             <div
@@ -5089,9 +5089,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                H
+                T
               </div>
             </div>
             <div
@@ -5153,9 +5153,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
               >
-                T
+                N
               </div>
             </div>
             <div
