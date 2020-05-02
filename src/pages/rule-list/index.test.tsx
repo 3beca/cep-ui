@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {renderInsideApp} from '../../test-utils';
+import {renderInsideApp, within, fireEvent, waitFor} from '../../test-utils';
 import RuleListPage, {colorTypeSelector} from './index';
 import { RuleTypes } from '../../services/api';
 
@@ -15,5 +15,24 @@ test(
         expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20);
         getByLabelText(/add rule/i);
         expect(container).toMatchSnapshot();
+    }
+);
+
+test(
+    'RuleListPage should render a create rule dialog when click on add button',
+    async () => {
+        const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
+
+        expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20);
+        const addButton = getByLabelText(/add rule/i);
+
+        fireEvent.click(addButton);
+        const dialog = within(document.getElementById('create-rule-dialog')!);
+        dialog.getByLabelText(/title create rule/i);
+        dialog.getByLabelText(/kind of rules description/i);
+        const closeButton = dialog.getByText(/^close$/i);
+
+        fireEvent.click(closeButton);
+        await waitFor(() => expect(document.getElementById('create-rule-dialog')).toBe(null));
     }
 );

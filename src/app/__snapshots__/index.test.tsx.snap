@@ -3,10 +3,10 @@
 exports[`App render / and navigate to Event Types Page with route /event-types and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-514"
+    class="makeStyles-root-558"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-515 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-559 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -23,7 +23,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-516 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-560 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -45,17 +45,17 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
     </header>
     CEP UI
     <div
-      class="makeStyles-root-702"
+      class="makeStyles-root-768"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-707"
+        class="makeStyles-tabletitle-773"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-708 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-774 MuiTypography-h6"
           >
             List of Event Types
           </h6>
@@ -68,7 +68,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-703"
+            class="MuiTableHead-root makeStyles-head-769"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -80,13 +80,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root makeStyles-mainCheck-705"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root makeStyles-mainCheck-771"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -113,7 +113,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-704 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-770 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -123,7 +123,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-704 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-770 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -133,7 +133,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-704 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-770 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -152,13 +152,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -189,7 +189,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -254,13 +254,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -291,7 +291,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -356,13 +356,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -393,7 +393,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -458,13 +458,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -495,7 +495,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -560,13 +560,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -597,7 +597,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -662,13 +662,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -699,7 +699,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -764,13 +764,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -801,7 +801,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -866,13 +866,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -903,7 +903,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -968,13 +968,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1005,7 +1005,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1070,13 +1070,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-741 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-807 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-744"
+                      class="PrivateSwitchBase-input-810"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1107,7 +1107,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1167,7 +1167,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-713"
+        class="makeStyles-paginatorRow-779"
       >
         <div
           class="MuiTablePagination-root"
@@ -1278,10 +1278,10 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
 exports[`App render / and navigate to Events Log with route /event-logs and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-1093"
+    class="makeStyles-root-1181"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1094 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1182 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1298,7 +1298,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-1095 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-1183 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1320,7 +1320,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
     </header>
     CEP UI
     <div
-      class="makeStyles-root-1281"
+      class="makeStyles-root-1391"
     >
       <h1>
         Event List
@@ -1393,10 +1393,10 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
 exports[`App render / and navigate to TargetListPage with route /targets and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-807"
+    class="makeStyles-root-873"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-808 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-874 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1413,7 +1413,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-809 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-875 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1435,17 +1435,17 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
     </header>
     CEP UI
     <div
-      class="makeStyles-root-995"
+      class="makeStyles-root-1083"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-1000"
+        class="makeStyles-tabletitle-1088"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-1001 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-1089 MuiTypography-h6"
           >
             List of Targets
           </h6>
@@ -1458,7 +1458,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-996"
+            class="MuiTableHead-root makeStyles-head-1084"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -1470,13 +1470,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root makeStyles-mainCheck-998"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root makeStyles-mainCheck-1086"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -1503,7 +1503,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-997 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1085 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -1513,7 +1513,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-997 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1085 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -1523,7 +1523,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-997 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1085 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -1542,13 +1542,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1579,7 +1579,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1620,13 +1620,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1657,7 +1657,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1698,13 +1698,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1735,7 +1735,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1776,13 +1776,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1813,7 +1813,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1854,13 +1854,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1891,7 +1891,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1932,13 +1932,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1969,7 +1969,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2010,13 +2010,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2047,7 +2047,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2088,13 +2088,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2125,7 +2125,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2166,13 +2166,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2203,7 +2203,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2244,13 +2244,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1034 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1122 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1037"
+                      class="PrivateSwitchBase-input-1125"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2281,7 +2281,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -2317,7 +2317,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-1006"
+        class="makeStyles-paginatorRow-1094"
       >
         <div
           class="MuiTablePagination-root"
@@ -2430,10 +2430,10 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-352"
+    class="makeStyles-root-396"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-353 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-397 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2450,7 +2450,7 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-354 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-398 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2485,10 +2485,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-164"
+    class="makeStyles-root-186"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-165 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-187 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2505,7 +2505,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-166 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-188 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2527,7 +2527,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
     </header>
     CEP UI
     <div
-      class="makeStyles-root-277"
+      class="makeStyles-root-299"
     >
       <div>
         <h1>
@@ -2536,7 +2536,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
       </div>
       <button
         aria-label="add rule"
-        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-279 MuiFab-primary"
+        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-301 MuiFab-primary"
         tabindex="0"
         type="button"
       >
@@ -2559,11 +2559,11 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         />
       </button>
       <div
-        class="makeStyles-gridCards-278"
+        class="makeStyles-gridCards-300"
       >
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2573,9 +2573,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarOrange-307 MuiAvatar-colorDefault"
               >
-                H
+                T
               </div>
             </div>
             <div
@@ -2589,7 +2589,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -2627,7 +2627,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2637,9 +2637,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
-                T
+                S
               </div>
             </div>
             <div
@@ -2653,7 +2653,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -2691,7 +2691,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2701,7 +2701,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -2717,7 +2717,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -2755,7 +2755,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2765,9 +2765,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarPurple-306 MuiAvatar-colorDefault"
               >
-                H
+                N
               </div>
             </div>
             <div
@@ -2781,7 +2781,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -2819,7 +2819,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2829,9 +2829,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarOrange-307 MuiAvatar-colorDefault"
               >
-                N
+                T
               </div>
             </div>
             <div
@@ -2845,7 +2845,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -2883,7 +2883,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2893,9 +2893,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarPurple-306 MuiAvatar-colorDefault"
               >
-                S
+                N
               </div>
             </div>
             <div
@@ -2909,7 +2909,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -2947,7 +2947,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2957,9 +2957,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarRed-304 MuiAvatar-colorDefault"
               >
-                N
+                H
               </div>
             </div>
             <div
@@ -2973,7 +2973,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3011,7 +3011,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3021,9 +3021,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarPurple-306 MuiAvatar-colorDefault"
               >
-                T
+                N
               </div>
             </div>
             <div
@@ -3037,7 +3037,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3075,7 +3075,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3085,9 +3085,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarOrange-307 MuiAvatar-colorDefault"
               >
-                N
+                T
               </div>
             </div>
             <div
@@ -3101,7 +3101,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3139,7 +3139,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3149,9 +3149,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
-                H
+                S
               </div>
             </div>
             <div
@@ -3165,7 +3165,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3203,7 +3203,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3213,9 +3213,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarPurple-306 MuiAvatar-colorDefault"
               >
-                H
+                N
               </div>
             </div>
             <div
@@ -3229,7 +3229,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3267,7 +3267,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3277,9 +3277,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
-                T
+                S
               </div>
             </div>
             <div
@@ -3293,7 +3293,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3331,7 +3331,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3341,9 +3341,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
-                T
+                S
               </div>
             </div>
             <div
@@ -3357,7 +3357,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3395,7 +3395,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3405,9 +3405,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarOrange-285 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
-                T
+                S
               </div>
             </div>
             <div
@@ -3421,7 +3421,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3459,7 +3459,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3469,9 +3469,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -3485,7 +3485,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3523,7 +3523,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3533,7 +3533,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarPurple-284 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarPurple-306 MuiAvatar-colorDefault"
               >
                 N
               </div>
@@ -3549,7 +3549,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3587,7 +3587,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3597,7 +3597,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3613,7 +3613,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3651,7 +3651,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3661,7 +3661,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarBlue-305 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3677,7 +3677,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3715,7 +3715,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3725,9 +3725,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarRed-282 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarOrange-307 MuiAvatar-colorDefault"
               >
-                H
+                T
               </div>
             </div>
             <div
@@ -3741,7 +3741,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3779,7 +3779,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-280 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-302 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3789,9 +3789,9 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-281 makeStyles-ruleCardAvatarBlue-283 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-303 makeStyles-ruleCardAvatarRed-304 MuiAvatar-colorDefault"
               >
-                S
+                H
               </div>
             </div>
             <div
@@ -3805,7 +3805,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -3937,9 +3937,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                S
+                T
               </div>
             </div>
             <div
@@ -3953,7 +3953,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4001,9 +4001,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -4017,7 +4017,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4081,71 +4081,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
-              >
-                S
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 3
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4204,12 +4140,12 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
               >
-                Rule 4
+                Rule 3
               </span>
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4257,9 +4193,73 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
               >
-                S
+                H
+              </div>
+            </div>
+            <div
+              class="MuiCardHeader-content"
+            >
+              <span
+                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+              >
+                Rule 4
+              </span>
+              <span
+                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                1/1/2020 11:10:10
+              </span>
+            </div>
+            <div
+              class="MuiCardHeader-action"
+            >
+              <button
+                aria-label="settings"
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <hr
+            class="MuiDivider-root"
+          />
+        </div>
+        <div
+          aria-label="element card rule"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiCardHeader-root"
+          >
+            <div
+              class="MuiCardHeader-avatar"
+            >
+              <div
+                aria-label="recipe"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+              >
+                N
               </div>
             </div>
             <div
@@ -4273,7 +4273,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4337,7 +4337,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4385,9 +4385,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                H
+                T
               </div>
             </div>
             <div
@@ -4401,7 +4401,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4449,9 +4449,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
               >
-                S
+                T
               </div>
             </div>
             <div
@@ -4465,7 +4465,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4529,7 +4529,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4577,9 +4577,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
               >
-                S
+                N
               </div>
             </div>
             <div
@@ -4593,7 +4593,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4657,7 +4657,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4705,9 +4705,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
               >
-                T
+                N
               </div>
             </div>
             <div
@@ -4721,7 +4721,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4769,9 +4769,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                T
+                S
               </div>
             </div>
             <div
@@ -4785,7 +4785,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4849,7 +4849,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4897,9 +4897,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
               >
-                N
+                S
               </div>
             </div>
             <div
@@ -4913,7 +4913,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -4977,7 +4977,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -5025,9 +5025,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
               >
-                T
+                N
               </div>
             </div>
             <div
@@ -5041,7 +5041,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -5089,9 +5089,9 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
               >
-                T
+                N
               </div>
             </div>
             <div
@@ -5105,7 +5105,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div
@@ -5169,7 +5169,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               <span
                 class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
               >
-                2020-1-1 11:10:10
+                1/1/2020 11:10:10
               </span>
             </div>
             <div

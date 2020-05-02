@@ -65,71 +65,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
-            </span>
-          </div>
-          <div
-            class="MuiCardHeader-action"
-          >
-            <button
-              aria-label="settings"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-        </div>
-        <hr
-          class="MuiDivider-root"
-        />
-      </div>
-      <div
-        aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
-      >
-        <div
-          class="MuiCardHeader-root"
-        >
-          <div
-            class="MuiCardHeader-avatar"
-          >
-            <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarOrange-9 MuiAvatar-colorDefault"
-            >
-              T
-            </div>
-          </div>
-          <div
-            class="MuiCardHeader-content"
-          >
-            <span
-              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-            >
-              Rule 1
-            </span>
-            <span
-              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-            >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -188,12 +124,76 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
             >
+              Rule 1
+            </span>
+            <span
+              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+            >
+              1/1/2020 11:10:10
+            </span>
+          </div>
+          <div
+            class="MuiCardHeader-action"
+          >
+            <button
+              aria-label="settings"
+              class="MuiButtonBase-root MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+        <hr
+          class="MuiDivider-root"
+        />
+      </div>
+      <div
+        aria-label="element card rule"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-avatar"
+          >
+            <div
+              aria-label="recipe"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarOrange-9 MuiAvatar-colorDefault"
+            >
+              T
+            </div>
+          </div>
+          <div
+            class="MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+            >
               Rule 2
             </span>
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -257,7 +257,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -321,7 +321,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -385,7 +385,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -433,9 +433,9 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarBlue-7 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarRed-6 MuiAvatar-colorDefault"
             >
-              S
+              H
             </div>
           </div>
           <div
@@ -449,7 +449,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -513,135 +513,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
-            </span>
-          </div>
-          <div
-            class="MuiCardHeader-action"
-          >
-            <button
-              aria-label="settings"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-        </div>
-        <hr
-          class="MuiDivider-root"
-        />
-      </div>
-      <div
-        aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
-      >
-        <div
-          class="MuiCardHeader-root"
-        >
-          <div
-            class="MuiCardHeader-avatar"
-          >
-            <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarPurple-8 MuiAvatar-colorDefault"
-            >
-              N
-            </div>
-          </div>
-          <div
-            class="MuiCardHeader-content"
-          >
-            <span
-              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-            >
-              Rule 8
-            </span>
-            <span
-              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-            >
-              2020-1-1 11:10:10
-            </span>
-          </div>
-          <div
-            class="MuiCardHeader-action"
-          >
-            <button
-              aria-label="settings"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-        </div>
-        <hr
-          class="MuiDivider-root"
-        />
-      </div>
-      <div
-        aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
-      >
-        <div
-          class="MuiCardHeader-root"
-        >
-          <div
-            class="MuiCardHeader-avatar"
-          >
-            <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarRed-6 MuiAvatar-colorDefault"
-            >
-              H
-            </div>
-          </div>
-          <div
-            class="MuiCardHeader-content"
-          >
-            <span
-              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-            >
-              Rule 9
-            </span>
-            <span
-              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-            >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -700,12 +572,140 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
             >
+              Rule 8
+            </span>
+            <span
+              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+            >
+              1/1/2020 11:10:10
+            </span>
+          </div>
+          <div
+            class="MuiCardHeader-action"
+          >
+            <button
+              aria-label="settings"
+              class="MuiButtonBase-root MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+        <hr
+          class="MuiDivider-root"
+        />
+      </div>
+      <div
+        aria-label="element card rule"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-avatar"
+          >
+            <div
+              aria-label="recipe"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarBlue-7 MuiAvatar-colorDefault"
+            >
+              S
+            </div>
+          </div>
+          <div
+            class="MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+            >
+              Rule 9
+            </span>
+            <span
+              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+            >
+              1/1/2020 11:10:10
+            </span>
+          </div>
+          <div
+            class="MuiCardHeader-action"
+          >
+            <button
+              aria-label="settings"
+              class="MuiButtonBase-root MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+        <hr
+          class="MuiDivider-root"
+        />
+      </div>
+      <div
+        aria-label="element card rule"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-avatar"
+          >
+            <div
+              aria-label="recipe"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarPurple-8 MuiAvatar-colorDefault"
+            >
+              N
+            </div>
+          </div>
+          <div
+            class="MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+            >
               Rule 10
             </span>
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -769,71 +769,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
-            </span>
-          </div>
-          <div
-            class="MuiCardHeader-action"
-          >
-            <button
-              aria-label="settings"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-        </div>
-        <hr
-          class="MuiDivider-root"
-        />
-      </div>
-      <div
-        aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
-      >
-        <div
-          class="MuiCardHeader-root"
-        >
-          <div
-            class="MuiCardHeader-avatar"
-          >
-            <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarPurple-8 MuiAvatar-colorDefault"
-            >
-              N
-            </div>
-          </div>
-          <div
-            class="MuiCardHeader-content"
-          >
-            <span
-              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-            >
-              Rule 12
-            </span>
-            <span
-              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-            >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -892,12 +828,12 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
             >
-              Rule 13
+              Rule 12
             </span>
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -945,9 +881,73 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarRed-6 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarOrange-9 MuiAvatar-colorDefault"
             >
-              H
+              T
+            </div>
+          </div>
+          <div
+            class="MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+            >
+              Rule 13
+            </span>
+            <span
+              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+            >
+              1/1/2020 11:10:10
+            </span>
+          </div>
+          <div
+            class="MuiCardHeader-action"
+          >
+            <button
+              aria-label="settings"
+              class="MuiButtonBase-root MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+        <hr
+          class="MuiDivider-root"
+        />
+      </div>
+      <div
+        aria-label="element card rule"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-avatar"
+          >
+            <div
+              aria-label="recipe"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarPurple-8 MuiAvatar-colorDefault"
+            >
+              N
             </div>
           </div>
           <div
@@ -961,7 +961,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -1025,7 +1025,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -1089,7 +1089,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -1137,9 +1137,9 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarOrange-9 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarRed-6 MuiAvatar-colorDefault"
             >
-              T
+              H
             </div>
           </div>
           <div
@@ -1153,71 +1153,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
-            </span>
-          </div>
-          <div
-            class="MuiCardHeader-action"
-          >
-            <button
-              aria-label="settings"
-              class="MuiButtonBase-root MuiIconButton-root"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-        </div>
-        <hr
-          class="MuiDivider-root"
-        />
-      </div>
-      <div
-        aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
-      >
-        <div
-          class="MuiCardHeader-root"
-        >
-          <div
-            class="MuiCardHeader-avatar"
-          >
-            <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarBlue-7 MuiAvatar-colorDefault"
-            >
-              S
-            </div>
-          </div>
-          <div
-            class="MuiCardHeader-content"
-          >
-            <span
-              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-            >
-              Rule 18
-            </span>
-            <span
-              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-            >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div
@@ -1276,12 +1212,76 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <span
               class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
             >
+              Rule 18
+            </span>
+            <span
+              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+            >
+              1/1/2020 11:10:10
+            </span>
+          </div>
+          <div
+            class="MuiCardHeader-action"
+          >
+            <button
+              aria-label="settings"
+              class="MuiButtonBase-root MuiIconButton-root"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+        <hr
+          class="MuiDivider-root"
+        />
+      </div>
+      <div
+        aria-label="element card rule"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-4 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-avatar"
+          >
+            <div
+              aria-label="recipe"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-5 makeStyles-ruleCardAvatarRed-6 MuiAvatar-colorDefault"
+            >
+              H
+            </div>
+          </div>
+          <div
+            class="MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+            >
               Rule 19
             </span>
             <span
               class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
             >
-              2020-1-1 11:10:10
+              1/1/2020 11:10:10
             </span>
           </div>
           <div

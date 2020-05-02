@@ -16,7 +16,7 @@ export const useStyles = makeStyles(
         fabAddRule: {
             position: 'fixed',
             bottom: theme.spacing(5),
-            right: theme.spacing(10),
+            right: theme.spacing(5),
         },
         ruleCard: {
             minWidth: 280,

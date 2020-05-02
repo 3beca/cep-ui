@@ -1,9 +1,9 @@
 import * as React from 'react';
 import IconButton from '@material-ui/core/IconButton';
+import {NOOP} from '../../utils';
 import Dialog from '@material-ui/core/Dialog';
 
 type IconDialogContext = ()=>void;
-const NOOP = () => {};
 const IconDialogContext = React.createContext<IconDialogContext>(NOOP);
 export const useIconDialog = () => {
     return React.useContext<IconDialogContext>(IconDialogContext);

@@ -11,6 +11,7 @@ import Fab from '@material-ui/core/Fab';
 import {generateRuleListWith} from '../../test-utils';
 import { Rule, RuleTypes } from '../../services/api';
 import { Divider } from '@material-ui/core';
+import {CreateRuleDialog} from './create-dialog';
 
 export const colorTypeSelector = (type: RuleTypes, styles: ReturnType<typeof useStyles>) => {
     switch(type) {
@@ -31,15 +32,15 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
         className={styles.ruleCard}>
             <CardHeader
                 avatar={
-                <Avatar aria-label="recipe"
-                className={`${styles.ruleCardAvatar} ${colorTypeSelector(rule.type, styles)}`}>
-                    {rule.type.slice(0, 1).toUpperCase()}
-                </Avatar>
+                    <Avatar aria-label="recipe"
+                    className={`${styles.ruleCardAvatar} ${colorTypeSelector(rule.type, styles)}`}>
+                        {rule.type.slice(0, 1).toUpperCase()}
+                    </Avatar>
                 }
                 action={
-                <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                </IconButton>
+                    <IconButton aria-label="settings">
+                        <MoreVertIcon />
+                    </IconButton>
                 }
                 title={rule.name}
                 subheader={(new Date(rule.createdAt)).toLocaleString()}
@@ -52,6 +53,9 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
 
 export const RuleListPage: React.FC<{}> = () => {
     const styles = useStyles();
+    const [isOpen, setOpen] = React.useState(false);
+    const openDialog = React.useCallback(() => setOpen(true), []);
+    const closeDialog = React.useCallback(() => setOpen(false), []);
     const {results} = generateRuleListWith(20);
 
     return (
@@ -60,7 +64,8 @@ export const RuleListPage: React.FC<{}> = () => {
             <Fab
                 color='primary'
                 aria-label='add rule'
-                className={styles.fabAddRule}>
+                className={styles.fabAddRule}
+                onClick={openDialog}>
                 <AddIcon />
             </Fab>
             <div className={styles.gridCards}>
@@ -68,6 +73,7 @@ export const RuleListPage: React.FC<{}> = () => {
                     results.map(rule => <RuleCard rule={rule} key={rule.id}/>)
                 }
             </div>
+            <CreateRuleDialog isOpen={isOpen} onClose={closeDialog}/>
         </div>
     );
 };
