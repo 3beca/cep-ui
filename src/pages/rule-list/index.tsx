@@ -8,10 +8,10 @@ import AddIcon from '@material-ui/icons/Add';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Fab from '@material-ui/core/Fab';
 
-import {generateRuleListWith} from '../../test-utils';
 import { Rule, RuleTypes } from '../../services/api';
 import { Divider } from '@material-ui/core';
 import {CreateRuleDialog} from './create-dialog';
+import {useGetList, ENTITY} from '../../services/use-api';
 
 export const colorTypeSelector = (type: RuleTypes, styles: ReturnType<typeof useStyles>) => {
     switch(type) {
@@ -20,6 +20,16 @@ export const colorTypeSelector = (type: RuleTypes, styles: ReturnType<typeof use
         case 'tumbling': return styles.ruleCardAvatarOrange;
         case 'none': return styles.ruleCardAvatarPurple;
         default: return styles.ruleCardAvatarBlue;
+    }
+};
+
+export const mapRuleTypeName = (type: RuleTypes = 'none') => {
+    switch(type) {
+        case 'hopping': return 'HOPPING';
+        case 'sliding': return 'SLIDING';
+        case 'tumbling': return 'TUMBLING';
+        case 'none': return 'REAL TIME';
+        default: return 'REAL TIME'
     }
 };
 
@@ -34,7 +44,7 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                 avatar={
                     <Avatar aria-label="recipe"
                     className={`${styles.ruleCardAvatar} ${colorTypeSelector(rule.type, styles)}`}>
-                        {rule.type.slice(0, 1).toUpperCase()}
+                        {mapRuleTypeName(rule.type).slice(0, 1).toUpperCase()}
                     </Avatar>
                 }
                 action={
@@ -50,13 +60,13 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
     );
 };
 
-
 export const RuleListPage: React.FC<{}> = () => {
     const styles = useStyles();
     const [isOpen, setOpen] = React.useState(false);
     const openDialog = React.useCallback(() => setOpen(true), []);
     const closeDialog = React.useCallback(() => setOpen(false), []);
-    const {results} = generateRuleListWith(20);
+    const {isLoading, response, error, request} = useGetList(ENTITY.RULES, 1, 20, true);
+    const results = response?.data.results;
 
     return (
         <div className={styles.root}>
@@ -70,7 +80,7 @@ export const RuleListPage: React.FC<{}> = () => {
             </Fab>
             <div className={styles.gridCards}>
                 {
-                    results.map(rule => <RuleCard rule={rule} key={rule.id}/>)
+                    results && results.map(rule => <RuleCard rule={rule} key={rule.id}/>)
                 }
             </div>
             <CreateRuleDialog isOpen={isOpen} onClose={closeDialog}/>

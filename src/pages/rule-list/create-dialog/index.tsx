@@ -10,16 +10,11 @@ import {NOOP} from '../../../utils';
 import {useStyles} from './styles';
 import {useStyles as useCardStyles} from '../styles';
 import { RuleTypes } from '../../../services/api';
-import {colorTypeSelector} from '../';
+import {colorTypeSelector, mapRuleTypeName} from '../';
+import { Divider } from '@material-ui/core';
 
 type RuleTypesText = {[key in RuleTypes]: string};
 type RuleTypesSamples = {[key in RuleTypes]: string[][]};
-const titles: RuleTypesText = {
-    none: 'Real Time',
-    sliding: 'Sliding',
-    hopping: 'Hopping',
-    tumbling: 'Tumbling'
-};
 const subtitles: RuleTypesText = {
     none: 'Rule executes on any event matching filter on its event data.',
     sliding: 'compute windowing with a text hiper large where it explains the main concept of this rule',
@@ -59,9 +54,9 @@ const RuleTypeCard: React.FC<RuleTypeCardProp> = ({selected, type, ariaLabel, on
                 <Avatar
                     aria-label="recipe"
                     className={`${styles.ruleAvatar} ${colorTypeSelector(type, stylesCard)}`}>
-                    {type.slice(0, 1).toUpperCase()}
+                    {mapRuleTypeName(type).slice(0, 1).toUpperCase()}
                 </Avatar>
-                <Typography className={styles.ruleTypeTextTitle}>{titles[type].toUpperCase()}</Typography>
+                <Typography className={styles.ruleTypeTextTitle}>{mapRuleTypeName(type).toUpperCase()}</Typography>
             </div>
         </div>
     );
@@ -122,6 +117,7 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClo
                     }
                 </div>
             </DialogContent>
+            <Divider/>
             <DialogActions aria-label='actions'>
                 <Button onClick={fireSelected} disabled={!type}>Select</Button>
                 <Button onClick={onClose}>Close</Button>

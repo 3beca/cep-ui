@@ -14,7 +14,7 @@ export const useStyles = makeStyles(
             flexWrap: 'wrap',
             justifyContent: 'center',
             overflowY: 'scroll',
-            maxHeight: '45vh',
+            maxHeight: '40vh',
         },
         cardButton: {
             display: 'flex',
@@ -68,7 +68,7 @@ export const useStyles = makeStyles(
         samplesBox: {
             display: 'flex',
             flexDirection: 'column',
-            height: '25vh'
+            maxHeight: '20vh'
         },
         ruleSample: {
             padding: 6

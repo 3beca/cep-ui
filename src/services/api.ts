@@ -47,6 +47,10 @@ export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'none';
 export type Rule = {
     name: string;
     type: RuleTypes;
+    targetId: string;
+    eventTypeId: string;
+    skipOnConsecutivesMatches?: boolean;
+    filters: any;
 } & Entity & WithDate;
 export type RuleList = ServiceList<Rule>;
 export type RuleError = ServiceError;

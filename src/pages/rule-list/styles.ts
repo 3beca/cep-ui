@@ -19,7 +19,7 @@ export const useStyles = makeStyles(
             right: theme.spacing(5),
         },
         ruleCard: {
-            minWidth: 280,
+            width: 300,
             minHeight: 300,
             margin: 24
         },
