@@ -65,7 +65,7 @@ export const RuleListPage: React.FC<{}> = () => {
     const [isOpen, setOpen] = React.useState(false);
     const openDialog = React.useCallback(() => setOpen(true), []);
     const closeDialog = React.useCallback(() => setOpen(false), []);
-    const {isLoading, response, error, request} = useGetList(ENTITY.RULES, 1, 20, true);
+    const {response} = useGetList(ENTITY.RULES, 1, 20, true);
     const results = response?.data.results;
 
     return (
