@@ -19,7 +19,7 @@ test(
 );
 
 test(
-    'RuleListPage should render a create rule dialog when click on add button',
+    'RuleListPage should render a create rule dialog when click on add button and close when press close button',
     async () => {
         const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
@@ -33,6 +33,27 @@ test(
         const closeButton = dialog.getByText(/^close$/i);
 
         fireEvent.click(closeButton);
+        await waitFor(() => expect(document.getElementById('create-rule-dialog')).toBe(null));
+    }
+);
+
+test(
+    'RuleListPage should render a create rule dialog when click on add button and close when press selecte button',
+    async () => {
+        const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
+
+        expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20);
+        const addButton = getByLabelText(/add rule/i);
+
+        fireEvent.click(addButton);
+        const dialog = within(document.getElementById('create-rule-dialog')!);
+        dialog.getByLabelText(/title create rule/i);
+        dialog.getByLabelText(/kind of rules description/i);
+        const realTimeCard =  dialog.getByLabelText(/create rule real time card/i);
+        const selectButton = dialog.getByText(/^select$/i);
+
+        fireEvent.click(realTimeCard);
+        fireEvent.click(selectButton);
         await waitFor(() => expect(document.getElementById('create-rule-dialog')).toBe(null));
     }
 );

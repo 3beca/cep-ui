@@ -3,35 +3,87 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles(
     (theme) => ({
         container: {
+            maxWidth: '80vw'
         },
         createButton: {
             color: theme.palette.warning.dark
         },
         dialogContent: {
+            display: 'flex',
+            flex: 1,
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             overflowY: 'scroll',
-            maxHeight: '60vh',
+            maxHeight: '45vh',
         },
         cardButton: {
             display: 'flex',
-            alignItems: 'flex-start',
+            flexDirection: 'column',
             margin: 16,
             borderColor: '#CCCCCC80',
             borderStyle: 'solid',
             borderWidth: 1,
-            maxWidth: 300,
+            borderRadius: 12,
+            width: 180,
+            padding: 6,
+            "&:hover": {
+                cursor: 'pointer',
+                backgroundColor: theme.palette.grey.A100
+            }
+        },
+        cardButtonSelected: {
+            display: 'flex',
+            flexDirection: 'column',
+            margin: 16,
+            borderColor: theme.palette.secondary.dark,
+            borderStyle: 'solid',
+            borderWidth: 1,
+            borderRadius: 12,
+            width: 180,
+            padding: 6,
         },
         ruleAvatar: {
             padding: 4,
             margin: 4
         },
-        rulesTypeText: {
+        rulesTypeHeader: {
             display: 'flex',
-            flexDirection: 'column',
-            margin: 14
+            margin: 4,
         },
         ruleTypeTextTitle: {
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
             fontWeight: 700,
             fontSize: 18
+        },
+        ruleTypeTextSubtitle: {
+            display: 'flex',
+            marginLeft: 8,
+            fontSize: 16,
+            fontWeight: 700,
+            color: theme.palette.common.black
+        },
+        samplesBox: {
+            display: 'flex',
+            flexDirection: 'column',
+            height: '25vh'
+        },
+        ruleSample: {
+            padding: 6
+        },
+        ruleTypeTextSampleTitle: {
+            display: 'flex',
+            fontSize: 14,
+            fontWeight: 700,
+            color: theme.palette.grey.A700
+        },
+        ruleTypeTextSampleDescription: {
+            display: 'flex',
+            marginLeft: 8,
+            fontSize: 12,
+            color: theme.palette.grey.A400
         }
     })
   );
