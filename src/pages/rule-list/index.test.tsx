@@ -6,7 +6,7 @@ import {
     waitFor,
     setupNock,
     serverGetRuleList,
-    generateRuleListWith
+    generateRuleListWith,
 } from '../../test-utils';
 import RuleListPage, {colorTypeSelector, mapRuleTypeName} from './index';
 import { RuleTypes } from '../../services/api';
@@ -75,5 +75,17 @@ test(
         fireEvent.click(realTimeCard);
         fireEvent.click(selectButton);
         await waitFor(() => expect(document.getElementById('create-rule-dialog')).toBe(null));
+    }
+);
+
+test(
+    'RuleListPage should render a searchbar  and find rules that contains rule',
+    async () => {
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+        const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
+
+        getByLabelText(/rule search bar/i);
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+        getByLabelText(/add rule/i);
     }
 );

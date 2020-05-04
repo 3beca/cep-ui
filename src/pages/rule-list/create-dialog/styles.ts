@@ -84,6 +84,9 @@ export const useStyles = makeStyles(
             marginLeft: 8,
             fontSize: 12,
             color: theme.palette.grey.A400
+        },
+        selectButton: {
+            color: theme.palette.warning.dark
         }
     })
   );

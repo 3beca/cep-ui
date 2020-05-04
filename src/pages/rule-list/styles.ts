@@ -8,6 +8,24 @@ export const useStyles = makeStyles(
             margin: theme.spacing(6, 0, 3),
             padding: 16,
         },
+        searchBar: {
+            display: 'flex',
+            justifyContent: 'center',
+            margin: 8
+        },
+        searchContainer: {
+            padding: '2px 4px',
+            display: 'flex',
+            alignItems: 'center',
+            width: 400,
+        },
+        searchInput: {
+            marginLeft: theme.spacing(1),
+            flex: 1,
+        },
+        searchButton: {
+            padding: 10
+        },
         gridCards: {
             display: 'flex',
             flexWrap: 'wrap',

@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Fab from '@material-ui/core/Fab';
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
 
 import { Rule, RuleTypes } from '../../services/api';
 import { Divider } from '@material-ui/core';
@@ -60,6 +63,22 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
     );
 };
 
+export function SearchBar() {
+    const styles = useStyles();
+    return (
+      <Paper component='div' className={styles.searchContainer}>
+        <InputBase
+          className={styles.searchInput}
+          placeholder='Search rules by name'
+          inputProps={{ 'aria-label': 'search rules by name' }}
+        />
+        <div className={styles.searchButton} aria-label='search button'>
+          <SearchIcon color='primary'/>
+        </div>
+      </Paper>
+    );
+  }
+
 export const RuleListPage: React.FC<{}> = () => {
     const styles = useStyles();
     const [isOpen, setOpen] = React.useState(false);
@@ -70,7 +89,9 @@ export const RuleListPage: React.FC<{}> = () => {
 
     return (
         <div className={styles.root}>
-            <div><h1>Rules List</h1></div>
+            <div aria-label='rule search bar' className={styles.searchBar}>
+                <SearchBar/>
+            </div>
             <Fab
                 color='primary'
                 aria-label='add rule'

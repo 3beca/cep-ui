@@ -3,10 +3,10 @@
 exports[`App render / and navigate to Event Types Page with route /event-types and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-570"
+    class="makeStyles-root-616"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-571 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-617 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -23,7 +23,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-572 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-618 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -45,17 +45,17 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
     </header>
     CEP UI
     <div
-      class="makeStyles-root-786"
+      class="makeStyles-root-855"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-791"
+        class="makeStyles-tabletitle-860"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-792 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-861 MuiTypography-h6"
           >
             List of Event Types
           </h6>
@@ -68,7 +68,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-787"
+            class="MuiTableHead-root makeStyles-head-856"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -80,13 +80,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root makeStyles-mainCheck-789"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root makeStyles-mainCheck-858"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -113,7 +113,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-788 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-857 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -123,7 +123,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-788 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-857 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -133,7 +133,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-788 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-857 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -152,13 +152,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -254,13 +254,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -356,13 +356,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -458,13 +458,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -560,13 +560,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -662,13 +662,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -764,13 +764,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -866,13 +866,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -968,13 +968,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1070,13 +1070,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-825 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-894 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-828"
+                      class="PrivateSwitchBase-input-897"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1167,7 +1167,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-797"
+        class="makeStyles-paginatorRow-866"
       >
         <div
           class="MuiTablePagination-root"
@@ -1278,10 +1278,10 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
 exports[`App render / and navigate to Events Log with route /event-logs and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-1205"
+    class="makeStyles-root-1261"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1206 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1262 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1298,7 +1298,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-1207 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-1263 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1320,7 +1320,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
     </header>
     CEP UI
     <div
-      class="makeStyles-root-1421"
+      class="makeStyles-root-1500"
     >
       <h1>
         Event List
@@ -1393,10 +1393,10 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
 exports[`App render / and navigate to TargetListPage with route /targets and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-891"
+    class="makeStyles-root-942"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-892 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-943 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1413,7 +1413,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-893 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-944 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1435,17 +1435,17 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
     </header>
     CEP UI
     <div
-      class="makeStyles-root-1107"
+      class="makeStyles-root-1181"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-1112"
+        class="makeStyles-tabletitle-1186"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-1113 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-1187 MuiTypography-h6"
           >
             List of Targets
           </h6>
@@ -1458,7 +1458,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-1108"
+            class="MuiTableHead-root makeStyles-head-1182"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -1470,13 +1470,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root makeStyles-mainCheck-1110"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root makeStyles-mainCheck-1184"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -1503,7 +1503,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-1109 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1183 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -1513,7 +1513,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-1109 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1183 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -1523,7 +1523,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-1109 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1183 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -1542,13 +1542,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1620,13 +1620,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1698,13 +1698,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1776,13 +1776,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1854,13 +1854,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1932,13 +1932,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2010,13 +2010,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2088,13 +2088,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2166,13 +2166,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2244,13 +2244,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1146 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1220 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1149"
+                      class="PrivateSwitchBase-input-1223"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2317,7 +2317,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-1118"
+        class="makeStyles-paginatorRow-1192"
       >
         <div
           class="MuiTablePagination-root"
@@ -2430,10 +2430,10 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-408"
+    class="makeStyles-root-454"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-409 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-455 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2450,7 +2450,7 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-410 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-456 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2485,10 +2485,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-192"
+    class="makeStyles-root-215"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-193 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-216 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2505,7 +2505,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-194 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-217 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2527,16 +2527,46 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
     </header>
     CEP UI
     <div
-      class="makeStyles-root-305"
+      class="makeStyles-root-328"
     >
-      <div>
-        <h1>
-          Rules List
-        </h1>
+      <div
+        aria-label="rule search bar"
+        class="makeStyles-searchBar-329"
+      >
+        <div
+          class="MuiPaper-root makeStyles-searchContainer-330 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiInputBase-root makeStyles-searchInput-331"
+          >
+            <input
+              aria-label="search rules by name"
+              class="MuiInputBase-input"
+              placeholder="Search rules by name"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            aria-label="search button"
+            class="makeStyles-searchButton-332"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
       <button
         aria-label="add rule"
-        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-307 MuiFab-primary"
+        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-334 MuiFab-primary"
         tabindex="0"
         type="button"
       >
@@ -2559,11 +2589,11 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         />
       </button>
       <div
-        class="makeStyles-gridCards-306"
+        class="makeStyles-gridCards-333"
       >
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2573,7 +2603,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarBlue-311 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarBlue-338 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -2627,7 +2657,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2637,7 +2667,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarRed-310 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarRed-337 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -2691,7 +2721,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2701,7 +2731,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarOrange-313 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarOrange-340 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -2755,7 +2785,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2765,7 +2795,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarPurple-312 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarPurple-339 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -2819,7 +2849,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2829,7 +2859,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarBlue-311 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarBlue-338 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -2883,7 +2913,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2893,7 +2923,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarRed-310 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarRed-337 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -2947,7 +2977,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -2957,7 +2987,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarOrange-313 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarOrange-340 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -3011,7 +3041,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3021,7 +3051,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarPurple-312 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarPurple-339 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -3075,7 +3105,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3085,7 +3115,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarBlue-311 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarBlue-338 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3139,7 +3169,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3149,7 +3179,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarRed-310 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarRed-337 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -3203,7 +3233,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3213,7 +3243,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarOrange-313 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarOrange-340 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -3267,7 +3297,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3277,7 +3307,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarPurple-312 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarPurple-339 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -3331,7 +3361,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3341,7 +3371,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarBlue-311 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarBlue-338 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3395,7 +3425,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3405,7 +3435,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarRed-310 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarRed-337 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -3459,7 +3489,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3469,7 +3499,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarOrange-313 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarOrange-340 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -3523,7 +3553,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3533,7 +3563,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarPurple-312 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarPurple-339 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -3587,7 +3617,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3597,7 +3627,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarBlue-311 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarBlue-338 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3651,7 +3681,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3661,7 +3691,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarRed-310 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarRed-337 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -3715,7 +3745,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3725,7 +3755,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarOrange-313 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarOrange-340 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -3779,7 +3809,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-308 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-335 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3789,7 +3819,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-309 makeStyles-ruleCardAvatarPurple-312 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-336 makeStyles-ruleCardAvatarPurple-339 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -3893,14 +3923,44 @@ exports[`App render with menu closed and snapshot 1`] = `
     <div
       class="makeStyles-root-114"
     >
-      <div>
-        <h1>
-          Rules List
-        </h1>
+      <div
+        aria-label="rule search bar"
+        class="makeStyles-searchBar-115"
+      >
+        <div
+          class="MuiPaper-root makeStyles-searchContainer-116 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            class="MuiInputBase-root makeStyles-searchInput-117"
+          >
+            <input
+              aria-label="search rules by name"
+              class="MuiInputBase-input"
+              placeholder="Search rules by name"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            aria-label="search button"
+            class="makeStyles-searchButton-118"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
       <button
         aria-label="add rule"
-        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-116 MuiFab-primary"
+        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-120 MuiFab-primary"
         tabindex="0"
         type="button"
       >
@@ -3923,11 +3983,11 @@ exports[`App render with menu closed and snapshot 1`] = `
         />
       </button>
       <div
-        class="makeStyles-gridCards-115"
+        class="makeStyles-gridCards-119"
       >
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -3937,7 +3997,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarBlue-124 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3991,7 +4051,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4001,7 +4061,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarRed-123 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -4055,7 +4115,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4065,7 +4125,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarOrange-126 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -4119,7 +4179,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4129,7 +4189,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarPurple-125 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -4183,7 +4243,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4193,7 +4253,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarBlue-124 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -4247,7 +4307,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4257,7 +4317,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarRed-123 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -4311,7 +4371,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4321,7 +4381,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarOrange-126 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -4375,7 +4435,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4385,7 +4445,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarPurple-125 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -4439,7 +4499,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4449,7 +4509,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarBlue-124 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -4503,7 +4563,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4513,7 +4573,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarRed-123 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -4567,7 +4627,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4577,7 +4637,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarOrange-126 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -4631,7 +4691,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4641,7 +4701,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarPurple-125 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -4695,7 +4755,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4705,7 +4765,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarBlue-124 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -4759,7 +4819,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4769,7 +4829,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarRed-123 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -4823,7 +4883,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4833,7 +4893,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarOrange-126 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -4887,7 +4947,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4897,7 +4957,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarPurple-125 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -4951,7 +5011,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -4961,7 +5021,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarBlue-120 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarBlue-124 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -5015,7 +5075,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -5025,7 +5085,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarRed-119 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarRed-123 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -5079,7 +5139,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -5089,7 +5149,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarOrange-122 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarOrange-126 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -5143,7 +5203,7 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-117 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-121 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             class="MuiCardHeader-root"
@@ -5153,7 +5213,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-118 makeStyles-ruleCardAvatarPurple-121 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-122 makeStyles-ruleCardAvatarPurple-125 MuiAvatar-colorDefault"
               >
                 R
               </div>
