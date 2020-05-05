@@ -22,6 +22,9 @@ export const useStyles = makeStyles(
             bottom: theme.spacing(5),
             right: theme.spacing(5),
             zIndex: 3
+        },
+        loadMoreButton: {
+            padding: 16
         }
     })
 );

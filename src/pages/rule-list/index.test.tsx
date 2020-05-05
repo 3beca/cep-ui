@@ -8,8 +8,10 @@ import {
     serverGetRuleList,
     generateRuleListWith,
 } from '../../test-utils';
+import userEvent from '@testing-library/user-event';
 import RuleListPage  from './index';
 import { BASE_URL } from '../../services/config';
+
 
 test(
     'RuleListPage should render loading component',
@@ -111,10 +113,34 @@ test(
     'RuleListPage should render a searchbar  and find rules that contains rule',
     async () => {
         serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
-        const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
+        const {getAllByLabelText, getByLabelText, queryByTestId} = renderInsideApp(<RuleListPage/>);
 
         getByLabelText(/rule search bar/i);
+        const input = getByLabelText(/search input/i) as HTMLInputElement;
         await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
         getByLabelText(/add rule/i);
+
+        const searchText = 'rule-name';
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, searchText, 200, generateRuleListWith(20, false, false));
+        userEvent.type(input, searchText);
+        await waitFor(() => expect(queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+    }
+);
+
+test(
+    'RuleListPage should render load button while there are more elements',
+    async () => {
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, true, false));
+        const {getAllByLabelText, getByLabelText, queryByTestId, queryByLabelText} = renderInsideApp(<RuleListPage/>);
+
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+        const loadMore = getByLabelText(/load more rules/i);
+
+        serverGetRuleList(setupNock(BASE_URL), 2, 20, '', 200, generateRuleListWith(10, false, false));
+        fireEvent.click(loadMore);
+        await waitFor(() => expect(queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(10));
+        expect(queryByLabelText(/load more rules/i)).not.toBeInTheDocument();
     }
 );

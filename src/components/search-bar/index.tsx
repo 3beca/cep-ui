@@ -17,7 +17,7 @@ export const SearchBar: React.FC<SearchBarProps> = function SearchBar({hint = 's
     const onTextChange = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => setSearchText(ev.target.value), []);
     React.useEffect(
         () => {
-            if (!searchText || searchText.length < minLength) return;
+            if (!!searchText && searchText.length < minLength) return;
             if (delay <= 0) {
                 onSearchFor(searchText);
                 return;

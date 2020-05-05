@@ -3,17 +3,17 @@
 exports[`RuleListPage should render 20 cards and a create button and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-667"
+    class="makeStyles-root-670"
   >
     <div
       aria-label="rule search bar"
-      class="makeStyles-searchBar-668"
+      class="makeStyles-searchBar-671"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-671 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-675 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-672"
+          class="MuiInputBase-root makeStyles-searchInput-676"
         >
           <input
             aria-label="search input"
@@ -25,7 +25,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-673"
+          class="makeStyles-searchButton-677"
         >
           <svg
             aria-hidden="true"
@@ -42,7 +42,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
     </div>
     <button
       aria-label="add rule"
-      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-670 MuiFab-primary"
+      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-673 MuiFab-primary"
       tabindex="0"
       type="button"
     >
@@ -65,21 +65,21 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       />
     </button>
     <div
-      class="makeStyles-gridCards-669"
+      class="makeStyles-gridCards-672"
     >
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarBlue-841 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarBlue-845 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -131,7 +131,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -143,7 +143,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -152,10 +152,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -164,15 +164,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -180,17 +180,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarRed-840 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarRed-844 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -242,7 +242,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -254,7 +254,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -263,10 +263,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -275,15 +275,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -291,17 +291,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarOrange-843 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarOrange-847 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -353,7 +353,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -365,7 +365,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -374,10 +374,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -386,15 +386,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -402,17 +402,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarPurple-842 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarPurple-846 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -464,7 +464,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -476,7 +476,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -485,10 +485,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -497,15 +497,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -513,17 +513,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarBlue-841 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarBlue-845 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -575,7 +575,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -587,7 +587,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -596,10 +596,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -608,15 +608,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -624,17 +624,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarRed-840 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarRed-844 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -686,7 +686,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -698,7 +698,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -707,10 +707,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -719,15 +719,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -735,17 +735,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarOrange-843 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarOrange-847 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -797,7 +797,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -809,7 +809,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -818,10 +818,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -830,15 +830,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -846,17 +846,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarPurple-842 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarPurple-846 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -908,7 +908,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -920,7 +920,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -929,10 +929,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -941,15 +941,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -957,17 +957,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarBlue-841 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarBlue-845 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -1019,7 +1019,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1031,7 +1031,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1040,10 +1040,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1052,15 +1052,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -1068,17 +1068,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarRed-840 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarRed-844 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -1130,7 +1130,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1142,7 +1142,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1151,10 +1151,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1163,15 +1163,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -1179,17 +1179,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarOrange-843 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarOrange-847 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -1241,7 +1241,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1253,7 +1253,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1262,10 +1262,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1274,15 +1274,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -1290,17 +1290,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarPurple-842 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarPurple-846 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -1352,7 +1352,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1364,7 +1364,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1373,10 +1373,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1385,15 +1385,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -1401,17 +1401,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarBlue-841 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarBlue-845 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -1463,7 +1463,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1475,7 +1475,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1484,10 +1484,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1496,15 +1496,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -1512,17 +1512,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarRed-840 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarRed-844 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -1574,7 +1574,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1586,7 +1586,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1595,10 +1595,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1607,15 +1607,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -1623,17 +1623,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarOrange-843 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarOrange-847 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -1685,7 +1685,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1697,7 +1697,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1706,10 +1706,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1718,15 +1718,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -1734,17 +1734,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarPurple-842 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarPurple-846 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -1796,7 +1796,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1808,7 +1808,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1817,10 +1817,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1829,15 +1829,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -1845,17 +1845,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarBlue-841 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarBlue-845 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -1907,7 +1907,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -1919,7 +1919,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -1928,10 +1928,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1940,15 +1940,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -1956,17 +1956,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarRed-840 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarRed-844 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -2018,7 +2018,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -2030,7 +2030,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -2039,10 +2039,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2051,15 +2051,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -2067,17 +2067,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarOrange-843 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarOrange-847 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -2129,7 +2129,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -2141,7 +2141,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -2150,10 +2150,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2162,15 +2162,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOn-837"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOn-841"
               />
             </div>
           </div>
@@ -2178,17 +2178,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-829 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-833 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-830"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-834"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-839 makeStyles-ruleCardAvatarPurple-842 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-843 makeStyles-ruleCardAvatarPurple-846 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -2240,7 +2240,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-831"
+          class="makeStyles-ruleCardContent-835"
         >
           <div>
             Event Type 
@@ -2252,7 +2252,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-832"
+            class="makeStyles-ruleCardFilters-836"
           >
             {"temperature":10}
           </div>
@@ -2261,10 +2261,10 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-833"
+            class="makeStyles-ruleCardStatus-837"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-834"
+              class="makeStyles-ruleCardStatusDate-838"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2273,15 +2273,15 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-835"
+              class="makeStyles-ruleCardStatusOneShot-839"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-836 makeStyles-onShotLabelOff-838"
+                class="makeStyles-onShotLabel-840 makeStyles-onShotLabelOff-842"
               />
             </div>
           </div>
@@ -2289,11 +2289,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
     </div>
     <div
-      class="makeStyles-emptyView-745"
+      class="makeStyles-emptyView-749"
       data-testid="empty-view-row"
     >
       <span
-        class="MuiTypography-root makeStyles-emptyViewText-746 MuiTypography-caption MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-emptyViewText-750 MuiTypography-caption MuiTypography-alignCenter"
       >
         You reached the end of the list!
       </span>
@@ -2305,17 +2305,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
 exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
 <div>
   <div
-    class="makeStyles-root-238"
+    class="makeStyles-root-239"
   >
     <div
       aria-label="rule search bar"
-      class="makeStyles-searchBar-239"
+      class="makeStyles-searchBar-240"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-242 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-244 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-243"
+          class="MuiInputBase-root makeStyles-searchInput-245"
         >
           <input
             aria-label="search input"
@@ -2327,7 +2327,7 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-244"
+          class="makeStyles-searchButton-246"
         >
           <svg
             aria-hidden="true"
@@ -2344,7 +2344,7 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
     </div>
     <button
       aria-label="add rule"
-      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-241 MuiFab-primary"
+      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-242 MuiFab-primary"
       tabindex="0"
       type="button"
     >
@@ -2367,14 +2367,14 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
       />
     </button>
     <div
-      class="makeStyles-gridCards-240"
+      class="makeStyles-gridCards-241"
     />
     <div
-      class="makeStyles-emptyView-316"
+      class="makeStyles-emptyView-318"
       data-testid="empty-view-row"
     >
       <h4
-        class="MuiTypography-root makeStyles-emptyViewText-317 MuiTypography-h4 MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-emptyViewText-319 MuiTypography-h4 MuiTypography-alignCenter"
       >
         There are not RULES created yet!
       </h4>
@@ -2386,17 +2386,17 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
 exports[`RuleListPage should render End List message when no more elements to load and snap 1`] = `
 <div>
   <div
-    class="makeStyles-root-430"
+    class="makeStyles-root-432"
   >
     <div
       aria-label="rule search bar"
-      class="makeStyles-searchBar-431"
+      class="makeStyles-searchBar-433"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-434 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-437 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-435"
+          class="MuiInputBase-root makeStyles-searchInput-438"
         >
           <input
             aria-label="search input"
@@ -2408,7 +2408,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-436"
+          class="makeStyles-searchButton-439"
         >
           <svg
             aria-hidden="true"
@@ -2425,7 +2425,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
     </div>
     <button
       aria-label="add rule"
-      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-433 MuiFab-primary"
+      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-435 MuiFab-primary"
       tabindex="0"
       type="button"
     >
@@ -2448,21 +2448,21 @@ exports[`RuleListPage should render End List message when no more elements to lo
       />
     </button>
     <div
-      class="makeStyles-gridCards-432"
+      class="makeStyles-gridCards-434"
     >
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarBlue-604 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarBlue-607 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -2514,7 +2514,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -2526,7 +2526,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -2535,10 +2535,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2547,15 +2547,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOn-600"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOn-603"
               />
             </div>
           </div>
@@ -2563,17 +2563,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarRed-603 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarRed-606 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -2625,7 +2625,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -2637,7 +2637,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -2646,10 +2646,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2658,15 +2658,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOff-601"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOff-604"
               />
             </div>
           </div>
@@ -2674,17 +2674,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarOrange-606 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarOrange-609 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -2736,7 +2736,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -2748,7 +2748,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -2757,10 +2757,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2769,15 +2769,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOn-600"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOn-603"
               />
             </div>
           </div>
@@ -2785,17 +2785,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarPurple-605 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarPurple-608 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -2847,7 +2847,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -2859,7 +2859,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -2868,10 +2868,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2880,15 +2880,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOff-601"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOff-604"
               />
             </div>
           </div>
@@ -2896,17 +2896,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarBlue-604 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarBlue-607 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -2958,7 +2958,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -2970,7 +2970,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -2979,10 +2979,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2991,15 +2991,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOn-600"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOn-603"
               />
             </div>
           </div>
@@ -3007,17 +3007,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarRed-603 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarRed-606 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -3069,7 +3069,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -3081,7 +3081,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -3090,10 +3090,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -3102,15 +3102,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOff-601"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOff-604"
               />
             </div>
           </div>
@@ -3118,17 +3118,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarOrange-606 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarOrange-609 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -3180,7 +3180,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -3192,7 +3192,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -3201,10 +3201,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -3213,15 +3213,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOn-600"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOn-603"
               />
             </div>
           </div>
@@ -3229,17 +3229,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarPurple-605 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarPurple-608 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -3291,7 +3291,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -3303,7 +3303,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -3312,10 +3312,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -3324,15 +3324,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOff-601"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOff-604"
               />
             </div>
           </div>
@@ -3340,17 +3340,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarBlue-604 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarBlue-607 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -3402,7 +3402,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -3414,7 +3414,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -3423,10 +3423,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -3435,15 +3435,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOn-600"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOn-603"
               />
             </div>
           </div>
@@ -3451,17 +3451,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-592 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-595 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-593"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-596"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
               aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-602 makeStyles-ruleCardAvatarRed-603 MuiAvatar-colorDefault"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-605 makeStyles-ruleCardAvatarRed-606 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -3513,7 +3513,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-594"
+          class="makeStyles-ruleCardContent-597"
         >
           <div>
             Event Type 
@@ -3525,7 +3525,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
           </div>
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-595"
+            class="makeStyles-ruleCardFilters-598"
           >
             {"temperature":10}
           </div>
@@ -3534,10 +3534,10 @@ exports[`RuleListPage should render End List message when no more elements to lo
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-596"
+            class="makeStyles-ruleCardStatus-599"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-597"
+              class="makeStyles-ruleCardStatusDate-600"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -3546,15 +3546,15 @@ exports[`RuleListPage should render End List message when no more elements to lo
               </p>
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-598"
+              class="makeStyles-ruleCardStatusOneShot-601"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                One Shot
+                Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-599 makeStyles-onShotLabelOff-601"
+                class="makeStyles-onShotLabel-602 makeStyles-onShotLabelOff-604"
               />
             </div>
           </div>
@@ -3562,11 +3562,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
     </div>
     <div
-      class="makeStyles-emptyView-508"
+      class="makeStyles-emptyView-511"
       data-testid="empty-view-row"
     >
       <span
-        class="MuiTypography-root makeStyles-emptyViewText-509 MuiTypography-caption MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-emptyViewText-512 MuiTypography-caption MuiTypography-alignCenter"
       >
         You reached the end of the list!
       </span>
@@ -3585,10 +3585,10 @@ exports[`RuleListPage should render loading component 1`] = `
       class="makeStyles-searchBar-2"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-5 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-6 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-6"
+          class="MuiInputBase-root makeStyles-searchInput-7"
         >
           <input
             aria-label="search input"
@@ -3600,7 +3600,7 @@ exports[`RuleListPage should render loading component 1`] = `
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-7"
+          class="makeStyles-searchButton-8"
         >
           <svg
             aria-hidden="true"
@@ -3643,11 +3643,11 @@ exports[`RuleListPage should render loading component 1`] = `
       class="makeStyles-gridCards-3"
     />
     <div
-      class="makeStyles-loadingView-76"
+      class="makeStyles-loadingView-77"
       data-testid="loading-view-row"
     >
       <div
-        class="MuiCircularProgress-root makeStyles-loadingSpinner-77 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        class="MuiCircularProgress-root makeStyles-loadingSpinner-78 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style="width: 40px; height: 40px;"
       >

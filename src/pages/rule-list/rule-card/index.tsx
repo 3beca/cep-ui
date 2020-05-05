@@ -67,7 +67,7 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                     className={styles.ruleCardStatus}
                     aria-label='rule status element'>
                         <div className={styles.ruleCardStatusDate}><Typography>{(new Date(rule.createdAt)).toLocaleDateString()}</Typography></div>
-                        <div className={styles.ruleCardStatusOneShot}><Typography>One Shot</Typography><div className={`${styles.onShotLabel} ${rule.skipOnConsecutivesMatches ? styles.onShotLabelOn : styles.onShotLabelOff}`}/></div>
+                        <div className={styles.ruleCardStatusOneShot}><Typography>Skip Consecutives</Typography><div className={`${styles.onShotLabel} ${rule.skipOnConsecutivesMatches ? styles.onShotLabelOn : styles.onShotLabelOff}`}/></div>
                 </div>
             </div>
         </Card>

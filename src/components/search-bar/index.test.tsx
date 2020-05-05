@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import {render} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import SearchBar from './index';
 
@@ -70,6 +70,7 @@ test('SearchBar should fire onSearchfor on each key pressed', async () => {
         userEvent.type(input, c);
     });
     jest.runAllTimers();
-    expect(onSearchfor).toHaveBeenCalledTimes(6);
-    searchText.split('').map((c, i) => expect(onSearchfor).toHaveBeenNthCalledWith(i + 1, searchText.substring(0, i + 1)));
+    expect(onSearchfor).toHaveBeenCalledTimes(7);
+    expect(onSearchfor).toHaveBeenNthCalledWith(1, '');
+    searchText.split('').map((c, i) => expect(onSearchfor).toHaveBeenNthCalledWith(i + 2, searchText.substring(0, i + 1)));
 });
