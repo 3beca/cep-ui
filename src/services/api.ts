@@ -77,8 +77,8 @@ export type Event = {
     }[];
 } & Entity;
 
-export const getListRequest = (baseURL: string, config: APIRequestInfo) => async <T>(path: string, page: number = 1, size: number = 10): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>> => {
-    const url = `${baseURL}${path}/?page=${page}&pageSize=${size}`;
+export const getListRequest = (baseURL: string, config: APIRequestInfo) => async <T>(path: string, page: number = 1, size: number = 10, filter: string = ''): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>> => {
+    const url = `${baseURL}${path}/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`;
     return fetchApi<undefined, ServiceList<T>, ServiceError>(url, {...config, method: 'GET'});
 };
 export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async (path: string, eventTypeIds: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)> => {
@@ -118,7 +118,7 @@ export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async 
     };
 };
 export type Api = {
-    getListRequest<T>(path: string, page?: number, size?: number): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>>;
+    getListRequest<T>(path: string, page?: number, size?: number, filter?: string): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>>;
     deleteRequest(path: string, ids: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)>;
 };
 export const buildApiService = (server: string): Api => {

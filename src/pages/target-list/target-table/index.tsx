@@ -34,7 +34,7 @@ export const TargetTable: React.FC<TargetTableProps> = ({
 
     // Paginator
     const {page, pageSize, changePage, changePageSize} = usePagination(initialPage, initialPageSize);
-    const {isLoading, response, request: forceReload} = useGetList(ENTITY.TARGETS, page, pageSize, true);
+    const {isLoading, response, request: forceReload} = useGetList(ENTITY.TARGETS, page, pageSize);
     const TargetList = response?.data;
     const targets = TargetList && Array.isArray(TargetList?.results) ? TargetList.results : [];
     const isEmpty = response?.data ? response.data.results.length <= 0 : true

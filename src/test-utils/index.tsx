@@ -108,50 +108,49 @@ const randomType = (index: number): RuleTypes => {
     const rand = index % 4;
     return types[rand];
 };
+export const generateRule = (idx: number, filters: any = {temperature: 10}) => ({
+    id: idx + '',
+    name: 'Rule ' + idx,
+    type: randomType(idx),
+    eventTypeId: 'eventtypeid',
+    targetId: 'targetid',
+    skipOnConsecutivesMatches: idx % 2 === 0 ? true : false,
+    filters,
+    createdAt: '2020-01-01T10:10:10.123Z',
+    updatedAt: '2020-01-01T10:10:10.123Z'
+});
 export const generateRuleListWith = function generateListWith(many: number = 5, next = false, prev = false): ServiceList<Rule> {
     const list: ServiceList<Rule> = {
-        results: Array.from({length: many},
-            (_, idx) => ({
-                id: idx + '',
-                name: 'Rule ' + idx,
-                type: randomType(idx),
-                eventTypeId: '',
-                targetId: '',
-                skipOnConsecutivesMatches: idx % 2 === 0 ? true : false,
-                filters: {},
-                createdAt: '2020-01-01T10:10:10.123Z',
-                updatedAt: '2020-01-01T10:10:10.123Z'
-            })
-        )
+        results: Array.from({length: many}, (_, idx) => generateRule(idx))
     };
     if (prev) list.prev = 'http://cep/?page=prev';
     if (next) list.next = 'http://cep/?page=next';
     return list;
 };
 
-export const serverGetList = function serverGetList<T>(server: nock.Scope, path: string, page: number = 1, size: number = 10, status: number = 200, response: ServiceList<T>|ServiceError) {
-    return server.get(path + `/?page=${page}&pageSize=${size}`).reply(status, response);
+export const serverGetList = function serverGetList<T>(server: nock.Scope, path: string, page: number = 1, size: number = 10, filter: string = '', status: number = 200, response: ServiceList<T>|ServiceError) {
+    return server.get(path + `/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`).reply(status, response);
 };
 export const serverDelete = (server: nock.Scope, path: string, id: string, status: number = 204, response: undefined|ServiceError = undefined) => {
     return server.delete(path + `/${id}`).reply(status, response);
 };
 
-export const serverGetEventTypeList = (server: nock.Scope, page: number = 1, size: number = 10, status: number = 200, response: EventTypeList|EventTypeError = generateEventTypeListWith(10, false, false)) => {
-    return serverGetList(server, EVENT_TYPES_URL, page, size, status, response);
+export const serverGetEventTypeList = (server: nock.Scope, page: number = 1, size: number = 10, filter= '', status: number = 200, response: EventTypeList|EventTypeError = generateEventTypeListWith(10, false, false)) => {
+    return serverGetList(server, EVENT_TYPES_URL, page, size, filter, status, response);
 };
 export const serverDeleteEventType = (server: nock.Scope, eventTypeId: string, status: number = 204, response: undefined|EventTypeError = undefined) => {
     return serverDelete(server, EVENT_TYPES_URL, eventTypeId, status, response);
 };
 
-export const serverGetTargetList = (server: nock.Scope, page: number = 1, size: number = 10, status: number = 200, response: TargetList|TargetError = generateTargetListWith(10, false, false)) => {
-    return serverGetList(server, TARGETS_URL, page, size, status, response);
+export const serverGetTargetList = (server: nock.Scope, page: number = 1, size: number = 10, filter= '', status: number = 200, response: TargetList|TargetError = generateTargetListWith(10, false, false)) => {
+    return serverGetList(server, TARGETS_URL, page, size, filter, status, response);
 };
 export const serverDeleteTarget = (server: nock.Scope, targetId: string, status: number = 204, response: undefined|TargetError = undefined) => {
     return serverDelete(server, TARGETS_URL, targetId, status, response);
 };
 
-export const serverGetRuleList = (server: nock.Scope, page: number = 1, size: number = 10, status: number = 200, response: RuleList|RuleError = generateRuleListWith(10, false, false)) => {
-    return serverGetList(server, RULES_URL, page, size, status, response);
+export const serverGetRuleList = (server: nock.Scope, page: number = 1, size: number = 10, filter= '', status: number = 200, response: RuleList|RuleError = generateRuleListWith(10, false, false)) => {
+    return serverGetList(server, RULES_URL, page, size, filter, status, response);
 };
 export const serverDeleteRule = (server: nock.Scope, ruleId: string, status: number = 204, response: undefined|RuleError = undefined) => {
     return serverDelete(server, RULES_URL, ruleId, status, response);

@@ -8,29 +8,58 @@ import {
     serverGetRuleList,
     generateRuleListWith,
 } from '../../test-utils';
-import RuleListPage, {colorTypeSelector, mapRuleTypeName} from './index';
-import { RuleTypes } from '../../services/api';
+import RuleListPage  from './index';
 import { BASE_URL } from '../../services/config';
 
-test('selector avatar color function shuold return a default color', () => {
-    expect(colorTypeSelector(undefined as unknown as RuleTypes, {ruleCardAvatarBlue: 'default color'} as any)).toEqual('default color');
-});
+test(
+    'RuleListPage should render loading component',
+    async () => {
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
+        const {container, getByTestId, getByLabelText, getAllByLabelText} = renderInsideApp(<RuleListPage/>);
 
-test('mapRuleTypeName should return REAL TIME when undefined type', () => {
-    expect(mapRuleTypeName(undefined as unknown as RuleTypes)).toEqual('REAL TIME');
-});
+        getByTestId(/loading-view-row/i);
+        getByLabelText(/add rule/i);
+        expect(container).toMatchSnapshot();
 
-test('mapRuleTypeName should return REAL TIME when invalid type', () => {
-    expect(mapRuleTypeName('invalidtype' as unknown as RuleTypes)).toEqual('REAL TIME');
-});
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+    }
+);
+
+test(
+    'RuleListPage should render Empty List when no elements and snap',
+    async () => {
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(0, false, false));
+        const {container, getByTestId, getByLabelText} = renderInsideApp(<RuleListPage/>);
+
+        await waitFor(() => expect(getByTestId(/empty-view-row/i)).toBeInTheDocument());
+        expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/there are not rules created yet/i);
+        getByLabelText(/add rule/i);
+        expect(container).toMatchSnapshot();
+    }
+);
+
+test(
+    'RuleListPage should render End List message when no more elements to load and snap',
+    async () => {
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(10, false, false));
+        const {container, getByTestId, getByLabelText, getAllByLabelText} = renderInsideApp(<RuleListPage/>);
+
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(10));
+        expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/you reached the end of the list/i);
+        getByLabelText(/add rule/i);
+        expect(container).toMatchSnapshot();
+    }
+);
 
 test(
     'RuleListPage should render 20 cards and a create button and snapshot',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
         const {container, getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
         await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+        expect(getAllByLabelText(/rule filter elements/i)).toHaveLength(20);
+        expect(getAllByLabelText(/rule status element/i)).toHaveLength(20);
         getByLabelText(/add rule/i);
         expect(container).toMatchSnapshot();
     }
@@ -39,7 +68,7 @@ test(
 test(
     'RuleListPage should render a create rule dialog when click on add button and close when press close button',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
         const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
         await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
@@ -59,7 +88,7 @@ test(
 test(
     'RuleListPage should render a create rule dialog when click on add button and close when press selecte button',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
         const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
         await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
@@ -81,7 +110,7 @@ test(
 test(
     'RuleListPage should render a searchbar  and find rules that contains rule',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
         const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
         getByLabelText(/rule search bar/i);

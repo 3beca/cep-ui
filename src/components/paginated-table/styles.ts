@@ -15,13 +15,18 @@ export const useStyles = makeStyles(
             color: theme.palette.error.dark
         },
         emptyView: {
+            display: 'flex',
+            justifyContent: 'center'
+        },
+        emptyViewText: {
             margin: 8,
             padding: 8,
             color: theme.palette.primary.dark
         },
         paginatorRow: {
             display: 'flex',
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
+            backgroundColor: theme.palette.common.white
         }
     })
   );

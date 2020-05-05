@@ -4,13 +4,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-2564"
+    class="makeStyles-tabletitle-2578"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-2565 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-2579 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -26,7 +26,7 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           <svg
             aria-hidden="true"
             aria-label="delete selecteds icon"
-            class="MuiSvgIcon-root makeStyles-deleteIcon-2563"
+            class="MuiSvgIcon-root makeStyles-deleteIcon-2577"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -48,7 +48,7 @@ exports[`TargeTable should show a delete icon button when have some elements sel
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-2560"
+        class="MuiTableHead-root makeStyles-head-2574"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -60,13 +60,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root makeStyles-mainCheck-2562"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root makeStyles-mainCheck-2576"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -93,7 +93,7 @@ exports[`TargeTable should show a delete icon button when have some elements sel
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-2561 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-2575 MuiTypography-body1"
             >
               Name
             </p>
@@ -103,7 +103,7 @@ exports[`TargeTable should show a delete icon button when have some elements sel
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-2561 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-2575 MuiTypography-body1"
             >
               Created
             </p>
@@ -113,7 +113,7 @@ exports[`TargeTable should show a delete icon button when have some elements sel
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-2561 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-2575 MuiTypography-body1"
             >
               Actions
             </p>
@@ -132,13 +132,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -210,13 +210,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2633 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2648 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -288,13 +288,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2633 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-2648 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -366,13 +366,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -444,13 +444,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -522,13 +522,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -600,13 +600,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -678,13 +678,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -756,13 +756,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -834,13 +834,13 @@ exports[`TargeTable should show a delete icon button when have some elements sel
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2632 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2647 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-2635"
+                  class="PrivateSwitchBase-input-2650"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -907,7 +907,7 @@ exports[`TargeTable should show a delete icon button when have some elements sel
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-2604"
+    class="makeStyles-paginatorRow-2619"
   >
     <div
       class="MuiTablePagination-root"
@@ -1048,13 +1048,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root makeStyles-mainCheck-3"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root makeStyles-mainCheck-3"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -1120,13 +1120,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1198,13 +1198,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1276,13 +1276,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1354,13 +1354,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1432,13 +1432,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1510,13 +1510,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1588,13 +1588,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1666,13 +1666,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1744,13 +1744,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1822,13 +1822,13 @@ exports[`TargetTable snapshot 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-73 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-76"
+                  class="PrivateSwitchBase-input-77"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -1895,7 +1895,7 @@ exports[`TargetTable snapshot 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-45"
+    class="makeStyles-paginatorRow-46"
   >
     <div
       class="MuiTablePagination-root"
@@ -2005,13 +2005,13 @@ exports[`TargetTable snapshot when all element selected 1`] = `
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-1771"
+    class="makeStyles-tabletitle-1781"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-1772 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-1782 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -2027,7 +2027,7 @@ exports[`TargetTable snapshot when all element selected 1`] = `
           <svg
             aria-hidden="true"
             aria-label="delete selecteds icon"
-            class="MuiSvgIcon-root makeStyles-deleteIcon-1770"
+            class="MuiSvgIcon-root makeStyles-deleteIcon-1780"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -2049,7 +2049,7 @@ exports[`TargetTable snapshot when all element selected 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-1767"
+        class="MuiTableHead-root makeStyles-head-1777"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -2061,13 +2061,13 @@ exports[`TargetTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1839 MuiCheckbox-root makeStyles-mainCheck-1769 PrivateSwitchBase-checked-1840 Mui-checked"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root makeStyles-mainCheck-1779 PrivateSwitchBase-checked-1851 Mui-checked"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1842"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -2094,7 +2094,7 @@ exports[`TargetTable snapshot when all element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1768 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1778 MuiTypography-body1"
             >
               Name
             </p>
@@ -2104,7 +2104,7 @@ exports[`TargetTable snapshot when all element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1768 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1778 MuiTypography-body1"
             >
               Created
             </p>
@@ -2114,7 +2114,7 @@ exports[`TargetTable snapshot when all element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1768 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1778 MuiTypography-body1"
             >
               Actions
             </p>
@@ -2133,13 +2133,13 @@ exports[`TargetTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1839 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1840 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1842"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2211,13 +2211,13 @@ exports[`TargetTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1839 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1840 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1842"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2289,13 +2289,13 @@ exports[`TargetTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1839 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1840 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1842"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2367,13 +2367,13 @@ exports[`TargetTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1839 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1840 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1842"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2445,13 +2445,13 @@ exports[`TargetTable snapshot when all element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1839 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1840 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1850 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1851 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1842"
+                  class="PrivateSwitchBase-input-1853"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -2518,7 +2518,7 @@ exports[`TargetTable snapshot when all element selected 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-1811"
+    class="makeStyles-paginatorRow-1822"
   >
     <div
       class="MuiTablePagination-root"
@@ -2630,13 +2630,13 @@ exports[`TargetTable snapshot when empty data 1`] = `
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-319"
+    class="makeStyles-tabletitle-321"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-320 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-322 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -2649,7 +2649,7 @@ exports[`TargetTable snapshot when empty data 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-315"
+        class="MuiTableHead-root makeStyles-head-317"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -2661,14 +2661,14 @@ exports[`TargetTable snapshot when empty data 1`] = `
           >
             <span
               aria-disabled="true"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-387 MuiCheckbox-root makeStyles-mainCheck-317 PrivateSwitchBase-checked-388 Mui-checked PrivateSwitchBase-disabled-389 Mui-disabled Mui-disabled Mui-disabled"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-390 MuiCheckbox-root makeStyles-mainCheck-319 PrivateSwitchBase-checked-391 Mui-checked PrivateSwitchBase-disabled-392 Mui-disabled Mui-disabled Mui-disabled"
               tabindex="-1"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-390"
+                  class="PrivateSwitchBase-input-393"
                   data-indeterminate="false"
                   disabled=""
                   role="element-selector-all"
@@ -2693,7 +2693,7 @@ exports[`TargetTable snapshot when empty data 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-316 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-318 MuiTypography-body1"
             >
               Name
             </p>
@@ -2703,7 +2703,7 @@ exports[`TargetTable snapshot when empty data 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-316 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-318 MuiTypography-body1"
             >
               Created
             </p>
@@ -2713,7 +2713,7 @@ exports[`TargetTable snapshot when empty data 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-316 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-318 MuiTypography-body1"
             >
               Actions
             </p>
@@ -2726,16 +2726,17 @@ exports[`TargetTable snapshot when empty data 1`] = `
     </table>
   </div>
   <div
+    class="makeStyles-emptyView-360"
     data-testid="empty-view-row"
   >
     <h4
-      class="MuiTypography-root makeStyles-emptyView-358 MuiTypography-h4 MuiTypography-alignCenter"
+      class="MuiTypography-root makeStyles-emptyViewText-361 MuiTypography-h4 MuiTypography-alignCenter"
     >
       No Elements created yet!
     </h4>
   </div>
   <div
-    class="makeStyles-paginatorRow-359"
+    class="makeStyles-paginatorRow-362"
   >
     <div
       class="MuiTablePagination-root"
@@ -2845,13 +2846,13 @@ exports[`TargetTable snapshot when loading first time 1`] = `
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-167"
+    class="makeStyles-tabletitle-168"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-168 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-169 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -2864,7 +2865,7 @@ exports[`TargetTable snapshot when loading first time 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-163"
+        class="MuiTableHead-root makeStyles-head-164"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -2876,14 +2877,14 @@ exports[`TargetTable snapshot when loading first time 1`] = `
           >
             <span
               aria-disabled="true"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-235 MuiCheckbox-root makeStyles-mainCheck-165 PrivateSwitchBase-disabled-237 Mui-disabled Mui-disabled Mui-disabled"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root makeStyles-mainCheck-166 PrivateSwitchBase-disabled-239 Mui-disabled Mui-disabled Mui-disabled"
               tabindex="-1"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-238"
+                  class="PrivateSwitchBase-input-240"
                   data-indeterminate="false"
                   disabled=""
                   role="element-selector-all"
@@ -2908,7 +2909,7 @@ exports[`TargetTable snapshot when loading first time 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-164 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-165 MuiTypography-body1"
             >
               Name
             </p>
@@ -2918,7 +2919,7 @@ exports[`TargetTable snapshot when loading first time 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-164 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-165 MuiTypography-body1"
             >
               Created
             </p>
@@ -2928,7 +2929,7 @@ exports[`TargetTable snapshot when loading first time 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-164 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-165 MuiTypography-body1"
             >
               Actions
             </p>
@@ -2941,14 +2942,14 @@ exports[`TargetTable snapshot when loading first time 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-207"
+    class="makeStyles-paginatorRow-209"
   >
     <div
-      class="makeStyles-loadingView-203"
+      class="makeStyles-loadingView-204"
       data-testid="loading-view-row"
     >
       <div
-        class="MuiCircularProgress-root makeStyles-loadingSpinner-204 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        class="MuiCircularProgress-root makeStyles-loadingSpinner-205 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style="width: 40px; height: 40px;"
       >
@@ -3075,13 +3076,13 @@ exports[`TargetTable snapshot when no element selected 1`] = `
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-1447"
+    class="makeStyles-tabletitle-1455"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-1448 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-1456 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -3094,7 +3095,7 @@ exports[`TargetTable snapshot when no element selected 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-1443"
+        class="MuiTableHead-root makeStyles-head-1451"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -3106,13 +3107,13 @@ exports[`TargetTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1515 MuiCheckbox-root makeStyles-mainCheck-1445"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root makeStyles-mainCheck-1453"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1518"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -3139,7 +3140,7 @@ exports[`TargetTable snapshot when no element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1444 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1452 MuiTypography-body1"
             >
               Name
             </p>
@@ -3149,7 +3150,7 @@ exports[`TargetTable snapshot when no element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1444 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1452 MuiTypography-body1"
             >
               Created
             </p>
@@ -3159,7 +3160,7 @@ exports[`TargetTable snapshot when no element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1444 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1452 MuiTypography-body1"
             >
               Actions
             </p>
@@ -3178,13 +3179,13 @@ exports[`TargetTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1515 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1518"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3256,13 +3257,13 @@ exports[`TargetTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1515 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1518"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3334,13 +3335,13 @@ exports[`TargetTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1515 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1518"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3412,13 +3413,13 @@ exports[`TargetTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1515 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1518"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3490,13 +3491,13 @@ exports[`TargetTable snapshot when no element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1515 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1524 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1518"
+                  class="PrivateSwitchBase-input-1527"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3563,7 +3564,7 @@ exports[`TargetTable snapshot when no element selected 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-1487"
+    class="makeStyles-paginatorRow-1496"
   >
     <div
       class="MuiTablePagination-root"
@@ -3675,13 +3676,13 @@ exports[`TargetTable snapshot when one element selected 1`] = `
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-1609"
+    class="makeStyles-tabletitle-1618"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-1610 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-1619 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -3697,7 +3698,7 @@ exports[`TargetTable snapshot when one element selected 1`] = `
           <svg
             aria-hidden="true"
             aria-label="delete selecteds icon"
-            class="MuiSvgIcon-root makeStyles-deleteIcon-1608"
+            class="MuiSvgIcon-root makeStyles-deleteIcon-1617"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -3719,7 +3720,7 @@ exports[`TargetTable snapshot when one element selected 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-1605"
+        class="MuiTableHead-root makeStyles-head-1614"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -3731,13 +3732,13 @@ exports[`TargetTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1677 MuiCheckbox-root makeStyles-mainCheck-1607"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root makeStyles-mainCheck-1616"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1680"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -3764,7 +3765,7 @@ exports[`TargetTable snapshot when one element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1606 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1615 MuiTypography-body1"
             >
               Name
             </p>
@@ -3774,7 +3775,7 @@ exports[`TargetTable snapshot when one element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1606 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1615 MuiTypography-body1"
             >
               Created
             </p>
@@ -3784,7 +3785,7 @@ exports[`TargetTable snapshot when one element selected 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-1606 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-1615 MuiTypography-body1"
             >
               Actions
             </p>
@@ -3803,13 +3804,13 @@ exports[`TargetTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1677 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1678 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary PrivateSwitchBase-checked-1688 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1680"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3881,13 +3882,13 @@ exports[`TargetTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1677 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1680"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -3959,13 +3960,13 @@ exports[`TargetTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1677 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1680"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4037,13 +4038,13 @@ exports[`TargetTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1677 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1680"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4115,13 +4116,13 @@ exports[`TargetTable snapshot when one element selected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1677 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1687 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-1680"
+                  class="PrivateSwitchBase-input-1690"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4188,7 +4189,7 @@ exports[`TargetTable snapshot when one element selected 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-1649"
+    class="makeStyles-paginatorRow-1659"
   >
     <div
       class="MuiTablePagination-root"
@@ -4300,13 +4301,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-795"
+    class="makeStyles-tabletitle-800"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-796 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-801 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -4319,7 +4320,7 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-791"
+        class="MuiTableHead-root makeStyles-head-796"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -4331,14 +4332,14 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="true"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root makeStyles-mainCheck-793 PrivateSwitchBase-disabled-865 Mui-disabled Mui-disabled Mui-disabled"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root makeStyles-mainCheck-798 PrivateSwitchBase-disabled-871 Mui-disabled Mui-disabled Mui-disabled"
               tabindex="-1"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   disabled=""
                   role="element-selector-all"
@@ -4363,7 +4364,7 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-792 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-797 MuiTypography-body1"
             >
               Name
             </p>
@@ -4373,7 +4374,7 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-792 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-797 MuiTypography-body1"
             >
               Created
             </p>
@@ -4383,7 +4384,7 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-792 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-797 MuiTypography-body1"
             >
               Actions
             </p>
@@ -4402,13 +4403,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4480,13 +4481,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4558,13 +4559,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4636,13 +4637,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4714,13 +4715,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4792,13 +4793,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4870,13 +4871,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -4948,13 +4949,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5026,13 +5027,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5104,13 +5105,13 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-863 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-869 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-866"
+                  class="PrivateSwitchBase-input-872"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5177,14 +5178,14 @@ exports[`TargetTable snapshot while loading with previous data and pagination 1`
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-835"
+    class="makeStyles-paginatorRow-841"
   >
     <div
-      class="makeStyles-loadingView-831"
+      class="makeStyles-loadingView-836"
       data-testid="loading-view-row"
     >
       <div
-        class="MuiCircularProgress-root makeStyles-loadingSpinner-832 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        class="MuiCircularProgress-root makeStyles-loadingSpinner-837 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style="width: 40px; height: 40px;"
       >
@@ -5313,13 +5314,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-633"
+    class="makeStyles-tabletitle-637"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-634 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-638 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -5332,7 +5333,7 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-629"
+        class="MuiTableHead-root makeStyles-head-633"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -5344,13 +5345,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root makeStyles-mainCheck-631"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root makeStyles-mainCheck-635"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -5377,7 +5378,7 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-630 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-634 MuiTypography-body1"
             >
               Name
             </p>
@@ -5387,7 +5388,7 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-630 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-634 MuiTypography-body1"
             >
               Created
             </p>
@@ -5397,7 +5398,7 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-630 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-634 MuiTypography-body1"
             >
               Actions
             </p>
@@ -5416,13 +5417,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5494,13 +5495,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5572,13 +5573,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5650,13 +5651,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5728,13 +5729,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5806,13 +5807,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5884,13 +5885,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -5962,13 +5963,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6040,13 +6041,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6118,13 +6119,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6196,13 +6197,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6274,13 +6275,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6352,13 +6353,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6430,13 +6431,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6508,13 +6509,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6586,13 +6587,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6664,13 +6665,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6742,13 +6743,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6820,13 +6821,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6898,13 +6899,13 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-701 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-706 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-704"
+                  class="PrivateSwitchBase-input-709"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -6971,7 +6972,7 @@ exports[`TargetTable snapshot with data and custom initial pagination 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-673"
+    class="makeStyles-paginatorRow-678"
   >
     <div
       class="MuiTablePagination-root"
@@ -7081,13 +7082,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
 <div>
   <div
     aria-label="table title"
-    class="makeStyles-tabletitle-471"
+    class="makeStyles-tabletitle-474"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-tablename-472 MuiTypography-h6"
+        class="MuiTypography-root makeStyles-tablename-475 MuiTypography-h6"
       >
         List of Targets
       </h6>
@@ -7100,7 +7101,7 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
       class="MuiTable-root"
     >
       <thead
-        class="MuiTableHead-root makeStyles-head-467"
+        class="MuiTableHead-root makeStyles-head-470"
       >
         <tr
           class="MuiTableRow-root MuiTableRow-head"
@@ -7112,13 +7113,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root makeStyles-mainCheck-469"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root makeStyles-mainCheck-472"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector-all"
                   type="checkbox"
@@ -7145,7 +7146,7 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-468 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-471 MuiTypography-body1"
             >
               Name
             </p>
@@ -7155,7 +7156,7 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-468 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-471 MuiTypography-body1"
             >
               Created
             </p>
@@ -7165,7 +7166,7 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
             scope="col"
           >
             <p
-              class="MuiTypography-root makeStyles-headText-468 MuiTypography-body1"
+              class="MuiTypography-root makeStyles-headText-471 MuiTypography-body1"
             >
               Actions
             </p>
@@ -7184,13 +7185,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7262,13 +7263,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7340,13 +7341,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7418,13 +7419,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7496,13 +7497,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7574,13 +7575,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7652,13 +7653,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7730,13 +7731,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7808,13 +7809,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7886,13 +7887,13 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-539 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-543 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-542"
+                  class="PrivateSwitchBase-input-546"
                   data-indeterminate="false"
                   role="element-selector"
                   type="checkbox"
@@ -7959,7 +7960,7 @@ exports[`TargetTable snapshot with data and pagination by default 1`] = `
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-511"
+    class="makeStyles-paginatorRow-515"
   >
     <div
       class="MuiTablePagination-root"

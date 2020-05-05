@@ -34,7 +34,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
 
     // Paginator
     const {page, pageSize, changePage, changePageSize} = usePagination(initialPage, initialPageSize);
-    const {response, isLoading, request: forceReload} = useGetList(ENTITY.EVENT_TYPES, page, pageSize, true);
+    const {response, isLoading, request: forceReload} = useGetList(ENTITY.EVENT_TYPES, page, pageSize);
     const eventTypeList = response?.data;
     const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
     const isEmpty = response?.data ? response.data.results.length <= 0 : true

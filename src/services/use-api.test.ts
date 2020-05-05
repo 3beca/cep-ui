@@ -7,7 +7,7 @@ import {
 import {
     BASE_URL
 } from './config';
-import {EventTypeError} from './event-type';
+import {ServiceError} from './api';
 import {
     setupNock,
     generateEventTypeListWith,
@@ -27,9 +27,9 @@ describe(
                 let page = 1;
                 let size = 3;
                 const expectedResult = generateEventTypeListWith(3, true, false);
-                serverGetEventTypeList(server, page, size, 200, expectedResult);
+                serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-                const {result, waitForNextUpdate, rerender} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, true));
+                const {result, waitForNextUpdate, rerender} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -47,7 +47,7 @@ describe(
                 page = 2;
                 size = 3;
                 const expectedResultPage2 = generateEventTypeListWith(3, true, true);
-                serverGetEventTypeList(server, page, size, 200, expectedResultPage2);
+                serverGetEventTypeList(server, page, size, '', 200, expectedResultPage2);
 
                 rerender();
 
@@ -69,12 +69,12 @@ describe(
 
                 page = 'one' as unknown as number;
                 size = 10;
-                const expectedResultPageError: EventTypeError = {
+                const expectedResultPageError: ServiceError = {
                     statusCode: 500,
                     error: 'Error query',
                     message: 'Error message'
                 };
-                serverGetEventTypeList(server, page, size, 500, expectedResultPageError);
+                serverGetEventTypeList(server, page, size, '', 500, expectedResultPageError);
 
                 rerender();
 
@@ -106,9 +106,9 @@ describe(
                 let page = 1;
                 let size = 3;
                 const expectedResult = generateEventTypeListWith(3, true, false);
-                serverGetEventTypeList(server, page, size, 200, expectedResult);
+                serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, true));
+                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -123,8 +123,54 @@ describe(
                     data: expectedResult
                 });
 
-                serverGetEventTypeList(server, page, size, 200, expectedResult);
+                serverGetEventTypeList(server, page, size, '', 200, expectedResult);
                 act(() => result.current.request());
+
+                expect(result.current.isLoading).toBe(true);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toEqual({
+                    status: 200,
+                    data: expectedResult
+                });
+
+                await waitForNextUpdate();
+
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toEqual({
+                    status: 200,
+                    data: expectedResult
+                });
+            }
+        );
+
+        it(
+            'should force a reload when change filter',
+            async () => {
+                let page = 1;
+                let size = 3;
+                let filter = '';
+                const expectedResult = generateEventTypeListWith(3, true, false);
+                serverGetEventTypeList(server, page, size, filter, 200, expectedResult);
+
+                const {result, rerender, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, filter));
+
+                expect(result.current.isLoading).toBe(true);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
+
+                await waitForNextUpdate();
+
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toEqual({
+                    status: 200,
+                    data: expectedResult
+                });
+
+                filter = 'newfilter'
+                serverGetEventTypeList(server, page, size, filter, 200, expectedResult);
+                rerender(() => useGetList(ENTITY.EVENT_TYPES, page, size, filter));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -150,9 +196,9 @@ describe(
                 let page = 1;
                 let size = 3;
                 const expectedResult = generateEventTypeListWith(3, true, false);
-                serverGetEventTypeList(server, page, size, 200, expectedResult);
+                serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, false));
+                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, '', false));
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
@@ -173,7 +219,7 @@ describe(
                     data: expectedResult
                 });
 
-                serverGetEventTypeList(server, page, size, 200, expectedResult);
+                serverGetEventTypeList(server, page, size, '', 200, expectedResult);
                 act(() => result.current.request());
 
                 expect(result.current.isLoading).toBe(true);
@@ -271,7 +317,7 @@ describe(
                     '123456456789',
                     '153478904567'
                 ];
-                const errorResponse: EventTypeError = {statusCode: 500, error: 'eventId can not be deleted', message: 'Error deleteing eventId'};
+                const errorResponse: ServiceError = {statusCode: 500, error: 'eventId can not be deleted', message: 'Error deleteing eventId'};
                 serverDeleteEventType(server, eventTypeIds[0]);
                 serverDeleteEventType(server, eventTypeIds[1], 500, errorResponse);
                 serverDeleteEventType(server, eventTypeIds[2]);

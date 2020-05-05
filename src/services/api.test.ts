@@ -24,7 +24,7 @@ describe(
                 const page = 1;
                 const size = 10;
                 const expectedResult = generateListWith();
-                serverGetList(server, PATH, page, size, 200, expectedResult);
+                serverGetList(server, PATH, page, size, undefined, 200, expectedResult);
 
                 const result = await api.getListRequest<Entity>(PATH, page, size);
 
@@ -42,9 +42,27 @@ describe(
                 const page = 1;
                 const size = 10;
                 const expectedResult = generateListWith();
-                serverGetList(server, PATH, page, size, 200, expectedResult);
+                serverGetList(server, PATH, page, size, '', 200, expectedResult);
 
                 const result = await api.getListRequest(PATH);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<ServiceList<Entity>>;
+                expect(response.status).toBe(200);
+                expect(response.data).toEqual(expectedResult);
+            }
+        );
+
+        it(
+            'getListRequest should return a list of Elements filter by a text',
+            async () => {
+                const page = 1;
+                const size = 10;
+                const filter = 'anyfilter';
+                const expectedResult = generateListWith();
+                serverGetList(server, PATH, page, size, filter, 200, expectedResult);
+
+                const result = await api.getListRequest(PATH, page, size, filter);
 
                 expect(isAPIError(result)).toBe(false);
                 const response = result as APIResponseData<ServiceList<Entity>>;
@@ -59,7 +77,7 @@ describe(
                 const page = 1;
                 const size = 'ten' as unknown as number;
                 const expectedResult = {statusCode: 400, error: 'Bad Request', message: 'querystring.pageSize should be integer'};
-                serverGetList(server, PATH, page, size, 400, expectedResult);
+                serverGetList(server, PATH, page, size, '', 400, expectedResult);
 
                 const result = await api.getListRequest(PATH, page, size);
 

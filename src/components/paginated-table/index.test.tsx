@@ -99,6 +99,31 @@ test('PaginatedTable render without data should show the empty data message', as
         />
     );
     const noDataView = getByTestId(/empty-view-row/i);
+    expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/no elements created yet/i);
+    const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
+    const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
+    const rowsPerPage = getByLabelText(/^rows:$/i);
+
+    expect(prevButton.disabled).toBe(true);
+    expect(nextButton.disabled).toBe(true);
+    expect(noDataView).toBeInTheDocument();
+    expect(() => getByTestId(/loading-view-row/)).toThrowError();
+    expect(rowsPerPage).toHaveTextContent('5');
+
+});
+
+test('PaginatedTable render with all server data should show the no more data message', async () => {
+    // Render without data
+    const {getByTitle, getByTestId, getByLabelText} = render(
+        <PaginatedTable
+            isLoading={false}
+            isEmpty={true}
+            page={2}
+            size={5}
+        />
+    );
+    const noDataView = getByTestId(/empty-view-row/i);
+    expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/there are no more elements/i);
     const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
     const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
     const rowsPerPage = getByLabelText(/^rows:$/i);

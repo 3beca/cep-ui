@@ -8,6 +8,18 @@ export const EXTRA_COLORS = {
 
 // A custom theme for this app
 export const theme = createMuiTheme({
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          backgroundColor: grey.A100
+        },
+        table: {
+          backgroundColor: 'white'
+        }
+      }
+    }
+  },
   palette: {
     primary: {
       main: '#329EB6',
@@ -30,7 +42,6 @@ export const theme = createMuiTheme({
     fontSize: 16
   },
   zIndex: {
-    drawer: 1300,
     appBar: 1301
   }
 });

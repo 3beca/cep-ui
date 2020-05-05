@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render / and navigate to Events Log with route /event-logs and snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <h1>
+      Event List
+    </h1>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      0
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      1
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      2
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      3
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      4
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      5
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      6
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      7
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      8
+    </div>
+    <div
+      aria-label="element row event logs"
+    >
+      Event Log 
+      9
+    </div>
+  </div>
+</div>
+`;

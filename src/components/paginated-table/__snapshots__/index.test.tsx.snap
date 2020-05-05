@@ -33,16 +33,17 @@ exports[`PaginatedTable snapshot reached last page 1`] = `
     </table>
   </div>
   <div
+    class="makeStyles-emptyView-245"
     data-testid="empty-view-row"
   >
     <h4
-      class="MuiTypography-root makeStyles-emptyView-243 MuiTypography-h4 MuiTypography-alignCenter"
+      class="MuiTypography-root makeStyles-emptyViewText-246 MuiTypography-h4 MuiTypography-alignCenter"
     >
       There are no more elements!
     </h4>
   </div>
   <div
-    class="makeStyles-paginatorRow-244"
+    class="makeStyles-paginatorRow-247"
   >
     <div
       class="MuiTablePagination-root"
@@ -181,14 +182,14 @@ exports[`PaginatedTable snapshot while loading with previous data and pagination
     </table>
   </div>
   <div
-    class="makeStyles-paginatorRow-368"
+    class="makeStyles-paginatorRow-372"
   >
     <div
-      class="makeStyles-loadingView-364"
+      class="makeStyles-loadingView-367"
       data-testid="loading-view-row"
     >
       <div
-        class="MuiCircularProgress-root makeStyles-loadingSpinner-365 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        class="MuiCircularProgress-root makeStyles-loadingSpinner-368 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style="width: 40px; height: 40px;"
       >
@@ -317,14 +318,14 @@ exports[`PaginatedTable snapshot while loading without data 1`] = `
     class="MuiTableContainer-root"
   />
   <div
-    class="makeStyles-paginatorRow-504"
+    class="makeStyles-paginatorRow-509"
   >
     <div
-      class="makeStyles-loadingView-500"
+      class="makeStyles-loadingView-504"
       data-testid="loading-view-row"
     >
       <div
-        class="MuiCircularProgress-root makeStyles-loadingSpinner-501 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        class="MuiCircularProgress-root makeStyles-loadingSpinner-505 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style="width: 40px; height: 40px;"
       >
@@ -480,16 +481,17 @@ exports[`PaginatedTable snapshot with data and pagination 1`] = `
     </table>
   </div>
   <div
+    class="makeStyles-emptyView-120"
     data-testid="empty-view-row"
   >
     <h4
-      class="MuiTypography-root makeStyles-emptyView-119 MuiTypography-h4 MuiTypography-alignCenter"
+      class="MuiTypography-root makeStyles-emptyViewText-121 MuiTypography-h4 MuiTypography-alignCenter"
     >
       There are no more elements!
     </h4>
   </div>
   <div
-    class="makeStyles-paginatorRow-120"
+    class="makeStyles-paginatorRow-122"
   >
     <div
       class="MuiTablePagination-root"
@@ -601,7 +603,7 @@ exports[`PaginatedTable snapshot without data 1`] = `
     class="MuiTableContainer-root"
   />
   <div
-    class="makeStyles-paginatorRow-5"
+    class="makeStyles-paginatorRow-6"
   >
     <div
       class="makeStyles-loadingView-1"

@@ -35,7 +35,7 @@ export const renderAppWithMenuOpenedInRoute = (route = '/') => {
 };
 
 test('App render with menu closed and snapshot', async () => {
-    serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+    serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
     const { container, getAllByLabelText, queryByLabelText } = renderInsideApp(<App/>, {route: '/'});
     await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(20));
     expect(container).toMatchSnapshot();
@@ -45,7 +45,7 @@ test('App render with menu closed and snapshot', async () => {
 });
 
 test('App render RulesPage with route / and snapshot', async () => {
-    serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+    serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
     const { container, getAllByLabelText, showMenuButton, queryByLabelText } = renderAppWithMenuOpenedInRoute('/');
     await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(20));
     expect(queryByLabelText(/^drawer menu$/i)).toBeInTheDocument();
@@ -64,7 +64,7 @@ test('App render NotFoundPage with route /unknown and snapshot', async () => {
 });
 
 test('App render / and navigate to Event Types Page with route /event-types and snapshot', async () => {
-    serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+    serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
     const { container, getAllByLabelText, queryByLabelText, menuEventTypes} = renderAppWithMenuOpenedInRoute('/');
     await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(20));
 
@@ -77,7 +77,7 @@ test('App render / and navigate to Event Types Page with route /event-types and 
 });
 
 test('App render / and navigate to TargetListPage with route /targets and snapshot', async () => {
-    serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+    serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
     const { container, getAllByLabelText, queryByLabelText, menuTargets} = renderAppWithMenuOpenedInRoute('/');
     await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(20));
 
@@ -90,7 +90,7 @@ test('App render / and navigate to TargetListPage with route /targets and snapsh
 });
 
 test('App render / and navigate to Events Log with route /event-logs and snapshot', async () => {
-    serverGetRuleList(setupNock(BASE_URL), 1, 20, 200, generateRuleListWith(20, false, false));
+    serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
     const { container, getAllByLabelText, queryByLabelText, menuEvents} = renderAppWithMenuOpenedInRoute('/');
     await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(20));
     expect(queryByLabelText(/^drawer menu$/i)).toBeInTheDocument();

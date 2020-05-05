@@ -38,13 +38,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root makeStyles-mainCheck-4"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root makeStyles-mainCheck-4"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector-all"
                     type="checkbox"
@@ -110,13 +110,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -212,13 +212,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -314,13 +314,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -416,13 +416,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -518,13 +518,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -620,13 +620,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -722,13 +722,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -824,13 +824,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -926,13 +926,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -1028,13 +1028,13 @@ exports[`EventTypeList snapshot 1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-75 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-77"
+                    class="PrivateSwitchBase-input-78"
                     data-indeterminate="false"
                     role="element-selector"
                     type="checkbox"
@@ -1125,7 +1125,7 @@ exports[`EventTypeList snapshot 1`] = `
       </table>
     </div>
     <div
-      class="makeStyles-paginatorRow-46"
+      class="makeStyles-paginatorRow-47"
     >
       <div
         class="MuiTablePagination-root"

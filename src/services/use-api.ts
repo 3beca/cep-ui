@@ -38,14 +38,14 @@ export type useGetListApi<R, E> = {
     error: APIError<E> | undefined;
 };
 export type useGetList = {
-    (entity: ENTITY.EVENT_TYPES, page: number, size: number, runOnLoad: boolean): useGetListApi<EventType, ServiceError>;
-    (entity: ENTITY.TARGETS, page: number, size: number, runOnLoad: boolean): useGetListApi<Target, ServiceError>;
-    (entity: ENTITY.RULES, page: number, size: number, runOnLoad: boolean): useGetListApi<Rule, ServiceError>;
+    (entity: ENTITY.EVENT_TYPES, page: number, size: number, filter?: string, runOnLoad?: boolean): useGetListApi<EventType, ServiceError>;
+    (entity: ENTITY.TARGETS, page: number, size: number, filter?: string, runOnLoad?: boolean): useGetListApi<Target, ServiceError>;
+    (entity: ENTITY.RULES, page: number, size: number, filter?: string, runOnLoad?: boolean): useGetListApi<Rule, ServiceError>;
 }
-export const useGetList: useGetList = <T>(entity: ENTITY, page: number, size: number, runOnLoad: boolean) => {
+export const useGetList: useGetList = <T>(entity: ENTITY, page: number, size: number, filter: string = '', runOnLoad: boolean = true) => {
     const req = React.useCallback(
-        () => api.getListRequest<T>(ENTITIES[entity], page, size),
-        [page, size, entity],
+        () => api.getListRequest<T>(ENTITIES[entity], page, size, filter),
+        [page, size, filter, entity],
     );
     const {request, ...state} = useFetchApi(req);
     React.useEffect(

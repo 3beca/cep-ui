@@ -5,13 +5,14 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Avatar from '@material-ui/core/Avatar';
+import { Divider } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import {NOOP} from '../../../utils';
-import {useStyles} from './styles';
-import {useStyles as useCardStyles} from '../styles';
 import { RuleTypes } from '../../../services/api';
-import {colorTypeSelector, mapRuleTypeName} from '../';
-import { Divider } from '@material-ui/core';
+import {colorTypeSelector, mapRuleTypeName} from '../rule-card';
+import {useStyles} from './styles';
+import {useStyles as useCardStyles} from '../rule-card/styles';
+
 
 type RuleTypesText = {[key in RuleTypes]: string};
 type RuleTypesSamples = {[key in RuleTypes]: string[][]};
@@ -52,7 +53,7 @@ const RuleTypeCard: React.FC<RuleTypeCardProp> = ({selected, type, ariaLabel, on
         <div className={selected ? styles.cardButtonSelected : styles.cardButton} aria-label={ariaLabel} onClick={onClick}>
             <div className={styles.rulesTypeHeader}>
                 <Avatar
-                    aria-label="recipe"
+                    aria-label='avatar rule type'
                     className={`${styles.ruleAvatar} ${colorTypeSelector(type, stylesCard)}`}>
                     {mapRuleTypeName(type).slice(0, 1).toUpperCase()}
                 </Avatar>

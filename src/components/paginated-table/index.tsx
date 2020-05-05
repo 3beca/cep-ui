@@ -6,8 +6,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import {NOOP} from '../../utils';
 
 import { useStyles } from './styles';
+import { Variant } from '@material-ui/core/styles/createTypography';
 
-const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
+export const ListLoadingView: React.FC<{show: boolean;}> = ({show}) => {
     const styles = useStyles();
     if (!show) return null;
     return (
@@ -18,13 +19,21 @@ const TableLoadingView: React.FC<{show: boolean;}> = ({show}) => {
     );
 };
 
-const TableEmptyView: React.FC<{show: boolean; page: number}> = ({show, page}) => {
+export type ListEmptyViewProps = {
+    show: boolean;
+    isEmpty: boolean;
+    emptyMessage?: string;
+    noMoreMessage?: string;
+    variant?: Variant
+};
+export const ListEmptyView: React.FC<ListEmptyViewProps> = ({show, isEmpty, emptyMessage = 'No Elements created yet!', noMoreMessage = 'There are no more elements!', variant = 'h4'}) => {
     const styles = useStyles();
     if (!show) return null;
     return (
         <div
+            className={styles.emptyView}
             data-testid='empty-view-row' >
-            <Typography align='center' className={styles.emptyView} variant='h4'>{page <= 1 ? 'No Elements created yet!' : 'There are no more elements!'}</Typography>
+            <Typography align='center' className={styles.emptyViewText} variant={variant}>{isEmpty ? emptyMessage : noMoreMessage}</Typography>
         </div>
     );
 };
@@ -57,9 +66,9 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
                 <TableContainer>
                    {children}
                 </TableContainer>
-                <TableEmptyView show={!isLoading && isEmpty} page={page}/>
+                <ListEmptyView show={!isLoading && isEmpty} isEmpty={page === 1}/>
                 <div className={styles.paginatorRow}>
-                    <TableLoadingView show={isLoading}/>
+                    <ListLoadingView show={isLoading}/>
                     <TablePagination
                         role='paginator'
                         component='div'
