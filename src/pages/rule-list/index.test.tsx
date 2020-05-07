@@ -6,7 +6,8 @@ import {
     setupNock,
     serverGetRuleList,
     generateRuleListWith,
-    screen
+    screen,
+    act
 } from '../../test-utils';
 import userEvent from '@testing-library/user-event';
 import RuleListPage  from './index';
@@ -37,7 +38,7 @@ test(
         const {container, getByTestId, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
         await waitFor(() => expect(getByTestId(/empty-view-row/i)).toBeInTheDocument());
-        expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/there are not rules created yet/i);
+        expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/there are no rules created yet/i);
         getByLabelText(/add rule/i);
         expect(container).toMatchSnapshot();
     }
@@ -90,7 +91,7 @@ test(
 );
 
 test(
-    'RuleListPage should render a create rule dialog when click on add button and close when press selecte button',
+    'RuleListPage should render a create rule dialog when click on add button and close when press select button',
     async () => {
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
         renderInsideApp(<RuleListPage/>);
@@ -113,6 +114,7 @@ test(
 test(
     'RuleListPage should render a searchbar  and find rules that contains rule',
     async () => {
+        jest.useFakeTimers();
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
         const {getAllByLabelText, getByLabelText, queryByTestId} = renderInsideApp(<RuleListPage/>);
 
@@ -124,8 +126,36 @@ test(
         const searchText = 'rule-name';
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(initialPageSize, false, false));
         userEvent.type(input, searchText);
+        act(() => {
+            jest.runOnlyPendingTimers();
+        });
         await waitFor(() => expect(queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
         await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
+    }
+);
+
+test(
+    'RuleListPage should render Empty List whith filter when no elements and snap',
+    async () => {
+        jest.useFakeTimers();
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(0, false, false));
+        const {container, getByTestId, getByLabelText, queryByTestId} = renderInsideApp(<RuleListPage/>);
+
+        await waitFor(() => expect(getByTestId(/empty-view-row/i)).toBeInTheDocument());
+        expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/there are no rules created yet/i);
+        getByLabelText(/add rule/i);
+
+        const searchText = 'rule-name';
+        const input = getByLabelText(/search input/i) as HTMLInputElement;
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(0, false, false));
+        userEvent.type(input, searchText);
+        act(() => {
+            jest.runOnlyPendingTimers();
+        });
+        await waitFor(() => expect(queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
+        await waitFor(() => expect(getByTestId(/empty-view-row/i)).toBeInTheDocument());
+        expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/There are no elements for "rule-name"/i);
+        expect(container).toMatchSnapshot();
     }
 );
 

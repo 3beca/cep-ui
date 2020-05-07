@@ -43,10 +43,10 @@ export const RuleListPage: React.FC<{}> = () => {
         accumulated,
         hasMoreElements,
         nextPage,
-        changeFilter
+        changeFilter,
+        currentFilter
     } = useGetListAccumulated<Rule>(ENTITY.RULES, 1, 10);
     const isEmpty = accumulated.length === 0;
-
     return (
         <div className={styles.root}>
             <div aria-label='rule search bar' className={styles.searchBar}>
@@ -72,9 +72,13 @@ export const RuleListPage: React.FC<{}> = () => {
                 onClick={nextPage}/>
             <ListLoadingView show={isLoading}/>
             <ListEmptyView
-                emptyMessage='There are not RULES created yet!'
+                emptyMessage={
+                    !!currentFilter ?
+                        `There are no elements for "${currentFilter}"` : 'There are no RULES created yet!'
+                }
                 noMoreMessage='You reached the end of the list!'
-                show={!isLoading && !hasMoreElements} isEmpty={isEmpty}
+                show={!isLoading && !hasMoreElements}
+                isEmpty={isEmpty}
                 variant={isEmpty ? 'h4' : 'caption'}/>
             <CreateRuleDialog isOpen={isOpen} onClose={closeDialog}/>
         </div>

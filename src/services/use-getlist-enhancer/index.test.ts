@@ -317,16 +317,18 @@ test(
 
         await  waitForNextUpdate();
         expect(result.current.accumulated).toHaveLength(10);
+        expect(result.current.currentFilter).toEqual(newFilter);
         expect(result.current.hasMoreElements).toBe(false);
 
         // Reset filtered page
-        serverGetEventTypeList(server, initialPage, initialPageSize, '', 200, generateEventTypeListWith(initialPageSize, true, false));
+        serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
         act(
             () => result.current.resetFilter()
         );
 
         await  waitForNextUpdate();
         expect(result.current.accumulated).toHaveLength(20);
+        expect(result.current.currentFilter).toEqual(filter);
         expect(result.current.hasMoreElements).toBe(true);
     }
 );
