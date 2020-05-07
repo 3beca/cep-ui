@@ -14,7 +14,7 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
     test(`${title} should show delete dialog when click in its delete icon`, async () => {
         const response = dataGenerator(10, false, false);
         serverDataResponse(1, 10, 200, response);
-        const {getAllByLabelText, getByTestId, queryByTestId} = render(
+        const {getAllByLabelText, getByTestId, queryByTestId, debug} = render(
             <DeletableTable/>
         );
         await waitFor(() => expect(getAllByLabelText(ariaElementRow)).toHaveLength(10));
@@ -36,7 +36,9 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
         fireEvent.click(deleteButton);
 
         await waitFor(() => expect(dialog.getAllByLabelText(/deleted element/)).toHaveLength(1));
+        expect(dialog.getAllByLabelText(/success message/i)).toHaveLength(1);
         expect(deleteButton).toBeDisabled();
+
         await waitFor(() => getByTestId(/loading-view-row/));
         await waitFor(() => expect(queryByTestId(/loading-view-row/)).not.toBeInTheDocument());
         await waitFor(() => expect(getAllByLabelText(ariaElementRow)).toHaveLength(5));
@@ -80,7 +82,8 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
         fireEvent.click(deleteButton);
 
         await waitFor(() => expect(dialog.getAllByLabelText(/deleted element/)).toHaveLength(2));
-        getAllByLabelText(/error message/i);
+        expect(dialog.getAllByLabelText(/success message/i)).toHaveLength(1);
+        expect(dialog.getAllByLabelText(/error message/i)).toHaveLength(1);
         expect(deleteButton).toBeDisabled();
         await waitFor(() => getByTestId(/loading-view-row/));
         await waitFor(() => expect(queryByTestId(/loading-view-row/)).not.toBeInTheDocument());

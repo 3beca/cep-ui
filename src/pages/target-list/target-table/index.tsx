@@ -13,15 +13,15 @@ import {PaginatedTable} from '../../../components/paginated-table';
 import IconDialog from '../../../components/icon-dialog';
 import DeleteDialog from '../../../components/delete-dialog';
 import {RowsSizes} from '../../../components/paginated-table';
-import {ComponentWithUsePaginationProps, usePagination} from '../../../services/use-pagination';
+import {ComponentWithUsePaginationProps} from '../../../services/use-pagination';
 import {useSelectableList, ComponentWithUseSelectableProps} from '../../../services/use-selectable-list';
+import {useGetListFilteredAndPaginated} from '../../../services/use-getlist-enhancer';
 import {NOOP} from '../../../utils';
 import {useStyles} from './styles';
 
 import { Target } from '../../../services/api';
 import {
-    ENTITY,
-    useGetList
+    ENTITY
 } from '../../../services/use-api';
 
 export type TargetTableProps = ComponentWithUsePaginationProps & ComponentWithUseSelectableProps<Target>;
@@ -31,10 +31,16 @@ export const TargetTable: React.FC<TargetTableProps> = ({
     onSelected=NOOP
 }) => {
     const styles = useStyles();
+    const {
+        isLoading,
+        request: forceReload,
+        response,
+        currentPage: page,
+        changePage,
+        currentPageSize: pageSize,
+        changePageSize
+    } = useGetListFilteredAndPaginated<Target>(ENTITY.TARGETS, initialPage, initialPageSize);
 
-    // Paginator
-    const {page, pageSize, changePage, changePageSize} = usePagination(initialPage, initialPageSize);
-    const {isLoading, response, request: forceReload} = useGetList(ENTITY.TARGETS, page, pageSize);
     const TargetList = response?.data;
     const targets = TargetList && Array.isArray(TargetList?.results) ? TargetList.results : [];
     const isEmpty = response?.data ? response.data.results.length <= 0 : true

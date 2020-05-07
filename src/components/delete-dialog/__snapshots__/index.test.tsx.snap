@@ -352,7 +352,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <span
               class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
             >
-              0
+              0__3
             </span>
           </div>
         </div>
@@ -371,7 +371,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <span
               class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
             >
-              1
+              1__3
             </span>
           </div>
         </div>
@@ -390,7 +390,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <span
               class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
             >
-              2
+              2__3
             </span>
           </div>
         </div>

@@ -23,8 +23,11 @@ export const useStyles = makeStyles(
             right: theme.spacing(5),
             zIndex: 3
         },
-        loadMoreButton: {
+        loadMoreButtonView: {
             padding: 16
+        },
+        loadMoreButton: {
+            backgroundColor: theme.palette.primary.main
         }
     })
 );

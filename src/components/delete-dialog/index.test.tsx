@@ -70,6 +70,7 @@ test('Should render a dialog with a list of EventTypes to delete and delete all 
     await waitFor(() => getByLabelText(/deleting element/));
 
     await waitFor(() => expect(getAllByLabelText(/deleted element/)).toHaveLength(3));
+    expect(getAllByLabelText(/success message/i)).toHaveLength(3);
     expect(deleteButton).toBeDisabled();
     expect(onDelete).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();

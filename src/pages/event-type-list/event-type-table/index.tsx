@@ -18,9 +18,10 @@ import { useStyles } from './styles';
 import { PaginatedTable } from '../../../components/paginated-table';
 import { EventType } from '../../../services/api';
 import {RowsSizes} from '../../../components/paginated-table';
-import {useGetList, ENTITY} from '../../../services/use-api';
+import {ENTITY} from '../../../services/use-api';
+import {useGetListFilteredAndPaginated} from '../../../services/use-getlist-enhancer';
 import {useSelectableList, ComponentWithUseSelectableProps} from '../../../services/use-selectable-list';
-import {usePagination, ComponentWithUsePaginationProps} from '../../../services/use-pagination';
+import {ComponentWithUsePaginationProps} from '../../../services/use-pagination';
 import {useClipboard} from '../../../services/use-clipboard';
 import {NOOP} from '../../../utils';
 
@@ -31,10 +32,16 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
     onSelected=NOOP
 }) => {
     const styles = useStyles();
+    const {
+        isLoading,
+        request: forceReload,
+        response,
+        currentPage: page,
+        changePage,
+        currentPageSize: pageSize,
+        changePageSize
+    } = useGetListFilteredAndPaginated<EventType>(ENTITY.EVENT_TYPES, initialPage, initialPageSize);
 
-    // Paginator
-    const {page, pageSize, changePage, changePageSize} = usePagination(initialPage, initialPageSize);
-    const {response, isLoading, request: forceReload} = useGetList(ENTITY.EVENT_TYPES, page, pageSize);
     const eventTypeList = response?.data;
     const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
     const isEmpty = response?.data ? response.data.results.length <= 0 : true

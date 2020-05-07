@@ -56,7 +56,7 @@ export type RuleList = ServiceList<Rule>;
 export type RuleError = ServiceError;
 export type RuleDeleted = ServiceDeleted;
 
-export type Event = {
+export type EventLog = {
     eventTypeId: string;
     eventTypeName: string;
     payload: {[key: string]: any;};

@@ -56,11 +56,11 @@ export const setupNock = (url: string) => {
     return server;
 }
 
-export const generateListWith = function generateListWith(many: number = 5, next = false, prev = false): ServiceList<Entity> {
+export const generateListWith = function generateListWith(many: number = 5, next = false, prev = false, key: string = '_' + many): ServiceList<Entity> {
     const list: ServiceList<Entity> = {
         results: Array.from({length: many},
             (_, idx) => ({
-                id: idx + '',
+                id: idx + '_' + key,
             })
         )
     };
@@ -69,11 +69,11 @@ export const generateListWith = function generateListWith(many: number = 5, next
     return list;
 };
 
-export const generateEventTypeListWith = (many: number = 5, next = false, prev = false): EventTypeList => {
+export const generateEventTypeListWith = (many: number = 5, next = false, prev = false, key: string = '_' + many): EventTypeList => {
     const list: EventTypeList = {
         results: Array.from({length: many},
             (_, idx) => ({
-                id: idx + '',
+                id: idx + '_' + key,
                 name: 'Elemento ' + idx,
                 url: 'http://cep/elemento' + idx,
                 createdAt: '2020-01-01T10:10:10.123Z',
@@ -86,11 +86,11 @@ export const generateEventTypeListWith = (many: number = 5, next = false, prev =
     return list;
 };
 
-export const generateTargetListWith = (many: number = 5, next = false, prev = false): TargetList => {
+export const generateTargetListWith = (many: number = 5, next = false, prev = false, key: string = '_' + many): TargetList => {
     const list: TargetList = {
         results: Array.from({length: many},
             (_, idx) => ({
-                id: idx + '',
+                id: idx + '_' + key,
                 name: 'Elemento Target' + idx,
                 url: 'http://target/elemento' + idx,
                 createdAt: '2020-01-01T10:10:10.123Z',
@@ -108,8 +108,8 @@ const randomType = (index: number): RuleTypes => {
     const rand = index % 4;
     return types[rand];
 };
-export const generateRule = (idx: number, filters: any = {temperature: 10}) => ({
-    id: idx + '',
+export const generateRule = (key: string, idx: number, filters: any = {temperature: 10}) => ({
+    id: idx + '_' + key,
     name: 'Rule ' + idx,
     type: randomType(idx),
     eventTypeId: 'eventtypeid',
@@ -119,9 +119,9 @@ export const generateRule = (idx: number, filters: any = {temperature: 10}) => (
     createdAt: '2020-01-01T10:10:10.123Z',
     updatedAt: '2020-01-01T10:10:10.123Z'
 });
-export const generateRuleListWith = function generateListWith(many: number = 5, next = false, prev = false): ServiceList<Rule> {
+export const generateRuleListWith = function generateListWith(many: number = 5, next = false, prev = false, key: string = '_' + many): ServiceList<Rule> {
     const list: ServiceList<Rule> = {
-        results: Array.from({length: many}, (_, idx) => generateRule(idx))
+        results: Array.from({length: many}, (_, idx) => generateRule(key, idx))
     };
     if (prev) list.prev = 'http://cep/?page=prev';
     if (next) list.next = 'http://cep/?page=next';

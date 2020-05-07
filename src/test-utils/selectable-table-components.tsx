@@ -131,7 +131,9 @@ export const runSelectableTableTest = <R, E>(
         // Expect new elements to be unchecked
         // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar
         // si un componente Check de MUI está seleccionado o plantear mockearlo
-        elements.map(e => expectMUICheckboxNotChecked(e));
+        const nextElements = getAllByRole(/element-selector$/);
+        nextElements.map(e => expectMUICheckboxNotChecked(e));
+        //elements.map(e => expectMUICheckboxNotChecked(e));
     });
 
     test(`${title} should check and uncheck all elements from header check selector`, async () => {
@@ -155,6 +157,7 @@ export const runSelectableTableTest = <R, E>(
             expect(onSelected).toHaveBeenCalledTimes(1);
             expect(onSelected).toHaveBeenCalledWith([events.results[0], events.results[1], events.results[2], events.results[3], events.results[4]]);
         }
+
         expectMUICheckboxChecked(selectAllChecker);
         elements.map(e => expectMUICheckboxChecked(e));
 
@@ -178,7 +181,8 @@ export const runSelectableTableTest = <R, E>(
         // Expect new elements to be unchecked
         // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar
         // si un componente Check de MUI está seleccionado o plantear mockearlo
-        elements.map(e => expectMUICheckboxNotChecked(e));
+        const nextElements = getAllByRole(/element-selector$/);
+        nextElements.map(e => expectMUICheckboxNotChecked(e));
         expectMUICheckboxNotChecked(selectAllChecker);
     });
 };

@@ -3,10 +3,10 @@
 exports[`App render / and navigate to Event Types Page with route /event-types and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-672"
+    class="makeStyles-root-674"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-673 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-675 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -23,7 +23,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-674 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-676 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -45,17 +45,17 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
     </header>
     CEP UI
     <div
-      class="makeStyles-root-939"
+      class="makeStyles-root-942"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-944"
+        class="makeStyles-tabletitle-947"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-945 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-948 MuiTypography-h6"
           >
             List of Event Types
           </h6>
@@ -68,7 +68,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-940"
+            class="MuiTableHead-root makeStyles-head-943"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -80,13 +80,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root makeStyles-mainCheck-942"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root makeStyles-mainCheck-945"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -113,7 +113,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-941 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-944 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -123,7 +123,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-941 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-944 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -133,7 +133,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-941 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-944 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -152,13 +152,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -254,13 +254,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -356,13 +356,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -458,13 +458,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -560,13 +560,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -662,13 +662,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -764,13 +764,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -866,13 +866,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -968,13 +968,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1070,13 +1070,13 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-973 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-976 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-976"
+                      class="PrivateSwitchBase-input-979"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1167,7 +1167,7 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-826"
+        class="makeStyles-paginatorRow-829"
       >
         <div
           class="MuiTablePagination-root"
@@ -1278,10 +1278,10 @@ exports[`App render / and navigate to Event Types Page with route /event-types a
 exports[`App render / and navigate to Events Log with route /event-logs and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-1363"
+    class="makeStyles-root-1367"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1364 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1368 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1298,7 +1298,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-1365 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-1369 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1320,7 +1320,7 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
     </header>
     CEP UI
     <div
-      class="makeStyles-root-1630"
+      class="makeStyles-root-1635"
     >
       <h1>
         Event List
@@ -1393,10 +1393,10 @@ exports[`App render / and navigate to Events Log with route /event-logs and snap
 exports[`App render / and navigate to TargetListPage with route /targets and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-1021"
+    class="makeStyles-root-1024"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1022 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1025 mui-fixed MuiPaper-elevation4"
       style=""
     >
       <div
@@ -1413,7 +1413,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-1023 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-1026 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -1435,17 +1435,17 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
     </header>
     CEP UI
     <div
-      class="makeStyles-root-1288"
+      class="makeStyles-root-1292"
     >
       <div
         aria-label="table title"
-        class="makeStyles-tabletitle-1293"
+        class="makeStyles-tabletitle-1297"
       >
         <div
           class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
         >
           <h6
-            class="MuiTypography-root makeStyles-tablename-1294 MuiTypography-h6"
+            class="MuiTypography-root makeStyles-tablename-1298 MuiTypography-h6"
           >
             List of Targets
           </h6>
@@ -1458,7 +1458,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
           class="MuiTable-root"
         >
           <thead
-            class="MuiTableHead-root makeStyles-head-1289"
+            class="MuiTableHead-root makeStyles-head-1293"
           >
             <tr
               class="MuiTableRow-root MuiTableRow-head"
@@ -1470,13 +1470,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root makeStyles-mainCheck-1291"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root makeStyles-mainCheck-1295"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector-all"
                       type="checkbox"
@@ -1503,7 +1503,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-1290 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1294 MuiTypography-body1"
                 >
                   Name
                 </p>
@@ -1513,7 +1513,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-1290 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1294 MuiTypography-body1"
                 >
                   Created
                 </p>
@@ -1523,7 +1523,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
                 scope="col"
               >
                 <p
-                  class="MuiTypography-root makeStyles-headText-1290 MuiTypography-body1"
+                  class="MuiTypography-root makeStyles-headText-1294 MuiTypography-body1"
                 >
                   Actions
                 </p>
@@ -1542,13 +1542,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1620,13 +1620,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1698,13 +1698,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1776,13 +1776,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1854,13 +1854,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -1932,13 +1932,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2010,13 +2010,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2088,13 +2088,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2166,13 +2166,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2244,13 +2244,13 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1322 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1326 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                 >
                   <span
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-1325"
+                      class="PrivateSwitchBase-input-1329"
                       data-indeterminate="false"
                       role="element-selector"
                       type="checkbox"
@@ -2317,7 +2317,7 @@ exports[`App render / and navigate to TargetListPage with route /targets and sna
         </table>
       </div>
       <div
-        class="makeStyles-paginatorRow-1175"
+        class="makeStyles-paginatorRow-1179"
       >
         <div
           class="MuiTablePagination-root"
@@ -2430,10 +2430,10 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-510"
+    class="makeStyles-root-512"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-511 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-513 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2450,7 +2450,7 @@ exports[`App render NotFoundPage with route /unknown and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-512 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-514 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2485,10 +2485,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
   aria-hidden="true"
 >
   <div
-    class="makeStyles-root-243"
+    class="makeStyles-root-244"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-244 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-245 mui-fixed MuiPaper-elevation4"
       style="padding-right: 0px;"
     >
       <div
@@ -2505,7 +2505,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root makeStyles-icon-245 MuiSvgIcon-fontSizeLarge"
+              class="MuiSvgIcon-root makeStyles-icon-246 MuiSvgIcon-fontSizeLarge"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -2527,17 +2527,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
     </header>
     CEP UI
     <div
-      class="makeStyles-root-356"
+      class="makeStyles-root-357"
     >
       <div
         aria-label="rule search bar"
-        class="makeStyles-searchBar-357"
+        class="makeStyles-searchBar-358"
       >
         <div
-          class="MuiPaper-root makeStyles-searchContainer-361 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root makeStyles-searchContainer-363 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiInputBase-root makeStyles-searchInput-362"
+            class="MuiInputBase-root makeStyles-searchInput-364"
           >
             <input
               aria-label="search input"
@@ -2549,7 +2549,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
           </div>
           <div
             aria-label="search icon"
-            class="makeStyles-searchButton-363"
+            class="makeStyles-searchButton-365"
           >
             <svg
               aria-hidden="true"
@@ -2566,7 +2566,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
       </div>
       <button
         aria-label="add rule"
-        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-359 MuiFab-primary"
+        class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-360 MuiFab-primary"
         tabindex="0"
         type="button"
       >
@@ -2589,21 +2589,21 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         />
       </button>
       <div
-        class="makeStyles-gridCards-358"
+        class="makeStyles-gridCards-359"
       >
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarBlue-500 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarBlue-502 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -2655,7 +2655,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -2667,7 +2667,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -2676,10 +2676,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -2688,7 +2688,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -2696,7 +2696,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOn-498"
                 />
               </div>
             </div>
@@ -2704,17 +2704,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarRed-499 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarRed-501 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -2766,7 +2766,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -2778,7 +2778,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -2787,10 +2787,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -2799,7 +2799,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -2807,7 +2807,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOff-499"
                 />
               </div>
             </div>
@@ -2815,17 +2815,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarOrange-502 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarOrange-504 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -2877,7 +2877,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -2889,7 +2889,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -2898,10 +2898,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -2910,7 +2910,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -2918,7 +2918,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOn-498"
                 />
               </div>
             </div>
@@ -2926,17 +2926,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarPurple-501 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarPurple-503 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -2988,7 +2988,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -3000,7 +3000,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -3009,10 +3009,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3021,7 +3021,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3029,7 +3029,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOff-499"
                 />
               </div>
             </div>
@@ -3037,17 +3037,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarBlue-500 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarBlue-502 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3099,7 +3099,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -3111,7 +3111,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -3120,10 +3120,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3132,7 +3132,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3140,7 +3140,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOn-498"
                 />
               </div>
             </div>
@@ -3148,17 +3148,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarRed-499 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarRed-501 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -3210,7 +3210,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -3222,7 +3222,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -3231,10 +3231,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3243,7 +3243,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3251,7 +3251,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOff-499"
                 />
               </div>
             </div>
@@ -3259,17 +3259,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarOrange-502 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarOrange-504 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -3321,7 +3321,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -3333,7 +3333,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -3342,10 +3342,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3354,7 +3354,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3362,7 +3362,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOn-498"
                 />
               </div>
             </div>
@@ -3370,17 +3370,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarPurple-501 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarPurple-503 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -3432,7 +3432,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -3444,7 +3444,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -3453,10 +3453,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3465,7 +3465,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3473,7 +3473,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOff-499"
                 />
               </div>
             </div>
@@ -3481,17 +3481,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarBlue-500 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarBlue-502 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -3543,7 +3543,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -3555,7 +3555,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -3564,10 +3564,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3576,7 +3576,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3584,7 +3584,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOn-498"
                 />
               </div>
             </div>
@@ -3592,17 +3592,17 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-490 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-491"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarRed-499 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-500 makeStyles-ruleCardAvatarRed-501 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -3654,7 +3654,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-490"
+            class="makeStyles-ruleCardContent-492"
           >
             <div>
               Event Type 
@@ -3666,7 +3666,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
+              class="makeStyles-ruleCardFilters-493"
             >
               {"temperature":10}
             </div>
@@ -3675,10 +3675,10 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
+              class="makeStyles-ruleCardStatus-494"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-493"
+                class="makeStyles-ruleCardStatusDate-495"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3687,7 +3687,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-494"
+                class="makeStyles-ruleCardStatusOneShot-496"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -3695,1117 +3695,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarOrange-502 MuiAvatar-colorDefault"
-              >
-                T
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 10
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarPurple-501 MuiAvatar-colorDefault"
-              >
-                R
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 11
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarBlue-500 MuiAvatar-colorDefault"
-              >
-                S
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 12
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarRed-499 MuiAvatar-colorDefault"
-              >
-                H
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 13
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarOrange-502 MuiAvatar-colorDefault"
-              >
-                T
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 14
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarPurple-501 MuiAvatar-colorDefault"
-              >
-                R
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 15
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarBlue-500 MuiAvatar-colorDefault"
-              >
-                S
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 16
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarRed-499 MuiAvatar-colorDefault"
-              >
-                H
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 17
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarOrange-502 MuiAvatar-colorDefault"
-              >
-                T
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 18
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOn-496"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-488 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-489"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-498 makeStyles-ruleCardAvatarPurple-501 MuiAvatar-colorDefault"
-              >
-                R
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 19
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-490"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-491"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-492"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-493"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-494"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-495 makeStyles-onShotLabelOff-497"
+                  class="makeStyles-onShotLabel-497 makeStyles-onShotLabelOff-499"
                 />
               </div>
             </div>
@@ -4813,11 +3703,11 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-emptyView-395"
+        class="makeStyles-emptyView-397"
         data-testid="empty-view-row"
       >
         <span
-          class="MuiTypography-root makeStyles-emptyViewText-396 MuiTypography-caption MuiTypography-alignCenter"
+          class="MuiTypography-root makeStyles-emptyViewText-398 MuiTypography-caption MuiTypography-alignCenter"
         >
           You reached the end of the list!
         </span>
@@ -4878,10 +3768,10 @@ exports[`App render with menu closed and snapshot 1`] = `
         class="makeStyles-searchBar-115"
       >
         <div
-          class="MuiPaper-root makeStyles-searchContainer-119 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root makeStyles-searchContainer-120 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiInputBase-root makeStyles-searchInput-120"
+            class="MuiInputBase-root makeStyles-searchInput-121"
           >
             <input
               aria-label="search input"
@@ -4893,7 +3783,7 @@ exports[`App render with menu closed and snapshot 1`] = `
           </div>
           <div
             aria-label="search icon"
-            class="makeStyles-searchButton-121"
+            class="makeStyles-searchButton-122"
           >
             <svg
               aria-hidden="true"
@@ -4937,17 +3827,17 @@ exports[`App render with menu closed and snapshot 1`] = `
       >
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarBlue-219 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarBlue-220 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -4999,7 +3889,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5011,7 +3901,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5020,10 +3910,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5032,7 +3922,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5040,7 +3930,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOn-216"
                 />
               </div>
             </div>
@@ -5048,17 +3938,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarRed-218 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarRed-219 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -5110,7 +4000,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5122,7 +4012,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5131,10 +4021,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5143,7 +4033,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5151,7 +4041,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOff-217"
                 />
               </div>
             </div>
@@ -5159,17 +4049,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarOrange-221 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarOrange-222 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -5221,7 +4111,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5233,7 +4123,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5242,10 +4132,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5254,7 +4144,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5262,7 +4152,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOn-216"
                 />
               </div>
             </div>
@@ -5270,17 +4160,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarPurple-220 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarPurple-221 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -5332,7 +4222,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5344,7 +4234,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5353,10 +4243,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5365,7 +4255,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5373,7 +4263,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOff-217"
                 />
               </div>
             </div>
@@ -5381,17 +4271,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarBlue-219 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarBlue-220 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -5443,7 +4333,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5455,7 +4345,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5464,10 +4354,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5476,7 +4366,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5484,7 +4374,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOn-216"
                 />
               </div>
             </div>
@@ -5492,17 +4382,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarRed-218 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarRed-219 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -5554,7 +4444,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5566,7 +4456,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5575,10 +4465,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5587,7 +4477,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5595,7 +4485,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOff-217"
                 />
               </div>
             </div>
@@ -5603,17 +4493,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarOrange-221 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarOrange-222 MuiAvatar-colorDefault"
               >
                 T
               </div>
@@ -5665,7 +4555,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5677,7 +4567,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5686,10 +4576,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5698,7 +4588,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5706,7 +4596,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOn-216"
                 />
               </div>
             </div>
@@ -5714,17 +4604,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarPurple-220 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarPurple-221 MuiAvatar-colorDefault"
               >
                 R
               </div>
@@ -5776,7 +4666,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5788,7 +4678,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5797,10 +4687,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5809,7 +4699,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5817,7 +4707,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOff-217"
                 />
               </div>
             </div>
@@ -5825,17 +4715,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarBlue-219 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarBlue-220 MuiAvatar-colorDefault"
               >
                 S
               </div>
@@ -5887,7 +4777,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -5899,7 +4789,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -5908,10 +4798,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5920,7 +4810,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -5928,7 +4818,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOn-216"
                 />
               </div>
             </div>
@@ -5936,17 +4826,17 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
         <div
           aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-208 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
+            class="MuiCardHeader-root makeStyles-ruleCardHeader-209"
           >
             <div
               class="MuiCardHeader-avatar"
             >
               <div
                 aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarRed-218 MuiAvatar-colorDefault"
+                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-218 makeStyles-ruleCardAvatarRed-219 MuiAvatar-colorDefault"
               >
                 H
               </div>
@@ -5998,7 +4888,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             class="MuiDivider-root"
           />
           <div
-            class="makeStyles-ruleCardContent-209"
+            class="makeStyles-ruleCardContent-210"
           >
             <div>
               Event Type 
@@ -6010,7 +4900,7 @@ exports[`App render with menu closed and snapshot 1`] = `
             </div>
             <div
               aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
+              class="makeStyles-ruleCardFilters-211"
             >
               {"temperature":10}
             </div>
@@ -6019,10 +4909,10 @@ exports[`App render with menu closed and snapshot 1`] = `
             />
             <div
               aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
+              class="makeStyles-ruleCardStatus-212"
             >
               <div
-                class="makeStyles-ruleCardStatusDate-212"
+                class="makeStyles-ruleCardStatusDate-213"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -6031,7 +4921,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                 </p>
               </div>
               <div
-                class="makeStyles-ruleCardStatusOneShot-213"
+                class="makeStyles-ruleCardStatusOneShot-214"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1"
@@ -6039,1117 +4929,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                   Skip Consecutives
                 </p>
                 <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarOrange-221 MuiAvatar-colorDefault"
-              >
-                T
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 10
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarPurple-220 MuiAvatar-colorDefault"
-              >
-                R
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 11
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarBlue-219 MuiAvatar-colorDefault"
-              >
-                S
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 12
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarRed-218 MuiAvatar-colorDefault"
-              >
-                H
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 13
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarOrange-221 MuiAvatar-colorDefault"
-              >
-                T
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 14
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarPurple-220 MuiAvatar-colorDefault"
-              >
-                R
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 15
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarBlue-219 MuiAvatar-colorDefault"
-              >
-                S
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 16
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarRed-218 MuiAvatar-colorDefault"
-              >
-                H
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 17
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarOrange-221 MuiAvatar-colorDefault"
-              >
-                T
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 18
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOn-215"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-label="element card rule"
-          class="MuiPaper-root MuiCard-root makeStyles-ruleCard-207 MuiPaper-elevation1 MuiPaper-rounded"
-        >
-          <div
-            class="MuiCardHeader-root makeStyles-ruleCardHeader-208"
-          >
-            <div
-              class="MuiCardHeader-avatar"
-            >
-              <div
-                aria-label="recipe"
-                class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-217 makeStyles-ruleCardAvatarPurple-220 MuiAvatar-colorDefault"
-              >
-                R
-              </div>
-            </div>
-            <div
-              class="MuiCardHeader-content"
-            >
-              <span
-                class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
-              >
-                Rule 19
-              </span>
-              <span
-                class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-              >
-                1/1/2020 11:10:10
-              </span>
-            </div>
-            <div
-              class="MuiCardHeader-action"
-            >
-              <button
-                aria-label="settings"
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
-          </div>
-          <hr
-            class="MuiDivider-root"
-          />
-          <div
-            class="makeStyles-ruleCardContent-209"
-          >
-            <div>
-              Event Type 
-              eventtypeid
-            </div>
-            <div>
-              Target 
-              eventtypeid
-            </div>
-            <div
-              aria-label="rule filter elements"
-              class="makeStyles-ruleCardFilters-210"
-            >
-              {"temperature":10}
-            </div>
-            <hr
-              class="MuiDivider-root"
-            />
-            <div
-              aria-label="rule status element"
-              class="makeStyles-ruleCardStatus-211"
-            >
-              <div
-                class="makeStyles-ruleCardStatusDate-212"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  1/1/2020
-                </p>
-              </div>
-              <div
-                class="makeStyles-ruleCardStatusOneShot-213"
-              >
-                <p
-                  class="MuiTypography-root MuiTypography-body1"
-                >
-                  Skip Consecutives
-                </p>
-                <div
-                  class="makeStyles-onShotLabel-214 makeStyles-onShotLabelOff-216"
+                  class="makeStyles-onShotLabel-215 makeStyles-onShotLabelOff-217"
                 />
               </div>
             </div>
@@ -7157,11 +4937,11 @@ exports[`App render with menu closed and snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-emptyView-153"
+        class="makeStyles-emptyView-154"
         data-testid="empty-view-row"
       >
         <span
-          class="MuiTypography-root makeStyles-emptyViewText-154 MuiTypography-caption MuiTypography-alignCenter"
+          class="MuiTypography-root makeStyles-emptyViewText-155 MuiTypography-caption MuiTypography-alignCenter"
         >
           You reached the end of the list!
         </span>

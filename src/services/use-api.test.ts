@@ -191,7 +191,7 @@ describe(
         );
 
         it(
-            'should NOT fire request when load',
+            'should NOT fire request when load is false',
             async () => {
                 let page = 1;
                 let size = 3;

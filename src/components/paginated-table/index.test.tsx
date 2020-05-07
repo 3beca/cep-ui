@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, within } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import PaginatedTable from './index';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -257,7 +257,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
 test('PaginatedTable render 10 elements when change pageSize to 20', async () => {
     // Render without data
     const onChangePageSize = jest.fn();
-    const {rerender, getByTitle, getByLabelText, getByTestId} = render(
+    const {rerender} = render(
         <PaginatedTable
             isLoading={false}
             isEmpty={false}
@@ -266,19 +266,19 @@ test('PaginatedTable render 10 elements when change pageSize to 20', async () =>
             onChangePageSize={onChangePageSize}
         />
     );
-    const prevButton = getByTitle(/Previous page/) as HTMLButtonElement;
-    const nextButton = getByTitle(/Next page/) as HTMLButtonElement;
-    const rowsPerPage = getByLabelText(/^rows:$/i);
+    const prevButton = screen.getByTitle(/Previous page/) as HTMLButtonElement;
+    const nextButton = screen.getByTitle(/Next page/) as HTMLButtonElement;
+    const rowsPerPage = screen.getByLabelText(/^rows:$/i);
 
     expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(true);
-    expect(() => getByTestId(/empty-view-row/)).toThrowError();
-    expect(() => getByTestId(/loading-view-row/)).toThrowError();
+    expect(() => screen.getByTestId(/empty-view-row/)).toThrowError();
+    expect(() => screen.getByTestId(/loading-view-row/)).toThrowError();
     expect(rowsPerPage).toHaveTextContent('5');
 
     fireEvent.mouseDown(rowsPerPage);
-    const bound = within(document.getElementById('menu-')!);
-    const options = bound.getAllByRole(/option/);
+    //const bound = within(document.getElementById('menu-')!);
+    const options = screen.getAllByRole(/option/);
     fireEvent.click(options[1]); // 0->5, 1->10, 2->20
 
     expect(onChangePageSize).toHaveBeenCalledTimes(1);
@@ -298,8 +298,8 @@ test('PaginatedTable render 10 elements when change pageSize to 20', async () =>
 
     expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(true);
-    expect(() => getByTestId(/empty-view-row/)).toThrowError();
-    expect(() => getByTestId(/loading-view-row/)).toThrowError();
+    expect(() => screen.getByTestId(/empty-view-row/)).toThrowError();
+    expect(() => screen.getByTestId(/loading-view-row/)).toThrowError();
     expect(rowsPerPage).toHaveTextContent('10');
 
     fireEvent.mouseDown(rowsPerPage);
@@ -322,7 +322,7 @@ test('PaginatedTable render 10 elements when change pageSize to 20', async () =>
 
     expect(prevButton.disabled).toBe(true);
     expect(nextButton.disabled).toBe(true);
-    expect(() => getByTestId(/empty-view-row/)).toThrowError();
-    expect(() => getByTestId(/loading-view-row/)).toThrowError();
+    expect(() => screen.getByTestId(/empty-view-row/)).toThrowError();
+    expect(() => screen.getByTestId(/loading-view-row/)).toThrowError();
     expect(rowsPerPage).toHaveTextContent('20');
 });

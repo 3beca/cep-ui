@@ -1,36 +1,39 @@
 import * as React from 'react';
 import {
     renderInsideApp,
-    within,
     fireEvent,
     waitFor,
     setupNock,
     serverGetRuleList,
     generateRuleListWith,
+    screen
 } from '../../test-utils';
 import userEvent from '@testing-library/user-event';
 import RuleListPage  from './index';
 import { BASE_URL } from '../../services/config';
 
+const initialPage = 1;
+const initialPageSize = 10;
+const filter = '';
 
 test(
     'RuleListPage should render loading component',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
         const {container, getByTestId, getByLabelText, getAllByLabelText} = renderInsideApp(<RuleListPage/>);
 
         getByTestId(/loading-view-row/i);
         getByLabelText(/add rule/i);
         expect(container).toMatchSnapshot();
 
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
     }
 );
 
 test(
     'RuleListPage should render Empty List when no elements and snap',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(0, false, false));
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(0, false, false));
         const {container, getByTestId, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
         await waitFor(() => expect(getByTestId(/empty-view-row/i)).toBeInTheDocument());
@@ -43,7 +46,7 @@ test(
 test(
     'RuleListPage should render End List message when no more elements to load and snap',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(10, false, false));
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(10, false, false));
         const {container, getByTestId, getByLabelText, getAllByLabelText} = renderInsideApp(<RuleListPage/>);
 
         await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(10));
@@ -56,12 +59,12 @@ test(
 test(
     'RuleListPage should render 20 cards and a create button and snapshot',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
         const {container, getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
 
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
-        expect(getAllByLabelText(/rule filter elements/i)).toHaveLength(20);
-        expect(getAllByLabelText(/rule status element/i)).toHaveLength(20);
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
+        expect(getAllByLabelText(/rule filter elements/i)).toHaveLength(initialPageSize);
+        expect(getAllByLabelText(/rule status element/i)).toHaveLength(initialPageSize);
         getByLabelText(/add rule/i);
         expect(container).toMatchSnapshot();
     }
@@ -70,17 +73,16 @@ test(
 test(
     'RuleListPage should render a create rule dialog when click on add button and close when press close button',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
-        const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(1, false, false));
+        renderInsideApp(<RuleListPage/>);
 
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
-        const addButton = getByLabelText(/add rule/i);
+        await waitFor(() => expect(screen.getAllByLabelText(/^element card rule$/i)).toHaveLength(1));
+        const addButton = screen.getByLabelText(/add rule/i);
 
         fireEvent.click(addButton);
-        const dialog = within(document.getElementById('create-rule-dialog')!);
-        dialog.getByLabelText(/title create rule/i);
-        dialog.getByLabelText(/kind of rules description/i);
-        const closeButton = dialog.getByText(/^close$/i);
+        screen.getByLabelText(/title create rule/i);
+        screen.getByLabelText(/kind of rules description/i);
+        const closeButton = screen.getByText(/^close$/i);
 
         fireEvent.click(closeButton);
         await waitFor(() => expect(document.getElementById('create-rule-dialog')).toBe(null));
@@ -90,18 +92,17 @@ test(
 test(
     'RuleListPage should render a create rule dialog when click on add button and close when press selecte button',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
-        const {getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
+        renderInsideApp(<RuleListPage/>);
 
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
-        const addButton = getByLabelText(/add rule/i);
+        await waitFor(() => expect(screen.getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
+        const addButton = screen.getByLabelText(/add rule/i);
 
         fireEvent.click(addButton);
-        const dialog = within(document.getElementById('create-rule-dialog')!);
-        dialog.getByLabelText(/title create rule/i);
-        dialog.getByLabelText(/kind of rules description/i);
-        const realTimeCard =  dialog.getByLabelText(/create rule real time card/i);
-        const selectButton = dialog.getByText(/^select$/i);
+        screen.getByLabelText(/title create rule/i);
+        screen.getByLabelText(/kind of rules description/i);
+        const realTimeCard =  screen.getByLabelText(/create rule real time card/i);
+        const selectButton = screen.getByText(/^select$/i);
 
         fireEvent.click(realTimeCard);
         fireEvent.click(selectButton);
@@ -112,35 +113,48 @@ test(
 test(
     'RuleListPage should render a searchbar  and find rules that contains rule',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
         const {getAllByLabelText, getByLabelText, queryByTestId} = renderInsideApp(<RuleListPage/>);
 
         getByLabelText(/rule search bar/i);
         const input = getByLabelText(/search input/i) as HTMLInputElement;
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
         getByLabelText(/add rule/i);
 
         const searchText = 'rule-name';
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, searchText, 200, generateRuleListWith(20, false, false));
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(initialPageSize, false, false));
         userEvent.type(input, searchText);
         await waitFor(() => expect(queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
+        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
     }
 );
 
 test(
-    'RuleListPage should render load button while there are more elements',
+    'RuleListPage should not render load button when there are NO MORE elements',
     async () => {
-        serverGetRuleList(setupNock(BASE_URL), 1, 20, '', 200, generateRuleListWith(20, true, false));
-        const {getAllByLabelText, getByLabelText, queryByTestId, queryByLabelText} = renderInsideApp(<RuleListPage/>);
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(10, false, false));
+        renderInsideApp(<RuleListPage/>);
 
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(20));
-        const loadMore = getByLabelText(/load more rules/i);
+        await waitFor(() => expect(screen.getAllByLabelText(/^element card rule$/i)).toHaveLength(10));
+        expect(screen.queryByLabelText(/load more rules/i)).not.toBeInTheDocument();
+        expect(screen.getByTestId(/empty-view-row/i)).toHaveTextContent(/you reached the end of the list/i);
+    }
+);
 
-        serverGetRuleList(setupNock(BASE_URL), 2, 20, '', 200, generateRuleListWith(10, false, false));
+test(
+    'RuleListPage should render load button when there are more elements and load next set of elelments when click',
+    async () => {
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, true, false));
+        renderInsideApp(<RuleListPage/>);
+
+        await waitFor(() => expect(screen.getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
+        const loadMore = screen.getByLabelText(/load more rules/i);
+
+        serverGetRuleList(setupNock(BASE_URL), initialPage + 1, initialPageSize, filter, 200, generateRuleListWith(5, false, true));
         fireEvent.click(loadMore);
-        await waitFor(() => expect(queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(10));
-        expect(queryByLabelText(/load more rules/i)).not.toBeInTheDocument();
+        await waitFor(() => expect(screen.queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
+        await waitFor(() => expect(screen.getAllByLabelText(/^element card rule$/i)).toHaveLength(15));
+        expect(screen.queryByLabelText(/load more rules/i)).not.toBeInTheDocument();
+        expect(screen.getByTestId(/empty-view-row/i)).toHaveTextContent(/you reached the end of the list/i);
     }
 );
