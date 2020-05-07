@@ -16,7 +16,7 @@ export const colorTypeSelector = (type: RuleTypes, styles: ReturnType<typeof use
         case 'sliding': return styles.ruleCardAvatarBlue;
         case 'tumbling': return styles.ruleCardAvatarOrange;
         case 'none': return styles.ruleCardAvatarPurple;
-        default: return styles.ruleCardAvatarBlue;
+        default: return styles.ruleCardAvatarPurple;
     }
 };
 
