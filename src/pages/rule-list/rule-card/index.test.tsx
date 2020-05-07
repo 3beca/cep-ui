@@ -5,7 +5,7 @@ import RuleCard, {colorTypeSelector, mapRuleTypeName} from './index';
 import { generateRule } from '../../../test-utils';
 
 test('selector avatar color function shuold return a default color', () => {
-    expect(colorTypeSelector(undefined as unknown as RuleTypes, {ruleCardAvatarBlue: 'default color'} as any)).toEqual('default color');
+    expect(colorTypeSelector(undefined as unknown as RuleTypes, {ruleCardAvatarPurple: 'default color'} as any)).toEqual('default color');
 });
 
 test('mapRuleTypeName should return REAL TIME when undefined type', () => {
