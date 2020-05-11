@@ -1,0 +1,588 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render RuleFilter with FilterComparator when received a container AND 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="container expressions"
+      class="makeStyles-ruleCardFilterContainer-352"
+    >
+      <div
+        aria-label="container expressions header"
+        class="makeStyles-ruleCardFilterContainerHeader-353"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardFilterContainerHeaderText-354 MuiTypography-body1"
+        >
+          All Of
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-359"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-356 MuiTypography-body1"
+        >
+          field1
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-357 MuiTypography-body1"
+        >
+          =
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-358 MuiTypography-body1"
+        >
+          10
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-359"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-356 MuiTypography-body1"
+        >
+          field2
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-357 MuiTypography-body1"
+        >
+          &gt;
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-358 MuiTypography-body1"
+        >
+          50
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-359"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-356 MuiTypography-body1"
+        >
+          field2
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-357 MuiTypography-body1"
+        >
+          &lt;=
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-358 MuiTypography-body1"
+        >
+          50
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with FilterComparator when received a container OR 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="container expressions"
+      class="makeStyles-ruleCardFilterContainer-391"
+    >
+      <div
+        aria-label="container expressions header"
+        class="makeStyles-ruleCardFilterContainerHeader-392"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardFilterContainerHeaderText-393 MuiTypography-body1"
+        >
+          One Of
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-398"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-395 MuiTypography-body1"
+        >
+          field1
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-396 MuiTypography-body1"
+        >
+          =
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-397 MuiTypography-body1"
+        >
+          10
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-398"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-395 MuiTypography-body1"
+        >
+          field2
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-396 MuiTypography-body1"
+        >
+          &gt;
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-397 MuiTypography-body1"
+        >
+          50
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-398"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-395 MuiTypography-body1"
+        >
+          field2
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-396 MuiTypography-body1"
+        >
+          &lt;=
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-397 MuiTypography-body1"
+        >
+          50
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with FilterComparator when received a container UNKNOWN 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="container expressions"
+      class="makeStyles-ruleCardFilterContainer-430"
+    >
+      <div
+        aria-label="container expressions header"
+        class="makeStyles-ruleCardFilterContainerHeader-431"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardFilterContainerHeaderText-432 MuiTypography-body1"
+        >
+          anyfield
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-437"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-434 MuiTypography-body1"
+        >
+          field1
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-435 MuiTypography-body1"
+        >
+          =
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-436 MuiTypography-body1"
+        >
+          10
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-437"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-434 MuiTypography-body1"
+        >
+          field2
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-435 MuiTypography-body1"
+        >
+          &gt;
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-436 MuiTypography-body1"
+        >
+          50
+        </p>
+      </div>
+      <div
+        aria-label="filter expression comparator"
+        class="makeStyles-ruleCardFilterExpression-437"
+      >
+        <p
+          aria-label="filter expression field"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-434 MuiTypography-body1"
+        >
+          field2
+        </p>
+        <p
+          aria-label="filter expression operator"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-435 MuiTypography-body1"
+        >
+          &lt;=
+        </p>
+        <p
+          aria-label="filter expression value"
+          class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-436 MuiTypography-body1"
+        >
+          50
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with FilterComparator when received an filter expression Comparator 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="filter expression comparator"
+      class="makeStyles-ruleCardFilterExpression-203"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-200 MuiTypography-body1"
+      >
+        field1
+      </p>
+      <p
+        aria-label="filter expression operator"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-201 MuiTypography-body1"
+      >
+        =
+      </p>
+      <p
+        aria-label="filter expression value"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-202 MuiTypography-body1"
+      >
+        10
+      </p>
+    </div>
+    <div
+      aria-label="filter expression comparator"
+      class="makeStyles-ruleCardFilterExpression-203"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-200 MuiTypography-body1"
+      >
+        field2
+      </p>
+      <p
+        aria-label="filter expression operator"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-201 MuiTypography-body1"
+      >
+        &gt;
+      </p>
+      <p
+        aria-label="filter expression value"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-202 MuiTypography-body1"
+      >
+        20
+      </p>
+    </div>
+    <div
+      aria-label="filter expression comparator"
+      class="makeStyles-ruleCardFilterExpression-203"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-200 MuiTypography-body1"
+      >
+        field3
+      </p>
+      <p
+        aria-label="filter expression operator"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-201 MuiTypography-body1"
+      >
+        &gt;=
+      </p>
+      <p
+        aria-label="filter expression value"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-202 MuiTypography-body1"
+      >
+        30
+      </p>
+    </div>
+    <div
+      aria-label="filter expression comparator"
+      class="makeStyles-ruleCardFilterExpression-203"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-200 MuiTypography-body1"
+      >
+        field4
+      </p>
+      <p
+        aria-label="filter expression operator"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-201 MuiTypography-body1"
+      >
+        &lt;
+      </p>
+      <p
+        aria-label="filter expression value"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-202 MuiTypography-body1"
+      >
+        40
+      </p>
+    </div>
+    <div
+      aria-label="filter expression comparator"
+      class="makeStyles-ruleCardFilterExpression-203"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-200 MuiTypography-body1"
+      >
+        field5
+      </p>
+      <p
+        aria-label="filter expression operator"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-201 MuiTypography-body1"
+      >
+        &lt;=
+      </p>
+      <p
+        aria-label="filter expression value"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-202 MuiTypography-body1"
+      >
+        50
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with FilterComparator when received an filter expression default 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="filter expression comparator"
+      class="makeStyles-ruleCardFilterExpression-164"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-161 MuiTypography-body1"
+      >
+        temperature
+      </p>
+      <p
+        aria-label="filter expression operator"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-162 MuiTypography-body1"
+      >
+        =
+      </p>
+      <p
+        aria-label="filter expression value"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-163 MuiTypography-body1"
+      >
+        10
+      </p>
+    </div>
+    <div
+      aria-label="filter expression comparator"
+      class="makeStyles-ruleCardFilterExpression-164"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-161 MuiTypography-body1"
+      >
+        humidity
+      </p>
+      <p
+        aria-label="filter expression operator"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-162 MuiTypography-body1"
+      >
+        =
+      </p>
+      <p
+        aria-label="filter expression value"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-163 MuiTypography-body1"
+      >
+        80
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with FilterComparator when received an filter expression location comparator with max distance 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="filter expression location"
+      class="makeStyles-ruleCardFilterExpression-242"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-239 MuiTypography-body1"
+      >
+        location
+      </p>
+      <p
+        aria-label="filter expression location min distance"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionDistance-243 MuiTypography-body1"
+      />
+      <p
+        aria-label="filter expression location coordinates"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-240 MuiTypography-body1"
+      >
+        [37.12, -1.12]
+      </p>
+      <p
+        aria-label="filter expression location max distance"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionDistance-243 MuiTypography-body1"
+      >
+        6500
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with FilterComparator when received an filter expression location comparator with min and max distance 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="filter expression location"
+      class="makeStyles-ruleCardFilterExpression-320"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-317 MuiTypography-body1"
+      >
+        location
+      </p>
+      <p
+        aria-label="filter expression location min distance"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionDistance-321 MuiTypography-body1"
+      >
+        6500
+      </p>
+      <p
+        aria-label="filter expression location coordinates"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-318 MuiTypography-body1"
+      >
+        [37.12, -1.12]
+      </p>
+      <p
+        aria-label="filter expression location max distance"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionDistance-321 MuiTypography-body1"
+      >
+        10500
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with FilterComparator when received an filter expression location comparator with min distance 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="filter expression location"
+      class="makeStyles-ruleCardFilterExpression-281"
+    >
+      <p
+        aria-label="filter expression field"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-278 MuiTypography-body1"
+      >
+        location
+      </p>
+      <p
+        aria-label="filter expression location min distance"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionDistance-282 MuiTypography-body1"
+      >
+        6500
+      </p>
+      <p
+        aria-label="filter expression location coordinates"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-279 MuiTypography-body1"
+      >
+        [37.12, -1.12]
+      </p>
+      <p
+        aria-label="filter expression location max distance"
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionDistance-282 MuiTypography-body1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render RuleFilter with Passthrow when no filter received 1`] = `
+<div>
+  <div
+    aria-label="filters container"
+  >
+    <div
+      aria-label="filter expression passthrow"
+      class="makeStyles-ruleCardFilterExpressionPassthrow-4"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+      >
+        PASSTHROW
+      </h6>
+    </div>
+  </div>
+</div>
+`;

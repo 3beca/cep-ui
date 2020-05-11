@@ -2,10 +2,18 @@
 
 exports[`NotFoundPage snapshot 1`] = `
 <div>
-  <h1
-    aria-label="page not found"
+  <div
+    class="makeStyles-container-1"
   >
-    404 Page not found!
-  </h1>
+    <div
+      aria-label="page not found"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 MuiTypography-colorPrimary"
+      >
+        404 Page not found!
+      </h1>
+    </div>
+  </div>
 </div>
 `;

@@ -61,12 +61,12 @@ test(
     'RuleListPage should render 20 cards and a create button and snapshot',
     async () => {
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
-        const {container, getAllByLabelText, getByLabelText} = renderInsideApp(<RuleListPage/>);
+        const {container} = renderInsideApp(<RuleListPage/>);
 
-        await waitFor(() => expect(getAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize));
-        expect(getAllByLabelText(/rule filter elements/i)).toHaveLength(initialPageSize);
-        expect(getAllByLabelText(/rule status element/i)).toHaveLength(initialPageSize);
-        getByLabelText(/add rule/i);
+        expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
+        expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(initialPageSize);
+        expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(initialPageSize);
+        await screen.findByLabelText(/add rule/i);
         expect(container).toMatchSnapshot();
     }
 );
@@ -186,5 +186,19 @@ test(
         await waitFor(() => expect(screen.getAllByLabelText(/^element card rule$/i)).toHaveLength(15));
         expect(screen.queryByLabelText(/load more rules/i)).not.toBeInTheDocument();
         expect(screen.getByTestId(/empty-view-row/i)).toHaveTextContent(/you reached the end of the list/i);
+    }
+);
+
+test(
+    'RuleListPage should render 10 RuleCards with header eventType, target, filters and status',
+    async () => {
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, true, false));
+        renderInsideApp(<RuleListPage/>);
+
+        expect(await screen.findAllByLabelText(/element card rule/i)).toHaveLength(10);
+        expect(await screen.findAllByLabelText(/eventType name card rule/i)).toHaveLength(10);
+        expect(await screen.findAllByLabelText(/target name card rule/i)).toHaveLength(10);
+        expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(10);
+        expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(10);
     }
 );

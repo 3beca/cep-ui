@@ -38,13 +38,13 @@ test(
 test(
     'getComparatorValue shuold return each type of Comparator',
     () => {
+        expect(getComparatorValue({_hs: 10} as unknown as RuleFilterComparator)).toEqual({name: 'EQ', value: ''});
         expect(getComparatorValue({_eq: 10})).toEqual({name: 'EQ', value: 10});
         expect(getComparatorValue({_eq: '10'})).toEqual({name: 'EQ', value: '10'});
         expect(getComparatorValue({_gt: 10})).toEqual({name: 'GT', value: 10});
         expect(getComparatorValue({_gte: '10'})).toEqual({name: 'GTE', value: '10'});
         expect(getComparatorValue({_lt: 10})).toEqual({name: 'LT', value: 10});
         expect(getComparatorValue({_lte: '10'})).toEqual({name: 'LTE', value: '10'});
-        expect(() => getComparatorValue({_hs: 10} as unknown as RuleFilterComparator)).toThrowError();
         const location: Geometry = {_geometry: {type: 'Point', coordinates: [1, 1]}};
         expect(getComparatorValue({_near: location})).toEqual({name: 'NEAR', value: location});
     }

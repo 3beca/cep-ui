@@ -11,7 +11,6 @@ import {
     isRuleFilterAND,
     isRuleFilterFieldValue,
     isRuleFilterComparator,
-    isRuleFilterComparatorEQ,
     isRuleFilterComparatorGT,
     isRuleFilterComparatorGTE,
     isRuleFilterComparatorLT,
@@ -49,14 +48,13 @@ type ComparatorLocation = {
     name: 'NEAR';
     value: Geometry;
 };
-export const getComparatorValue = (comparator: RuleFilterComparator): ComparatorValue|ComparatorLocation|never => {
-    if (isRuleFilterComparatorEQ(comparator)) return {name: 'EQ', value: comparator._eq};
+export const getComparatorValue = (comparator: RuleFilterComparator): ComparatorValue|ComparatorLocation => {
     if (isRuleFilterComparatorGT(comparator)) return {name: 'GT', value: comparator._gt};
     if (isRuleFilterComparatorGTE(comparator)) return {name: 'GTE', value: comparator._gte};
     if (isRuleFilterComparatorLT(comparator)) return {name: 'LT', value: comparator._lt};
     if (isRuleFilterComparatorLTE(comparator)) return {name: 'LTE', value: comparator._lte};
     if (isRuleFilterComparatorLocation(comparator)) return {name: 'NEAR', value: comparator._near};
-    throw new Error(`Invalid comparator operator ${JSON.stringify(comparator)}`);
+    return {name: 'EQ', value: comparator._eq || ''}
 };
 export const processValues = (field: RuleFilterField, value: RuleFilterFieldValue): ECOMPARATOR|EDEFAULT|ECOMPARATORLOCATION => {
     if (isRuleFilterComparator(value)){
