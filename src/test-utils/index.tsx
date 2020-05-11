@@ -20,7 +20,8 @@ import {
     Rule,
     RuleTypes,
     RuleList,
-    RuleError
+    RuleError,
+    RuleFilter
 } from '../services/api';
 export * from '@testing-library/react';
 
@@ -108,12 +109,14 @@ const randomType = (index: number): RuleTypes => {
     const rand = index % 4;
     return types[rand];
 };
-export const generateRule = (key: string, idx: number, filters: any = {temperature: 10}) => ({
+export const generateRule = (key: string, idx: number, filters: RuleFilter = {temperature: {_eq: 10}, humidity: '45'}): Rule => ({
     id: idx + '_' + key,
     name: 'Rule ' + idx,
     type: randomType(idx),
     eventTypeId: 'eventtypeid',
+    eventTypeName: 'EventType ' + idx + '-' + key,
     targetId: 'targetid',
+    targetName: 'Target ' + idx + '-' + key,
     skipOnConsecutivesMatches: idx % 2 === 0 ? true : false,
     filters,
     createdAt: '2020-01-01T10:10:10.123Z',

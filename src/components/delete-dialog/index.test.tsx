@@ -5,7 +5,7 @@ import {useIconDialog} from '../../components/icon-dialog';
 import {BASE_URL} from '../../services/config';
 import DeleteDialog from './index';
 import { EventType } from '../../services/api';
-import { ENTITY } from '../../services/use-api';
+import { ENTITY } from '../../services/api/use-api';
 
 jest.mock('../../components/icon-dialog', () => {
     const mockClose = jest.fn();

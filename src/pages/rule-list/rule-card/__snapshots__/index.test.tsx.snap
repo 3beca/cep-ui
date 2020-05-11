@@ -1,0 +1,463 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RuleCard should render with a eventType name and targetName 1`] = `
+<div>
+  <div
+    aria-label="element card rule"
+    class="MuiPaper-root MuiCard-root makeStyles-ruleCard-137 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      class="MuiCardHeader-root makeStyles-ruleCardHeader-138"
+    >
+      <div
+        class="MuiCardHeader-avatar"
+      >
+        <div
+          aria-label="avatar icon"
+          class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-158 makeStyles-ruleCardAvatarPurple-161 MuiAvatar-colorDefault"
+        >
+          R
+        </div>
+      </div>
+      <div
+        class="MuiCardHeader-content"
+      >
+        <span
+          class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+        >
+          Rule 3
+        </span>
+        <span
+          class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        >
+          1/1/2020 11:10:10
+        </span>
+      </div>
+      <div
+        class="MuiCardHeader-action"
+      >
+        <button
+          aria-label="settings"
+          class="MuiButtonBase-root MuiIconButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <hr
+      class="MuiDivider-root"
+    />
+    <div
+      class="makeStyles-ruleCardContent-139"
+    >
+      <div
+        class="makeStyles-ruleCardBody-140"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardBodyLabel-141 MuiTypography-body1"
+        >
+          Event Type:
+        </p>
+        <p
+          aria-label="eventType name"
+          class="MuiTypography-root makeStyles-ruleCardBodyName-142 MuiTypography-body1"
+        >
+          EventType 3-rule-test
+        </p>
+      </div>
+      <hr
+        class="MuiDivider-root"
+      />
+      <div
+        class="makeStyles-ruleCardBody-140"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardBodyLabel-141 MuiTypography-body1"
+        >
+          Target:
+        </p>
+        <p
+          aria-label="target name"
+          class="MuiTypography-root makeStyles-ruleCardBodyName-142 MuiTypography-body1"
+        >
+          Target 3-rule-test
+        </p>
+      </div>
+      <hr
+        class="MuiDivider-root"
+      />
+      <div
+        aria-label="rule filter elements"
+        class="makeStyles-ruleCardFilters-143"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardBodyLabel-141 MuiTypography-body1"
+        >
+          Filters:
+        </p>
+        <div>
+          <div
+            class="makeStyles-ruleCardFilterContainer-144"
+          >
+            <div
+              class="makeStyles-ruleCardFilterContainerHeader-145"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterContainerHeaderText-146 MuiTypography-body1"
+              >
+                One Of
+              </p>
+            </div>
+            <div
+              class="makeStyles-ruleCardFilterExpression-151"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-148 MuiTypography-body1"
+              >
+                hola
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-149 MuiTypography-body1"
+              >
+                =
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-150 MuiTypography-body1"
+              >
+                1
+              </p>
+            </div>
+          </div>
+          <div
+            class="makeStyles-ruleCardFilterContainer-144"
+          >
+            <div
+              class="makeStyles-ruleCardFilterContainerHeader-145"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterContainerHeaderText-146 MuiTypography-body1"
+              >
+                All Of
+              </p>
+            </div>
+            <div
+              class="makeStyles-ruleCardFilterExpression-151"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-148 MuiTypography-body1"
+              >
+                adios
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-149 MuiTypography-body1"
+              >
+                =
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-150 MuiTypography-body1"
+              >
+                2
+              </p>
+            </div>
+          </div>
+          <div
+            class="makeStyles-ruleCardFilterExpression-151"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-148 MuiTypography-body1"
+            >
+              p1
+            </p>
+            <p
+              class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-149 MuiTypography-body1"
+            >
+              =
+            </p>
+            <p
+              class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-150 MuiTypography-body1"
+            >
+              valor
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr
+        class="MuiDivider-root"
+      />
+      <div
+        aria-label="rule status element"
+        class="makeStyles-ruleCardStatus-152"
+      >
+        <div
+          class="makeStyles-ruleCardStatusDate-153"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          />
+        </div>
+        <div
+          class="makeStyles-ruleCardStatusOneShot-154"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            Skip Consecutives
+          </p>
+          <div
+            class="makeStyles-onShotLabel-155 makeStyles-onShotLabelOff-157"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RuleCard should render with a rule and snap 1`] = `
+<div>
+  <div
+    aria-label="element card rule"
+    class="MuiPaper-root MuiCard-root makeStyles-ruleCard-1 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      class="MuiCardHeader-root makeStyles-ruleCardHeader-2"
+    >
+      <div
+        class="MuiCardHeader-avatar"
+      >
+        <div
+          aria-label="avatar icon"
+          class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-22 makeStyles-ruleCardAvatarPurple-25 MuiAvatar-colorDefault"
+        >
+          R
+        </div>
+      </div>
+      <div
+        class="MuiCardHeader-content"
+      >
+        <span
+          class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+        >
+          Rule 3
+        </span>
+        <span
+          class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        >
+          1/1/2020 11:10:10
+        </span>
+      </div>
+      <div
+        class="MuiCardHeader-action"
+      >
+        <button
+          aria-label="settings"
+          class="MuiButtonBase-root MuiIconButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <hr
+      class="MuiDivider-root"
+    />
+    <div
+      class="makeStyles-ruleCardContent-3"
+    >
+      <div
+        class="makeStyles-ruleCardBody-4"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardBodyLabel-5 MuiTypography-body1"
+        >
+          Event Type:
+        </p>
+        <p
+          aria-label="eventType name"
+          class="MuiTypography-root makeStyles-ruleCardBodyName-6 MuiTypography-body1"
+        >
+          EventType 3-rule-test
+        </p>
+      </div>
+      <hr
+        class="MuiDivider-root"
+      />
+      <div
+        class="makeStyles-ruleCardBody-4"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardBodyLabel-5 MuiTypography-body1"
+        >
+          Target:
+        </p>
+        <p
+          aria-label="target name"
+          class="MuiTypography-root makeStyles-ruleCardBodyName-6 MuiTypography-body1"
+        >
+          Target 3-rule-test
+        </p>
+      </div>
+      <hr
+        class="MuiDivider-root"
+      />
+      <div
+        aria-label="rule filter elements"
+        class="makeStyles-ruleCardFilters-7"
+      >
+        <p
+          class="MuiTypography-root makeStyles-ruleCardBodyLabel-5 MuiTypography-body1"
+        >
+          Filters:
+        </p>
+        <div>
+          <div
+            class="makeStyles-ruleCardFilterContainer-8"
+          >
+            <div
+              class="makeStyles-ruleCardFilterContainerHeader-9"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterContainerHeaderText-10 MuiTypography-body1"
+              >
+                One Of
+              </p>
+            </div>
+            <div
+              class="makeStyles-ruleCardFilterExpression-15"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-12 MuiTypography-body1"
+              >
+                hola
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-13 MuiTypography-body1"
+              >
+                =
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-14 MuiTypography-body1"
+              >
+                1
+              </p>
+            </div>
+          </div>
+          <div
+            class="makeStyles-ruleCardFilterContainer-8"
+          >
+            <div
+              class="makeStyles-ruleCardFilterContainerHeader-9"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterContainerHeaderText-10 MuiTypography-body1"
+              >
+                All Of
+              </p>
+            </div>
+            <div
+              class="makeStyles-ruleCardFilterExpression-15"
+            >
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-12 MuiTypography-body1"
+              >
+                adios
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-13 MuiTypography-body1"
+              >
+                =
+              </p>
+              <p
+                class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-14 MuiTypography-body1"
+              >
+                2
+              </p>
+            </div>
+          </div>
+          <div
+            class="makeStyles-ruleCardFilterExpression-15"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-12 MuiTypography-body1"
+            >
+              p1
+            </p>
+            <p
+              class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-13 MuiTypography-body1"
+            >
+              =
+            </p>
+            <p
+              class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-14 MuiTypography-body1"
+            >
+              valor
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr
+        class="MuiDivider-root"
+      />
+      <div
+        aria-label="rule status element"
+        class="makeStyles-ruleCardStatus-16"
+      >
+        <div
+          class="makeStyles-ruleCardStatusDate-17"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          />
+        </div>
+        <div
+          class="makeStyles-ruleCardStatusOneShot-18"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            Skip Consecutives
+          </p>
+          <div
+            class="makeStyles-onShotLabel-19 makeStyles-onShotLabelOff-21"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

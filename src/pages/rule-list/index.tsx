@@ -9,7 +9,7 @@ import {
 } from '../../components/paginated-table';
 import RuleCard from './rule-card';
 import {CreateRuleDialog} from './create-dialog';
-import {ENTITY} from '../../services/use-api';
+import {ENTITY} from '../../services/api/use-api';
 import {useStyles} from './styles';
 import { Rule } from '../../services/api';
 import {useGetListAccumulated} from '../../services/use-getlist-enhancer';

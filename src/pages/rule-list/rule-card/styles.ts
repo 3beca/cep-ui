@@ -17,11 +17,63 @@ export const useStyles = makeStyles(
             flexDirection: 'column',
             flex: 1,
         },
+        ruleCardBody: {
+            display: 'flex',
+            flexDirection: 'column',
+            padding: 6
+        },
+        ruleCardBodyLabel: {
+            display: 'flex',
+            fontSize: 12,
+            fontWeight: 700
+        },
+        ruleCardBodyName: {
+            display: 'flex',
+            marginLeft: 32,
+            flex: 1
+        },
         ruleCardFilters: {
             display: 'flex',
+            flexDirection: 'column',
             maxHeight: 300,
+            padding: 6,
             overflowY: 'scroll',
             flex: 1
+        },
+        ruleCardFilterContainer: {
+            display: 'flex',
+            flexDirection: 'column',
+            margin: 3,
+            borderStyle: 'solid',
+            borderColor: '#CCC',
+            borderWidth: 1
+        },
+        ruleCardFilterContainerHeader: {
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: 20
+        },
+        ruleCardFilterContainerHeaderText: {
+            marginTop: -31,
+            backgroundColor: theme.palette.common.white,
+            fontWeight: 700,
+            fontSize: 14
+        },
+        ruleCardFilterExpressionPassthrow: {
+            display: 'flex',
+            justifyContent: 'center'
+        },
+        ruleCardFilterExpressionField: {
+        },
+        ruleCardFilterExpressionOperator: {
+            marginLeft: 10,
+            marginRight: 10
+        },
+        ruleCardFilterExpressionValue: {
+        },
+        ruleCardFilterExpression: {
+            display: 'flex',
+            marginLeft: 32
         },
         ruleCardStatus: {
             display: 'flex',

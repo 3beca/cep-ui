@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
     useGetList,
     ENTITY
-} from '../use-api';
+} from '../api/use-api';
 import { Entity } from '../api';
 type ActionNextPage = {
     type: 'NEXT_PAGE'|'PREV_PAGE'|'RESET_PAGE'|'RESET_PAGE_SIZE'|'RESET_FILTER';

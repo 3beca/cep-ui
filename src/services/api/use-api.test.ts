@@ -6,14 +6,14 @@ import {
 } from './use-api';
 import {
     BASE_URL
-} from './config';
-import {ServiceError} from './api';
+} from '../config';
+import {ServiceError} from './index';
 import {
     setupNock,
     generateEventTypeListWith,
     serverGetEventTypeList,
     serverDeleteEventType
-} from '../test-utils';
+} from '../../test-utils';
 
 const url = BASE_URL;
 const server = setupNock(url);

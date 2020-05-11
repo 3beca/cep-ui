@@ -1,7 +1,7 @@
 import {renderHook, act} from '@testing-library/react-hooks'
 import {
     ENTITY
-} from '../use-api';
+} from '../api/use-api';
 import {
     BASE_URL
 } from '../config';

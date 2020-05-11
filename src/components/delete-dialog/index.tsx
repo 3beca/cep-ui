@@ -8,7 +8,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 import {useIconDialog} from '../../components/icon-dialog';
 import { EventType, ServiceError, Target, ServiceDeleted } from '../../services/api';
-import { useDelete, ENTITY } from '../../services/use-api';
+import { useDelete, ENTITY } from '../../services/api/use-api';
 import {useStyles} from './styles';
 
 const EmptyMessage: React.FC<{show: boolean;}> = ({show}) => {

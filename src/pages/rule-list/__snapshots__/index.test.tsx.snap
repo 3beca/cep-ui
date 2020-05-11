@@ -3,17 +3,17 @@
 exports[`RuleListPage should render 20 cards and a create button and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-root-673"
+    class="makeStyles-root-695"
   >
     <div
       aria-label="rule search bar"
-      class="makeStyles-searchBar-674"
+      class="makeStyles-searchBar-696"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-679 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-701 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-680"
+          class="MuiInputBase-root makeStyles-searchInput-702"
         >
           <input
             aria-label="search input"
@@ -25,7 +25,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-681"
+          class="makeStyles-searchButton-703"
         >
           <svg
             aria-hidden="true"
@@ -42,7 +42,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
     </div>
     <button
       aria-label="add rule"
-      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-676 MuiFab-primary"
+      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-698 MuiFab-primary"
       tabindex="0"
       type="button"
     >
@@ -65,21 +65,21 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       />
     </button>
     <div
-      class="makeStyles-gridCards-675"
+      class="makeStyles-gridCards-697"
     >
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarBlue-849 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarBlue-882 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -131,40 +131,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 0-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 0-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -172,7 +242,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOn-845"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOn-878"
               />
             </div>
           </div>
@@ -180,17 +250,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarRed-848 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarRed-881 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -242,40 +312,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 1-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 1-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -283,7 +423,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOff-846"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOff-879"
               />
             </div>
           </div>
@@ -291,17 +431,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarOrange-851 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarOrange-884 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -353,40 +493,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 2-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 2-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -394,7 +604,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOn-845"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOn-878"
               />
             </div>
           </div>
@@ -402,17 +612,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarPurple-850 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarPurple-883 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -464,40 +674,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 3-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 3-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -505,7 +785,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOff-846"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOff-879"
               />
             </div>
           </div>
@@ -513,17 +793,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarBlue-849 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarBlue-882 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -575,40 +855,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 4-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 4-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -616,7 +966,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOn-845"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOn-878"
               />
             </div>
           </div>
@@ -624,17 +974,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarRed-848 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarRed-881 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -686,40 +1036,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 5-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 5-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -727,7 +1147,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOff-846"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOff-879"
               />
             </div>
           </div>
@@ -735,17 +1155,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarOrange-851 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarOrange-884 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -797,40 +1217,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 6-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 6-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -838,7 +1328,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOn-845"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOn-878"
               />
             </div>
           </div>
@@ -846,17 +1336,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarPurple-850 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarPurple-883 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -908,40 +1398,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 7-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 7-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -949,7 +1509,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOff-846"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOff-879"
               />
             </div>
           </div>
@@ -957,17 +1517,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarBlue-849 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarBlue-882 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -1019,40 +1579,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 8-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 8-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1060,7 +1690,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOn-845"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOn-878"
               />
             </div>
           </div>
@@ -1068,17 +1698,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-837 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-859 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-838"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-860"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-847 makeStyles-ruleCardAvatarRed-848 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-880 makeStyles-ruleCardAvatarRed-881 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -1130,40 +1760,110 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-839"
+          class="makeStyles-ruleCardContent-861"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              EventType 9-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-862"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-864 MuiTypography-body1"
+            >
+              Target 9-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-840"
+            class="makeStyles-ruleCardFilters-865"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-863 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-873"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-870 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-871 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-872 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-841"
+            class="makeStyles-ruleCardStatus-874"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-842"
+              class="makeStyles-ruleCardStatusDate-875"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-843"
+              class="makeStyles-ruleCardStatusOneShot-876"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1171,7 +1871,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-844 makeStyles-onShotLabelOff-846"
+                class="makeStyles-onShotLabel-877 makeStyles-onShotLabelOff-879"
               />
             </div>
           </div>
@@ -1179,11 +1879,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
       </div>
     </div>
     <div
-      class="makeStyles-emptyView-753"
+      class="makeStyles-emptyView-775"
       data-testid="empty-view-row"
     >
       <span
-        class="MuiTypography-root makeStyles-emptyViewText-754 MuiTypography-caption MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-emptyViewText-776 MuiTypography-caption MuiTypography-alignCenter"
       >
         You reached the end of the list!
       </span>
@@ -1195,17 +1895,17 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
 exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
 <div>
   <div
-    class="makeStyles-root-240"
+    class="makeStyles-root-251"
   >
     <div
       aria-label="rule search bar"
-      class="makeStyles-searchBar-241"
+      class="makeStyles-searchBar-252"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-246 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-257 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-247"
+          class="MuiInputBase-root makeStyles-searchInput-258"
         >
           <input
             aria-label="search input"
@@ -1217,7 +1917,7 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-248"
+          class="makeStyles-searchButton-259"
         >
           <svg
             aria-hidden="true"
@@ -1234,7 +1934,7 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
     </div>
     <button
       aria-label="add rule"
-      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-243 MuiFab-primary"
+      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-254 MuiFab-primary"
       tabindex="0"
       type="button"
     >
@@ -1257,14 +1957,14 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
       />
     </button>
     <div
-      class="makeStyles-gridCards-242"
+      class="makeStyles-gridCards-253"
     />
     <div
-      class="makeStyles-emptyView-320"
+      class="makeStyles-emptyView-331"
       data-testid="empty-view-row"
     >
       <h4
-        class="MuiTypography-root makeStyles-emptyViewText-321 MuiTypography-h4 MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-emptyViewText-332 MuiTypography-h4 MuiTypography-alignCenter"
       >
         There are no RULES created yet!
       </h4>
@@ -1276,17 +1976,17 @@ exports[`RuleListPage should render Empty List when no elements and snap 1`] = `
 exports[`RuleListPage should render Empty List whith filter when no elements and snap 1`] = `
 <div>
   <div
-    class="makeStyles-root-1713"
+    class="makeStyles-root-1779"
   >
     <div
       aria-label="rule search bar"
-      class="makeStyles-searchBar-1714"
+      class="makeStyles-searchBar-1780"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-1719 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-1785 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-1720"
+          class="MuiInputBase-root makeStyles-searchInput-1786"
         >
           <input
             aria-label="search input"
@@ -1298,7 +1998,7 @@ exports[`RuleListPage should render Empty List whith filter when no elements and
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-1721"
+          class="makeStyles-searchButton-1787"
         >
           <svg
             aria-hidden="true"
@@ -1315,7 +2015,7 @@ exports[`RuleListPage should render Empty List whith filter when no elements and
     </div>
     <button
       aria-label="add rule"
-      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-1716 MuiFab-primary"
+      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-1782 MuiFab-primary"
       tabindex="0"
       type="button"
     >
@@ -1338,14 +2038,14 @@ exports[`RuleListPage should render Empty List whith filter when no elements and
       />
     </button>
     <div
-      class="makeStyles-gridCards-1715"
+      class="makeStyles-gridCards-1781"
     />
     <div
-      class="makeStyles-emptyView-1793"
+      class="makeStyles-emptyView-1859"
       data-testid="empty-view-row"
     >
       <h4
-        class="MuiTypography-root makeStyles-emptyViewText-1794 MuiTypography-h4 MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-emptyViewText-1860 MuiTypography-h4 MuiTypography-alignCenter"
       >
         There are no elements for "rule-name"
       </h4>
@@ -1357,17 +2057,17 @@ exports[`RuleListPage should render Empty List whith filter when no elements and
 exports[`RuleListPage should render End List message when no more elements to load and snap 1`] = `
 <div>
   <div
-    class="makeStyles-root-434"
+    class="makeStyles-root-445"
   >
     <div
       aria-label="rule search bar"
-      class="makeStyles-searchBar-435"
+      class="makeStyles-searchBar-446"
     >
       <div
-        class="MuiPaper-root makeStyles-searchContainer-440 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root makeStyles-searchContainer-451 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiInputBase-root makeStyles-searchInput-441"
+          class="MuiInputBase-root makeStyles-searchInput-452"
         >
           <input
             aria-label="search input"
@@ -1379,7 +2079,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
         </div>
         <div
           aria-label="search icon"
-          class="makeStyles-searchButton-442"
+          class="makeStyles-searchButton-453"
         >
           <svg
             aria-hidden="true"
@@ -1396,7 +2096,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
     </div>
     <button
       aria-label="add rule"
-      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-437 MuiFab-primary"
+      class="MuiButtonBase-root MuiFab-root makeStyles-fabAddRule-448 MuiFab-primary"
       tabindex="0"
       type="button"
     >
@@ -1419,21 +2119,21 @@ exports[`RuleListPage should render End List message when no more elements to lo
       />
     </button>
     <div
-      class="makeStyles-gridCards-436"
+      class="makeStyles-gridCards-447"
     >
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarBlue-610 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarBlue-632 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -1485,40 +2185,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 0-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 0-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1526,7 +2296,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOn-606"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOn-628"
               />
             </div>
           </div>
@@ -1534,17 +2304,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarRed-609 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarRed-631 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -1596,40 +2366,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 1-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 1-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1637,7 +2477,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOff-607"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOff-629"
               />
             </div>
           </div>
@@ -1645,17 +2485,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarOrange-612 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarOrange-634 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -1707,40 +2547,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 2-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 2-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1748,7 +2658,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOn-606"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOn-628"
               />
             </div>
           </div>
@@ -1756,17 +2666,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarPurple-611 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarPurple-633 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -1818,40 +2728,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 3-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 3-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1859,7 +2839,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOff-607"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOff-629"
               />
             </div>
           </div>
@@ -1867,17 +2847,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarBlue-610 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarBlue-632 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -1929,40 +2909,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 4-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 4-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -1970,7 +3020,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOn-606"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOn-628"
               />
             </div>
           </div>
@@ -1978,17 +3028,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarRed-609 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarRed-631 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -2040,40 +3090,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 5-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 5-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2081,7 +3201,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOff-607"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOff-629"
               />
             </div>
           </div>
@@ -2089,17 +3209,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarOrange-612 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarOrange-634 MuiAvatar-colorDefault"
             >
               T
             </div>
@@ -2151,40 +3271,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 6-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 6-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2192,7 +3382,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOn-606"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOn-628"
               />
             </div>
           </div>
@@ -2200,17 +3390,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarPurple-611 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarPurple-633 MuiAvatar-colorDefault"
             >
               R
             </div>
@@ -2262,40 +3452,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 7-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 7-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2303,7 +3563,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOff-607"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOff-629"
               />
             </div>
           </div>
@@ -2311,17 +3571,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarBlue-610 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarBlue-632 MuiAvatar-colorDefault"
             >
               S
             </div>
@@ -2373,40 +3633,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 8-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 8-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2414,7 +3744,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOn-606"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOn-628"
               />
             </div>
           </div>
@@ -2422,17 +3752,17 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
       <div
         aria-label="element card rule"
-        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-598 MuiPaper-elevation1 MuiPaper-rounded"
+        class="MuiPaper-root MuiCard-root makeStyles-ruleCard-609 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
-          class="MuiCardHeader-root makeStyles-ruleCardHeader-599"
+          class="MuiCardHeader-root makeStyles-ruleCardHeader-610"
         >
           <div
             class="MuiCardHeader-avatar"
           >
             <div
-              aria-label="recipe"
-              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-608 makeStyles-ruleCardAvatarRed-609 MuiAvatar-colorDefault"
+              aria-label="avatar icon"
+              class="MuiAvatar-root MuiAvatar-circle makeStyles-ruleCardAvatar-630 makeStyles-ruleCardAvatarRed-631 MuiAvatar-colorDefault"
             >
               H
             </div>
@@ -2484,40 +3814,110 @@ exports[`RuleListPage should render End List message when no more elements to lo
           class="MuiDivider-root"
         />
         <div
-          class="makeStyles-ruleCardContent-600"
+          class="makeStyles-ruleCardContent-611"
         >
-          <div>
-            Event Type 
-            eventtypeid
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Event Type:
+            </p>
+            <p
+              aria-label="eventType name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              EventType 9-_10
+            </p>
           </div>
-          <div>
-            Target 
-            eventtypeid
+          <hr
+            class="MuiDivider-root"
+          />
+          <div
+            class="makeStyles-ruleCardBody-612"
+          >
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Target:
+            </p>
+            <p
+              aria-label="target name"
+              class="MuiTypography-root makeStyles-ruleCardBodyName-614 MuiTypography-body1"
+            >
+              Target 9-_10
+            </p>
           </div>
+          <hr
+            class="MuiDivider-root"
+          />
           <div
             aria-label="rule filter elements"
-            class="makeStyles-ruleCardFilters-601"
+            class="makeStyles-ruleCardFilters-615"
           >
-            {"temperature":10}
+            <p
+              class="MuiTypography-root makeStyles-ruleCardBodyLabel-613 MuiTypography-body1"
+            >
+              Filters:
+            </p>
+            <div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  temperature
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  10
+                </p>
+              </div>
+              <div
+                class="makeStyles-ruleCardFilterExpression-623"
+              >
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionField-620 MuiTypography-body1"
+                >
+                  humidity
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionOperator-621 MuiTypography-body1"
+                >
+                  =
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-ruleCardFilterExpressionValue-622 MuiTypography-body1"
+                >
+                  45
+                </p>
+              </div>
+            </div>
           </div>
           <hr
             class="MuiDivider-root"
           />
           <div
             aria-label="rule status element"
-            class="makeStyles-ruleCardStatus-602"
+            class="makeStyles-ruleCardStatus-624"
           >
             <div
-              class="makeStyles-ruleCardStatusDate-603"
+              class="makeStyles-ruleCardStatusDate-625"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
-              >
-                1/1/2020
-              </p>
+              />
             </div>
             <div
-              class="makeStyles-ruleCardStatusOneShot-604"
+              class="makeStyles-ruleCardStatusOneShot-626"
             >
               <p
                 class="MuiTypography-root MuiTypography-body1"
@@ -2525,7 +3925,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                 Skip Consecutives
               </p>
               <div
-                class="makeStyles-onShotLabel-605 makeStyles-onShotLabelOff-607"
+                class="makeStyles-onShotLabel-627 makeStyles-onShotLabelOff-629"
               />
             </div>
           </div>
@@ -2533,11 +3933,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
       </div>
     </div>
     <div
-      class="makeStyles-emptyView-514"
+      class="makeStyles-emptyView-525"
       data-testid="empty-view-row"
     >
       <span
-        class="MuiTypography-root makeStyles-emptyViewText-515 MuiTypography-caption MuiTypography-alignCenter"
+        class="MuiTypography-root makeStyles-emptyViewText-526 MuiTypography-caption MuiTypography-alignCenter"
       >
         You reached the end of the list!
       </span>

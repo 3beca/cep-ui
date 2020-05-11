@@ -3,21 +3,19 @@ import {
     useFetchApi,
     APIError,
     APIResponseData
-} from '../utils/fetch-api';
+} from '../../utils/fetch-api';
 import {
     buildApiService,
     ServiceList,
     Entity
-} from './api';
+} from './index';
 import {
     BASE_URL,
     EVENT_TYPES_URL,
     TARGETS_URL,
     RULES_URL,
     EVENTS_URL
-} from './config';
-
-
+} from '../config';
 
 const ENTITIES = [EVENT_TYPES_URL, TARGETS_URL, RULES_URL, EVENTS_URL];
 export enum ENTITY {
