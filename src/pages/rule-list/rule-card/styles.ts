@@ -53,22 +53,8 @@ export const useStyles = makeStyles(
         },
         ruleCardStatusOneShot: {
             display: 'flex',
-            alignItems: 'center'
-        },
-        onShotLabel: {
-            width: 18,
-            height: 18,
-            marginLeft: 6,
-            borderWidth: 1,
-            borderColor: theme.palette.primary.dark,
-            borderStyle: 'solid',
-            borderRadius: 9
-        },
-        onShotLabelOn: {
-            backgroundColor: theme.palette.secondary.light
-        },
-        onShotLabelOff: {
-            backgroundColor: theme.palette.error.light
+            alignItems: 'flex-end',
+            marginRight: 8
         },
         ruleCardAvatar: {
             padding: 4,
