@@ -1,5 +1,5 @@
 import React from 'react';
-import { waitFor, fireEvent } from '@testing-library/react';
+import { waitFor, fireEvent, screen } from '@testing-library/react';
 import App from './index';
 import {
     setupNock,
@@ -10,6 +10,7 @@ import {
     renderInsideApp
 } from '../test-utils';
 import {BASE_URL} from '../services/config';
+import { selectCreateRule } from '../pages/rule-list/index.test';
 
 export const renderAppWithMenuOpenedInRoute = (route = '/') => {
     const utils = renderInsideApp(<App/>, {route});
@@ -36,69 +37,108 @@ export const renderAppWithMenuOpenedInRoute = (route = '/') => {
 
 test('App render with menu closed and snapshot', async () => {
     serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
-    const { container, getAllByLabelText, queryByLabelText } = renderInsideApp(<App/>, {route: '/'});
-    await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(10));
+    const { container} = renderInsideApp(<App/>, {route: '/'});
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
     expect(container).toMatchSnapshot();
 
     // Menu starts closed
-    expect(queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument();
 });
 
 test('App render RulesPage with route / and snapshot', async () => {
     serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
-    const { container, getAllByLabelText, showMenuButton, queryByLabelText } = renderAppWithMenuOpenedInRoute('/');
-    await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(10));
-    expect(queryByLabelText(/^drawer menu$/i)).toBeInTheDocument();
+    const { container, showMenuButton} = renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
+    expect(await screen.findByLabelText(/^drawer menu$/i)).toBeInTheDocument();
     expect(container).toMatchSnapshot();
 
     // Close Menu
     fireEvent.click(showMenuButton);
-    waitFor(() => expect(queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
+    waitFor(() => expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
 });
 
 test('App render NotFoundPage with route /unknown and snapshot', async () => {
-    const {container, getByLabelText} = renderAppWithMenuOpenedInRoute('/unknown');
+    const {container} = renderAppWithMenuOpenedInRoute('/unknown');
 
-    getByLabelText(/page not found/i);
+    await screen.findByLabelText(/page not found/i);
     expect(container).toMatchSnapshot();
 });
 
 test('App render / and navigate to Event Types Page with route /event-types and snapshot', async () => {
     serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
-    const { container, getAllByLabelText, queryByLabelText, menuEventTypes} = renderAppWithMenuOpenedInRoute('/');
-    await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(10));
+    const { container, menuEventTypes} = renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10);
     fireEvent.click(menuEventTypes);
-    await waitFor(() => expect(getAllByLabelText(/element row eventtype/i)).toHaveLength(10));
+    expect(await screen.findAllByLabelText(/element row eventtype/i)).toHaveLength(10);
     expect(container).toMatchSnapshot();
     // expect drawer will be closed after navigate to page
-    await waitFor(() => expect(queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
 });
 
 test('App render / and navigate to TargetListPage with route /targets and snapshot', async () => {
     serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
-    const { container, getAllByLabelText, queryByLabelText, menuTargets} = renderAppWithMenuOpenedInRoute('/');
-    await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(10));
+    const { container, menuTargets} = renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 
     serverGetTargetList(setupNock(BASE_URL), 1, 10);
     fireEvent.click(menuTargets);
-    await waitFor(() => expect(getAllByLabelText(/element row target/i)).toHaveLength(10));
+    expect(await screen.findAllByLabelText(/element row target/i)).toHaveLength(10);
     expect(container).toMatchSnapshot();
     // expect drawer will be closed after navigate to page
-    await waitFor(() => expect(queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
 });
 
 test('App render / and navigate to Events Log with route /event-logs and snapshot', async () => {
     serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
-    const { container, getAllByLabelText, queryByLabelText, menuEvents} = renderAppWithMenuOpenedInRoute('/');
-    await waitFor(() => expect(getAllByLabelText(/element card rule/)).toHaveLength(10));
-    expect(queryByLabelText(/^drawer menu$/i)).toBeInTheDocument();
+    const { container, menuEvents} = renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
+    expect(await screen.findByLabelText(/^drawer menu$/i)).toBeInTheDocument();
 
     fireEvent.click(menuEvents);
-    expect(getAllByLabelText(/^element row event logs$/i)).toHaveLength(10);
+    expect(await screen.findAllByLabelText(/^element row event logs$/i)).toHaveLength(10);
     expect(container).toMatchSnapshot();
     // expect drawer will be closed after navigate to page
+    await waitFor(() => expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
+});
 
-    await waitFor(() => expect(queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
+test('App render / and navigate to create real time rule', async () => {
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
+    renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
+
+    await selectCreateRule('real time');
+    // Expect to navigate to create real tiem rule
+    await screen.findByLabelText(/create realtime rule page/);
+});
+
+test('App render / and navigate to create sliding rule', async () => {
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
+    renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
+
+    await selectCreateRule('sliding');
+    // Expect to navigate to create real tiem rule
+    await screen.findByLabelText(/create sliding rule page/);
+});
+
+test('App render / and navigate to create hopping rule', async () => {
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
+    renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
+
+    await selectCreateRule('hopping');
+    // Expect to navigate to create real tiem rule
+    await screen.findByLabelText(/create hopping rule page/);
+});
+
+test('App render / and navigate to create tumbling rule', async () => {
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
+    renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
+
+    await selectCreateRule('tumbling');
+    // Expect to navigate to create real tiem rule
+    await screen.findByLabelText(/create tumbling rule page/);
 });

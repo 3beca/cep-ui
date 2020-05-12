@@ -4,6 +4,7 @@ export const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
         height: '90vh',
+        margin: 40,
         justifyContent: 'center',
         alignItems: 'center'
     }

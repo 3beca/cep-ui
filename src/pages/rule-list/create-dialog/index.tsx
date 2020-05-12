@@ -12,6 +12,7 @@ import { RuleTypes } from '../../../services/api';
 import {colorTypeSelector, mapRuleTypeName} from '../rule-card';
 import {useStyles} from './styles';
 import {useStyles as useCardStyles} from '../rule-card/styles';
+import {useHistory} from 'react-router-dom';
 
 
 type RuleTypesText = {[key in RuleTypes]: string};
@@ -63,16 +64,17 @@ const RuleTypeCard: React.FC<RuleTypeCardProp> = ({selected, type, ariaLabel, on
     );
 };
 
-export type CreateRuleDialogProps = {isOpen: boolean; onClose?():void; onSelect?(type: RuleTypes):void;};
-export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClose = NOOP, onSelect = NOOP}) => {
+export type CreateRuleDialogProps = {isOpen: boolean; onClose?():void;};
+export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClose = NOOP}) => {
     const styles = useStyles();
     const [type, setType] = React.useState<RuleTypes|null>(null);
     const selectType = React.useCallback((type: RuleTypes) => setType(type), []);
+    const history = useHistory();
     const fireSelected = React.useCallback(() => {
-        onSelect(type!);
+        history.push(`/rules/create/${type === 'none' ? 'realtime': type}`);
         onClose();
         setType(null);
-    }, [onSelect, onClose, type]);
+    }, [history, onClose, type]);
     return (
         <Dialog
             open={isOpen}

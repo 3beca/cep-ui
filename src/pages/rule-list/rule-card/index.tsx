@@ -76,7 +76,7 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                     <Typography className={styles.ruleCardBodyLabel}>Event Type:</Typography>
                     <Typography className={styles.ruleCardBodyName} aria-label='eventType name'>{rule.eventTypeName}</Typography>
                 </div>
-                <Divider/>
+                {/*<Divider/>*/}
                 <div
                     aria-label='target name card rule'
                     className={styles.ruleCardBody}>
@@ -101,6 +101,8 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                                     control={<Switch size='small' color='primary' checked={rule.skipOnConsecutivesMatches}/>}
                                     label='Skip Consecutives'
                                     labelPlacement='start'
+                                    aria-label={`skip consecutives ${rule.skipOnConsecutivesMatches ? 'enable' : 'disable'}`}
+                                    aria-readonly={true}
                                 />
                             </FormGroup>
                         </div>

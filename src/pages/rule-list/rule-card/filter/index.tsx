@@ -46,10 +46,26 @@ export const ExpressionComparator: React.FC<ExpresionComparatorProps> = ({field,
         </div>
     );
 };
-
+const toKilometers = (distance: number) => distance >= 1000 ? (distance / 1000).toFixed(1) + ' kms.' : distance + ' mts.';
 export type ExpresionLocationProps = {field: string; operator: string; geometry: Geometry};
 export const ExpresionLocation: React.FC<ExpresionLocationProps> = ({field, operator, geometry}) => {
     const styles = useStyles();
+    const maxDistance = geometry._maxDistance;
+    const minDistance = geometry._minDistance;
+    if (maxDistance === undefined && minDistance === undefined) return null;
+    let maxDistanceText, minDistanceText;
+    if (maxDistance !== undefined) {
+        maxDistanceText = toKilometers(maxDistance);
+    }
+    if (minDistance !== undefined) {
+        minDistanceText = toKilometers(minDistance);
+    }
+    const nearDistanceText = (minDistance && maxDistance) ?
+        `is between ${minDistanceText} and ${maxDistanceText}` :
+        (maxDistanceText) ?
+            `is to less than ${maxDistanceText}` :
+            `is to more than ${minDistanceText}`;
+
     return (
         <div
             aria-label='filter expression location'
@@ -60,19 +76,9 @@ export const ExpresionLocation: React.FC<ExpresionLocationProps> = ({field, oper
                 {field}
             </Typography>
             <Typography
-                aria-label='filter expression location min distance'
+                aria-label={`filter expression location distance`}
                 className={styles.ruleCardFilterExpressionDistance}>
-                {geometry._minDistance}
-            </Typography>
-            <Typography
-                aria-label='filter expression location coordinates'
-                className={styles.ruleCardFilterExpressionOperator}>
-                {`[${geometry._geometry.coordinates[0].toFixed(2) + ', ' + geometry._geometry.coordinates[1].toFixed(2)}]`}
-            </Typography>
-            <Typography
-                aria-label='filter expression location max distance'
-                className={styles.ruleCardFilterExpressionDistance}>
-                {geometry._maxDistance}
+                {nearDistanceText + ` from [${geometry._geometry.coordinates[0].toFixed(2) + ', ' + geometry._geometry.coordinates[1].toFixed(2)}]`}
             </Typography>
         </div>
     );

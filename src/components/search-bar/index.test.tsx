@@ -3,7 +3,8 @@ import {render} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import SearchBar from './index';
 
-jest.useFakeTimers();
+beforeAll(() => jest.useFakeTimers());
+afterAll(() => jest.useRealTimers());
 
 test('SearchBar should render with a default hint text and snap', () => {
     const {getByPlaceholderText, rerender, container} = render(<SearchBar/>);
@@ -26,7 +27,7 @@ test('SearchBar should fire onSearchfor after write a text with default params',
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
 
-    jest.runAllTimers();
+    jest.runOnlyPendingTimers();
     expect(onSearchfor).toHaveBeenNthCalledWith(1, searchText);
 });
 
@@ -45,13 +46,13 @@ test('SearchBar should fire onSearchfor after write a text with min size', () =>
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
 
-    jest.runAllTimers();
+    jest.runOnlyPendingTimers();
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
 
     const longText = 'njo';
     userEvent.type(input, longText);
-    jest.runAllTimers();
+    jest.runOnlyPendingTimers();
     expect(onSearchfor).toHaveBeenNthCalledWith(1, searchText + longText);
 });
 
@@ -69,7 +70,7 @@ test('SearchBar should fire onSearchfor on each key pressed', async () => {
     searchText.split('').map(async c => {
         userEvent.type(input, c);
     });
-    jest.runAllTimers();
+    jest.runOnlyPendingTimers();
     expect(onSearchfor).toHaveBeenCalledTimes(7);
     expect(onSearchfor).toHaveBeenNthCalledWith(1, '');
     searchText.split('').map((c, i) => expect(onSearchfor).toHaveBeenNthCalledWith(i + 2, searchText.substring(0, i + 1)));

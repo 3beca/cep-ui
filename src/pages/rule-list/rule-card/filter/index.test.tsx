@@ -148,8 +148,7 @@ test(
         expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
 
         await screen.findByLabelText(/filter expression field/i);
-        expect(await screen.findByLabelText(/filter expression location max distance/i)).toHaveTextContent('6500');
-        expect(await screen.findByLabelText(/filter expression location coordinates/i)).toHaveTextContent('[37.12, -1.12]');
+        expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent('is to less than 6.5 kms. from [37.12, -1.12]');
 
         expect(container).toMatchSnapshot();
     }
@@ -176,8 +175,7 @@ test(
         expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
 
         await screen.findByLabelText(/filter expression field/i);
-        expect(await screen.findByLabelText(/filter expression location min distance/i)).toHaveTextContent('6500');
-        expect(await screen.findByLabelText(/filter expression location coordinates/i)).toHaveTextContent('[37.12, -1.12]');
+        expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent('is to more than 6.5 kms. from [37.12, -1.12]');
 
         expect(container).toMatchSnapshot();
     }
@@ -191,8 +189,8 @@ test(
                 type: 'Point',
                 coordinates: [37.123456, -1.12]
             },
-            _minDistance: 6500,
-            _maxDistance: 10500
+            _minDistance: 500,
+            _maxDistance: 1500
         };
         const filter = {
             location: {
@@ -205,11 +203,30 @@ test(
         expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
 
         await screen.findByLabelText(/filter expression field/i);
-        expect(await screen.findByLabelText(/filter expression location min distance/i)).toHaveTextContent('6500');
-        expect(await screen.findByLabelText(/filter expression location max distance/i)).toHaveTextContent('10500');
-        expect(await screen.findByLabelText(/filter expression location coordinates/i)).toHaveTextContent('[37.12, -1.12]');
+        expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent('is between 500 mts. and 1.5 kms. from [37.12, -1.12]');
 
         expect(container).toMatchSnapshot();
+    }
+);
+
+test(
+    'Do not render RuleFilter with FilterComparator when received an invalid filter expression location comparator',
+    async () => {
+        const location: Geometry = {
+            _geometry: {
+                type: 'Point',
+                coordinates: [37.123456, -1.12]
+            }
+        };
+        const filter = {
+            location: {
+                _near: location
+            }
+        };
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+
+        await screen.findByLabelText(/filters container/i);
+        expect(screen.queryByLabelText(/filter expression location$/i)).not.toBeInTheDocument();
     }
 );
 
