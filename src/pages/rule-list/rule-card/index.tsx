@@ -6,6 +6,10 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVertOutlined';
 import Divider from '@material-ui/core/Divider';
+import Switch from '@material-ui/core/Switch';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 import { Rule, RuleTypes } from '../../../services/api';
 import { parseRuleFilter } from '../../../services/api/utils';
 import RuleFilter from './filter';
@@ -90,7 +94,7 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                 <div
                     className={styles.ruleCardStatus}
                     aria-label='status card rule'>
-                        <div className={styles.ruleCardStatusDate}><Typography>{''}</Typography></div>
+                        <div className={styles.ruleCardStatusDate}><Typography variant='caption'>{mapRuleTypeName(rule.type)}</Typography></div>
                         <div className={styles.ruleCardStatusOneShot}>
                             <Typography>Skip Consecutives</Typography>
                             <div

@@ -243,9 +243,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                SLIDING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -439,9 +441,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                HOPPING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -635,9 +639,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                TUMBLING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -831,9 +837,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                REAL TIME
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -1027,9 +1035,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                SLIDING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -1223,9 +1233,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                HOPPING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -1419,9 +1431,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                TUMBLING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -1615,9 +1629,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                REAL TIME
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -1811,9 +1827,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                SLIDING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -2007,9 +2025,11 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             <div
               class="makeStyles-ruleCardStatusDate-869"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                HOPPING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-870"
@@ -2447,9 +2467,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                SLIDING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -2643,9 +2665,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                HOPPING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -2839,9 +2863,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                TUMBLING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -3035,9 +3061,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                REAL TIME
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -3231,9 +3259,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                SLIDING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -3427,9 +3457,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                HOPPING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -3623,9 +3655,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                TUMBLING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -3819,9 +3853,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                REAL TIME
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -4015,9 +4051,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                SLIDING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"
@@ -4211,9 +4249,11 @@ exports[`RuleListPage should render End List message when no more elements to lo
             <div
               class="makeStyles-ruleCardStatusDate-618"
             >
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              />
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                HOPPING
+              </span>
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-619"

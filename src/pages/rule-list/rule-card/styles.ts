@@ -48,6 +48,7 @@ export const useStyles = makeStyles(
         },
         ruleCardStatusDate: {
             display: 'flex',
+            alignItems: 'flex-end',
             flex: 1
         },
         ruleCardStatusOneShot: {

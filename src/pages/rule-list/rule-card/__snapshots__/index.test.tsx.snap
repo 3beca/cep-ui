@@ -142,9 +142,11 @@ exports[`RuleCard should render with a eventType name, target name, filter passt
         <div
           class="makeStyles-ruleCardStatusDate-283"
         >
-          <p
-            class="MuiTypography-root MuiTypography-body1"
-          />
+          <span
+            class="MuiTypography-root MuiTypography-caption"
+          >
+            TUMBLING
+          </span>
         </div>
         <div
           class="makeStyles-ruleCardStatusOneShot-284"
@@ -396,9 +398,11 @@ exports[`RuleCard should render with a eventType name, target name, filters and 
         <div
           class="makeStyles-ruleCardStatusDate-146"
         >
-          <p
-            class="MuiTypography-root MuiTypography-body1"
-          />
+          <span
+            class="MuiTypography-root MuiTypography-caption"
+          >
+            REAL TIME
+          </span>
         </div>
         <div
           class="makeStyles-ruleCardStatusOneShot-147"
@@ -650,9 +654,11 @@ exports[`RuleCard should render with a rule and snap 1`] = `
         <div
           class="makeStyles-ruleCardStatusDate-9"
         >
-          <p
-            class="MuiTypography-root MuiTypography-body1"
-          />
+          <span
+            class="MuiTypography-root MuiTypography-caption"
+          >
+            REAL TIME
+          </span>
         </div>
         <div
           class="makeStyles-ruleCardStatusOneShot-10"
