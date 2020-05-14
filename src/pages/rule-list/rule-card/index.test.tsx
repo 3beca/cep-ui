@@ -33,6 +33,7 @@ test('RuleCard should render with a eventType name, target name, filters and ski
     await screen.findByLabelText(/filters card rule/);
     expect(await screen.findByLabelText(/status card rule/)).toHaveTextContent(/skip consecutives/i);
     await screen.findByLabelText(/skip consecutives disable/);
+    expect(await screen.findByRole('checkbox')).toHaveAttribute('readonly');
     expect(container).toMatchSnapshot();
 });
 
@@ -46,5 +47,6 @@ test('RuleCard should render with a eventType name, target name, filter passthro
     expect(await screen.findByLabelText(/filters card rule/)).toHaveTextContent(/^filters.*passthrow$/i);
     expect(await screen.findByLabelText(/status card rule/)).toHaveTextContent(/skip consecutives/i);
     await screen.findByLabelText(/skip consecutives enable/);
+    expect(await screen.findByRole('checkbox')).toHaveAttribute('readonly');
     expect(container).toMatchSnapshot();
 });

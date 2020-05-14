@@ -2774,9 +2774,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  SLIDING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -2794,6 +2792,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4839 Mui-checked"
                       >
                         <span
@@ -2802,6 +2801,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -3003,9 +3003,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  HOPPING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -3023,6 +3021,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -3030,6 +3029,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -3231,9 +3231,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  TUMBLING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -3251,6 +3249,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4839 Mui-checked"
                       >
                         <span
@@ -3259,6 +3258,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -3460,9 +3460,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  REAL TIME
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -3480,6 +3478,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -3487,6 +3486,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -3688,9 +3688,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  SLIDING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -3708,6 +3706,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4839 Mui-checked"
                       >
                         <span
@@ -3716,6 +3715,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -3917,9 +3917,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  HOPPING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -3937,6 +3935,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -3944,6 +3943,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -4145,9 +4145,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  TUMBLING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -4165,6 +4163,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4839 Mui-checked"
                       >
                         <span
@@ -4173,6 +4172,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -4374,9 +4374,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  REAL TIME
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -4394,6 +4392,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -4401,6 +4400,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -4602,9 +4602,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  SLIDING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -4622,6 +4620,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4839 Mui-checked"
                       >
                         <span
@@ -4630,6 +4629,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -4831,9 +4831,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  HOPPING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4796"
@@ -4851,6 +4849,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4838 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -4858,6 +4857,7 @@ exports[`App render RulesPage with route / and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4841 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -5183,9 +5183,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  SLIDING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -5203,6 +5201,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4538 Mui-checked"
                       >
                         <span
@@ -5211,6 +5210,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -5412,9 +5412,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  HOPPING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -5432,6 +5430,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -5439,6 +5438,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -5640,9 +5640,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  TUMBLING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -5660,6 +5658,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4538 Mui-checked"
                       >
                         <span
@@ -5668,6 +5667,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -5869,9 +5869,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  REAL TIME
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -5889,6 +5887,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -5896,6 +5895,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -6097,9 +6097,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  SLIDING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -6117,6 +6115,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4538 Mui-checked"
                       >
                         <span
@@ -6125,6 +6124,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -6326,9 +6326,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  HOPPING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -6346,6 +6344,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -6353,6 +6352,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -6554,9 +6554,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  TUMBLING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -6574,6 +6572,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4538 Mui-checked"
                       >
                         <span
@@ -6582,6 +6581,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -6783,9 +6783,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  REAL TIME
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -6803,6 +6801,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -6810,6 +6809,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -7011,9 +7011,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  SLIDING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -7031,6 +7029,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4538 Mui-checked"
                       >
                         <span
@@ -7039,6 +7038,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                           <input
                             checked=""
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -7240,9 +7240,7 @@ exports[`App render with menu closed and snapshot 1`] = `
               >
                 <span
                   class="MuiTypography-root MuiTypography-caption"
-                >
-                  HOPPING
-                </span>
+                />
               </div>
               <div
                 class="makeStyles-ruleCardStatusOneShot-4481"
@@ -7260,6 +7258,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                     >
                       <span
                         aria-disabled="false"
+                        arial-label="skip consecutives input"
                         class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4537 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                       >
                         <span
@@ -7267,6 +7266,7 @@ exports[`App render with menu closed and snapshot 1`] = `
                         >
                           <input
                             class="PrivateSwitchBase-input-4540 MuiSwitch-input"
+                            readonly=""
                             type="checkbox"
                             value=""
                           />
@@ -7551,9 +7551,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                SLIDING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -7571,6 +7569,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-1008 Mui-checked"
                     >
                       <span
@@ -7579,6 +7578,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -7780,9 +7780,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                HOPPING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -7800,6 +7798,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -7807,6 +7806,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                       >
                         <input
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -8008,9 +8008,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                TUMBLING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -8028,6 +8026,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-1008 Mui-checked"
                     >
                       <span
@@ -8036,6 +8035,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -8237,9 +8237,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                REAL TIME
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -8257,6 +8255,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -8264,6 +8263,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                       >
                         <input
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -8465,9 +8465,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                SLIDING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -8485,6 +8483,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-1008 Mui-checked"
                     >
                       <span
@@ -8493,6 +8492,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -8694,9 +8694,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                HOPPING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -8714,6 +8712,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -8721,6 +8720,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                       >
                         <input
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -8922,9 +8922,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                TUMBLING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -8942,6 +8940,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-1008 Mui-checked"
                     >
                       <span
@@ -8950,6 +8949,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -9151,9 +9151,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                REAL TIME
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -9171,6 +9169,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -9178,6 +9177,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                       >
                         <input
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -9379,9 +9379,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                SLIDING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -9399,6 +9397,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-1008 Mui-checked"
                     >
                       <span
@@ -9407,6 +9406,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -9608,9 +9608,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                HOPPING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-912"
@@ -9628,6 +9626,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1007 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -9635,6 +9634,7 @@ exports[`RuleListPage should render 20 cards and a create button and snapshot 1`
                       >
                         <input
                           class="PrivateSwitchBase-input-1010 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -10080,9 +10080,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                SLIDING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -10100,6 +10098,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-736 Mui-checked"
                     >
                       <span
@@ -10108,6 +10107,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -10309,9 +10309,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                HOPPING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -10329,6 +10327,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -10336,6 +10335,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                       >
                         <input
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -10537,9 +10537,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                TUMBLING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -10557,6 +10555,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-736 Mui-checked"
                     >
                       <span
@@ -10565,6 +10564,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -10766,9 +10766,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                REAL TIME
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -10786,6 +10784,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -10793,6 +10792,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                       >
                         <input
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -10994,9 +10994,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                SLIDING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -11014,6 +11012,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-736 Mui-checked"
                     >
                       <span
@@ -11022,6 +11021,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -11223,9 +11223,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                HOPPING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -11243,6 +11241,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -11250,6 +11249,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                       >
                         <input
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -11451,9 +11451,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                TUMBLING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -11471,6 +11469,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-736 Mui-checked"
                     >
                       <span
@@ -11479,6 +11478,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -11680,9 +11680,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                REAL TIME
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -11700,6 +11698,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -11707,6 +11706,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                       >
                         <input
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -11908,9 +11908,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                SLIDING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -11928,6 +11926,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-736 Mui-checked"
                     >
                       <span
@@ -11936,6 +11935,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                         <input
                           checked=""
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />
@@ -12137,9 +12137,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
-              >
-                HOPPING
-              </span>
+              />
             </div>
             <div
               class="makeStyles-ruleCardStatusOneShot-640"
@@ -12157,6 +12155,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                   >
                     <span
                       aria-disabled="false"
+                      arial-label="skip consecutives input"
                       class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-735 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                     >
                       <span
@@ -12164,6 +12163,7 @@ exports[`RuleListPage should render End List message when no more elements to lo
                       >
                         <input
                           class="PrivateSwitchBase-input-738 MuiSwitch-input"
+                          readonly=""
                           type="checkbox"
                           value=""
                         />

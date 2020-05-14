@@ -94,11 +94,11 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                 <div
                     className={styles.ruleCardStatus}
                     aria-label='status card rule'>
-                        <div className={styles.ruleCardStatusDate}><Typography variant='caption'>{mapRuleTypeName(rule.type)}</Typography></div>
+                        <div className={styles.ruleCardStatusDate}><Typography variant='caption'>{/*mapRuleTypeName(rule.type)*/}</Typography></div>
                         <div className={styles.ruleCardStatusOneShot}>
                             <FormGroup>
                                 <FormControlLabel
-                                    control={<Switch size='small' color='primary' checked={rule.skipOnConsecutivesMatches}/>}
+                                    control={<Switch size='small' color='primary' checked={rule.skipOnConsecutivesMatches ? true : false} readOnly arial-label='skip consecutives input'/>}
                                     label='Skip Consecutives'
                                     labelPlacement='start'
                                     aria-label={`skip consecutives ${rule.skipOnConsecutivesMatches ? 'enable' : 'disable'}`}

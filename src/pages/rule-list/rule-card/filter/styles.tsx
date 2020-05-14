@@ -23,15 +23,19 @@ export const useStyles = makeStyles(
         },
         ruleCardFilterExpressionPassthrow: {
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            fontSize: 14
         },
         ruleCardFilterExpressionField: {
+            fontSize: 14
         },
         ruleCardFilterExpressionOperator: {
             marginLeft: 10,
-            marginRight: 10
+            marginRight: 10,
+            fontSize: 14
         },
         ruleCardFilterExpressionValue: {
+            fontSize: 14
         },
         ruleCardFilterExpression: {
             display: 'flex',
@@ -39,7 +43,8 @@ export const useStyles = makeStyles(
         },
         ruleCardFilterExpressionDistance: {
             marginLeft: 10,
-            marginRight: 10
+            marginRight: 10,
+            fontSize: 14
         }
     })
 );

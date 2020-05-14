@@ -30,6 +30,7 @@ export const useStyles = makeStyles(
         ruleCardBodyName: {
             display: 'flex',
             marginLeft: 32,
+            fontSize: 14,
             flex: 1
         },
         ruleCardFilters: {

@@ -111,9 +111,8 @@ export const FilterExpression: React.FC<{expression: EXPRESSION}> = ({expression
     }
     return (
         <div
-            aria-label='filter expression passthrow'
-            className={styles.ruleCardFilterExpressionPassthrow}>
-                <Typography variant='h6'>{expression.type}</Typography>
+            aria-label='filter expression passthrow'>
+                <Typography className={styles.ruleCardFilterExpressionPassthrow}>{expression.type}</Typography>
             </div>
     );
 };

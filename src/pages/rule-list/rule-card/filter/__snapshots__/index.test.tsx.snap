@@ -543,13 +543,12 @@ exports[`Render RuleFilter with Passthrow when no filter received 1`] = `
   >
     <div
       aria-label="filter expression passthrow"
-      class="makeStyles-ruleCardFilterExpressionPassthrow-4"
     >
-      <h6
-        class="MuiTypography-root MuiTypography-h6"
+      <p
+        class="MuiTypography-root makeStyles-ruleCardFilterExpressionPassthrow-4 MuiTypography-body1"
       >
         PASSTHROW
-      </h6>
+      </p>
     </div>
   </div>
 </div>

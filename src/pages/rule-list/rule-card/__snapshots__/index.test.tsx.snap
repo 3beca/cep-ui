@@ -119,13 +119,12 @@ exports[`RuleCard should render with a eventType name, target name, filter passt
         >
           <div
             aria-label="filter expression passthrow"
-            class="makeStyles-ruleCardFilterExpressionPassthrow-435"
           >
-            <h6
-              class="MuiTypography-root MuiTypography-h6"
+            <p
+              class="MuiTypography-root makeStyles-ruleCardFilterExpressionPassthrow-435 MuiTypography-body1"
             >
               PASSTHROW
-            </h6>
+            </p>
           </div>
         </div>
       </div>
@@ -141,9 +140,7 @@ exports[`RuleCard should render with a eventType name, target name, filter passt
         >
           <span
             class="MuiTypography-root MuiTypography-caption"
-          >
-            TUMBLING
-          </span>
+          />
         </div>
         <div
           class="makeStyles-ruleCardStatusOneShot-326"
@@ -161,6 +158,7 @@ exports[`RuleCard should render with a eventType name, target name, filter passt
               >
                 <span
                   aria-disabled="false"
+                  arial-label="skip consecutives input"
                   class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-461 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-462 Mui-checked"
                 >
                   <span
@@ -169,6 +167,7 @@ exports[`RuleCard should render with a eventType name, target name, filter passt
                     <input
                       checked=""
                       class="PrivateSwitchBase-input-464 MuiSwitch-input"
+                      readonly=""
                       type="checkbox"
                       value=""
                     />
@@ -428,9 +427,7 @@ exports[`RuleCard should render with a eventType name, target name, filters and 
         >
           <span
             class="MuiTypography-root MuiTypography-caption"
-          >
-            REAL TIME
-          </span>
+          />
         </div>
         <div
           class="makeStyles-ruleCardStatusOneShot-168"
@@ -448,6 +445,7 @@ exports[`RuleCard should render with a eventType name, target name, filters and 
               >
                 <span
                   aria-disabled="false"
+                  arial-label="skip consecutives input"
                   class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-303 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                 >
                   <span
@@ -455,6 +453,7 @@ exports[`RuleCard should render with a eventType name, target name, filters and 
                   >
                     <input
                       class="PrivateSwitchBase-input-306 MuiSwitch-input"
+                      readonly=""
                       type="checkbox"
                       value=""
                     />
@@ -714,9 +713,7 @@ exports[`RuleCard should render with a rule and snap 1`] = `
         >
           <span
             class="MuiTypography-root MuiTypography-caption"
-          >
-            REAL TIME
-          </span>
+          />
         </div>
         <div
           class="makeStyles-ruleCardStatusOneShot-10"
@@ -734,6 +731,7 @@ exports[`RuleCard should render with a rule and snap 1`] = `
               >
                 <span
                   aria-disabled="false"
+                  arial-label="skip consecutives input"
                   class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-145 MuiSwitch-switchBase MuiSwitch-colorPrimary"
                 >
                   <span
@@ -741,6 +739,7 @@ exports[`RuleCard should render with a rule and snap 1`] = `
                   >
                     <input
                       class="PrivateSwitchBase-input-148 MuiSwitch-input"
+                      readonly=""
                       type="checkbox"
                       value=""
                     />
