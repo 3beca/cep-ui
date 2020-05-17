@@ -120,7 +120,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                 open={!!text}
                 onClose={clear}
                 autoHideDuration={1500}
-                message={`URL copied!`}
+                message={`EventType URL copied!`}
             />
         </>
     );

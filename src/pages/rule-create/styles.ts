@@ -4,7 +4,13 @@ export const useStyles = makeStyles(
     (theme) => ({
         container: {
             display: 'flex',
-            flexDirection: 'column'
+            marginTop: 40,
+            flexWrap: 'wrap'
+        },
+        sections: {
+            flex: 1,
+            margin: 16,
+            minWidth: 300
         }
     })
 );

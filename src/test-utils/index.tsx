@@ -70,12 +70,12 @@ export const generateListWith = function generateListWith(many: number = 5, next
     return list;
 };
 
-export const generateEventTypeListWith = (many: number = 5, next = false, prev = false, key: string = '_' + many): EventTypeList => {
+export const generateEventTypeListWith = (many: number = 5, next = false, prev = false, key: string = '_' + many, namePrefix: string = 'Elemento '): EventTypeList => {
     const list: EventTypeList = {
         results: Array.from({length: many},
             (_, idx) => ({
                 id: idx + '_' + key,
-                name: 'Elemento ' + idx,
+                name: namePrefix + idx,
                 url: 'http://cep/elemento' + idx,
                 createdAt: '2020-01-01T10:10:10.123Z',
                 updatedAt: '2020-01-01T10:10:10.123Z'
