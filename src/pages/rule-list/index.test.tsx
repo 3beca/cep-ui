@@ -126,13 +126,14 @@ test(
         await screen.findByLabelText(/add rule/i);
 
         const searchText = 'rule-name';
-        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(initialPageSize, false, false));
+        serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(5, false, false));
         userEvent.type(input, searchText);
         act(() => {
             jest.runOnlyPendingTimers();
         });
+        await screen.findByTestId(/loading-view-row/i);
         await waitFor(() => expect(screen.queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
-        expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
+        expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(5);
         jest.useRealTimers();
     }
 );

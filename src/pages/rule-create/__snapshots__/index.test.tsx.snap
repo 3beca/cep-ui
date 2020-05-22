@@ -12,12 +12,12 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
     >
       <div
         aria-label="eventtype selector"
-        class="makeStyles-container-3"
+        class="MuiPaper-root makeStyles-container-3 MuiPaper-elevation1 MuiPaper-rounded"
       >
         <div
           aria-expanded="false"
           aria-label="eventtype name"
-          class="MuiAutocomplete-root makeStyles-autocomplete-4 MuiAutocomplete-fullWidth MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon"
+          class="MuiAutocomplete-root MuiAutocomplete-fullWidth MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon"
           role="combobox"
         >
           <div
@@ -26,21 +26,21 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
             <label
               class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
               data-shrink="false"
-              for="eventtype-autocomplete"
-              id="eventtype-autocomplete-label"
+              for="element-autocomplete"
+              id="element-autocomplete-label"
             >
-              Search a EventType
+              Search a Eventtype
             </label>
             <div
               class="MuiInputBase-root MuiInput-root MuiInput-underline MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
             >
               <input
-                aria-autocomplete="list"
+                aria-autocomplete="both"
                 aria-invalid="false"
                 autocapitalize="none"
                 autocomplete="off"
                 class="MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd"
-                id="eventtype-autocomplete"
+                id="element-autocomplete"
                 spellcheck="false"
                 type="text"
                 value=""
@@ -114,7 +114,16 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
       aria-label="manage target section"
       class="makeStyles-sections-2"
     >
-      Target Selector/create
+      <div
+        aria-label="target selector"
+        class="MuiPaper-root makeStyles-container-135 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <h5
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          Target Selector goes here!
+        </h5>
+      </div>
     </div>
   </div>
 </div>

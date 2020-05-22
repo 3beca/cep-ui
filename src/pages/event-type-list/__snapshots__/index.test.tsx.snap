@@ -142,7 +142,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 0
+              Elemento EventType0
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -244,7 +244,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 1
+              Elemento EventType1
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -346,7 +346,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 2
+              Elemento EventType2
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -448,7 +448,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 3
+              Elemento EventType3
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -550,7 +550,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 4
+              Elemento EventType4
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -652,7 +652,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 5
+              Elemento EventType5
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -754,7 +754,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 6
+              Elemento EventType6
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -856,7 +856,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 7
+              Elemento EventType7
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -958,7 +958,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 8
+              Elemento EventType8
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
@@ -1060,7 +1060,7 @@ exports[`EventTypeList snapshot 1`] = `
               aria-label="element name"
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
             >
-              Elemento 9
+              Elemento EventType9
             </td>
             <td
               class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"

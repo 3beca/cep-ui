@@ -2,6 +2,7 @@ import {renderHook, act} from '@testing-library/react-hooks'
 import {
     useGetList,
     useDelete,
+    useCreate,
     ENTITY
 } from './use-api';
 import {
@@ -10,10 +11,14 @@ import {
 import {ServiceError} from './index';
 import {
     setupNock,
+    generateEventType,
     generateEventTypeListWith,
     serverGetEventTypeList,
-    serverDeleteEventType
+    serverDeleteEventType,
+    serverCreateEventType
 } from '../../test-utils';
+import { EventType, Target, TargetError } from './models';
+import { generateTarget, serverCreateTarget } from '../../test-utils/api';
 
 const url = BASE_URL;
 const server = setupNock(url);
@@ -243,7 +248,7 @@ describe(
 );
 
 describe(
-    'useDeleteEventList',
+    'useDelete',
     () => {
 
         it(
@@ -277,7 +282,7 @@ describe(
         );
 
         it(
-            'shuold try to delete one invalid EventType and return Error',
+            'should try to delete one invalid EventType and return Error',
             async () => {
                 const eventTypeId = undefined as unknown as string;
                 serverDeleteEventType(server, eventTypeId);
@@ -345,6 +350,142 @@ describe(
                         {id: eventTypeIds[2], state: 'DELETED'}
                     ]
                 });
+            }
+        );
+    }
+);
+
+describe(
+    'useCreate',
+    () => {
+        it(
+            'should create a new EventType',
+            async () => {
+                const eventType = generateEventType(1, 'usetCreateTest', 'evtest');
+                const eventBody: Partial<EventType> = {name: eventType.name};
+                serverCreateEventType(server, eventBody, 201, eventType);
+
+                const {result, waitForNextUpdate} = renderHook(() => useCreate(ENTITY.EVENT_TYPES, eventBody));
+
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response).toBe(undefined);
+
+                act(() => result.current.request());
+                expect(result.current.response).toBe(undefined);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(true);
+
+                await waitForNextUpdate();
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response?.status).toBe(201);
+                expect(result.current.response?.data).toEqual(eventType);
+            }
+        );
+
+        it(
+            'should create a new Target',
+            async () => {
+                const target = generateTarget(1, 'usetCreateTest', 'ttest');
+                const targetBody: Partial<Target> = {name: target.name, url: target.url};
+                serverCreateTarget(server, targetBody, 201, target);
+
+                const {result, waitForNextUpdate} = renderHook(() => useCreate(ENTITY.TARGETS, targetBody));
+
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response).toBe(undefined);
+
+                act(() => result.current.request());
+                expect(result.current.response).toBe(undefined);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(true);
+
+                await waitForNextUpdate();
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response?.status).toBe(201);
+                expect(result.current.response?.data).toEqual(target);
+            }
+        );
+
+        it(
+            'should fails to create new Target',
+            async () => {
+                const targetBody: Partial<Target> = {name: 'existing name', url: 'http://anywhere'};
+                const targetError: TargetError = {
+                    statusCode: 409,
+                    error: 'Bad request',
+                    message: 'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
+                };
+                serverCreateTarget(server, targetBody, 409, targetError);
+
+                const {result, waitForNextUpdate} = renderHook(() => useCreate(ENTITY.TARGETS, targetBody));
+
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response).toBe(undefined);
+
+                act(() => result.current.request());
+                expect(result.current.response).toBe(undefined);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(true);
+
+                await waitForNextUpdate();
+
+                expect(result.current.response).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.error).toEqual({
+                    errorCode: 409,
+                    errorMessage: 'Error from http://localhost:123/admin/targets',
+                    error: targetError
+                });
+            }
+        );
+
+        it(
+            'should create a new Target on Render',
+            async () => {
+                let target = generateTarget(1, 'usetCreateTest', 'ttest');
+                let targetBody: Partial<Target> = {name: target.name, url: target.url};
+                serverCreateTarget(server, targetBody, 201, target);
+
+                const {result, waitForNextUpdate, rerender} = renderHook(() => useCreate(ENTITY.TARGETS, targetBody, true));
+
+                expect(result.current.response).toBe(undefined);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(true);
+
+                await waitForNextUpdate();
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response?.status).toBe(201);
+                expect(result.current.response?.data).toEqual(target);
+
+                rerender();
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response?.status).toBe(201);
+                expect(result.current.response?.data).toEqual(target);
+
+                // Change values should create a new target
+                const oldTarget = target;
+                target = generateTarget(2, 'usetCreateTest', 'ttest');
+                targetBody = {name: target.name, url: target.url};
+                serverCreateTarget(server, targetBody, 201, target);
+
+                rerender();
+                expect(result.current.response?.status).toBe(201);
+                expect(result.current.response?.data).toEqual(oldTarget);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(true);
+
+                await waitForNextUpdate();
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.response?.status).toBe(201);
+                expect(result.current.response?.data).toEqual(target);
             }
         );
     }

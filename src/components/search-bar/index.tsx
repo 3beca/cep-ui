@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import {NOOP} from '../../utils';
+import {useDebounce} from '../../services/use-debounce';
 import {useStyles} from './styles';
 
 export type SearchBarProps = {
@@ -13,23 +14,14 @@ export type SearchBarProps = {
 };
 export const SearchBar: React.FC<SearchBarProps> = function SearchBar({hint = 'search for...', onSearchFor = NOOP, delay = 500, minLength = 3}) {
     const styles = useStyles();
-    const [searchText, setSearchText] = React.useState('');
-    const onTextChange = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => setSearchText(ev.target.value), []);
-    React.useEffect(
-        () => {
-            if (!!searchText && searchText.length < minLength) return;
-            if (delay <= 0) {
-                onSearchFor(searchText);
-                return;
-            }
-            const timerId = setTimeout(
-                () => {
-                     onSearchFor(searchText);
-                }, delay
-            );
-            return () => clearTimeout(timerId);
-        }, [searchText, delay, minLength, onSearchFor]
-    );
+    const filter = React.useCallback((value) => !!value && value.length >= minLength, [minLength]);
+    const [searchText, setSearchText] = useDebounce({
+        callback: onSearchFor,
+        initialValue: '',
+        delay: delay,
+        filterDispatch: filter
+    });
+    const onTextChange = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => setSearchText(ev.target.value), [setSearchText]);
     return (
         <Paper component='div' className={styles.searchContainer}>
             <InputBase

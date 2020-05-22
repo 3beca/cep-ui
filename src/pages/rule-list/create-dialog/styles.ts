@@ -19,7 +19,9 @@ export const useStyles = makeStyles(
         cardButton: {
             display: 'flex',
             flexDirection: 'column',
-            margin: 16,
+            marginTop: 8,
+            marginLeft: 8,
+            marginRight: 8,
             borderColor: '#CCCCCC80',
             borderStyle: 'solid',
             borderWidth: 1,
@@ -34,7 +36,9 @@ export const useStyles = makeStyles(
         cardButtonSelected: {
             display: 'flex',
             flexDirection: 'column',
-            margin: 16,
+            marginTop: 8,
+            marginLeft: 8,
+            marginRight: 8,
             borderColor: theme.palette.secondary.dark,
             borderStyle: 'solid',
             borderWidth: 1,

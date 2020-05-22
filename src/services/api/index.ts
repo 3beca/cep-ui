@@ -3,7 +3,8 @@ import {
     APIRequestInfo,
     APIResponseData,
     APIError,
-    isAPIError
+    isAPIError,
+    APIBody
 } from '../../utils/fetch-api';
 import {
     ServiceList,
@@ -16,10 +17,10 @@ export const getListRequest = (baseURL: string, config: APIRequestInfo) => async
     const url = `${baseURL}${path}/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`;
     return fetchApi<undefined, ServiceList<T>, ServiceError>(url, {...config, method: 'GET'});
 };
-export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async (path: string, eventTypeIds: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)> => {
-    const eventTypesArray = ((Array.isArray(eventTypeIds)) ? eventTypeIds : [eventTypeIds]).filter(id => !!id);
+export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async (path: string, entityIds: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)> => {
+    const entityArray = ((Array.isArray(entityIds)) ? entityIds : [entityIds]).filter(id => !!id);
 
-    if(!eventTypeIds || eventTypesArray.length < 1) {
+    if(!entityIds || entityArray.length < 1) {
         return {
             errorCode: 500,
             errorMessage: '',
@@ -31,14 +32,14 @@ export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async 
         };
     }
     const requests = [];
-    for (const eventTypeId of eventTypesArray) {
-        const url = `${baseURL}${path}/${eventTypeId}`;
+    for (const entityId of entityArray) {
+        const url = `${baseURL}${path}/${entityId}`;
         requests.push(fetchApi<undefined, undefined, ServiceError>(url, {...config, method: 'DELETE'}));
     }
     const responses = await Promise.all(requests);
     const data: ServiceDeleted[] = responses.map((response, idx) => {
         const deletedResponse: ServiceDeleted = {
-            id: eventTypesArray[idx],
+            id: entityArray[idx],
             state: 'DELETED'
         };
         if(isAPIError(response)) {
@@ -52,9 +53,14 @@ export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async 
         data
     };
 };
+export const createRequest = (baseURL: string, config: APIRequestInfo) => async <T extends APIBody>(path: string, body: Partial<T>): Promise<APIResponseData<T>|APIError<ServiceError>> => {
+    const url = `${baseURL}${path}`;
+    return fetchApi<Partial<T>, T, ServiceError>(url, {...config, method: 'POST', headers: {...config.headers, 'content-type': 'application/json'}, body});
+};
 export type Api = {
     getListRequest<T>(path: string, page?: number, size?: number, filter?: string): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>>;
     deleteRequest(path: string, ids: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)>;
+    createRequest<T extends APIBody>(path: string, body: Partial<T>): Promise<APIResponseData<T>|APIError<ServiceError>>;
 };
 export const buildApiService = (server: string): Api => {
     const config: APIRequestInfo = {
@@ -63,6 +69,7 @@ export const buildApiService = (server: string): Api => {
     };
     return {
         getListRequest: getListRequest(server, config),
-        deleteRequest: deleteRequest(server, config)
+        deleteRequest: deleteRequest(server, config),
+        createRequest: createRequest(server, config)
     };
 };

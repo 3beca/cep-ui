@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {render} from '@testing-library/react';
+import {render, act} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import SearchBar from './index';
 
@@ -27,7 +27,7 @@ test('SearchBar should fire onSearchfor after write a text with default params',
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
 
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     expect(onSearchfor).toHaveBeenNthCalledWith(1, searchText);
 });
 
@@ -46,13 +46,13 @@ test('SearchBar should fire onSearchfor after write a text with min size', () =>
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
 
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
 
     const longText = 'njo';
     userEvent.type(input, longText);
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     expect(onSearchfor).toHaveBeenNthCalledWith(1, searchText + longText);
 });
 
@@ -70,8 +70,7 @@ test('SearchBar should fire onSearchfor on each key pressed', async () => {
     searchText.split('').map(async c => {
         userEvent.type(input, c);
     });
-    jest.runOnlyPendingTimers();
-    expect(onSearchfor).toHaveBeenCalledTimes(7);
-    expect(onSearchfor).toHaveBeenNthCalledWith(1, '');
-    searchText.split('').map((c, i) => expect(onSearchfor).toHaveBeenNthCalledWith(i + 2, searchText.substring(0, i + 1)));
+    act(() => void jest.runOnlyPendingTimers());
+    expect(onSearchfor).toHaveBeenCalledTimes(6);
+    searchText.split('').map((c, i) => expect(onSearchfor).toHaveBeenNthCalledWith(i+1, searchText.substring(0, i + 1)));
 });

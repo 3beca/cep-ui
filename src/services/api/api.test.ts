@@ -3,7 +3,8 @@ import {
     setupNock,
     generateListWith,
     serverGetList,
-    serverDelete
+    serverDelete,
+    serverCreate
 } from '../../test-utils';
 
 import {
@@ -30,6 +31,8 @@ import {
     isRuleFilterComparatorLT,
     isRuleFilterComparatorLTE
 } from './index';
+import { EventType, Target } from './models';
+import { generateEventType, generateTarget } from '../../test-utils/api';
 
 describe(
     'CEP API',
@@ -283,6 +286,126 @@ describe(
                 });
             }
         );
+
+        it(
+            'createRequest should return error when eventtype name exists in server',
+            async () => {
+                const eventTypeBody: Partial<EventType> = {name: 'new entity'};
+                serverCreate(server, PATH, JSON.stringify(eventTypeBody), 409, {message: 'Event type name must be unique and is already taken by event type with id 5ec39c6f118b4dbbe07b1cbb'});
+
+                const result = await api.createRequest(PATH, eventTypeBody);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(409);
+                expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
+                expect(response.error).toEqual({
+                    message: 'Event type name must be unique and is already taken by event type with id 5ec39c6f118b4dbbe07b1cbb'
+                });
+            }
+        );
+
+        it(
+            'createRequest should return error when eventtype name is invalid',
+            async () => {
+                const eventTypeBody = undefined as unknown as Partial<EventType>;
+                const errorRespponse: ServiceError = {
+                    statusCode: 400,
+                    error: 'Bad Request',
+                    message: 'FST_ERR_CTP_EMPTY_JSON_BODY: Body cannot be empty when content-type is set to \'application/json\''
+                };
+                serverCreate(server, PATH, '', 400, errorRespponse);
+
+                const result = await api.createRequest(PATH, eventTypeBody);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(400);
+                expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
+                expect(response.error).toEqual({
+                    error: 'Bad Request',
+                    statusCode: 400,
+                    message: 'FST_ERR_CTP_EMPTY_JSON_BODY: Body cannot be empty when content-type is set to \'application/json\''
+                });
+            }
+        );
+
+        it(
+            'createRequest should return error when no name presents',
+            async () => {
+                const eventTypeBody = {} as unknown as Partial<EventType>;
+                const errorRespponse: ServiceError = {
+                    statusCode: 400,
+                    error: 'Bad Request',
+                    message: 'body should have required property \'name\''
+                };
+                serverCreate(server, PATH, '{}', 400, errorRespponse);
+
+                const result = await api.createRequest(PATH, eventTypeBody);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(400);
+                expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
+                expect(response.error).toEqual({
+                    error: 'Bad Request',
+                    statusCode: 400,
+                    message: 'body should have required property \'name\''
+                });
+            }
+        );
+
+        it(
+            'createRequest should return 200 and a Entity when create corrected',
+            async () => {
+                const eventTypeResponse = generateEventType(1, 'test', 'test');
+                const eventTypeBody: Partial<EventType> = {name: eventTypeResponse.name};
+                serverCreate(server, PATH, JSON.stringify(eventTypeBody), 201, eventTypeResponse);
+                const result = await api.createRequest(PATH, eventTypeBody);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<EventType>;
+                expect(response.status).toBe(201);
+                expect(response.data).toEqual(eventTypeResponse);
+            }
+        );
+
+        it(
+            'createRequest should return error when Target name exists in server',
+            async () => {
+                const targetBody = {name: 'new target entity', url: 'https://whateveryouwant.com'};
+                const errorResponse = {
+                    message: 'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
+                };
+                serverCreate(server, PATH, JSON.stringify(targetBody), 409, errorResponse);
+                const result = await api.createRequest(PATH, targetBody);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(409);
+                expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
+                expect(response.error).toEqual({
+                    message: 'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
+                });
+            }
+        );
+
+        it(
+            'createRequest should return 200 and a Entity Target when create corrected',
+            async () => {
+                const target = generateTarget(1, 'test', 'test');
+                const targetBody = {name: target.name, url: target.url};
+                serverCreate(server, PATH, JSON.stringify(targetBody), 201, target);
+
+                const result = await api.createRequest(PATH, targetBody);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<Target>;
+                expect(response.status).toBe(201);
+                expect(response.data).toEqual(target);
+            }
+        );
+
     }
 );
 
@@ -300,13 +423,6 @@ describe(
                     ]
                 };
 
-                // Pattern
-                // 0. Get Rule Filters
-                // ForEach RuleFilter
-                // 1. Is filter
-                // 2. Get Fields
-                // 3. Get Arrays
-                // 4. Get
                 expect(isRuleFilter(filter)).toBe(true);
                 const fields = getRuleFilters(filter);
                 expect(fields).toHaveLength(1);

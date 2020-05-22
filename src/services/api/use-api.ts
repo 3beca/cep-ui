@@ -32,7 +32,7 @@ export type useGetListApi<R, E> = {
     response: APIResponseData<ServiceList<R>> | undefined;
     error: APIError<E> | undefined;
 };
-export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size: number, filter: string = '', runOnLoad: boolean = true) => {
+export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size: number, filter: string = '', runOnRender: boolean = true) => {
     const req = React.useCallback(
         () => api.getListRequest<T>(ENTITIES[entity], page, size, filter),
         [page, size, filter, entity],
@@ -40,9 +40,9 @@ export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size:
     const {request, ...state} = useFetchApi(req);
     React.useEffect(
         () => {
-            runOnLoad && request();
+            runOnRender && request();
         },
-        [request, runOnLoad]
+        [request, runOnRender]
     );
     return {...state, request};
 };
@@ -53,4 +53,19 @@ export const useDelete = (entity: ENTITY, eventIds: string[]|string) => {
         [eventIds, entity]
     );
     return useFetchApi(req);
+};
+
+export const useCreate = <T extends Entity>(entity: ENTITY, body: Partial<T>, runOnRender: boolean = false) => {
+    const req = React.useCallback(
+        () => api.createRequest<T>(ENTITIES[entity], body),
+        [body, entity]
+    );
+    const {request, ...state} = useFetchApi(req);
+    React.useEffect(
+        () => {
+            runOnRender && request();
+        },
+        [request, runOnRender]
+    );
+    return {...state, request};
 };

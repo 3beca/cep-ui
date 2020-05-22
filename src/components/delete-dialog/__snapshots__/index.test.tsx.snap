@@ -34,7 +34,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 0
+              Elemento EventType0
             </h5>
           </div>
           <div
@@ -57,7 +57,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 1
+              Elemento EventType1
             </h5>
           </div>
           <div
@@ -81,7 +81,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 2
+              Elemento EventType2
             </h5>
           </div>
           <div
@@ -105,7 +105,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 3
+              Elemento EventType3
             </h5>
           </div>
           <div
@@ -203,7 +203,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 0
+              Elemento EventType0
             </h5>
           </div>
           <div
@@ -226,7 +226,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 1
+              Elemento EventType1
             </h5>
           </div>
           <div
@@ -249,7 +249,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 2
+              Elemento EventType2
             </h5>
           </div>
           <div
@@ -345,7 +345,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 0
+              Elemento EventType0
             </h5>
           </div>
           <div>
@@ -364,7 +364,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 1
+              Elemento EventType1
             </h5>
           </div>
           <div>
@@ -383,7 +383,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
-              Elemento 2
+              Elemento EventType2
             </h5>
           </div>
           <div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {render, fireEvent, waitFor} from '@testing-library/react';
+import {render, fireEvent, waitFor, screen} from '@testing-library/react';
 import EventTypeTable from './index';
 import {generateEventTypeListWith} from '../../../test-utils';
 import {runPaginatedTableTest} from '../../../test-utils/paginated-table-components';
@@ -53,14 +53,15 @@ runDeletableTableTest(
 test('EventTypeTable should copy url of element to clipboard when click in edit icon', async () => {
     const response = generateEventTypeListWith(10, false, false);
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, response);
-    const {getAllByLabelText, getByLabelText} = render(
+    render(
         <EventTypeTable/>
     );
-    await waitFor(() => expect(getAllByLabelText(/element row eventtype/)).toHaveLength(10));
-    const elements = getAllByLabelText('copy-icon');
+    expect(await screen.findAllByLabelText(/element row eventtype/)).toHaveLength(10);
+    const elements = await screen.findAllByLabelText('copy-icon');
     expect(elements.length).toBe(10);
     fireEvent.click(elements[0]);
-    await waitFor(() => expect(getByLabelText('snackbar-message')).toHaveTextContent(/snackbar message/i));
+    expect(await screen.findByLabelText('snackbar-message')).toHaveTextContent(/snackbar message/i);
     expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(1);
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(response.results[0].url);
+    await waitFor(() => expect(screen.queryByLabelText('snackbar-message')).not.toBeInTheDocument());
 });

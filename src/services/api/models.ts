@@ -11,6 +11,9 @@ export type ServiceError = {
 export type Entity = {
     id: string;
 };
+export type EntityWithName = {
+    name: string;
+} & Entity;
 export type WithDate = {
     createdAt: string;
     updatedAt: string;
@@ -20,17 +23,15 @@ export type ServiceDeleted = {
     error?: ServiceError;
 } & Entity;
 export type EventType = {
-    name: string;
     url: string;
-} & Entity & WithDate;
+} & EntityWithName & WithDate;
 export type EventTypeList = ServiceList<EventType>;
 export type EventTypeError = ServiceError;
 export type EventTypeDeleted = ServiceDeleted;
 
 export type Target = {
-    name: string;
     url: string;
-} & Entity & WithDate;
+} & EntityWithName & WithDate;
 export type TargetList = ServiceList<Target>;
 export type TargetError = ServiceError;
 export type TargetDeleted = ServiceDeleted;
@@ -68,7 +69,6 @@ export type RuleFilter = {
 };
 export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'none';
 export type Rule = {
-    name: string;
     type: RuleTypes;
     targetId: string;
     targetName: string;
@@ -76,7 +76,7 @@ export type Rule = {
     eventTypeName: string;
     skipOnConsecutivesMatches?: boolean;
     filters: RuleFilter;
-} & Entity & WithDate;
+} & EntityWithName & WithDate;
 export type RuleList = ServiceList<Rule>;
 export type RuleError = ServiceError;
 export type RuleDeleted = ServiceDeleted;
