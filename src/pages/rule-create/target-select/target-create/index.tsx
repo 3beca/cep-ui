@@ -12,7 +12,6 @@ import { useCreate, ENTITY } from '../../../../services/api/use-api';
 import { APIError } from '../../../../utils/fetch-api';
 import {cutString} from '../../../../utils';
 import { Target, ServiceError } from '../../../../services/api';
-import { StylesProvider } from '@material-ui/core';
 
 const TargetCreatorLoader: React.FC<{show: boolean}> = ({show}) => {
     const styles = useStyles();
