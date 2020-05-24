@@ -1,5 +1,13 @@
 import * as React from 'react';
-import {render, screen, serverGetEventTypeList, setupNock, generateEventTypeListWith} from '../../test-utils';
+import {
+    render,
+    screen,
+    serverGetEventTypeList,
+    serverGetTargetList,
+    setupNock,
+    generateEventTypeListWith,
+    generateTargetListWith
+} from '../../test-utils';
 import {RuleCreatePage} from './index';
 import {useParams} from 'react-router';
 import { BASE_URL } from '../../services/config';
@@ -14,13 +22,19 @@ jest.mock('react-router', () => {
 
 test('RuleCreatePage for realtime rules should render 3 sections, Manage EventTypes, Create rule and Manage Target and snapshot', async () => {
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, generateEventTypeListWith(10, false, false));
+    serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
     fakeUseParams.mockReturnValue({type: 'realtime'});
     const {container} = render(<RuleCreatePage/>);
 
     await screen.findByLabelText(/create realtime rule page/i);
     await screen.findByLabelText(/manage eventtype section/i);
     await screen.findByLabelText(/create rule section/i);
+
+    await screen.findByLabelText(/loading eventtypes/i);
+    await screen.findByLabelText(/loading targets/i);
+
     await screen.findByLabelText(/manage target section/i);
-    await screen.findByLabelText(/search a eventtype/i);
+    await screen.findByLabelText(/search a target/i);
+
     expect(container).toMatchSnapshot();
 });

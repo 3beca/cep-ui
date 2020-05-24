@@ -92,9 +92,9 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClo
                 className={styles.dialogContent}
                 aria-label='kind of rules description'>
                 <RuleTypeCard type='none' ariaLabel='create rule real time card' selected={type === 'none'} onClick={() => selectType('none')}/>
-                <RuleTypeCard type='hopping' ariaLabel='create rule hopping card' selected={type === 'hopping'} onClick={() => selectType('hopping')}/>
                 <RuleTypeCard type='sliding' ariaLabel='create rule sliding card' selected={type === 'sliding'} onClick={() => selectType('sliding')}/>
                 <RuleTypeCard type='tumbling' ariaLabel='create rule tumbling card' selected={type === 'tumbling'} onClick={() => selectType('tumbling')}/>
+                <RuleTypeCard type='hopping' ariaLabel='create rule hopping card' selected={type === 'hopping'} onClick={() => selectType('hopping')}/>
             </DialogContent>
             <DialogContent>
 

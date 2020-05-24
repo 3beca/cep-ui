@@ -7,10 +7,14 @@ export const useStyles = makeStyles(
             marginTop: 40,
             flexWrap: 'wrap'
         },
+        sectionSearch: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        },
         sections: {
-            flex: 1,
             margin: 16,
-            minWidth: 300
+            minWidth: 400
         }
     })
 );

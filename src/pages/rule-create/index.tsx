@@ -12,17 +12,19 @@ export const RuleCreatePage: React.FC<{}> = () => {
         <div
             className={styles.container}
             aria-label={`create ${type} rule page`}>
-            <div
-                aria-label='manage eventtype section'
-                className={styles.sections}>
-                <EventTypeSelector/>
+            <div className={styles.sectionSearch}>
+                <div
+                    aria-label='manage eventtype section'
+                    className={styles.sections}>
+                    <EventTypeSelector/>
+                </div>
+                <div
+                    aria-label='manage target section'
+                    className={styles.sections}>
+                    <TargetSelector/>
+                </div>
             </div>
             <div aria-label='create rule section' className={styles.sections}>Create Rule section</div>
-            <div
-                aria-label='manage target section'
-                className={styles.sections}>
-                <TargetSelector/>
-            </div>
         </div>
     );
 };

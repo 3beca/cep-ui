@@ -26,9 +26,16 @@ export const useStyles = makeStyles(
         detailsURL: {
             display: 'flex'
         },
+        detailsCreateURL: {
+            display: 'flex'
+        },
+        detailsCreateURLButton: {
+            marginLeft: 10
+        },
         detailsStatus: {
             display: 'flex',
-            padding: 6
+            padding: 6,
+            flexDirection: 'column'
         },
         detailsStatusLoading: {
             display: 'flex',

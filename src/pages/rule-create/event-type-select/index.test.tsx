@@ -29,7 +29,7 @@ beforeAll(() => jest.useFakeTimers());
 afterAll(() => jest.useRealTimers());
 
 const nockServer = setupNock(BASE_URL);
-test('EventTypeSelector should render a filtered by elemento options when type elemento and close keep selection', async () => {
+test('EventTypeSelector should render a filtered by element options when type element and close keep selection', async () => {
     const result = generateEventTypeListWith(10, false, false);
     serverGetEventTypeList(nockServer, 1, 10, '', 200, result);
     render(<EventTypeSelector/>);

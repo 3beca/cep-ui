@@ -67,6 +67,7 @@ const EventTypeCreator: React.FC<{eventTypeBody: Partial<EventType>; resolve: (e
             className={styles.details}
             aria-label='eventtype creating block'>
             <div className={styles.detailsActions}>
+                <Typography className={styles.detailsActionsType} variant='caption'>Event Type</Typography>
                 <IconButton
                     disabled={!error || isLoading}
                     onClick={close}
@@ -109,6 +110,7 @@ export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clea
                 className={styles.details}
                 aria-label='eventtype selected block'>
                 <div className={styles.detailsActions}>
+                    <Typography className={styles.detailsActionsType} variant='caption'>Event Type</Typography>
                     <IconButton
                         aria-label='eventtype selected copy'
                         onClick={() => copy(currentEvent.url)}>

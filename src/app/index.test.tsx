@@ -8,7 +8,8 @@ import {
     serverGetRuleList,
     generateRuleListWith,
     renderInsideApp,
-    generateEventTypeListWith
+    generateEventTypeListWith,
+    generateTargetListWith
 } from '../test-utils';
 import {BASE_URL} from '../services/config';
 import { selectCreateRule } from '../pages/rule-list/index.test';
@@ -110,10 +111,12 @@ test('App render / and navigate to create real time rule', async () => {
     expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, generateEventTypeListWith(10, false, false));
+    serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
     await selectCreateRule('real time');
     // Expect to navigate to create real tiem rule
     await screen.findByLabelText(/create realtime rule page/);
     await screen.findByLabelText(/search a eventtype/i);
+    await screen.findByLabelText(/search a target/i);
 });
 
 test('App render / and navigate to create sliding rule', async () => {
@@ -122,10 +125,12 @@ test('App render / and navigate to create sliding rule', async () => {
     expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, generateEventTypeListWith(10, false, false));
+    serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
     await selectCreateRule('sliding');
     // Expect to navigate to create real tiem rule
     await screen.findByLabelText(/create sliding rule page/);
     await screen.findByLabelText(/search a eventtype/i);
+    await screen.findByLabelText(/search a target/i);
 });
 
 test('App render / and navigate to create hopping rule', async () => {
@@ -134,10 +139,12 @@ test('App render / and navigate to create hopping rule', async () => {
     expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, generateEventTypeListWith(10, false, false));
+    serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
     await selectCreateRule('hopping');
     // Expect to navigate to create real tiem rule
     await screen.findByLabelText(/create hopping rule page/);
     await screen.findByLabelText(/search a eventtype/i);
+    await screen.findByLabelText(/search a target/i);
 });
 
 test('App render / and navigate to create tumbling rule', async () => {
@@ -146,8 +153,10 @@ test('App render / and navigate to create tumbling rule', async () => {
     expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, generateEventTypeListWith(10, false, false));
+    serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
     await selectCreateRule('tumbling');
     // Expect to navigate to create real tiem rule
     await screen.findByLabelText(/create tumbling rule page/);
     await screen.findByLabelText(/search a eventtype/i);
+    await screen.findByLabelText(/search a target/i);
 });
