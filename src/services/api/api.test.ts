@@ -3,11 +3,13 @@ import {
     setupNock,
     generateListWith,
     serverGetList,
+    serverGetEventLogList,
     serverDelete,
     serverCreate
 } from '../../test-utils';
 
 import {
+    parseFilters,
     Api,
     buildApiService,
     ServiceList,
@@ -31,8 +33,21 @@ import {
     isRuleFilterComparatorLT,
     isRuleFilterComparatorLTE
 } from './index';
-import { EventType, Target } from './models';
-import { generateEventType, generateTarget } from '../../test-utils/api';
+import { EventType, Target, EventLog } from './models';
+import { generateEventType, generateTarget, generateEventLogListWith } from '../../test-utils/api';
+import { EVENTS_URL } from '../config';
+
+test(
+    'paserFilters should return a valid string',
+    () => {
+        expect(parseFilters('')).toEqual(null);
+        expect(parseFilters('helloworld')).toEqual('search=helloworld');
+        expect(!!parseFilters({})).toEqual(false);
+        expect(parseFilters({eventTypeId: '5e4aa7370c20ff3faab7c7d2'})).toEqual('eventTypeId=5e4aa7370c20ff3faab7c7d2');
+        expect(parseFilters({eventTypeId: '5e4aa7370c20ff3faab7c7d2', search: 'anyfilter'})).toEqual('eventTypeId=5e4aa7370c20ff3faab7c7d2&search=anyfilter');
+        expect(parseFilters({field1: 'hello', field2: 'world'})).toEqual('field1=hello&field2=world');
+    }
+);
 
 describe(
     'CEP API',
@@ -58,7 +73,22 @@ describe(
                 const response = result as APIResponseData<ServiceList<Entity>>;
                 expect(response.status).toBe(200);
                 expect(response.data).toEqual(expectedResult);
-                expect(1).toBe(1);
+            }
+        );
+
+        it(
+            'getListRequest should return a list of one Event Element',
+            async () => {
+                const page = 1;
+                const size = 1;
+                const expectedResult = generateEventLogListWith(1, false, false);
+                serverGetEventLogList(server, page, size, '5e4aa7370c20ff3faab7c7d2', 200, expectedResult);
+                const result = await api.getListRequest<EventLog>(EVENTS_URL, page, size, {eventTypeId: '5e4aa7370c20ff3faab7c7d2'});
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<ServiceList<EventLog>>;
+                expect(response.status).toBe(200);
+                expect(response.data).toEqual(expectedResult);
             }
         );
 
@@ -168,7 +198,7 @@ describe(
         );
 
         it(
-            'deleteEvent should return two APIError when ids are not valid',
+            'deleteRequest should return two APIError when ids are not valid',
             async () => {
                 const ids = ['invalidid1', 'invalid2'];
                 const response = {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'};
@@ -207,7 +237,7 @@ describe(
         );
 
         it(
-            'deleteEvent should return one 204 empty response when eventTypeId is valid ',
+            'deleteRequest should return one 204 empty response when eventTypeId is valid ',
             async () => {
                 const eventTypeId = '5e8dffc9c906fefd9e7b2486';
                 serverDelete(server, PATH, eventTypeId, 204);
@@ -226,7 +256,7 @@ describe(
         );
 
         it(
-            'deleteEvent should return two 204 empty response when eventTypeIds are valid ',
+            'deleteRequest should return two 204 empty response when eventTypeIds are valid ',
             async () => {
                 const eventTypeIds = ['5e8dffc9c906fefd9e7b2486', '5e8dffd0c906fe54737b2487'];
                 serverDelete(server, PATH, eventTypeIds[0], 204);
@@ -254,7 +284,7 @@ describe(
         );
 
         it(
-            'deleteEvent should return one 204 empty response and one APIError when eventTypeIds are valid e invalid ',
+            'deleteRequest should return one 204 empty response and one APIError when eventTypeIds are valid e invalid ',
             async () => {
                 const eventTypeIds = ['5e8dffc9c906fefd9e7b2486', 'invalidid'];
                 const responseError = {statusCode: 500, error: 'Internal Server Error', message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'};

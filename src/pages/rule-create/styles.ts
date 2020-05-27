@@ -14,7 +14,7 @@ export const useStyles = makeStyles(
         },
         sections: {
             margin: 16,
-            minWidth: 380
+            minWidth: 340
         }
     })
 );

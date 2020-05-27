@@ -1,7 +1,8 @@
 import {
     EVENT_TYPES_URL,
     TARGETS_URL,
-    RULES_URL
+    RULES_URL,
+    EVENTS_URL
 } from '../services/config';
 import {
     ServiceList,
@@ -17,7 +18,10 @@ import {
     RuleError,
     RuleFilter,
     EventType,
-    Target
+    Target,
+    EventLog,
+    EventLogList,
+    EventLogError
 } from '../services/api';
 import nock from 'nock';
 
@@ -109,6 +113,30 @@ export const generateRuleListWith = function generateListWith(many: number = 5, 
     return list;
 };
 
+const samplePayload = {
+    dateTime: '2020-05-27T18:04:34.182Z',
+    device: 'UCAM-01-G-AI00',
+    id: '15267:UCAM-01-G-AI00:HUMIDITY',
+    type: 'humidity',
+    value: 36.58125
+};
+export const generateEventLog = (key: string, idx: number, payload: any = samplePayload): EventLog => ({
+    id: idx + '_' + key,
+    eventTypeId: 'eventtypeid',
+    eventTypeName: 'EventType ' + idx + '-' + key,
+    payload,
+    requestId: "53960",
+    createdAt: '2020-01-01T10:10:10.123Z'
+});
+export const generateEventLogListWith = function generateListWith(many: number = 5, next = false, prev = false, key: string = '_' + many): ServiceList<EventLog> {
+    const list: ServiceList<EventLog> = {
+        results: Array.from({length: many}, (_, idx) => generateEventLog(key, idx))
+    };
+    if (prev) list.prev = 'http://cep/?page=prev';
+    if (next) list.next = 'http://cep/?page=next';
+    return list;
+};
+
 export const serverGetList = function serverGetList<T>(server: nock.Scope, path: string, page: number = 1, size: number = 10, filter: string = '', status: number = 200, response: ServiceList<T>|ServiceError) {
     return server.get(path + `/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`).reply(status, response);
 };
@@ -147,4 +175,8 @@ export const serverDeleteRule = (server: nock.Scope, ruleId: string, status: num
 };
 export const serverCreateRule = (server: nock.Scope, body: Partial<Rule>, status: number = 200, response: Rule|ServiceError) => {
     return serverCreate(server, RULES_URL, JSON.stringify(body), status, response);
+};
+
+export const serverGetEventLogList = (server: nock.Scope, page: number = 1, size: number = 10, eventTypeId= '', status: number = 200, response: EventLogList|EventLogError = generateEventLogListWith(10, false, false)) => {
+    return server.get(EVENTS_URL + `/?page=${page}&pageSize=${size}${eventTypeId ? `&eventTypeId=${eventTypeId}` : ''}`).reply(status, response);
 };

@@ -140,17 +140,6 @@ export type EventLog = {
     payload: {[key: string]: any;};
     requestId: string;
     createdAt: string;
-    rules: {
-        id: string;
-        name: string;
-        targetId: string;
-    }[];
-    targets: {
-        id: string;
-        name: string;
-        response: {
-            statusCode: number;
-            body: {[key: string]: any;};
-        };
-    }[];
 } & Entity;
+export type EventLogList = ServiceList<EventLog>;
+export type EventLogError = ServiceError;

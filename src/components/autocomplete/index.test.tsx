@@ -206,7 +206,18 @@ test('Autocomplete should filter all options, and create a new one', async () =>
     act(() => void jest.runOnlyPendingTimers());
     expect(changeFilter).toHaveBeenNthCalledWith(1, prefix);
     await screen.findAllByLabelText(/search a element/i);
-
+    // Simulate isLoading
+    rerender(
+        <Autocomplete
+            selected={selected}
+            setSelected={setSelected}
+            options={[]}
+            isLoading={true}
+            changeFilter={changeFilter}
+            emptyElement={emptyElement}
+        />
+    );
+    // Simulate after loading....
     rerender(
         <Autocomplete
             selected={selected}
@@ -221,8 +232,6 @@ test('Autocomplete should filter all options, and create a new one', async () =>
     const newElement = await screen.findByRole('option');
     expect(newElement).toHaveTextContent('Create ' + prefix);
     expect(input).toHaveAttribute('value', prefix);
-
-
 
     // Select
     changeFilter.mockClear();

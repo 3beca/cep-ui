@@ -1,3 +1,4 @@
+import QS from 'query-string';
 import {
     fetchApi,
     APIRequestInfo,
@@ -13,8 +14,11 @@ import {
 } from './models';
 export * from './models';
 
-export const getListRequest = (baseURL: string, config: APIRequestInfo) => async <T>(path: string, page: number = 1, size: number = 10, filter: string = ''): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>> => {
-    const url = `${baseURL}${path}/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`;
+export type GetListRequestOptions = {[key: string]: string;}|string;
+export const parseFilters = (filters: GetListRequestOptions) => !filters ? null : QS.stringify(typeof filters === 'string' ? {search: filters} : filters);
+export const getListRequest = (baseURL: string, config: APIRequestInfo) => async <T>(path: string, page: number = 1, size: number = 10, filters: GetListRequestOptions = ''): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>> => {
+    const filterString = parseFilters(filters);
+    const url = `${baseURL}${path}/?page=${page}&pageSize=${size}${!!filterString ? `&${filterString}` : ''}`;
     return fetchApi<undefined, ServiceList<T>, ServiceError>(url, {...config, method: 'GET'});
 };
 export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async (path: string, entityIds: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)> => {
@@ -58,7 +62,7 @@ export const createRequest = (baseURL: string, config: APIRequestInfo) => async 
     return fetchApi<Partial<T>, T, ServiceError>(url, {...config, method: 'POST', headers: {...config.headers, 'content-type': 'application/json'}, body});
 };
 export type Api = {
-    getListRequest<T>(path: string, page?: number, size?: number, filter?: string): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>>;
+    getListRequest<T>(path: string, page?: number, size?: number, filter?: GetListRequestOptions): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>>;
     deleteRequest(path: string, ids: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)>;
     createRequest<T extends APIBody>(path: string, body: Partial<T>): Promise<APIResponseData<T>|APIError<ServiceError>>;
 };

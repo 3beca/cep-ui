@@ -37,7 +37,7 @@ export function Autocomplete<T extends EntityWithName>(
         loadingText = 'Loading elements',
         className
     }: AutocompleteProps<T>) {
-
+    const cameFromLoading = React.useRef(false);
     const handleChange = React.useCallback(
         (ev: React.ChangeEvent<unknown>, element: T|null) => {
             setSelected(element);
@@ -57,7 +57,7 @@ export function Autocomplete<T extends EntityWithName>(
         (options: T[], params: FilterOptionsState<T>) => {
             const filtered = defaultFilter(options, params);
             // If there are not matchs...
-            if (!isLoading && options.length === 0 && filtered.length === 0 && params.inputValue !== '') {
+            if (cameFromLoading.current && !isLoading && options.length === 0 && filtered.length === 0 && params.inputValue !== '') {
                 const newElement = {...emptyElement, name: params.inputValue};
                 filtered.push(newElement);
             }
@@ -71,6 +71,9 @@ export function Autocomplete<T extends EntityWithName>(
             setFilter(name);
         },[setFilter]
     );
+    React.useEffect(() => {
+        cameFromLoading.current = isLoading;
+    });
 
     return (
         <MUIAutocomplete
