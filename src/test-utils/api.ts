@@ -87,7 +87,7 @@ export const generateTargetListWith = (many: number = 5, next = false, prev = fa
 };
 
 const randomType = (index: number): RuleTypes => {
-    const types: RuleTypes[] = ['sliding', 'hopping', 'tumbling', 'none'];
+    const types: RuleTypes[] = ['sliding', 'hopping', 'tumbling', 'realtime'];
     const rand = index % 4;
     return types[rand];
 };

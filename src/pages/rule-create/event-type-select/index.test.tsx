@@ -87,9 +87,9 @@ test('EventTypeSelector should select the third element from the options and cha
     act(() => void jest.runOnlyPendingTimers());
     expect(screen.queryAllByRole('option')).toHaveLength(0);
     expect( await screen.findByLabelText(/search a eventtype/i)).toHaveAttribute('value', 'test EventType2');
-
     expect(setSelected).toHaveBeenCalledTimes(1);
     expect(setSelected).toHaveBeenNthCalledWith(1, fakeEventType);
+
     rerender(<EventTypeSelector selected={fakeEventType} onSelected={setSelected}/>);
     expect(await screen.findByLabelText(/eventtype selected name/i)).toHaveTextContent(fakeEventType.name);
     expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(fakeEventType.url);
@@ -153,8 +153,6 @@ test('EventTypeSelector should create new element when no options found', async 
     await screen.findByLabelText(/eventtype creating block/i);
     await screen.findByLabelText(/eventtype creating name/i);
     await screen.findByLabelText(/eventtype creating action/i);
-    expect(setSelected).toHaveBeenCalledTimes(1);
-    expect(setSelected).toHaveBeenNthCalledWith(1, {...emptyEventType, name: prefix});
 
     act(() => void jest.runOnlyPendingTimers());
     expect(await screen.findByLabelText(/eventtype creating loading/i)).toHaveTextContent(/creating event type/i);

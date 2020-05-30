@@ -7,7 +7,7 @@ import {useStyles} from './styles';
 import { ENTITY } from '../../../services/api/use-api';
 import { Target } from '../../../services/api';
 
-const emptyTarget: Target = {
+export const emptyTarget: Target = {
     id: '',
     name: '',
     url: '',
@@ -15,18 +15,21 @@ const emptyTarget: Target = {
     updatedAt: ''
 
 };
-export const TargetSelector: React.FC<{}> = () => {
+export type TargetSelectorProps = {
+    selected: Target|null;
+    onSelected: (target: Target|null) => void;
+};
+export const TargetSelector: React.FC<TargetSelectorProps> = ({selected, onSelected}) => {
     const styles = useStyles();
     const {isLoading, accumulated, changeFilter} = useGetListAccumulated<Target>(ENTITY.TARGETS, 1, 10, '', true);
-    const [selected, setSelected] = React.useState<Target|null>(null);
-    const handleClearSelection = React.useCallback(() => setSelected(null), []);
+    const handleClearSelection = React.useCallback(() => onSelected(null), [onSelected]);
 
     if (selected) {
         return (
             <Paper
                 className={styles.container}
                 aria-label={`target selector`}>
-                <TargetCreate target={selected} clearTarget={handleClearSelection}/>
+                <TargetCreate target={selected} clearTarget={handleClearSelection} setTarget={onSelected}/>
             </Paper>
         );
     }
@@ -37,7 +40,7 @@ export const TargetSelector: React.FC<{}> = () => {
             <Autocomplete<Target>
                 options={accumulated}
                 selected={selected}
-                setSelected={setSelected}
+                setSelected={onSelected}
                 emptyElement={emptyTarget}
                 isLoading={isLoading}
                 changeFilter={changeFilter}

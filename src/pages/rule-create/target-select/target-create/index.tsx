@@ -124,12 +124,17 @@ const TargetCreator: React.FC<{targeteBody: Partial<Target>; resolve: (target: T
 export type TargetCreateProps = {
     target: Target;
     clearTarget: () => void;
+    setTarget(target: Target): void;
 };
-export const TargetCreate: React.FC<TargetCreateProps> = ({target, clearTarget}) => {
+export const TargetCreate: React.FC<TargetCreateProps> = ({target, clearTarget, setTarget}) => {
     const styles = useStyles();
     const targetBody = React.useRef<Partial<Target>>({name: target.name});
     const [currentTarget, setCurrentTarget] = React.useState(target);
-
+    React.useEffect(() => {
+        if(currentTarget.id) {
+            setTarget(currentTarget);
+        }
+    }, [currentTarget, setTarget]);
     if(!currentTarget.id) {
         return <TargetCreator targeteBody={targetBody.current} resolve={setCurrentTarget} close={clearTarget}/>
     }

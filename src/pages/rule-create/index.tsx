@@ -4,12 +4,13 @@ import {useStyles} from './styles';
 import {EventTypeSelector} from './event-type-select';
 import {TargetSelector} from './target-select/index';
 import {PayloadLoader, Payload} from './payload-loader';
-import { EventType } from '../../services/api';
+import { EventType, Target } from '../../services/api';
 
 export const RuleCreatePage: React.FC<{}> = () => {
     const styles = useStyles();
     const {type} = useParams();
     const [eventType, setEventType] = React.useState<EventType|null>(null);
+    const [target, setTarget] = React.useState<Target|null>(null);
     const [payload, setPayload] = React.useState<Payload|null>(null);
     return (
         <div
@@ -26,7 +27,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
                 <div
                     aria-label='manage target section'
                     className={styles.sections}>
-                    <TargetSelector/>
+                    <TargetSelector selected={target} onSelected={setTarget}/>
                 </div>
                 <div
                     aria-label='manage payload loader section'

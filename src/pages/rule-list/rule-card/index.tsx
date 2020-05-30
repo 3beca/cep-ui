@@ -20,17 +20,17 @@ export const colorTypeSelector = (type: RuleTypes, styles: ReturnType<typeof use
         case 'hopping': return styles.ruleCardAvatarRed;
         case 'sliding': return styles.ruleCardAvatarBlue;
         case 'tumbling': return styles.ruleCardAvatarOrange;
-        case 'none': return styles.ruleCardAvatarPurple;
+        case 'realtime': return styles.ruleCardAvatarPurple;
         default: return styles.ruleCardAvatarPurple;
     }
 };
 
-export const mapRuleTypeName = (type: RuleTypes = 'none') => {
+export const mapRuleTypeName = (type: RuleTypes = 'realtime') => {
     switch(type) {
         case 'hopping': return 'HOPPING';
         case 'sliding': return 'SLIDING';
         case 'tumbling': return 'TUMBLING';
-        case 'none': return 'REAL TIME';
+        case 'realtime': return 'REAL TIME';
         default: return 'REAL TIME'
     }
 };

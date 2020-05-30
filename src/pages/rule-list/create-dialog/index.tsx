@@ -18,13 +18,13 @@ import {useHistory} from 'react-router-dom';
 type RuleTypesText = {[key in RuleTypes]: string};
 type RuleTypesSamples = {[key in RuleTypes]: string[][]};
 const subtitles: RuleTypesText = {
-    none: 'Rule executes on any event matching filter on its event data.',
+    realtime: 'Rule executes on any event matching filter on its event data.',
     sliding: 'compute windowing with a text hiper large where it explains the main concept of this rule',
     hopping: 'compute windowing with...',
     tumbling: 'Rules executes on an interval matching aggregation over each interval of time.'
 };
 const samples: RuleTypesSamples = {
-    none: [
+    realtime: [
         ['temperature > 10', 'checks temperature is great than 10 for each temperature received'],
         ['distance(location) > 50', 'checks a locations is great than 5 meters'],
         ['battery < 30 and windSpeed > 5', 'checks battery is less than 30 and windSpeed great than 5']
@@ -71,7 +71,7 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClo
     const selectType = React.useCallback((type: RuleTypes) => setType(type), []);
     const history = useHistory();
     const fireSelected = React.useCallback(() => {
-        history.push(`/rules/create/${type === 'none' ? 'realtime': type}`);
+        history.push(`/rules/create/${type}`);
         onClose();
         setType(null);
     }, [history, onClose, type]);
@@ -91,7 +91,7 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClo
                 dividers={true}
                 className={styles.dialogContent}
                 aria-label='kind of rules description'>
-                <RuleTypeCard type='none' ariaLabel='create rule real time card' selected={type === 'none'} onClick={() => selectType('none')}/>
+                <RuleTypeCard type='realtime' ariaLabel='create rule real time card' selected={type === 'realtime'} onClick={() => selectType('realtime')}/>
                 <RuleTypeCard type='sliding' ariaLabel='create rule sliding card' selected={type === 'sliding'} onClick={() => selectType('sliding')}/>
                 <RuleTypeCard type='tumbling' ariaLabel='create rule tumbling card' selected={type === 'tumbling'} onClick={() => selectType('tumbling')}/>
                 <RuleTypeCard type='hopping' ariaLabel='create rule hopping card' selected={type === 'hopping'} onClick={() => selectType('hopping')}/>

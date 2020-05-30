@@ -11,7 +11,7 @@ import {
 } from '../../../test-utils';
 import { BASE_URL } from '../../../services/config';
 
-import TargetSelector from './index';
+import TargetSelector, {emptyTarget} from './index';
 import { serverCreateTarget } from '../../../test-utils/api';
 
 
@@ -22,7 +22,8 @@ const nockServer = setupNock(BASE_URL);
 test('TargetSelector should render a filtered by element options when type element and close keep selection', async () => {
     const result = generateTargetListWith(10, false, false);
     serverGetTargetList(nockServer, 1, 10, '', 200, result);
-    render(<TargetSelector/>);
+    const onSelected = jest.fn();
+    render(<TargetSelector selected={null} onSelected={onSelected}/>);
 
     await screen.findByLabelText('target name');
     screen.getByLabelText(/loading targets/i);
@@ -35,6 +36,7 @@ test('TargetSelector should render a filtered by element options when type eleme
     const input = await screen.findByLabelText(/search a target/i);
     await userEvent.type(input, prefix);
     act(() => void jest.runOnlyPendingTimers());
+
     await screen.findByLabelText(/loading targets/i);
     await screen.findAllByLabelText(/search a target/i);
     expect(await screen.findAllByRole('option')).toHaveLength(5);
@@ -46,11 +48,13 @@ test('TargetSelector should render a filtered by element options when type eleme
     // Open options from icon button
     userEvent.click(await screen.findByLabelText(/open/i));
     expect(await screen.findAllByRole('option')).toHaveLength(5);
+    expect(onSelected).toHaveBeenCalledTimes(0);
 });
 
 test('Target should select the third element from the options and change to details view, clear selection and back to search view', async () => {
     serverGetTargetList(nockServer, 1, 10, '', 200, generateTargetListWith(10, false, false));
-    render(<TargetSelector/>);
+    const onSelected = jest.fn();
+    const {rerender} = render(<TargetSelector selected={null} onSelected={onSelected}/>);
 
     await screen.findByLabelText('target name');
 
@@ -73,15 +77,24 @@ test('Target should select the third element from the options and change to deta
     userEvent.click(elements[2]);
     act(() => void jest.runOnlyPendingTimers());
     expect(screen.queryAllByRole('option')).toHaveLength(0);
-    expect(input).toHaveAttribute('value', 'test');
+    expect(input).toHaveAttribute('value', 'test Target2');
+    expect(onSelected).toHaveBeenCalledTimes(1);
+    expect(onSelected).toHaveBeenNthCalledWith(1, fakeTarget);
 
+    rerender(<TargetSelector selected={fakeTarget} onSelected={onSelected}/>);
     expect(await screen.findByLabelText(/target selected name/i)).toHaveTextContent(fakeTarget.name);
     expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(fakeTarget.url);
+    expect(onSelected).toHaveBeenCalledTimes(2);
+    expect(onSelected).toHaveBeenNthCalledWith(2, fakeTarget);
 
     // Cancel selection
     serverGetTargetList(nockServer, 1, 10, '', 200, generateTargetListWith(10, false, false));
     const clearButton = await screen.findByLabelText(/target selected clear/i);
     userEvent.click(clearButton);
+    expect(onSelected).toHaveBeenCalledTimes(3);
+    expect(onSelected).toHaveBeenNthCalledWith(3, null);
+    rerender(<TargetSelector selected={null} onSelected={onSelected}/>);
+
     act(() => void jest.runOnlyPendingTimers());
     await screen.findByLabelText(/loading targets/i);
     await screen.findByLabelText(/search a target/i);
@@ -89,7 +102,8 @@ test('Target should select the third element from the options and change to deta
 
 test('TargetSelector should create new element when no options found', async () => {
     serverGetTargetList(nockServer, 1, 10, '', 200, generateTargetListWith(10, false, false));
-    render(<TargetSelector/>);
+    const onSelected = jest.fn();
+    const {rerender} = render(<TargetSelector selected={null} onSelected={onSelected}/>);
 
     await screen.findByLabelText('target name');
 
@@ -112,6 +126,11 @@ test('TargetSelector should create new element when no options found', async () 
     serverCreateTarget(setupNock(BASE_URL), {name: target.name, url: target.url}, 201, target);
     userEvent.click(newElement);
     expect(input).toHaveAttribute('value', prefix);
+
+    expect(onSelected).toHaveBeenCalledTimes(1);
+    expect(onSelected).toHaveBeenNthCalledWith(1, {...emptyTarget, name: prefix});
+    rerender(<TargetSelector selected={{...emptyTarget, name: prefix}} onSelected={onSelected}/>);
+
     await screen.findByLabelText(/target creating block/i);
     await screen.findByLabelText(/target creating name/i);
     await screen.findByLabelText(/target creating action/i);
@@ -130,4 +149,6 @@ test('TargetSelector should create new element when no options found', async () 
     act(() => void jest.runOnlyPendingTimers());
     expect(await screen.findByLabelText(/target selected name/i)).toHaveTextContent(target.name);
     expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(target.url);
+    expect(onSelected).toHaveBeenCalledTimes(2);
+    expect(onSelected).toHaveBeenNthCalledWith(2, target);
 });

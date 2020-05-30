@@ -67,7 +67,7 @@ export type RuleFilterField = {
 export type RuleFilter = {
     [key: string]:  RuleFilterFieldValue|RuleFilter|RuleFilter[];
 };
-export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'none';
+export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'realtime';
 export type Rule = {
     type: RuleTypes;
     targetId: string;
