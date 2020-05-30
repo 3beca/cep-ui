@@ -94,13 +94,19 @@ const EventTypeCreator: React.FC<{eventTypeBody: Partial<EventType>; resolve: (e
 export type EventTypeCreateProps = {
     eventType: EventType;
     clearEventType: () => void;
+    setEventType: (eventType: EventType) => void;
 };
-export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clearEventType}) => {
+export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clearEventType, setEventType}) => {
     const styles = useStyles();
     const eventTypeBody = React.useRef<Partial<EventType>>({name: eventType.name});
     const [currentEvent, setCurrentEvent] = React.useState(eventType);
     // Clipboard
     const {text, copy, clear} = useClipboard();
+    React.useEffect(() => {
+        if(currentEvent.id) {
+            setEventType(currentEvent);
+        }
+    }, [currentEvent, setEventType]);
     if(!currentEvent.id) {
         return <EventTypeCreator eventTypeBody={eventTypeBody.current} resolve={setCurrentEvent} close={clearEventType}/>
     }

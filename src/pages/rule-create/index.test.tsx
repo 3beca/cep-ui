@@ -36,5 +36,6 @@ test('RuleCreatePage for realtime rules should render 3 sections, Manage EventTy
     await screen.findByLabelText(/manage target section/i);
     await screen.findByLabelText(/search a target/i);
 
+    await screen.findByLabelText(/manage payload loader section/i);
     expect(container).toMatchSnapshot();
 });

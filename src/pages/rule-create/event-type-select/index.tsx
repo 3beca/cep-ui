@@ -7,19 +7,21 @@ import EventTypeCreate from './event-type-create/index';
 import Autocomplete from '../../../components/autocomplete/index';
 import Paper from '@material-ui/core/Paper';
 
-const emptyEventType: EventType = {
+export const emptyEventType: EventType = {
     id: '',
     name: '',
     url: '',
     createdAt: '',
     updatedAt: ''
-
 };
-export const EventTypeSelector: React.FC<{}> = () => {
+export type EventTypeSelectorProps = {
+    selected: EventType|null;
+    onSelected: (eventType: EventType|null) => void;
+};
+export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({selected, onSelected}) => {
     const styles = useStyles();
     const {accumulated, isLoading, changeFilter} = useGetListAccumulated<EventType>(ENTITY.EVENT_TYPES, 1, 10);
-    const [selected, setSelected] = React.useState<EventType|null>(null);
-    const handleClearSelection = React.useCallback(() => setSelected(null), []);
+    const handleClearSelection = React.useCallback(() => onSelected(null), [onSelected]);
 
     // Render component
     if (selected) {
@@ -27,7 +29,7 @@ export const EventTypeSelector: React.FC<{}> = () => {
             <Paper
                 className={styles.container}
                 aria-label={`eventtype selector`}>
-                <EventTypeCreate eventType={selected} clearEventType={handleClearSelection}/>
+                <EventTypeCreate eventType={selected} clearEventType={handleClearSelection} setEventType={onSelected}/>
             </Paper>
         );
     }
@@ -38,7 +40,7 @@ export const EventTypeSelector: React.FC<{}> = () => {
             <Autocomplete<EventType>
                 options={accumulated}
                 selected={selected}
-                setSelected={setSelected}
+                setSelected={onSelected}
                 emptyElement={emptyEventType}
                 isLoading={isLoading}
                 changeFilter={changeFilter}

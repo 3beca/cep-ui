@@ -7,7 +7,8 @@ import {
 import {
     buildApiService,
     ServiceList,
-    Entity
+    Entity,
+    GetListRequestOptions
 } from './index';
 import {
     BASE_URL,
@@ -32,7 +33,7 @@ export type useGetListApi<R, E> = {
     response: APIResponseData<ServiceList<R>> | undefined;
     error: APIError<E> | undefined;
 };
-export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size: number, filter: string = '', runOnRender: boolean = true) => {
+export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size: number, filter: string|GetListRequestOptions = '', runOnRender: boolean = true) => {
     const req = React.useCallback(
         () => api.getListRequest<T>(ENTITIES[entity], page, size, filter),
         [page, size, filter, entity],

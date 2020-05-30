@@ -205,6 +205,27 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
           </div>
         </div>
       </div>
+      <div
+        aria-label="manage payload loader section"
+        class="makeStyles-sections-3"
+      >
+        <div
+          class="makeStyles-container-138"
+        >
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled"
+            disabled=""
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Check Payload
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
     <div
       aria-label="create rule section"

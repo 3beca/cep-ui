@@ -15,10 +15,13 @@ import {
     generateEventTypeListWith,
     serverGetEventTypeList,
     serverDeleteEventType,
-    serverCreateEventType
+    serverCreateEventType,
+    generateTarget,
+    serverCreateTarget,
+    generateEventLogListWith,
+    serverGetEventLogList
 } from '../../test-utils';
 import { EventType, Target, TargetError } from './models';
-import { generateTarget, serverCreateTarget } from '../../test-utils/api';
 
 const url = BASE_URL;
 const server = setupNock(url);
@@ -233,6 +236,32 @@ describe(
                     status: 200,
                     data: expectedResult
                 });
+
+                await waitForNextUpdate();
+
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toEqual({
+                    status: 200,
+                    data: expectedResult
+                });
+            }
+        );
+
+        it(
+            'should receive a a list of one element when using fiter eventTypeId',
+            async () => {
+                const page = 1;
+                const size = 1;
+                const eventTypeId = 'eventtypeid';
+                const expectedResult = generateEventLogListWith(3, true, false);
+                serverGetEventLogList(server, page, size, eventTypeId, 200, expectedResult);
+                const filter = {eventTypeId};
+                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENTS_LOG, page, size, filter));
+
+                expect(result.current.isLoading).toBe(true);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
 
                 await waitForNextUpdate();
 

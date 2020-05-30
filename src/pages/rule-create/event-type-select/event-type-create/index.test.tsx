@@ -23,7 +23,8 @@ afterAll(() => jest.useRealTimers());
 test('EventTypeCreate should show a eventtype, copy its url and close', async () => {
     const eventType = generateEventType(1, 'test', 'test');
     const clearEventType = jest.fn();
-    render(<EventTypeCreate eventType={eventType} clearEventType={clearEventType}/>);
+    const setEventType = jest.fn();
+    render(<EventTypeCreate eventType={eventType} clearEventType={clearEventType} setEventType={setEventType}/>);
 
     // Copy url to clipboard
     const copyButton = await screen.findByLabelText(/eventtype selected copy/i);
@@ -33,6 +34,8 @@ test('EventTypeCreate should show a eventtype, copy its url and close', async ()
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(eventType.url);
     act(() => void jest.runOnlyPendingTimers());
     await waitFor(() => expect(screen.queryByLabelText('snackbar-message')).not.toBeInTheDocument());
+    expect(setEventType).toHaveBeenCalledTimes(1);
+    expect(setEventType).toHaveBeenNthCalledWith(1, eventType);
 
     // Cancel selection
     const clearButton = await screen.findByLabelText(/eventtype selected clear/i);
@@ -43,6 +46,7 @@ test('EventTypeCreate should show a eventtype, copy its url and close', async ()
 test('EventTypeCreate should create a new EventType', async () => {
     const eventType = generateEventType(1, 'newEV', 'testNewEv');
     const clearEventType = jest.fn();
+    const setEventType = jest.fn();
     const eventTypeEmpty: EventType = {
         id: '',
         name: eventType.name,
@@ -51,7 +55,7 @@ test('EventTypeCreate should create a new EventType', async () => {
         updatedAt: ''
     };
     serverCreateEventType(setupNock(BASE_URL), {name: eventType.name}, 201, eventType);
-    render(<EventTypeCreate eventType={eventTypeEmpty} clearEventType={clearEventType}/>);
+    render(<EventTypeCreate eventType={eventTypeEmpty} clearEventType={clearEventType} setEventType={setEventType}/>);
 
     await screen.findByLabelText(/eventtype creating block/i);
     await screen.findByLabelText(/eventtype creating name/i);
@@ -65,11 +69,14 @@ test('EventTypeCreate should create a new EventType', async () => {
     expect(await screen.findByLabelText(/eventtype creating url/i)).toHaveTextContent(eventType.url);
     expect(await screen.findByLabelText(/eventtype selected name/i)).toHaveTextContent(eventType.name);
     expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(eventType.url);
+    expect(setEventType).toHaveBeenCalledTimes(1);
+    expect(setEventType).toHaveBeenNthCalledWith(1, eventType);
 });
 
 test('EventTypeCreate should show error when cannot create the event type', async () => {
     const eventType = generateEventType(1, 'newEV', 'testNewEv');
     const clearEventType = jest.fn();
+    const setEventType = jest.fn();
     const eventTypeEmpty: EventType = {
         id: '',
         name: eventType.name,
@@ -83,7 +90,7 @@ test('EventTypeCreate should show error when cannot create the event type', asyn
         message: 'Event type name must be unique and is already taken by event type with id 5ec39c6f118b4dbbe07b1cbb'
     };
     serverCreateEventType(setupNock(BASE_URL), {name: eventType.name}, 409, eventTypeError);
-    render(<EventTypeCreate eventType={eventTypeEmpty} clearEventType={clearEventType}/>);
+    render(<EventTypeCreate eventType={eventTypeEmpty} clearEventType={clearEventType} setEventType={setEventType}/>);
 
     await screen.findByLabelText(/eventtype creating block/i);
     expect(await screen.findByLabelText(/eventtype creating name/i)).toHaveTextContent(eventType.name);
@@ -102,4 +109,5 @@ test('EventTypeCreate should show error when cannot create the event type', asyn
     // Cancel selection
     userEvent.click(await screen.findByLabelText(/eventtype creating clear/i));
     expect(clearEventType).toHaveBeenCalledTimes(1);
+    expect(setEventType).toHaveBeenCalledTimes(0);
 });
