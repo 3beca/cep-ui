@@ -3,7 +3,6 @@ import {
     setupNock,
     generateListWith,
     serverGetList,
-    serverGetEventLogList,
     serverDelete,
     serverCreate
 } from '../../test-utils';
@@ -33,9 +32,8 @@ import {
     isRuleFilterComparatorLT,
     isRuleFilterComparatorLTE
 } from './index';
-import { EventType, Target, EventLog } from './models';
-import { generateEventType, generateTarget, generateEventLogListWith } from '../../test-utils/api';
-import { EVENTS_URL } from '../config';
+import { EventType, Target, EventLog, Rule, RuleError } from './models';
+import { generateEventType, generateTarget, generateEventLogListWith, generateRule } from '../../test-utils/api';
 
 test(
     'paserFilters should return a valid string',
@@ -82,8 +80,8 @@ describe(
                 const page = 1;
                 const size = 1;
                 const expectedResult = generateEventLogListWith(1, false, false);
-                serverGetEventLogList(server, page, size, '5e4aa7370c20ff3faab7c7d2', 200, expectedResult);
-                const result = await api.getListRequest<EventLog>(EVENTS_URL, page, size, {eventTypeId: '5e4aa7370c20ff3faab7c7d2'});
+                serverGetList(server, PATH, page, size, '5e4aa7370c20ff3faab7c7d2', 200, expectedResult);
+                const result = await api.getListRequest<EventLog>(PATH, page, size, {search: '5e4aa7370c20ff3faab7c7d2'});
 
                 expect(isAPIError(result)).toBe(false);
                 const response = result as APIResponseData<ServiceList<EventLog>>;
@@ -436,6 +434,25 @@ describe(
             }
         );
 
+        it(
+            'createRequest should return 200 and a Entity Rule when create corrected',
+            async () => {
+                const rule: Rule = generateRule('ruletest', 1);
+                const error = {
+                    statusCode: 400,
+                    error: 'Bad Request',
+                    message: 'body/targetId should be a valid ObjectId, body/eventTypeId should be a valid ObjectId'
+                };
+                const ruleBody = {name: rule.name, targetId: rule.targetId, eventTypeId: rule.eventTypeId, type: 'realTime'};
+                serverCreate(server, PATH, JSON.stringify(ruleBody), 400, error);
+                const result = await api.createRequest(PATH, ruleBody);
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<RuleError>;
+                expect(response.errorCode).toBe(400);
+                expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
+                expect(response.error).toEqual(error);
+            }
+        );
     }
 );
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 import { waitFor, fireEvent, screen } from '@testing-library/react';
 import App from './index';
 import {
@@ -159,4 +160,22 @@ test('App render / and navigate to create tumbling rule', async () => {
     await screen.findByLabelText(/create tumbling rule page/);
     await screen.findByLabelText(/search a eventtype/i);
     await screen.findByLabelText(/search a target/i);
+});
+
+test('App render / and navigate to rule details', async () => {
+    const ruleList = generateRuleListWith(10, false, false);
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, ruleList);
+    renderAppWithMenuOpenedInRoute('/');
+    expect(await screen.findAllByLabelText(/element card rule/i)).toHaveLength(10);
+    const rule = ruleList.results[0];
+    const firstRuleCardSettings = (await screen.findAllByLabelText(/settings card rule/i))[0];
+    userEvent.click(firstRuleCardSettings);
+
+    expect(await screen.findAllByLabelText(/setting dialog card rule/i)).toHaveLength(10);
+    const detailsCardButtons = await screen.findAllByLabelText(/setting dialog details card rule/i);
+    expect(detailsCardButtons).toHaveLength(10);
+    userEvent.click(detailsCardButtons[0]);
+
+    // Expect to navigate to details rule
+    await screen.findByLabelText(`details rule ${rule.id} page`);
 });

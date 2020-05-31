@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
@@ -9,11 +10,18 @@ import Divider from '@material-ui/core/Divider';
 import Switch from '@material-ui/core/Switch';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import DetailsIcon from '@material-ui/icons/DetailsOutlined';
+import CloneIcon from '@material-ui/icons/FileCopyOutlined';
+import DeleteIcon from '@material-ui/icons/DeleteOutline';
 
 import { Rule, RuleTypes } from '../../../services/api';
 import { parseRuleFilter } from '../../../services/api/utils';
 import RuleFilter from './filter';
 import {useStyles} from './styles';
+
 
 export const colorTypeSelector = (type: RuleTypes, styles: ReturnType<typeof useStyles>) => {
     switch(type) {
@@ -35,6 +43,54 @@ export const mapRuleTypeName = (type: RuleTypes = 'realtime') => {
     }
 };
 
+export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
+    const [anchorElement, setAnchorElement] = React.useState<HTMLElement|null>(null);
+    const open = Boolean(anchorElement);
+    const openContextMenu = React.useCallback((event: React.MouseEvent<HTMLElement>) => setAnchorElement(event.currentTarget), []);
+    const closeContextMenu = React.useCallback(() => setAnchorElement(null), []);
+
+    return (
+    <>
+        <IconButton aria-label='settings card rule' onClick={openContextMenu}>
+            <MoreVertIcon/>
+        </IconButton>
+        <Menu
+            aria-label='setting dialog card rule'
+            keepMounted={true}
+            open={open}
+            anchorEl={anchorElement}
+            onClose={closeContextMenu}
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}>
+            <MenuItem onClick={closeContextMenu} component={Link} to={`/rules/details/${rule.id}`} aria-label='setting dialog details card rule'>
+                <ListItemIcon>
+                    <DetailsIcon fontSize='small'/>
+                </ListItemIcon>
+                <Typography variant='inherit'>Details</Typography>
+            </MenuItem>
+            <MenuItem>
+                <ListItemIcon>
+                    <CloneIcon fontSize='small' />
+                </ListItemIcon>
+                <Typography variant='inherit'>Clone</Typography>
+            </MenuItem>
+            <MenuItem>
+                <ListItemIcon>
+                    <DeleteIcon fontSize='small' />
+                </ListItemIcon>
+                <Typography variant='inherit'>Delete</Typography>
+            </MenuItem>
+        </Menu>
+    </>
+    );
+  }
+
 export type RuleCardProp = {rule: Rule};
 const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
     const styles = useStyles();
@@ -44,12 +100,13 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
             return <RuleFilter filter={container}/>
         }, [rule.filters]
     );
+
     return (
         <Card
         aria-label='element card rule'
         className={styles.ruleCard}>
             <CardHeader
-                aria-label='header rule card'
+                aria-label='header card rule'
                 className={styles.ruleCardHeader}
                 avatar={
                     <Avatar
@@ -59,9 +116,7 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                     </Avatar>
                 }
                 action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon/>
-                    </IconButton>
+                    <RuleCardMenu rule={rule}/>
                 }
                 title={rule.name}
                 subheader={(new Date(rule.createdAt)).toLocaleString()}

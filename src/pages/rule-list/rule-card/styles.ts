@@ -72,6 +72,9 @@ export const useStyles = makeStyles(
         },
         ruleCardAvatarOrange: {
             backgroundColor: theme.palette.warning.dark
+        },
+        ruleCardMenu: {
+            width: 240
         }
     })
 );

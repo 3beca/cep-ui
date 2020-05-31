@@ -5,8 +5,9 @@ import TitleBar from './title-bar';
 import MenuDrawer from './menu-drawer';
 import RuleListPage from '../pages/rule-list';
 import RuleCreatePage from '../pages/rule-create';
+import RuleDetailsPage from '../pages/rule-details';
 import EventTypeListPage from '../pages/event-type-list';
-import TargetListPage from '../pages/target-list/index';
+import TargetListPage from '../pages/target-list';
 import NotFoundPage from '../pages/not-found';
 import EventLogListPage from '../pages/event-log-list';
 
@@ -23,6 +24,9 @@ export const App: React.FC<{}> = function App() {
                 </Route>
                 <Route path='/rules/create/:type'>
                     <RuleCreatePage/>
+                </Route>
+                <Route path='/rules/details/:ruleId'>
+                    <RuleDetailsPage/>
                 </Route>
                 <Route path='/event-types'>
                     <EventTypeListPage/>
