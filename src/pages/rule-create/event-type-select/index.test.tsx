@@ -27,6 +27,7 @@ jest.mock('@material-ui/core/Snackbar', () => {
 
 beforeAll(() => jest.useFakeTimers());
 afterAll(() => jest.useRealTimers());
+afterEach(() => (navigator.clipboard.writeText as jest.Mock).mockClear());
 
 const nockServer = setupNock(BASE_URL);
 test('EventTypeSelector should render a filtered by element options when type element and close keep selection', async () => {
@@ -35,6 +36,7 @@ test('EventTypeSelector should render a filtered by element options when type el
     const setSelected = jest.fn();
     render(<EventTypeSelector selected={null} onSelected={setSelected}/>);
 
+    await screen.findByLabelText(/eventtype selector$/i);
     await screen.findByLabelText('eventtype name');
     screen.getByLabelText(/loading eventtypes/i);
     await screen.findByLabelText(/search a eventtype/i);
@@ -68,7 +70,7 @@ test('EventTypeSelector should select the third element from the options and cha
     await screen.findByLabelText('eventtype name');
 
     // Open options when click in input
-    const prefix = 'test';
+    const prefix = 'test2';
     const filteredResult = generateEventTypeListWith(5, false, false, '', prefix + ' ');
     serverGetEventTypeList(nockServer, 1, 10, prefix, 200, filteredResult);
     // screen.getByLabelText(/loading eventtypes/i);
@@ -86,11 +88,12 @@ test('EventTypeSelector should select the third element from the options and cha
     userEvent.click(elements[2]);
     act(() => void jest.runOnlyPendingTimers());
     expect(screen.queryAllByRole('option')).toHaveLength(0);
-    expect( await screen.findByLabelText(/search a eventtype/i)).toHaveAttribute('value', 'test EventType2');
+    expect( await screen.findByLabelText(/search a eventtype/i)).toHaveAttribute('value', 'test2 EventType2');
     expect(setSelected).toHaveBeenCalledTimes(1);
     expect(setSelected).toHaveBeenNthCalledWith(1, fakeEventType);
 
     rerender(<EventTypeSelector selected={fakeEventType} onSelected={setSelected}/>);
+    act(() => void jest.runOnlyPendingTimers());
     expect(await screen.findByLabelText(/eventtype selected name/i)).toHaveTextContent(fakeEventType.name);
     expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(fakeEventType.url);
     expect(setSelected).toHaveBeenCalledTimes(2);
@@ -106,13 +109,15 @@ test('EventTypeSelector should select the third element from the options and cha
     await waitFor(() => expect(screen.queryByLabelText('snackbar-message')).not.toBeInTheDocument());
 
     // Cancel selection
-    serverGetEventTypeList(nockServer, 1, 10, '', 200, generateEventTypeListWith(10, false, false));
+    serverGetEventTypeList(nockServer, 1, 10, prefix, 200, generateEventTypeListWith(10, false, false));
     const clearButton = await screen.findByLabelText(/eventtype selected clear/i);
     userEvent.click(clearButton);
     expect(setSelected).toHaveBeenCalledTimes(3);
     expect(setSelected).toHaveBeenNthCalledWith(3, null);
-    rerender(<EventTypeSelector selected={null} onSelected={setSelected}/>);
+    act(() => void jest.runOnlyPendingTimers());
 
+    serverGetEventTypeList(nockServer, 1, 10, '', 200, generateEventTypeListWith(10, false, false));
+    rerender(<EventTypeSelector selected={null} onSelected={setSelected}/>);
     act(() => void jest.runOnlyPendingTimers());
     await screen.findByLabelText(/loading eventtypes/i);
     await screen.findByLabelText(/search a eventtype/i);
@@ -163,4 +168,42 @@ test('EventTypeSelector should create new element when no options found', async 
     expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(eventType.url);
     expect(setSelected).toHaveBeenCalledTimes(2);
     expect(setSelected).toHaveBeenNthCalledWith(2, eventType);
+});
+
+test('EventTypeSelector should not be interactive when disabled without EventType', async () => {
+    const setSelected = jest.fn();
+    render(<EventTypeSelector selected={null} onSelected={setSelected} disabled={true}/>);
+
+    await screen.findByLabelText(/eventtype selector disabled/i);
+    await screen.findByLabelText('eventtype name');
+    await screen.findByLabelText(/search a eventtype/i);
+
+    // Open options when click in input
+    const prefix = 'test';
+    const input = await screen.findByLabelText(/search a eventtype/i);
+    await userEvent.type(input, prefix);
+    act(() => void jest.runOnlyPendingTimers());
+    expect(input).not.toHaveValue();
+});
+
+test('EventTypeSelector should not be interactive when disabled wit EventType', async () => {
+    const setSelected = jest.fn();
+    const eventType = generateEventType(1, '', '');
+    render(<EventTypeSelector selected={eventType} onSelected={setSelected} disabled={true}/>);
+
+    await screen.findByLabelText(/eventtype selector disabled/i);
+    expect(await screen.findByLabelText(/eventtype selected name/i)).toHaveTextContent(eventType.name);
+    expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(eventType.url);
+
+    // Copy url to clipboard
+    const copyButton = await screen.findByLabelText(/eventtype selected copy/i);
+    userEvent.click(copyButton);
+    expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(0);
+    act(() => void jest.runOnlyPendingTimers());
+
+    // Cancel selection
+    setSelected.mockClear();
+    const clearButton = await screen.findByLabelText(/eventtype selected clear/i);
+    userEvent.click(clearButton);
+    expect(setSelected).toHaveBeenCalledTimes(0);
 });

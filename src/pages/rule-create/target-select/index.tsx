@@ -18,26 +18,28 @@ export const emptyTarget: Target = {
 export type TargetSelectorProps = {
     selected: Target|null;
     onSelected: (target: Target|null) => void;
+    disabled?: boolean;
 };
-export const TargetSelector: React.FC<TargetSelectorProps> = ({selected, onSelected}) => {
+export const TargetSelector: React.FC<TargetSelectorProps> = ({selected, onSelected, disabled = false}) => {
     const styles = useStyles();
-    const {isLoading, accumulated, changeFilter} = useGetListAccumulated<Target>(ENTITY.TARGETS, 1, 10, '', true);
+    const {isLoading, accumulated, changeFilter} = useGetListAccumulated<Target>(ENTITY.TARGETS, 1, 10, '', !disabled && !selected);
     const handleClearSelection = React.useCallback(() => onSelected(null), [onSelected]);
 
     if (selected) {
         return (
             <Paper
                 className={styles.container}
-                aria-label={`target selector`}>
-                <TargetCreate target={selected} clearTarget={handleClearSelection} setTarget={onSelected}/>
+                aria-label={`target selector${disabled ? ' disabled' : ''}`}>
+                <TargetCreate target={selected} clearTarget={handleClearSelection} setTarget={onSelected} disabled={disabled}/>
             </Paper>
         );
     }
     return (
         <Paper
             className={styles.container}
-            aria-label={`target selector`}>
+            aria-label={`target selector${disabled ? ' disabled' : ''}`}>
             <Autocomplete<Target>
+                disabled={disabled}
                 options={accumulated}
                 selected={selected}
                 setSelected={onSelected}

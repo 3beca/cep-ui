@@ -25,6 +25,7 @@ test('TargetSelector should render a filtered by element options when type eleme
     const onSelected = jest.fn();
     render(<TargetSelector selected={null} onSelected={onSelected}/>);
 
+    await screen.findByLabelText(/target selector$/i);
     await screen.findByLabelText('target name');
     screen.getByLabelText(/loading targets/i);
     await screen.findByLabelText(/search a target/i);
@@ -59,7 +60,7 @@ test('Target should select the third element from the options and change to deta
     await screen.findByLabelText('target name');
 
     // Open options when click in input
-    const prefix = 'test';
+    const prefix = 'test2';
     const filteredResult = generateTargetListWith(5, false, false, '', prefix + ' ');
     serverGetTargetList(nockServer, 1, 10, prefix, 200, filteredResult);
     // screen.getByLabelText(/loading eventtypes/i);
@@ -77,7 +78,7 @@ test('Target should select the third element from the options and change to deta
     userEvent.click(elements[2]);
     act(() => void jest.runOnlyPendingTimers());
     expect(screen.queryAllByRole('option')).toHaveLength(0);
-    expect(input).toHaveAttribute('value', 'test Target2');
+    expect(input).toHaveAttribute('value', 'test2 Target2');
     expect(onSelected).toHaveBeenCalledTimes(1);
     expect(onSelected).toHaveBeenNthCalledWith(1, fakeTarget);
 
@@ -88,13 +89,15 @@ test('Target should select the third element from the options and change to deta
     expect(onSelected).toHaveBeenNthCalledWith(2, fakeTarget);
 
     // Cancel selection
-    serverGetTargetList(nockServer, 1, 10, '', 200, generateTargetListWith(10, false, false));
+    serverGetTargetList(nockServer, 1, 10, prefix, 200, generateTargetListWith(10, false, false));
     const clearButton = await screen.findByLabelText(/target selected clear/i);
     userEvent.click(clearButton);
+    act(() => void jest.runOnlyPendingTimers());
     expect(onSelected).toHaveBeenCalledTimes(3);
     expect(onSelected).toHaveBeenNthCalledWith(3, null);
-    rerender(<TargetSelector selected={null} onSelected={onSelected}/>);
 
+    serverGetTargetList(nockServer, 1, 10, '', 200, generateTargetListWith(10, false, false));
+    rerender(<TargetSelector selected={null} onSelected={onSelected}/>);
     act(() => void jest.runOnlyPendingTimers());
     await screen.findByLabelText(/loading targets/i);
     await screen.findByLabelText(/search a target/i);
@@ -151,4 +154,36 @@ test('TargetSelector should create new element when no options found', async () 
     expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(target.url);
     expect(onSelected).toHaveBeenCalledTimes(2);
     expect(onSelected).toHaveBeenNthCalledWith(2, target);
+});
+
+test('TargetSelector should not be interactive when disabled without TArget', async () => {
+    const setSelected = jest.fn();
+    render(<TargetSelector selected={null} onSelected={setSelected} disabled={true}/>);
+
+    await screen.findByLabelText(/target selector disabled/i);
+    await screen.findByLabelText('target name');
+    await screen.findByLabelText(/search a target/i);
+
+    // Open options when click in input
+    const prefix = 'test';
+    const input = await screen.findByLabelText(/search a target/i);
+    await userEvent.type(input, prefix);
+    act(() => void jest.runOnlyPendingTimers());
+    expect(input).not.toHaveValue();
+});
+
+test('TargetSelector should not be interactive when disabled with Target', async () => {
+    const setSelected = jest.fn();
+    const target = generateTarget(1, '', '');
+    render(<TargetSelector selected={target} onSelected={setSelected} disabled={true}/>);
+
+    await screen.findByLabelText(/target selector disabled/i);
+    expect(await screen.findByLabelText(/target selected name/i)).toHaveTextContent(target.name);
+    expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(target.url);
+
+    // Cancel selection
+    setSelected.mockClear();
+    const clearButton = await screen.findByLabelText(/target selected clear/i);
+    userEvent.click(clearButton);
+    expect(setSelected).toHaveBeenCalledTimes(0);
 });

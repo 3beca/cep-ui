@@ -19,6 +19,10 @@ jest.mock('@material-ui/core/Snackbar', () => {
 
 beforeAll(() => jest.useFakeTimers());
 afterAll(() => jest.useRealTimers());
+afterEach(() => {
+    (navigator.clipboard.writeText as jest.Mock).mockClear();
+    (navigator.clipboard.readText as jest.Mock).mockClear()
+});
 
 test('EventTypeCreate should show a eventtype, copy its url and close', async () => {
     const eventType = generateEventType(1, 'test', 'test');
@@ -110,4 +114,53 @@ test('EventTypeCreate should show error when cannot create the event type', asyn
     userEvent.click(await screen.findByLabelText(/eventtype creating clear/i));
     expect(clearEventType).toHaveBeenCalledTimes(1);
     expect(setEventType).toHaveBeenCalledTimes(0);
+});
+
+test('EventTypeCreate should show a eventtype disabled', async () => {
+    const eventType = generateEventType(1, 'test', 'test');
+    const clearEventType = jest.fn();
+    const setEventType = jest.fn();
+    render(<EventTypeCreate eventType={eventType} clearEventType={clearEventType} setEventType={setEventType} disabled={true}/>);
+
+    // Copy url to clipboard
+    const copyButton = await screen.findByLabelText(/eventtype selected copy/i);
+    userEvent.click(copyButton);
+    await waitFor(() => expect(screen.queryByLabelText('snackbar-message')).not.toBeInTheDocument());
+    expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(0);
+    act(() => void jest.runOnlyPendingTimers());
+    await waitFor(() => expect(screen.queryByLabelText('snackbar-message')).not.toBeInTheDocument());
+    expect(setEventType).toHaveBeenCalledTimes(1);
+    expect(setEventType).toHaveBeenNthCalledWith(1, eventType);
+
+    // Cancel selection
+    const clearButton = await screen.findByLabelText(/eventtype selected clear/i);
+    userEvent.click(clearButton);
+    expect(clearEventType).toHaveBeenCalledTimes(0);
+});
+
+test('EventTypeCreate should show a eventtype disabled even when its not created', async () => {
+    const eventTypeEmpty: EventType = {
+        id: '',
+        name: 'Empty event type',
+        url: '',
+        createdAt: '',
+        updatedAt: ''
+    };
+    const clearEventType = jest.fn();
+    const setEventType = jest.fn();
+    render(<EventTypeCreate eventType={eventTypeEmpty} clearEventType={clearEventType} setEventType={setEventType} disabled={true}/>);
+
+    // Copy url to clipboard
+    const copyButton = await screen.findByLabelText(/eventtype selected copy/i);
+    userEvent.click(copyButton);
+    await waitFor(() => expect(screen.queryByLabelText('snackbar-message')).not.toBeInTheDocument());
+    expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(0);
+    act(() => void jest.runOnlyPendingTimers());
+    await waitFor(() => expect(screen.queryByLabelText('snackbar-message')).not.toBeInTheDocument());
+    expect(setEventType).toHaveBeenCalledTimes(0);
+
+    // Cancel selection
+    const clearButton = await screen.findByLabelText(/eventtype selected clear/i);
+    userEvent.click(clearButton);
+    expect(clearEventType).toHaveBeenCalledTimes(0);
 });

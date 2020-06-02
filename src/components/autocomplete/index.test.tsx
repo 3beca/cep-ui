@@ -243,3 +243,33 @@ test('Autocomplete should filter all options, and create a new one', async () =>
     await screen.findAllByLabelText(/search a element/i);
     expect(screen.queryAllByRole('option')).toHaveLength(0);
 });
+
+test('Autocomplete should render disabled', async () => {
+    const options = [
+        {id: '1', name: 'element 1'}
+    ];
+    const selected: {id: string; name: string;}|null = null;
+    const setSelected = jest.fn();
+    const changeFilter = jest.fn();
+    const emptyElement = {id: '', name: ''};
+    render(
+        <Autocomplete
+            disabled={true}
+            selected={selected}
+            setSelected={setSelected}
+            options={options}
+            isLoading={false}
+            changeFilter={changeFilter}
+            emptyElement={emptyElement}
+        />
+    );
+
+    await screen.findByLabelText('element name');
+
+    // DO NOT Open options when disabled
+    const prefix = 'element 5';
+    const input = await screen.findByLabelText(/search a element/i);
+    await userEvent.type(input, prefix);
+    act(() => void jest.runOnlyPendingTimers());
+    expect(input).not.toHaveValue();
+});

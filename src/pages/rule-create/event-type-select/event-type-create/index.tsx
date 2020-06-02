@@ -95,8 +95,9 @@ export type EventTypeCreateProps = {
     eventType: EventType;
     clearEventType: () => void;
     setEventType: (eventType: EventType) => void;
+    disabled?: boolean;
 };
-export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clearEventType, setEventType}) => {
+export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clearEventType, setEventType, disabled = false}) => {
     const styles = useStyles();
     const eventTypeBody = React.useRef<Partial<EventType>>({name: eventType.name});
     const [currentEvent, setCurrentEvent] = React.useState(eventType);
@@ -107,7 +108,7 @@ export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clea
             setEventType(currentEvent);
         }
     }, [currentEvent, setEventType]);
-    if(!currentEvent.id) {
+    if(!currentEvent.id && !disabled) {
         return <EventTypeCreator eventTypeBody={eventTypeBody.current} resolve={setCurrentEvent} close={clearEventType}/>
     }
     return (
@@ -118,11 +119,13 @@ export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clea
                 <div className={styles.detailsActions}>
                     <Typography className={styles.detailsActionsType} variant='caption'>Event Type</Typography>
                     <IconButton
+                        disabled={disabled}
                         aria-label='eventtype selected copy'
                         onClick={() => copy(currentEvent.url)}>
                         <IconCopy fontSize='small'/>
                     </IconButton>
                     <IconButton
+                        disabled={disabled}
                         onClick={clearEventType}
                         aria-label='eventtype selected clear'>
                         <IconClose fontSize='small'/>

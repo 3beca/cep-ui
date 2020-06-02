@@ -1,52 +1,52 @@
 import * as React from 'react';
-
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Switch from '@material-ui/core/Switch';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-import { useParams, Redirect } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+
+import { useParams, Link } from 'react-router-dom';
 import {EventTypeSelector} from './event-type-select';
-import {TargetSelector} from './target-select/index';
+import {TargetSelector} from './target-select';
+import {RuleCreator} from './rule-creator';
 import {PayloadLoader, Payload} from './payload-loader';
 import { EventType, Target, Rule } from '../../services/api';
 import { useCreate, ENTITY } from '../../services/api/use-api';
 import {useStyles} from './styles';
 
-export type RuleCreatorProps = {
-    rule: Partial<Rule>;
-    updateRule(rule: Partial<Rule>): void;
-};
-export const RuleCreator: React.FC<RuleCreatorProps> = ({rule, updateRule}) => {
+const RuleCreateError: React.FC<{message?: string}> = ({message}) => {
+    const styles = useStyles();
+    if (!message) return null;
     return (
-        <div>
-            <span>Create Rule section</span>
-            <TextField
-                required={true}
-                placeholder='Enter rule name'
-                inputProps={{
-                    'aria-label': 'rule create name',
-                }}
-                value={rule.name}
-                onChange={(ev) => updateRule({name: ev.target.value})}/>
-                <FormGroup>
-                    <FormControlLabel
-                        control={
-                            <Switch
-                                size='medium'
-                                color='primary'
-                                checked={rule.skipOnConsecutivesMatches ? true : false}
-                                onChange={(ev) => updateRule({skipOnConsecutivesMatches: ev.target.checked})}
-                                aria-label='rule create skip consecutives'/>
-                        }
-                        title='Skip Consecutives'
-                        label='Skip Consecutives'
-                        labelPlacement='end'
-                    />
-                </FormGroup>
-        </div>
+        <Paper
+            aria-label='rule create error'
+            className={styles.elementItem}>
+            <Typography
+                variant='caption'
+                className={styles.errorText}
+                aria-label='rule create error message'>
+                {message}
+            </Typography>
+        </Paper>
+    );
+};
+
+const RuleCreatorSuccess: React.FC<{show: boolean; rule?: Rule, clear: () => void;}> = ({rule, show, clear}) => {
+    const styles = useStyles();
+    if (!rule || !show) return null;
+    return (
+        <Paper
+            aria-label='rule create success'
+            className={styles.elementItem}>
+            <Typography
+                className={styles.successText}
+                aria-label='rule create success message'>
+                Rule {rule?.name} created successfully
+            </Typography>
+            <div className={styles.successButtons}>
+                <Button aria-label='rule create success button more' className={styles.moreButton} onClick={clear}>Create more</Button>
+                <Button aria-label='rule create success button details' component={Link} to={`/rules/details/${rule.id}`} className={styles.visitButton}>Details</Button>
+            </div>
+        </Paper>
     );
 };
 
@@ -71,12 +71,8 @@ export const RuleCreatePage: React.FC<{}> = () => {
             filters: {}
         };
     }, [rule, target, eventType, type]);
-    const {request, isLoading, error, response} = useCreate<Rule>(ENTITY.RULES, bodyRule, false);
-    const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name), [bodyRule]);
-
-    if (!isLoading && !error && response?.status === 200) {
-        return (<Redirect to={`/rules/details/${response.data.id}`}/>);
-    }
+    const {request, isLoading, error, response, reset} = useCreate<Rule>(ENTITY.RULES, bodyRule, false);
+    const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading), [bodyRule, isLoading]);
 
     return (
         <div
@@ -87,38 +83,51 @@ export const RuleCreatePage: React.FC<{}> = () => {
                     aria-label='manage eventtype section'
                     className={styles.sections}>
                     <EventTypeSelector
+                        disabled={isLoading}
                         selected={eventType}
                         onSelected={setEventType}/>
                 </div>
                 <div
                     aria-label='manage target section'
                     className={styles.sections}>
-                    <TargetSelector selected={target} onSelected={setTarget}/>
+                    <TargetSelector
+                        disabled={isLoading}
+                        selected={target}
+                        onSelected={setTarget}/>
                 </div>
                 <div
                     aria-label='manage payload loader section'
                     className={styles.sections}>
-                    <PayloadLoader eventTypeId={eventType?.id} payload={payload} setPayload={setPayload}/>
+                    <PayloadLoader
+                        disabled={isLoading}
+                        eventTypeId={eventType?.id}
+                        payload={payload}
+                        setPayload={setPayload}/>
                 </div>
             </div>
             <div
                 aria-label='create rule section'
                 className={styles.sections}>
-                    <RuleCreator rule={rule} updateRule={updateRule}/>
+                    <RuleCreator
+                        disabled={isLoading}
+                        rule={rule}
+                        updateRule={updateRule}/>
             </div>
             <div
                 aria-label='submit rule section'
                 className={styles.sections}>
+                    <RuleCreatorSuccess rule={response?.data} show={true} clear={reset}/>
+                    <RuleCreateError message={error?.error?.message}/>
                     <Button
-                        aria-label='create rule button'
+                        className={styles.submitButton}
+                        aria-label='rule create button'
                         disabled={isCreateRuleDisabled()}
+                        fullWidth={true}
+                        variant='contained'
+                        color='primary'
                         onClick={request}>
-                        Create New Rule
+                        {isLoading ? (<CircularProgress color='primary' aria-label='rule create loading' size={26}/>) : 'Create New Rule'}
                     </Button>
-                    {
-                        isLoading &&
-                        (<CircularProgress color='primary' aria-label='rule create loading'/>)
-                    }
             </div>
         </div>
     );

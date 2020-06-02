@@ -2,8 +2,14 @@ import * as React from 'react';
 import { RuleTypes } from '../../../services/api';
 import RuleCard, {colorTypeSelector, mapRuleTypeName} from './index';
 import { generateRule, render, screen } from '../../../test-utils';
-
-jest.mock('react-router-dom');
+jest.mock('react-router-dom', () => {
+    const React = require('react');
+    return {
+        Link: React.forwardRef((props: any, ref: any) => {
+            return <div ref={ref}>{props.children}</div>
+        })
+    };
+});
 
 test('selector avatar color function shuold return a default color', () => {
     expect(colorTypeSelector(undefined as unknown as RuleTypes, {ruleCardAvatarPurple: 'default color'} as any)).toEqual('default color');

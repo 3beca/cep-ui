@@ -1,0 +1,48 @@
+import * as React from 'react';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Switch from '@material-ui/core/Switch';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Rule } from '../../../services/api';
+import {useStyles} from './styles';
+
+export type RuleCreatorProps = {
+    rule: Partial<Rule>;
+    updateRule(rule: Partial<Rule>): void;
+    disabled?: boolean;
+};
+export const RuleCreator: React.FC<RuleCreatorProps> = ({rule, updateRule, disabled = false}) => {
+    const styles = useStyles();
+    return (
+        <Paper className={styles.container} aria-label={`rule creator${disabled ? ' disabled' : ''}`}>
+            <TextField
+                disabled={disabled}
+                required={true}
+                placeholder='Enter rule name'
+                inputProps={{
+                    'aria-label': 'rule creator name',
+                }}
+                value={rule.name}
+                onChange={(ev) => updateRule({name: ev.target.value})}/>
+                <FormGroup>
+                    <FormControlLabel
+                        control={
+                            <Switch
+                                disabled={disabled}
+                                size='medium'
+                                color='primary'
+                                checked={rule.skipOnConsecutivesMatches ? true : false}
+                                onChange={(ev) => updateRule({skipOnConsecutivesMatches: ev.target.checked})}
+                                aria-label='rule creator skip consecutives'/>
+                        }
+                        title='Skip Consecutives'
+                        label='Skip Consecutives'
+                        labelPlacement='end'
+                    />
+                </FormGroup>
+        </Paper>
+    );
+};
+
+export default RuleCreator;

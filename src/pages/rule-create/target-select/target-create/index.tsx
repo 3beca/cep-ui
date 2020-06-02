@@ -125,8 +125,9 @@ export type TargetCreateProps = {
     target: Target;
     clearTarget: () => void;
     setTarget(target: Target): void;
+    disabled?: boolean;
 };
-export const TargetCreate: React.FC<TargetCreateProps> = ({target, clearTarget, setTarget}) => {
+export const TargetCreate: React.FC<TargetCreateProps> = ({target, clearTarget, setTarget, disabled = false}) => {
     const styles = useStyles();
     const targetBody = React.useRef<Partial<Target>>({name: target.name});
     const [currentTarget, setCurrentTarget] = React.useState(target);
@@ -135,7 +136,7 @@ export const TargetCreate: React.FC<TargetCreateProps> = ({target, clearTarget, 
             setTarget(currentTarget);
         }
     }, [currentTarget, setTarget]);
-    if(!currentTarget.id) {
+    if(!currentTarget.id && !disabled) {
         return <TargetCreator targeteBody={targetBody.current} resolve={setCurrentTarget} close={clearTarget}/>
     }
     return (
@@ -145,6 +146,7 @@ export const TargetCreate: React.FC<TargetCreateProps> = ({target, clearTarget, 
             <div className={styles.detailsActions}>
                 <Typography className={styles.detailsActionsType} variant='caption'>Target</Typography>
                 <IconButton
+                    disabled={disabled}
                     onClick={clearTarget}
                     aria-label='target selected clear'>
                     <IconClose fontSize='small'/>

@@ -15,7 +15,7 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
       >
         <div
           aria-label="eventtype selector"
-          class="MuiPaper-root makeStyles-container-4 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root makeStyles-container-12 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             aria-expanded="false"
@@ -113,7 +113,7 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
       >
         <div
           aria-label="target selector"
-          class="MuiPaper-root makeStyles-container-136 MuiPaper-elevation1 MuiPaper-rounded"
+          class="MuiPaper-root makeStyles-container-144 MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
             aria-expanded="false"
@@ -210,10 +210,12 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
         class="makeStyles-sections-3"
       >
         <div
-          class="makeStyles-container-138"
+          aria-label="payload loader"
+          class="makeStyles-container-146"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled"
+            aria-label="payload loader button"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled MuiButton-fullWidth Mui-disabled"
             disabled=""
             tabindex="-1"
             type="button"
@@ -231,10 +233,10 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
       aria-label="create rule section"
       class="makeStyles-sections-3"
     >
-      <div>
-        <span>
-          Create Rule section
-        </span>
+      <div
+        aria-label="rule creator"
+        class="MuiPaper-root makeStyles-container-176 MuiPaper-elevation1 MuiPaper-rounded"
+      >
         <div
           class="MuiFormControl-root MuiTextField-root"
         >
@@ -243,7 +245,7 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
           >
             <input
               aria-invalid="false"
-              aria-label="rule create name"
+              aria-label="rule creator name"
               class="MuiInputBase-input MuiInput-input"
               placeholder="Enter rule name"
               required=""
@@ -264,14 +266,14 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
             >
               <span
                 aria-disabled="false"
-                aria-label="rule create skip consecutives"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-188 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+                aria-label="rule creator skip consecutives"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-199 MuiSwitch-switchBase MuiSwitch-colorPrimary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-191 MuiSwitch-input"
+                    class="PrivateSwitchBase-input-202 MuiSwitch-input"
                     type="checkbox"
                     value=""
                   />
@@ -301,8 +303,8 @@ exports[`RuleCreatePage for realtime rules should render 3 sections, Manage Even
       class="makeStyles-sections-3"
     >
       <button
-        aria-label="create rule button"
-        class="MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled"
+        aria-label="rule create button"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-submitButton-8 MuiButton-containedPrimary Mui-disabled MuiButton-fullWidth Mui-disabled"
         disabled=""
         tabindex="-1"
         type="button"

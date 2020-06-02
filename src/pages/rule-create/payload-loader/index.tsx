@@ -10,8 +10,9 @@ export type PayloadLoaderProps = {
     eventTypeId?: string;
     payload: Payload|null;
     setPayload(payload: Payload): void;
+    disabled?: boolean;
 };
-export const PayloadLoader: React.FC<PayloadLoaderProps> = ({eventTypeId}) => {
+export const PayloadLoader: React.FC<PayloadLoaderProps> = ({eventTypeId, disabled}) => {
     const styles = useStyles();
     const filter = React.useMemo(() => !!eventTypeId ? {eventTypeId} : '', [eventTypeId]);
     const {isLoading, response, request} = useGetList<EventLog>(ENTITY.EVENTS_LOG, 1, 1, filter, false);
@@ -20,23 +21,26 @@ export const PayloadLoader: React.FC<PayloadLoaderProps> = ({eventTypeId}) => {
         openHelpDialog.current = isLoading;
     }, [isLoading]);
     return (
-        <div className={styles.container}>
+        <div className={styles.container} aria-label={`payload loader${disabled ? ' disabled' : ''}`}>
             <Button
-                disabled={!eventTypeId || isLoading}
+                aria-label='payload loader button'
+                fullWidth={true}
+                variant='contained'
+                color='primary'
+                disabled={!eventTypeId || isLoading || disabled}
                 onClick={request}>
-                Check Payload
-                {isLoading && <CircularProgress aria-label='loading payload' size={20}/>}
+                {isLoading ? <CircularProgress aria-label='payload loader loading' size={26}/> : 'Check Payload'}
             </Button>
             {
                 openHelpDialog.current && response?.data.results && response.data.results.length === 0 &&
                 (
-                    <div aria-label='show payload help'>Sorry, no default payload!</div>
+                    <div aria-label='payload loader help'>Sorry, no default payload!</div>
                 )
             }
             {
                 response?.data.results && response.data.results.length > 0 &&
                 (
-                <div aria-label='schema payload'>{JSON.stringify(response.data.results[0].payload)}</div>
+                <div aria-label='payload loader schema'>{JSON.stringify(response.data.results[0].payload)}</div>
                 )
             }
         </div>

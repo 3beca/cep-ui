@@ -125,3 +125,34 @@ test('TargetCreate should show error when cannot create the target', async () =>
     expect(await screen.findByLabelText(/target creating error/i)).toHaveTextContent(targetError.message);
     expect(setTarget).toHaveBeenCalledTimes(0);
 });
+
+
+test('TargetCreate should show a Target disabled', async () => {
+    const target = generateTarget(1, 'test', 'test');
+    const clearTarget = jest.fn();
+    const setTarget = jest.fn();
+    render(<TargetCreate target={target} clearTarget={clearTarget} setTarget={setTarget} disabled={true}/>);
+
+    // Cancel selection
+    const clearButton = await screen.findByLabelText(/target selected clear/i);
+    userEvent.click(clearButton);
+    expect(clearTarget).toHaveBeenCalledTimes(0);
+});
+
+test('TargetCreate should show a Target disabled even when its not created', async () => {
+    const targetEmpty: Target = {
+        id: '',
+        name: 'Empty event type',
+        url: '',
+        createdAt: '',
+        updatedAt: ''
+    };
+    const clearTarget = jest.fn();
+    const setTarget = jest.fn();
+    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={true}/>);
+
+    // Cancel selection
+    const clearButton = await screen.findByLabelText(/target selected clear/i);
+    userEvent.click(clearButton);
+    expect(clearTarget).toHaveBeenCalledTimes(0);
+});

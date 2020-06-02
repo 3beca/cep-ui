@@ -9,6 +9,7 @@ import {useDebounce} from '../../services/use-debounce';
 export const createCustomFilterOptions = createFilterOptions;
 
 export type AutocompleteProps<T> = {
+    disabled?: boolean;
     options: T[];
     selected: T|null;
     setSelected(element: T|null): void;
@@ -24,6 +25,7 @@ export type AutocompleteProps<T> = {
 };
 export function Autocomplete<T extends EntityWithName>(
     {
+        disabled = false,
         options,
         selected,
         setSelected,
@@ -77,6 +79,7 @@ export function Autocomplete<T extends EntityWithName>(
 
     return (
         <MUIAutocomplete
+            disabled={disabled}
             autoComplete={true}
             fullWidth={true}
             id={elementId}

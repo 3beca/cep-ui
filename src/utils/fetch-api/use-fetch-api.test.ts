@@ -63,6 +63,47 @@ describe(
         );
 
         it(
+            'should receive a valid response and a error and clear last execution',
+            async () => {
+                const req: APIFetchQuery<{response: string}, {message: string}> = () => fetchApi<undefined, {response: string}, {message: string}>('https://use-fetch-api/hooktest', { method: 'GET' });
+                const {result, waitForNextUpdate} = renderHook(() => useFetchApi(req));
+
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
+
+                // Run query
+                server.get('/hooktest').reply(200, {response: 'Query received'});
+                act(() => {
+                    result.current.request();
+                });
+
+                // Start Query
+                expect(result.current.isLoading).toBe(true);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
+
+                // Wait to response Query
+                await waitForNextUpdate();
+
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toEqual({status: 200, data: {response: 'Query received'}});
+
+                // Clear query
+                server.get('/hooktest').reply(400, {message: 'Error received'});
+                act(() => {
+                    result.current.reset();
+                });
+
+                // Query status
+                expect(result.current.isLoading).toBe(false);
+                expect(result.current.error).toBe(undefined);
+                expect(result.current.response).toBe(undefined);
+            }
+        );
+
+        it(
             'should return an error when query fails to fetch api',
             async () => {
                 const req: APIFetchQuery<{response: string}, {message: string}> = () => fetchApi<undefined, {response: string}, {message: string}>('https://unknownserver', { method: 'GET' })

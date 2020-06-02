@@ -20,12 +20,15 @@ test(
         const setPayload = jest.fn();
         render(<PayloadLoader eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
 
-        const checkPayload = await screen.findByText(/check payload/i);
+        await screen.findByLabelText(/payload loader$/i);
+        const checkPayload = await screen.findByLabelText(/payload loader button/i);
         const eventLog = generateEventLogListWith(0);
         serverGetEventLogList(server, 1, 1, eventTypeId, 200, eventLog);
         userEvent.click(checkPayload);
-        await screen.findByLabelText(/loading payload/i);
-        await screen.findByLabelText(/show payload help/i);
+        expect(await screen.findByLabelText(/payload loader button/i)).toBeDisabled();
+        await screen.findByLabelText(/payload loader loading/i);
+        await screen.findByLabelText(/payload loader help/i);
+        expect(await screen.findByLabelText(/payload loader button/i)).not.toBeDisabled();
     }
 );
 
@@ -37,11 +40,26 @@ test(
         const setPayload = jest.fn();
         render(<PayloadLoader eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
 
-        const checkPayload = await screen.findByText(/check payload/i);
+        const checkPayload = await screen.findByLabelText(/payload loader button/i);
         const eventLog = generateEventLogListWith(1);
         serverGetEventLogList(server, 1, 1, eventTypeId, 200, eventLog);
         userEvent.click(checkPayload);
-        await screen.findByLabelText(/loading payload/i);
-        await screen.findByLabelText(/schema payload/i);
+        expect(await screen.findByLabelText(/payload loader button/i)).toBeDisabled();
+        await screen.findByLabelText(/payload loader loading/i);
+        await screen.findByLabelText(/payload loader schema/i);
+        expect(await screen.findByLabelText(/payload loader button/i)).not.toBeDisabled();
+    }
+);
+
+test(
+    'PayloadLoader should show disabled',
+    async () => {
+        const eventTypeId = 'eventtypeid';
+        const payload: Payload|null = null;
+        const setPayload = jest.fn();
+        render(<PayloadLoader eventTypeId={eventTypeId} payload={payload} setPayload={setPayload} disabled={true}/>);
+
+        await screen.findByLabelText(/payload loader disabled/i);
+        expect(await screen.findByLabelText(/payload loader button/i)).toBeDisabled();
     }
 );

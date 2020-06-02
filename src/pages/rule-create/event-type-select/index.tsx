@@ -17,10 +17,11 @@ export const emptyEventType: EventType = {
 export type EventTypeSelectorProps = {
     selected: EventType|null;
     onSelected: (eventType: EventType|null) => void;
+    disabled?: boolean;
 };
-export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({selected, onSelected}) => {
+export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({selected, onSelected, disabled = false}) => {
     const styles = useStyles();
-    const {accumulated, isLoading, changeFilter} = useGetListAccumulated<EventType>(ENTITY.EVENT_TYPES, 1, 10);
+    const {accumulated, isLoading, changeFilter} = useGetListAccumulated<EventType>(ENTITY.EVENT_TYPES, 1, 10, '', !disabled && !selected);
     const handleClearSelection = React.useCallback(() => onSelected(null), [onSelected]);
 
     // Render component
@@ -28,16 +29,17 @@ export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({selected, o
         return (
             <Paper
                 className={styles.container}
-                aria-label={`eventtype selector`}>
-                <EventTypeCreate eventType={selected} clearEventType={handleClearSelection} setEventType={onSelected}/>
+                aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}>
+                <EventTypeCreate eventType={selected} clearEventType={handleClearSelection} setEventType={onSelected} disabled={disabled}/>
             </Paper>
         );
     }
     return (
         <Paper
             className={styles.container}
-            aria-label={`eventtype selector`}>
+            aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}>
             <Autocomplete<EventType>
+                disabled={disabled}
                 options={accumulated}
                 selected={selected}
                 setSelected={onSelected}
