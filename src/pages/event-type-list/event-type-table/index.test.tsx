@@ -21,9 +21,8 @@ jest.mock('@material-ui/core/Snackbar', () => {
 
 test('EventTypeList snapshot', async () => {
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10);
-    const { container, getAllByLabelText } = render(<EventTypeTable />);
-    await waitFor(() => expect(getAllByLabelText(/element row eventtype/)).toHaveLength(10));
-    expect(container).toMatchSnapshot();
+    render(<EventTypeTable />);
+    expect(await screen.findAllByLabelText(/element row eventtype/)).toHaveLength(10);
 });
 
 runPaginatedTableTest(

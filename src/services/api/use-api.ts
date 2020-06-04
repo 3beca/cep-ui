@@ -34,6 +34,7 @@ export type useGetListApi<R, E> = {
     error: APIError<E> | undefined;
 };
 export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size: number, filter: string|GetListRequestOptions = '', runOnRender: boolean = true) => {
+    const prevRequest = React.useRef< () => void>();
     const req = React.useCallback(
         () => api.getListRequest<T>(ENTITIES[entity], page, size, filter),
         [page, size, filter, entity],
@@ -41,9 +42,12 @@ export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size:
     const {request, ...state} = useFetchApi(req);
     React.useEffect(
         () => {
-            runOnRender && request();
+            if (runOnRender && (prevRequest.current !== request)) {
+                request();
+                prevRequest.current = request;
+            }
         },
-        [request, runOnRender]
+        [request, runOnRender, prevRequest]
     );
     return {...state, request};
 };

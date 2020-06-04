@@ -58,12 +58,13 @@ test('Target should select the third element from the options and change to deta
     const {rerender} = render(<TargetSelector selected={null} onSelected={onSelected}/>);
 
     await screen.findByLabelText('target name');
+    await screen.findByLabelText(/loading targets/i);
+    await screen.findAllByLabelText(/search a target/i);
 
     // Open options when click in input
     const prefix = 'test2';
     const filteredResult = generateTargetListWith(5, false, false, '', prefix + ' ');
     serverGetTargetList(nockServer, 1, 10, prefix, 200, filteredResult);
-    // screen.getByLabelText(/loading eventtypes/i);
     const input = await screen.findByLabelText(/search a target/i);
     await userEvent.type(input, prefix);
     act(() => void jest.runOnlyPendingTimers());
@@ -79,6 +80,8 @@ test('Target should select the third element from the options and change to deta
     act(() => void jest.runOnlyPendingTimers());
     expect(screen.queryAllByRole('option')).toHaveLength(0);
     expect(input).toHaveAttribute('value', 'test2 Target2');
+    await screen.findByLabelText(/loading targets/i);
+    expect( await screen.findByLabelText(/search a target/i)).toHaveAttribute('value', 'test2 Target2');
     expect(onSelected).toHaveBeenCalledTimes(1);
     expect(onSelected).toHaveBeenNthCalledWith(1, fakeTarget);
 
@@ -89,15 +92,13 @@ test('Target should select the third element from the options and change to deta
     expect(onSelected).toHaveBeenNthCalledWith(2, fakeTarget);
 
     // Cancel selection
-    serverGetTargetList(nockServer, 1, 10, prefix, 200, generateTargetListWith(10, false, false));
     const clearButton = await screen.findByLabelText(/target selected clear/i);
     userEvent.click(clearButton);
-    act(() => void jest.runOnlyPendingTimers());
     expect(onSelected).toHaveBeenCalledTimes(3);
     expect(onSelected).toHaveBeenNthCalledWith(3, null);
 
-    serverGetTargetList(nockServer, 1, 10, '', 200, generateTargetListWith(10, false, false));
     rerender(<TargetSelector selected={null} onSelected={onSelected}/>);
+    serverGetTargetList(nockServer, 1, 10, '', 200, generateTargetListWith(10, false, false));
     act(() => void jest.runOnlyPendingTimers());
     await screen.findByLabelText(/loading targets/i);
     await screen.findByLabelText(/search a target/i);

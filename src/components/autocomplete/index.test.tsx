@@ -162,7 +162,8 @@ test('Autocomplete should filter options, change filter and select one', async (
     act(() => void jest.runOnlyPendingTimers());
     expect(input).toHaveValue('element 12');
     expect(setSelected).toHaveBeenNthCalledWith(1, options[4]);
-    expect(changeFilter).toHaveBeenCalledTimes(0);
+    expect(changeFilter).toHaveBeenCalledTimes(1);
+    expect(changeFilter).toHaveBeenNthCalledWith(1, options[4].name);
     await screen.findAllByLabelText(/search a element/i);
     expect(screen.queryAllByRole('option')).toHaveLength(0);
 });

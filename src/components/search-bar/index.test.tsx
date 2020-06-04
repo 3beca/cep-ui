@@ -1,28 +1,28 @@
 import * as React from 'react';
-import {render, act} from '@testing-library/react';
+import {render, act, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import SearchBar from './index';
 
 beforeAll(() => jest.useFakeTimers());
 afterAll(() => jest.useRealTimers());
 
-test('SearchBar should render with a default hint text and snap', () => {
-    const {getByPlaceholderText, rerender, container} = render(<SearchBar/>);
+test('SearchBar should render with a default hint text and snap', async () => {
+    const {rerender, container} = render(<SearchBar/>);
 
-    getByPlaceholderText(/search for.../i);
+    await screen.findByPlaceholderText(/search for.../i);
 
     rerender(<SearchBar hint={'Enter a name...'}/>);
-    getByPlaceholderText(/enter a name../i);
+    await screen.findByPlaceholderText(/enter a name../i);
     expect(container).toMatchSnapshot();
 });
 
-test('SearchBar should fire onSearchfor after write a text with default params', () => {
+test('SearchBar should fire onSearchfor after write a text with default params', async () => {
     const onSearchfor = jest.fn();
-    const {getByLabelText} = render(<SearchBar onSearchFor={onSearchfor}/>);
+    render(<SearchBar onSearchFor={onSearchfor}/>);
 
     const searchText = 'juanjo';
-    const input = getByLabelText(/search input/i) as HTMLInputElement;
-    userEvent.type(input, searchText);
+    const input = await screen.findByLabelText(/search input/i) as HTMLInputElement;
+    await userEvent.type(input, searchText);
 
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
@@ -31,17 +31,17 @@ test('SearchBar should fire onSearchfor after write a text with default params',
     expect(onSearchfor).toHaveBeenNthCalledWith(1, searchText);
 });
 
-test('SearchBar should fire onSearchfor after write a text with min size', () => {
+test('SearchBar should fire onSearchfor after write a text with min size', async () => {
     const onSearchfor = jest.fn();
-    const {getByLabelText} = render(
+    render(
         <SearchBar
             onSearchFor={onSearchfor}
             minLength={5}/>
     );
 
     const searchText = 'jua';
-    const input = getByLabelText(/search input/i) as HTMLInputElement;
-    userEvent.type(input, searchText);
+    const input = await screen.findByLabelText(/search input/i) as HTMLInputElement;
+    await userEvent.type(input, searchText);
 
     expect(input.value).toEqual(searchText);
     expect(onSearchfor).toHaveBeenCalledTimes(0);
@@ -51,14 +51,14 @@ test('SearchBar should fire onSearchfor after write a text with min size', () =>
     expect(onSearchfor).toHaveBeenCalledTimes(0);
 
     const longText = 'njo';
-    userEvent.type(input, longText);
+    await userEvent.type(input, longText);
     act(() => void jest.runOnlyPendingTimers());
     expect(onSearchfor).toHaveBeenNthCalledWith(1, searchText + longText);
 });
 
 test('SearchBar should fire onSearchfor on each key pressed', async () => {
     const onSearchfor = jest.fn();
-    const {getByLabelText} = render(
+    render(
         <SearchBar
             onSearchFor={onSearchfor}
             minLength={1}
@@ -66,10 +66,11 @@ test('SearchBar should fire onSearchfor on each key pressed', async () => {
     );
 
     const searchText = 'juanjo';
-    const input = getByLabelText(/search input/i) as HTMLInputElement;
-    searchText.split('').map(async c => {
-        userEvent.type(input, c);
-    });
+    const input = await screen.findByLabelText(/search input/i) as HTMLInputElement;
+    const chars = searchText.split('');
+    for(const char of chars) {
+        await userEvent.type(input, char);
+    }
     act(() => void jest.runOnlyPendingTimers());
     expect(onSearchfor).toHaveBeenCalledTimes(6);
     searchText.split('').map((c, i) => expect(onSearchfor).toHaveBeenNthCalledWith(i+1, searchText.substring(0, i + 1)));

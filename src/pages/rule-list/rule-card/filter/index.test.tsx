@@ -10,11 +10,10 @@ test(
     'Render RuleFilter with Passthrow when no filter received',
     async () => {
         const filter = {} as RuleFilter;
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         expect(await screen.findByLabelText(/filter expression passthrow/i)).toHaveTextContent(/passthrow/i);
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -58,7 +57,7 @@ test(
             temperature: 10,
             humidity: 80
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         expect(await screen.findAllByLabelText(/filter expression comparator/i)).toHaveLength(2);
@@ -79,7 +78,6 @@ test(
         expect(values[0]).toHaveTextContent(/10/i);
         expect(values[1]).toHaveTextContent(/80/i);
 
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -93,7 +91,7 @@ test(
             field4: {_lt: 40},
             field5: {_lte: 50},
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         expect(await screen.findAllByLabelText(/filter expression comparator/i)).toHaveLength(5);
@@ -123,7 +121,6 @@ test(
         expect(values[3]).toHaveTextContent(/40/i);
         expect(values[4]).toHaveTextContent(/50/i);
 
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -142,7 +139,7 @@ test(
                 _near: location
             }
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
@@ -150,7 +147,6 @@ test(
         await screen.findByLabelText(/filter expression field/i);
         expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent('is to less than 6.5 kms. from [37.12, -1.12]');
 
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -169,7 +165,7 @@ test(
                 _near: location
             }
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
@@ -177,7 +173,6 @@ test(
         await screen.findByLabelText(/filter expression field/i);
         expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent('is to more than 6.5 kms. from [37.12, -1.12]');
 
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -197,7 +192,7 @@ test(
                 _near: location
             }
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
@@ -205,7 +200,6 @@ test(
         await screen.findByLabelText(/filter expression field/i);
         expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent('is between 500 mts. and 1.5 kms. from [37.12, -1.12]');
 
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -240,7 +234,7 @@ test(
                 {field2: {_lte: 50}}
             ]
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         await screen.findByLabelText(/container expressions$/i);
@@ -266,7 +260,6 @@ test(
         expect(values[1]).toHaveTextContent(/50/i);
         expect(values[2]).toHaveTextContent(/50/i);
 
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -280,7 +273,7 @@ test(
                 {field2: {_lte: 50}}
             ]
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         await screen.findByLabelText(/container expressions$/i);
@@ -306,7 +299,6 @@ test(
         expect(values[1]).toHaveTextContent(/50/i);
         expect(values[2]).toHaveTextContent(/50/i);
 
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -320,7 +312,7 @@ test(
                 {field2: {_lte: 50}}
             ]
         };
-        const {container} = render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
+        render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
         await screen.findByLabelText(/filters container/i);
         await screen.findByLabelText(/container expressions$/i);
@@ -346,7 +338,6 @@ test(
         expect(values[1]).toHaveTextContent(/50/i);
         expect(values[2]).toHaveTextContent(/50/i);
 
-        expect(container).toMatchSnapshot();
     }
 );
 

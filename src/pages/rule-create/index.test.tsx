@@ -16,7 +16,7 @@ import { BASE_URL } from '../../services/config';
 import { Rule, RuleError } from '../../services/api';
 
 const fakeUseParams = useParams as unknown as jest.Mock;
-const fakeLink = Link as unknown as {linkAction: jest.Mock};;
+const fakeLink = Link as unknown as {linkAction: jest.Mock};
 jest.mock('react-router-dom', () => {
     const React = require('react');
     const useParams = jest.fn();
@@ -93,7 +93,7 @@ test('RuleCreatePage should create a Passthrow rule', async () => {
     expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(target.url);
 
     const ruleName = 'Test-New-Rule';
-    userEvent.type(await screen.findByLabelText(/rule creator name/i), ruleName);
+    await userEvent.type(await screen.findByLabelText(/rule creator name/i), ruleName);
     userEvent.click(await screen.findByLabelText(/rule creator skip consecutives/i));
     expect(await screen.findByLabelText(/rule create button/i)).not.toBeDisabled();
 
@@ -163,7 +163,7 @@ test('RuleCreatePage should show an error when create rule fails', async () => 
     expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(target.url);
 
     const ruleName = 'Test-New-Rule';
-    userEvent.type(await screen.findByLabelText(/rule creator name/i), ruleName);
+    await userEvent.type(await screen.findByLabelText(/rule creator name/i), ruleName);
     userEvent.click(await screen.findByLabelText(/rule creator skip consecutives/i));
     expect(await screen.findByLabelText(/rule create button/i)).not.toBeDisabled();
 
@@ -231,7 +231,7 @@ test('RuleCreatePage should create a new Rule after create one', async () => {
     expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(target.url);
 
     const ruleName = 'Test-New-Rule';
-    userEvent.type(await screen.findByLabelText(/rule creator name/i), ruleName);
+    await userEvent.type(await screen.findByLabelText(/rule creator name/i), ruleName);
     userEvent.click(await screen.findByLabelText(/rule creator skip consecutives/i));
     expect(await screen.findByLabelText(/rule create button/i)).not.toBeDisabled();
 
@@ -265,7 +265,7 @@ test('RuleCreatePage should create a new Rule after create one', async () => {
 
     const secondRule = 'Second-rule';
     userEvent.clear(await screen.findByLabelText(/rule creator name/i));
-    userEvent.type(await screen.findByLabelText(/rule creator name/i), secondRule);
+    await userEvent.type(await screen.findByLabelText(/rule creator name/i), secondRule);
     ruleBody.name = secondRule;
     ruleCreated.name = secondRule;
     serverCreateRule(setupNock(BASE_URL), ruleBody, 201, ruleCreated);

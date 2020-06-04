@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {render, waitFor} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 
 import TargetTable from './index';
 import {
@@ -16,9 +16,8 @@ import { BASE_URL } from '../../../services/config';
 
 test('TargetTable snapshot', async () => {
     serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200);;
-    const {container, getAllByLabelText} = render(<TargetTable/>);
-    await waitFor(() => expect(getAllByLabelText('element row target')).toHaveLength(10));
-    expect(container).toMatchSnapshot();
+    render(<TargetTable/>);
+    expect(await screen.findAllByLabelText('element row target')).toHaveLength(10);
 });
 
 runPaginatedTableTest(

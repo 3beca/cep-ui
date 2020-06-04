@@ -55,7 +55,7 @@ export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
             <MoreVertIcon/>
         </IconButton>
         <Menu
-            aria-label='setting dialog card rule'
+            aria-label={`setting dialog card rule ${open ? 'visible' : 'hidden'}`}
             keepMounted={true}
             open={open}
             anchorEl={anchorElement}

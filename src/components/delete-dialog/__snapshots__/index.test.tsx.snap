@@ -3,7 +3,7 @@
 exports[`Should render a dialog with a list of 4 EventTypes to delete and fail to delete 2 and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-container-322"
+    class="makeStyles-container-28"
   >
     <div
       aria-label="title"
@@ -17,16 +17,16 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
       </h2>
     </div>
     <div
-      class="MuiDialogContent-root makeStyles-dialogContent-324 MuiDialogContent-dividers"
+      class="MuiDialogContent-root makeStyles-dialogContent-30 MuiDialogContent-dividers"
       id="icon-dialog-content"
     >
       <div
         aria-label="elements deleted"
-        class="makeStyles-elementList-325"
+        class="makeStyles-elementList-31"
       >
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-327"
+          class="makeStyles-elementItem-33"
         >
           <div
             aria-label="deleted element"
@@ -41,7 +41,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             aria-label="success message"
           >
             <span
-              class="MuiTypography-root makeStyles-successText-330 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-successText-36 MuiTypography-caption"
             >
               This entity has been deleted successfuly
             </span>
@@ -49,7 +49,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
         </div>
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-327"
+          class="makeStyles-elementItem-33"
         >
           <div
             aria-label="deleted element"
@@ -64,7 +64,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             aria-label="error message"
           >
             <span
-              class="MuiTypography-root makeStyles-errorText-329 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-errorText-35 MuiTypography-caption"
             >
               Error: 
               cannot delete eventtype
@@ -73,7 +73,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
         </div>
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-327"
+          class="makeStyles-elementItem-33"
         >
           <div
             aria-label="deleted element"
@@ -88,7 +88,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             aria-label="error message"
           >
             <span
-              class="MuiTypography-root makeStyles-errorText-329 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-errorText-35 MuiTypography-caption"
             >
               Error: 
               This element cannot be deleted
@@ -97,7 +97,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
         </div>
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-327"
+          class="makeStyles-elementItem-33"
         >
           <div
             aria-label="deleted element"
@@ -112,7 +112,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
             aria-label="success message"
           >
             <span
-              class="MuiTypography-root makeStyles-successText-330 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-successText-36 MuiTypography-caption"
             >
               This entity has been deleted successfuly
             </span>
@@ -124,6 +124,8 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
       aria-label="element loader"
     >
       <div
+        aria-valuemax="100"
+        aria-valuemin="0"
         aria-valuenow="100"
         class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
         role="progressbar"
@@ -153,7 +155,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
         />
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-323 Mui-disabled Mui-disabled"
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-29 Mui-disabled Mui-disabled"
         disabled=""
         tabindex="-1"
         type="button"
@@ -172,7 +174,7 @@ exports[`Should render a dialog with a list of 4 EventTypes to delete and fail t
 exports[`Should render a dialog with a list of EventTypes to delete and delete all items and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-container-215"
+    class="makeStyles-container-19"
   >
     <div
       aria-label="title"
@@ -186,16 +188,16 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
       </h2>
     </div>
     <div
-      class="MuiDialogContent-root makeStyles-dialogContent-217 MuiDialogContent-dividers"
+      class="MuiDialogContent-root makeStyles-dialogContent-21 MuiDialogContent-dividers"
       id="icon-dialog-content"
     >
       <div
         aria-label="elements deleted"
-        class="makeStyles-elementList-218"
+        class="makeStyles-elementList-22"
       >
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-220"
+          class="makeStyles-elementItem-24"
         >
           <div
             aria-label="deleted element"
@@ -210,7 +212,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
             aria-label="success message"
           >
             <span
-              class="MuiTypography-root makeStyles-successText-223 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-successText-27 MuiTypography-caption"
             >
               This entity has been deleted successfuly
             </span>
@@ -218,7 +220,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
         </div>
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-220"
+          class="makeStyles-elementItem-24"
         >
           <div
             aria-label="deleted element"
@@ -233,7 +235,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
             aria-label="success message"
           >
             <span
-              class="MuiTypography-root makeStyles-successText-223 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-successText-27 MuiTypography-caption"
             >
               This entity has been deleted successfuly
             </span>
@@ -241,7 +243,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
         </div>
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-220"
+          class="makeStyles-elementItem-24"
         >
           <div
             aria-label="deleted element"
@@ -256,7 +258,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
             aria-label="success message"
           >
             <span
-              class="MuiTypography-root makeStyles-successText-223 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-successText-27 MuiTypography-caption"
             >
               This entity has been deleted successfuly
             </span>
@@ -268,6 +270,8 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
       aria-label="element loader"
     >
       <div
+        aria-valuemax="100"
+        aria-valuemin="0"
         aria-valuenow="100"
         class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
         role="progressbar"
@@ -297,7 +301,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
         />
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-216 Mui-disabled Mui-disabled"
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-20 Mui-disabled Mui-disabled"
         disabled=""
         tabindex="-1"
         type="button"
@@ -316,7 +320,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and delete a
 exports[`Should render a dialog with a list of EventTypes to delete and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-container-108"
+    class="makeStyles-container-10"
   >
     <div
       aria-label="title"
@@ -330,16 +334,16 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
       </h2>
     </div>
     <div
-      class="MuiDialogContent-root makeStyles-dialogContent-110 MuiDialogContent-dividers"
+      class="MuiDialogContent-root makeStyles-dialogContent-12 MuiDialogContent-dividers"
       id="icon-dialog-content"
     >
       <div
         aria-label="elements to delete"
-        class="makeStyles-elementList-111"
+        class="makeStyles-elementList-13"
       >
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-113"
+          class="makeStyles-elementItem-15"
         >
           <div>
             <h5
@@ -350,7 +354,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
           </div>
           <div>
             <span
-              class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-captionText-16 MuiTypography-caption"
             >
               0__3
             </span>
@@ -358,7 +362,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
         </div>
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-113"
+          class="makeStyles-elementItem-15"
         >
           <div>
             <h5
@@ -369,7 +373,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
           </div>
           <div>
             <span
-              class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-captionText-16 MuiTypography-caption"
             >
               1__3
             </span>
@@ -377,7 +381,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
         </div>
         <div
           aria-label="element to delete"
-          class="makeStyles-elementItem-113"
+          class="makeStyles-elementItem-15"
         >
           <div>
             <h5
@@ -388,7 +392,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
           </div>
           <div>
             <span
-              class="MuiTypography-root makeStyles-captionText-114 MuiTypography-caption"
+              class="MuiTypography-root makeStyles-captionText-16 MuiTypography-caption"
             >
               2__3
             </span>
@@ -400,6 +404,8 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
       aria-label="element loader"
     >
       <div
+        aria-valuemax="100"
+        aria-valuemin="0"
         aria-valuenow="100"
         class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
         role="progressbar"
@@ -429,7 +435,7 @@ exports[`Should render a dialog with a list of EventTypes to delete and snapshot
         />
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-109"
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-11"
         tabindex="0"
         type="button"
       >
@@ -481,6 +487,8 @@ exports[`Should render a dialog with empty message and snapshot 1`] = `
       aria-label="element loader"
     >
       <div
+        aria-valuemax="100"
+        aria-valuemin="0"
         aria-valuenow="100"
         class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
         role="progressbar"
@@ -529,7 +537,7 @@ exports[`Should render a dialog with empty message and snapshot 1`] = `
 exports[`Should render a dialog with error when evettypes is invalid and snapshot 1`] = `
 <div>
   <div
-    class="makeStyles-container-429"
+    class="makeStyles-container-37"
   >
     <div
       aria-label="title"
@@ -543,7 +551,7 @@ exports[`Should render a dialog with error when evettypes is invalid and snapsho
       </h2>
     </div>
     <div
-      class="MuiDialogContent-root makeStyles-dialogContent-431 MuiDialogContent-dividers"
+      class="MuiDialogContent-root makeStyles-dialogContent-39 MuiDialogContent-dividers"
       id="icon-dialog-content"
     >
       <div
@@ -560,6 +568,8 @@ exports[`Should render a dialog with error when evettypes is invalid and snapsho
       aria-label="element loader"
     >
       <div
+        aria-valuemax="100"
+        aria-valuemin="0"
         aria-valuenow="100"
         class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
         role="progressbar"
@@ -589,7 +599,7 @@ exports[`Should render a dialog with error when evettypes is invalid and snapsho
         />
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-430 Mui-disabled Mui-disabled"
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-deleteButton-38 Mui-disabled Mui-disabled"
         disabled=""
         tabindex="-1"
         type="button"

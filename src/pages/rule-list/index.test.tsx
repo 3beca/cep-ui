@@ -47,12 +47,11 @@ test(
     'RuleListPage should render Empty List when no elements and snap',
     async () => {
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(0, false, false));
-        const {container} = renderInsideApp(<RuleListPage/>);
+        renderInsideApp(<RuleListPage/>);
 
         expect(await screen.findByTestId(/empty-view-row/i)).toBeInTheDocument();
         expect(await screen.findByTestId(/empty-view-row/i)).toHaveTextContent(/there are no rules created yet/i);
         await screen.findByLabelText(/add rule/i);
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -60,12 +59,11 @@ test(
     'RuleListPage should render End List message when no more elements to load and snap',
     async () => {
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(10, false, false));
-        const {container} = renderInsideApp(<RuleListPage/>);
+        renderInsideApp(<RuleListPage/>);
 
         expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(10);
         expect(await screen.findByTestId(/empty-view-row/i)).toHaveTextContent(/you reached the end of the list/i);
         await screen.findByLabelText(/add rule/i);
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -73,13 +71,12 @@ test(
     'RuleListPage should render 20 cards and a create button and snapshot',
     async () => {
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(initialPageSize, false, false));
-        const {container} = renderInsideApp(<RuleListPage/>);
+        renderInsideApp(<RuleListPage/>);
 
         expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
         expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(initialPageSize);
         expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(initialPageSize);
         await screen.findByLabelText(/add rule/i);
-        expect(container).toMatchSnapshot();
     }
 );
 
@@ -127,7 +124,7 @@ test(
 
         const searchText = 'rule-name';
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(5, false, false));
-        userEvent.type(input, searchText);
+        await userEvent.type(input, searchText);
         act(() => {
             jest.runOnlyPendingTimers();
         });
@@ -152,7 +149,7 @@ test(
         const searchText = 'rule-name';
         const input = await screen.findByLabelText(/search input/i) as HTMLInputElement;
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(0, false, false));
-        userEvent.type(input, searchText);
+        await userEvent.type(input, searchText);
         act(() => {
             jest.runOnlyPendingTimers();
         });

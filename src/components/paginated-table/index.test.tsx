@@ -31,12 +31,11 @@ const SampleTable: React.FC<{rows?: number}> = ({rows = 5}) => {
     );
 };
 test('PaginatedTable snapshot without data', () => {
-    const { container } = render(<PaginatedTable isEmpty={true}/>);
-    expect(container).toMatchSnapshot();
+    render(<PaginatedTable isEmpty={true}/>);
 });
 
 test('PaginatedTable snapshot with data and pagination', () => {
-    const { container } = render(
+    render(
         <PaginatedTable
             isLoading={false}
             page={2}
@@ -44,13 +43,11 @@ test('PaginatedTable snapshot with data and pagination', () => {
         >
             <SampleTable/>
         </PaginatedTable>
-
     );
-    expect(container).toMatchSnapshot();
 });
 
 test('PaginatedTable snapshot reached last page', () => {
-    const { container } = render(
+    render(
         <PaginatedTable
             isLoading={false}
             isEmpty={true}
@@ -59,33 +56,29 @@ test('PaginatedTable snapshot reached last page', () => {
         >
             <SampleTable/>
         </PaginatedTable>
-
     );
-    expect(container).toMatchSnapshot();
 });
 
 test('PaginatedTable snapshot while loading with previous data and pagination', () => {
-    const { container } = render(
+    render(
         <PaginatedTable
             isLoading={true}
             page={2}
             size={5}
         >
             <SampleTable/>
-        </PaginatedTable>
+      </PaginatedTable>
     );
-    expect(container).toMatchSnapshot();
 });
 
 test('PaginatedTable snapshot while loading without data', () => {
-    const { container } = render(
+    render(
         <PaginatedTable
             isLoading={true}
             page={1}
             size={5}
-        />
+      />
     );
-    expect(container).toMatchSnapshot();
 });
 
 test('PaginatedTable render without data should show the empty data message', async () => {

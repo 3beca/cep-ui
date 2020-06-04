@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import nock from 'nock/types';
 import { ComponentWithUseSelectableProps } from '../services/use-selectable-list';
 import { ServiceList } from '../services/api';
@@ -19,45 +19,42 @@ export const runSelectableTableTest = <R, E>(
     test(`${title} snapshot when no element selected`, async () => {
         const events = dataGenerator(5, true, false);
         serverResponse(1, 10, 200, events);
-        const {container, getAllByLabelText, getAllByRole} = render(
+        render(
             <SelectableTable/>
         );
-        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
-        const elements = getAllByRole(/element-selector$/);
+        const elements = await screen.findAllByRole(/element-selector$/);
 
         expect(elements.length).toBe(5);
-        expect(container).toMatchSnapshot();
     });
 
     test(`${title} snapshot when one element selected`, async () => {
         const events = dataGenerator(5, true, false);
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
-        const {container, getAllByLabelText, getAllByRole} = render(
+        render(
             <SelectableTable/>
         );
-        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
-        const elements = getAllByRole(/element-selector$/);
+        const elements = await screen.findAllByRole(/element-selector$/);
 
         expect(elements.length).toBe(5);
         fireEvent.click(elements[0], {target: {value: true}});
-        expect(container).toMatchSnapshot();
     });
 
     test(`${title} snapshot when all element selected`, async () => {
         const events = dataGenerator(5, true, false);
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
-        const {container, getAllByLabelText, getByRole} = render(
+        render(
             <SelectableTable/>
         );
-        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
-        const selectorAll = getByRole(/element-selector-all$/);
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
+        const selectorAll = await screen.findByRole(/element-selector-all$/);
 
         fireEvent.click(selectorAll, {target: {value: true}});
-        expect(container).toMatchSnapshot();
     });
 
     test(`${title} should keep checked elements and notify on each element checked change`, async () => {
@@ -65,14 +62,14 @@ export const runSelectableTableTest = <R, E>(
         const events = dataGenerator(5, true, false);
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
-        const {getAllByLabelText, getAllByRole, getByTitle, getByTestId} = render(
+        render(
             <SelectableTable
                 onSelected={onSelected}
             />
         );
-        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
-        const elements = getAllByRole(/element-selector$/);
+        const elements = await screen.findAllByRole(/element-selector$/);
 
         expect(elements.length).toBe(5);
         const [first, second, thrid, fourth, fifth] = elements;
@@ -124,14 +121,14 @@ export const runSelectableTableTest = <R, E>(
         // Forward page should reset selecteds
         const secondPageOfEvents = dataGenerator(5, false, true);
         serverResponse(2, 10, 200, secondPageOfEvents);
-        const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
+        const nextButton = await screen.findByTitle(/next page/i) as HTMLButtonElement;
         fireEvent.click(nextButton);
-        await waitFor(() => expect(() => getByTestId(/loading-view-row/)).toThrowError());
+        await waitFor(() => expect(() => screen.getByTestId(/loading-view-row/)).toThrowError());
 
         // Expect new elements to be unchecked
         // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar
         // si un componente Check de MUI está seleccionado o plantear mockearlo
-        const nextElements = getAllByRole(/element-selector$/);
+        const nextElements = await screen.findAllByRole(/element-selector$/);
         nextElements.map(e => expectMUICheckboxNotChecked(e));
         //elements.map(e => expectMUICheckboxNotChecked(e));
     });
@@ -141,15 +138,15 @@ export const runSelectableTableTest = <R, E>(
         const events = dataGenerator(5, true, false);
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
-        const {getByRole, getAllByRole, getAllByLabelText, getByTitle, getByTestId} = render(
+        render(
             <SelectableTable
                 onSelected={onSelected}
             />
         );
-        await waitFor(() => expect(getAllByLabelText('element name')).toHaveLength(5));
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
-        const selectAllChecker = getByRole(/element-selector-all/);
-        const elements = getAllByRole(/element-selector$/);
+        const selectAllChecker = await screen.findByRole(/element-selector-all/);
+        const elements = await screen.findAllByRole(/element-selector$/);
 
         // Check All elements
         fireEvent.click(selectAllChecker, {target: {value: true}});
@@ -174,14 +171,14 @@ export const runSelectableTableTest = <R, E>(
         fireEvent.click(selectAllChecker, {target: {value: true}});
         const secondPageOfEvents = dataGenerator(5, false, true);
         serverResponse(2, 10, 200, secondPageOfEvents);
-        const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
+        const nextButton = await screen.findByTitle(/next page/i) as HTMLButtonElement;
         fireEvent.click(nextButton);
-        await waitFor(() => expect(() => getByTestId(/loading-view-row/)).toThrowError());
+        await waitFor(() => expect(() => screen.getByTestId(/loading-view-row/)).toThrowError());
 
         // Expect new elements to be unchecked
         // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar
         // si un componente Check de MUI está seleccionado o plantear mockearlo
-        const nextElements = getAllByRole(/element-selector$/);
+        const nextElements = await screen.findAllByRole(/element-selector$/);
         nextElements.map(e => expectMUICheckboxNotChecked(e));
         expectMUICheckboxNotChecked(selectAllChecker);
     });
