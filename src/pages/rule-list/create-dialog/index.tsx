@@ -122,8 +122,8 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClo
             </DialogContent>
             <Divider/>
             <DialogActions aria-label='actions'>
-                <Button onClick={onClose}>Close</Button>
-                <Button onClick={fireSelected} disabled={!type} className={styles.selectButton}>Select</Button>
+                <Button onClick={onClose} aria-label='close button'>Close</Button>
+                <Button onClick={fireSelected} disabled={!type} className={styles.selectButton} aria-label='select button'>Select</Button>
             </DialogActions>
         </Dialog>
     );

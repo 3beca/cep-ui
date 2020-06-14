@@ -6,8 +6,7 @@ import {
     serverGetRuleList,
     generateRuleListWith,
     screen,
-    act,
-    fireEvent
+    act
 } from '../../test-utils';
 import userEvent from '@testing-library/user-event';
 import RuleListPage  from './index';
@@ -140,7 +139,7 @@ test(
     async () => {
         jest.useFakeTimers();
         serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, generateRuleListWith(0, false, false));
-        const {container} = renderInsideApp(<RuleListPage/>);
+        renderInsideApp(<RuleListPage/>);
 
         expect(await screen.findByTestId(/empty-view-row/i)).toBeInTheDocument();
         expect(await screen.findByTestId(/empty-view-row/i)).toHaveTextContent(/there are no rules created yet/i);
@@ -156,7 +155,6 @@ test(
         await waitFor(() => expect(screen.queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
         expect(await screen.findByTestId(/empty-view-row/i)).toBeInTheDocument();
         expect(await screen.findByTestId(/empty-view-row/i)).toHaveTextContent(/There are no elements for "rule-name"/i);
-        expect(container).toMatchSnapshot();
         jest.useRealTimers();
     }
 );
@@ -183,7 +181,7 @@ test(
         const loadMore = await screen.findByLabelText(/load more rules/i);
 
         serverGetRuleList(setupNock(BASE_URL), initialPage + 1, initialPageSize, filter, 200, generateRuleListWith(5, false, true));
-        fireEvent.click(loadMore);
+        userEvent.click(loadMore);
         expect(await screen.findByTestId(/loading-view-row/i)).toBeInTheDocument();
         await waitFor(() => expect(screen.queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
         expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(15);

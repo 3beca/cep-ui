@@ -27,8 +27,8 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
         await dialog.findByLabelText(/title/i);
         await dialog.findByLabelText(/elements to delete/i);
         expect(await await dialog.findAllByLabelText(/element to delete/i)).toHaveLength(1);
-        const closeButton = await dialog.findByText(/^close$/i);
-        const deleteButton = await dialog.findByText(/^delete$/i);
+        const closeButton = await dialog.findByLabelText(/^close button$/i);
+        const deleteButton = await dialog.findByLabelText(/^delete button$/i);
 
         // First eventType should be deleted and reload list
         serverDeleteResponse(response.results[0].id, 204);
@@ -69,8 +69,8 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
         await dialog.findByLabelText(/title/i);
         await dialog.findByLabelText(/elements to delete/i);
         expect(await dialog.findAllByLabelText(/element to delete/i)).toHaveLength(2);
-        const closeButton = await dialog.findByText(/^close$/i);
-        const deleteButton = await dialog.findByText(/^delete$/i);
+        const closeButton = await dialog.findByLabelText(/^close button$/i);
+        const deleteButton = await dialog.findByLabelText(/^delete button$/i);
 
         // First eventType should be deleted and second rejected
         serverDeleteResponse(response.results[1].id, 200);

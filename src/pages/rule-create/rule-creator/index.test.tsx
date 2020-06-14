@@ -30,7 +30,7 @@ test('RuleCreator should create a new rule', async () => {
     const ruleName = 'rule-name';
     await userEvent.type(await screen.findByLabelText(/rule creator name/i), ruleName);
     expect(updateRule).toHaveBeenCalledTimes(9);
-    expect(updateRule).toHaveBeenNthCalledWith(9, {name: ruleName});
+    [...ruleName].map((ch, index) => expect(updateRule).toHaveBeenNthCalledWith(index + 1, {name: ch}))
     userEvent.click(await screen.findByLabelText(/rule creator skip consecutives/i));
     expect(updateRule).toHaveBeenCalledTimes(10);
     expect(updateRule).toHaveBeenNthCalledWith(10, {skipOnConsecutivesMatches: true});

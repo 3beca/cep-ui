@@ -33,8 +33,8 @@ const Actions: React.FC<{close():void; disableClose: boolean; disableDelete: boo
     const styles = useStyles();
     return (
         <DialogActions aria-label='actions'>
-            <Button onClick={close} disabled={disableClose}>Close</Button>
-            <Button onClick={deleteElements} disabled={disableDelete} className={styles.deleteButton}>Delete</Button>
+            <Button onClick={close} disabled={disableClose} aria-label='close button'>Close</Button>
+            <Button onClick={deleteElements} disabled={disableDelete} className={styles.deleteButton} aria-label='delete button'>Delete</Button>
         </DialogActions>
     );
 };

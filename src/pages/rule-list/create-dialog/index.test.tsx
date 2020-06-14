@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { render, fireEvent, waitFor, screen } from '../../../test-utils';
+import { render, waitFor, screen } from '../../../test-utils';
 import CreateRuleDialog from './index';
 import { RuleTypes } from '../../../services/api';
 import {useHistory} from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 
 const mockHistory = useHistory();
 const mockPush = mockHistory.push as jest.Mock;
@@ -27,14 +28,13 @@ test('CreateRuleDialog should render the create rules dialog', async () => {
     const onClose = jest.fn();
 
     // Render dialog
-    const {container, getByLabelText, getByText} = render(
+    render(
         <CreateRuleDialog isOpen={true}/>
     );
-    getByLabelText(/create rule dialog/i);
+    await screen.findByLabelText(/create rule dialog/i);
     expect(onClose).toBeCalledTimes(0);
-    getByText(/close/i);
-    expect(getByText(/^select$/i)).toBeDisabled();
-    expect(container).toMatchSnapshot();
+    await screen.findByLabelText(/close button/i);
+    expect(await screen.findByLabelText(/^select button$/i)).toBeDisabled();
 
 });
 
@@ -42,19 +42,19 @@ test('CreateRuleDialog should render dialog when click in icon dialog and close 
     const onClose = jest.fn();
 
     // Render dialog
-    const {getByLabelText, queryByLabelText, getByText, rerender} = render(
+    const {rerender} = render(
         <CreateRuleDialog isOpen={true} onClose={onClose}/>
     );
-    getByLabelText(/create rule dialog/i);
+    await screen.findByLabelText(/create rule dialog/i);
     expect(onClose).toBeCalledTimes(0);
-    const closeButton = getByText(/close/i);
+    const closeButton = await screen.findByLabelText(/close button/i);
 
     // close Dialog
-    fireEvent.click(closeButton);
+    userEvent.click(closeButton);
     expect(onClose).toBeCalledTimes(1);
 
     rerender(<CreateRuleDialog isOpen={false} onClose={onClose}/>);
-    await waitFor(() => expect(queryByLabelText(/create rule dialog/i)).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByLabelText(/create rule dialog/i)).not.toBeInTheDocument());
 });
 
 const runSelectCardTest = (ariaLabel: RegExp, typeSelected: RuleTypes|'realtime') => {
@@ -67,17 +67,17 @@ const runSelectCardTest = (ariaLabel: RegExp, typeSelected: RuleTypes|'realtime'
         );
         await screen.findByLabelText(/create rule dialog/i);
         expect(onClose).toBeCalledTimes(0);
-        await screen.findByText(/close/i);
-        const selectButton = await screen.findByText(/^select$/i);
+        await screen.findByLabelText(/close button/i);
+        const selectButton = await screen.findByLabelText(/^select button$/i);
         const cardRule = await screen.findByLabelText(ariaLabel);
         expect(selectButton).toBeDisabled();
 
         // Select rule
-        fireEvent.click(cardRule);
+        userEvent.click(cardRule);
         expect(selectButton).not.toBeDisabled();
 
         // Confirm select
-        fireEvent.click(selectButton);
+        userEvent.click(selectButton);
         expect(onClose).toBeCalledTimes(1);
         expect(mockPush).toHaveBeenNthCalledWith(1, '/rules/create/' + typeSelected);
 
