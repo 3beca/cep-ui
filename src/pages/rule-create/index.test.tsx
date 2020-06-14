@@ -362,4 +362,18 @@ test('RuleCreatePage for realtime rules should overwrite payload fields with the
     expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(eventType.url);
 
     // TODO: Create twice the same field
+    const addFieldButton = await screen.findByLabelText(/payload addfield button open dialog/i);
+    userEvent.click(addFieldButton);
+    await screen.findByLabelText(/payload addfield dialog$/i);
+
+    const stringFieldName = 'myNumericfield';
+    await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), stringFieldName);
+    userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
+    userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
+    expect(await screen.findAllByLabelText(/payload field$/)).toHaveLength(1);
+
+    await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), stringFieldName);
+    userEvent.click(await screen.findByLabelText(/payload addfield dialog number/i));
+    userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
+    expect(await screen.findAllByLabelText(/payload field$/)).toHaveLength(1);
 });

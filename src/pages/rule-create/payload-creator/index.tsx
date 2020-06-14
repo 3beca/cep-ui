@@ -227,7 +227,14 @@ export const PayloadCreator: React.FC<PayloadCreatorProps> = ({eventTypeId, disa
                         disabled={disabled}
                         updatePayload={(newPayloadField: PayloadField) => {
                             const currentPayload = !payload ? [] : payload;
-                            setPayload([...currentPayload, newPayloadField]);
+                            const sameFieldName = currentPayload.find(field => field.name === newPayloadField.name);
+                            if (sameFieldName) {
+                                sameFieldName.type = newPayloadField.type;
+                                setPayload([...payload]);
+                            }
+                            else {
+                                setPayload([...currentPayload, newPayloadField]);
+                            }
                         }}/>
                 </IconDialog>
                 <PayloadDownloader

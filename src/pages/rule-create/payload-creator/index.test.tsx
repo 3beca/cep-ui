@@ -169,7 +169,7 @@ test(
         const locationFieldName = 'myLocationfield';
         await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), locationFieldName);
         userEvent.click(await screen.findByLabelText(/payload addfield dialog location/i));
-        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i))
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
         const expectedLocationPayload: Payload = [
             {name: locationFieldName, type: 'location'}
@@ -181,7 +181,7 @@ test(
         const numberFieldName = 'myNumericfield';
         await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), numberFieldName);
         userEvent.click(await screen.findByLabelText(/payload addfield dialog number/i));
-        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i))
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
         const expectedNumberPayload: Payload = [
             {name: numberFieldName, type: 'number'}
@@ -193,7 +193,7 @@ test(
         const stringFieldName = 'myNumericfield';
         await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), stringFieldName);
         userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
-        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i))
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
         const expectedStringPayload: Payload = [
             {name: stringFieldName, type: 'string'}
@@ -232,11 +232,42 @@ test(
         const stringFieldName = 'myNumericfield';
         await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), stringFieldName);
         userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
-        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i))
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
         const expectedStringPayload: Payload = [
             {name: stringFieldName, type: 'string'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, [...payload, ...expectedStringPayload]);
+    }
+);
+
+test(
+    'PayloadCreator should add a fields twice to a payload',
+    async () => {
+        const eventTypeId = 'eventtypeid';
+        const fieldName = 'myNumericfield';
+        const payload: Payload = [
+            {name: fieldName, type: 'number'}
+        ];
+        const setPayload = jest.fn();
+
+        render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
+        await screen.findByLabelText(/payload creator schema/i);
+        expect(await screen.findAllByLabelText(/payload field$/i)).toHaveLength(1);
+
+        const addFieldButton = await screen.findByLabelText(/payload addfield button open dialog/i);
+        userEvent.click(addFieldButton);
+        await screen.findByLabelText(/payload addfield dialog$/i);
+
+        setPayload.mockClear();
+
+        await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), fieldName);
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
+        expect(setPayload).toHaveBeenCalledTimes(1);
+        const expectedStringPayload: Payload = [
+            {name: fieldName, type: 'string'}
+        ];
+        expect(setPayload).toHaveBeenNthCalledWith(1, expectedStringPayload);
     }
 );
