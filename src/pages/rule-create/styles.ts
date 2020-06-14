@@ -6,7 +6,8 @@ export const useStyles = makeStyles(
         container: {
             display: 'flex',
             marginTop: 40,
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            justifyContent: 'center',
         },
         sectionSearch: {
             display: 'flex',

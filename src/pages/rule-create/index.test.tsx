@@ -4,12 +4,15 @@ import userEvent from '@testing-library/user-event';
 import {
     render,
     screen,
+    waitFor,
     serverGetEventTypeList,
     serverGetTargetList,
     serverCreateRule,
     setupNock,
     generateEventTypeListWith,
-    generateTargetListWith
+    generateTargetListWith,
+    generateEventLogListWithPayload,
+    serverGetEventLogList
 } from '../../test-utils';
 import {RuleCreatePage} from './index';
 import { BASE_URL } from '../../services/config';
@@ -39,7 +42,7 @@ test('RuleCreatePage for realtime rules should render 3 sections, Manage EventTy
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, generateEventTypeListWith(10, false, false));
     serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
     fakeUseParams.mockReturnValue({type: 'realtime'});
-    const {container} = render(<RuleCreatePage/>);
+    render(<RuleCreatePage/>);
 
     await screen.findByLabelText(/create realtime rule page/i);
     await screen.findByLabelText(/manage eventtype section/i);
@@ -51,8 +54,7 @@ test('RuleCreatePage for realtime rules should render 3 sections, Manage EventTy
     await screen.findByLabelText(/manage target section/i);
     await screen.findByLabelText(/search a target/i);
 
-    await screen.findByLabelText(/manage payload loader section/i);
-    expect(container).toMatchSnapshot();
+    await screen.findByLabelText(/manage payload creator section/i);
 });
 
 test('RuleCreatePage should create a Passthrow rule', async () => {
@@ -73,7 +75,7 @@ test('RuleCreatePage should create a Passthrow rule', async () => {
     await screen.findByLabelText(/manage target section/i);
     await screen.findByLabelText(/search a target/i);
 
-    await screen.findByLabelText(/manage payload loader section/i);
+    await screen.findByLabelText(/manage payload creator section/i);
     expect(await screen.findByLabelText(/rule create button/i)).toBeDisabled();
 
     // Select Event Type
@@ -143,7 +145,7 @@ test('RuleCreatePage should show an error when create rule fails', async () => 
     await screen.findByLabelText(/manage target section/i);
     await screen.findByLabelText(/search a target/i);
 
-    await screen.findByLabelText(/manage payload loader section/i);
+    await screen.findByLabelText(/manage payload creator section/i);
     expect(await screen.findByLabelText(/rule create button/i)).toBeDisabled();
 
     // Select Event Type
@@ -187,7 +189,7 @@ test('RuleCreatePage should show an error when create rule fails', async () => 
     screen.getByLabelText(/rule create loading/i);
     await screen.findByLabelText(/eventtype selector disabled/i);
     await screen.findByLabelText(/target selector disabled/i);
-    await screen.findByLabelText(/payload loader disabled/i);
+    await screen.findByLabelText(/payload creator disabled/i);
     await screen.findByLabelText(/rule creator disabled/i);
     expect(await screen.findByLabelText(/rule create error message/i)).toHaveTextContent(ruleError.message);
     expect(screen.queryByLabelText(/rule create success message/i)).not.toBeInTheDocument();
@@ -211,7 +213,7 @@ test('RuleCreatePage should create a new Rule after create one', async () => {
     await screen.findByLabelText(/manage target section/i);
     await screen.findByLabelText(/search a target/i);
 
-    await screen.findByLabelText(/manage payload loader section/i);
+    await screen.findByLabelText(/manage payload creator section/i);
     expect(await screen.findByLabelText(/rule create button/i)).toBeDisabled();
 
     // Select Event Type
@@ -274,4 +276,60 @@ test('RuleCreatePage should create a new Rule after create one', async () => {
     await screen.findByLabelText(/rule create loading/i);
     await screen.findByLabelText(/rule create success$/i);
     expect(await screen.findByLabelText(/rule create success message/i)).toHaveTextContent(`Rule ${ruleCreated.name} created successfully`);
+});
+
+test('RuleCreatePage for realtime rules should clear payload when change eventype', async () => {
+    const eventTypeList = generateEventTypeListWith(10, false, false);
+    serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, eventTypeList);
+    serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
+    fakeUseParams.mockReturnValue({type: 'realtime'});
+    render(<RuleCreatePage/>);
+
+    await screen.findByLabelText(/create realtime rule page/i);
+    await screen.findByLabelText(/manage eventtype section/i);
+    await screen.findByLabelText(/create rule section/i);
+
+    await screen.findByLabelText(/loading eventtypes/i);
+    await screen.findByLabelText(/loading targets/i);
+
+    await screen.findByLabelText(/manage target section/i);
+    await screen.findByLabelText(/search a target/i);
+
+    await screen.findByLabelText(/manage payload creator section/i);
+
+    // Select Event Type
+    userEvent.click(await screen.findByLabelText(/search a eventtype/i));
+    const eventTypes = await screen.findAllByRole('option');
+    const eventType = eventTypeList.results[2];
+    userEvent.click(eventTypes[2]);
+    expect(await screen.findByLabelText(/eventtype selected name/i)).toHaveTextContent(eventType.name);
+    expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(eventType.url);
+
+    // Download payload
+    const checkPayload = await screen.findByLabelText(/payload download button/i);
+    const payloadDownloaded = {
+        numericField: 25,
+        stringField: 'string',
+        locationField: [100, 100],
+        complexObject: {},
+        arrayObject: [],
+        invalidArray: [100, 100, 100]
+    };
+    const eventLog = generateEventLogListWithPayload(payloadDownloaded);
+    serverGetEventLogList(setupNock(BASE_URL), 1, 1, eventType.id, 200, eventLog);
+    userEvent.click(checkPayload);
+    expect(await screen.findByLabelText(/payload download button/i)).toBeDisabled();
+    await screen.findByLabelText(/payload creator loading/i);
+    await waitFor(() => expect(screen.queryByLabelText(/payload creator loading/i)).not.toBeInTheDocument());
+    await screen.findByLabelText(/payload download button enabled/i);
+    await screen.findByLabelText(/payload creator schema/i);
+    expect(await screen.findAllByLabelText(/payload field$/i)).toHaveLength(3);
+
+    // Cancel selection
+    const clearButton = await screen.findByLabelText(/eventtype selected clear/i);
+    userEvent.click(clearButton);
+
+    await screen.findByLabelText(/payload download button disabled/i);
+    expect(screen.queryByLabelText(/payload creator schema/i)).not.toBeInTheDocument();
+    expect(screen.queryAllByLabelText(/payload field$/i)).toHaveLength(0);
 });

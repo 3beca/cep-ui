@@ -37,11 +37,12 @@ export type TargetError = ServiceError;
 export type TargetDeleted = ServiceDeleted;
 
 export type RuleFilterValue = number|string;
+export type RulefilterPoint = {
+    type: 'Point';
+    coordinates: [number, number];
+};
 export type Geometry = {
-    _geometry: {
-        type: 'Point',
-        coordinates: [number, number]
-    };
+    _geometry: RulefilterPoint;
     _minDistance?: number;
     _maxDistance?: number;
 };

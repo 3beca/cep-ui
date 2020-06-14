@@ -8,10 +8,11 @@ import { useParams, Link } from 'react-router-dom';
 import {EventTypeSelector} from './event-type-select';
 import {TargetSelector} from './target-select';
 import {RuleCreator} from './rule-creator';
-import {PayloadLoader, Payload} from './payload-loader';
+import {PayloadCreator} from './payload-creator';
 import { EventType, Target, Rule } from '../../services/api';
 import { useCreate, ENTITY } from '../../services/api/use-api';
 import {useStyles} from './styles';
+import { Payload } from '../../services/api/utils';
 
 const RuleCreateError: React.FC<{message?: string}> = ({message}) => {
     const styles = useStyles();
@@ -73,7 +74,10 @@ export const RuleCreatePage: React.FC<{}> = () => {
     }, [rule, target, eventType, type]);
     const {request, isLoading, error, response, reset} = useCreate<Rule>(ENTITY.RULES, bodyRule, false);
     const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading), [bodyRule, isLoading]);
-
+    const eventTypeId = bodyRule.eventTypeId;
+    React.useEffect(() => {
+        setPayload(null);
+    }, [eventTypeId]);
     return (
         <div
             className={styles.container}
@@ -95,15 +99,15 @@ export const RuleCreatePage: React.FC<{}> = () => {
                         selected={target}
                         onSelected={setTarget}/>
                 </div>
-                <div
-                    aria-label='manage payload loader section'
-                    className={styles.sections}>
-                    <PayloadLoader
-                        disabled={isLoading}
-                        eventTypeId={eventType?.id}
-                        payload={payload}
-                        setPayload={setPayload}/>
-                </div>
+            </div>
+            <div
+                aria-label='manage payload creator section'
+                className={styles.sections}>
+                <PayloadCreator
+                    disabled={isLoading}
+                    eventTypeId={eventType?.id}
+                    payload={payload}
+                    setPayload={setPayload}/>
             </div>
             <div
                 aria-label='create rule section'

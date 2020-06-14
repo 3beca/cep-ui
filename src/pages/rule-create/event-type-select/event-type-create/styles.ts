@@ -9,7 +9,8 @@ export const useStyles = makeStyles(
         },
         detailsActions: {
             display: 'flex',
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
+            alignItems: 'center'
         },
         detailsActionsType: {
             display: 'flex',

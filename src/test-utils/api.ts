@@ -137,6 +137,13 @@ export const generateEventLogListWith = function generateListWith(many: number =
     return list;
 };
 
+export const generateEventLogListWithPayload = function generateEventLogListWithPayload(payload: any): ServiceList<EventLog> {
+    const list: ServiceList<EventLog> = {
+        results: [generateEventLog('EventLogWithPayload', 1, payload)]
+    };
+    return list;
+};
+
 export const serverGetList = function serverGetList<T>(server: nock.Scope, path: string, page: number = 1, size: number = 10, filter: string = '', status: number = 200, response: ServiceList<T>|ServiceError) {
     return server.get(path + `/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`).reply(status, response);
 };

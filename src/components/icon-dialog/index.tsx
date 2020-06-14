@@ -9,8 +9,8 @@ export const useIconDialog = () => {
     return React.useContext<IconDialogContext>(IconDialogContext);
 };
 
-export type IconDialogProps = {show: boolean; icon: React.ReactElement; onOpen?():void, onClose?():void};
-export const IconDialog: React.FC<IconDialogProps> = ({show, icon, onOpen = NOOP, onClose = NOOP, children, ...props}) => {
+export type IconDialogProps = {show: boolean; icon: React.ReactElement; onOpen?():void, onClose?():void; disabled?: boolean;};
+export const IconDialog: React.FC<IconDialogProps> = ({show, icon, disabled, onOpen = NOOP, onClose = NOOP, children, ...props}) => {
     const [open, setOpen] = React.useState(false);
     const closeDialog = React.useCallback(() => {
         setOpen(false);
@@ -35,7 +35,7 @@ export const IconDialog: React.FC<IconDialogProps> = ({show, icon, onOpen = NOOP
         );
     }
     return (
-        <IconButton aria-label='open dialog' onClick={openDialog} {...props}>{icon}</IconButton>
+        <IconButton aria-label='open dialog' onClick={openDialog} disabled={disabled} {...props}>{icon}</IconButton>
     );
 };
 

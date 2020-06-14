@@ -176,3 +176,30 @@ export const parseRuleFilter = (filter: RuleFilter): RULEFILTERCONTAINER => {
         field: 'root'
     }];
 };
+
+export type PayloadTypes = 'number'|'string'|'location';
+export type PayloadField = {type: PayloadTypes, name: string};
+export type Payload = {type: PayloadTypes, name: string}[];
+
+const isValidPayloadField = (field: any): PayloadTypes|null => {
+    if (typeof field === 'number') return 'number';
+    if (typeof field === 'string') return 'string';
+    if (Array.isArray(field) && field.length === 2 && typeof field[0] === 'number' && typeof field[1] === 'number') return 'location';
+    return null;
+};
+const filterEmptyPayloads = (payload: PayloadField|null): payload is PayloadField => !!payload;
+export const buildPayloadFromEventLogPayload = (eventLogPayload: any): Payload|null => {
+    if (!eventLogPayload) return null;
+    if (typeof eventLogPayload !== 'object') return null;
+    if (Array.isArray(eventLogPayload)) return null;
+
+    const keys = Object.keys(eventLogPayload);
+    if (keys.length === 0) return null;
+    const validPayload: Payload = keys.map((key) => {
+        const value = eventLogPayload[key];
+        const type = isValidPayloadField(value);
+        if (type) return {name: key, type};
+        return null;
+    }).filter(filterEmptyPayloads);
+    return validPayload.length > 0 ? validPayload : null;
+};
