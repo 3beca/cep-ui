@@ -210,3 +210,33 @@ test(
         expect(await screen.findAllByLabelText(/payload field$/)).toHaveLength(3);
     }
 );
+
+test(
+    'PayloadCreator should add new fields to a payload',
+    async () => {
+        const eventTypeId = 'eventtypeid';
+        const payload: Payload = [
+            {name: 'oneFieldName', type: 'number'}
+        ];
+        const setPayload = jest.fn();
+
+        render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
+        await screen.findByLabelText(/payload creator schema/i);
+        expect(await screen.findAllByLabelText(/payload field$/i)).toHaveLength(1);
+
+        const addFieldButton = await screen.findByLabelText(/payload addfield button open dialog/i);
+        userEvent.click(addFieldButton);
+        await screen.findByLabelText(/payload addfield dialog$/i);
+
+        setPayload.mockClear();
+        const stringFieldName = 'myNumericfield';
+        await userEvent.type(await screen.findByLabelText(/payload addfield dialog name/), stringFieldName);
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
+        userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i))
+        expect(setPayload).toHaveBeenCalledTimes(1);
+        const expectedStringPayload: Payload = [
+            {name: stringFieldName, type: 'string'}
+        ];
+        expect(setPayload).toHaveBeenNthCalledWith(1, [...payload, ...expectedStringPayload]);
+    }
+);

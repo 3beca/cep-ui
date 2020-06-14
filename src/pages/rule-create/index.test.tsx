@@ -333,3 +333,33 @@ test('RuleCreatePage for realtime rules should clear payload when change eventyp
     expect(screen.queryByLabelText(/payload creator schema/i)).not.toBeInTheDocument();
     expect(screen.queryAllByLabelText(/payload field$/i)).toHaveLength(0);
 });
+
+test('RuleCreatePage for realtime rules should overwrite payload fields with the same name', async () => {
+    const eventTypeList = generateEventTypeListWith(10, false, false);
+    serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, eventTypeList);
+    serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, generateTargetListWith(10, false, false));
+    fakeUseParams.mockReturnValue({type: 'realtime'});
+    render(<RuleCreatePage/>);
+
+    await screen.findByLabelText(/create realtime rule page/i);
+    await screen.findByLabelText(/manage eventtype section/i);
+    await screen.findByLabelText(/create rule section/i);
+
+    await screen.findByLabelText(/loading eventtypes/i);
+    await screen.findByLabelText(/loading targets/i);
+
+    await screen.findByLabelText(/manage target section/i);
+    await screen.findByLabelText(/search a target/i);
+
+    await screen.findByLabelText(/manage payload creator section/i);
+
+    // Select Event Type
+    userEvent.click(await screen.findByLabelText(/search a eventtype/i));
+    const eventTypes = await screen.findAllByRole('option');
+    const eventType = eventTypeList.results[2];
+    userEvent.click(eventTypes[2]);
+    expect(await screen.findByLabelText(/eventtype selected name/i)).toHaveTextContent(eventType.name);
+    expect(await screen.findByLabelText(/eventtype selected url/i)).toHaveTextContent(eventType.url);
+
+    // TODO: Create twice the same field
+});
