@@ -80,6 +80,21 @@ export const PayloadDownloader: React.FC<PayloadDownloaderProps> = ({eventTypeId
     );
 };
 
+export type PayloadFieldViewDeleteButtonProps= {
+    removePayloadField?: () => void;
+    disabled?: boolean;
+};
+export const PayloadFieldViewDeleteButton: React.FC<PayloadFieldViewDeleteButtonProps> = ({removePayloadField, disabled = false}) => {
+    if (!removePayloadField) return null;
+    return (
+        <IconButton
+            aria-label='payload field button remove'
+            onClick={removePayloadField}
+            disabled={disabled}>
+                <DeleteIcon/>
+        </IconButton>
+    );
+};
 export const IconByFieldType: React.FC<{type: PayloadTypes}> = ({type}) => {
     if (type === 'number') return <NumberIcon/>;
     if (type === 'location') return <LocationIcon/>;
@@ -87,7 +102,7 @@ export const IconByFieldType: React.FC<{type: PayloadTypes}> = ({type}) => {
 };
 export type PayloadFieldViewProps = {
     payloadField: PayloadField;
-    removePayloadField: () => void;
+    removePayloadField?: () => void;
     disabled?: boolean;
 };
 export const PayloadFieldView: React.FC<PayloadFieldViewProps> = ({payloadField, removePayloadField, disabled}) => {
@@ -98,12 +113,7 @@ export const PayloadFieldView: React.FC<PayloadFieldViewProps> = ({payloadField,
             className={styles.paloadFieldView}>
             <div className={styles.payloadFieldViewIcon}><IconByFieldType type={payloadField.type}/></div>
             <Typography className={styles.payloadFieldViewText}>{payloadField.name}</Typography>
-            <IconButton
-                aria-label='payload field button remove'
-                onClick={removePayloadField}
-                disabled={disabled}>
-                    <DeleteIcon/>
-            </IconButton>
+            <PayloadFieldViewDeleteButton removePayloadField={removePayloadField} disabled={disabled}/>
         </div>
     );
 };

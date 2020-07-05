@@ -19,7 +19,7 @@ import DeleteIcon from '@material-ui/icons/DeleteOutline';
 
 import { Rule, RuleTypes } from '../../../services/api';
 import { parseRuleFilter } from '../../../services/api/utils';
-import RuleFilter from './filter';
+import RuleFilter from '../../../components/rule-filter';
 import {useStyles} from './styles';
 
 

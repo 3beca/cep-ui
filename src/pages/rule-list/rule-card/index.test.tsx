@@ -37,15 +37,14 @@ test('mapRuleTypeName should return REAL TIME when invalid type', () => {
 
 test('RuleCard should render with a rule and snap', () => {
     const rule = generateRule('rule-test', 3, {'_or': [{'hola': 1}], '_and': [{'adios': 2}], p1: 'valor'});
-    const {container} = render(<RuleCard rule={rule}/>);
+    render(<RuleCard rule={rule}/>);
 
     expect(screen.getByLabelText(/avatar icon/)).toHaveTextContent('R');
-    expect(container).toMatchSnapshot();
 });
 
 test('RuleCard should render with a eventType name, target name, filters and skip execution disable', async () => {
     const rule = generateRule('rule-test', 3, {'_or': [{'hola': 1}], '_and': [{'adios': 2}], p1: 'valor'});
-    const {container} = render(<RuleCard rule={rule}/>);
+    render(<RuleCard rule={rule}/>);
 
     expect(await screen.findByLabelText(/avatar icon/)).toHaveTextContent('R');
     expect(await screen.findByLabelText(/eventType name card rule/)).toHaveTextContent('EventType 3-rule-test');
@@ -54,12 +53,11 @@ test('RuleCard should render with a eventType name, target name, filters and ski
     expect(await screen.findByLabelText(/status card rule/)).toHaveTextContent(/skip consecutives/i);
     await screen.findByLabelText(/skip consecutives disable/);
     expect(await screen.findByRole('checkbox')).toHaveAttribute('readonly');
-    expect(container).toMatchSnapshot();
 });
 
 test('RuleCard should render with a eventType name, target name, filter passthrow and skip execution enable', async () => {
     const rule = generateRule('rule-test', 2, {});
-    const {container} = render(<RuleCard rule={rule}/>);
+    render(<RuleCard rule={rule}/>);
 
     expect(await screen.findByLabelText(/avatar icon/)).toHaveTextContent('T');
     expect(await screen.findByLabelText(/eventType name card rule/)).toHaveTextContent('EventType 2-rule-test');
@@ -68,7 +66,6 @@ test('RuleCard should render with a eventType name, target name, filter passthro
     expect(await screen.findByLabelText(/status card rule/)).toHaveTextContent(/skip consecutives/i);
     await screen.findByLabelText(/skip consecutives enable/);
     expect(await screen.findByRole('checkbox')).toHaveAttribute('readonly');
-    expect(container).toMatchSnapshot();
 });
 
 test('RuleCard should open the context menu and navigate to details', async () => {

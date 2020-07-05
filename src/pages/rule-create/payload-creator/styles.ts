@@ -55,9 +55,12 @@ export const useStyles = makeStyles(
 // FieldView Styles
         paloadFieldView: {
             display: 'flex',
+            flex: 1,
             alignItems: 'center',
             margin: 6,
             paddingLeft: 12,
+            paddingRight: 6,
+            minHeight: 50,
             borderColor: theme.palette.primary.light,
             borderWidth: 1,
             borderStyle: 'solid'

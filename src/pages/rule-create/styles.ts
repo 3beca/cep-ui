@@ -20,6 +20,9 @@ export const useStyles = makeStyles(
             marginTop: 16,
             minWidth: 340
         },
+        sectionsInPaper: {
+            padding: 16
+        },
         elementItem: {
             padding: 16,
             marginBottom: 8
@@ -45,6 +48,10 @@ export const useStyles = makeStyles(
         },
         moreButton: {
             color: theme.palette.info.dark
+        },
+        fieldSelector: {
+            margin: 6,
+            minWidth: 280
         }
     })
 );

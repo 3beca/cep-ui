@@ -7,10 +7,10 @@ import {
     generateEventLogListWithPayload
 } from '../../../test-utils';
 import userEvent from '@testing-library/user-event';
-import PayloadCreator from './index';
+import PayloadCreator, {PayloadFieldView} from './index';
 import { setupNock } from '../../../test-utils/api';
 import { BASE_URL } from '../../../services/config';
-import { Payload } from '../../../services/api/utils';
+import { Payload, PayloadField } from '../../../services/api/utils';
 import { waitFor } from '@testing-library/react';
 
 const server = setupNock(BASE_URL);
@@ -242,7 +242,7 @@ test(
 );
 
 test(
-    'PayloadCreator should add a fields twice to a payload',
+    'PayloadCreator should not add a fields twice to a payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const fieldName = 'myNumericfield';
@@ -269,5 +269,16 @@ test(
             {name: fieldName, type: 'string'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, expectedStringPayload);
+    }
+);
+
+test(
+    'PayloadFieldView can hidde delete button when no action',
+    async () => {
+        const payloadField: PayloadField = {name: 'numericField', type: 'number'};
+
+        render(<PayloadFieldView payloadField={payloadField}/>);
+
+        expect(screen.queryByLabelText(/payload field button remove/i)).not.toBeInTheDocument();
     }
 );

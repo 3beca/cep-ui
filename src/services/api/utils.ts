@@ -4,6 +4,7 @@ import {
     RuleFilterField,
     RuleFilterFieldValue,
     Geometry,
+    RuleFilterValue,
     getRuleFilters,
     isRuleFilter,
     isRuleFilterArray,
@@ -15,7 +16,7 @@ import {
     isRuleFilterComparatorGTE,
     isRuleFilterComparatorLT,
     isRuleFilterComparatorLTE,
-    isRuleFilterComparatorLocation
+    isRuleFilterComparatorLocation,
 } from './models';
 
 export type EXPRESSIONBASE = {
@@ -87,15 +88,35 @@ export const processValues = (field: RuleFilterField, value: RuleFilterFieldValu
     }
 };
 export type EXPRESSION = EPASSTHROW|EDEFAULT|ECOMPARATOR|ECOMPARATORLOCATION;
-export type CONTAINER = {
-    model: 'CONTAINER',
-    type: 'OR'|'AND'|'DEFAULT';
+export type CONTAINERTYPE = 'OR'|'AND'|'DEFAULT';
+export type CONTAINERBASE = {
+    model: 'CONTAINER';
     field: string;
-    values: (EXPRESSION|CONTAINER)[]
+    values: (EXPRESSION|CONTAINER)[];
 };
+export type CONTAINERAND = {
+    type: 'AND';
+} & CONTAINERBASE;
+export type CONTAINEROR = {
+    type: 'OR';
+} & CONTAINERBASE;
+export type CONTAINERDEFAULT = {
+    type: 'DEFAULT';
+} & CONTAINERBASE;
+export type CONTAINER = CONTAINERAND|CONTAINEROR|CONTAINERDEFAULT;
 export type RULEFILTERCONTAINER = (EXPRESSION|CONTAINER)[];
+
 export const isContainer = (value: EXPRESSION|CONTAINER): value is CONTAINER => {
     return value.model === MODELS.CONTAINER;
+}
+export const isContainerAND = (value: EXPRESSION|CONTAINER): value is CONTAINERAND => {
+    return isContainer(value) && value.type === 'AND';
+}
+export const isContainerOR = (value: EXPRESSION|CONTAINER): value is CONTAINEROR => {
+    return isContainer(value) && value.type === 'OR';
+}
+export const isContainerDefault = (value: EXPRESSION|CONTAINER): value is CONTAINERDEFAULT => {
+    return isContainer(value) && value.type === 'DEFAULT';
 }
 export const isExpressionPassthrow = (value: EXPRESSION): value is EPASSTHROW => {
     return value.type === EXPRESSION_TYPES.PASSTHROW;
@@ -179,7 +200,7 @@ export const parseRuleFilter = (filter: RuleFilter): RULEFILTERCONTAINER => {
 
 export type PayloadTypes = 'number'|'string'|'location';
 export type PayloadField = {type: PayloadTypes, name: string};
-export type Payload = {type: PayloadTypes, name: string}[];
+export type Payload = PayloadField[];
 
 const isValidPayloadField = (field: any): PayloadTypes|null => {
     if (typeof field === 'number') return 'number';
@@ -202,4 +223,36 @@ export const buildPayloadFromEventLogPayload = (eventLogPayload: any): Payload|n
         return null;
     }).filter(filterEmptyPayloads);
     return validPayload.length > 0 ? validPayload : null;
+};
+
+export const createANDContainer = (): CONTAINER => {
+    return {
+        type: 'AND',
+        model: 'CONTAINER',
+        field: '_and',
+        values: []
+    };
+};
+export const createORContainer = (): CONTAINER => {
+    return {
+        type: 'OR',
+        model: 'CONTAINER',
+        field: '_or',
+        values: []
+    };
+};
+export const createExpresion = (fieldName = 'root', value?: RuleFilterValue): EXPRESSION => {
+    if (value === undefined) {
+        return {
+            model: 'EXPRESSION',
+            type: 'PASSTHROW',
+            field: fieldName
+        };
+    }
+    return {
+        type: 'DEFAULT',
+        model: 'EXPRESSION',
+        field: fieldName,
+        value
+    };
 };

@@ -45,6 +45,10 @@ export const useStyles = makeStyles(
             marginLeft: 10,
             marginRight: 10,
             fontSize: 14
+        },
+        ruleCardActionsButtons: {
+            display: 'flex',
+            justifyContent: 'flex-end'
         }
     })
 );

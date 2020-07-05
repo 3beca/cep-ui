@@ -1,5 +1,8 @@
 import {
     isContainer,
+    isContainerAND,
+    isContainerOR,
+    isContainerDefault,
     isExpressionPassthrow,
     isExpressionDefault,
     isExpressionComparator,
@@ -7,12 +10,19 @@ import {
     parseRuleFilter,
     getComparatorValue,
     buildPayloadFromEventLogPayload,
+    createANDContainer,
+    createORContainer,
+    createExpresion,
     CONTAINER,
     EPASSTHROW,
     EDEFAULT,
     ECOMPARATOR,
     ECOMPARATORLOCATION,
-    Payload
+    Payload,
+    EXPRESSION,
+    CONTAINERAND,
+    CONTAINEROR,
+    CONTAINERDEFAULT
 } from './utils';
 import { RuleFilter, RuleFilterComparator, Geometry } from './models';
 
@@ -20,6 +30,10 @@ test(
     'check types should return the correct type',
     () => {
         const container: CONTAINER = {model: 'CONTAINER'} as CONTAINER;
+        const containerAND: CONTAINERAND = {model: 'CONTAINER', type: 'AND'} as CONTAINERAND;
+        const containerOR: CONTAINEROR = {model: 'CONTAINER', type: 'OR'} as CONTAINEROR;
+        const containerDefault: CONTAINERDEFAULT = {model: 'CONTAINER', type: 'DEFAULT'} as CONTAINERDEFAULT;
+
         const passExpression  = {model: 'EXPRESSION', type: 'PASSTHROW'} as EPASSTHROW;
         const defaultExpression  = {model: 'EXPRESSION', type: 'DEFAULT'} as EDEFAULT;
         const comparatorExpression  = {model: 'EXPRESSION', type: 'COMPARATOR'} as ECOMPARATOR;
@@ -27,6 +41,12 @@ test(
 
         expect(isContainer(container)).toBe(true);
         expect(isContainer(passExpression)).toBe(false);
+        expect(isContainerAND(containerAND)).toBe(true);
+        expect(isContainerAND(container)).toBe(false);
+        expect(isContainerOR(containerOR)).toBe(true);
+        expect(isContainerOR(container)).toBe(false);
+        expect(isContainerDefault(containerDefault)).toBe(true);
+        expect(isContainerDefault(container)).toBe(false);
         expect(isExpressionPassthrow(passExpression)).toBe(true);
         expect(isExpressionPassthrow(geoExpression)).toBe(false);
         expect(isExpressionDefault(defaultExpression)).toBe(true);
@@ -535,4 +555,67 @@ test('buildPayloadFromEventLogPayload should return a valid payload', () => {
     ];
 
     expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(expected);
+});
+
+test('createANDContainer should return a container with AND', () => {
+    const expectedANDContainer: CONTAINER = {
+        model: 'CONTAINER',
+        type: 'AND',
+        field: '_and',
+        values: []
+    };
+    expect(createANDContainer()).toEqual(expectedANDContainer);
+});
+
+test('createOrContainer should return a container with OR', () => {
+    const expectedORContainer: CONTAINER = {
+        model: 'CONTAINER',
+        type: 'OR',
+        field: '_or',
+        values: []
+    };
+    expect(createORContainer()).toEqual(expectedORContainer);
+});
+
+test('createExpresion should return a EXPRESION default with number', () => {
+    const fieldName = 'fieldName';
+    const value = 25;
+    const expectedORContainer: EXPRESSION = {
+        model: 'EXPRESSION',
+        type: 'DEFAULT',
+        field: fieldName,
+        value
+    };
+    expect(createExpresion(fieldName, value)).toEqual(expectedORContainer);
+});
+
+test('createExpresion should return a EXPRESION default with string', () => {
+    const fieldName = 'type';
+    const value = 'temperature';
+    const expectedExpression: EXPRESSION = {
+        model: 'EXPRESSION',
+        type: 'DEFAULT',
+        field: fieldName,
+        value
+    };
+    expect(createExpresion(fieldName, value)).toEqual(expectedExpression);
+});
+
+test('createExpresion should return a EXPRESION passthrow when no arguments', () => {
+    const expectedExpression: EXPRESSION = {
+        model: 'EXPRESSION',
+        type: 'PASSTHROW',
+        field: 'root'
+    };
+    expect(createExpresion()).toEqual(expectedExpression);
+});
+
+test('createExpresion should return a EXPRESION passthrow when only receive fieldname', () => {
+    const fieldName = 'type';
+    const expectedExpression: EXPRESSION = {
+        model: 'EXPRESSION',
+        type: 'PASSTHROW',
+        field: fieldName
+    };
+    expect(createExpresion(fieldName)).toEqual(expectedExpression);
 });
