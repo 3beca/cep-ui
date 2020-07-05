@@ -204,7 +204,6 @@ export const ConfigFilterDialogExpression: React.FC<ConfigFilterDialogExpression
     const [comparator, setComparator] = React.useState<EXPRESSION>(expression);
     const updateExpression = React.useCallback(
         () => {
-            console.log('Filter Expression to save', comparator);
             expression.field = comparator.field;
             expression.type = comparator.type;
             switch(comparator.type) {
@@ -317,6 +316,8 @@ export const RuleCreatePage: React.FC<{}> = () => {
     }, []);
     React.useEffect(() => {
         setPayload(null);
+        setMutateFilterContainer(undefined);
+        setRuleFilterContainer([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
     }, [eventTypeId]);
     return (
         <div
