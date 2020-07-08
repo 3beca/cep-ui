@@ -15,7 +15,7 @@ import {EventTypeSelector} from './event-type-select';
 import {TargetSelector} from './target-select';
 import {RuleCreator} from './rule-creator';
 import {PayloadCreator} from './payload-creator';
-import { EventType, Target, Rule, RuleTypes } from '../../services/api';
+import { EventType, Target, Rule, RuleTypes, Geometry } from '../../services/api';
 import { useCreate, ENTITY } from '../../services/api/use-api';
 import {useStyles} from './styles';
 import {
@@ -32,6 +32,7 @@ import {
     ECOMPARATORLOCATION
 } from '../../services/api/utils';
 import RuleFilter from '../../components/rule-filter';
+import { Divider } from '@material-ui/core';
 
 const RuleCreateError: React.FC<{message?: string}> = ({message}) => {
     const styles = useStyles();
@@ -50,8 +51,17 @@ const RuleCreateError: React.FC<{message?: string}> = ({message}) => {
     );
 };
 
-const RuleCreatorSuccess: React.FC<{show: boolean; rule?: Rule, clear: () => void;}> = ({rule, show, clear}) => {
+export type RuleCreatorSuccessProps ={
+    show: boolean;
+    rule?: Rule;
+    clear: () => void;
+    setDialogState: (isOpen: boolean) => void;
+};
+const RuleCreatorSuccess: React.FC<RuleCreatorSuccessProps> = ({rule, show, clear, setDialogState}) => {
     const styles = useStyles();
+    React.useEffect(() => {
+        setDialogState(!!(rule && show));
+    });
     if (!rule || !show) return null;
     return (
         <Paper
@@ -161,7 +171,7 @@ export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps>
     };
     const updateOperator = (operator: 'EQ'|'GT'|'GTE'|'LT'|'LTE') => {
         if (!isExpressionComparator(expression)) updateExpression({field: field.name, model: 'EXPRESSION', type: 'COMPARATOR', value: value, operator});
-        else updateExpression({...expression, value});
+        else updateExpression({...expression, operator});
     };
     return (
         <div>
@@ -171,6 +181,80 @@ export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps>
     );
 };
 
+export const buildLocationExpression = (name: string, lng = 0, lat = 0): ECOMPARATORLOCATION => (
+    {
+        type: 'GEO',
+        model: 'EXPRESSION',
+        field: name,
+        operator: 'NEAR',
+        value: {
+            _geometry: {type: 'Point', coordinates: [lng, lat]}
+        }
+    }
+);
+export type FieldExpressionLocationProps = {
+    field: PayloadField;
+    expression: ECOMPARATORLOCATION;
+    updateExpression: (comaprator: ECOMPARATORLOCATION) => void;
+};
+export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = ({field, expression, updateExpression}) => {
+    const [location, setLocation] = React.useState<Geometry>(expression.value);
+    const updateLocation = React.useCallback((coords: Geometry) => {
+        const newLocation =  {...expression, value: coords};
+        // console.log('Location', coords, newLocation);
+        setLocation(coords);
+        updateExpression(newLocation);
+    }, [expression, updateExpression]);
+    return (
+        <div>
+            <div>
+                <div><Typography>Coordinates</Typography></div>
+                <div>
+                    <TextField
+                        inputProps={{
+                            'aria-label': 'config filter location longitude'
+                        }}
+                        value={location._geometry.coordinates[0]}
+                        onChange={(ev) => updateLocation({...location, _geometry: {type: 'Point', coordinates: [Number(ev.target.value), location._geometry.coordinates[1]]}})}
+                        type='number'/>
+                </div>
+                <div>
+                    <TextField
+                        inputProps={{
+                            'aria-label': 'config filter location latitude'
+                        }}
+                        value={location._geometry.coordinates[1]}
+                        onChange={(ev) => updateLocation({...location, _geometry: {type: 'Point', coordinates: [location._geometry.coordinates[0], Number(ev.target.value)]}})}
+                        type='number'/>
+                </div>
+            </div>
+            <div>
+                <div><Typography>Min. Distance:</Typography></div>
+                <div>
+                    <TextField
+                        inputProps={{
+                            'aria-label': 'config filter location min distance'
+                        }}
+                        value={location._minDistance || ''}
+                        onChange={(ev) => updateLocation({...location, _minDistance: Number(ev.target.value)})}
+                        type='number'/>
+                </div>
+            </div>
+            <div>
+                <div><Typography>Max. Distance:</Typography></div>
+                <div>
+                    <TextField
+                        inputProps={{
+                            'aria-label': 'config filter location max distance'
+                        }}
+                        value={location._maxDistance || ''}
+                        onChange={(ev) => updateLocation({...location, _maxDistance: Number(ev.target.value)})}
+                        type='number'/>
+                </div>
+            </div>
+        </div>
+    );
+};
 export type FieldExpressionProps = {
     field?: PayloadField;
     expression: EXPRESSION;
@@ -180,9 +264,10 @@ export const FieldExpression: React.FC<FieldExpressionProps> = ({field, expressi
     if (!field) return null;
     if (field.type === 'location') {
         return (
-            <div>
-                LOCATION
-            </div>
+            <FieldExpressionLocation
+                field={field}
+                expression={isExpressionLocation(expression) ? expression : buildLocationExpression(field.name)}
+                updateExpression={updateExpression}/>
         );
     }
     return (
@@ -295,6 +380,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const [target, setTarget] = React.useState<Target|null>(null);
     const [payload, setPayload] = React.useState<Payload|null>(null);
     const [rule, updateRule] = React.useReducer((state: Partial<Rule>, update: Partial<Rule>) => ({...state, ...update}), initialRuleState);
+    const [isResponseDialogOpen, setResponseDialogOpen] = React.useState(false);
     const bodyRule = React.useMemo((): Partial<Rule> => {
         return {
             name: rule.name,
@@ -306,7 +392,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
         };
     }, [rule, target, eventType, type]);
     const {request, isLoading, error, response, reset} = useCreate<Rule>(ENTITY.RULES, bodyRule, false);
-    const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading), [bodyRule, isLoading]);
+    const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading || isResponseDialogOpen), [bodyRule, isLoading, isResponseDialogOpen]);
     const eventTypeId = bodyRule.eventTypeId;
     const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RULEFILTERCONTAINER>([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
     const [mutateFilterContainer, setMutateFilterContainer] = React.useState<{filter: RULEFILTERCONTAINER; expression?: EXPRESSION;}>();
@@ -319,6 +405,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
         setMutateFilterContainer(undefined);
         setRuleFilterContainer([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
     }, [eventTypeId]);
+
     return (
         <div
             className={styles.container}
@@ -350,35 +437,38 @@ export const RuleCreatePage: React.FC<{}> = () => {
                 </div>
             </div>
             <div
-                aria-label='manage payload creator section'
-                className={styles.sections}>
-                <PayloadCreator
-                    disabled={isLoading}
-                    eventTypeId={eventType?.id}
-                    payload={payload}
-                    setPayload={setPayload}/>
-            </div>
-            <div
-                aria-label='manage filter section'
                 className={styles.sections}>
                 <Paper
                     className={styles.sectionsInPaper}>
-                    <RuleFilter
-                        filter={ruleFilterContainer}
-                        onChange={(filter, expression) => setMutateFilterContainer({filter, expression})}
-                        editMode={!isLoading && !!eventTypeId && !!payload && payload.length > 0}
-                        disabled={isLoading}/>
+                    <div
+                        aria-label='manage payload creator section'>
+                        <PayloadCreator
+                            disabled={isLoading}
+                            eventTypeId={eventType?.id}
+                            payload={payload}
+                            setPayload={setPayload}/>
+                    </div>
+                    {!!payload && <Typography variant='caption'>Use AND, OR and EXP to create your custom filter.</Typography>}
+                    <Divider/>
+                    <div
+                        aria-label='manage filter section'>
+                        <RuleFilter
+                            filter={ruleFilterContainer}
+                            onChange={(filter, expression) => setMutateFilterContainer({filter, expression})}
+                            editMode={!isLoading && !!eventTypeId && !!payload && payload.length > 0}
+                            disabled={isLoading}/>
+                        <ConfigFilterExpression
+                            filter={mutateFilterContainer?.filter}
+                            expression={mutateFilterContainer?.expression}
+                            updateFilter={updateRuleFilter}
+                            payload={payload}/>
+                    </div>
                 </Paper>
-                <ConfigFilterExpression
-                    filter={mutateFilterContainer?.filter}
-                    expression={mutateFilterContainer?.expression}
-                    updateFilter={updateRuleFilter}
-                    payload={payload}/>
             </div>
             <div
                 aria-label='submit rule section'
                 className={styles.sections}>
-                    <RuleCreatorSuccess rule={response?.data} show={true} clear={reset}/>
+                    <RuleCreatorSuccess rule={response?.data} show={true} clear={reset} setDialogState={setResponseDialogOpen}/>
                     <RuleCreateError message={error?.error?.message}/>
                     <Button
                         className={styles.submitButton}

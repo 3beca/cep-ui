@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Paper from '@material-ui/core/Paper';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -141,7 +140,6 @@ export const PayloadSchema: React.FC<{disabled?: boolean; payload: Payload|null,
         <div aria-label='payload creator schema'>
             <Divider/>
             {fields}
-            <Divider/>
         </div>
     );
 };
@@ -229,7 +227,7 @@ export type PayloadCreatorProps = {
 export const PayloadCreator: React.FC<PayloadCreatorProps> = ({eventTypeId, disabled, payload, setPayload}) => {
     const styles = useStyles();
     return (
-        <Paper className={styles.container} aria-label={`payload creator${disabled ? ' disabled' : ''}`}>
+        <div className={styles.container} aria-label={`payload creator${disabled ? ' disabled' : ''}`}>
             <div className={styles.payloadCreatorHeader}>
                 <Typography variant='caption' className={styles.payloadCreatorHeaderTitle}>Event payload</Typography>
                 <IconDialog aria-label='payload addfield button open dialog' show={true} disabled={disabled || !eventTypeId} icon={<AddIcon aria-label='payload addfield icon'/>}>
@@ -256,7 +254,7 @@ export const PayloadCreator: React.FC<PayloadCreatorProps> = ({eventTypeId, disa
                 disabled={disabled}
                 payload={payload}
                 setPayload={setPayload}/>
-        </Paper>
+        </div>
     );
 };
 
