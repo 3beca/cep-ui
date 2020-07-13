@@ -695,9 +695,7 @@ test('parseFilterContainer should return an AND rule filter from a filter AND co
         }
     };
     const filter: RuleFilter = {
-        _and: {
-            type: 'temperature', value: {_lte: 0}, location
-        }
+        _and: [{type: 'temperature'}, {value: {_lte: 0}}, {location}]
     };
     expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
 });
@@ -710,9 +708,7 @@ test('parseFilterContainer should return an OR rule filter from a filter AND con
         }
     };
     const filter: RuleFilter = {
-        _or: {
-            type: 'temperature', value: {_lte: 0}, location
-        }
+        _or: [{type: 'temperature'}, {value: {_lte: 0}}, {location}]
     };
     expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
 });
@@ -725,14 +721,10 @@ test('parseFilterContainer should return an nested rule filter from a filter nes
         }
     };
     const filter: RuleFilter = {
-        _or: {
-            _and: {
-                type: 'temperature', value: {_lte: 0}, location
-            },
-            _or: {
-                type: 'temperature', value: {_lte: 0}, location
-            }
-        }
+        _or: [
+            {_and: [{type: 'temperature'}, {value: {_lte: 0}}, {location}]},
+            {_or: [{type: 'temperature'}, {value: {_lte: 0}}, {location}]}
+        ]
     };
     expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
 });
@@ -747,15 +739,11 @@ test('parseFilterContainer should return an nested rule filter with expressions 
     const filter: RuleFilter = {
         type: 'humidity',
         value: {_gte: 75},
-        _or: {
-            type: 'windspeed',
-            _and: {
-                type: 'temperature', value: {_lte: 0}, location
-            },
-            _or: {
-                type: 'temperature', value: {_lte: 0}, location
-            }
-        }
+        _or: [
+            {type: 'windspeed'},
+            {_and: [{type: 'temperature'}, {value: {_lte: 0}}, {location}]},
+            {_or: [{type: 'temperature'}, {value: {_lte: 0}}, {location}]}
+        ]
     };
     expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
 });

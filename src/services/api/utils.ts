@@ -260,25 +260,25 @@ export const createExpresion = (fieldName = 'root', value?: RuleFilterValue): EX
     };
 };
 
+export const parseContainerValue = (value: EXPRESSION|CONTAINER) : RuleFilter => {
+    if (value.model === 'EXPRESSION') {
+        if (isExpressionDefault(value)) {
+            return {[value.field]: value.value};
+        }
+        if (isExpressionComparator(value)) {
+            return {[value.field]: {[RULE_OPERATORS[value.operator]]: value.value}};
+        }
+        if (isExpressionLocation(value)) {
+            return {[value.field]: { _near: value.value }};
+        }
+        return {};
+    }
+    return {[value.field]: value.values.map(parseContainerValue)};
+};
 const emptyFilter: RuleFilter = {};
 export const parseFilterContainer = (container: RULEFILTERCONTAINER) : RuleFilter => {
     if (!Array.isArray(container)) return {};
     return container.reduce<RuleFilter>((filter, container) => {
-        if (container.model === 'EXPRESSION') {
-            if (isExpressionDefault(container)) {
-                return {...filter, [container.field]: container.value};
-            }
-            if (isExpressionComparator(container)) {
-                return {...filter, [container.field]: {[RULE_OPERATORS[container.operator]]: container.value}};
-            }
-            if (isExpressionLocation(container)) {
-                return {
-                    ...filter,
-                    [container.field]: { _near: container.value }
-                };
-            }
-            return filter;
-        }
-        return {...filter, [container.field]: parseFilterContainer(container.values)};;
+        return {...filter, ...parseContainerValue(container)};
     }, emptyFilter);
 };
