@@ -19,27 +19,27 @@ import {
     isRuleFilterComparatorLocation
 } from './models';
 
-export type EXPRESSIONBASE = {
+export type ExpressionBase = {
     model: 'EXPRESSION';
     field: string;
 };
-export type EPASSTHROW = {
+export type EPassthrow = {
     type: 'PASSTHROW'
-} & EXPRESSIONBASE;
-export type EDEFAULT = {
+} & ExpressionBase;
+export type EDefault = {
     type: 'DEFAULT';
     value: string|number;
-} & EXPRESSIONBASE;
-export type ECOMPARATOR = {
+} & ExpressionBase;
+export type EComparator = {
     type: 'COMPARATOR';
     operator: 'EQ'|'GT'|'GTE'|'LT'|'LTE';
     value: string|number;
-} & EXPRESSIONBASE;
-export type ECOMPARATORLOCATION = {
+} & ExpressionBase;
+export type EComparatorLocation = {
     type: 'GEO';
     operator: 'NEAR';
     value: Geometry;
-} & EXPRESSIONBASE;
+} & ExpressionBase;
 
 type ComparatorValue = {
     name: 'EQ'|'GT'|'GTE'|'LT'|'LTE';
@@ -57,7 +57,7 @@ export const getComparatorValue = (comparator: RuleFilterComparator): Comparator
     if (isRuleFilterComparatorLocation(comparator)) return {name: 'NEAR', value: comparator._near};
     return {name: 'EQ', value: comparator._eq || ''}
 };
-export const processValues = (field: RuleFilterField, value: RuleFilterFieldValue): ECOMPARATOR|EDEFAULT|ECOMPARATORLOCATION => {
+export const processValues = (field: RuleFilterField, value: RuleFilterFieldValue): EComparator|EDefault|EComparatorLocation => {
     if (isRuleFilterComparator(value)){
         const comparator = value;
         const operator = getComparatorValue(comparator);
@@ -87,47 +87,47 @@ export const processValues = (field: RuleFilterField, value: RuleFilterFieldValu
         });
     }
 };
-export type EXPRESSION = EPASSTHROW|EDEFAULT|ECOMPARATOR|ECOMPARATORLOCATION;
-export type CONTAINERTYPE = 'OR'|'AND'|'DEFAULT';
-export type CONTAINERBASE = {
+export type Expression = EPassthrow|EDefault|EComparator|EComparatorLocation;
+export type ContainerType = 'OR'|'AND'|'DEFAULT';
+export type ContainerBase = {
     model: 'CONTAINER';
     field: string;
-    values: (EXPRESSION|CONTAINER)[];
+    values: (Expression|Container)[];
 };
-export type CONTAINERAND = {
+export type ContainerAND = {
     type: 'AND';
-} & CONTAINERBASE;
-export type CONTAINEROR = {
+} & ContainerBase;
+export type ContainerOR = {
     type: 'OR';
-} & CONTAINERBASE;
-export type CONTAINERDEFAULT = {
+} & ContainerBase;
+export type ContainerDefault = {
     type: 'DEFAULT';
-} & CONTAINERBASE;
-export type CONTAINER = CONTAINERAND|CONTAINEROR|CONTAINERDEFAULT;
-export type RULEFILTERCONTAINER = (EXPRESSION|CONTAINER)[];
+} & ContainerBase;
+export type Container = ContainerAND|ContainerOR|ContainerDefault;
+export type RuleFilterContainer = (Expression|Container)[];
 
-export const isContainer = (value: EXPRESSION|CONTAINER): value is CONTAINER => {
+export const isContainer = (value: Expression|Container): value is Container => {
     return value.model === MODELS.CONTAINER;
 }
-export const isContainerAND = (value: EXPRESSION|CONTAINER): value is CONTAINERAND => {
+export const isContainerAND = (value: Expression|Container): value is ContainerAND => {
     return isContainer(value) && value.type === 'AND';
 }
-export const isContainerOR = (value: EXPRESSION|CONTAINER): value is CONTAINEROR => {
+export const isContainerOR = (value: Expression|Container): value is ContainerOR => {
     return isContainer(value) && value.type === 'OR';
 }
-export const isContainerDefault = (value: EXPRESSION|CONTAINER): value is CONTAINERDEFAULT => {
+export const isContainerDefault = (value: Expression|Container): value is ContainerDefault => {
     return isContainer(value) && value.type === 'DEFAULT';
 }
-export const isExpressionPassthrow = (value: EXPRESSION): value is EPASSTHROW => {
+export const isExpressionPassthrow = (value: Expression): value is EPassthrow => {
     return value.type === EXPRESSION_TYPES.PASSTHROW;
 };
-export const isExpressionDefault = (value: EXPRESSION): value is EDEFAULT => {
+export const isExpressionDefault = (value: Expression): value is EDefault => {
     return value.type === EXPRESSION_TYPES.DEFAULT;
 };
-export const isExpressionComparator = (value: EXPRESSION): value is ECOMPARATOR => {
+export const isExpressionComparator = (value: Expression): value is EComparator => {
     return value.type === EXPRESSION_TYPES.COMPARATOR;
 };
-export const isExpressionLocation = (value: EXPRESSION): value is ECOMPARATORLOCATION => {
+export const isExpressionLocation = (value: Expression): value is EComparatorLocation => {
     return value.type === EXPRESSION_TYPES.GEO;
 };
 export const MODELS = {
@@ -156,7 +156,7 @@ export const EXPRESSION_OPERATORS = {
 export const RULE_OPERATORS = {
     'EQ': '_eq', 'GT': '_gt', 'GTE': '_gte', 'LT': '_lt', 'LTE': '_lte', 'NEAR': '_near'
 };
-export const parseRuleFilter = (filter: RuleFilter): RULEFILTERCONTAINER => {
+export const parseRuleFilter = (filter: RuleFilter): RuleFilterContainer => {
     const fields = getRuleFilters(filter);
     if (fields) {
         return fields.map(
@@ -170,7 +170,7 @@ export const parseRuleFilter = (filter: RuleFilter): RULEFILTERCONTAINER => {
                     };
                 }
                 else if (isRuleFilterArray(field.value)) {
-                    const results: RULEFILTERCONTAINER = [];
+                    const results: RuleFilterContainer = [];
                     field.value.forEach(
                         (rulefilter) => results.push(...parseRuleFilter(rulefilter))
                     );
@@ -228,7 +228,7 @@ export const buildPayloadFromEventLogPayload = (eventLogPayload: any): Payload|n
     return validPayload.length > 0 ? validPayload : null;
 };
 
-export const createANDContainer = (): CONTAINER => {
+export const createANDContainer = (): Container => {
     return {
         type: 'AND',
         model: 'CONTAINER',
@@ -236,7 +236,7 @@ export const createANDContainer = (): CONTAINER => {
         values: []
     };
 };
-export const createORContainer = (): CONTAINER => {
+export const createORContainer = (): Container => {
     return {
         type: 'OR',
         model: 'CONTAINER',
@@ -244,7 +244,7 @@ export const createORContainer = (): CONTAINER => {
         values: []
     };
 };
-export const createExpresion = (fieldName = 'root', value?: RuleFilterValue): EXPRESSION => {
+export const createExpresion = (fieldName = 'root', value?: RuleFilterValue): Expression => {
     if (value === undefined) {
         return {
             model: 'EXPRESSION',
@@ -260,7 +260,7 @@ export const createExpresion = (fieldName = 'root', value?: RuleFilterValue): EX
     };
 };
 
-export const parseContainerValue = (value: EXPRESSION|CONTAINER) : RuleFilter => {
+export const parseContainerValue = (value: Expression|Container) : RuleFilter => {
     if (value.model === 'EXPRESSION') {
         if (isExpressionDefault(value)) {
             return {[value.field]: value.value};
@@ -276,7 +276,7 @@ export const parseContainerValue = (value: EXPRESSION|CONTAINER) : RuleFilter =>
     return {[value.field]: value.values.map(parseContainerValue)};
 };
 const emptyFilter: RuleFilter = {};
-export const parseFilterContainer = (container: RULEFILTERCONTAINER) : RuleFilter => {
+export const parseFilterContainer = (container: RuleFilterContainer) : RuleFilter => {
     if (!Array.isArray(container)) return {};
     return container.reduce<RuleFilter>((filter, container) => {
         return {...filter, ...parseContainerValue(container)};

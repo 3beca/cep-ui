@@ -5,9 +5,9 @@ import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import EditIcon from '@material-ui/icons/EditOutlined';
 
 import {
-    RULEFILTERCONTAINER,
-    EXPRESSION,
-    CONTAINER,
+    RuleFilterContainer,
+    Expression,
+    Container,
     isContainer,
     CONTAINER_TYPES,
     isExpressionDefault,
@@ -15,7 +15,7 @@ import {
     isExpressionLocation,
     createANDContainer,
     createORContainer,
-    CONTAINERTYPE,
+    ContainerType,
     createExpresion
 } from '../../services/api/utils';
 import {Geometry} from '../../services/api';
@@ -112,12 +112,12 @@ export const EditButton: React.FC<{onEdit?: () => void}> = ({onEdit}) => {
         </IconButton>
     );
 };
-export const hasContainer = (operator: CONTAINERTYPE, filter: RULEFILTERCONTAINER) => {
+export const hasContainer = (operator: ContainerType, filter: RuleFilterContainer) => {
     return filter.some(container => container.type === operator);
 };
 export type EditButtonsProps = {
     show: boolean;
-    filter: RULEFILTERCONTAINER;
+    filter: RuleFilterContainer;
     onAddContainer: (type: 'OR'|'AND') => void;
     onAddExpression: () => void;
     onDelete?: () => void;
@@ -152,12 +152,12 @@ export const EditButtons: React.FC<EditButtonsProps> = ({show, filter, onAddCont
 };
 
 export type FilterExpressionProps = {
-    expression: EXPRESSION,
-    filter: RULEFILTERCONTAINER;
-    parent?: CONTAINER;
+    expression: Expression,
+    filter: RuleFilterContainer;
+    parent?: Container;
     index: number;
     editMode: boolean;
-    onChange:(newFilter: RULEFILTERCONTAINER, expression?: EXPRESSION) => void;
+    onChange:(newFilter: RuleFilterContainer, expression?: Expression) => void;
 };
 export const FilterExpression: React.FC<FilterExpressionProps> = ({expression, editMode, filter, parent, index, onChange}) => {
     const styles = useStyles();
@@ -222,12 +222,12 @@ export const FilterExpression: React.FC<FilterExpressionProps> = ({expression, e
     );
 };
 export type FilterContainerProps = {
-    filter: RULEFILTERCONTAINER;
-    parent?: CONTAINER;
-    container: CONTAINER;
+    filter: RuleFilterContainer;
+    parent?: Container;
+    container: Container;
     index: number;
     editMode: boolean;
-    onChange:(newFilter: RULEFILTERCONTAINER, expression?: EXPRESSION) => void;
+    onChange:(newFilter: RuleFilterContainer, expression?: Expression) => void;
 };
 export const FilterContainer: React.FC<FilterContainerProps> = ({filter, parent, container, index, editMode, onChange}) => {
     const styles = useStyles();
@@ -312,10 +312,10 @@ export const FilterContainer: React.FC<FilterContainerProps> = ({filter, parent,
 };
 
 export type RuleFilterProps = {
-    filter: RULEFILTERCONTAINER;
+    filter: RuleFilterContainer;
     disabled?: boolean;
     editMode?: boolean;
-    onChange?:(newFilter: RULEFILTERCONTAINER, expression?: EXPRESSION) => void;
+    onChange?:(newFilter: RuleFilterContainer, expression?: Expression) => void;
 };
 export const RuleFilter: React.FC<RuleFilterProps> = ({filter, disabled, editMode = false, onChange = NOOP}) => {
     const onAddContainer = React.useCallback((type: 'OR'|'AND') => {

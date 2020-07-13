@@ -18,7 +18,7 @@ import {
 import RuleCreatePage, {ConfigFilterExpression} from './';
 import { BASE_URL } from '../../services/config';
 import { Rule, RuleError, RuleFilter } from '../../services/api';
-import { Payload, RULEFILTERCONTAINER, EXPRESSION, ECOMPARATORLOCATION } from '../../services/api/utils';
+import { Payload, RuleFilterContainer, Expression, EComparatorLocation } from '../../services/api/utils';
 
 const fakeUseParams = useParams as unknown as jest.Mock;
 const fakeLink = Link as unknown as {linkAction: jest.Mock};
@@ -550,8 +550,8 @@ test('RuleCreatePage for realtime rules should config the filter and create the 
 test('ConfigFilterExpresion should close dialog when click outside', async () => {
     const fieldName = 'fieldString';
     const payload: Payload = [{name: fieldName, type: 'string'}];
-    const expression: EXPRESSION = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
-    const filter: RULEFILTERCONTAINER = [expression];
+    const expression: Expression = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -571,7 +571,7 @@ test('ConfigFilterExpresion should close dialog when click outside', async () =>
 test('ConfigFilterExpresion should not show dialog when no expression', async () => {
     const fieldName = 'fieldString';
     const payload: Payload = [{name: fieldName, type: 'string'}];
-    const filter: RULEFILTERCONTAINER = [];
+    const filter: RuleFilterContainer = [];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -590,8 +590,8 @@ test('ConfigFilterExpresion should not show dialog when no expression', async ()
 test('ConfigFilterExpresion should set operator GT to numeric field', async () => {
     const fieldName = 'fieldNumeric';
     const payload: Payload = [{name: fieldName, type: 'number'}];
-    const expression: EXPRESSION = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
-    const filter: RULEFILTERCONTAINER = [expression];
+    const expression: Expression = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -634,8 +634,8 @@ test('ConfigFilterExpresion should set operator GT to numeric field', async () =
 test('ConfigFilterExpresion should update operator LTE and numeric field', async () => {
     const fieldName = 'fieldNumeric';
     const payload: Payload = [{name: fieldName, type: 'number'}];
-    const expression: EXPRESSION = {type: 'COMPARATOR', model: 'EXPRESSION', field: fieldName, operator: 'EQ', value: 50};
-    const filter: RULEFILTERCONTAINER = [expression];
+    const expression: Expression = {type: 'COMPARATOR', model: 'EXPRESSION', field: fieldName, operator: 'EQ', value: 50};
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -678,8 +678,8 @@ test('ConfigFilterExpresion should update operator LTE and numeric field', async
 test('ConfigFilterExpresion should set a default operator with a string field', async () => {
     const fieldName = 'fieldString';
     const payload: Payload = [{name: fieldName, type: 'string'}];
-    const expression: EXPRESSION = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
-    const filter: RULEFILTERCONTAINER = [expression];
+    const expression: Expression = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -716,8 +716,8 @@ test('ConfigFilterExpresion should set a default operator with a string field', 
 test('ConfigFilterExpresion should set operator NEAR to GEO field with maxDistance', async () => {
     const fieldName = 'fieldLocation';
     const payload: Payload = [{name: fieldName, type: 'location'}];
-    const expression: EXPRESSION = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
-    const filter: RULEFILTERCONTAINER = [expression];
+    const expression: Expression = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -744,7 +744,7 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with maxDistan
 
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
-    const expectedFilter: ECOMPARATORLOCATION[] = [
+    const expectedFilter: EComparatorLocation[] = [
         {
           model: 'EXPRESSION',
           type: 'GEO',
@@ -763,8 +763,8 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with maxDistan
 test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistance', async () => {
     const fieldName = 'fieldLocation';
     const payload: Payload = [{name: fieldName, type: 'location'}];
-    const expression: EXPRESSION = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
-    const filter: RULEFILTERCONTAINER = [expression];
+    const expression: Expression = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -791,7 +791,7 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
 
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
-    const expectedFilter: ECOMPARATORLOCATION[] = [
+    const expectedFilter: EComparatorLocation[] = [
         {
           model: 'EXPRESSION',
           type: 'GEO',
@@ -810,8 +810,8 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
 test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistance and maxDistance', async () => {
     const fieldName = 'fieldLocation';
     const payload: Payload = [{name: fieldName, type: 'location'}];
-    const expression: EXPRESSION = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
-    const filter: RULEFILTERCONTAINER = [expression];
+    const expression: Expression = {type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName};
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression
@@ -840,7 +840,7 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
 
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
-    const expectedFilter: ECOMPARATORLOCATION[] = [
+    const expectedFilter: EComparatorLocation[] = [
         {
           model: 'EXPRESSION',
           type: 'GEO',
@@ -860,7 +860,7 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
 test('ConfigFilterExpresion should change location filter to passthorw when payload field is not location', async () => {
     const fieldName = 'fieldLocation';
     const payload: Payload = [{name: fieldName, type: 'number'}];
-    const expression: EXPRESSION =         {
+    const expression: Expression =         {
         model: 'EXPRESSION',
         type: 'GEO',
         operator: 'NEAR',
@@ -870,7 +870,7 @@ test('ConfigFilterExpresion should change location filter to passthorw when payl
             _maxDistance: 300
         }
     };
-    const filter: RULEFILTERCONTAINER = [expression];
+    const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     render(
         <ConfigFilterExpression

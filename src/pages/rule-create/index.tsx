@@ -22,15 +22,15 @@ import {useStyles} from './styles';
 import {
     Payload,
     PayloadField,
-    RULEFILTERCONTAINER,
-    EXPRESSION,
-    EPASSTHROW,
-    ECOMPARATOR,
-    EDEFAULT,
+    RuleFilterContainer,
+    Expression,
+    EPassthrow,
+    EComparator,
+    EDefault,
     isExpressionPassthrow,
     isExpressionLocation,
     isExpressionComparator,
-    ECOMPARATORLOCATION
+    EComparatorLocation
 } from '../../services/api/utils';
 import RuleFilter from '../../components/rule-filter';
 import {parseFilterContainer} from '../../services/api/utils';
@@ -160,12 +160,12 @@ export const FieldValue: React.FC<FieldValueProps> = ({type, value, setValue}) =
 
 export type FieldExpressionComparatorProps = {
     field: PayloadField;
-    expression: ECOMPARATOR|EDEFAULT|EPASSTHROW;
-    updateExpression: (comaprator: ECOMPARATOR|EDEFAULT) => void;
+    expression: EComparator|EDefault|EPassthrow;
+    updateExpression: (comaprator: EComparator|EDefault) => void;
 };
 export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps> = ({field, expression, updateExpression}) => {
-    const operator = (expression as ECOMPARATOR).operator || '';
-    const value = (expression as ECOMPARATOR).value || '';
+    const operator = (expression as EComparator).operator || '';
+    const value = (expression as EComparator).value || '';
     const updateValue = (value: number|string) => {
         if (isExpressionPassthrow(expression)) updateExpression({field: field.name, model: 'EXPRESSION', type: 'DEFAULT', value: value});
         else updateExpression({...expression, value});
@@ -182,7 +182,7 @@ export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps>
     );
 };
 
-export const buildLocationExpression = (name: string, lng = 0, lat = 0): ECOMPARATORLOCATION => (
+export const buildLocationExpression = (name: string, lng = 0, lat = 0): EComparatorLocation => (
     {
         type: 'GEO',
         model: 'EXPRESSION',
@@ -195,8 +195,8 @@ export const buildLocationExpression = (name: string, lng = 0, lat = 0): ECOMPAR
 );
 export type FieldExpressionLocationProps = {
     field: PayloadField;
-    expression: ECOMPARATORLOCATION;
-    updateExpression: (comaprator: ECOMPARATORLOCATION) => void;
+    expression: EComparatorLocation;
+    updateExpression: (comaprator: EComparatorLocation) => void;
 };
 export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = ({field, expression, updateExpression}) => {
     const [location, setLocation] = React.useState<Geometry>(expression.value);
@@ -258,8 +258,8 @@ export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = (
 };
 export type FieldExpressionProps = {
     field?: PayloadField;
-    expression: EXPRESSION;
-    updateExpression: (comaprator: EXPRESSION) => void;
+    expression: Expression;
+    updateExpression: (comaprator: Expression) => void;
 };
 export const FieldExpression: React.FC<FieldExpressionProps> = ({field, expression, updateExpression}) => {
     if (!field) return null;
@@ -280,34 +280,34 @@ export const FieldExpression: React.FC<FieldExpressionProps> = ({field, expressi
 };
 
 export type ConfigFilterDialogExpressionProps = {
-    filter: RULEFILTERCONTAINER;
-    expression: EXPRESSION;
-    updateFilter: (filter: RULEFILTERCONTAINER) => void;
+    filter: RuleFilterContainer;
+    expression: Expression;
+    updateFilter: (filter: RuleFilterContainer) => void;
     payload: Payload;
 };
 export const ConfigFilterDialogExpression: React.FC<ConfigFilterDialogExpressionProps> = ({filter, expression, updateFilter, payload}) => {
     const [selected, setSelected] = React.useState<PayloadField|undefined>(payload.find(field => expression.field === field.name));
-    const [comparator, setComparator] = React.useState<EXPRESSION>(expression);
+    const [comparator, setComparator] = React.useState<Expression>(expression);
     const updateExpression = React.useCallback(
         () => {
             expression.field = comparator.field;
             expression.type = comparator.type;
             switch(comparator.type) {
                 case 'DEFAULT': {
-                    const newExp = expression as EDEFAULT;
+                    const newExp = expression as EDefault;
                     newExp.value = comparator.value;
                     newExp.field = comparator.field;
                     break;
                 }
                 case 'COMPARATOR': {
-                    const newExp = expression as ECOMPARATOR;
+                    const newExp = expression as EComparator;
                     newExp.value = comparator.value;
                     newExp.field = comparator.field;
                     newExp.operator = comparator.operator;
                     break;
                 }
                 case 'GEO': {
-                    const newExp = expression as ECOMPARATORLOCATION;
+                    const newExp = expression as EComparatorLocation;
                     newExp.value = comparator.value;
                     newExp.field = comparator.field;
                     newExp.operator = comparator.operator;
@@ -346,9 +346,9 @@ export const ConfigFilterDialogExpression: React.FC<ConfigFilterDialogExpression
 };
 
 export type ConfigFilterExpressionProps = {
-    filter?: RULEFILTERCONTAINER;
-    expression?: EXPRESSION;
-    updateFilter: (filter: RULEFILTERCONTAINER) => void;
+    filter?: RuleFilterContainer;
+    expression?: Expression;
+    updateFilter: (filter: RuleFilterContainer) => void;
     payload?: Payload|null;
 };
 export const ConfigFilterExpression: React.FC<ConfigFilterExpressionProps> = ({filter, expression, updateFilter, payload}) => {
@@ -382,9 +382,9 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const [payload, setPayload] = React.useState<Payload|null>(null);
     const [rule, updateRule] = React.useReducer((state: Partial<Rule>, update: Partial<Rule>) => ({...state, ...update}), initialRuleState);
     const [isResponseDialogOpen, setResponseDialogOpen] = React.useState(false);
-    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RULEFILTERCONTAINER>([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
-    const [mutateFilterContainer, setMutateFilterContainer] = React.useState<{filter: RULEFILTERCONTAINER; expression?: EXPRESSION;}>();
-    const updateRuleFilter = React.useCallback((filter: RULEFILTERCONTAINER) => {
+    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RuleFilterContainer>([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
+    const [mutateFilterContainer, setMutateFilterContainer] = React.useState<{filter: RuleFilterContainer; expression?: Expression;}>();
+    const updateRuleFilter = React.useCallback((filter: RuleFilterContainer) => {
         setMutateFilterContainer(undefined);
         setRuleFilterContainer(filter);
     }, []);

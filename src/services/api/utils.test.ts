@@ -13,32 +13,32 @@ import {
     createANDContainer,
     createORContainer,
     createExpresion,
-    CONTAINER,
-    EPASSTHROW,
-    EDEFAULT,
-    ECOMPARATOR,
-    ECOMPARATORLOCATION,
+    Container,
+    EPassthrow,
+    EDefault,
+    EComparator,
+    EComparatorLocation,
     Payload,
-    EXPRESSION,
-    CONTAINERAND,
-    CONTAINEROR,
-    CONTAINERDEFAULT,
-    parseFilterContainer, RULEFILTERCONTAINER
+    Expression,
+    ContainerAND,
+    ContainerOR,
+    ContainerDefault,
+    parseFilterContainer, RuleFilterContainer
 } from './utils';
 import { RuleFilter, RuleFilterComparator, Geometry, RuleFilterComparatorLocation } from './models';
 
 test(
     'check types should return the correct type',
     () => {
-        const container: CONTAINER = {model: 'CONTAINER'} as CONTAINER;
-        const containerAND: CONTAINERAND = {model: 'CONTAINER', type: 'AND'} as CONTAINERAND;
-        const containerOR: CONTAINEROR = {model: 'CONTAINER', type: 'OR'} as CONTAINEROR;
-        const containerDefault: CONTAINERDEFAULT = {model: 'CONTAINER', type: 'DEFAULT'} as CONTAINERDEFAULT;
+        const container: Container = {model: 'CONTAINER'} as Container;
+        const containerAND: ContainerAND = {model: 'CONTAINER', type: 'AND'} as ContainerAND;
+        const containerOR: ContainerOR = {model: 'CONTAINER', type: 'OR'} as ContainerOR;
+        const containerDefault: ContainerDefault = {model: 'CONTAINER', type: 'DEFAULT'} as ContainerDefault;
 
-        const passExpression  = {model: 'EXPRESSION', type: 'PASSTHROW'} as EPASSTHROW;
-        const defaultExpression  = {model: 'EXPRESSION', type: 'DEFAULT'} as EDEFAULT;
-        const comparatorExpression  = {model: 'EXPRESSION', type: 'COMPARATOR'} as ECOMPARATOR;
-        const geoExpression  = {model: 'EXPRESSION', type: 'GEO'} as ECOMPARATORLOCATION;
+        const passExpression  = {model: 'EXPRESSION', type: 'PASSTHROW'} as EPassthrow;
+        const defaultExpression  = {model: 'EXPRESSION', type: 'DEFAULT'} as EDefault;
+        const comparatorExpression  = {model: 'EXPRESSION', type: 'COMPARATOR'} as EComparator;
+        const geoExpression  = {model: 'EXPRESSION', type: 'GEO'} as EComparatorLocation;
 
         expect(isContainer(container)).toBe(true);
         expect(isContainer(passExpression)).toBe(false);
@@ -559,7 +559,7 @@ test('buildPayloadFromEventLogPayload should return a valid payload', () => {
 });
 
 test('createANDContainer should return a container with AND', () => {
-    const expectedANDContainer: CONTAINER = {
+    const expectedANDContainer: Container = {
         model: 'CONTAINER',
         type: 'AND',
         field: '_and',
@@ -569,7 +569,7 @@ test('createANDContainer should return a container with AND', () => {
 });
 
 test('createOrContainer should return a container with OR', () => {
-    const expectedORContainer: CONTAINER = {
+    const expectedORContainer: Container = {
         model: 'CONTAINER',
         type: 'OR',
         field: '_or',
@@ -581,7 +581,7 @@ test('createOrContainer should return a container with OR', () => {
 test('createExpresion should return a EXPRESION default with number', () => {
     const fieldName = 'fieldName';
     const value = 25;
-    const expectedORContainer: EXPRESSION = {
+    const expectedORContainer: Expression = {
         model: 'EXPRESSION',
         type: 'DEFAULT',
         field: fieldName,
@@ -593,7 +593,7 @@ test('createExpresion should return a EXPRESION default with number', () => {
 test('createExpresion should return a EXPRESION default with string', () => {
     const fieldName = 'type';
     const value = 'temperature';
-    const expectedExpression: EXPRESSION = {
+    const expectedExpression: Expression = {
         model: 'EXPRESSION',
         type: 'DEFAULT',
         field: fieldName,
@@ -603,7 +603,7 @@ test('createExpresion should return a EXPRESION default with string', () => {
 });
 
 test('createExpresion should return a EXPRESION passthrow when no arguments', () => {
-    const expectedExpression: EXPRESSION = {
+    const expectedExpression: Expression = {
         model: 'EXPRESSION',
         type: 'PASSTHROW',
         field: 'root'
@@ -613,7 +613,7 @@ test('createExpresion should return a EXPRESION passthrow when no arguments', ()
 
 test('createExpresion should return a EXPRESION passthrow when only receive fieldname', () => {
     const fieldName = 'type';
-    const expectedExpression: EXPRESSION = {
+    const expectedExpression: Expression = {
         model: 'EXPRESSION',
         type: 'PASSTHROW',
         field: fieldName
@@ -622,17 +622,17 @@ test('createExpresion should return a EXPRESION passthrow when only receive fiel
 });
 
 test('parseFilterContainer should return a Passthrow rule filter from a invalid filter container', () => {
-    const invalidContainer = {} as RULEFILTERCONTAINER;
+    const invalidContainer = {} as RuleFilterContainer;
     expect(parseFilterContainer(invalidContainer)).toEqual({});
 });
 
 test('parseFilterContainer should return a Passthrow rule filter from a null filter container', () => {
-    const invalidContainer = null as unknown as RULEFILTERCONTAINER;
+    const invalidContainer = null as unknown as RuleFilterContainer;
     expect(parseFilterContainer(invalidContainer)).toEqual({});
 });
 
 test('parseFilterContainer should return a Passthrow rule filter from a undefined filter container', () => {
-    const invalidContainer = undefined as unknown as RULEFILTERCONTAINER;
+    const invalidContainer = undefined as unknown as RuleFilterContainer;
     expect(parseFilterContainer(invalidContainer)).toEqual({});
 });
 
