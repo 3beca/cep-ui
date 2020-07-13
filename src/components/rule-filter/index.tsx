@@ -2,6 +2,7 @@ import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
+import EditIcon from '@material-ui/icons/EditOutlined';
 
 import {
     RULEFILTERCONTAINER,
@@ -101,6 +102,16 @@ export const DeleteButton: React.FC<{onDelete?: () => void}> = ({onDelete}) => {
         </IconButton>
     );
 };
+export const EditButton: React.FC<{onEdit?: () => void}> = ({onEdit}) => {
+    if (!onEdit) return null;
+    return (
+        <IconButton
+            aria-label='filter edit button'
+            onClick={onEdit}>
+            <EditIcon fontSize='small'/>
+        </IconButton>
+    );
+};
 export const hasContainer = (operator: CONTAINERTYPE, filter: RULEFILTERCONTAINER) => {
     return filter.some(container => container.type === operator);
 };
@@ -169,35 +180,38 @@ export const FilterExpression: React.FC<FilterExpressionProps> = ({expression, e
     }, [parent, filter, onChange, index]);
     if (isExpressionDefault(expression)) {
         return (
-            <>
+            <div className={styles.ruleCardFilterExpressionLine}>
                 <ExpressionComparator
                     field={expression.field}
                     operator={OPERATORS['EQ']}
                     value={expression.value}/>
                 <DeleteButton onDelete={editMode ? onDeleteExpression : undefined}/>
-            </>
+                <EditButton onEdit={editMode ? () => onChange(filter, expression) : undefined}/>
+            </div>
         );
     }
     if (isExpressionComparator(expression)) {
         return (
-            <>
+            <div className={styles.ruleCardFilterExpressionLine}>
                 <ExpressionComparator
                     field={expression.field}
                     operator={OPERATORS[expression.operator]}
                     value={expression.value}/>
                 <DeleteButton onDelete={editMode ? onDeleteExpression : undefined}/>
-            </>
+                <EditButton onEdit={editMode ? () => onChange(filter, expression) : undefined}/>
+            </div>
         );
     }
     if (isExpressionLocation(expression)) {
         return (
-            <>
+            <div className={styles.ruleCardFilterExpressionLine}>
                 <ExpresionLocation
                     field={expression.field}
                     operator={expression.operator}
                     geometry={expression.value}/>
                 <DeleteButton onDelete={editMode ? onDeleteExpression : undefined}/>
-            </>
+                <EditButton onEdit={editMode ? () => onChange(filter, expression) : undefined}/>
+            </div>
         );
     }
     return (

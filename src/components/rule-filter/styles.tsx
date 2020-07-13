@@ -37,9 +37,15 @@ export const useStyles = makeStyles(
         ruleCardFilterExpressionValue: {
             fontSize: 14
         },
+        ruleCardFilterExpressionLine: {
+            display: 'flex',
+            flex: 1,
+            alignItems: 'center'
+        },
         ruleCardFilterExpression: {
             display: 'flex',
-            marginLeft: 32
+            marginLeft: 32,
+            flex: 1,
         },
         ruleCardFilterExpressionDistance: {
             marginLeft: 10,

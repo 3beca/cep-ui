@@ -215,7 +215,7 @@ export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = (
                         inputProps={{
                             'aria-label': 'config filter location longitude'
                         }}
-                        value={location._geometry.coordinates[0]}
+                        value={location._geometry.coordinates[0] || ''}
                         onChange={(ev) => updateLocation({...location, _geometry: {type: 'Point', coordinates: [Number(ev.target.value), location._geometry.coordinates[1]]}})}
                         type='number'/>
                 </div>
@@ -224,7 +224,7 @@ export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = (
                         inputProps={{
                             'aria-label': 'config filter location latitude'
                         }}
-                        value={location._geometry.coordinates[1]}
+                        value={location._geometry.coordinates[1] || ''}
                         onChange={(ev) => updateLocation({...location, _geometry: {type: 'Point', coordinates: [location._geometry.coordinates[0], Number(ev.target.value)]}})}
                         type='number'/>
                 </div>
@@ -286,7 +286,7 @@ export type ConfigFilterDialogExpressionProps = {
     payload: Payload;
 };
 export const ConfigFilterDialogExpression: React.FC<ConfigFilterDialogExpressionProps> = ({filter, expression, updateFilter, payload}) => {
-    const [selected, setSelected] = React.useState<PayloadField|undefined>();
+    const [selected, setSelected] = React.useState<PayloadField|undefined>(payload.find(field => expression.field === field.name));
     const [comparator, setComparator] = React.useState<EXPRESSION>(expression);
     const updateExpression = React.useCallback(
         () => {

@@ -9,9 +9,7 @@ import {
 import { parseRuleFilter, createANDContainer, createORContainer, createExpresion } from '../../services/api/utils';
 import userEvent from '@testing-library/user-event';
 
-test(
-    'Render RuleFilter with Passthrow when no filter received',
-    async () => {
+test('Render RuleFilter with Passthrow when no filter received', async () => {
         const filter = {} as RuleFilter;
         render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
@@ -20,9 +18,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with Passthrow when filter in undefined',
-    async () => {
+test('Render RuleFilter with Passthrow when filter in undefined', async () => {
         const filter = undefined as unknown as RuleFilter;
         render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
@@ -31,9 +27,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with Passthrow when filter in null',
-    async () => {
+test('Render RuleFilter with Passthrow when filter in null', async () => {
         const filter = null as unknown as RuleFilter;
         render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
@@ -42,9 +36,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with Passthrow when filter in []',
-    async () => {
+test('Render RuleFilter with Passthrow when filter in []', async () => {
         const filter = [] as unknown as RuleFilter;
         render(<RuleFilterView filter={parseRuleFilter(filter)}/>);
 
@@ -53,9 +45,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received an filter expression default',
-    async () => {
+test('Render RuleFilter with FilterComparator when received an filter expression default', async () => {
         const filter = {
             temperature: 10,
             humidity: 80
@@ -84,9 +74,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received an filter expression Comparator',
-    async () => {
+test('Render RuleFilter with FilterComparator when received an filter expression Comparator', async () => {
         const filter = {
             field1: {_eq: 10},
             field2: {_gt: 20},
@@ -127,9 +115,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received an filter expression location comparator with max distance',
-    async () => {
+test('Render RuleFilter with FilterComparator when received an filter expression location comparator with max distance', async () => {
         const location: Geometry = {
             _geometry: {
                 type: 'Point',
@@ -153,9 +139,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received an filter expression location comparator with min distance',
-    async () => {
+test('Render RuleFilter with FilterComparator when received an filter expression location comparator with min distance', async () => {
         const location: Geometry = {
             _geometry: {
                 type: 'Point',
@@ -179,9 +163,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received an filter expression location comparator with min and max distance',
-    async () => {
+test('Render RuleFilter with FilterComparator when received an filter expression location comparator with min and max distance', async () => {
         const location: Geometry = {
             _geometry: {
                 type: 'Point',
@@ -206,9 +188,7 @@ test(
     }
 );
 
-test(
-    'Do not render RuleFilter with FilterComparator when received an invalid filter expression location comparator',
-    async () => {
+test('Do not render RuleFilter with FilterComparator when received an invalid filter expression location comparator', async () => {
         const location: Geometry = {
             _geometry: {
                 type: 'Point',
@@ -227,9 +207,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received a container AND',
-    async () => {
+test('Render RuleFilter with FilterComparator when received a container AND', async () => {
         const filter: RuleFilter = {
             _and: [
                 {field1: 10},
@@ -266,9 +244,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received a container OR',
-    async () => {
+test('Render RuleFilter with FilterComparator when received a container OR', async () => {
         const filter: RuleFilter = {
             _or: [
                 {field1: 10},
@@ -305,9 +281,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received a container UNKNOWN',
-    async () => {
+test('Render RuleFilter with FilterComparator when received a container UNKNOWN', async () => {
         const filter: RuleFilter = {
             anyfield: [
                 {field1: 10},
@@ -344,9 +318,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received an AND and OR container',
-    async () => {
+test('Render RuleFilter with FilterComparator when received an AND and OR container', async () => {
         const filter: RuleFilter = {
             _and: [{p1: 10, p2: 20}],
             _or: [{p3: 30}, {p4: 40}]
@@ -393,9 +365,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter with FilterComparator when received an AND container with a nested OR container',
-    async () => {
+test('Render RuleFilter with FilterComparator when received an AND container with a nested OR container', async () => {
         const filter: RuleFilter = {
             _and: [
                 {p1: 10, p2: 20},
@@ -450,9 +420,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode show Passthrow when no filter received and create an AND and OR container in it',
-    async () => {
+test('Render RuleFilter in editMode show Passthrow when no filter received and create an AND and OR container in it', async () => {
         const filter = {} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -480,9 +448,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode cannot add AND when there is one',
-    async () => {
+test('Render RuleFilter in editMode cannot add AND when there is one', async () => {
         const filter = {_and: [{temperature: 25}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -500,9 +466,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode cannot add OR when there is one',
-    async () => {
+test('Render RuleFilter in editMode cannot add OR when there is one', async () => {
         const filter = {_or: [{temperature: 25}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -520,9 +484,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode show Passthrow when no filter received and create a expression',
-    async () => {
+test('Render RuleFilter in editMode show Passthrow when no filter received and create a expression', async () => {
         const filter = {} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -545,9 +507,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete first container',
-    async () => {
+test('Render RuleFilter in editMode can delete first container', async () => {
         const filter = {_and: [{teperature: 5}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -567,9 +527,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete first container with more elements',
-    async () => {
+test('Render RuleFilter in editMode can delete first container with more elements', async () => {
         const filter = {_and: [{teperature: 5}], temperature: 10} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -589,9 +547,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an INNER AND container',
-    async () => {
+test('Render RuleFilter in editMode can delete an INNER AND container', async () => {
         const filter = {_and: [{_and: [{teperature: 5}]}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -616,9 +572,8 @@ test(
         expect(onChange).toHaveBeenNthCalledWith(2, expectedPassthrowExpression);
     }
 );
-test(
-    'Render RuleFilter in editMode can delete an INNER AND container and other expressions',
-    async () => {
+
+test('Render RuleFilter in editMode can delete an INNER AND container and other expressions', async () => {
         const filter = {_and: [{_and: [{teperature: 5}], humidity: 45}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -644,9 +599,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an INNER AND container and complex expressions',
-    async () => {
+test('Render RuleFilter in editMode can delete an INNER AND container and complex expressions', async () => {
         const filter = {_and: [{_and: [{teperature: 5}, {pressure: 1000}], humidity: 45}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -672,9 +625,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter can create an INNER empty AND container',
-    async () => {
+test('Render RuleFilter can create an INNER empty AND container', async () => {
         const filter = {_or: []} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -695,9 +646,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter can create an INNER AND container with passthrow',
-    async () => {
+test('Render RuleFilter can create an INNER AND container with passthrow', async () => {
         const filter = {_or: [{}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -718,9 +667,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter can create an INNER OR container',
-    async () => {
+test('Render RuleFilter can create an INNER OR container', async () => {
         const filter = {_and: []} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -741,9 +688,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can create a INNER expression',
-    async () => {
+test('Render RuleFilter in editMode can create a INNER expression', async () => {
         const filter = {_and: []} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -765,9 +710,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can create a INNER expression passthrow',
-    async () => {
+test('Render RuleFilter in editMode can create a INNER expression passthrow', async () => {
         const filter = {_and: [{}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -789,9 +732,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an expression',
-    async () => {
+test('Render RuleFilter in editMode can delete an expression', async () => {
         const filter = {humidity: 45} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -812,9 +753,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an expression when more root expressions',
-    async () => {
+test('Render RuleFilter in editMode can delete an expression when more root expressions', async () => {
         const filter = {humidity: 45, temperature: 12} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -835,9 +774,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an INNER expression',
-    async () => {
+test('Render RuleFilter in editMode can delete an INNER expression', async () => {
         const filter = {_and: [{humidity: 25}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -858,9 +795,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an INNER expression inside container',
-    async () => {
+test('Render RuleFilter in editMode can delete an INNER expression inside container', async () => {
         const filter = {_and: [{humidity: 25, _or: [{pressure: 1000}]}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -881,9 +816,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an INNER expression comparator inside container',
-    async () => {
+test('Render RuleFilter in editMode can delete an INNER expression comparator inside container', async () => {
         const filter = {_and: [{humidity: 25, pressure: {_gt: 25}}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -904,9 +837,7 @@ test(
     }
 );
 
-test(
-    'Render RuleFilter in editMode can delete an INNER expression location inside container',
-    async () => {
+test('Render RuleFilter in editMode can delete an INNER expression location inside container', async () => {
         const location: RuleFilterComparatorLocation = {_near: {_geometry: {coordinates: [100, 100], type: 'Point'}, _maxDistance: 100}};
         const filter = {_and: [{humidity: 25, location}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
@@ -927,3 +858,61 @@ test(
 
     }
 );
+
+test('Render RuleFilter in editMode can edit an location expression', async () => {
+    const location: RuleFilterComparatorLocation = {_near: {_geometry: {coordinates: [100, 100], type: 'Point'}, _maxDistance: 100}};
+    const filter = {_and: [{humidity: 25}, {location}]} as RuleFilter;
+    const ruleContainer = parseRuleFilter(filter);
+    const onChange = jest.fn();
+    render(
+        <RuleFilterView
+            filter={ruleContainer}
+            editMode={true}
+            onChange={onChange}/>
+        );
+    await screen.findByLabelText(/filters container/i);
+    const editButtons = await screen.findAllByLabelText(/filter edit button/i);
+    expect(editButtons).toHaveLength(2);
+    userEvent.click(editButtons[1]);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenNthCalledWith(1, ruleContainer, parseRuleFilter({location})[0]);
+});
+
+test('Render RuleFilter in editMode can edit an string expression', async () => {
+    const stringFilter = {type: 'humudity'};
+    const filter = {_and: [stringFilter]} as RuleFilter;
+    const ruleContainer = parseRuleFilter(filter);
+    const onChange = jest.fn();
+    render(
+        <RuleFilterView
+            filter={ruleContainer}
+            editMode={true}
+            onChange={onChange}/>
+        );
+    await screen.findByLabelText(/filters container/i);
+    const editButtons = await screen.findAllByLabelText(/filter edit button/i);
+    expect(editButtons).toHaveLength(1);
+    userEvent.click(editButtons[0]);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenNthCalledWith(1, ruleContainer, parseRuleFilter(stringFilter)[0]);
+});
+
+test('Render RuleFilter in editMode can edit an numeric expression', async () => {
+    const numericFilter = {temperature: {_gt: 25}};
+    const filter = {_and: [numericFilter]} as RuleFilter;
+    const ruleContainer = parseRuleFilter(filter);
+    const onChange = jest.fn();
+    render(
+        <RuleFilterView
+            filter={ruleContainer}
+            editMode={true}
+            onChange={onChange}/>
+        );
+    await screen.findByLabelText(/filters container/i);
+    const editButtons = await screen.findAllByLabelText(/filter edit button/i);
+    expect(editButtons).toHaveLength(1);
+    userEvent.click(editButtons[0]);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenNthCalledWith(1, ruleContainer, parseRuleFilter(numericFilter)[0]);
+});
+

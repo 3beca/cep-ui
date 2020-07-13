@@ -536,7 +536,7 @@ test('RuleCreatePage for realtime rules should config the filter and create the 
     const {id, eventTypeName, targetName, createdAt, updatedAt, ...bodyRule} = expectedRule;
     const ruleName = expectedRule.name;
     await userEvent.type(await screen.findByLabelText(/rule creator name/), ruleName);
-    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule).log(console.log);
+    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule);
     const createRuleButton = await screen.findByLabelText(/rule create button/);
     expect(createRuleButton).not.toBeDisabled();
     userEvent.click(createRuleButton);
@@ -908,4 +908,9 @@ test('ConfigFilterExpresion should change location filter to passthorw when payl
       ];
     expect(updateFilter).toHaveBeenCalledTimes(1);
     expect(updateFilter).toHaveBeenNthCalledWith(1, expectedFilter);
+});
+
+// FieldExpressionLocation
+test('FieldExpressionLocation should avoid invalid coordinates, Lat: [-90, 90] and Lng: [-180, 180]', () => {
+
 });
