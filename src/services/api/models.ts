@@ -35,7 +35,6 @@ export type Target = {
 export type TargetList = ServiceList<Target>;
 export type TargetError = ServiceError;
 export type TargetDeleted = ServiceDeleted;
-
 export type RuleFilterValue = number|string;
 export type RulefilterPoint = {
     type: 'Point';

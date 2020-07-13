@@ -5,6 +5,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Select from '@material-ui/core/Select';
@@ -32,7 +33,7 @@ import {
     ECOMPARATORLOCATION
 } from '../../services/api/utils';
 import RuleFilter from '../../components/rule-filter';
-import { Divider } from '@material-ui/core';
+import {parseFilterContainer} from '../../services/api/utils';
 
 const RuleCreateError: React.FC<{message?: string}> = ({message}) => {
     const styles = useStyles();
@@ -381,6 +382,12 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const [payload, setPayload] = React.useState<Payload|null>(null);
     const [rule, updateRule] = React.useReducer((state: Partial<Rule>, update: Partial<Rule>) => ({...state, ...update}), initialRuleState);
     const [isResponseDialogOpen, setResponseDialogOpen] = React.useState(false);
+    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RULEFILTERCONTAINER>([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
+    const [mutateFilterContainer, setMutateFilterContainer] = React.useState<{filter: RULEFILTERCONTAINER; expression?: EXPRESSION;}>();
+    const updateRuleFilter = React.useCallback((filter: RULEFILTERCONTAINER) => {
+        setMutateFilterContainer(undefined);
+        setRuleFilterContainer(filter);
+    }, []);
     const bodyRule = React.useMemo((): Partial<Rule> => {
         return {
             name: rule.name,
@@ -388,18 +395,12 @@ export const RuleCreatePage: React.FC<{}> = () => {
             eventTypeId: eventType?.id,
             targetId: target?.id,
             skipOnConsecutivesMatches: rule.skipOnConsecutivesMatches,
-            filters: {}
+            filters: parseFilterContainer(ruleFilterContainer)
         };
-    }, [rule, target, eventType, type]);
+    }, [rule, target, eventType, type, ruleFilterContainer]);
     const {request, isLoading, error, response, reset} = useCreate<Rule>(ENTITY.RULES, bodyRule, false);
     const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading || isResponseDialogOpen), [bodyRule, isLoading, isResponseDialogOpen]);
     const eventTypeId = bodyRule.eventTypeId;
-    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RULEFILTERCONTAINER>([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
-    const [mutateFilterContainer, setMutateFilterContainer] = React.useState<{filter: RULEFILTERCONTAINER; expression?: EXPRESSION;}>();
-    const updateRuleFilter = React.useCallback((filter: RULEFILTERCONTAINER) => {
-        setMutateFilterContainer(undefined);
-        setRuleFilterContainer(filter);
-    }, []);
     React.useEffect(() => {
         setPayload(null);
         setMutateFilterContainer(undefined);

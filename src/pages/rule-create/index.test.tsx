@@ -444,6 +444,8 @@ const enableRuleFilterComponent = async () => {
     expect(await screen.findAllByLabelText(/payload field$/)).toHaveLength(3);
     userEvent.click(await screen.findByLabelText(/payload addfield dialog close/i));
     expect(screen.queryByLabelText(/payload addfield dialog$/i)).not.toBeInTheDocument();
+
+    return {eventType, target};
 };
 
 test('RuleCreatePage for realtime rules should activate RuleFilter editMode only when eventId and payload are valid', async () => {
@@ -451,8 +453,8 @@ test('RuleCreatePage for realtime rules should activate RuleFilter editMode only
     expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
 });
 
-test('RuleCreatePage for realtime rules shoul config the filter and create the rule', async () => {
-    await enableRuleFilterComponent();
+test('RuleCreatePage for realtime rules should config the filter and create the rule', async () => {
+    const {eventType, target} = await enableRuleFilterComponent();
     expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
 
     // Add a filter for string should show the filter comparator dialog
@@ -518,8 +520,8 @@ test('RuleCreatePage for realtime rules shoul config the filter and create the r
 
     // Create Rule
     const filter: RuleFilter = {
-        myStringfield: 'my string',
-        myNumericfield: 100,
+        myStringfield: 'my String',
+        myNumericfield: {_lt: 100},
         myLocationfield: {
             _near: {
                 _geometry: {type: 'Point', coordinates: [100, 200]},
@@ -528,12 +530,13 @@ test('RuleCreatePage for realtime rules shoul config the filter and create the r
         }
 
     };
-    const expectedRule = generateRule('test-rule', 3, filter);
-    const {id, ...bodyRule} = expectedRule;
+    const {...expectedRule} = generateRule('test-rule', 3, filter);
+    expectedRule.eventTypeId = eventType.id;
+    expectedRule.targetId = target.id;
+    const {id, eventTypeName, targetName, createdAt, updatedAt, ...bodyRule} = expectedRule;
     const ruleName = expectedRule.name;
     await userEvent.type(await screen.findByLabelText(/rule creator name/), ruleName);
-    console.log('New Rule', expectedRule);
-    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule);
+    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule).log(console.log);
     const createRuleButton = await screen.findByLabelText(/rule create button/);
     expect(createRuleButton).not.toBeDisabled();
     userEvent.click(createRuleButton);
@@ -541,7 +544,6 @@ test('RuleCreatePage for realtime rules shoul config the filter and create the r
     await screen.findByLabelText(/rule create loading/);
     await screen.findByLabelText(/rule create success$/);
     await screen.findByLabelText(/rule create success message/);
-    screen.debug(await screen.findByLabelText(/submit rule section/));
 });
 
 // ConfigFilterExpression test
@@ -562,6 +564,25 @@ test('ConfigFilterExpresion should close dialog when click outside', async () =>
 
     const dialog = await screen.findByLabelText(/config filter dialog/i);
     userEvent.click(dialog.firstElementChild!);
+    expect(updateFilter).toHaveBeenCalledTimes(1);
+    expect(updateFilter).toHaveBeenNthCalledWith(1, filter);
+});
+
+test('ConfigFilterExpresion should not show dialog when no expression', async () => {
+    const fieldName = 'fieldString';
+    const payload: Payload = [{name: fieldName, type: 'string'}];
+    const filter: RULEFILTERCONTAINER = [];
+    const updateFilter = jest.fn();
+    render(
+        <ConfigFilterExpression
+            payload={payload}
+            filter={filter}
+            expression={undefined}
+            updateFilter={updateFilter}
+        />
+    );
+
+    expect(screen.queryByLabelText(/config filter dialog/i)).not.toBeInTheDocument();
     expect(updateFilter).toHaveBeenCalledTimes(1);
     expect(updateFilter).toHaveBeenNthCalledWith(1, filter);
 });
@@ -830,6 +851,59 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
               _minDistance: 300,
               _maxDistance: 600
           }
+        }
+      ];
+    expect(updateFilter).toHaveBeenCalledTimes(1);
+    expect(updateFilter).toHaveBeenNthCalledWith(1, expectedFilter);
+});
+
+test('ConfigFilterExpresion should change location filter to passthorw when payload field is not location', async () => {
+    const fieldName = 'fieldLocation';
+    const payload: Payload = [{name: fieldName, type: 'number'}];
+    const expression: EXPRESSION =         {
+        model: 'EXPRESSION',
+        type: 'GEO',
+        operator: 'NEAR',
+        field: fieldName,
+        value: {
+            _geometry: {type: 'Point', coordinates: [100, 200]},
+            _maxDistance: 300
+        }
+    };
+    const filter: RULEFILTERCONTAINER = [expression];
+    const updateFilter = jest.fn();
+    render(
+        <ConfigFilterExpression
+            payload={payload}
+            filter={filter}
+            expression={expression}
+            updateFilter={updateFilter}
+        />
+    );
+
+    await screen.findByLabelText(/config filter dialog/i);
+    const selector = await screen.findByLabelText(/config filter field selector/i);
+    userEvent.click(selector);
+    const options = await screen.findAllByLabelText(/config filter options/i);
+    expect(options).toHaveLength(1);
+    userEvent.click(options[0]);
+
+    const operatorSelector = await screen.findByLabelText(/config filter operator selector/);
+    userEvent.click(operatorSelector);
+    const operators = await screen.findAllByLabelText(/config filter operators/);
+    expect(operators).toHaveLength(5);
+    userEvent.click(operators[1]);
+    const valueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(valueField, '100');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    const expectedFilter = [
+        {
+          model: 'EXPRESSION',
+          type: 'COMPARATOR',
+          operator: 'GT',
+          field: fieldName,
+          value: 100
         }
       ];
     expect(updateFilter).toHaveBeenCalledTimes(1);

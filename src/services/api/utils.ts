@@ -16,7 +16,7 @@ import {
     isRuleFilterComparatorGTE,
     isRuleFilterComparatorLT,
     isRuleFilterComparatorLTE,
-    isRuleFilterComparatorLocation,
+    isRuleFilterComparatorLocation
 } from './models';
 
 export type EXPRESSIONBASE = {
@@ -153,6 +153,9 @@ export const EXPRESSION_OPERATORS = {
     LTE: 'LTE',
     NEAR: 'NEAR'
 };
+export const RULE_OPERATORS = {
+    'EQ': '_eq', 'GT': '_gt', 'GTE': '_gte', 'LT': '_lt', 'LTE': '_lte', 'NEAR': '_near'
+};
 export const parseRuleFilter = (filter: RuleFilter): RULEFILTERCONTAINER => {
     const fields = getRuleFilters(filter);
     if (fields) {
@@ -255,4 +258,27 @@ export const createExpresion = (fieldName = 'root', value?: RuleFilterValue): EX
         field: fieldName,
         value
     };
+};
+
+const emptyFilter: RuleFilter = {};
+export const parseFilterContainer = (container: RULEFILTERCONTAINER) : RuleFilter => {
+    if (!Array.isArray(container)) return {};
+    return container.reduce<RuleFilter>((filter, container) => {
+        if (container.model === 'EXPRESSION') {
+            if (isExpressionDefault(container)) {
+                return {...filter, [container.field]: container.value};
+            }
+            if (isExpressionComparator(container)) {
+                return {...filter, [container.field]: {[RULE_OPERATORS[container.operator]]: container.value}};
+            }
+            if (isExpressionLocation(container)) {
+                return {
+                    ...filter,
+                    [container.field]: { _near: container.value }
+                };
+            }
+            return filter;
+        }
+        return {...filter, [container.field]: parseFilterContainer(container.values)};;
+    }, emptyFilter);
 };

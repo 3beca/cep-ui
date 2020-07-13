@@ -22,9 +22,10 @@ import {
     EXPRESSION,
     CONTAINERAND,
     CONTAINEROR,
-    CONTAINERDEFAULT
+    CONTAINERDEFAULT,
+    parseFilterContainer, RULEFILTERCONTAINER
 } from './utils';
-import { RuleFilter, RuleFilterComparator, Geometry } from './models';
+import { RuleFilter, RuleFilterComparator, Geometry, RuleFilterComparatorLocation } from './models';
 
 test(
     'check types should return the correct type',
@@ -618,4 +619,143 @@ test('createExpresion should return a EXPRESION passthrow when only receive fiel
         field: fieldName
     };
     expect(createExpresion(fieldName)).toEqual(expectedExpression);
+});
+
+test('parseFilterContainer should return a Passthrow rule filter from a invalid filter container', () => {
+    const invalidContainer = {} as RULEFILTERCONTAINER;
+    expect(parseFilterContainer(invalidContainer)).toEqual({});
+});
+
+test('parseFilterContainer should return a Passthrow rule filter from a null filter container', () => {
+    const invalidContainer = null as unknown as RULEFILTERCONTAINER;
+    expect(parseFilterContainer(invalidContainer)).toEqual({});
+});
+
+test('parseFilterContainer should return a Passthrow rule filter from a undefined filter container', () => {
+    const invalidContainer = undefined as unknown as RULEFILTERCONTAINER;
+    expect(parseFilterContainer(invalidContainer)).toEqual({});
+});
+
+test('parseFilterContainer should return a Passthrow rule filter from a passthrow filter container', () => {
+    const filter: RuleFilter = {};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+test('parseFilterContainer should return a Default rule filter from a default filter container', () => {
+    const filter: RuleFilter = {type: 'temperature'};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+test('parseFilterContainer should return a comparator rule filter from a comparator filter container', () => {
+    const filter: RuleFilter = {temperatue: {_gt: 25}};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+test('parseFilterContainer should return a location comparator rule filter from a lcoation comparator filter container', () => {
+    const filter: RuleFilter = {location: {_near: {
+        _geometry: {type: 'Point', coordinates: [100, 200]},
+        _minDistance: 300,
+        _maxDistance: 400
+    }}};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+test('parseFilterContainer should return a location comparator rule filter from a lcoation comparator filter container only coords', () => {
+    const filter: RuleFilter = {location: {_near: {
+        _geometry: {type: 'Point', coordinates: [100, 200]}
+    }}};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+test('parseFilterContainer should return a location comparator rule filter from a lcoation comparator filter container only max distance', () => {
+    const filter: RuleFilter = {location: {_near: {
+        _geometry: {type: 'Point', coordinates: [100, 200]},
+        _maxDistance: 400
+    }}};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+test('parseFilterContainer should return a location comparator rule filter from a lcoation comparator filter container only min distance', () => {
+    const filter: RuleFilter = {location: {_near: {
+        _geometry: {type: 'Point', coordinates: [100, 200]},
+        _minDistance: 300
+    }}};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+test('parseFilterContainer should return a  valid rule filter from a filter container with type, value and location', () => {
+    const location: RuleFilterComparatorLocation = {
+        _near: {
+            _geometry: {type: 'Point', coordinates: [100, 200]},
+            _minDistance: 300
+        }
+    };
+    const filter: RuleFilter = {type: 'temperature', value: {_lte: 0}, location};
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+
+test('parseFilterContainer should return an AND rule filter from a filter AND container with type, value and location', () => {
+    const location: RuleFilterComparatorLocation = {
+        _near: {
+            _geometry: {type: 'Point', coordinates: [100, 200]},
+            _minDistance: 300
+        }
+    };
+    const filter: RuleFilter = {
+        _and: {
+            type: 'temperature', value: {_lte: 0}, location
+        }
+    };
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+
+test('parseFilterContainer should return an OR rule filter from a filter AND container with type, value and location', () => {
+    const location: RuleFilterComparatorLocation = {
+        _near: {
+            _geometry: {type: 'Point', coordinates: [100, 200]},
+            _minDistance: 300
+        }
+    };
+    const filter: RuleFilter = {
+        _or: {
+            type: 'temperature', value: {_lte: 0}, location
+        }
+    };
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+
+test('parseFilterContainer should return an nested rule filter from a filter nested container with type, value and location', () => {
+    const location: RuleFilterComparatorLocation = {
+        _near: {
+            _geometry: {type: 'Point', coordinates: [100, 200]},
+            _minDistance: 300
+        }
+    };
+    const filter: RuleFilter = {
+        _or: {
+            _and: {
+                type: 'temperature', value: {_lte: 0}, location
+            },
+            _or: {
+                type: 'temperature', value: {_lte: 0}, location
+            }
+        }
+    };
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+
+test('parseFilterContainer should return an nested rule filter with expressions from a filter nested container with type, value and location', () => {
+    const location: RuleFilterComparatorLocation = {
+        _near: {
+            _geometry: {type: 'Point', coordinates: [100, 200]},
+            _minDistance: 300
+        }
+    };
+    const filter: RuleFilter = {
+        type: 'humidity',
+        value: {_gte: 75},
+        _or: {
+            type: 'windspeed',
+            _and: {
+                type: 'temperature', value: {_lte: 0}, location
+            },
+            _or: {
+                type: 'temperature', value: {_lte: 0}, location
+            }
+        }
+    };
+    expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
 });
