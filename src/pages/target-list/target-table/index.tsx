@@ -78,7 +78,7 @@ export const TargetTable: React.FC<TargetTableProps> = ({
                                     className={styles.mainCheck}
                                     color='default'
                                     disabled={isLoading || isEmpty}
-                                    inputProps={{role: 'element-selector-all'}}
+                                    inputProps={{'aria-label': 'element-selector-all'}}
                                     checked={selecteds.size === TargetList?.results.length}
                                     onChange={(ev, checked) => selectAll(checked)}/>
                             </TableCell>

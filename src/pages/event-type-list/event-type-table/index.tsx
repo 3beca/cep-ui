@@ -80,7 +80,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                                     className={styles.mainCheck}
                                     color='default'
                                     disabled={isLoading || isEmpty}
-                                    inputProps={{role: 'element-selector-all'}}
+                                    inputProps={{'aria-label': 'element-selector-all'}}
                                     checked={selecteds.size === eventTypeList?.results.length}
                                     onChange={(ev, checked) => selectAll(checked)}/>
                             </TableCell>

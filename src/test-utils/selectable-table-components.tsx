@@ -52,7 +52,7 @@ export const runSelectableTableTest = <R, E>(
             <SelectableTable/>
         );
         await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
-        const selectorAll = await screen.findByRole(/element-selector-all$/);
+        const selectorAll = await screen.findByLabelText(/element-selector-all$/);
 
         fireEvent.click(selectorAll, {target: {value: true}});
     });
@@ -145,7 +145,7 @@ export const runSelectableTableTest = <R, E>(
         );
         await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
-        const selectAllChecker = await screen.findByRole(/element-selector-all/);
+        const selectAllChecker = await screen.findByLabelText(/element-selector-all/);
         const elements = await screen.findAllByRole(/element-selector$/);
 
         // Check All elements
