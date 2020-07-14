@@ -271,7 +271,7 @@ test('PaginatedTable render 10 elements when change pageSize to 20', async () =>
 
     fireEvent.mouseDown(rowsPerPage);
     //const bound = within(document.getElementById('menu-')!);
-    const options = screen.getAllByRole(/option/);
+    const options = screen.getAllByRole('option');
     fireEvent.click(options[1]); // 0->5, 1->10, 2->20
 
     expect(onChangePageSize).toHaveBeenCalledTimes(1);

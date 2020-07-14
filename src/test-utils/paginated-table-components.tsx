@@ -136,7 +136,7 @@ export const runPaginatedTableTest = <R, E>(
         serverResponse(1, 5, 200, dataGenerator(5, false, false));
         fireEvent.mouseDown(rowsPerPage);
         let bound = within(document.getElementById('menu-')!);
-        let options = bound.getAllByRole(/option/);
+        let options = bound.getAllByRole('option');
         fireEvent.click(options[0]); // 0->5, 1->10, 2->20
 
         await waitFor(() => expect(() => screen.getByTestId(/loading-view-row/)).toThrowError());
@@ -151,7 +151,7 @@ export const runPaginatedTableTest = <R, E>(
         serverResponse(1, 20, 200, dataGenerator(20, false, false));
         fireEvent.mouseDown(rowsPerPage);
         bound = within(document.getElementById('menu-')!);
-        options = bound.getAllByRole(/option/);
+        options = bound.getAllByRole('option');
         fireEvent.click(options[2]); // 0->5, 1->10, 2->20
 
         await waitFor(() => expect(() => screen.getByTestId(/loading-view-row/)).toThrowError());
