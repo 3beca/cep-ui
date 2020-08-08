@@ -117,12 +117,13 @@ export const hasContainer = (operator: ContainerType, filter: RuleFilterContaine
 };
 export type EditButtonsProps = {
     show: boolean;
+    isRoot?: boolean;
     filter: RuleFilterContainer;
     onAddContainer: (type: 'OR'|'AND') => void;
     onAddExpression: () => void;
     onDelete?: () => void;
 };
-export const EditButtons: React.FC<EditButtonsProps> = ({show, filter, onAddContainer, onAddExpression, onDelete}) => {
+export const EditButtons: React.FC<EditButtonsProps> = ({show, isRoot = false, filter, onAddContainer, onAddExpression, onDelete}) => {
     const styles = useStyles();
     if (!show) return null;
     return (
@@ -131,13 +132,13 @@ export const EditButtons: React.FC<EditButtonsProps> = ({show, filter, onAddCont
             className={styles.ruleCardActionsButtons}>
             <IconButton
                 aria-label='filter add button and'
-                disabled={hasContainer('AND', filter)}
+                disabled={hasContainer('AND', filter) && isRoot}
                 onClick={() => onAddContainer('AND')}>
                 <Typography>AND</Typography>
             </IconButton>
             <IconButton
                 aria-label='filter add button or'
-                disabled={hasContainer('OR', filter)}
+                disabled={hasContainer('OR', filter) && isRoot}
                 onClick={() => onAddContainer('OR')}>
                 <Typography>OR</Typography>
             </IconButton>
@@ -333,6 +334,7 @@ export const RuleFilter: React.FC<RuleFilterProps> = ({filter, disabled, editMod
         <div
             aria-label='filters container'>
             <EditButtons
+                isRoot={true}
                 show={editMode && !disabled}
                 filter={filter}
                 onAddContainer={onAddContainer}

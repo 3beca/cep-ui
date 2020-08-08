@@ -448,7 +448,7 @@ test('Render RuleFilter in editMode show Passthrow when no filter received and c
     }
 );
 
-test('Render RuleFilter in editMode cannot add AND when there is one', async () => {
+test('Render RuleFilter in editMode cannot add AND when there is one in Root', async () => {
         const filter = {_and: [{temperature: 25}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -466,7 +466,7 @@ test('Render RuleFilter in editMode cannot add AND when there is one', async () 
     }
 );
 
-test('Render RuleFilter in editMode cannot add OR when there is one', async () => {
+test('Render RuleFilter in editMode cannot add OR when there is one in Root', async () => {
         const filter = {_or: [{temperature: 25}]} as RuleFilter;
         const ruleContainer = parseRuleFilter(filter);
         const onChange = jest.fn();
@@ -914,5 +914,143 @@ test('Render RuleFilter in editMode can edit an numeric expression', async () =>
     userEvent.click(editButtons[0]);
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenNthCalledWith(1, ruleContainer, parseRuleFilter(numericFilter)[0]);
+});
+
+test('Render RuleFilter in editMode CAN add more than one AND inside a parent AND', async () => {
+    const filter = {_and: [{_and: [{a: 1}, {b: 2}]}]} as RuleFilter;
+    const ruleContainer = parseRuleFilter(filter);
+    const onChange = jest.fn();
+    render(
+        <RuleFilterView
+            filter={ruleContainer}
+            editMode={true}
+            onChange={onChange}/>
+        );
+    await screen.findByLabelText(/filters container/i);
+    const addButtons = await screen.findAllByLabelText(/filter add button and/i);
+    expect(addButtons).toHaveLength(3);
+    expect(addButtons[0]).toBeDisabled();
+    expect(addButtons[1]).not.toBeDisabled();
+    expect(addButtons[2]).not.toBeDisabled();
+
+    // Add second AND
+    userEvent.click(addButtons[1]);
+
+    expect(onChange).toHaveBeenNthCalledWith(
+        1,
+        parseRuleFilter(
+            {
+                _and: [
+                    {_and: [{a: 1}, {b: 2}]},
+                    {_and: []}
+                ]
+            }
+        )
+    );
+});
+
+test('Render RuleFilter in editMode CAN add more than one OR inside a parent OR', async () => {
+    const filter = {_or: [{_or: [{a: 1}, {b: 2}]}]} as RuleFilter;
+    const ruleContainer = parseRuleFilter(filter);
+    const onChange = jest.fn();
+    render(
+        <RuleFilterView
+            filter={ruleContainer}
+            editMode={true}
+            onChange={onChange}/>
+        );
+    await screen.findByLabelText(/filters container/i);
+    const addButtons = await screen.findAllByLabelText(/filter add button or/i);
+    expect(addButtons).toHaveLength(3);
+    expect(addButtons[0]).toBeDisabled();
+    expect(addButtons[1]).not.toBeDisabled();
+    expect(addButtons[2]).not.toBeDisabled();
+
+    // Add second AND
+    userEvent.click(addButtons[1]);
+
+    expect(onChange).toHaveBeenNthCalledWith(
+        1,
+        parseRuleFilter(
+            {
+                _or: [
+                    {_or: [{a: 1}, {b: 2}]},
+                    {_or: []}
+                ]
+            }
+        )
+    );
+});
+
+test('Render RuleFilter in editMode CAN add more than one OR inside a parent AND', async () => {
+    const filter = {_and: [{_or: [{a: 1}, {b: 2}]}]} as RuleFilter;
+    const ruleContainer = parseRuleFilter(filter);
+    const onChange = jest.fn();
+    render(
+        <RuleFilterView
+            filter={ruleContainer}
+            editMode={true}
+            onChange={onChange}/>
+        );
+    await screen.findByLabelText(/filters container/i);
+    const addORButtons = await screen.findAllByLabelText(/filter add button or/i);
+    const addAndButtons = await screen.findAllByLabelText(/filter add button and/i);
+    expect(addAndButtons).toHaveLength(3);
+    expect(addORButtons).toHaveLength(3);
+    expect(addAndButtons[0]).toBeDisabled();
+    expect(addORButtons[0]).not.toBeDisabled();
+    expect(addORButtons[1]).not.toBeDisabled();
+    expect(addORButtons[2]).not.toBeDisabled();
+
+    // Add second AND
+    userEvent.click(addORButtons[1]);
+
+    expect(onChange).toHaveBeenNthCalledWith(
+        1,
+        parseRuleFilter(
+            {
+                _and: [
+                    {_or: [{a: 1}, {b: 2}]},
+                    {_or: []}
+                ]
+            }
+        )
+    );
+});
+
+test('Render RuleFilter in editMode CAN add more than one AND inside a parent OR', async () => {
+    const filter = {_or: [{_and: [{a: 1}, {b: 2}]}]} as RuleFilter;
+    const ruleContainer = parseRuleFilter(filter);
+    const onChange = jest.fn();
+    render(
+        <RuleFilterView
+            filter={ruleContainer}
+            editMode={true}
+            onChange={onChange}/>
+        );
+    await screen.findByLabelText(/filters container/i);
+    const addANDButtons = await screen.findAllByLabelText(/filter add button and/i);
+    const addORButtons = await screen.findAllByLabelText(/filter add button or/i);
+    expect(addORButtons).toHaveLength(3);
+    expect(addANDButtons).toHaveLength(3);
+    expect(addORButtons[0]).toBeDisabled();
+    expect(addANDButtons[0]).not.toBeDisabled();
+    expect(addANDButtons[1]).not.toBeDisabled();
+    expect(addANDButtons[2]).not.toBeDisabled();
+
+    // Add second AND
+    userEvent.click(addANDButtons[1]);
+
+    expect(onChange).toHaveBeenNthCalledWith(
+        1,
+        parseRuleFilter(
+            {
+                _or: [
+                    {_and: [{a: 1}, {b: 2}]},
+                    {_and: []}
+                ]
+            }
+        )
+    );
 });
 
