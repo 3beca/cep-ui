@@ -15,13 +15,13 @@ import {useStyles as useCardStyles} from '../rule-card/styles';
 import {useHistory} from 'react-router-dom';
 
 
-type RuleTypesText = {[key in RuleTypes]: string};
+type RuleTypesText = {[key in RuleTypes]: string[]};
 type RuleTypesSamples = {[key in RuleTypes]: string[][]};
 const subtitles: RuleTypesText = {
-    realtime: 'Rule executes on any event matching filter on its event data.',
-    sliding: 'compute windowing with a text hiper large where it explains the main concept of this rule',
-    hopping: 'compute windowing with...',
-    tumbling: 'Rules executes on an interval matching aggregation over each interval of time.'
+    realtime: ['This rule executes one time for each event', 'On event payload of a given type, each rule will be evaluated to determinate if the event payload match the rule filter or does not.'],
+    sliding: ['This rule executes one time for each event aggregating previous events', 'On event payload of a given type, sliding rule evaluates a filter match based on an aggregation of a given time window. Aggregation operators supported are max, min, count, avg, stdDevPop, stdDevSample.'],
+    hopping: ['This rule executes...', 'compute windowing with...'],
+    tumbling: ['This rule executes in fixed time intervals aggregating events reveived inside the interval', 'As sliding rules, tumbling rules perform an aggregation of a given time window. However, in spite of realtime and slinding rules, tumbling rules got executed on a given time interval. This time interval matches the time window']
 };
 const samples: RuleTypesSamples = {
     realtime: [
@@ -30,9 +30,9 @@ const samples: RuleTypesSamples = {
         ['battery < 30 and windSpeed > 5', 'checks battery is less than 30 and windSpeed great than 5']
     ],
     sliding: [
-        ['Example 1', 'explanation example 1'],
-        ['Example 2', 'explanation example 2'],
-        ['Example 3', 'explanation example 3']
+        ['avg(temperature) > 35 last hour', 'checks temperature average is greater than 35 degrees on the last hour'],
+        ['sum(count) > 100 last 30 seconds', 'checks count sum is greater than 100 on the last 30 seconds'],
+        ['max(prints) < 10 last 90 minutes', 'checks max prints is less than 10 on the last 90 minutes']
     ],
     hopping: [
         ['Example 1', 'explanation example 1'],
@@ -40,9 +40,9 @@ const samples: RuleTypesSamples = {
         ['Example 3', 'explanation example 3']
     ],
     tumbling: [
-        ['count(temperature) last 5 minutes = 0', 'Checks no events of temperature has arrived every 5 minutes'],
-        ['avg(temperature) last 5 minutes > 30', 'Checks average of temperature of temperature is great than 30 every 5 minutes'],
-        ['max(temperature) last 5 minutes > 10', 'Checks max value of temperature is great than 30 every 5 minutes'],
+        ['count(temperature) = 0 last 5 minutes', 'Checks no events of temperature has arrived every 5 minutes'],
+        ['avg(temperature) > 30 last 5 minutes', 'Checks average of temperature of temperature is great than 30 every 5 minutes'],
+        ['max(temperature) > 10 last 5 minutes', 'Checks max value of temperature is great than 30 every 5 minutes'],
     ]
 };
 
@@ -100,7 +100,12 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({isOpen, onClo
 
                 <div className={styles.samplesBox}>
                     {
-                        type != null && (<Typography className={styles.ruleTypeTextSubtitle}>{subtitles[type]}</Typography>)
+                        type != null && (
+                            <div>
+                                <Typography className={styles.ruleTypeTextSubtitle}>{subtitles[type][0]}</Typography>
+                                <Typography className={styles.ruleTypeTextDescription}>{subtitles[type][1]}</Typography>
+                            </div>
+                        )
                     }
                     {
                         type != null && samples[type].map((text, idx) => (

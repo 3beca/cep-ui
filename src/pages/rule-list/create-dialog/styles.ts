@@ -69,6 +69,12 @@ export const useStyles = makeStyles(
             fontWeight: 700,
             color: theme.palette.common.black
         },
+        ruleTypeTextDescription: {
+            display: 'flex',
+            marginLeft: 8,
+            fontSize: 14,
+            color: theme.palette.common.black
+        },
         samplesBox: {
             display: 'flex',
             flexDirection: 'column',
