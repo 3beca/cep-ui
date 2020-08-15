@@ -29,6 +29,14 @@ Now, run the application in watch mode prompting the following command:
 npm start
 ```
 
+To create a production bundle:
+
+```
+npm run build
+```
+
+You can then serve all static files using for instance nginx. You can see the Dockerfile as reference.
+
 ## Test
 
 Run the test suite with the following command:
