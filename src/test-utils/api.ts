@@ -28,7 +28,7 @@ import nock from 'nock';
 export const setupNock = (url: string) => {
     const server = nock(url).defaultReplyHeaders({ 'access-control-allow-origin': '*' });
     // Skip Preflight CORS OPTION request
-    nock(url).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*' }).persist();
+    nock(url).intercept(/./, 'OPTIONS').reply(200, undefined, { 'access-control-allow-origin': '*', 'access-control-allow-headers': 'authorization' }).persist();
     return server;
 }
 
@@ -186,4 +186,37 @@ export const serverCreateRule = (server: nock.Scope, body: Partial<Rule>, status
 
 export const serverGetEventLogList = (server: nock.Scope, page: number = 1, size: number = 10, eventTypeId= '', status: number = 200, response: EventLogList|EventLogError = generateEventLogListWith(10, false, false)) => {
     return server.get(EVENTS_URL + `/?page=${page}&pageSize=${size}${eventTypeId ? `&eventTypeId=${eventTypeId}` : ''}`).reply(status, response);
+};
+
+export const serverGet401 = (server: nock.Scope, path: string, page = 1, size = 10, filter?: string) => {
+    return server.get(path + `/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`).reply(401, {error: 'missing authorization header'});
+};
+export const serverPost401 = (server: nock.Scope, path: string, body: string) => {
+    return server.post(path, body).reply(401, {error: 'missing authorization header'});
+};
+export const serverDelete401 = (server: nock.Scope, path: string, id: string) => {
+    return server.delete(path + `/${id}`).reply(401, {error: 'missing authorization header'});
+};
+
+export const serverGetListAuth = function serverGetList<T>(server: nock.Scope, path: string, key: string, page: number = 1, size: number = 10, filter: string = '', status: number = 200, response: ServiceList<T>|ServiceError) {
+    return server.get(
+        path + `/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`,
+        undefined,
+        {reqheaders: {Authorization: 'apiKey ' + key}}
+    ).reply(status, response);
+};
+
+export const serverDeleteAuth = (server: nock.Scope, path: string, key: string, id: string, status: number = 204, response: undefined|ServiceError = undefined) => {
+    return server.delete(
+        path + `/${id}`,
+        undefined,
+        {reqheaders: {Authorization: 'apiKey ' + key}}
+    ).reply(status, response);
+};
+export const serverCreateAuth = <T>(server: nock.Scope, path: string, key: string, body: string, status: number = 204, response: T|ServiceError) => {
+    return server.post(
+        path,
+        body,
+        {reqheaders: {Authorization: 'apiKey ' + key}}
+    ).reply(status, response);
 };

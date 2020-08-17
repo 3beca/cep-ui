@@ -4,7 +4,13 @@ import {
     generateListWith,
     serverGetList,
     serverDelete,
-    serverCreate
+    serverCreate,
+    serverGet401,
+    serverPost401,
+    serverDelete401,
+    serverGetListAuth,
+    serverDeleteAuth,
+    serverCreateAuth
 } from '../../test-utils';
 
 import {
@@ -185,7 +191,7 @@ describe(
                 const error = result as APIError<ServiceError>;
                 expect(error).toEqual({
                     errorCode: 500,
-                    errorMessage: '',
+                    errorMessage: 'id is an invalid id value or array',
                     error: {
                         statusCode: 500,
                         error: 'Missing id',
@@ -660,6 +666,136 @@ describe(
                 expect(isRuleFilterValue(filters![5].value)).toBe(false);
                 expect(isRuleFilterComparator(filters![5].value)).toBe(true);
                 expect(isRuleFilterComparatorLocation(filters![5].value as RuleFilterComparator)).toBe(true);
+            }
+        );
+    }
+);
+
+describe(
+    'CEP API with NO Authorization when it is required',
+    () => {
+        let api: Api;
+        const BASE_URL = 'https://localhost:123';
+        const PATH = '/anypath';
+        const server = setupNock(BASE_URL);
+
+        beforeAll(() => api = buildApiService(BASE_URL));
+
+        it(
+            'getListRequest should return 401 when no authorization',
+            async () => {
+                const page = 1;
+                const size = 10;
+                serverGet401(server, PATH);
+
+                const result = await api.getListRequest<Entity>(PATH, page, size);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(401);
+                expect(response.errorMessage).toEqual(expect.stringContaining(`${BASE_URL}${PATH}`));
+                expect(response.error).toEqual({error: 'missing authorization header'});
+            }
+        );
+
+        it(
+            'deleteRequest should return 401 when no authorization',
+            async () => {
+                const id = '1234567890';
+                serverDelete401(server, PATH, id);
+
+                const result = await api.deleteRequest(PATH, id);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(401);
+                expect(response.errorMessage).toEqual('missing authorization header');
+                expect(response.error).toEqual({
+                    statusCode: 401,
+                    error: 'missing authorization header',
+                    message: 'missing authorization header'
+                });
+            }
+        );
+
+        it(
+            'createRequest should return 401 when no authorization',
+            async () => {
+                const targetBody = {name: 'new target entity', url: 'https://whateveryouwant.com'};
+                serverPost401(server, PATH, JSON.stringify(targetBody));
+                const result = await api.createRequest(PATH, targetBody);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(401);
+                expect(response.errorMessage).toEqual(expect.stringContaining(`${BASE_URL}${PATH}`));
+                expect(response.error).toEqual({error: 'missing authorization header'});
+            }
+        );
+    }
+);
+
+describe(
+    'CEP API with Authorization when it is required',
+    () => {
+        let api: Api;
+        const BASE_URL = 'https://localhost:123';
+        //const BASE_URL = 'https://admin.cep.tribeca.ovh';
+        const PATH = '/anypath';
+        const server = setupNock(BASE_URL);
+        const apiKey = '1234567890';
+
+        beforeAll(() => api = buildApiService(BASE_URL, {method: 'GET', headers: {'authorization': 'apiKey ' + apiKey}}));
+
+        it(
+            'getListRequest should return a list of Elements',
+            async () => {
+                const page = 1;
+                const size = 10;
+                const expectedResult = generateListWith();
+                serverGetListAuth(server, PATH, apiKey, page, size, undefined, 200, expectedResult);
+
+                const result = await api.getListRequest<Entity>(PATH, page, size);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<ServiceList<Entity>>;
+                expect(response.status).toBe(200);
+                expect(response.data).toEqual(expectedResult);
+            }
+        );
+
+        it(
+            'deleteRequest should return one 204 empty response when eventTypeId is valid ',
+            async () => {
+                const eventTypeId = '5e8dffc9c906fefd9e7b2486';
+                serverDeleteAuth(server, PATH, apiKey, eventTypeId, 204);
+
+                const result = await api.deleteRequest(PATH, eventTypeId);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<ServiceDeleted[]>;
+                expect(response.status).toBe(200);
+                expect(response.data.length).toBe(1);
+                expect(response.data[0]).toEqual({
+                    id: eventTypeId,
+                    state: 'DELETED'
+                });
+            }
+        );
+
+        it(
+            'createRequest should return 200 and a Entity Target when create corrected',
+            async () => {
+                const target = generateTarget(1, 'test', 'test');
+                const targetBody = {name: target.name, url: target.url};
+                serverCreateAuth(server, PATH, apiKey, JSON.stringify(targetBody), 201, target);
+
+                const result = await api.createRequest(PATH, targetBody);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<Target>;
+                expect(response.status).toBe(201);
+                expect(response.data).toEqual(target);
             }
         );
     }

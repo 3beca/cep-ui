@@ -41,8 +41,8 @@ const samples: RuleTypesSamples = {
     ],
     hopping: [
         ['count(temperature) = 0 each 5 minutes in 10 minutes', 'Checks no events of temperature has arrived every 5 minutes'],
-        ['avg(temperature) > 30 each 15 minutes in 1 hour', 'Checks average of temperature of temperature is great than 30 every 5 minutes'],
-        ['max(temperature) > 10 each 5 seconds in 1 minute', 'Checks max value of temperature is great than 30 every 5 minutes'],
+        ['avg(temperature) > 30 each 15 minutes in 1 hour', 'Checks average of temperature of temperature is great than 30 every 15 minutes in a 1 hour window'],
+        ['max(temperature) > 10 each 5 seconds in 1 minute', 'Checks max value of temperature is great than 30 every 5 seconds in a 1 minute window'],
     ]
 };
 

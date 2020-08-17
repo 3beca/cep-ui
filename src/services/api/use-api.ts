@@ -5,13 +5,11 @@ import {
     APIResponseData
 } from '../../utils/fetch-api';
 import {
-    buildApiService,
     ServiceList,
     Entity,
-    GetListRequestOptions
+    GetListRequestOptions, Api
 } from './index';
 import {
-    BASE_URL,
     EVENT_TYPES_URL,
     TARGETS_URL,
     RULES_URL,
@@ -25,7 +23,6 @@ export enum ENTITY {
     RULES = 2,
     EVENTS_LOG = 3
 };
-const api = buildApiService(BASE_URL);
 
 export type useGetListApi<R, E> = {
     request: () => void;
@@ -33,11 +30,11 @@ export type useGetListApi<R, E> = {
     response: APIResponseData<ServiceList<R>> | undefined;
     error: APIError<E> | undefined;
 };
-export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size: number, filter: string|GetListRequestOptions = '', runOnRender: boolean = true) => {
+export const useGetList = <T extends Entity>(api: Api, entity: ENTITY, page: number, size: number, filter: string|GetListRequestOptions = '', runOnRender: boolean = true) => {
     const prevRequest = React.useRef< () => void>();
     const req = React.useCallback(
         () => api.getListRequest<T>(ENTITIES[entity], page, size, filter),
-        [page, size, filter, entity],
+        [api, page, size, filter, entity],
     );
     const {request, ...state} = useFetchApi(req);
     React.useEffect(
@@ -52,18 +49,18 @@ export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size:
     return {...state, request};
 };
 
-export const useDelete = (entity: ENTITY, eventIds: string[]|string) => {
+export const useDelete = (api: Api, entity: ENTITY, eventIds: string[]|string) => {
     const req = React.useCallback(
         () => api.deleteRequest(ENTITIES[entity], eventIds),
-        [eventIds, entity]
+        [api, eventIds, entity]
     );
     return useFetchApi(req);
 };
 
-export const useCreate = <T extends Entity>(entity: ENTITY, body: Partial<T>, runOnRender: boolean = false) => {
+export const useCreate = <T extends Entity>(api: Api, entity: ENTITY, body: Partial<T>, runOnRender: boolean = false) => {
     const req = React.useCallback(
         () => api.createRequest<T>(ENTITIES[entity], body),
-        [body, entity]
+        [api, body, entity]
     );
     const {request, ...state} = useFetchApi(req);
     React.useEffect(

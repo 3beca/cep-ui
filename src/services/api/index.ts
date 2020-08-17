@@ -27,7 +27,7 @@ export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async 
     if(!entityIds || entityArray.length < 1) {
         return {
             errorCode: 500,
-            errorMessage: '',
+            errorMessage: 'id is an invalid id value or array',
             error: {
                 statusCode: 500,
                 error: 'Missing id',
@@ -41,21 +41,37 @@ export const deleteRequest = (baseURL: string, config: APIRequestInfo) => async 
         requests.push(fetchApi<undefined, undefined, ServiceError>(url, {...config, method: 'DELETE'}));
     }
     const responses = await Promise.all(requests);
-    const data: ServiceDeleted[] = responses.map((response, idx) => {
-        const deletedResponse: ServiceDeleted = {
-            id: entityArray[idx],
-            state: 'DELETED'
+
+    try {
+        const data: ServiceDeleted[] = responses.map((response, idx) => {
+            const deletedResponse: ServiceDeleted = {
+                id: entityArray[idx],
+                state: 'DELETED'
+            };
+            if(isAPIError(response)) {
+                if (response.errorCode === 401) throw new Error();
+                deletedResponse.state = 'REJECTED';
+                deletedResponse.error = response.error;
+            }
+            return deletedResponse;
+        });
+
+        return {
+            status: 200,
+            data
         };
-        if(isAPIError(response)) {
-            deletedResponse.state = 'REJECTED';
-            deletedResponse.error = response.error;
-        }
-        return deletedResponse;
-    });
-    return {
-        status: 200,
-        data
-    };
+    }
+    catch(error) {
+        return {
+            errorCode: 401,
+            errorMessage: 'missing authorization header',
+            error: {
+                statusCode: 401,
+                error: 'missing authorization header',
+                message: 'missing authorization header'
+            }
+        };
+    }
 };
 export const createRequest = (baseURL: string, config: APIRequestInfo) => async <T extends APIBody>(path: string, body: Partial<T>): Promise<APIResponseData<T>|APIError<ServiceError>> => {
     const url = `${baseURL}${path}`;
@@ -66,10 +82,11 @@ export type Api = {
     deleteRequest(path: string, ids: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)>;
     createRequest<T extends APIBody>(path: string, body: Partial<T>): Promise<APIResponseData<T>|APIError<ServiceError>>;
 };
-export const buildApiService = (server: string): Api => {
+export const buildApiService = (server: string, baseConfig?: APIRequestInfo): Api => {
     const config: APIRequestInfo = {
         method: 'GET',
-        headers: {}
+        headers: {},
+        ...baseConfig
     };
     return {
         getListRequest: getListRequest(server, config),

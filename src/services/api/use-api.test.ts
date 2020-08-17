@@ -8,7 +8,10 @@ import {
 import {
     BASE_URL
 } from '../config';
-import {ServiceError} from './index';
+import {
+    ServiceError,
+    buildApiService
+} from './index';
 import {
     setupNock,
     generateEventType,
@@ -21,9 +24,14 @@ import {
     generateEventLogListWith,
     serverGetEventLogList
 } from '../../test-utils';
-import { EventType, Target, TargetError } from './models';
+import {
+    EventType,
+    Target,
+    TargetError
+} from './models';
 
 const url = BASE_URL;
+const api = buildApiService(BASE_URL);
 const server = setupNock(url);
 
 describe(
@@ -37,7 +45,7 @@ describe(
                 const expectedResult = generateEventTypeListWith(3, true, false);
                 serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-                const {result, waitForNextUpdate, rerender} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size));
+                const {result, waitForNextUpdate, rerender} = renderHook(() => useGetList(api, ENTITY.EVENT_TYPES, page, size));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -116,7 +124,7 @@ describe(
                 const expectedResult = generateEventTypeListWith(3, true, false);
                 serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size));
+                const {result, waitForNextUpdate} = renderHook(() => useGetList(api, ENTITY.EVENT_TYPES, page, size));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -161,7 +169,7 @@ describe(
                 const expectedResult = generateEventTypeListWith(3, true, false);
                 serverGetEventTypeList(server, page, size, filter, 200, expectedResult);
 
-                const {result, rerender, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, filter));
+                const {result, rerender, waitForNextUpdate} = renderHook(() => useGetList(api, ENTITY.EVENT_TYPES, page, size, filter));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -178,7 +186,7 @@ describe(
 
                 filter = 'newfilter'
                 serverGetEventTypeList(server, page, size, filter, 200, expectedResult);
-                rerender(() => useGetList(ENTITY.EVENT_TYPES, page, size, filter));
+                rerender(() => useGetList(api, ENTITY.EVENT_TYPES, page, size, filter));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -206,7 +214,7 @@ describe(
                 const expectedResult = generateEventTypeListWith(3, true, false);
                 serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, '', false));
+                const {result, waitForNextUpdate} = renderHook(() => useGetList(api, ENTITY.EVENT_TYPES, page, size, '', false));
 
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toBe(undefined);
@@ -257,7 +265,7 @@ describe(
                 const expectedResult = generateEventLogListWith(3, true, false);
                 serverGetEventLogList(server, page, size, eventTypeId, 200, expectedResult);
                 const filter = {eventTypeId};
-                const {result, waitForNextUpdate} = renderHook(() => useGetList(ENTITY.EVENTS_LOG, page, size, filter));
+                const {result, waitForNextUpdate} = renderHook(() => useGetList(api, ENTITY.EVENTS_LOG, page, size, filter));
 
                 expect(result.current.isLoading).toBe(true);
                 expect(result.current.error).toBe(undefined);
@@ -286,7 +294,7 @@ describe(
                 const eventTypeId = '123456789098';
                 serverDeleteEventType(server, eventTypeId);
 
-                const {result, waitForNextUpdate} = renderHook(() => useDelete(ENTITY.EVENT_TYPES, eventTypeId));
+                const {result, waitForNextUpdate} = renderHook(() => useDelete(api, ENTITY.EVENT_TYPES, eventTypeId));
                 expect(result.current.response).toBe(undefined);
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.isLoading).toBe(false);
@@ -316,7 +324,7 @@ describe(
                 const eventTypeId = undefined as unknown as string;
                 serverDeleteEventType(server, eventTypeId);
 
-                const {result, waitForNextUpdate} = renderHook(() => useDelete(ENTITY.EVENT_TYPES, eventTypeId));
+                const {result, waitForNextUpdate} = renderHook(() => useDelete(api, ENTITY.EVENT_TYPES, eventTypeId));
                 expect(result.current.response).toBe(undefined);
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.isLoading).toBe(false);
@@ -333,7 +341,7 @@ describe(
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toEqual({
                     errorCode: 500,
-                    errorMessage: '',
+                    errorMessage: 'id is an invalid id value or array',
                     error: {
                         error: 'Missing id',
                         message: 'id is an invalid id value or array',
@@ -356,7 +364,7 @@ describe(
                 serverDeleteEventType(server, eventTypeIds[1], 500, errorResponse);
                 serverDeleteEventType(server, eventTypeIds[2]);
 
-                const {result, waitForNextUpdate} = renderHook(() => useDelete(ENTITY.EVENT_TYPES, eventTypeIds));
+                const {result, waitForNextUpdate} = renderHook(() => useDelete(api, ENTITY.EVENT_TYPES, eventTypeIds));
                 expect(result.current.response).toBe(undefined);
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.isLoading).toBe(false);
@@ -394,7 +402,7 @@ describe(
                 const eventBody: Partial<EventType> = {name: eventType.name};
                 serverCreateEventType(server, eventBody, 201, eventType);
 
-                const {result, waitForNextUpdate} = renderHook(() => useCreate(ENTITY.EVENT_TYPES, eventBody));
+                const {result, waitForNextUpdate} = renderHook(() => useCreate(api, ENTITY.EVENT_TYPES, eventBody));
 
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.isLoading).toBe(false);
@@ -420,7 +428,7 @@ describe(
                 const targetBody: Partial<Target> = {name: target.name, url: target.url};
                 serverCreateTarget(server, targetBody, 201, target);
 
-                const {result, waitForNextUpdate} = renderHook(() => useCreate(ENTITY.TARGETS, targetBody));
+                const {result, waitForNextUpdate} = renderHook(() => useCreate(api, ENTITY.TARGETS, targetBody));
 
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.isLoading).toBe(false);
@@ -450,7 +458,7 @@ describe(
                 };
                 serverCreateTarget(server, targetBody, 409, targetError);
 
-                const {result, waitForNextUpdate} = renderHook(() => useCreate(ENTITY.TARGETS, targetBody));
+                const {result, waitForNextUpdate} = renderHook(() => useCreate(api, ENTITY.TARGETS, targetBody));
 
                 expect(result.current.error).toBe(undefined);
                 expect(result.current.isLoading).toBe(false);
@@ -480,7 +488,7 @@ describe(
                 let targetBody: Partial<Target> = {name: target.name, url: target.url};
                 serverCreateTarget(server, targetBody, 201, target);
 
-                const {result, waitForNextUpdate, rerender} = renderHook(() => useCreate(ENTITY.TARGETS, targetBody, true));
+                const {result, waitForNextUpdate, rerender} = renderHook(() => useCreate(api, ENTITY.TARGETS, targetBody, true));
 
                 expect(result.current.response).toBe(undefined);
                 expect(result.current.error).toBe(undefined);

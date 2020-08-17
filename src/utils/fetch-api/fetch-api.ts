@@ -23,7 +23,7 @@ export const fetchApi = async <B extends APIBody, R extends APIBody, E extends A
         body: (method !== 'GET' && body) ? JSON.stringify(body) : undefined,
         ...rest
     };
-    
+
     try {
         const response = await fetch(url, options);
         const status = response.status;
