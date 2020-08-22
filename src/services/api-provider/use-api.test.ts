@@ -111,7 +111,7 @@ describe(
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toEqual({
                     errorCode: 500,
-                    errorMessage: 'Error from http://localhost:123/event-types/?page=one&pageSize=10',
+                    errorMessage: `Error from ${url}/event-types/?page=one&pageSize=10`,
                     error: expectedResultPageError
                 });
                 expect(result.current.response).toEqual({
@@ -480,7 +480,7 @@ describe(
                 expect(result.current.isLoading).toBe(false);
                 expect(result.current.error).toEqual({
                     errorCode: 409,
-                    errorMessage: 'Error from http://localhost:123/targets',
+                    errorMessage: `Error from ${url}/targets`,
                     error: targetError
                 });
             }

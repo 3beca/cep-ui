@@ -81,7 +81,7 @@ test('ApiProvider should start checking and show login when server do not respon
     await waitFor(() => expect(screen.getByTestId(/noservice/i)).toHaveTextContent('true'));
     await waitFor(() => expect(screen.getByTestId(/login/i)).toHaveTextContent('false'));
     await waitFor(() => expect(screen.getByTestId(/apikey/i)).toHaveTextContent('undefined'));
-    await waitFor(() => expect(screen.getByTestId(/invalidkey/i)).toHaveTextContent('http://localhost:123 not found'));
+    await waitFor(() => expect(screen.getByTestId(/invalidkey/i)).toHaveTextContent(BASE_URL + ' not found'));
     spy.mockRestore();
 });
 
