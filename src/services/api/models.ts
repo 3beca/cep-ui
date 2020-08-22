@@ -143,3 +143,8 @@ export type EventLog = {
 } & Entity;
 export type EventLogList = ServiceList<EventLog>;
 export type EventLogError = ServiceError;
+
+export type VersionInfo = {
+    version: string;
+};
+export type VersionInfoError = ServiceError;

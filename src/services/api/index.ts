@@ -77,10 +77,15 @@ export const createRequest = (baseURL: string, config: APIRequestInfo) => async 
     const url = `${baseURL}${path}`;
     return fetchApi<Partial<T>, T, ServiceError>(url, {...config, method: 'POST', headers: {...config.headers, 'content-type': 'application/json'}, body});
 };
+export const getRequest = (baseURL: string, config: APIRequestInfo) => async <T extends APIBody>(path: string): Promise<APIResponseData<T>|APIError<ServiceError>> => {
+    const url = `${baseURL}${path}`;
+    return fetchApi<undefined, T, ServiceError>(url, {...config, method: 'GET'});
+};
 export type Api = {
     getListRequest<T>(path: string, page?: number, size?: number, filter?: GetListRequestOptions): Promise<APIResponseData<ServiceList<T>>|APIError<ServiceError>>;
     deleteRequest(path: string, ids: string|string[]): Promise<(APIResponseData<ServiceDeleted[]>|APIError<ServiceError>)>;
     createRequest<T extends APIBody>(path: string, body: Partial<T>): Promise<APIResponseData<T>|APIError<ServiceError>>;
+    getRequest<T extends APIBody>(path: string): Promise<APIResponseData<T>|APIError<ServiceError>>;
 };
 export const buildApiService = (server: string, baseConfig?: APIRequestInfo): Api => {
     const config: APIRequestInfo = {
@@ -91,6 +96,7 @@ export const buildApiService = (server: string, baseConfig?: APIRequestInfo): Ap
     return {
         getListRequest: getListRequest(server, config),
         deleteRequest: deleteRequest(server, config),
-        createRequest: createRequest(server, config)
+        createRequest: createRequest(server, config),
+        getRequest: getRequest(server, config)
     };
 };

@@ -32,6 +32,12 @@ export const setupNock = (url: string) => {
     return server;
 }
 
+export const generateEntity = function generateListWith(key: string): Entity {
+    return {
+        id: 'test_entity_' + key
+    };
+};
+
 export const generateListWith = function generateListWith(many: number = 5, next = false, prev = false, key: string = '_' + many): ServiceList<Entity> {
     const list: ServiceList<Entity> = {
         results: Array.from({length: many},
@@ -144,6 +150,9 @@ export const generateEventLogListWithPayload = function generateEventLogListWith
     return list;
 };
 
+export const serverGet = function serverGetList<T>(server: nock.Scope, path: string, status: number = 200, response: T|ServiceError) {
+    return server.get(path).reply(status, response);
+};
 export const serverGetList = function serverGetList<T>(server: nock.Scope, path: string, page: number = 1, size: number = 10, filter: string = '', status: number = 200, response: ServiceList<T>|ServiceError) {
     return server.get(path + `/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`).reply(status, response);
 };
@@ -187,8 +196,10 @@ export const serverCreateRule = (server: nock.Scope, body: Partial<Rule>, status
 export const serverGetEventLogList = (server: nock.Scope, page: number = 1, size: number = 10, eventTypeId= '', status: number = 200, response: EventLogList|EventLogError = generateEventLogListWith(10, false, false)) => {
     return server.get(EVENTS_URL + `/?page=${page}&pageSize=${size}${eventTypeId ? `&eventTypeId=${eventTypeId}` : ''}`).reply(status, response);
 };
-
-export const serverGet401 = (server: nock.Scope, path: string, page = 1, size = 10, filter?: string) => {
+export const serverGet401 = (server: nock.Scope, path: string) => {
+    return server.get(path).reply(401, {error: 'missing authorization header'});
+};
+export const serverGetList401 = (server: nock.Scope, path: string, page = 1, size = 10, filter?: string) => {
     return server.get(path + `/?page=${page}&pageSize=${size}${filter ? `&search=${filter}` : ''}`).reply(401, {error: 'missing authorization header'});
 };
 export const serverPost401 = (server: nock.Scope, path: string, body: string) => {
@@ -196,6 +207,14 @@ export const serverPost401 = (server: nock.Scope, path: string, body: string) =>
 };
 export const serverDelete401 = (server: nock.Scope, path: string, id: string) => {
     return server.delete(path + `/${id}`).reply(401, {error: 'missing authorization header'});
+};
+
+export const serverGetAuth = function serverGetList<T>(server: nock.Scope, path: string, key: string,status: number = 200, response: T|ServiceError) {
+    return server.get(
+        path,
+        undefined,
+        {reqheaders: {Authorization: 'apiKey ' + key}}
+    ).reply(status, response);
 };
 
 export const serverGetListAuth = function serverGetList<T>(server: nock.Scope, path: string, key: string, page: number = 1, size: number = 10, filter: string = '', status: number = 200, response: ServiceList<T>|ServiceError) {

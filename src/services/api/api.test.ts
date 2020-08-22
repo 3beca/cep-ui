@@ -2,12 +2,15 @@ import { APIResponseData, APIError, isAPIError } from '../../utils/fetch-api';
 import {
     setupNock,
     generateListWith,
+    serverGet,
     serverGetList,
     serverDelete,
     serverCreate,
     serverGet401,
+    serverGetList401,
     serverPost401,
     serverDelete401,
+    serverGetAuth,
     serverGetListAuth,
     serverDeleteAuth,
     serverCreateAuth
@@ -39,7 +42,13 @@ import {
     isRuleFilterComparatorLTE
 } from './index';
 import { EventType, Target, EventLog, Rule, RuleError } from './models';
-import { generateEventType, generateTarget, generateEventLogListWith, generateRule } from '../../test-utils/api';
+import {
+    generateEventType,
+    generateTarget,
+    generateEventLogListWith,
+    generateRule,
+    generateEntity
+} from '../../test-utils/api';
 
 test(
     'paserFilters should return a valid string',
@@ -62,6 +71,43 @@ describe(
         const server = setupNock(BASE_URL);
 
         beforeAll(() => api = buildApiService(BASE_URL));
+
+        it(
+            'getRequest should return an Element',
+            async () => {
+                const expectedResult = generateEntity('myElement');
+                serverGet(server, PATH, 200, expectedResult);
+
+                const result = await api.getRequest<Entity>(PATH);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<Entity>;
+                expect(response.status).toBe(200);
+                expect(response.data).toEqual(expectedResult);
+            }
+        );
+
+        it(
+            'getRequest should return an APIError when it fails',
+            async () => {
+                const expectedResult = {statusCode: 400, error: 'Bad Request', message: 'invalid request'};
+                serverGet(server, PATH, 400, expectedResult);
+
+                const result = await api.getRequest(PATH);
+
+                expect(isAPIError(result)).toBe(true);
+                const error = result as APIError<ServiceError>;
+                expect(error).toEqual({
+                    errorCode: 400,
+                    errorMessage: 'Error from https://localhost:123/anypath',
+                    error: {
+                        statusCode: 400,
+                        error: 'Bad Request',
+                        message: 'invalid request'
+                    }
+                });
+            }
+        );
 
         it(
             'getListRequest should return a list of Elements',
@@ -686,7 +732,7 @@ describe(
             async () => {
                 const page = 1;
                 const size = 10;
-                serverGet401(server, PATH);
+                serverGetList401(server, PATH, page, size);
 
                 const result = await api.getListRequest<Entity>(PATH, page, size);
 
@@ -732,6 +778,21 @@ describe(
                 expect(response.error).toEqual({error: 'missing authorization header'});
             }
         );
+
+        it(
+            'getRequest should return 401 when no authorization',
+            async () => {
+                serverGet401(server, PATH);
+
+                const result = await api.getRequest<Entity>(PATH);
+
+                expect(isAPIError(result)).toBe(true);
+                const response = result as APIError<ServiceError>;
+                expect(response.errorCode).toBe(401);
+                expect(response.errorMessage).toEqual(expect.stringContaining(`${BASE_URL}${PATH}`));
+                expect(response.error).toEqual({error: 'missing authorization header'});
+            }
+        );
     }
 );
 
@@ -740,12 +801,26 @@ describe(
     () => {
         let api: Api;
         const BASE_URL = 'https://localhost:123';
-        //const BASE_URL = 'https://admin.cep.tribeca.ovh';
         const PATH = '/anypath';
         const server = setupNock(BASE_URL);
         const apiKey = '1234567890';
 
         beforeAll(() => api = buildApiService(BASE_URL, {method: 'GET', headers: {'authorization': 'apiKey ' + apiKey}}));
+
+        it(
+            'getRequest should return an Element',
+            async () => {
+                const expectedResult = generateEntity('myElement');
+                serverGetAuth(server, PATH, apiKey, 200, expectedResult);
+
+                const result = await api.getRequest<Entity>(PATH);
+
+                expect(isAPIError(result)).toBe(false);
+                const response = result as APIResponseData<Entity>;
+                expect(response.status).toBe(200);
+                expect(response.data).toEqual(expectedResult);
+            }
+        );
 
         it(
             'getListRequest should return a list of Elements',
