@@ -30,6 +30,15 @@ import {
 const url = BASE_URL;
 const server = setupNock(url);
 
+jest.mock('./index', () => {
+    const apiService = require('../api');
+    const config = require('../config');
+    const api = {api: apiService.buildApiService(config.BASE_URL)};
+    return {
+        useAPIProvider: () => api
+    };
+});
+
 describe(
     'useGetList',
     () => {

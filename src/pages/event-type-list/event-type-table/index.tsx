@@ -18,7 +18,7 @@ import { useStyles } from './styles';
 import { PaginatedTable } from '../../../components/paginated-table';
 import { EventType } from '../../../services/api';
 import {RowsSizes} from '../../../components/paginated-table';
-import {ENTITY} from '../../../services/api/use-api';
+import {ENTITY} from '../../../services/api-provider/use-api';
 import {useGetListFilteredAndPaginated} from '../../../services/use-getlist-enhancer';
 import {useSelectableList, ComponentWithUseSelectableProps} from '../../../services/use-selectable-list';
 import {ComponentWithUsePaginationProps} from '../../../services/use-pagination';

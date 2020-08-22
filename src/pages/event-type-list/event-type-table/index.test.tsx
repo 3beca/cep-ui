@@ -1,7 +1,12 @@
 import * as React from 'react';
-import {render, fireEvent, waitFor, screen} from '@testing-library/react';
 import EventTypeTable from './index';
-import {generateEventTypeListWith} from '../../../test-utils';
+import {
+    renderWithAPI as render,
+    fireEvent,
+    waitFor,
+    screen,
+    generateEventTypeListWith
+} from '../../../test-utils';
 import {runPaginatedTableTest} from '../../../test-utils/paginated-table-components';
 import {serverGetEventTypeList, serverDeleteEventType, setupNock} from '../../../test-utils';
 import {BASE_URL} from '../../../services/config';

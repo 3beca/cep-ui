@@ -1,74 +1,24 @@
 import * as React from 'react';
 import { APIRequestInfo, isAPIError } from '../../utils/fetch-api';
-import {
-    Api,
-    buildApiService
-} from '../api';
+import { buildApiService } from '../api';
 import { VersionInfo } from '../api/models';
 import { BASE_URL, VERSION_URL } from '../config';
 import {
-    NOOP,
     loadApikey,
     saveApikey,
     clearApikey
 } from '../../utils';
-
-export enum ValidationState {
-    VALIDATED = 0,
-    PENDING = 1,
-    NOT_FOUND = 2
-};
-export type APIContext = {
-    isValidating: boolean;
-    isValidated: ValidationState;
-    isValid: boolean;
-    invalidReason?: string;
-    requireKey?: boolean;
-    apiKey?: string;
-    api?: Api;
-    version?: string;
-};
-export type APIContextActionValidating = {
-    type: 'VALIDATING';
-};
-export type APIContextActionServerNotFound = {
-    type: 'SERVER_NOT_FOUND';
-    url: string;
-};
-export type APIContextActionRequireKey = {
-    type: 'REQUIRE_APIKEY';
-    reason: string;
-};
-export type APIContextActionNoRequireKey = {
-    type: 'NO_REQUIRE_APIKEY';
-    version: string
-};
-export type APIContextActionSetKey = {
-    type: 'SET_APIKEY';
-    apiKey: string;
-    version: string;
-};
-
-export type ApiContextActions = APIContextActionValidating|APIContextActionRequireKey|APIContextActionNoRequireKey|APIContextActionSetKey|APIContextActionServerNotFound;
-
-export type APIUtilsContext = {
-    invalidateApiKey: (required: boolean) => void;
-    setApiKey: (apiKey: string) => void;
-};
-
-const initialContext = {
-    isValidating: false,
-    isValidated: ValidationState.PENDING,
-    isValid: false
-};
-const APIContext = React.createContext<APIContext>(initialContext);
-const UpdateAPIContext = React.createContext<APIUtilsContext>({
-    invalidateApiKey: NOOP,
-    setApiKey: NOOP
-});
+import {
+    APIContextState,
+    ApiContextActions,
+    ValidationState,
+    initialContext,
+    APIContext,
+    UpdateAPIContext
+} from './api-context';
 
 // config = {method: 'GET', headers: {'authorization': 'apiKey ' + apiKey}};
-export const apiReducer = (state: APIContext, action: ApiContextActions) => {
+export const apiReducer = (state: APIContextState, action: ApiContextActions) => {
     switch(action.type) {
         case 'VALIDATING': {
             return {
@@ -194,7 +144,7 @@ export const APIProvider: React.FC<{}> = (props) => {
     );
 };
 
-export const useAPIStatus = () => {
+export const useAPIProviderStatus = () => {
     const api = React.useContext(APIContext);
     return {
         showLoading: api.isValidating || api.isValidated === ValidationState.PENDING,
@@ -207,11 +157,11 @@ export const useAPIStatus = () => {
     };
 };
 
-export const useUpdateAPI = () => {
+export const useUpdateAPIProvider = () => {
     return React.useContext(UpdateAPIContext);
 };
 
-export const useAPI = () => {
+export const useAPIProvider = () => {
     const api = React.useContext(APIContext);
     if (!api.api) throw Error('no API available');
     return {

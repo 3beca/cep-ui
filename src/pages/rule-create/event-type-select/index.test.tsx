@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BASE_URL } from '../../../services/config';
 import {
-    render,
+    renderWithAPI as render,
     screen,
     generateEventTypeListWith,
     generateEventType,

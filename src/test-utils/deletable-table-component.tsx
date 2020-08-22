@@ -1,8 +1,17 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { render, within, screen, waitFor } from '@testing-library/react';
+import {
+    renderWithAPI as render,
+    waitFor,
+    screen,
+    within
+} from './index';
 import nock from 'nock/types';
-import { ServiceList, Entity, ServiceError } from '../services/api';
+import {
+    ServiceList,
+    Entity,
+    ServiceError
+} from '../services/api';
 
 export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
     title: string,

@@ -22,7 +22,7 @@ import {useStyles} from './styles';
 import { Target } from '../../../services/api';
 import {
     ENTITY
-} from '../../../services/api/use-api';
+} from '../../../services/api-provider/use-api';
 
 export type TargetTableProps = ComponentWithUsePaginationProps & ComponentWithUseSelectableProps<Target>;
 export const TargetTable: React.FC<TargetTableProps> = ({

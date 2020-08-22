@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {render, screen} from '@testing-library/react';
-
 import TargetTable from './index';
 import {
+    renderWithAPI,
+    screen,
     setupNock,
     generateTargetListWith,
     serverGetTargetList,
@@ -16,7 +16,7 @@ import { BASE_URL } from '../../../services/config';
 
 test('TargetTable snapshot', async () => {
     serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200);;
-    render(<TargetTable/>);
+    renderWithAPI(<TargetTable/>);
     expect(await screen.findAllByLabelText('element row target')).toHaveLength(10);
 });
 

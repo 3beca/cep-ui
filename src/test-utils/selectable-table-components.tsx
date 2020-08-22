@@ -1,5 +1,10 @@
 import React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import {
+    renderWithAPI as render,
+    fireEvent,
+    waitFor,
+    screen
+} from './index';
 import nock from 'nock/types';
 import { ComponentWithUseSelectableProps } from '../services/use-selectable-list';
 import { ServiceList } from '../services/api';

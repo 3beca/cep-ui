@@ -1,5 +1,11 @@
 import React from 'react';
-import { render, fireEvent, within, screen, waitFor } from '@testing-library/react';
+import {
+    renderWithAPI as render,
+    fireEvent,
+    waitFor,
+    screen,
+    within
+} from './index';
 import nock from 'nock/types';
 import {ComponentWithUsePaginationProps} from '../services/use-pagination';
 

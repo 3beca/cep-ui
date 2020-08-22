@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { BASE_URL } from '../../../../services/config';
-import {render, generateTarget, screen, serverCreateTarget, setupNock} from '../../../../test-utils';
+import {
+    renderWithAPI as render,
+    generateTarget,
+    screen,
+    serverCreateTarget,
+    setupNock
+} from '../../../../test-utils';
 import userEvent from '@testing-library/user-event';
 
 import TargetCreate from './index';

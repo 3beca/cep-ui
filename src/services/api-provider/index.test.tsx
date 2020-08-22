@@ -10,28 +10,33 @@ import {
     serverGet,
     serverGetAuth
 } from '../../test-utils';
-
+import {
+    APIContextActionNoRequireKey,
+    APIContextState
+} from './api-context';
 import {
     APIProvider,
-    useAPIStatus,
-    useUpdateAPI,
-    useAPI,
-    apiReducer, APIContext, APIContextActionNoRequireKey
+    useAPIProviderStatus,
+    useUpdateAPIProvider,
+    useAPIProvider,
+    apiReducer
 } from './index';
 import {
     BASE_URL,
     VERSION_URL
 } from '../config';
 import { VersionInfo } from '../api/models';
-import { clearApikey, saveApikey } from '../../utils';
+import {
+    clearApikey,
+    saveApikey
+} from '../../utils';
 import userEvent from '@testing-library/user-event';
-import { ApiActions, ApiActionStart } from '../../utils/fetch-api';
 
 const versionInfo: VersionInfo = {version: 'CEP 1'};
 
 const TestComponent: React.FC<{}> = (props) => {
-    const {showLoading, showNoService, showLogin, requireApikey, invalidReason, apiKey, version} = useAPIStatus();
-    const {setApiKey, invalidateApiKey} = useUpdateAPI();
+    const {showLoading, showNoService, showLogin, requireApikey, invalidReason, apiKey, version} = useAPIProviderStatus();
+    const {setApiKey, invalidateApiKey} = useUpdateAPIProvider();
     const inputApiKey = React.createRef<HTMLInputElement>();
     const inputRequiredToken = React.createRef<HTMLInputElement>();
 
@@ -268,7 +273,7 @@ test('ApiProvider should invalidate an apikey and show App', async () => {
 });
 
 const TestUseAPIComponent: React.FC<{}> = (props) => {
-    const {api, apiKey, version} = useAPI();
+    const {api, apiKey, version} = useAPIProvider();
     return (
         <>
             <div data-testid='version'>{version && `${apiKey}-${version}`}</div>
@@ -278,7 +283,7 @@ const TestUseAPIComponent: React.FC<{}> = (props) => {
 };
 
 const TestProviderComponent: React.FC<{}> = (props) => {
-    const {showLoading, showNoService, showLogin} = useAPIStatus();
+    const {showLoading, showNoService, showLogin} = useAPIProviderStatus();
 
     if (showLoading || showNoService || showLogin) {
         return (
@@ -320,7 +325,7 @@ test('ApiProvider should throw an error when no api available', async () => {
 });
 
 test('apiReducer return current state when receive an invalid action', () => {
-    const state = {} as APIContext;
+    const state = {} as APIContextState;
     const action = {type: 'UNSUPPORTED'} as unknown as APIContextActionNoRequireKey;
     expect(apiReducer(state, action)).toEqual(state);
 });

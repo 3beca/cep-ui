@@ -4,20 +4,23 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import {BrowserRouter} from 'react-router-dom';
 import {MainMenuProvider} from './services/main-menu-provider';
+import {APIProvider} from './services/api-provider';
 import * as serviceWorker from './serviceWorker';
 
-import App from './app';
+import AuthApp from './auth-app';
 import theme from './theme';
 import './index.css';
 ReactDOM.render(
     <React.StrictMode>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <BrowserRouter>
-                <MainMenuProvider>
-                    <App/>
-                </MainMenuProvider>
-            </BrowserRouter>
+            <APIProvider>
+                <BrowserRouter>
+                    <MainMenuProvider>
+                        <AuthApp/>
+                    </MainMenuProvider>
+                </BrowserRouter>
+            </APIProvider>
         </ThemeProvider>
     </React.StrictMode>,
     document.getElementById('root')

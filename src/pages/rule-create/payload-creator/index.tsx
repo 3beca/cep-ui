@@ -16,7 +16,7 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Divider from '@material-ui/core/Divider';
 import {useStyles} from './styles';
-import { useGetList, ENTITY } from '../../../services/api/use-api';
+import { useGetList, ENTITY } from '../../../services/api-provider/use-api';
 import { EventLog } from '../../../services/api';
 import { Payload, buildPayloadFromEventLogPayload, PayloadField, PayloadTypes } from '../../../services/api/utils';
 import IconDialog, {useIconDialog} from '../../../components/icon-dialog';

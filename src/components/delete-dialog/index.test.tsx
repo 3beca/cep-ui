@@ -1,12 +1,15 @@
 import * as React from 'react';
-import {render, screen} from '@testing-library/react';
+import {
+    renderWithAPI as render,
+    screen
+} from '../../test-utils';
 import userEvent from '@testing-library/user-event';
 import {generateEventTypeListWith, setupNock, serverDeleteEventType} from '../../test-utils';
 import {useIconDialog} from '../../components/icon-dialog';
 import {BASE_URL} from '../../services/config';
 import DeleteDialog from './index';
 import { EventType } from '../../services/api';
-import { ENTITY } from '../../services/api/use-api';
+import { ENTITY } from '../../services/api-provider/use-api';
 
 jest.mock('../../components/icon-dialog', () => {
     const mockClose = jest.fn();

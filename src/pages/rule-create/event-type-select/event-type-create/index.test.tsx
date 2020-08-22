@@ -1,6 +1,14 @@
 import * as React from 'react';
 import { BASE_URL } from '../../../../services/config';
-import {render, generateEventType, screen, act, waitFor, serverCreateEventType, setupNock} from '../../../../test-utils';
+import {
+    renderWithAPI as render,
+    generateEventType,
+    screen,
+    act,
+    waitFor,
+    serverCreateEventType,
+    setupNock
+} from '../../../../test-utils';
 import userEvent from '@testing-library/user-event';
 
 import EventTypeCreate from './index';

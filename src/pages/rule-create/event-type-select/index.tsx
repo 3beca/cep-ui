@@ -2,7 +2,7 @@ import * as React from 'react';
 import { EventType } from '../../../services/api';
 import {useStyles} from './styles';
 import { useGetListAccumulated } from '../../../services/use-getlist-enhancer';
-import { ENTITY } from '../../../services/api/use-api';
+import { ENTITY } from '../../../services/api-provider/use-api';
 import EventTypeCreate from './event-type-create/index';
 import Autocomplete from '../../../components/autocomplete/index';
 import Paper from '@material-ui/core/Paper';

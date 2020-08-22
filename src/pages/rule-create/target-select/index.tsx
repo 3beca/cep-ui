@@ -4,7 +4,7 @@ import { useGetListAccumulated } from '../../../services/use-getlist-enhancer';
 import Autocomplete from '../../../components/autocomplete/index';
 import TargetCreate from './target-create/index';
 import {useStyles} from './styles';
-import { ENTITY } from '../../../services/api/use-api';
+import { ENTITY } from '../../../services/api-provider/use-api';
 import { Target } from '../../../services/api';
 
 export const emptyTarget: Target = {

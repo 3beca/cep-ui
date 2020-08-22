@@ -1,7 +1,7 @@
 import {renderHook, act} from '@testing-library/react-hooks'
 import {
     ENTITY
-} from '../api/use-api';
+} from '../api-provider/use-api';
 import {
     BASE_URL
 } from '../config';
@@ -14,6 +14,15 @@ import {
     useGetListFilteredAndPaginated,
     useGetListAccumulated
 } from './index';
+
+jest.mock('../api-provider', () => {
+    const apiService = require('../api');
+    const config = require('../config');
+    const api = {api: apiService.buildApiService(config.BASE_URL)};
+    return {
+        useAPIProvider: () => api
+    };
+});
 
 const url = BASE_URL;
 const server = setupNock(url);

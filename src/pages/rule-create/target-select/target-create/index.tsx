@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 
 
 import {useStyles} from './styles';
-import { useCreate, ENTITY } from '../../../../services/api/use-api';
+import { useCreate, ENTITY } from '../../../../services/api-provider/use-api';
 import { APIError } from '../../../../utils/fetch-api';
 import {cutString} from '../../../../utils';
 import { Target, ServiceError } from '../../../../services/api';

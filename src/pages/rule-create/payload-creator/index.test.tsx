@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-    render,
+    renderWithAPI as render,
     screen,
     serverGetEventLogList,
     generateEventLogListWith,

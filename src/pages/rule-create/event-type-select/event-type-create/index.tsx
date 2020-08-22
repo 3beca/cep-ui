@@ -9,7 +9,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { useClipboard } from '../../../../services/use-clipboard';
 import {useStyles} from './styles';
 import { EventType, ServiceError } from '../../../../services/api';
-import { useCreate, ENTITY } from '../../../../services/api/use-api';
+import { useCreate, ENTITY } from '../../../../services/api-provider/use-api';
 import { APIError } from '../../../../utils/fetch-api';
 import {cutString} from '../../../../utils';
 

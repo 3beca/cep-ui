@@ -1,7 +1,7 @@
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
 import {
-    render,
+    renderWithAPI as render,
     screen,
     setupNock,
     generateTarget,

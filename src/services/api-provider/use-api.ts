@@ -16,6 +16,7 @@ import {
     EVENTS_URL,
     VERSION_URL
 } from '../config';
+import {useAPIProvider} from './index';
 
 const ENTITIES = [EVENT_TYPES_URL, TARGETS_URL, RULES_URL, EVENTS_URL, VERSION_URL];
 export enum ENTITY {
@@ -34,10 +35,11 @@ export type useGetListApi<R, E> = {
     error: APIError<E> | undefined;
 };
 export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size: number, filter: string|GetListRequestOptions = '', runOnRender: boolean = true) => {
+    const {api} = useAPIProvider();
     const prevRequest = React.useRef< () => void>();
     const req = React.useCallback(
         () => api.getListRequest<T>(ENTITIES[entity], page, size, filter),
-        [page, size, filter, entity],
+        [api, page, size, filter, entity],
     );
     const {request, ...state} = useFetchApi(req);
     React.useEffect(
@@ -53,17 +55,19 @@ export const useGetList = <T extends Entity>(entity: ENTITY, page: number, size:
 };
 
 export const useDelete = (entity: ENTITY, eventIds: string[]|string) => {
+    const {api} = useAPIProvider();
     const req = React.useCallback(
         () => api.deleteRequest(ENTITIES[entity], eventIds),
-        [eventIds, entity]
+        [api, eventIds, entity]
     );
     return useFetchApi(req);
 };
 
 export const useCreate = <T extends Entity>(entity: ENTITY, body: Partial<T>, runOnRender: boolean = false) => {
+    const {api} = useAPIProvider();
     const req = React.useCallback(
         () => api.createRequest<T>(ENTITIES[entity], body),
-        [body, entity]
+        [api, body, entity]
     );
     const {request, ...state} = useFetchApi(req);
     React.useEffect(

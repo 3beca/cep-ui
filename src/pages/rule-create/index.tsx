@@ -17,7 +17,7 @@ import {TargetSelector} from './target-select';
 import {RuleCreator} from './rule-creator';
 import {PayloadCreator} from './payload-creator';
 import { EventType, Target, Rule, RuleTypes, Geometry } from '../../services/api';
-import { useCreate, ENTITY } from '../../services/api/use-api';
+import { useCreate, ENTITY } from '../../services/api-provider/use-api';
 import {useStyles} from './styles';
 import {
     Payload,
