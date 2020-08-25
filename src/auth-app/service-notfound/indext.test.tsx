@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {render, screen} from '@testing-library/react';
-import {NotFoundPage} from './index';
+import ServiceNotFoundPage from './index';
 
 test('NotFoundPage snapshot', () => {
-    const {container} = render(<NotFoundPage/>);
-    screen.getByLabelText(/page not found/i);
+    const {container} = render(<ServiceNotFoundPage/>);
+    screen.getByLabelText(/authapp no cep service/i);
     expect(container).toMatchSnapshot();
 });

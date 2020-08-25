@@ -151,7 +151,7 @@ test('ApiProvider should start checking and show login when apiKey is stored and
     await waitFor(() => expect(screen.getByTestId(/noservice/i)).toHaveTextContent('false'));
     await waitFor(() => expect(screen.getByTestId(/login/i)).toHaveTextContent('true'));
     await waitFor(() => expect(screen.getByTestId(/apikey/i)).toHaveTextContent('true'));
-    await waitFor(() => expect(screen.getByTestId(/invalidkey/i)).toHaveTextContent('ApiKey 1234567890 in NOT valid'));
+    await waitFor(() => expect(screen.getByTestId(/invalidkey/i)).toHaveTextContent('ApiKey 1234567890 is NOT valid'));
     await waitFor(() => expect(screen.getByTestId(/version/i)).toHaveTextContent(''));
 });
 
@@ -209,7 +209,7 @@ test('ApiProvider should fails login with invalid apikey', async () => {
     await waitFor(() => expect(screen.getByTestId(/noservice/i)).toHaveTextContent('false'));
     await waitFor(() => expect(screen.getByTestId(/login/i)).toHaveTextContent('true'));
     await waitFor(() => expect(screen.getByTestId(/apikey/i)).toHaveTextContent('true'));
-    await waitFor(() => expect(screen.getByTestId(/invalidkey/i)).toHaveTextContent('ApiKey ' + invalidApikey + ' in NOT valid'));
+    await waitFor(() => expect(screen.getByTestId(/invalidkey/i)).toHaveTextContent('ApiKey ' + invalidApikey + ' is NOT valid'));
     await waitFor(() => expect(screen.getByTestId(/version/i)).toHaveTextContent(''));
 });
 

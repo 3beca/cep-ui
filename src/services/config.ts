@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhoster';//window._env_.BASE_URL;
+export const BASE_URL = window._env_.BASE_URL;
 export const EVENT_TYPES_URL = '/event-types';
 export const TARGETS_URL = '/targets';
 export const RULES_URL = '/rules';

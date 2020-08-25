@@ -4,6 +4,7 @@ import {createMemoryHistory, History} from 'history';
 import {render} from '@testing-library/react';
 import {MainMenuProvider} from '../services/main-menu-provider';
 import {APIProviderMock} from './api-provider-mock';
+import {APIProvider} from '../services/api-provider';
 import {
     APIContextState,
     APIUtilsContext
@@ -34,6 +35,29 @@ export function renderInsideApp(
                     <MainMenuProvider {...props} />
                 </Router>
             </APIProviderMock>
+        );
+    }
+    return {
+        ...render(ui, {wrapper: Wrapper, ...renderOptions}),
+        history
+    };
+};
+
+export function renderInsideRealApp(
+    ui: React.ReactElement,
+    {
+        route = '/',
+        history = createMemoryHistory({initialEntries: [route]}),
+        ...renderOptions
+    }: OptionsRenderRouter = {}
+) {
+    const Wrapper: React.FC<{}> = function Wrapper(props) {
+        return (
+            <APIProvider>
+                <Router history={history}>
+                    <MainMenuProvider {...props} />
+                </Router>
+            </APIProvider>
         );
     }
     return {

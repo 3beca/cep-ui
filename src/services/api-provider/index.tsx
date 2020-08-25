@@ -81,7 +81,7 @@ export const APIProvider: React.FC<{}> = (props) => {
         const responseWithtoken = await api.getRequest<VersionInfo>(VERSION_URL);
         if (isAPIError(responseWithtoken)) {
             clearApikey();
-            dispatch({type: 'REQUIRE_APIKEY', reason: `ApiKey ${apiKey} in NOT valid`});
+            dispatch({type: 'REQUIRE_APIKEY', reason: `ApiKey ${apiKey} is NOT valid`});
             return;
         }
         else {
@@ -144,6 +144,10 @@ export const APIProvider: React.FC<{}> = (props) => {
     );
 };
 
+export const useUpdateAPIProvider = () => {
+    return React.useContext(UpdateAPIContext);
+};
+
 export const useAPIProviderStatus = () => {
     const api = React.useContext(APIContext);
     return {
@@ -155,10 +159,6 @@ export const useAPIProviderStatus = () => {
         apiKey: api.apiKey,
         version: api.version
     };
-};
-
-export const useUpdateAPIProvider = () => {
-    return React.useContext(UpdateAPIContext);
 };
 
 export const useAPIProvider = () => {

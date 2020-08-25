@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-container-1"
+  >
+    <div
+      class="makeStyles-dialog-2"
+    >
+      <div
+        aria-label="authapp no cep service"
+      >
+        <h3
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-colorPrimary"
+        >
+          CEP Service not found!
+        </h3>
+      </div>
+      <div
+        class="makeStyles-message-3"
+      >
+        <span
+          class="MuiTypography-root makeStyles-messageText-4 MuiTypography-caption MuiTypography-colorTextSecondary"
+        >
+          CEP is not responding in 
+          http://localhost:123
+          , please visit our docs in order to configure it with a valid url.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

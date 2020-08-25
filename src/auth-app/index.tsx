@@ -1,5 +1,7 @@
 import * as React from 'react';
 import App from '../app';
+import LoginPage from './login';
+import ServiceNotFoundPage from './service-notfound';
 import { useAPIProviderStatus } from '../services/api-provider';
 
 export const AuthApp: React.FC<{}> = () => {
@@ -7,30 +9,25 @@ export const AuthApp: React.FC<{}> = () => {
         showLoading,
         showLogin,
         showNoService,
-        invalidReason
+        invalidReason,
+        apiKey
     } = useAPIProviderStatus();
 
     if (showLoading) {
         return (
-            <div aria-label='validating'>
+            <div aria-label='authapp validating'>
 
             </div>
         );
     }
 
     if (showNoService) {
-        return (
-            <div aria-label='no cep service'>
-
-            </div>
-        );
+        return (<ServiceNotFoundPage/>);
     }
 
     if (showLogin) {
         return (
-            <div aria-label='apikey'>
-                <div aria-label='login reason'>{invalidReason}</div>
-            </div>
+            <LoginPage invalidReason={invalidReason}/>
         );
     }
     return (<App/>);
