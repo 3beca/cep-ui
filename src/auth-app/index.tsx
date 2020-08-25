@@ -13,8 +13,7 @@ export const AuthApp: React.FC<{}> = () => {
         showLoading,
         showLogin,
         showNoService,
-        invalidReason,
-        apiKey
+        invalidReason
     } = useAPIProviderStatus();
 
     if (showLoading) {
