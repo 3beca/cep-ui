@@ -48,10 +48,6 @@ export const useStyles = makeStyles(
         },
         moreButton: {
             color: theme.palette.info.dark
-        },
-        fieldSelector: {
-            margin: 6,
-            minWidth: 280
         }
     })
 );
