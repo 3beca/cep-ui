@@ -21,7 +21,8 @@ import {
     Target,
     EventLog,
     EventLogList,
-    EventLogError
+    EventLogError,
+    RuleGroup, WindowingSize
 } from '../services/api';
 import nock from 'nock';
 
@@ -92,15 +93,19 @@ export const generateTargetListWith = (many: number = 5, next = false, prev = fa
     return list;
 };
 
-const randomType = (index: number): RuleTypes => {
-    const types: RuleTypes[] = ['sliding', 'hopping', 'tumbling', 'realtime'];
+const randomType = (index: number): {type: RuleTypes; group?: RuleGroup; windowSize?: WindowingSize} => {
     const rand = index % 4;
-    return types[rand];
+    switch(rand) {
+        case 0: return {type: 'sliding', group: {maxTemp: {_max: 'temperature'}}, windowSize: {unit: 'second', value: 1}};
+        case 1: return {type: 'hopping', group: {maxTemp: {_max: 'temperature'}}, windowSize: {unit: 'second', value: 1}};
+        case 2: return {type: 'tumbling', group: {maxTemp: {_max: 'temperature'}}, windowSize: {unit: 'second', value: 1}};
+        default: return {type: 'realtime'};
+    }
 };
 export const generateRule = (key: string, idx: number, filters: RuleFilter = {temperature: {_eq: 10}, humidity: '45'}): Rule => ({
     id: idx + '_' + key,
     name: 'Rule ' + idx,
-    type: randomType(idx),
+    ...randomType(idx),
     eventTypeId: 'eventtypeid',
     eventTypeName: 'EventType ' + idx + '-' + key,
     targetId: 'targetid',
@@ -109,7 +114,7 @@ export const generateRule = (key: string, idx: number, filters: RuleFilter = {te
     filters,
     createdAt: '2020-01-01T10:10:10.123Z',
     updatedAt: '2020-01-01T10:10:10.123Z'
-});
+} as Rule);
 export const generateRuleListWith = function generateListWith(many: number = 5, next = false, prev = false, key: string = '_' + many): ServiceList<Rule> {
     const list: ServiceList<Rule> = {
         results: Array.from({length: many}, (_, idx) => generateRule(key, idx))

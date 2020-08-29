@@ -23,7 +23,8 @@ import {
     ContainerAND,
     ContainerOR,
     ContainerDefault,
-    parseFilterContainer, RuleFilterContainer
+    parseFilterContainer,
+    RuleFilterContainer
 } from './utils';
 import { RuleFilter, RuleFilterComparator, Geometry, RuleFilterComparatorLocation } from './models';
 

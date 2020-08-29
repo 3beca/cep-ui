@@ -67,22 +67,8 @@ export type RuleFilterField = {
 export type RuleFilter = {
     [key: string]:  RuleFilterFieldValue|RuleFilter|RuleFilter[];
 };
-export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'realtime';
-export type Rule = {
-    type: RuleTypes;
-    targetId: string;
-    targetName: string;
-    eventTypeId: string;
-    eventTypeName: string;
-    skipOnConsecutivesMatches?: boolean;
-    filters: RuleFilter;
-} & EntityWithName & WithDate;
-export type RuleList = ServiceList<Rule>;
-export type RuleError = ServiceError;
-export type RuleDeleted = ServiceDeleted;
 
 type NullOrUndefinde = null|undefined;
-
 export const getRuleFilters = (value: RuleFilter|NullOrUndefinde): RuleFilterField[]|null => {
     if(!!value && typeof value === 'object') {
         const filters = Object.keys(value).map(key => ({field: key, value: value[key]}));
@@ -134,6 +120,69 @@ export const isRuleFilter = (value: RuleFilterFieldValue|RuleFilter|RuleFilter[]
 export const isRuleFilterArray = (value: RuleFilterFieldValue|RuleFilter|RuleFilter[]|NullOrUndefinde): value is RuleFilter[] => {
     return (Array.isArray(value));
 };
+
+export type WindowingGroupAverage = {
+    _avg: string;
+};
+export type WindowingGroupMin = {
+    _min: string;
+};
+export type WindowingGroupMax = {
+    _max: string;
+};
+export type WindowingGroupSum = {
+    _sum: string;
+};
+export type WindowingGroupStdDevPop = {
+    _stdDevPop: string;
+};
+export type WindowingGroupStdDevSamp = {
+    _stdDevSamp: string;
+};
+export type WindowingGroup = WindowingGroupAverage|WindowingGroupMax|WindowingGroupMin|WindowingGroupSum|WindowingGroupStdDevSamp|WindowingGroupStdDevPop;
+export type RuleGroup = {
+    [key: string]: WindowingGroup;
+};
+export type WindowingSize = {
+    unit: 'hour'|'minute'|'second';
+    value: number;
+};
+export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'realtime';
+export type RuleBase = {
+    targetId: string;
+    targetName: string;
+    eventTypeId: string;
+    eventTypeName: string;
+    skipOnConsecutivesMatches?: boolean;
+    filters: RuleFilter;
+} & EntityWithName & WithDate;
+export type RuleTypeRealtime = {
+    type: 'realtime';
+} & RuleBase;
+export type RuleTypeSliding = {
+    type: 'sliding';
+    group: RuleGroup;
+    windowSize: WindowingSize;
+} & RuleBase;
+export type RuleTypeHopping = {
+    type: 'hopping';
+    group: RuleGroup;
+    windowSize: WindowingSize;
+} & RuleBase;
+export type RuleTypeTumbling = {
+    type: 'tumbling';
+    group: RuleGroup;
+    windowSize: WindowingSize;
+} & RuleBase;
+export type Rule = RuleTypeRealtime|RuleTypeSliding|RuleTypeHopping|RuleTypeTumbling;
+export const isRuleTypeRealtime = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'realtime';
+export const isRuleTypeSliding = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'sliding';
+export const isRuleTypeTumbling = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'tumbling';
+export const isRuleTypeHopping = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'hopping';
+export type RuleList = ServiceList<Rule>;
+export type RuleError = ServiceError;
+export type RuleDeleted = ServiceDeleted;
+
 export type EventLog = {
     eventTypeId: string;
     eventTypeName: string;
