@@ -1,5 +1,6 @@
-import { EventPayload } from '../event-payload-creator/utils';
+import { RuleGroupPayload } from './models';
 
-export const buildEventPayloadFromGroupPayload = (payload?: EventPayload|null, group?: unknown) => {
-    return payload;
+export const buildEventPayloadFromGroupPayload = (group?: RuleGroupPayload) => {
+    if (!group) return null;
+    return null;
 };

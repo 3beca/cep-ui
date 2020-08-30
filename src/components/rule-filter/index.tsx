@@ -10,6 +10,7 @@ import {
     createExpresion
 } from './utils';
 import {
+    Geometry,
     RuleFilterContainer,
     Expression,
     Container,
@@ -20,7 +21,6 @@ import {
     isExpressionLocation,
     ContainerType
 } from './models';
-import {Geometry} from '../../services/api';
 import {useStyles} from './styles';
 import { NOOP } from '../../utils';
 

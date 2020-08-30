@@ -10,12 +10,12 @@ import EventTypeSelector from './event-type-select';
 import TargetSelector from './target-select';
 import RuleCreator from './rule-creator';
 import PayloadCreator from '../../components/event-payload-creator';
-import { EventPayload } from '../../components/event-payload-creator/utils';
+import { EventPayload } from '../../components/event-payload-creator/models';
 import RuleGroupCreator from '../../components/rule-group-creator';
 import { buildEventPayloadFromGroupPayload } from '../../components/rule-group-creator/utils';
 import RuleFilter from '../../components/rule-filter';
 import ConfigFilterExpression from '../../components/config-filter-expression';
-import { EventType, Target, Rule, RuleTypes, RuleGroup } from '../../services/api';
+import { EventType, Target, Rule, RuleTypes } from '../../services/api';
 import { useCreate, ENTITY } from '../../services/api-provider/use-api';
 import {useStyles} from './styles';
 import {
@@ -25,6 +25,7 @@ import {
     RuleFilterContainer,
     Expression
 } from '../../components/rule-filter/models';
+import { RuleGroupPayload } from '../../components/rule-group-creator/models';
 
 const RuleCreateError: React.FC<{message?: string}> = ({message}) => {
     const styles = useStyles();
@@ -83,7 +84,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const [eventType, setEventType] = React.useState<EventType|null>(null);
     const [target, setTarget] = React.useState<Target|null>(null);
     const [eventPayload, setEventPayload] = React.useState<EventPayload|null>(null);
-    const [ruleGroup, setRuleGroup] = React.useState<RuleGroup>();
+    const [ruleGroupPayload, setRuleGroupPayload] = React.useState<RuleGroupPayload>();
     const [rule, updateRule] = React.useReducer((state: Partial<Rule>, update: Partial<Rule>) => ({...state, ...update}), initialRuleState);
     const [isResponseDialogOpen, setResponseDialogOpen] = React.useState(false);
     const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RuleFilterContainer>([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
@@ -106,8 +107,8 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading || isResponseDialogOpen), [bodyRule, isLoading, isResponseDialogOpen]);
     const filterPayload = React.useMemo(() => {
         if (type === 'realtime') return eventPayload;
-        return buildEventPayloadFromGroupPayload(eventPayload, ruleGroup);
-    }, [type, eventPayload, ruleGroup]);
+        return buildEventPayloadFromGroupPayload(ruleGroupPayload);
+    }, [type, eventPayload, ruleGroupPayload]);
     const eventTypeId = bodyRule.eventTypeId;
     React.useEffect(() => {
         setEventPayload(null);
@@ -161,8 +162,8 @@ export const RuleCreatePage: React.FC<{}> = () => {
                     <RuleGroupCreator
                         ruleTpe={type}
                         payload={eventPayload}
-                        group={ruleGroup}
-                        setGroup={setRuleGroup}/>
+                        group={ruleGroupPayload}
+                        setGroup={setRuleGroupPayload}/>
                     <Divider/>
                     {!!filterPayload && <Typography variant='caption'>Use AND, OR and EXP to create your custom filter.</Typography>}
                     <div

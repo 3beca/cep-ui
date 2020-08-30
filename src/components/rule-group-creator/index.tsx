@@ -15,10 +15,11 @@ import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
 // import Divider from '@material-ui/core/Divider';
 // import IconDialog, {useIconDialog} from '../icon-dialog';
-import { RuleGroup, RuleTypes } from '../../services/api';
-import { EventPayload } from '../event-payload-creator/utils';
+import { EventPayload } from '../event-payload-creator/models';
 
 import {useStyles} from './styles';
+import { RuleTypes } from '../../services/api';
+import { RuleGroupPayload } from './models';
 
 
 // export type GroupFieldViewDeleteButtonProps= {
@@ -106,8 +107,8 @@ import {useStyles} from './styles';
 export type RuleGroupCreatorProps = {
     ruleTpe: RuleTypes;
     payload: EventPayload|null;
-    group?: RuleGroup;
-    setGroup: (group?: RuleGroup) => void;
+    group?: RuleGroupPayload;
+    setGroup: (group?: RuleGroupPayload) => void;
     disabled?: boolean;
 };
 export const RuleGroupCreator: React.FC<RuleGroupCreatorProps> = ({
