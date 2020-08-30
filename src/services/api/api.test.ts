@@ -306,7 +306,7 @@ describe('Rule', () => {
 
     });
 
-    it('isRuleTypeSliding should check if realtime', () => {
+    it('isRuleTypeSliding should check if sliding', () => {
         const ruleSliding: Rule = {
             ...createBaseRule(),
             type: 'sliding',
@@ -329,7 +329,7 @@ describe('Rule', () => {
         expect(isRuleTypeSliding(ruleRT)).toBe(false);
     });
 
-    it('isRuleTypeTumbling should check if realtime', () => {
+    it('isRuleTypeTumbling should check if tumbling', () => {
         const ruleTumbling: Rule = {
             ...createBaseRule(),
             type: 'tumbling',
@@ -352,7 +352,7 @@ describe('Rule', () => {
         expect(isRuleTypeTumbling(ruleRT)).toBe(false);
     });
 
-    it('isRuleTypeHopping should check if realtime', () => {
+    it('isRuleTypeHopping should check if hopping', () => {
         const ruleHopping: Rule = {
             ...createBaseRule(),
             type: 'hopping',

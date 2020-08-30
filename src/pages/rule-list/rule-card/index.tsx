@@ -18,7 +18,7 @@ import CloneIcon from '@material-ui/icons/FileCopyOutlined';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
 
 import { Rule, RuleTypes } from '../../../services/api';
-import { parseRuleFilter } from '../../../services/api/utils';
+import { parseRuleFilter } from '../../../components/rule-filter/utils';
 import RuleFilter from '../../../components/rule-filter';
 import {useStyles} from './styles';
 

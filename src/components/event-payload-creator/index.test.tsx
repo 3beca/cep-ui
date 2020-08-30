@@ -5,21 +5,35 @@ import {
     serverGetEventLogList,
     generateEventLogListWith,
     generateEventLogListWithPayload
-} from '../../../test-utils';
+} from '../../test-utils';
 import userEvent from '@testing-library/user-event';
 import PayloadCreator, {PayloadFieldView} from './index';
-import { setupNock } from '../../../test-utils/api';
-import { BASE_URL } from '../../../services/config';
-import { Payload, PayloadField } from '../../../services/api/utils';
+import { setupNock } from '../../test-utils/api';
+import { BASE_URL } from '../../services/config';
 import { waitFor } from '@testing-library/react';
+import { EventPayload, EventPayloadField } from './utils';
 
 const server = setupNock(BASE_URL);
+
+test(
+    'PayloadCreator should show a message when no payload',
+    async () => {
+        const eventTypeId = 'eventtypeid';
+        const payload: EventPayload|null = null;
+        const setPayload = jest.fn();
+        render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
+
+        await screen.findByLabelText(/payload creator$/i);
+        await screen.findByLabelText(/payload download button/i);
+        await screen.findByLabelText(/payload creator info message/);
+    }
+);
 
 test(
     'PayloadCreator should show a button to try to download the las payload from an event without payload',
     async () => {
         const eventTypeId = 'eventtypeid';
-        const payload: Payload|null = null;
+        const payload: EventPayload|null = null;
         const setPayload = jest.fn();
         render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
 
@@ -42,7 +56,7 @@ test(
     'PayloadCreator should show a button to try to download the las payload from an event with invalid payload',
     async () => {
         const eventTypeId = 'eventtypeid';
-        const payload: Payload|null = null;
+        const payload: EventPayload|null = null;
         const setPayload = jest.fn();
         render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
 
@@ -65,7 +79,7 @@ test(
     'PayloadCreator should show a button to try to download the las payload from an event with payload',
     async () => {
         const eventTypeId = 'eventtypeid';
-        const payload: Payload|null = null;
+        const payload: EventPayload|null = null;
         const setPayload = jest.fn();
         const {rerender} = render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
 
@@ -86,7 +100,7 @@ test(
         await waitFor(() => expect(screen.queryByLabelText(/payload creator loading/i)).not.toBeInTheDocument());
         await screen.findByLabelText(/payload download button enabled/i);
         expect(setPayload).toHaveBeenCalledTimes(1);
-        const expectedPayload: Payload = [
+        const expectedPayload: EventPayload = [
             {name: 'numericField', type: 'number'},
             {name: 'stringField', type: 'string'},
             {name: 'locationField', type: 'location'}
@@ -103,7 +117,7 @@ test(
     'PayloadCreator should show disabled',
     async () => {
         const eventTypeId = 'eventtypeid';
-        const payload: Payload|null = null;
+        const payload: EventPayload|null = null;
         const setPayload = jest.fn();
         render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload} disabled={true}/>);
 
@@ -116,7 +130,7 @@ test(
     'PayloadCreator should delete fields from payload',
     async () => {
         const eventTypeId = 'eventtypeid';
-        const payload: Payload = [
+        const payload: EventPayload = [
             {name: 'numericField', type: 'number'},
             {name: 'stringField', type: 'string'},
             {name: 'locationField', type: 'location'}
@@ -130,21 +144,21 @@ test(
         expect(buttonRemovePayloadField).toHaveLength(3);
 
         userEvent.click(buttonRemovePayloadField[0]);
-        const expectedPayloadDeleteFirst: Payload = [
+        const expectedPayloadDeleteFirst: EventPayload = [
             {name: 'stringField', type: 'string'},
             {name: 'locationField', type: 'location'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, expectedPayloadDeleteFirst);
 
         userEvent.click(buttonRemovePayloadField[1]);
-        const expectedPayloadDeletedSecond: Payload = [
+        const expectedPayloadDeletedSecond: EventPayload = [
             {name: 'numericField', type: 'number'},
             {name: 'locationField', type: 'location'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(2, expectedPayloadDeletedSecond);
 
         userEvent.click(buttonRemovePayloadField[2]);
-        const expectedPayloadDeletedThird: Payload = [
+        const expectedPayloadDeletedThird: EventPayload = [
             {name: 'numericField', type: 'number'},
             {name: 'stringField', type: 'string'}
         ];
@@ -156,7 +170,7 @@ test(
     'PayloadCreator should create a payload by hand',
     async () => {
         const eventTypeId = 'eventtypeid';
-        const payload: Payload|null = null;
+        const payload: EventPayload|null = null;
         const setPayload = jest.fn();
         const {rerender} = render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
 
@@ -171,7 +185,7 @@ test(
         userEvent.click(await screen.findByLabelText(/payload addfield dialog location/i));
         userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
-        const expectedLocationPayload: Payload = [
+        const expectedLocationPayload: EventPayload = [
             {name: locationFieldName, type: 'location'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, expectedLocationPayload);
@@ -183,7 +197,7 @@ test(
         userEvent.click(await screen.findByLabelText(/payload addfield dialog number/i));
         userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
-        const expectedNumberPayload: Payload = [
+        const expectedNumberPayload: EventPayload = [
             {name: numberFieldName, type: 'number'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, expectedNumberPayload);
@@ -195,7 +209,7 @@ test(
         userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
         userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
-        const expectedStringPayload: Payload = [
+        const expectedStringPayload: EventPayload = [
             {name: stringFieldName, type: 'string'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, expectedStringPayload);
@@ -215,7 +229,7 @@ test(
     'PayloadCreator should add new fields to a payload',
     async () => {
         const eventTypeId = 'eventtypeid';
-        const payload: Payload = [
+        const payload: EventPayload = [
             {name: 'oneFieldName', type: 'number'}
         ];
         const setPayload = jest.fn();
@@ -234,7 +248,7 @@ test(
         userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
         userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
-        const expectedStringPayload: Payload = [
+        const expectedStringPayload: EventPayload = [
             {name: stringFieldName, type: 'string'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, [...payload, ...expectedStringPayload]);
@@ -246,7 +260,7 @@ test(
     async () => {
         const eventTypeId = 'eventtypeid';
         const fieldName = 'myNumericfield';
-        const payload: Payload = [
+        const payload: EventPayload = [
             {name: fieldName, type: 'number'}
         ];
         const setPayload = jest.fn();
@@ -265,7 +279,7 @@ test(
         userEvent.click(await screen.findByLabelText(/payload addfield dialog string/i));
         userEvent.click(await screen.findByLabelText(/payload addfield dialog add/i));
         expect(setPayload).toHaveBeenCalledTimes(1);
-        const expectedStringPayload: Payload = [
+        const expectedStringPayload: EventPayload = [
             {name: fieldName, type: 'string'}
         ];
         expect(setPayload).toHaveBeenNthCalledWith(1, expectedStringPayload);
@@ -275,7 +289,7 @@ test(
 test(
     'PayloadFieldView can hidde delete button when no action',
     async () => {
-        const payloadField: PayloadField = {name: 'numericField', type: 'number'};
+        const payloadField: EventPayloadField = {name: 'numericField', type: 'number'};
 
         render(<PayloadFieldView payloadField={payloadField}/>);
 

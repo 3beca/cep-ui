@@ -5,6 +5,11 @@ import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import EditIcon from '@material-ui/icons/EditOutlined';
 
 import {
+    createANDContainer,
+    createORContainer,
+    createExpresion
+} from './utils';
+import {
     RuleFilterContainer,
     Expression,
     Container,
@@ -13,11 +18,8 @@ import {
     isExpressionDefault,
     isExpressionComparator,
     isExpressionLocation,
-    createANDContainer,
-    createORContainer,
-    ContainerType,
-    createExpresion
-} from '../../services/api/utils';
+    ContainerType
+} from './models';
 import {Geometry} from '../../services/api';
 import {useStyles} from './styles';
 import { NOOP } from '../../utils';

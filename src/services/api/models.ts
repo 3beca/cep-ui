@@ -131,7 +131,7 @@ export type WindowingGroupMax = {
     _max: string;
 };
 export type WindowingGroupSum = {
-    _sum: string;
+    _sum: string|number;
 };
 export type WindowingGroupStdDevPop = {
     _stdDevPop: string;
@@ -176,9 +176,9 @@ export type RuleTypeTumbling = {
 } & RuleBase;
 export type Rule = RuleTypeRealtime|RuleTypeSliding|RuleTypeHopping|RuleTypeTumbling;
 export const isRuleTypeRealtime = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'realtime';
-export const isRuleTypeSliding = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'sliding';
-export const isRuleTypeTumbling = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'tumbling';
-export const isRuleTypeHopping = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'hopping';
+export const isRuleTypeSliding = (rule: Rule): rule is RuleTypeSliding => rule.type === 'sliding';
+export const isRuleTypeTumbling = (rule: Rule): rule is RuleTypeTumbling => rule.type === 'tumbling';
+export const isRuleTypeHopping = (rule: Rule): rule is RuleTypeHopping => rule.type === 'hopping';
 export type RuleList = ServiceList<Rule>;
 export type RuleError = ServiceError;
 export type RuleDeleted = ServiceDeleted;

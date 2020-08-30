@@ -11,8 +11,6 @@ import TextField from '@material-ui/core/TextField';
 import { Geometry } from '../../services/api';
 import {useStyles} from './styles';
 import {
-    Payload,
-    PayloadField,
     RuleFilterContainer,
     Expression,
     EPassthrow,
@@ -22,7 +20,11 @@ import {
     isExpressionLocation,
     isExpressionComparator,
     EComparatorLocation
-} from '../../services/api/utils';
+} from '../rule-filter/models';
+import {
+    EventPayload,
+    EventPayloadField
+} from '../event-payload-creator/utils';
 
 export const buildLocationExpression = (name: string, lng = 0, lat = 0): EComparatorLocation => (
     {
@@ -37,9 +39,9 @@ export const buildLocationExpression = (name: string, lng = 0, lat = 0): ECompar
 );
 
 export type FieldSelectorProps = {
-    payload: Payload;
-    selected?: PayloadField;
-    onSelected: (field: PayloadField|undefined) => void;
+    payload: EventPayload;
+    selected?: EventPayloadField;
+    onSelected: (field: EventPayloadField|undefined) => void;
 };
 export const FieldSelector: React.FC<FieldSelectorProps> = ({payload, selected, onSelected}) => {
     const styles = useStyles();
@@ -53,7 +55,7 @@ export const FieldSelector: React.FC<FieldSelectorProps> = ({payload, selected, 
             }}>
             {
                 payload.map(
-                    (field: PayloadField) => (
+                    (field: EventPayloadField) => (
                         <MenuItem
                             aria-label='config filter options'
                             key={field.name}
@@ -114,7 +116,7 @@ export const FieldValue: React.FC<FieldValueProps> = ({type, value, setValue}) =
 };
 
 export type FieldExpressionComparatorProps = {
-    field: PayloadField;
+    field: EventPayloadField;
     expression: EComparator|EDefault|EPassthrow;
     updateExpression: (comaprator: EComparator|EDefault) => void;
 };
@@ -138,7 +140,7 @@ export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps>
 };
 
 export type FieldExpressionLocationProps = {
-    field: PayloadField;
+    field: EventPayloadField;
     expression: EComparatorLocation;
     updateExpression: (comaprator: EComparatorLocation) => void;
 };
@@ -200,7 +202,7 @@ export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = (
     );
 };
 export type FieldExpressionProps = {
-    field?: PayloadField;
+    field?: EventPayloadField;
     expression: Expression;
     updateExpression: (comaprator: Expression) => void;
 };
@@ -226,10 +228,10 @@ export type ConfigFilterDialogExpressionProps = {
     filter: RuleFilterContainer;
     expression: Expression;
     updateFilter: (filter: RuleFilterContainer) => void;
-    payload: Payload;
+    payload: EventPayload;
 };
 export const ConfigFilterDialogExpression: React.FC<ConfigFilterDialogExpressionProps> = ({filter, expression, updateFilter, payload}) => {
-    const [selected, setSelected] = React.useState<PayloadField|undefined>(payload.find(field => expression.field === field.name));
+    const [selected, setSelected] = React.useState<EventPayloadField|undefined>(payload.find(field => expression.field === field.name));
     const [comparator, setComparator] = React.useState<Expression>(expression);
     const updateExpression = React.useCallback(
         () => {
@@ -292,7 +294,7 @@ export type ConfigFilterExpressionProps = {
     filter?: RuleFilterContainer;
     expression?: Expression;
     updateFilter: (filter: RuleFilterContainer) => void;
-    payload?: Payload|null;
+    payload?: EventPayload|null;
 };
 export const ConfigFilterExpression: React.FC<ConfigFilterExpressionProps> = ({filter, expression, updateFilter, payload}) => {
     React.useEffect(

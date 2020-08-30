@@ -72,6 +72,14 @@ export const useStyles = makeStyles(
             display: 'flex',
             flex: 1,
             paddingLeft: 8,
+        },
+        info: {
+            display: 'flex',
+            padding: 16
+        },
+        infoText: {
+            fontSize: 14,
+            color: theme.palette.info.dark
         }
     })
 );

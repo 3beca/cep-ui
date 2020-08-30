@@ -1,64 +1,14 @@
 import {
-    isContainer,
-    isContainerAND,
-    isContainerOR,
-    isContainerDefault,
-    isExpressionPassthrow,
-    isExpressionDefault,
-    isExpressionComparator,
-    isExpressionLocation,
     parseRuleFilter,
     getComparatorValue,
-    buildPayloadFromEventLogPayload,
     createANDContainer,
     createORContainer,
     createExpresion,
-    Container,
-    EPassthrow,
-    EDefault,
-    EComparator,
-    EComparatorLocation,
-    Payload,
-    Expression,
-    ContainerAND,
-    ContainerOR,
-    ContainerDefault,
-    parseFilterContainer,
-    RuleFilterContainer
+    parseFilterContainer
 } from './utils';
-import { RuleFilter, RuleFilterComparator, Geometry, RuleFilterComparatorLocation } from './models';
+import { RuleFilter, RuleFilterComparator, Geometry, RuleFilterComparatorLocation } from '../../services/api/models';
+import { Container, Expression, RuleFilterContainer } from './models';
 
-test(
-    'check types should return the correct type',
-    () => {
-        const container: Container = {model: 'CONTAINER'} as Container;
-        const containerAND: ContainerAND = {model: 'CONTAINER', type: 'AND'} as ContainerAND;
-        const containerOR: ContainerOR = {model: 'CONTAINER', type: 'OR'} as ContainerOR;
-        const containerDefault: ContainerDefault = {model: 'CONTAINER', type: 'DEFAULT'} as ContainerDefault;
-
-        const passExpression  = {model: 'EXPRESSION', type: 'PASSTHROW'} as EPassthrow;
-        const defaultExpression  = {model: 'EXPRESSION', type: 'DEFAULT'} as EDefault;
-        const comparatorExpression  = {model: 'EXPRESSION', type: 'COMPARATOR'} as EComparator;
-        const geoExpression  = {model: 'EXPRESSION', type: 'GEO'} as EComparatorLocation;
-
-        expect(isContainer(container)).toBe(true);
-        expect(isContainer(passExpression)).toBe(false);
-        expect(isContainerAND(containerAND)).toBe(true);
-        expect(isContainerAND(container)).toBe(false);
-        expect(isContainerOR(containerOR)).toBe(true);
-        expect(isContainerOR(container)).toBe(false);
-        expect(isContainerDefault(containerDefault)).toBe(true);
-        expect(isContainerDefault(container)).toBe(false);
-        expect(isExpressionPassthrow(passExpression)).toBe(true);
-        expect(isExpressionPassthrow(geoExpression)).toBe(false);
-        expect(isExpressionDefault(defaultExpression)).toBe(true);
-        expect(isExpressionDefault(geoExpression)).toBe(false);
-        expect(isExpressionComparator(comparatorExpression)).toBe(true);
-        expect(isExpressionComparator(geoExpression)).toBe(false);
-        expect(isExpressionLocation(geoExpression)).toBe(true);
-        expect(isExpressionLocation(passExpression)).toBe(false);
-    }
-);
 test(
     'getComparatorValue shuold return each type of Comparator',
     () => {
@@ -486,78 +436,6 @@ test(
         ]);
     }
 );
-
-test('buildPayloadFromEventLogPayload should return null when payload is undefined', () => {
-    expect(buildPayloadFromEventLogPayload(undefined)).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should return null when payload is null', () => {
-    expect(buildPayloadFromEventLogPayload(null)).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should return null when payload is a number', () => {
-    expect(buildPayloadFromEventLogPayload(10)).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should return null when payload is a string', () => {
-    expect(buildPayloadFromEventLogPayload('10')).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should return null when payload is an empty object', () => {
-    const payloadDownloaded = {};
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should return null when payload is an complex object', () => {
-    const payloadDownloaded = {
-        invalidKey: { subkey: 'hi'},
-        anotherInvalidKey: [],
-        functionAsChild: () => {}
-    };
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should filter invalid locations', () => {
-    const payloadDownloaded = {
-        invalidLocation: [],
-        invalidLocation1: [12, '15'],
-        invalidLocation2: [{}, 12],
-        invalidLocation3: ['', []],
-        invalidLocation4: [''],
-        invalidLocation5: [[], []],
-        validLocation: [10, 10]
-    };
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual([{name: 'validLocation', type: 'location'}]);
-});
-
-test('buildPayloadFromEventLogPayload should return null when payload is an array', () => {
-    const payloadDownloaded = [] as any;
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should return null when payload is a function', () => {
-    const payloadDownloaded = (() => {}) as any;
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(null);
-});
-
-test('buildPayloadFromEventLogPayload should return a valid payload', () => {
-    const payloadDownloaded = {
-        numericField: 25,
-        stringfield: 'string',
-        locationField: [100, 100],
-        complexObject: {},
-        arrayObject: [],
-        invalidArray: [100, 100, 100]
-    };
-
-    const expected: Payload = [
-        {name: 'numericField', type: 'number'},
-        {name: 'stringfield', type: 'string'},
-        {name: 'locationField', type: 'location'}
-    ];
-
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(expected);
-});
 
 test('createANDContainer should return a container with AND', () => {
     const expectedANDContainer: Container = {

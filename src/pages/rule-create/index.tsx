@@ -9,20 +9,22 @@ import { useParams, Link } from 'react-router-dom';
 import EventTypeSelector from './event-type-select';
 import TargetSelector from './target-select';
 import RuleCreator from './rule-creator';
-import PayloadCreator from './payload-creator';
-import RuleGroupCreator, {buildPayloadFromRuleGroup} from '../../components/rule-group-creator';
+import PayloadCreator from '../../components/event-payload-creator';
+import { EventPayload } from '../../components/event-payload-creator/utils';
+import RuleGroupCreator from '../../components/rule-group-creator';
+import { buildEventPayloadFromGroupPayload } from '../../components/rule-group-creator/utils';
 import RuleFilter from '../../components/rule-filter';
 import ConfigFilterExpression from '../../components/config-filter-expression';
-
 import { EventType, Target, Rule, RuleTypes, RuleGroup } from '../../services/api';
 import { useCreate, ENTITY } from '../../services/api-provider/use-api';
 import {useStyles} from './styles';
 import {
-    Payload,
+    parseFilterContainer
+} from '../../components/rule-filter/utils';
+import {
     RuleFilterContainer,
     Expression
-} from '../../services/api/utils';
-import {parseFilterContainer} from '../../services/api/utils';
+} from '../../components/rule-filter/models';
 
 const RuleCreateError: React.FC<{message?: string}> = ({message}) => {
     const styles = useStyles();
@@ -80,7 +82,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const {type} = useParams<{type: RuleTypes}>();
     const [eventType, setEventType] = React.useState<EventType|null>(null);
     const [target, setTarget] = React.useState<Target|null>(null);
-    const [eventPayload, setEventPayload] = React.useState<Payload|null>(null);
+    const [eventPayload, setEventPayload] = React.useState<EventPayload|null>(null);
     const [ruleGroup, setRuleGroup] = React.useState<RuleGroup>();
     const [rule, updateRule] = React.useReducer((state: Partial<Rule>, update: Partial<Rule>) => ({...state, ...update}), initialRuleState);
     const [isResponseDialogOpen, setResponseDialogOpen] = React.useState(false);
@@ -104,7 +106,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading || isResponseDialogOpen), [bodyRule, isLoading, isResponseDialogOpen]);
     const filterPayload = React.useMemo(() => {
         if (type === 'realtime') return eventPayload;
-        return buildPayloadFromRuleGroup(eventPayload, ruleGroup);
+        return buildEventPayloadFromGroupPayload(eventPayload, ruleGroup);
     }, [type, eventPayload, ruleGroup]);
     const eventTypeId = bodyRule.eventTypeId;
     React.useEffect(() => {

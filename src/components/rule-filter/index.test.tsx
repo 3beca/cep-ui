@@ -6,7 +6,7 @@ import {
     Geometry,
     RuleFilterComparatorLocation
 } from '../../services/api';
-import { parseRuleFilter, createANDContainer, createORContainer, createExpresion } from '../../services/api/utils';
+import { parseRuleFilter, createANDContainer, createORContainer, createExpresion } from './utils';
 import userEvent from '@testing-library/user-event';
 
 test('Render RuleFilter with Passthrow when no filter received', async () => {

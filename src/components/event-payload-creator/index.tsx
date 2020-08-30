@@ -16,10 +16,15 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Divider from '@material-ui/core/Divider';
 import {useStyles} from './styles';
-import { useGetList, ENTITY } from '../../../services/api-provider/use-api';
-import { EventLog } from '../../../services/api';
-import { Payload, buildPayloadFromEventLogPayload, PayloadField, PayloadTypes } from '../../../services/api/utils';
-import IconDialog, {useIconDialog} from '../../../components/icon-dialog';
+import { useGetList, ENTITY } from '../../services/api-provider/use-api';
+import { EventLog } from '../../services/api';
+import IconDialog, {useIconDialog} from '../icon-dialog';
+import {
+    buildPayloadFromEventLogPayload,
+    EventPayloadFieldTypes,
+    EventPayload,
+    EventPayloadField
+} from './models';
 
 export const HelpDialog: React.FC<{showDialog: boolean; closeDialog: () => void;}> = ({showDialog, closeDialog}) => {
     const styles = useStyles();
@@ -94,13 +99,13 @@ export const PayloadFieldViewDeleteButton: React.FC<PayloadFieldViewDeleteButton
         </IconButton>
     );
 };
-export const IconByFieldType: React.FC<{type: PayloadTypes}> = ({type}) => {
+export const IconByFieldType: React.FC<{type: EventPayloadFieldTypes}> = ({type}) => {
     if (type === 'number') return <NumberIcon/>;
     if (type === 'location') return <LocationIcon/>;
     return <StringIcon/>;
 };
 export type PayloadFieldViewProps = {
-    payloadField: PayloadField;
+    payloadField: EventPayloadField;
     removePayloadField?: () => void;
     disabled?: boolean;
 };
@@ -116,7 +121,8 @@ export const PayloadFieldView: React.FC<PayloadFieldViewProps> = ({payloadField,
         </div>
     );
 };
-export const PayloadSchema: React.FC<{disabled?: boolean; payload: Payload|null, setPayload: setPayload}> = ({disabled, payload, setPayload}) => {
+export const PayloadSchema: React.FC<{disabled?: boolean; payload: EventPayload|null, setPayload: setPayload}> = ({disabled, payload, setPayload}) => {
+    const styles = useStyles();
     const removePayloadField = React.useCallback(
         (index: number) => {
             const beforeIndex = payload && payload.slice(0, index);
@@ -125,7 +131,16 @@ export const PayloadSchema: React.FC<{disabled?: boolean; payload: Payload|null,
         },
         [setPayload, payload]
     );
-    if (!payload) return null;
+    if (!payload) {
+        return (
+            <div
+                aria-label='payload creator info message'
+                className={styles.info}>
+                <Typography className={styles.infoText}>When you choose an EventType you can download or create its payload, in order to create a custom filter for your Rule</Typography>
+            </div>
+        );
+    }
+
     const fields = payload.map(
         (payloadField, idx) => (
             <div key={idx}>
@@ -144,13 +159,13 @@ export const PayloadSchema: React.FC<{disabled?: boolean; payload: Payload|null,
     );
 };
 export type PayloadAddFieldProps = {
-    updatePayload: (field: PayloadField) => void;
+    updatePayload: (field: EventPayloadField) => void;
     disabled?: boolean;
 };
 export const PayloadAddField: React.FC<PayloadAddFieldProps> = ({disabled, updatePayload}) => {
     const styles = useStyles();
     const closeDialog = useIconDialog();
-    const [type, setType] = React.useState<PayloadTypes>('number');
+    const [type, setType] = React.useState<EventPayloadFieldTypes>('number');
     const [name, setName] = React.useState('');
     const isDisabled = !name || !type;
     const addField = React.useCallback(
@@ -217,10 +232,10 @@ export const PayloadAddField: React.FC<PayloadAddFieldProps> = ({disabled, updat
         </>
     );
 };
-export type setPayload = (payload: Payload|null) => void;
+export type setPayload = (payload: EventPayload|null) => void;
 export type PayloadCreatorProps = {
     eventTypeId?: string;
-    payload: Payload|null;
+    payload: EventPayload|null;
     setPayload: setPayload;
     disabled?: boolean;
 };
@@ -233,7 +248,7 @@ export const PayloadCreator: React.FC<PayloadCreatorProps> = ({eventTypeId, disa
                 <IconDialog aria-label='payload addfield button open dialog' show={true} disabled={disabled || !eventTypeId} icon={<AddIcon aria-label='payload addfield icon'/>}>
                     <PayloadAddField
                         disabled={disabled}
-                        updatePayload={(newPayloadField: PayloadField) => {
+                        updatePayload={(newPayloadField: EventPayloadField) => {
                             const currentPayload = !payload ? [] : payload;
                             const sameFieldName = currentPayload.find(field => field.name === newPayloadField.name);
                             if (sameFieldName) {
