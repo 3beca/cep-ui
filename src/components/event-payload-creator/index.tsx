@@ -113,50 +113,80 @@ export const PayloadFieldView: React.FC<PayloadFieldViewProps> = ({payloadField,
     const styles = useStyles();
     return (
         <div
-            aria-label='payload field'
+            aria-label={`payload field`}
             className={styles.paloadFieldView}>
             <div className={styles.payloadFieldViewIcon}><IconByFieldType type={payloadField.type}/></div>
-            <Typography className={styles.payloadFieldViewText}>{payloadField.name}</Typography>
+            <Typography className={styles.payloadFieldViewText} aria-label={`payload field ${payloadField.name}`}>{payloadField.name}</Typography>
             <PayloadFieldViewDeleteButton removePayloadField={removePayloadField} disabled={disabled}/>
         </div>
     );
 };
-export const PayloadSchema: React.FC<{disabled?: boolean; payload: EventPayload|null, setPayload: setPayload}> = ({disabled, payload, setPayload}) => {
-    const styles = useStyles();
+
+
+
+export type PayloadSchemaFieldsProps = {
+    disabled?: boolean;
+    payload: EventPayload;
+    setPayload: setPayload;
+};
+export const PayloadSchemaFields: React.FC<PayloadSchemaFieldsProps> = ({disabled, payload, setPayload}) => {
+
     const removePayloadField = React.useCallback(
         (index: number) => {
-            const beforeIndex = payload && payload.slice(0, index);
-            const afterIndex = payload && payload.slice(index + 1);
-            setPayload([...beforeIndex, ...afterIndex]);
+            const beforeIndex = payload.slice(0, index);
+            const afterIndex = payload.slice(index + 1);
+            const newPayload = [...beforeIndex, ...afterIndex];
+            setPayload(newPayload.length > 0 ? newPayload : null);
         },
         [setPayload, payload]
     );
-    if (!payload) {
+    return (
+        <div aria-label='payload creator schema'>
+            <Divider/>
+            {
+                payload.map(
+                    (payloadField, idx) => (
+                        <div key={idx}>
+                            <PayloadFieldView
+                                disabled={disabled}
+                                payloadField={payloadField}
+                                removePayloadField={() => {removePayloadField(idx)}}/>
+                        </div>
+                    )
+                )
+            }
+        </div>
+    );
+};
+
+export type PayloadSchemaProps = {
+    eventTypeId?: string;
+    disabled?: boolean;
+    payload: EventPayload|null;
+    setPayload: setPayload;
+};
+export const PayloadSchema: React.FC<PayloadSchemaProps> = ({eventTypeId, disabled, payload, setPayload}) => {
+    const styles = useStyles();
+    if (!eventTypeId) {
         return (
             <div
-                aria-label='payload creator info message'
+                aria-label='payload creator info message no eventTypeId'
                 className={styles.info}>
                 <Typography className={styles.infoText}>When you choose an EventType you can download or create its payload, in order to create a custom filter for your Rule</Typography>
             </div>
         );
     }
-
-    const fields = payload.map(
-        (payloadField, idx) => (
-            <div key={idx}>
-                <PayloadFieldView
-                    disabled={disabled}
-                    payloadField={payloadField}
-                    removePayloadField={() => removePayloadField(idx)}/>
+    if (!payload) {
+        return (
+            <div
+                aria-label='payload creator info message no payload'
+                className={styles.info}>
+                <Typography className={styles.infoText}>You can CREATE or DOWNLOAD the payload from this EventType</Typography>
             </div>
-        )
-    );
-    return (
-        <div aria-label='payload creator schema'>
-            <Divider/>
-            {fields}
-        </div>
-    );
+        );
+    }
+
+    return (<PayloadSchemaFields disabled={disabled} payload={payload} setPayload={setPayload}/>);
 };
 export type PayloadAddFieldProps = {
     updatePayload: (field: EventPayloadField) => void;
@@ -253,7 +283,7 @@ export const PayloadCreator: React.FC<PayloadCreatorProps> = ({eventTypeId, disa
                             const sameFieldName = currentPayload.find(field => field.name === newPayloadField.name);
                             if (sameFieldName) {
                                 sameFieldName.type = newPayloadField.type;
-                                setPayload([...payload]);
+                                setPayload([...currentPayload]);
                             }
                             else {
                                 setPayload([...currentPayload, newPayloadField]);
@@ -266,6 +296,7 @@ export const PayloadCreator: React.FC<PayloadCreatorProps> = ({eventTypeId, disa
                     setPayload={setPayload}/>
             </div>
             <PayloadSchema
+                eventTypeId={eventTypeId}
                 disabled={disabled}
                 payload={payload}
                 setPayload={setPayload}/>

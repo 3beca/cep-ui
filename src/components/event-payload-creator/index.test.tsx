@@ -11,12 +11,11 @@ import PayloadCreator, {PayloadFieldView} from './index';
 import { setupNock } from '../../test-utils/api';
 import { BASE_URL } from '../../services/config';
 import { waitFor } from '@testing-library/react';
-import { EventPayload, EventPayloadField } from './utils';
+import { EventPayload, EventPayloadField } from './models';
 
 const server = setupNock(BASE_URL);
 
-test(
-    'PayloadCreator should show a message when no payload',
+test('PayloadCreator should show a message when no payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload|null = null;
@@ -25,12 +24,24 @@ test(
 
         await screen.findByLabelText(/payload creator$/i);
         await screen.findByLabelText(/payload download button/i);
-        await screen.findByLabelText(/payload creator info message/);
+        await screen.findByLabelText(/payload creator info message no payload/i);
     }
 );
 
-test(
-    'PayloadCreator should show a button to try to download the las payload from an event without payload',
+test('PayloadCreator should show a message when no eventTypeId',
+    async () => {
+        const eventTypeId = undefined;
+        const payload: EventPayload|null = null;
+        const setPayload = jest.fn();
+        render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
+
+        await screen.findByLabelText(/payload creator$/i);
+        await screen.findByLabelText(/payload download button/i);
+        await screen.findByLabelText(/payload creator info message no eventtype/i);
+    }
+);
+
+test('PayloadCreator should show a button to try to download the las payload from an event without payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload|null = null;
@@ -52,8 +63,7 @@ test(
     }
 );
 
-test(
-    'PayloadCreator should show a button to try to download the las payload from an event with invalid payload',
+test('PayloadCreator should show a button to try to download the las payload from an event with invalid payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload|null = null;
@@ -75,8 +85,7 @@ test(
     }
 );
 
-test(
-    'PayloadCreator should show a button to try to download the las payload from an event with payload',
+test('PayloadCreator should show a button to try to download the las payload from an event with payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload|null = null;
@@ -113,8 +122,7 @@ test(
     }
 );
 
-test(
-    'PayloadCreator should show disabled',
+test('PayloadCreator should show disabled',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload|null = null;
@@ -126,8 +134,7 @@ test(
     }
 );
 
-test(
-    'PayloadCreator should delete fields from payload',
+test('PayloadCreator should delete fields from payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload = [
@@ -166,8 +173,26 @@ test(
     }
 );
 
-test(
-    'PayloadCreator should create a payload by hand',
+test('PayloadCreator should set payload to null when delete last field',
+    async () => {
+        const eventTypeId = 'eventtypeid';
+        const payload: EventPayload = [
+            {name: 'numericField', type: 'number'}
+        ];
+        const setPayload = jest.fn();
+
+        render(<PayloadCreator eventTypeId={eventTypeId} payload={payload} setPayload={setPayload}/>);
+        await screen.findByLabelText(/payload creator schema/i);
+        expect(await screen.findAllByLabelText(/payload field$/i)).toHaveLength(1);
+        const buttonRemovePayloadField = await screen.findAllByLabelText(/payload field button remove/);
+        expect(buttonRemovePayloadField).toHaveLength(1);
+
+        userEvent.click(buttonRemovePayloadField[0]);
+        expect(setPayload).toHaveBeenNthCalledWith(1, null);
+    }
+);
+
+test('PayloadCreator should create a payload by hand',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload|null = null;
@@ -225,8 +250,7 @@ test(
     }
 );
 
-test(
-    'PayloadCreator should add new fields to a payload',
+test('PayloadCreator should add new fields to a payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const payload: EventPayload = [
@@ -255,8 +279,7 @@ test(
     }
 );
 
-test(
-    'PayloadCreator should not add a fields twice to a payload',
+test('PayloadCreator should not add a fields twice to a payload',
     async () => {
         const eventTypeId = 'eventtypeid';
         const fieldName = 'myNumericfield';
@@ -286,8 +309,7 @@ test(
     }
 );
 
-test(
-    'PayloadFieldView can hidde delete button when no action',
+test('PayloadFieldView can hidde delete button when no action',
     async () => {
         const payloadField: EventPayloadField = {name: 'numericField', type: 'number'};
 

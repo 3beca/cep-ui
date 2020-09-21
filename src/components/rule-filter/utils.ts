@@ -17,10 +17,12 @@ import {
     isRuleFilterComparatorLTE,
     isRuleFilterComparatorLocation
 } from '../../services/api/models';
+import { EventPayload } from '../event-payload-creator/models';
 import {
     ComparatorLocation,
     ComparatorValue,
     Container,
+    isContainer,
     EComparator,
     EComparatorLocation,
     EDefault,
@@ -29,7 +31,8 @@ import {
     RuleFilterContainer,
     RULE_OPERATORS,
     isExpressionDefault,
-    isExpressionLocation
+    isExpressionLocation,
+    DEFAULT_RULEFILTERCONTAINER
 } from './models';
 
 export const getComparatorValue = (comparator: RuleFilterComparator): ComparatorValue|ComparatorLocation => {
@@ -109,11 +112,7 @@ export const parseRuleFilter = (filter: RuleFilter): RuleFilterContainer => {
             }
         );
     }
-    return [{
-        model: 'EXPRESSION',
-        type: 'PASSTHROW',
-        field: 'root'
-    }];
+    return DEFAULT_RULEFILTERCONTAINER;
 };
 
 export const createANDContainer = (): Container => {
@@ -169,4 +168,38 @@ export const parseFilterContainer = (container: RuleFilterContainer) : RuleFilte
     return container.reduce<RuleFilter>((filter, container) => {
         return {...filter, ...parseContainerValue(container)};
     }, emptyFilter);
+};
+
+const synchronizeExpression = (payloadNames: string[], expression: Expression): Expression|null => {
+    return payloadNames.includes(expression.field) ? expression : null;
+};
+const synchronizeContainer = (payloadNames: string[], container: Container): Container|null => {
+    const syncedContainerValues: (Expression|Container)[] = [];
+    for(const containerElement of container.values) {
+        if (isContainer(containerElement)) {
+            const container = synchronizeContainer(payloadNames, containerElement);
+            container && syncedContainerValues.push(container);
+        }
+        else {
+            const expression = synchronizeExpression(payloadNames, containerElement);
+            expression && syncedContainerValues.push(expression);
+        }
+    }
+    return {...container, values: syncedContainerValues};
+};
+export const synchronizeRuleFilterContainerAndEventPayload = (payload: EventPayload|null, ruleFilter: RuleFilterContainer) => {
+    if (!Array.isArray(payload) || payload.length < 1 || !Array.isArray(ruleFilter)) return DEFAULT_RULEFILTERCONTAINER;
+    const syncedRuleFilterContainer: RuleFilterContainer = [];
+    const payloadNames = payload.map(payloadItem => payloadItem.name);
+    for(const ruleFilterElement of ruleFilter) {
+        if(isContainer(ruleFilterElement)) {
+            const container = synchronizeContainer(payloadNames, ruleFilterElement);
+            container && syncedRuleFilterContainer.push(container);
+        }
+        else {
+            const expression = synchronizeExpression(payloadNames, ruleFilterElement);
+            expression && syncedRuleFilterContainer.push(expression);
+        }
+    }
+    return syncedRuleFilterContainer.length > 0 ? syncedRuleFilterContainer : DEFAULT_RULEFILTERCONTAINER;
 };

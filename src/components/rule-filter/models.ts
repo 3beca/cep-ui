@@ -59,6 +59,9 @@ export type RuleFilterContainer = (Expression|Container)[];
 export const isContainer = (value: Expression|Container): value is Container => {
     return value.model === MODELS.CONTAINER;
 }
+export const isExpression = (value: Expression|Container): value is Expression => {
+    return value.model === MODELS.EXPRESSION;
+}
 export const isContainerAND = (value: Expression|Container): value is ContainerAND => {
     return isContainer(value) && value.type === 'AND';
 }
@@ -106,3 +109,6 @@ export const EXPRESSION_OPERATORS = {
 export const RULE_OPERATORS = {
     'EQ': '_eq', 'GT': '_gt', 'GTE': '_gte', 'LT': '_lt', 'LTE': '_lte', 'NEAR': '_near'
 };
+
+export const DEFAULT_RULEFILTEREXPRESSION: Expression = {type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'};
+export const DEFAULT_RULEFILTERCONTAINER: RuleFilterContainer = [DEFAULT_RULEFILTEREXPRESSION];

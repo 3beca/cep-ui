@@ -4,10 +4,12 @@ import {
     createANDContainer,
     createORContainer,
     createExpresion,
-    parseFilterContainer
+    parseFilterContainer,
+    synchronizeRuleFilterContainerAndEventPayload
 } from './utils';
 import { RuleFilter, RuleFilterComparator, Geometry, RuleFilterComparatorLocation } from '../../services/api/models';
-import { Container, Expression, RuleFilterContainer } from './models';
+import { Container, DEFAULT_RULEFILTERCONTAINER, DEFAULT_RULEFILTEREXPRESSION, Expression, RuleFilterContainer } from './models';
+import { EventPayload } from '../event-payload-creator/models';
 
 test(
     'getComparatorValue shuold return each type of Comparator',
@@ -28,13 +30,7 @@ test(
     () => {
         const filter: RuleFilter = {};
 
-        expect(parseRuleFilter(filter)).toEqual([
-            {
-                model: 'EXPRESSION',
-                type: 'PASSTHROW',
-                field: 'root'
-            }
-        ]);
+        expect(parseRuleFilter(filter)).toEqual(DEFAULT_RULEFILTERCONTAINER);
     }
 );
 
@@ -482,11 +478,7 @@ test('createExpresion should return a EXPRESION default with string', () => {
 });
 
 test('createExpresion should return a EXPRESION passthrow when no arguments', () => {
-    const expectedExpression: Expression = {
-        model: 'EXPRESSION',
-        type: 'PASSTHROW',
-        field: 'root'
-    };
+    const expectedExpression: Expression = DEFAULT_RULEFILTEREXPRESSION;
     expect(createExpresion()).toEqual(expectedExpression);
 });
 
@@ -625,4 +617,200 @@ test('parseFilterContainer should return an nested rule filter with expressions 
         ]
     };
     expect(parseFilterContainer(parseRuleFilter(filter))).toEqual(filter);
+});
+
+test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFilterContainer when no EventPayload', () => {
+    const defaultRulefilterContainer: RuleFilterContainer = DEFAULT_RULEFILTERCONTAINER;
+
+    expect(synchronizeRuleFilterContainerAndEventPayload(null, [])).toEqual(defaultRulefilterContainer);
+    expect(synchronizeRuleFilterContainerAndEventPayload(undefined as unknown as EventPayload, null as unknown as RuleFilterContainer)).toEqual(defaultRulefilterContainer);
+    expect(synchronizeRuleFilterContainerAndEventPayload(undefined as unknown as EventPayload, undefined as unknown as RuleFilterContainer)).toEqual(defaultRulefilterContainer);
+    expect(synchronizeRuleFilterContainerAndEventPayload(null, defaultRulefilterContainer)).toEqual(defaultRulefilterContainer);
+});
+
+test('synchronizeRuleFilterContainerAndEventPayload should return the same RuleFilterContainer', () => {
+    const payload: EventPayload = [
+        {type: 'number', name: 'temperature'},
+        {type: 'number', name: 'humidity'},
+        {type: 'number', name: 'pressure'},
+    ];
+
+    const expectedRuleFilter: RuleFilterContainer = [
+        {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1},
+        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1},
+        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1}
+    ];
+
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, expectedRuleFilter)).toEqual(expectedRuleFilter);
+});
+
+test('synchronizeRuleFilterContainerAndEventPayload should remove temperature from RuleFilterContainer', () => {
+    const payload: EventPayload = [
+        {type: 'number', name: 'humidity'},
+        {type: 'number', name: 'pressure'},
+    ];
+
+    const ruleFilter: RuleFilterContainer = [
+        {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1},
+        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1},
+        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1}
+    ];
+
+    const expectedRuleFilter: RuleFilterContainer = [
+        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1},
+        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1}
+    ];
+
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
+});
+
+test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFilterContainer when RuleFilterContainer synced is empty', () => {
+    const payload: EventPayload = [
+        {type: 'number', name: 'humidity'},
+        {type: 'number', name: 'pressure'},
+    ];
+
+    const ruleFilter: RuleFilterContainer = [
+        {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+        {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1}
+    ];
+
+    const expectedRuleFilter: RuleFilterContainer = DEFAULT_RULEFILTERCONTAINER;
+
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
+});
+
+test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFilterContainer when nested RuleFilterContainer synced is empty', () => {
+    const payload: EventPayload = [
+        {type: 'number', name: 'humidity'},
+        {type: 'number', name: 'pressure'},
+    ];
+
+    const ruleFilter: RuleFilterContainer = [
+        {
+            model: 'CONTAINER',
+            type: 'DEFAULT',
+            field: '_and',
+            values: [
+                {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'GT', value: 1}
+            ]
+        }
+    ];
+
+    const expectedRuleFilter: RuleFilterContainer = [
+        {
+            model: 'CONTAINER',
+            type: 'DEFAULT',
+            field: '_and',
+            values: []
+        }
+    ];
+
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
+});
+
+test('synchronizeRuleFilterContainerAndEventPayload should remove temperature from RuleFilterContainer', () => {
+    const payload: EventPayload = [
+        {type: 'number', name: 'humidity'},
+        {type: 'number', name: 'pressure'},
+    ];
+
+    const ruleFilter: RuleFilterContainer = [
+        {
+            model: 'CONTAINER',
+            field: '_and',
+            type: 'AND',
+            values: [
+                {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15}
+            ]
+        },
+        {
+            model: 'CONTAINER',
+            field: '_or',
+            type: 'OR',
+            values: [
+                {
+                    model: 'CONTAINER',
+                    field: '_and',
+                    type: 'AND',
+                    values: [{field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15}]
+                },
+                {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {
+                    model: 'CONTAINER',
+                    field: '_or',
+                    type: 'OR',
+                    values: [
+                        {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15}
+                    ]
+                }
+            ]
+        },
+        {
+            model: 'CONTAINER',
+            field: '',
+            type: 'DEFAULT',
+            values: [
+                {field: 'temperature', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15}
+            ]
+        }
+    ];
+
+    const expectedRuleFilter: RuleFilterContainer = [
+        {
+            model: 'CONTAINER',
+            field: '_and',
+            type: 'AND',
+            values: [
+                {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15}
+            ]
+        },
+        {
+            model: 'CONTAINER',
+            field: '_or',
+            type: 'OR',
+            values: [
+                {
+                    model: 'CONTAINER',
+                    field: '_and',
+                    type: 'AND',
+                    values: []
+                },
+                {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                {
+                    model: 'CONTAINER',
+                    field: '_or',
+                    type: 'OR',
+                    values: [
+                        {field: 'humidity', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15},
+                        {field: 'pressure', model: 'EXPRESSION', type: 'COMPARATOR', operator: 'LT', value: 15}
+                    ]
+                }
+            ]
+        },
+        {
+            model: 'CONTAINER',
+            field: '',
+            type: 'DEFAULT',
+            values: []
+        }
+    ];
+
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
 });

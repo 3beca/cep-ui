@@ -3,6 +3,7 @@ import {
     isContainerAND,
     isContainerOR,
     isContainerDefault,
+    isExpression,
     isExpressionPassthrow,
     isExpressionDefault,
     isExpressionComparator,
@@ -38,6 +39,8 @@ test(
         expect(isContainerOR(container)).toBe(false);
         expect(isContainerDefault(containerDefault)).toBe(true);
         expect(isContainerDefault(container)).toBe(false);
+        expect(isExpression(container)).toBe(false);
+        expect(isExpression(passExpression)).toBe(true);
         expect(isExpressionPassthrow(passExpression)).toBe(true);
         expect(isExpressionPassthrow(geoExpression)).toBe(false);
         expect(isExpressionDefault(defaultExpression)).toBe(true);

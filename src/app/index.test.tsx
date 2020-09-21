@@ -55,7 +55,7 @@ test('App render RulesPage with route / and snapshot', async () => {
 
     // Close Menu
     userEvent.click(showMenuButton);
-    waitFor(() => expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument());
 });
 
 test('App render NotFoundPage with route /unknown and snapshot', async () => {

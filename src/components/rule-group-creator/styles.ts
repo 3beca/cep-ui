@@ -28,27 +28,10 @@ export const useStyles = makeStyles(
         },
         addFieldForm: {},
         addFieldName: {},
-        addfieldSelector: {
+        addFieldOperator: {
             marginTop: 10
         },
-        addfieldSelectorLabel: {
-            fontWeight: 500
-        },
-        addFieldIconTypes: {
-            display: 'flex',
-            flex: 1,
-            justifyContent: 'flex-end',
-            alignItems: 'center'
-        },
-        addFieldIcon: {
-            padding: 12,
-            color: theme.palette.primary.light,
-            cursor: 'pointer'
-        },
-        addFieldIconSelected: {
-            padding: 12,
-            color: theme.palette.warning.dark
-        },
+        addfieldTarget: {},
         selectButton: {
             color: theme.palette.warning.dark
         },
@@ -80,6 +63,9 @@ export const useStyles = makeStyles(
         infoText: {
             fontSize: 14,
             color: theme.palette.info.dark
+        },
+        schemaGroupFieldViewText: {
+
         }
     })
 );

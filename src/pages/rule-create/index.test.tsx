@@ -13,11 +13,12 @@ import {
     generateTargetListWith,
     generateEventLogListWithPayload,
     generateRule,
-    serverGetEventLogList
+    serverGetEventLogList,
+    within
 } from '../../test-utils';
 import RuleCreatePage from './';
 import { BASE_URL } from '../../services/config';
-import { Rule, RuleError, RuleFilter } from '../../services/api';
+import { Rule, RuleError, RuleFilter, RuleTypes } from '../../services/api';
 
 const fakeUseParams = useParams as unknown as jest.Mock;
 const fakeLink = Link as unknown as {linkAction: jest.Mock};
@@ -381,15 +382,15 @@ test('RuleCreatePage for realtime rules should overwrite payload fields with the
     expect(await screen.findAllByLabelText(/payload field$/)).toHaveLength(1);
 });
 
-const enableRuleFilterComponent = async () => {
+const enableRuleFilterComponent = async (type?: RuleTypes) => {
     const eventTypeList = generateEventTypeListWith(10, false, false);
     const targetList = generateTargetListWith(10, false, false);
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, eventTypeList);
     serverGetTargetList(setupNock(BASE_URL), 1, 10, '', 200, targetList);
-    fakeUseParams.mockReturnValue({type: 'realtime'});
+    fakeUseParams.mockReturnValue({type});
     render(<RuleCreatePage/>);
 
-    await screen.findByLabelText(/create realtime rule page/i);
+    await screen.findByLabelText(`create ${type || 'realtime'} rule page`);
     await screen.findByLabelText(/manage eventtype section/i);
     await screen.findByLabelText(/create rule section/i);
 
@@ -447,13 +448,162 @@ const enableRuleFilterComponent = async () => {
     return {eventType, target};
 };
 
-test('RuleCreatePage for realtime rules should activate RuleFilter editMode only when eventId and payload are valid', async () => {
+test('RuleCreatePage use realtime when no type defined', async () => {
     await enableRuleFilterComponent();
     expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
 });
 
-test('RuleCreatePage for realtime rules should config the filter and create the rule', async () => {
-    const {eventType, target} = await enableRuleFilterComponent();
+test('RuleCreatePage use realtime when type is null', async () => {
+    await enableRuleFilterComponent(null as unknown as RuleTypes);
+    expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
+});
+
+test('RuleCreatePage for realtime rules should update filter when change payload', async () => {
+    await enableRuleFilterComponent('realtime');
+    expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
+
+    // Add a filter for string should show the filter comparator dialog
+    const expressionButtons = await screen.findAllByLabelText(/filter add button expression/i);
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    let availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[0]);
+
+    await screen.findByLabelText(/config filter operator selector/);
+    await screen.findByLabelText(/config filter value/);
+
+    const valueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(valueField, 'my String');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Add a second filter for myStringfield
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[0]);
+    await screen.findByLabelText(/config filter operator selector/);
+    await screen.findByLabelText(/config filter value/);
+    const secondValueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(secondValueField, 'my Second String');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Add a filter for numeric should show the filter comparator dialog
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[1]);
+
+    await screen.findByLabelText(/config filter operator selector/);
+    await screen.findByLabelText(/config filter value/);
+    userEvent.click(await screen.findByLabelText(/config filter operator selector/));
+    const operators = await screen.findAllByLabelText(/config filter operators/);
+    expect(operators).toHaveLength(5);
+    userEvent.click(operators[3]);
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '100');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Add a filter for numeric should show the filter comparator dialog
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[2]);
+
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
+    await userEvent.type(lngField, '100');
+    const latField = await screen.findByLabelText(/config filter location latitude/);
+    await userEvent.type(latField, '200');
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
+    await userEvent.type(maxField, '300');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Delete myStringfield field from payload
+    // Check that field exists in payload
+    await screen.findByLabelText(/payload field myStringfield/i);
+    await screen.findByLabelText(/payload field myNumericfield/i);
+    await screen.findByLabelText(/payload field myLocationfield/i);
+
+    // Delete myStrinfield item from payload
+    const deletePayloadButtons = await screen.findAllByLabelText(/payload field button remove/);
+    userEvent.click(deletePayloadButtons[0]);
+
+    // Check it has been removed
+    expect(screen.queryByLabelText(/payload field myStringfield/i)).not.toBeInTheDocument();
+    await screen.findByLabelText(/payload field myNumericfield/i);
+    await screen.findByLabelText(/payload field myLocationfield/i);
+
+    // Check that filter remove all filter related with myStringfield
+    const filters = await screen.findAllByLabelText(/filter expression field/);
+    filters.map((filter) => expect(filter).not.toHaveTextContent('myStringfield'));
+});
+
+test('RuleCreatePage for realtime rules should clear filter when delete all payloads fields', async () => {
+    await enableRuleFilterComponent('realtime');
+    expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
+
+    // Add a filter for string should show the filter comparator dialog
+    const expressionButtons = await screen.findAllByLabelText(/filter add button expression/i);
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    let availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[0]);
+
+    await screen.findByLabelText(/config filter operator selector/);
+    await screen.findByLabelText(/config filter value/);
+
+    const valueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(valueField, 'my String');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Add a second filter for myStringfield
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[0]);
+    await screen.findByLabelText(/config filter operator selector/);
+    await screen.findByLabelText(/config filter value/);
+    const secondValueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(secondValueField, 'my Second String');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Delete myStringfield field from payload
+    // Check that field exists in payload
+    await screen.findByLabelText(/payload field myStringfield/i);
+
+    // Delete myStrinfield item from payload
+    const deletePayloadButtons = await screen.findAllByLabelText(/payload field button remove/);
+    userEvent.click(deletePayloadButtons[0]);
+
+    // Check it has been removed
+    expect(screen.queryByLabelText(/payload field myStringfield/i)).not.toBeInTheDocument();
+
+    // Check that filter is PASSTHROW
+    await screen.findAllByLabelText(/filter expression passthrow/i);
+});
+
+test('RuleCreatePage for realtime rules should config filter with 3 expressions and create the rule', async () => {
+    const {eventType, target} = await enableRuleFilterComponent('realtime');
     expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
 
     // Add a filter for string should show the filter comparator dialog
@@ -471,11 +621,182 @@ test('RuleCreatePage for realtime rules should config the filter and create the 
     await screen.findByLabelText(/config filter operator selector/);
     await screen.findByLabelText(/config filter value/);
 
-    // const operatorSelector = await screen.findByLabelText(/config filter operator selector/);
-    // userEvent.click(operatorSelector);
-    // let operators = await screen.findAllByLabelText(/config filter operators/);
-    // expect(operators).toHaveLength(5);
-    // userEvent.click(operators[1]);
+    const valueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(valueField, 'my String');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Add a filter for numeric should show the filter comparator dialog
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[1]);
+
+    await screen.findByLabelText(/config filter operator selector/);
+    await screen.findByLabelText(/config filter value/);
+    userEvent.click(await screen.findByLabelText(/config filter operator selector/));
+    const operators = await screen.findAllByLabelText(/config filter operators/);
+    expect(operators).toHaveLength(5);
+    userEvent.click(operators[3]);
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '100');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Add a filter for numeric should show the filter comparator dialog
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[2]);
+
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
+    await userEvent.type(lngField, '40');
+    const latField = await screen.findByLabelText(/config filter location latitude/);
+    await userEvent.type(latField, '40');
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
+    await userEvent.type(maxField, '300');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Create Rule
+    const filter: RuleFilter = {
+        myStringfield: 'my String',
+        myNumericfield: {_lt: 100},
+        myLocationfield: {
+            _near: {
+                _geometry: {type: 'Point', coordinates: [40, 40]},
+                _maxDistance: 300
+            }
+        }
+
+    };
+    const {...expectedRule} = generateRule('test-rule', 3, filter);
+    expectedRule.eventTypeId = eventType.id;
+    expectedRule.targetId = target.id;
+    const {id, eventTypeName, targetName, createdAt, updatedAt, ...bodyRule} = expectedRule;
+    const ruleName = expectedRule.name;
+    await userEvent.type(await screen.findByLabelText(/rule creator name/), ruleName);
+    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule);
+    const createRuleButton = await screen.findByLabelText(/rule create button/);
+    expect(createRuleButton).not.toBeDisabled();
+    userEvent.click(createRuleButton);
+    expect(createRuleButton).toBeDisabled();
+    await screen.findByLabelText(/rule create loading/);
+    await screen.findByLabelText(/rule create success$/);
+    await screen.findByLabelText(/rule create success message/);
+});
+
+test('RuleCreatePage for realtime rules should config filter with two AND containers inside a OR container and create rule', async () => {
+    const {eventType, target} = await enableRuleFilterComponent('realtime');
+    expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
+
+    // Press main OR button to create a OR container
+    userEvent.click(await screen.findByLabelText(/filter add button or/i));
+
+
+    // Search nested add button
+    const firstFilter = within(await screen.findByLabelText(/container expressions$/i));
+    const nestedAndButton = await firstFilter.findByLabelText(/filter add button and/i);
+    // Add first nested AND
+    userEvent.click(nestedAndButton);
+    const firstNestedAnd = within(await firstFilter.findByLabelText(/container expressions$/i));
+    // Add sencond nested AND
+    userEvent.click(nestedAndButton);
+    const secondNestedAnd = within(firstFilter.queryAllByLabelText(/container expressions$/i)[1]);
+    // Create an expression inside first and nested
+    userEvent.click(await firstNestedAnd.findByLabelText(/filter add button expression/i));
+    // Open Filter dialog
+    await screen.findByLabelText(/config filter dialog/i);
+    // Select the first field from payload
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    let availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[0]);
+    // Select first operator (EQ)
+    userEvent.click(await screen.findByLabelText(/config filter operator selector/));
+    let availableOperators = await screen.findAllByLabelText(/config filter operators/i);
+    expect(availableOperators).toHaveLength(5);
+    userEvent.click(availableOperators[0]);
+    // Set value for expression temperatureSensor
+    await screen.findByLabelText(/config filter value/);
+    const firstValueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(firstValueField, 'temperatureSensor');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+    expect(await firstNestedAnd.findByLabelText(/filter expression field/)).toHaveTextContent('myStringfield');
+    expect(await firstNestedAnd.findByLabelText(/filter expression value/)).toHaveTextContent('temperatureSensor');
+    // Create an expression inside second and nested
+    userEvent.click(await secondNestedAnd.findByLabelText(/filter add button expression/i));
+    // Open Filter dialog
+    await screen.findByLabelText(/config filter dialog/i);
+    // Select the second field from payload
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[1]);
+    // Select second operator (GT)
+    userEvent.click(await screen.findByLabelText(/config filter operator selector/));
+    availableOperators = await screen.findAllByLabelText(/config filter operators/i);
+    expect(availableOperators).toHaveLength(5);
+    userEvent.click(availableOperators[1]);
+    // Set value for expression 25
+    await screen.findByLabelText(/config filter value/);
+    const secondValueField = await screen.findByLabelText(/config filter value/);
+    await userEvent.type(secondValueField, '25');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+    expect(await secondNestedAnd.findByLabelText(/filter expression field/)).toHaveTextContent('myNumericfield');
+    expect(await secondNestedAnd.findByLabelText(/filter expression value/)).toHaveTextContent('25');
+
+    // Create Rule
+    const createRuleButton = await screen.findByLabelText(/rule create button/);
+    expect(createRuleButton).toBeDisabled();
+    const filter: RuleFilter = {
+        _or: [
+            {
+                _and: [{myStringfield: {_eq: 'temperatureSensor'}}]
+            },
+            {
+                _and: [{myNumericfield: {_gt: 25}}]
+            }
+        ]
+    };
+    const {...expectedRule} = generateRule('test-rule-or-nested', 3, filter);
+    expectedRule.eventTypeId = eventType.id;
+    expectedRule.targetId = target.id;
+    const {id, eventTypeName, targetName, createdAt, updatedAt, ...bodyRule} = expectedRule;
+    const ruleName = expectedRule.name;
+    await userEvent.type(await screen.findByLabelText(/rule creator name/), ruleName);
+    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule);
+    expect(createRuleButton).not.toBeDisabled();
+    userEvent.click(createRuleButton);
+    expect(createRuleButton).toBeDisabled();
+    await screen.findByLabelText(/rule create loading/);
+    await screen.findByLabelText(/rule create success$/);
+    await screen.findByLabelText(/rule create success message/);
+});
+
+test.skip('RuleCreatePage for slice rules should config the group, the windowing and the filter and create the rule', async () => {
+    const {eventType, target} = await enableRuleFilterComponent();
+    expect(screen.queryByLabelText(/filter action buttons2/i)).toBeInTheDocument();
+
+    // Add a filter for string should show the filter comparator dialog
+    const expressionButtons = await screen.findAllByLabelText(/filter add button expression/i);
+    expect(expressionButtons).toHaveLength(1);
+    userEvent.click(expressionButtons[0]);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    const selector = await screen.findByLabelText(/config filter field selector/i);
+    userEvent.click(selector);
+    let availableFields = await screen.findAllByLabelText(/config filter options/i);
+    expect(availableFields).toHaveLength(3);
+    userEvent.click(availableFields[0]);
+
+    await screen.findByLabelText(/config filter operator selector/);
+    await screen.findByLabelText(/config filter value/);
+
     const valueField = await screen.findByLabelText(/config filter value/);
     await userEvent.type(valueField, 'my String');
     userEvent.click(await screen.findByLabelText(/config filter button save/));
@@ -544,4 +865,3 @@ test('RuleCreatePage for realtime rules should config the filter and create the 
     await screen.findByLabelText(/rule create success$/);
     await screen.findByLabelText(/rule create success message/);
 });
-

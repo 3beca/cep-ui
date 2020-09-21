@@ -5,7 +5,7 @@ import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import { useParams, Link } from 'react-router-dom';
-
+import RuleFilter from '../../components/rule-filter';
 import EventTypeSelector from './event-type-select';
 import TargetSelector from './target-select';
 import RuleCreator from './rule-creator';
@@ -13,17 +13,18 @@ import PayloadCreator from '../../components/event-payload-creator';
 import { EventPayload } from '../../components/event-payload-creator/models';
 import RuleGroupCreator from '../../components/rule-group-creator';
 import { buildEventPayloadFromGroupPayload } from '../../components/rule-group-creator/utils';
-import RuleFilter from '../../components/rule-filter';
 import ConfigFilterExpression from '../../components/config-filter-expression';
 import { EventType, Target, Rule, RuleTypes } from '../../services/api';
 import { useCreate, ENTITY } from '../../services/api-provider/use-api';
 import {useStyles} from './styles';
 import {
-    parseFilterContainer
+    parseFilterContainer,
+    synchronizeRuleFilterContainerAndEventPayload
 } from '../../components/rule-filter/utils';
 import {
     RuleFilterContainer,
-    Expression
+    Expression,
+    DEFAULT_RULEFILTERCONTAINER
 } from '../../components/rule-filter/models';
 import { RuleGroupPayload } from '../../components/rule-group-creator/models';
 
@@ -73,26 +74,33 @@ const RuleCreatorSuccess: React.FC<RuleCreatorSuccessProps> = ({rule, show, clea
     );
 };
 
-
 const initialRuleState: Partial<Rule> = {
     skipOnConsecutivesMatches: false,
     name: ''
 };
 export const RuleCreatePage: React.FC<{}> = () => {
     const styles = useStyles();
-    const {type} = useParams<{type: RuleTypes}>();
+    const { type: ruleType} = useParams<{type: RuleTypes}>();
+    const type: RuleTypes = ruleType ? ruleType : 'realtime';
     const [eventType, setEventType] = React.useState<EventType|null>(null);
     const [target, setTarget] = React.useState<Target|null>(null);
     const [eventPayload, setEventPayload] = React.useState<EventPayload|null>(null);
     const [ruleGroupPayload, setRuleGroupPayload] = React.useState<RuleGroupPayload>();
     const [rule, updateRule] = React.useReducer((state: Partial<Rule>, update: Partial<Rule>) => ({...state, ...update}), initialRuleState);
     const [isResponseDialogOpen, setResponseDialogOpen] = React.useState(false);
-    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RuleFilterContainer>([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
+    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RuleFilterContainer>(DEFAULT_RULEFILTERCONTAINER);
     const [mutateFilterContainer, setMutateFilterContainer] = React.useState<{filter: RuleFilterContainer; expression?: Expression;}>();
     const updateRuleFilter = React.useCallback((filter: RuleFilterContainer) => {
         setMutateFilterContainer(undefined);
         setRuleFilterContainer(filter);
     }, []);
+    const filterPayload = React.useMemo(() => {
+        if (type === 'realtime') return eventPayload;
+        return buildEventPayloadFromGroupPayload(ruleGroupPayload);
+    }, [type, eventPayload, ruleGroupPayload]);
+    React.useEffect(() => {
+        setRuleFilterContainer(ruleFilterContainer => synchronizeRuleFilterContainerAndEventPayload(filterPayload, ruleFilterContainer));
+    }, [filterPayload]);
     const bodyRule = React.useMemo((): Partial<Rule> => {
         return {
             name: rule.name,
@@ -104,18 +112,13 @@ export const RuleCreatePage: React.FC<{}> = () => {
         };
     }, [rule, target, eventType, type, ruleFilterContainer]);
     const {request, isLoading, error, response, reset} = useCreate<Rule>(ENTITY.RULES, bodyRule, false);
-    const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading || isResponseDialogOpen), [bodyRule, isLoading, isResponseDialogOpen]);
-    const filterPayload = React.useMemo(() => {
-        if (type === 'realtime') return eventPayload;
-        return buildEventPayloadFromGroupPayload(ruleGroupPayload);
-    }, [type, eventPayload, ruleGroupPayload]);
     const eventTypeId = bodyRule.eventTypeId;
+    const isCreateRuleDisabled = React.useCallback(() => !!(!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading || isResponseDialogOpen), [bodyRule, isLoading, isResponseDialogOpen]);
     React.useEffect(() => {
         setEventPayload(null);
         setMutateFilterContainer(undefined);
-        setRuleFilterContainer([{type: 'PASSTHROW', model: 'EXPRESSION', field: 'root'}]);
+        setRuleFilterContainer(DEFAULT_RULEFILTERCONTAINER);
     }, [eventTypeId]);
-
     return (
         <div
             className={styles.container}
@@ -160,6 +163,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
                     </div>
                     <Divider/>
                     <RuleGroupCreator
+                        disabled={isLoading}
                         ruleTpe={type}
                         payload={eventPayload}
                         group={ruleGroupPayload}
