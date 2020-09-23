@@ -1,6 +1,11 @@
+import { RuleGroup } from '../../services/api';
 import { EventPayload } from '../event-payload-creator/models';
 import { RuleGroupPayload } from './models';
-import { buildEventPayloadFromGroupPayload, syncEventPayloadAndGroupPayload } from './utils';
+import {
+    buildEventPayloadFromGroupPayload,
+    syncEventPayloadAndGroupPayload,
+    parseRuleGroupPayloadToRuleGroup
+} from './utils';
 
 test('buildEventPayloadFromGroupPayload should return null when GroupPayload not defined', () => {
     expect(buildEventPayloadFromGroupPayload()).toBeNull();
@@ -101,3 +106,35 @@ test('syncEventPayloadAndGroupPayload should return that renders with complex pa
     ];
     expect(syncEventPayloadAndGroupPayload(payload, group)).toEqual([true, expectedGroup]);
 });
+
+test('parseRuleGroupPayloadToRuleGroup should parse a RuleGroupPayload and return a RuleGroup', () => {
+    expect(parseRuleGroupPayloadToRuleGroup(undefined as unknown as RuleGroupPayload)).toBe(undefined);
+    expect(parseRuleGroupPayloadToRuleGroup(null as unknown as RuleGroupPayload)).toBe(undefined);
+    expect(parseRuleGroupPayloadToRuleGroup([])).toBe(undefined);
+    expect(parseRuleGroupPayloadToRuleGroup([{field: 1, operator: '_sum', name: ''}])).toBe(undefined);
+
+    const group: RuleGroupPayload = [
+        {field: 'temperature', operator: '_max', name: 'maxTemperature'},
+        {field: 'temperature', operator: '_min', name: 'minTemperature'},
+        {field: 'temperature', operator: '_avg', name: 'avgTemperature'},
+        {field: 'pressure', operator: '_sum', name: 'sumPressure'},
+        {field: 1, operator: '_sum', name: 'countEvents'},
+        {field: 'humidity', operator: '_stdDevPop', name: 'devPopHumidity'},
+        {field: 'winspeed', operator: '_stdDevSamp', name: 'devSampWindspeed'},
+        {field: 1, operator: '_sum', name: ''},
+        {field: 'temperature', operator: '_max', name: 'maxTemperature'},
+        {field: 'temperature', operator: '_min', name: 'minTemperature'},
+        {field: 'temperature', operator: '_avg', name: 'avgTemperature'},
+    ];
+
+    const expectedRuleGroup: RuleGroup = {
+        maxTemperature: {_max: '_temperature'},
+        minTemperature: {_min: '_temperature'},
+        avgTemperature: {_avg: '_temperature'},
+        sumPressure: {_sum: '_pressure'},
+        countEvents: {_sum: 1},
+        devPopHumidity: {_stdDevPop: '_humidity'},
+        devSampWindspeed: {_stdDevSamp: '_winspeed'}
+    };
+    expect(parseRuleGroupPayloadToRuleGroup(group)).toEqual(expectedRuleGroup);
+})

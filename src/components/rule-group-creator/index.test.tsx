@@ -105,7 +105,7 @@ test(
     }
 );
 
-const openAddFieldGroupDialog = async () => {
+export const openAddFieldGroupDialog = async () => {
     await screen.findByLabelText(/rule group creator container/i);
     const addFieldButton = await screen.findByLabelText(/rule group creator addfield button open dialog/i);
 
@@ -544,7 +544,7 @@ test('RuleGroupCreator should show schema with maxTemperature and minTemperature
     render(<RuleGroupCreator ruleTpe='sliding' payload={validEventPayload} setGroup={setGroup} group={group}/>);
 
     await screen.findByLabelText(/rule group creator payload schema container/i);
-    expect(await screen.findAllByLabelText(/rule group creator apyload schema field/i)).toHaveLength(2);
+    expect(await screen.findAllByLabelText(/rule group creator payload schema field/i)).toHaveLength(2);
 });
 
 test('RuleGroupCreator should remove maxTemperature from group', async () => {
@@ -556,7 +556,7 @@ test('RuleGroupCreator should remove maxTemperature from group', async () => {
     render(<RuleGroupCreator ruleTpe='sliding' payload={validEventPayload} setGroup={setGroup} group={group}/>);
 
     await screen.findByLabelText(/rule group creator payload schema container/i);
-    expect(await screen.findAllByLabelText(/rule group creator apyload schema field/i)).toHaveLength(2);
+    expect(await screen.findAllByLabelText(/rule group creator payload schema field/i)).toHaveLength(2);
     const deleteButtons = await screen.findAllByLabelText(/rule group creator schema field button remove/i);
     expect(deleteButtons).toHaveLength(2);
 
@@ -576,7 +576,7 @@ test('RuleGroupCreator cannot remove if disabled', async () => {
     render(<RuleGroupCreator ruleTpe='sliding' payload={validEventPayload} setGroup={setGroup} group={group} disabled={true}/>);
 
     await screen.findByLabelText(/rule group creator payload schema container/i);
-    expect(await screen.findAllByLabelText(/rule group creator apyload schema field/i)).toHaveLength(2);
+    expect(await screen.findAllByLabelText(/rule group creator payload schema field/i)).toHaveLength(2);
     const deleteButtons = await screen.findAllByLabelText(/rule group creator schema field button remove/i);
     expect(deleteButtons).toHaveLength(2);
 
@@ -593,7 +593,7 @@ test('RuleGroupCreator should keep in sync payload and group when deleting all g
     const {rerender} = render(<RuleGroupCreator ruleTpe='sliding' payload={validEventPayload} setGroup={setGroup} group={group}/>);
 
     await screen.findByLabelText(/rule group creator payload schema container/i);
-    expect(await screen.findAllByLabelText(/rule group creator apyload schema field/i)).toHaveLength(2);
+    expect(await screen.findAllByLabelText(/rule group creator payload schema field/i)).toHaveLength(2);
 
     const newEventPayload = null;
     rerender(<RuleGroupCreator ruleTpe='sliding' payload={newEventPayload} setGroup={setGroup} group={group}/>);
@@ -610,7 +610,7 @@ test('RuleGroupCreator should keep in sync payload and group when deleting all f
     const {rerender} = render(<RuleGroupCreator ruleTpe='sliding' payload={validEventPayload} setGroup={setGroup} group={group}/>);
 
     await screen.findByLabelText(/rule group creator payload schema container/i);
-    expect(await screen.findAllByLabelText(/rule group creator apyload schema field/i)).toHaveLength(3);
+    expect(await screen.findAllByLabelText(/rule group creator payload schema field/i)).toHaveLength(3);
 
     const newEventPayload = null;
     rerender(<RuleGroupCreator ruleTpe='sliding' payload={newEventPayload} setGroup={setGroup} group={group}/>);
@@ -630,7 +630,7 @@ test('RuleGroupCreator should keep in sync payload and group when deleting tempe
     const {rerender} = render(<RuleGroupCreator ruleTpe='sliding' payload={validEventPayload} setGroup={setGroup} group={group}/>);
 
     await screen.findByLabelText(/rule group creator payload schema container/i);
-    expect(await screen.findAllByLabelText(/rule group creator apyload schema field/i)).toHaveLength(3);
+    expect(await screen.findAllByLabelText(/rule group creator payload schema field/i)).toHaveLength(3);
 
     const newEventPayload: EventPayload = [
         {name: 'humidity', type: 'number'},

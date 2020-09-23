@@ -4,15 +4,18 @@ import TextField from '@material-ui/core/TextField';
 import Switch from '@material-ui/core/Switch';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { Rule } from '../../../services/api';
 import {useStyles} from './styles';
 
+export type RuleHeader = {
+    name: string;
+    skipOnConsecutivesMatches: boolean;
+};
 export type RuleCreatorProps = {
-    rule: Partial<Rule>;
-    updateRule(rule: Partial<Rule>): void;
+    ruleHeader: Partial<RuleHeader>;
+    updateRuleHeader(rule: Partial<RuleHeader>): void;
     disabled?: boolean;
 };
-export const RuleCreator: React.FC<RuleCreatorProps> = ({rule, updateRule, disabled = false}) => {
+export const RuleCreator: React.FC<RuleCreatorProps> = ({ruleHeader, updateRuleHeader, disabled = false}) => {
     const styles = useStyles();
     return (
         <Paper className={styles.container} aria-label={`rule creator${disabled ? ' disabled' : ''}`}>
@@ -23,8 +26,8 @@ export const RuleCreator: React.FC<RuleCreatorProps> = ({rule, updateRule, disab
                 inputProps={{
                     'aria-label': 'rule creator name',
                 }}
-                value={rule.name}
-                onChange={(ev) => updateRule({name: ev.target.value})}/>
+                value={ruleHeader.name}
+                onChange={(ev) => updateRuleHeader({name: ev.target.value})}/>
                 <FormGroup>
                     <FormControlLabel
                         control={
@@ -32,8 +35,8 @@ export const RuleCreator: React.FC<RuleCreatorProps> = ({rule, updateRule, disab
                                 disabled={disabled}
                                 size='medium'
                                 color='primary'
-                                checked={rule.skipOnConsecutivesMatches ? true : false}
-                                onChange={(ev) => updateRule({skipOnConsecutivesMatches: ev.target.checked})}
+                                checked={ruleHeader.skipOnConsecutivesMatches ? true : false}
+                                onChange={(ev) => updateRuleHeader({skipOnConsecutivesMatches: ev.target.checked})}
                                 aria-label='rule creator skip consecutives'/>
                         }
                         title='Skip Consecutives'

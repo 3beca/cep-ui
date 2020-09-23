@@ -1,3 +1,4 @@
+import {v4} from 'uuid';
 import {
     EVENT_TYPES_URL,
     TARGETS_URL,
@@ -115,6 +116,22 @@ export const generateRule = (key: string, idx: number, filters: RuleFilter = {te
     createdAt: '2020-01-01T10:10:10.123Z',
     updatedAt: '2020-01-01T10:10:10.123Z'
 } as Rule);
+
+export const generateWindowingRule = (name: string, type: Exclude<RuleTypes, 'realtime'>, eventTypeId: string, eventTypeName: string, targetId: string, targetName: string, filters: RuleFilter, group: RuleGroup, windowSize: WindowingSize): Rule => ({
+    id: v4(),
+    name,
+    type,
+    eventTypeId,
+    eventTypeName,
+    targetId: targetId,
+    targetName,
+    skipOnConsecutivesMatches: false,
+    filters,
+    group,
+    windowSize,
+    createdAt: '2020-01-01T10:10:10.123Z',
+    updatedAt: '2020-01-01T10:10:10.123Z'
+});
 export const generateRuleListWith = function generateListWith(many: number = 5, next = false, prev = false, key: string = '_' + many): ServiceList<Rule> {
     const list: ServiceList<Rule> = {
         results: Array.from({length: many}, (_, idx) => generateRule(key, idx))

@@ -291,7 +291,7 @@ export const GroupFieldView: React.FC<GroupFieldViewProps> = ({groupField, remov
     const styles = useStyles();
     return (
         <div
-            aria-label='rule group creator apyload schema field'
+            aria-label='rule group creator payload schema field'
             className={styles.paloadFieldView}>
             <Typography className={styles.schemaGroupFieldViewText}>{groupField.name}</Typography>
             <GroupFieldViewDeleteButton removeGroupField={removeGroupField} disabled={disabled}/>

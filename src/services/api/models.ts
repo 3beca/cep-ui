@@ -143,8 +143,9 @@ export type WindowingGroup = WindowingGroupAverage|WindowingGroupMax|WindowingGr
 export type RuleGroup = {
     [key: string]: WindowingGroup;
 };
+export type WindowingSizeUnits = 'hour'|'minute'|'second';
 export type WindowingSize = {
-    unit: 'hour'|'minute'|'second';
+    unit: WindowingSizeUnits;
     value: number;
 };
 export type RuleTypes = 'sliding'|'hopping'|'tumbling'|'realtime';

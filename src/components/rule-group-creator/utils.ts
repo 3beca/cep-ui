@@ -1,3 +1,4 @@
+import { RuleGroup } from '../../services/api';
 import { EventPayload, EventPayloadField } from '../event-payload-creator/models';
 import { RuleGroupPayload } from './models';
 
@@ -23,4 +24,17 @@ export const syncEventPayloadAndGroupPayload = (payload: EventPayload|null, grou
         }
     }
     return [itNeedsUpdate, newGroup.length > 0 ? newGroup : undefined];
+};
+
+export const parseRuleGroupPayloadToRuleGroup = (group: RuleGroupPayload|undefined): RuleGroup|undefined => {
+    if (!Array.isArray(group)) return undefined;
+    const ruleGroup: RuleGroup = group.reduce<RuleGroup>(
+        (newGroup, payloadField) => {
+            if (payloadField.name) return {...newGroup, [payloadField.name]: {[payloadField.operator]: typeof payloadField.field === 'number' ? payloadField.field : '_' + payloadField.field}} as RuleGroup;
+            return newGroup;
+        },
+        Object.create(null)
+    );
+
+    return Object.keys(ruleGroup).length > 0 ? ruleGroup : undefined;
 };

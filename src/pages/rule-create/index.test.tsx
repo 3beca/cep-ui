@@ -13,12 +13,14 @@ import {
     generateTargetListWith,
     generateEventLogListWithPayload,
     generateRule,
+    generateWindowingRule,
     serverGetEventLogList,
     within
 } from '../../test-utils';
 import RuleCreatePage from './';
 import { BASE_URL } from '../../services/config';
-import { Rule, RuleError, RuleFilter, RuleTypes } from '../../services/api';
+import { Rule, RuleError, RuleFilter, RuleGroup, RuleTypes, ServiceError, WindowingSize } from '../../services/api';
+import { openAddFieldGroupDialog } from '../../components/rule-group-creator/index.test';
 
 const fakeUseParams = useParams as unknown as jest.Mock;
 const fakeLink = Link as unknown as {linkAction: jest.Mock};
@@ -778,9 +780,162 @@ test('RuleCreatePage for realtime rules should config filter with two AND contai
     await screen.findByLabelText(/rule create success message/);
 });
 
-test.skip('RuleCreatePage for slice rules should config the group, the windowing and the filter and create the rule', async () => {
-    const {eventType, target} = await enableRuleFilterComponent();
-    expect(screen.queryByLabelText(/filter action buttons2/i)).toBeInTheDocument();
+test('RuleCreatePage for sliding rules should config the group, the windowing and the filter and create the rule', async () => {
+    // Prepare Rule EventType, Target and Event Payload for sliding
+    const type: RuleTypes = 'sliding';
+    const {eventType, target} = await enableRuleFilterComponent(type);
+
+    // Set Rule Name
+    const ruleName = 'Sliding Rule Test';
+    await userEvent.type(await screen.findByLabelText(/rule creator name/), ruleName);
+    expect(await screen.findByLabelText(/rule create button/)).toBeDisabled();
+
+    // Open create Group Dialog
+    const groupDialog = await openAddFieldGroupDialog();
+
+    // Add average from myNumericfield field
+    // Set field name
+    const avgFieldName = 'avgNumeric';
+    expect(screen.queryByLabelText(/rule group creator addfield dialog selector targets from payload/i)).toBeInTheDocument();
+    await userEvent.type(groupDialog.inputName, avgFieldName);
+    expect(await screen.findByLabelText(/rule group creator addfield dialog add/i)).toBeDisabled();
+    // Set operator
+    userEvent.click(groupDialog.selectOperator);
+    expect(await screen.findAllByLabelText(/rule group creator addfield dialog select operator/i)).toHaveLength(6);
+    expect((await screen.findAllByLabelText(/rule group creator addfield dialog select operator/i))[2]).toHaveTextContent(/Average/i);
+    await screen.findByLabelText(/rule group creator addfield dialog select operator _avg/i)
+    userEvent.click((await screen.findAllByLabelText(/rule group creator addfield dialog select operator/i))[2]);
+    expect(await screen.findByLabelText(/rule group creator addfield dialog operators/i)).toHaveTextContent(/Average/i);
+    expect(await screen.findByLabelText(/rule group creator addfield dialog add/i)).toBeDisabled();
+    expect(screen.queryByLabelText(/rule group creator addfield dialog input value/i)).not.toBeInTheDocument();
+    // Set field myNumericfield from Event Payload
+    userEvent.click(await screen.findByLabelText(/rule group creator addfield dialog selector targets from payload/i));
+    expect(await screen.findAllByLabelText(/rule group creator addfield dialog select target/i)).toHaveLength(1); // Exclude not numeric fields
+    userEvent.click((await screen.findAllByLabelText(/rule group creator addfield dialog select target/i))[0]); // Select myNumericfield
+    expect(await screen.findByLabelText(/rule group creator addfield dialog add/i)).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText(/rule group creator addfield dialog add/i));
+    expect(await screen.findByLabelText(/rule group creator addfield dialog container/i)).toBeInTheDocument();
+    expect(await screen.findByLabelText(/rule create button/)).toBeDisabled();
+
+    // Add max from myNumericfield field
+    // Set field name
+    const maxFieldName = 'maxNumeric';
+    expect(screen.queryByLabelText(/rule group creator addfield dialog selector targets from payload/i)).toBeInTheDocument();
+    await userEvent.type(groupDialog.inputName, maxFieldName);
+    expect(await screen.findByLabelText(/rule group creator addfield dialog add/i)).toBeDisabled();
+    // Set operator
+    userEvent.click(groupDialog.selectOperator);
+    expect(await screen.findAllByLabelText(/rule group creator addfield dialog select operator/i)).toHaveLength(6);
+    expect((await screen.findAllByLabelText(/rule group creator addfield dialog select operator/i))[0]).toHaveTextContent(/Max. Value/i);
+    await screen.findByLabelText(/rule group creator addfield dialog select operator _max/i)
+    userEvent.click((await screen.findAllByLabelText(/rule group creator addfield dialog select operator/i))[0]);
+    expect(await screen.findByLabelText(/rule group creator addfield dialog operators/i)).toHaveTextContent(/max. value/i);
+    expect(await screen.findByLabelText(/rule group creator addfield dialog add/i)).toBeDisabled();
+    expect(screen.queryByLabelText(/rule group creator addfield dialog input value/i)).not.toBeInTheDocument();
+    // Set field myNumericfield from Event Payload
+    userEvent.click(await screen.findByLabelText(/rule group creator addfield dialog selector targets from payload/i));
+    expect(await screen.findAllByLabelText(/rule group creator addfield dialog select target/i)).toHaveLength(1); // Exclude not numeric fields
+    userEvent.click((await screen.findAllByLabelText(/rule group creator addfield dialog select target/i))[0]); // Select myNumericfield
+    expect(await screen.findByLabelText(/rule group creator addfield dialog add/i)).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText(/rule group creator addfield dialog add/i));
+    expect(await screen.findByLabelText(/rule group creator addfield dialog container/i)).toBeInTheDocument();
+    expect(await screen.findByLabelText(/rule create button/)).toBeDisabled();
+
+    // Close group addfield dialog
+    userEvent.click(await screen.findByLabelText(/rule group creator addfield dialog close/i));
+    expect(screen.queryByLabelText(/rule group creator addfield dialog container/i)).not.toBeInTheDocument();
+    // Check group payload schema
+    const groupFields = await screen.findAllByLabelText(/rule group creator payload schema field/i);
+    expect(groupFields).toHaveLength(2);
+    expect(groupFields[0]).toHaveTextContent(avgFieldName);
+    expect(groupFields[1]).toHaveTextContent(maxFieldName);
+
+    expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
+    expect(await screen.findByLabelText(/rule create button/)).toBeDisabled();
+
+    // Create AND filter
+    userEvent.click(await screen.findByLabelText(/filter add button and/i));
+    // Find expression button in nested AND
+    const expressionButtons = await screen.findAllByLabelText(/filter add button expression/i);
+    expect(expressionButtons).toHaveLength(2);
+
+    // Add filter avgNumeric GT 20 in nested AND
+    userEvent.click(expressionButtons[1]);
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    expect(await screen.findAllByLabelText(/config filter options/i)).toHaveLength(2);
+    // Select avgNumeric
+    userEvent.click((await screen.findAllByLabelText(/config filter options/i))[0]);
+    // Select GT operator
+    userEvent.click(await screen.findByLabelText(/config filter operator selector/));
+    expect(await screen.findAllByLabelText(/config filter operators/i)).toHaveLength(5);
+    userEvent.click((await screen.findAllByLabelText(/config filter operators/i))[1]);
+    // Set value for expression avgNumeric
+    const avgValue = 20;
+    await userEvent.type(await screen.findByLabelText(/config filter value/), avgValue + '');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Add filter maxNumeric LT 40 in nested AND
+    userEvent.click(expressionButtons[1]);
+    await screen.findByLabelText(/config filter dialog/i);
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
+    expect(await screen.findAllByLabelText(/config filter options/i)).toHaveLength(2);
+    // Select maxNumeric
+    userEvent.click((await screen.findAllByLabelText(/config filter options/i))[1]);
+    // Select LT operator
+    userEvent.click(await screen.findByLabelText(/config filter operator selector/));
+    expect(await screen.findAllByLabelText(/config filter operators/i)).toHaveLength(5);
+    userEvent.click((await screen.findAllByLabelText(/config filter operators/i))[3]);
+    // Set value for expression avgNumeric
+    const maxValue = 40;
+    await userEvent.type(await screen.findByLabelText(/config filter value/), maxValue + '');
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+
+    // Check filters
+    expect((await screen.findAllByLabelText(/filter expression field/))[0]).toHaveTextContent(avgFieldName);
+    expect((await screen.findAllByLabelText(/filter expression operator/))[0]).toHaveTextContent('>');
+    expect((await screen.findAllByLabelText(/filter expression value/))[0]).toHaveTextContent(avgValue + '');
+    expect((await screen.findAllByLabelText(/filter expression field/))[1]).toHaveTextContent(maxFieldName);
+    expect((await screen.findAllByLabelText(/filter expression operator/))[1]).toHaveTextContent('<');
+    expect((await screen.findAllByLabelText(/filter expression value/))[1]).toHaveTextContent(maxValue + '');
+    expect(await screen.findByLabelText(/rule create button/)).toBeDisabled();
+
+    // Set windowSize to 10 minutes
+    await screen.findByLabelText(/rule windowsize main container/);
+    userEvent.click(await screen.findByLabelText(/rule windowsize unit minute/));
+    await screen.findByLabelText(/rule windowsize unit minute selected/);
+    await userEvent.type(await screen.findByLabelText(/rule windowsize input value/), '10');
+
+    // Create Rule
+    const filter: RuleFilter = {
+        _and: [
+            {[avgFieldName]: {_gt: avgValue}},
+            {[maxFieldName]: {_lt: maxValue}}
+        ]
+    };
+    const group: RuleGroup = {
+        [avgFieldName]: {_avg: '_myNumericfield'},
+        [maxFieldName]: {_max: '_myNumericfield'}
+    };
+    const windowSize: WindowingSize = {
+        unit: 'minute',
+        value: 10
+    };
+    const expectedRule = generateWindowingRule(ruleName, type, eventType.id, eventType.name, target.id, target.name, filter, group, windowSize);
+    const {id, eventTypeName, targetName, createdAt, updatedAt, ...bodyRule} = expectedRule;
+    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule);
+    const createRuleButton = await screen.findByLabelText(/rule create button/);
+    expect(createRuleButton).not.toBeDisabled();
+    userEvent.click(createRuleButton);
+    expect(createRuleButton).toBeDisabled();
+    await screen.findByLabelText(/rule create loading/);
+    await screen.findByLabelText(/rule create success$/);
+    await screen.findByLabelText(/rule create success message/);
+});
+
+test('RuleCreatePage for realtime rules should config filter with 3 expressions and return error rule name exists', async () => {
+    const {eventType, target} = await enableRuleFilterComponent('realtime');
+    expect(screen.queryByLabelText(/filter action buttons/i)).toBeInTheDocument();
 
     // Add a filter for string should show the filter comparator dialog
     const expressionButtons = await screen.findAllByLabelText(/filter add button expression/i);
@@ -831,9 +986,9 @@ test.skip('RuleCreatePage for slice rules should config the group, the windowing
     userEvent.click(availableFields[2]);
 
     const lngField = await screen.findByLabelText(/config filter location longitude/);
-    await userEvent.type(lngField, '100');
+    await userEvent.type(lngField, '40');
     const latField = await screen.findByLabelText(/config filter location latitude/);
-    await userEvent.type(latField, '200');
+    await userEvent.type(latField, '40');
     const maxField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(maxField, '300');
     userEvent.click(await screen.findByLabelText(/config filter button save/));
@@ -844,7 +999,7 @@ test.skip('RuleCreatePage for slice rules should config the group, the windowing
         myNumericfield: {_lt: 100},
         myLocationfield: {
             _near: {
-                _geometry: {type: 'Point', coordinates: [100, 200]},
+                _geometry: {type: 'Point', coordinates: [40, 40]},
                 _maxDistance: 300
             }
         }
@@ -856,12 +1011,17 @@ test.skip('RuleCreatePage for slice rules should config the group, the windowing
     const {id, eventTypeName, targetName, createdAt, updatedAt, ...bodyRule} = expectedRule;
     const ruleName = expectedRule.name;
     await userEvent.type(await screen.findByLabelText(/rule creator name/), ruleName);
-    serverCreateRule(setupNock(BASE_URL), bodyRule, 200, expectedRule);
+    const errorRuleName: ServiceError = {
+        statusCode: 400,
+        error: 'Bad Request',
+        message: `${ruleName} already exists in CEP`
+    };
+    serverCreateRule(setupNock(BASE_URL), bodyRule, 400, errorRuleName);
     const createRuleButton = await screen.findByLabelText(/rule create button/);
     expect(createRuleButton).not.toBeDisabled();
     userEvent.click(createRuleButton);
     expect(createRuleButton).toBeDisabled();
     await screen.findByLabelText(/rule create loading/);
-    await screen.findByLabelText(/rule create success$/);
-    await screen.findByLabelText(/rule create success message/);
+    await screen.findByLabelText(/rule create error$/);
+    await screen.findByLabelText(/rule create error message/);
 });
