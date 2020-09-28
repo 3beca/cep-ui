@@ -24,7 +24,6 @@ export const TargetSelector: React.FC<TargetSelectorProps> = ({selected, onSelec
     const styles = useStyles();
     const {isLoading, accumulated, changeFilter} = useGetListAccumulated<Target>(ENTITY.TARGETS, 1, 10, '', !disabled && !selected);
     const handleClearSelection = React.useCallback(() => onSelected(null), [onSelected]);
-
     if (selected) {
         return (
             <Paper

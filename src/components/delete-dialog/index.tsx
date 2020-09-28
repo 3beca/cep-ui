@@ -104,7 +104,7 @@ export type DeleteDialogProps = {
     title: string;
     entity: ENTITY;
     elementsSelecteds?: ELEMENTS;
-    onDeleted?():void;
+    onDeleted?(ids: string[]):void;
     onCloseDialog?: () => void;
 };
 export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(({title, entity, elementsSelecteds, onDeleted, onCloseDialog}) => {
@@ -122,8 +122,11 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(({title, ent
     React.useEffect(
         () => {
             // TODO: Si hay alguna respuesta con delete, recargar el listado de elements
-            hasResponse && (typeof onDeleted === 'function') && onDeleted();
-        }, [hasResponse, onDeleted]
+            if (!!response && hasResponse) {
+                const itemsDeleted = response.data.filter(ruleDelete => ruleDelete.state === 'DELETED').map(rule => rule.id);
+                if (itemsDeleted.length > 0) onDeleted?.(itemsDeleted);
+            }
+        }, [hasResponse, response, onDeleted]
     );
     return (
         <div className={styles.container}>

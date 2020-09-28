@@ -7,11 +7,14 @@ import {
     generateRuleListWith,
     screen,
     act,
-    within
+    within,
+    waitForElementToBeRemoved,
+    serverDeleteRule
 } from '../../test-utils';
 import userEvent from '@testing-library/user-event';
 import RuleListPage  from './index';
 import { BASE_URL } from '../../services/config';
+import { Rule, ServiceError, ServiceList } from '../../services/api';
 
 export const selectCreateRule = async (ariaLabel: 'real time'|'hopping'|'sliding'|'tumbling') => {
     const addButton = await screen.findByLabelText(/add rule/i);
@@ -248,3 +251,127 @@ test(
         await selectCreateRule('tumbling');
     }
 );
+
+test('RuleListPage should delete the first rule and update the list', async () => {
+    const rules = generateRuleListWith(initialPageSize, true, false);
+    serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, rules);
+    renderInsideApp(<RuleListPage/>);
+
+    expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(initialPageSize);
+    await screen.findByLabelText(/add rule/i);
+    // Find first Rule Card
+    const ruleCards = await screen.findAllByLabelText(/^element card rule$/i);
+    const firstCard = within(ruleCards[0]);
+    const ruleToDelete = rules.results[0];
+    await screen.findByText(ruleToDelete.name);
+    // Open acctions dialog
+    userEvent.click(await firstCard.findByLabelText(/settings card rule/i));
+    // Cacture actions dialog
+    const dialogs = (await screen.findAllByLabelText(/setting dialog card rule visible/i));
+    expect(dialogs).toHaveLength(1);
+    const actionsDialog = within(dialogs[0]);
+    // Open delete action
+    userEvent.click(await actionsDialog.findByLabelText(/setting dialog delete card rule/i));
+    const deleteDialogs = await screen.findAllByLabelText(/delete dialog card rule/i);
+    expect(deleteDialogs).toHaveLength(1);
+    // Delete first Rule
+    const newPageSize = initialPageSize - 1;
+    serverDeleteRule(setupNock(BASE_URL), rules.results[0].id);
+    const newRulesResult: ServiceList<Rule> = {...rules, results: rules.results.slice(1)};
+    serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, newRulesResult);
+    userEvent.click(await screen.findByLabelText(/delete button/i));
+    await waitForElementToBeRemoved(await screen.findByLabelText(/delete dialog card rule/i));
+    await waitForElementToBeRemoved(await screen.findByTestId('loading-view-row'));
+    expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(newPageSize);
+    expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(newPageSize);
+    expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(newPageSize);
+    expect(screen.queryByText(ruleToDelete.name)).not.toBeInTheDocument();
+});
+
+test('RuleListPage should delete the first rule when load two pages and update the list', async () => {
+    const rules = generateRuleListWith(initialPageSize, true, false, 'page1');
+    serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, rules);
+    const {unmount} = renderInsideApp(<RuleListPage/>);
+
+    expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(initialPageSize);
+    await screen.findByLabelText(/add rule/i);
+
+    // Load next page of rules
+    const loadMore = await screen.findByLabelText(/load more rules/i);
+    serverGetRuleList(setupNock(BASE_URL), initialPage + 1, initialPageSize, filter, 200, generateRuleListWith(5, false, true, 'page2'));
+    userEvent.click(loadMore);
+    expect(await screen.findByTestId(/loading-view-row/i)).toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
+    const newPageSize = 15;
+    expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(newPageSize);
+    expect(screen.queryByLabelText(/load more rules/i)).not.toBeInTheDocument();
+    expect(await screen.findByTestId(/empty-view-row/i)).toHaveTextContent(/you reached the end of the list/i);
+
+    // Find Rule Card in position 6
+    const ruleCards = await screen.findAllByLabelText(/^element card rule$/i);
+    const firstCard = within(ruleCards[6]);
+    const ruleToDelete = rules.results[6];
+    await screen.findByText(ruleToDelete.name);
+    // Open acctions dialog
+    userEvent.click(await firstCard.findByLabelText(/settings card rule/i));
+    // Capture actions dialog
+    const dialogs = (await screen.findAllByLabelText(/setting dialog card rule visible/i));
+    expect(dialogs).toHaveLength(1);
+    const actionsDialog = within(dialogs[0]);
+    // Open delete action
+    userEvent.click(await actionsDialog.findByLabelText(/setting dialog delete card rule/i));
+    const deleteDialogs = await screen.findAllByLabelText(/delete dialog card rule/i);
+    expect(deleteDialogs).toHaveLength(1);
+    // Delete Rule in position 6
+    serverDeleteRule(setupNock(BASE_URL), ruleToDelete.id);
+    userEvent.click(await screen.findByLabelText(/delete button/i));
+    await waitForElementToBeRemoved(await screen.findByLabelText(/delete dialog card rule/i));
+    expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(newPageSize - 1);
+    expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(newPageSize - 1);
+    expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(newPageSize - 1);
+    expect(screen.queryByText(ruleToDelete.name)).not.toBeInTheDocument();
+    unmount();
+});
+
+test('RuleListPage should fails when cannnot delete a Rule', async () => {
+    const rules = generateRuleListWith(initialPageSize, true, false);
+    serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, filter, 200, rules);
+    renderInsideApp(<RuleListPage/>);
+
+    expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(initialPageSize);
+    await screen.findByLabelText(/add rule/i);
+    // Find first Rule Card
+    const ruleCards = await screen.findAllByLabelText(/^element card rule$/i);
+    const firstCard = within(ruleCards[0]);
+    const ruleToDelete = rules.results[0];
+    await screen.findByText(ruleToDelete.name);
+    // Open acctions dialog
+    userEvent.click(await firstCard.findByLabelText(/settings card rule/i));
+    // Cacture actions dialog
+    const dialogs = (await screen.findAllByLabelText(/setting dialog card rule visible/i));
+    expect(dialogs).toHaveLength(1);
+    const actionsDialog = within(dialogs[0]);
+    // Open delete action
+    userEvent.click(await actionsDialog.findByLabelText(/setting dialog delete card rule/i));
+    const deleteDialogs = await screen.findAllByLabelText(/delete dialog card rule/i);
+    expect(deleteDialogs).toHaveLength(1);
+    // Fails to delete first Rule
+    const deleteError: ServiceError = {error: 'Invalid id of Rule', message: 'Cannot delete this rule, please go away...', statusCode: 400};
+    serverDeleteRule(setupNock(BASE_URL), ruleToDelete.id, 400, deleteError);
+    userEvent.click(await screen.findByLabelText(/delete button/i));
+    // Show error message
+    await screen.findByLabelText(/error message/i);
+    // Close dialog
+    userEvent.click(await screen.findByLabelText(/close button/));
+    await waitForElementToBeRemoved(await screen.findByLabelText(/delete dialog card rule/i));
+    expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/filters card rule/i)).toHaveLength(initialPageSize);
+    expect(await screen.findAllByLabelText(/status card rule/i)).toHaveLength(initialPageSize);
+    expect(await screen.findByText(ruleToDelete.name)).toBeInTheDocument();
+});

@@ -8,12 +8,13 @@ import {
 import {
     setupNock,
     serverGetEventTypeList,
-    generateEventTypeListWith,
+    generateEventTypeListWith
 } from '../../test-utils';
 import {
     useGetListFilteredAndPaginated,
     useGetListAccumulated
 } from './index';
+import { Entity, EventType, ServiceList } from '../api';
 
 jest.mock('../api-provider', () => {
     const apiService = require('../api');
@@ -342,3 +343,184 @@ test(
     }
 );
 
+test(
+    'useGetListAcumulated get 20 elements, nextPage and reuest should return the firsts 40 elements',
+    async () => {
+        const initialPage = 1;
+        const initialPageSize = 20;
+        const filter = '';
+        serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
+        const {result, waitForNextUpdate} = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(20);
+        expect(result.current.hasMoreElements).toBe(true);
+
+        const secondPage = generateEventTypeListWith(initialPageSize, true, true);
+        serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, secondPage);
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(40);
+        expect(result.current.hasMoreElements).toBe(true);
+
+        serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, secondPage);
+        act(
+            () => result.current.request()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(40);
+        expect(result.current.currentFilter).toEqual(filter);
+        expect(result.current.hasMoreElements).toBe(true);
+    }
+);
+
+test(
+    'useGetListAcumulated get 20 elements, nextPage and reuest after delete one element should return the firsts 39 elements',
+    async () => {
+        const initialPage = 1;
+        const initialPageSize = 20;
+        const filter = '';
+        serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
+        const {result, waitForNextUpdate} = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(20);
+        expect(result.current.hasMoreElements).toBe(true);
+
+        serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, true));
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(40);
+        expect(result.current.hasMoreElements).toBe(true);
+
+        serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize - 1, true, true));
+        act(
+            () => result.current.request()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(39);
+        expect(result.current.currentFilter).toEqual(filter);
+        expect(result.current.hasMoreElements).toBe(true);
+    }
+);
+
+test(
+    'useGetListAcumulated should remove 3 elements and refresh accumulated',
+    async () => {
+        const initialPage = 1;
+        const initialPageSize = 5;
+        const filter = '';
+        const items = generateEventTypeListWith(23).results;
+        const serverPages: ServiceList<EventType>[] = [
+            {next: 'http://page2', results: items.slice(0, 5)},
+            {next: 'http://page3', prev: 'http://page1', results: items.slice(5, 10)},
+            {next: 'http://page4', prev: 'http://page2', results: items.slice(10, 15)},
+            {next: 'http://page5', prev: 'http://page3', results: items.slice(15, 20)},
+            {next: 'http://page5', prev: 'http://page3', results: items.slice(18, 23)},
+        ];
+        const itemsToDelete = [3, 8, 13];
+        const itemsAcumulatedBeforeDelete = items.slice(0, 20);
+        const itemsAcumulatedAferDelete = items.filter((_, index) => !itemsToDelete.includes(index));
+
+        // Iterate 4 pages
+        serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, serverPages[0]);
+        serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, serverPages[1]);
+        serverGetEventTypeList(server, initialPage + 2, initialPageSize, filter, 200, serverPages[2]);
+        serverGetEventTypeList(server, initialPage + 3, initialPageSize, filter, 200, serverPages[3]);
+        const {result, waitForNextUpdate} = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(5);
+        expect(result.current.hasMoreElements).toBe(true);
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(10);
+        expect(result.current.hasMoreElements).toBe(true);
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(15);
+        expect(result.current.hasMoreElements).toBe(true);
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(20);
+        expect(result.current.accumulated).toEqual(itemsAcumulatedBeforeDelete);
+        expect(result.current.hasMoreElements).toBe(true);
+        expect(result.current.currentFilter).toEqual(filter);
+
+        // Delete 3 items
+        serverGetEventTypeList(server, initialPage + 3, initialPageSize, filter, 200, serverPages[4]);
+        act(
+            () => result.current.deleteItems(itemsToDelete)
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(20);
+        expect(result.current.accumulated).toEqual(itemsAcumulatedAferDelete);
+        expect(result.current.hasMoreElements).toBe(true);
+        expect(result.current.currentFilter).toEqual(filter);
+    }
+);
+
+test(
+    'useGetListAcumulated should remove 3 elements from a ended list and DO NOT refresh accumulated',
+    async () => {
+        const initialPage = 1;
+        const initialPageSize = 5;
+        const filter = '';
+        const items = generateEventTypeListWith(17).results;
+        const serverPages: ServiceList<EventType>[] = [
+            {next: 'http://page2', results: items.slice(0, 5)},
+            {next: 'http://page3', prev: 'http://page1', results: items.slice(5, 10)},
+            {next: 'http://page4', prev: 'http://page2', results: items.slice(10, 15)},
+            {prev: 'http://page3', results: items.slice(15, 17)},
+        ];
+        const itemsToDelete = [3, 8, 13];
+        const itemsAcumulatedBeforeDelete = items.slice(0, 17);
+        const itemsAcumulatedAferDelete = items.filter((_, index) => !itemsToDelete.includes(index));
+
+        // Iterate 4 pages
+        serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, serverPages[0]);
+        serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, serverPages[1]);
+        serverGetEventTypeList(server, initialPage + 2, initialPageSize, filter, 200, serverPages[2]);
+        serverGetEventTypeList(server, initialPage + 3, initialPageSize, filter, 200, serverPages[3]);
+        const {result, waitForNextUpdate} = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(5);
+        expect(result.current.hasMoreElements).toBe(true);
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(10);
+        expect(result.current.hasMoreElements).toBe(true);
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(15);
+        expect(result.current.hasMoreElements).toBe(true);
+        act(
+            () => result.current.nextPage()
+        );
+        await  waitForNextUpdate();
+        expect(result.current.accumulated).toHaveLength(17);
+        expect(result.current.accumulated).toEqual(itemsAcumulatedBeforeDelete);
+        expect(result.current.hasMoreElements).toBe(false);
+        expect(result.current.currentFilter).toEqual(filter);
+
+        // Delete 3 items
+        act(
+            () => result.current.deleteItems(itemsToDelete)
+        );
+        expect(result.current.accumulated).toHaveLength(14);
+        expect(result.current.accumulated).toEqual(itemsAcumulatedAferDelete);
+        expect(result.current.hasMoreElements).toBe(false);
+        expect(result.current.currentFilter).toEqual(filter);
+    }
+);

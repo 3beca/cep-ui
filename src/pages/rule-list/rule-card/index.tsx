@@ -50,11 +50,9 @@ export type DeleteRuleDialogProps = {
     isOpen: boolean;
     close: ()=>void;
     rule: Rule;
+    onDelete: () => void;
 };
-export const DeleteRuleDialog: React.FC<DeleteRuleDialogProps> = ({isOpen, close, rule}) => {
-    const onDeleted = React.useCallback(() => {
-        console.log('Rule deleted!');
-    }, []);
+export const DeleteRuleDialog: React.FC<DeleteRuleDialogProps> = ({isOpen, close, rule, onDelete}) => {
     return (
         <Dialog
             open={isOpen}
@@ -64,12 +62,16 @@ export const DeleteRuleDialog: React.FC<DeleteRuleDialogProps> = ({isOpen, close
             aria-label='delete dialog card rule'
             aria-labelledby='icon-dialog-title'
             aria-describedby='icon-dialog-content'>
-                <DeleteDialog title={`Delete rule ${rule.name}`} entity={ENTITY.RULES} elementsSelecteds={[rule]} onDeleted={onDeleted} onCloseDialog={close}/>
+                <DeleteDialog title={`Delete rule ${rule.name}`} entity={ENTITY.RULES} elementsSelecteds={[rule]} onDeleted={onDelete} onCloseDialog={close}/>
         </Dialog>
     );
 };
 
-export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
+export type RuleCardMenuProps = {
+    rule: Rule;
+    onDelete?: (rule: Rule) => void;
+};
+export const RuleCardMenu: React.FC<RuleCardMenuProps> = ({rule, onDelete}) => {
     const [anchorElement, setAnchorElement] = React.useState<HTMLElement|null>(null);
     const open = Boolean(anchorElement);
     const openContextMenu = React.useCallback((event: React.MouseEvent<HTMLElement>) => setAnchorElement(event.currentTarget), []);
@@ -80,13 +82,16 @@ export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
         setIsOpenDialogOpen(true);
     }, [closeContextMenu, setIsOpenDialogOpen]);
     const closeDeleteDialog = React.useCallback(() => setIsOpenDialogOpen(false), []);
-
+    const onDeleteRule = React.useCallback(() => {
+        onDelete?.(rule);
+    }, [onDelete, rule]);
     return (
     <>
         <DeleteRuleDialog
             isOpen={isDeleteDialogOpen}
             close={closeDeleteDialog}
-            rule={rule}/>
+            rule={rule}
+            onDelete={onDeleteRule}/>
         <IconButton aria-label='settings card rule' onClick={openContextMenu}>
             <MoreVertIcon/>
         </IconButton>
@@ -127,8 +132,11 @@ export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
     );
   }
 
-export type RuleCardProp = {rule: Rule};
-const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
+export type RuleCardProp = {
+    rule: Rule;
+    onDelete?: (rule: Rule) => void;
+};
+const RuleCard: React.FC<RuleCardProp> = ({rule, onDelete}) => {
     const styles = useStyles();
     const filters = React.useMemo(
         () => {
@@ -152,7 +160,9 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                     </Avatar>
                 }
                 action={
-                    <RuleCardMenu rule={rule}/>
+                    <RuleCardMenu
+                        rule={rule}
+                        onDelete={onDelete}/>
                 }
                 title={rule.name}
                 subheader={(new Date(rule.createdAt)).toLocaleString()}
