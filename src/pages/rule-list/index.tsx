@@ -44,8 +44,13 @@ export const RuleListPage: React.FC<{}> = () => {
         hasMoreElements,
         nextPage,
         changeFilter,
-        currentFilter
+        currentFilter,
+        deleteItems
     } = useGetListAccumulated<Rule>(ENTITY.RULES, 1, 10);
+    const onDeleteRule = React.useCallback((ruleToDelete: Rule) => {
+        const indexToDelete = accumulated.findIndex(rule => rule.id === ruleToDelete.id);
+        deleteItems([indexToDelete]);
+    }, [deleteItems, accumulated]);
     const isEmpty = accumulated.length === 0;
     return (
         <div className={styles.root}>
@@ -64,7 +69,7 @@ export const RuleListPage: React.FC<{}> = () => {
             </Fab>
             <div className={styles.gridCards}>
                 {
-                    accumulated.map(rule => <RuleCard rule={rule} key={rule.id}/>)
+                    accumulated.map(rule => <RuleCard rule={rule} key={rule.id} onDelete={onDeleteRule}/>)
                 }
             </div>
             <LoadMoreButton

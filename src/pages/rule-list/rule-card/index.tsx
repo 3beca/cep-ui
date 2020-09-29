@@ -16,10 +16,13 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import DetailsIcon from '@material-ui/icons/DetailsOutlined';
 import CloneIcon from '@material-ui/icons/FileCopyOutlined';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
+import Dialog from '@material-ui/core/Dialog';
 
 import { Rule, RuleTypes } from '../../../services/api';
 import { parseRuleFilter } from '../../../components/rule-filter/utils';
 import RuleFilter from '../../../components/rule-filter';
+import DeleteDialog from '../../../components/delete-dialog';
+import { ENTITY } from '../../../services/api-provider/use-api';
 import {useStyles} from './styles';
 
 
@@ -43,14 +46,52 @@ export const mapRuleTypeName = (type: RuleTypes = 'realtime') => {
     }
 };
 
-export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
+export type DeleteRuleDialogProps = {
+    isOpen: boolean;
+    close: ()=>void;
+    rule: Rule;
+    onDelete: () => void;
+};
+export const DeleteRuleDialog: React.FC<DeleteRuleDialogProps> = ({isOpen, close, rule, onDelete}) => {
+    return (
+        <Dialog
+            open={isOpen}
+            onClose={close}
+            id='delete-dialog-card-rule'
+            scroll='paper'
+            aria-label='delete dialog card rule'
+            aria-labelledby='icon-dialog-title'
+            aria-describedby='icon-dialog-content'>
+                <DeleteDialog title={`Delete rule ${rule.name}`} entity={ENTITY.RULES} elementsSelecteds={[rule]} onDeleted={onDelete} onCloseDialog={close}/>
+        </Dialog>
+    );
+};
+
+export type RuleCardMenuProps = {
+    rule: Rule;
+    onDelete?: (rule: Rule) => void;
+};
+export const RuleCardMenu: React.FC<RuleCardMenuProps> = ({rule, onDelete}) => {
     const [anchorElement, setAnchorElement] = React.useState<HTMLElement|null>(null);
     const open = Boolean(anchorElement);
     const openContextMenu = React.useCallback((event: React.MouseEvent<HTMLElement>) => setAnchorElement(event.currentTarget), []);
     const closeContextMenu = React.useCallback(() => setAnchorElement(null), []);
-
+    const [isDeleteDialogOpen, setIsOpenDialogOpen] = React.useState(false);
+    const openDeleteDialog = React.useCallback(() => {
+        closeContextMenu();
+        setIsOpenDialogOpen(true);
+    }, [closeContextMenu, setIsOpenDialogOpen]);
+    const closeDeleteDialog = React.useCallback(() => setIsOpenDialogOpen(false), []);
+    const onDeleteRule = React.useCallback(() => {
+        onDelete?.(rule);
+    }, [onDelete, rule]);
     return (
     <>
+        <DeleteRuleDialog
+            isOpen={isDeleteDialogOpen}
+            close={closeDeleteDialog}
+            rule={rule}
+            onDelete={onDeleteRule}/>
         <IconButton aria-label='settings card rule' onClick={openContextMenu}>
             <MoreVertIcon/>
         </IconButton>
@@ -80,7 +121,7 @@ export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
                 </ListItemIcon>
                 <Typography variant='inherit'>Clone</Typography>
             </MenuItem>
-            <MenuItem>
+            <MenuItem onClick={openDeleteDialog} aria-label='setting dialog delete card rule'>
                 <ListItemIcon>
                     <DeleteIcon fontSize='small' />
                 </ListItemIcon>
@@ -91,8 +132,11 @@ export const RuleCardMenu: React.FC<{rule: Rule}> = ({rule}) => {
     );
   }
 
-export type RuleCardProp = {rule: Rule};
-const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
+export type RuleCardProp = {
+    rule: Rule;
+    onDelete?: (rule: Rule) => void;
+};
+const RuleCard: React.FC<RuleCardProp> = ({rule, onDelete}) => {
     const styles = useStyles();
     const filters = React.useMemo(
         () => {
@@ -116,7 +160,9 @@ const RuleCard: React.FC<RuleCardProp> = ({rule}) => {
                     </Avatar>
                 }
                 action={
-                    <RuleCardMenu rule={rule}/>
+                    <RuleCardMenu
+                        rule={rule}
+                        onDelete={onDelete}/>
                 }
                 title={rule.name}
                 subheader={(new Date(rule.createdAt)).toLocaleString()}

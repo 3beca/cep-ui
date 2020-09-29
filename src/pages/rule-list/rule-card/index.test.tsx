@@ -3,7 +3,16 @@ import userEvent from '@testing-library/user-event';
 import {Link} from 'react-router-dom';
 import { RuleTypes } from '../../../services/api';
 import RuleCard, {colorTypeSelector, mapRuleTypeName} from './index';
-import { generateRule, render, screen } from '../../../test-utils';
+import {
+    generateRule,
+    render,
+    renderWithAPI,
+    screen,
+    serverDeleteRule,
+    setupNock,
+    waitForElementToBeRemoved
+} from '../../../test-utils';
+import { BASE_URL } from '../../../services/config';
 
 const fakeLink = Link as unknown as {linkAction: jest.Mock};
 jest.mock('react-router-dom', () => {
@@ -81,4 +90,80 @@ test('RuleCard should open the context menu and navigate to details', async () =
     expect(fakeLink.linkAction).toHaveBeenCalledTimes(1);
     expect(fakeLink.linkAction).toHaveBeenNthCalledWith(1, '/rules/details/2_rule-test');
     await screen.findByLabelText(/setting dialog card rule hidden$/);
+});
+
+test('RuleCard should delete a rule', async () => {
+    const onDeleteRule = jest.fn();
+    const rule = generateRule('rule-test', 2, {});
+    renderWithAPI(<RuleCard rule={rule} onDelete={onDeleteRule}/>);
+    await screen.findByLabelText(/setting dialog card rule hidden$/);
+    expect(screen.queryByLabelText(/delete dialog card rule/i)).not.toBeInTheDocument();
+
+    // Open setting dialog
+    expect(await screen.findByLabelText(/avatar icon/)).toHaveTextContent('T');
+    userEvent.click(await screen.findByLabelText(/settings card rule$/i));
+    await screen.findByLabelText(/setting dialog card rule visible/);
+
+    // Open delete dialog
+    userEvent.click(await screen.findByLabelText(/setting dialog delete card rule$/i));
+    await screen.findByLabelText(/delete dialog card rule/i);
+
+    // Delete rule
+    serverDeleteRule(setupNock(BASE_URL), rule.id);
+    userEvent.click(await screen.findByLabelText(/delete button/i));
+    await screen.findByLabelText(/success message/i);
+    expect(onDeleteRule).toHaveBeenNthCalledWith(1, rule);
+
+    // Close delete dialog
+    userEvent.click(await screen.findByLabelText(/close button/i));
+    await waitForElementToBeRemoved(await screen.findByLabelText(/delete dialog card rule/i));
+});
+
+test('RuleCard should fails to delete a rule', async () => {
+    const onDeleteRule = jest.fn();
+    const rule = generateRule('rule-test', 2, {});
+    renderWithAPI(<RuleCard rule={rule} onDelete={onDeleteRule}/>);
+    await screen.findByLabelText(/setting dialog card rule hidden$/);
+    expect(screen.queryByLabelText(/delete dialog card rule/i)).not.toBeInTheDocument();
+
+    // Open setting dialog
+    expect(await screen.findByLabelText(/avatar icon/)).toHaveTextContent('T');
+    userEvent.click(await screen.findByLabelText(/settings card rule$/i));
+    await screen.findByLabelText(/setting dialog card rule visible/);
+
+    // Open delete dialog
+    userEvent.click(await screen.findByLabelText(/setting dialog delete card rule$/i));
+    await screen.findByLabelText(/delete dialog card rule/i);
+
+    // Delete rule
+    serverDeleteRule(setupNock(BASE_URL), rule.id, 500, {error: 'invalid id', message: 'cannot delete eventtype', statusCode: 400});
+    userEvent.click(await screen.findByLabelText(/delete button/i));
+    await screen.findByLabelText(/error message/i);
+    expect(onDeleteRule).toHaveBeenCalledTimes(0);
+
+    // Close delete dialog
+    userEvent.click(await screen.findByLabelText(/close button/i));
+    await waitForElementToBeRemoved(await screen.findByLabelText(/delete dialog card rule/i));
+});
+
+test('RuleCard should cancel delete a rule', async () => {
+    const onDeleteRule = jest.fn();
+    const rule = generateRule('rule-test', 2, {});
+    renderWithAPI(<RuleCard rule={rule} onDelete={onDeleteRule}/>);
+    await screen.findByLabelText(/setting dialog card rule hidden$/);
+    expect(screen.queryByLabelText(/delete dialog card rule/i)).not.toBeInTheDocument();
+
+    // Open setting dialog
+    expect(await screen.findByLabelText(/avatar icon/)).toHaveTextContent('T');
+    userEvent.click(await screen.findByLabelText(/settings card rule$/i));
+    await screen.findByLabelText(/setting dialog card rule visible/);
+
+    // Open delete dialog
+    userEvent.click(await screen.findByLabelText(/setting dialog delete card rule$/i));
+    await screen.findByLabelText(/delete dialog card rule/i);
+    expect(onDeleteRule).toHaveBeenCalledTimes(0);
+
+    // Cancel delete rule
+    userEvent.click(await screen.findByLabelText(/close button/i));
+    await waitForElementToBeRemoved(await screen.findByLabelText(/delete dialog card rule/i));
 });

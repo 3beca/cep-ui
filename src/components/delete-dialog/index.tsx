@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 import {useIconDialog} from '../../components/icon-dialog';
-import { EventType, ServiceError, Target, ServiceDeleted } from '../../services/api';
+import { EventType, ServiceError, Target, ServiceDeleted, Rule } from '../../services/api';
 import { useDelete, ENTITY } from '../../services/api-provider/use-api';
 import {useStyles} from './styles';
 
@@ -52,7 +52,7 @@ const LoadingView: React.FC<{show: boolean}> = ({show}) => {
     );
 };
 
-export type ELEMENTS = (EventType|Target)[];
+export type ELEMENTS = (EventType|Target|Rule)[];
 const DeleteList: React.FC<{show: boolean; elements?: ELEMENTS; isLoading: boolean}> = ({show, elements, isLoading}) => {
     const styles = useStyles();
     if (!show) return null;
@@ -100,20 +100,33 @@ const DeletedList: React.FC<{responses: ServiceDeleted[]|undefined; elements: EL
     );
 };
 
-export type DeleteDialogProps = {title: string; entity: ENTITY; elementsSelecteds?: ELEMENTS; onDeleted?():void;};
-export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(({title, entity, elementsSelecteds, onDeleted}) => {
+export type DeleteDialogProps = {
+    title: string;
+    entity: ENTITY;
+    elementsSelecteds?: ELEMENTS;
+    onDeleted?(ids: string[]):void;
+    onCloseDialog?: () => void;
+};
+export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(({title, entity, elementsSelecteds, onDeleted, onCloseDialog}) => {
     const styles = useStyles();
     const [elements] = React.useState(elementsSelecteds);
-    const closeDialog = useIconDialog();
+    const closeIconDialog = useIconDialog();
     const events = React.useMemo(() => elements ? elements?.map(e => e.id) : [], [elements])
     const {isLoading, response, error, request} = useDelete(entity, events);
     const hasElements = Array.isArray(elements) && elements.length > 0;
     const hasResponse = !(!Array.isArray(response?.data) || response?.data?.length === 0);
+    const closeDialog = React.useCallback(() => {
+        closeIconDialog?.();
+        onCloseDialog?.();
+    }, [onCloseDialog, closeIconDialog]);
     React.useEffect(
         () => {
             // TODO: Si hay alguna respuesta con delete, recargar el listado de elements
-            hasResponse && (typeof onDeleted === 'function') && onDeleted();
-        }, [hasResponse, onDeleted]
+            if (!!response && hasResponse) {
+                const itemsDeleted = response.data.filter(ruleDelete => ruleDelete.state === 'DELETED').map(rule => rule.id);
+                if (itemsDeleted.length > 0) onDeleted?.(itemsDeleted);
+            }
+        }, [hasResponse, response, onDeleted]
     );
     return (
         <div className={styles.container}>

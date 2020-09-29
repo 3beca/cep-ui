@@ -106,28 +106,33 @@ export const useGetListFilteredAndPaginated = <T extends Entity>(entity: ENTITY,
 
 export const useGetListAccumulated = <T extends Entity>(entity: ENTITY, initialPage: number = 1, initialPageSize: number = 20, initialFilter: string = '', runOnLoad: boolean = true) => {
     const listPaginatedApi = useGetListFilteredAndPaginated<T>(entity, initialPage, initialPageSize, initialFilter, runOnLoad);
-    const {response, currentPage, firstPage, isLoading} = listPaginatedApi;
-    const commingFromLoading = React.useRef(isLoading);
-    // TODO: Accumulate responses
-    const accumulatedResults = React.useRef<T[]>([]);
-    accumulatedResults.current = React.useMemo(
+    const {response, currentPage, currentPageSize, isLoading, request, hasMoreElements} = listPaginatedApi;
+    const [accumulatedResults, setAccumulatedResults] = React.useState<T[]>([]);
+    const staleResponse = React.useRef(isLoading);
+    React.useLayoutEffect(
         () => {
-            if (!commingFromLoading.current || !response) {
-                return accumulatedResults.current;
+            const totalPages = currentPage - initialPage;
+            const totalElements = totalPages * currentPageSize;
+            if (!!response && staleResponse.current) {
+                staleResponse.current = false;
+                setAccumulatedResults(acc => [
+                    ...acc.slice(0, totalElements),
+                    ...response.data.results
+                ]);
             }
-            if (currentPage === firstPage) {
-                return [...response.data.results];
-            }
-            else {
-                return [...accumulatedResults.current, ...response.data.results];
-            }
-        }, [currentPage, firstPage, response]
+        }, [currentPage, response, currentPageSize, initialPage, staleResponse]
     );
-    // Set this render was a loading in order to
-    // recalculate accumulated in next render
-    commingFromLoading.current = isLoading;
+    React.useEffect(() => {
+        if (isLoading) staleResponse.current = true;
+    }, [isLoading]);
+    const deleteItems = React.useCallback((items: number[]) => {
+        const itemsFiltered = items.filter(index => index >= 0 && index < accumulatedResults.length);
+        setAccumulatedResults(accumulatedResults.filter((_, index) => !itemsFiltered.includes(index)));
+        if (hasMoreElements) request();
+    }, [request, hasMoreElements, accumulatedResults]);
     return {
         ...listPaginatedApi,
-        accumulated: accumulatedResults.current
+        accumulated: accumulatedResults,
+        deleteItems
     };
 };

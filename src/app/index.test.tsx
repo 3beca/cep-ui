@@ -13,7 +13,18 @@ import {
     generateTargetListWith
 } from '../test-utils';
 import {BASE_URL} from '../services/config';
-import { selectCreateRule } from '../pages/rule-list/index.test';
+
+export const selectCreateRule = async (ariaLabel: 'real time'|'hopping'|'sliding'|'tumbling') => {
+    const addButton = await screen.findByLabelText(/add rule/i);
+    userEvent.click(addButton);
+    await screen.findByLabelText(/title create rule/i);
+    await screen.findByLabelText(/kind of rules description/i);
+    const realTimeCard =  await screen.findByLabelText(`create rule ${ariaLabel} card`);
+    const selectButton = await screen.findByText(/^select$/i);
+    userEvent.click(realTimeCard);
+    userEvent.click(selectButton);
+    await waitFor(() => expect(document.getElementById('create-rule-dialog')).toBe(null));
+};
 
 export const renderAppWithMenuOpenedInRoute = (route = '/') => {
     const utils = renderInsideApp(<App/>, {route});

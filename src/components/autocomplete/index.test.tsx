@@ -229,11 +229,20 @@ test('Autocomplete should filter all options, and create a new one', async () =>
             emptyElement={emptyElement}
         />
     );
+    rerender(
+        <Autocomplete
+            selected={selected}
+            setSelected={setSelected}
+            options={[]}
+            isLoading={false}
+            changeFilter={changeFilter}
+            emptyElement={emptyElement}
+        />
+    );
 
     const newElement = await screen.findByRole('option');
     expect(newElement).toHaveTextContent('Create ' + prefix);
     expect(input).toHaveAttribute('value', prefix);
-
     // Select
     changeFilter.mockClear();
     userEvent.click(newElement);
