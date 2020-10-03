@@ -1,12 +1,12 @@
 import * as React from 'react';
 import TargetTable from './target-table';
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 
 export const TargetListPage: React.FC<{}> = () => {
     const styles = useStyles();
     return (
         <div className={styles.root}>
-            <TargetTable/>
+            <TargetTable />
         </div>
     );
 };

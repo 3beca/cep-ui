@@ -1,23 +1,34 @@
 import React from 'react';
 import { APIError, APIResponseData, isAPIError } from './fetch-api';
 
-export type ApiActionStart = { type: 'START'};
-export type ApiActionCancel = { type: 'CANCEL'};
-export type ApiActionRestart = { type: 'RESTART'};
-export type ApiActionSuccess<R> = { type: 'SUCCESS'; data: APIResponseData<R>;};
-export type ApiActionError<E> = { type: 'ERROR'; error: APIError<E>;};
-export type ApiActions<R, E> = ApiActionStart | ApiActionCancel | ApiActionSuccess<R> | ApiActionError<E> | ApiActionRestart;
+export type ApiActionStart = { type: 'START' };
+export type ApiActionCancel = { type: 'CANCEL' };
+export type ApiActionRestart = { type: 'RESTART' };
+export type ApiActionSuccess<R> = { type: 'SUCCESS'; data: APIResponseData<R> };
+export type ApiActionError<E> = { type: 'ERROR'; error: APIError<E> };
+export type ApiActions<R, E> =
+    | ApiActionStart
+    | ApiActionCancel
+    | ApiActionSuccess<R>
+    | ApiActionError<E>
+    | ApiActionRestart;
 export type ApiState<R, E> = {
-    status: 'IDLE'|'PENDING'|'RESOLVED'|'REJECTED';
-    data: APIResponseData<R>|undefined;
-    error: APIError<E>|undefined;
+    status: 'IDLE' | 'PENDING' | 'RESOLVED' | 'REJECTED';
+    data: APIResponseData<R> | undefined;
+    error: APIError<E> | undefined;
 };
 export const neverForgetAnAction = (action: never): never => {
     throw new Error(`Forget implement action ${action}`);
 };
-export type ApiReducer<R, E> = (state: ApiState<R, E>, action: ApiActions<R, E>) => ApiState<R, E>;
-export const apiReducer = <R, E>(state: ApiState<R, E>, action: ApiActions<R, E>): ApiState<R, E> => {
-    switch(action.type) {
+export type ApiReducer<R, E> = (
+    state: ApiState<R, E>,
+    action: ApiActions<R, E>
+) => ApiState<R, E>;
+export const apiReducer = <R, E>(
+    state: ApiState<R, E>,
+    action: ApiActions<R, E>
+): ApiState<R, E> => {
+    switch (action.type) {
         case 'START': {
             return {
                 ...state,
@@ -58,35 +69,45 @@ export const apiReducer = <R, E>(state: ApiState<R, E>, action: ApiActions<R, E>
         }
     }
 };
-export type APIFetchQuery<R, E> = () => Promise<APIResponseData<R>|APIError<E>|null|undefined>|undefined|null;
-export const requester = async <R, E>(query: APIFetchQuery<R, E>, dispatch: React.Dispatch<ApiActions<R, E>>) => {
+export type APIFetchQuery<R, E> = () =>
+    | Promise<APIResponseData<R> | APIError<E> | null | undefined>
+    | undefined
+    | null;
+export const requester = async <R, E>(
+    query: APIFetchQuery<R, E>,
+    dispatch: React.Dispatch<ApiActions<R, E>>
+) => {
     const promiseResponse = query();
-    if(!promiseResponse) {
+    if (!promiseResponse) {
         return null;
     }
-    dispatch({type: 'START'});
+    dispatch({ type: 'START' });
     const response = await promiseResponse;
     if (!response) {
-        dispatch({type: 'CANCEL'});
-    }
-    else if (isAPIError(response)) {
-        dispatch({type: 'ERROR', error: response});
-    }
-    else {
-        dispatch({type: 'SUCCESS', data: response});
+        dispatch({ type: 'CANCEL' });
+    } else if (isAPIError(response)) {
+        dispatch({ type: 'ERROR', error: response });
+    } else {
+        dispatch({ type: 'SUCCESS', data: response });
     }
 };
 export const useFetchApi = <R, E>(query: APIFetchQuery<R, E>) => {
-    const [response, dispatch] = React.useReducer<ApiReducer<R, E>>(apiReducer, {status: 'IDLE', data: undefined, error: undefined});
-    const request = React.useCallback(
-        () => {
-            requester(query, dispatch);
-        },
-        [query]
+    const [response, dispatch] = React.useReducer<ApiReducer<R, E>>(
+        apiReducer,
+        { status: 'IDLE', data: undefined, error: undefined }
     );
-    const reset = React.useCallback(() => dispatch({type: 'RESTART'}), []);
+    const request = React.useCallback(() => {
+        requester(query, dispatch);
+    }, [query]);
+    const reset = React.useCallback(() => dispatch({ type: 'RESTART' }), []);
     const isLoading = response.status === 'PENDING';
-    return {isLoading, response: response.data, error: response.error, request, reset};
+    return {
+        isLoading,
+        response: response.data,
+        error: response.error,
+        request,
+        reset
+    };
 };
 
 export default useFetchApi;

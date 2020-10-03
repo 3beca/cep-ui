@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {Router} from 'react-router-dom';
-import {createMemoryHistory, History} from 'history';
-import {render} from '@testing-library/react';
-import {MainMenuProvider} from '../services/main-menu-provider';
-import {APIProviderMock} from './api-provider-mock';
-import {APIProvider} from '../services/api-provider';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory, History } from 'history';
+import { render } from '@testing-library/react';
+import { MainMenuProvider } from '../services/main-menu-provider';
+import { APIProviderMock } from './api-provider-mock';
+import { APIProvider } from '../services/api-provider';
 import {
     APIContextState,
     APIUtilsContext
@@ -22,7 +22,7 @@ export function renderInsideApp(
     ui: React.ReactElement,
     {
         route = '/',
-        history = createMemoryHistory({initialEntries: [route]}),
+        history = createMemoryHistory({ initialEntries: [route] }),
         apiState,
         apiUtils,
         ...renderOptions
@@ -36,18 +36,18 @@ export function renderInsideApp(
                 </Router>
             </APIProviderMock>
         );
-    }
+    };
     return {
-        ...render(ui, {wrapper: Wrapper, ...renderOptions}),
+        ...render(ui, { wrapper: Wrapper, ...renderOptions }),
         history
     };
-};
+}
 
 export function renderInsideRealApp(
     ui: React.ReactElement,
     {
         route = '/',
-        history = createMemoryHistory({initialEntries: [route]}),
+        history = createMemoryHistory({ initialEntries: [route] }),
         ...renderOptions
     }: OptionsRenderRouter = {}
 ) {
@@ -59,20 +59,16 @@ export function renderInsideRealApp(
                 </Router>
             </APIProvider>
         );
-    }
+    };
     return {
-        ...render(ui, {wrapper: Wrapper, ...renderOptions}),
+        ...render(ui, { wrapper: Wrapper, ...renderOptions }),
         history
     };
-};
+}
 
 export function renderWithAPI(
     ui: React.ReactElement,
-    {
-        apiState,
-        apiUtils,
-        ...renderOptions
-    }: OptionsRenderRouter = {}
+    { apiState, apiUtils, ...renderOptions }: OptionsRenderRouter = {}
 ) {
     const Wrapper: React.FC<{}> = function Wrapper(props) {
         return (
@@ -80,6 +76,6 @@ export function renderWithAPI(
                 <MainMenuProvider {...props} />
             </APIProviderMock>
         );
-    }
-    return render(ui, {wrapper: Wrapper, ...renderOptions});
-};
+    };
+    return render(ui, { wrapper: Wrapper, ...renderOptions });
+}

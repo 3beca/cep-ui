@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { Api } from '../api';
-import {
-    NOOP
-} from '../../utils';
+import { NOOP } from '../../utils';
 
 export enum ValidationState {
     VALIDATED = 0,
     PENDING = 1,
     NOT_FOUND = 2
-};
+}
 export type APIContextState = {
     isValidating: boolean;
     isValidated: ValidationState;
@@ -32,7 +30,7 @@ export type APIContextActionRequireKey = {
 };
 export type APIContextActionNoRequireKey = {
     type: 'NO_REQUIRE_APIKEY';
-    version: string
+    version: string;
 };
 export type APIContextActionSetKey = {
     type: 'SET_APIKEY';
@@ -40,7 +38,12 @@ export type APIContextActionSetKey = {
     version: string;
 };
 
-export type ApiContextActions = APIContextActionValidating|APIContextActionRequireKey|APIContextActionNoRequireKey|APIContextActionSetKey|APIContextActionServerNotFound;
+export type ApiContextActions =
+    | APIContextActionValidating
+    | APIContextActionRequireKey
+    | APIContextActionNoRequireKey
+    | APIContextActionSetKey
+    | APIContextActionServerNotFound;
 
 export type APIUtilsContext = {
     invalidateApiKey: (required: boolean) => void;
@@ -57,4 +60,6 @@ export const initialUtils = {
     setApiKey: NOOP
 };
 export const APIContext = React.createContext<APIContextState>(initialContext);
-export const UpdateAPIContext = React.createContext<APIUtilsContext>(initialUtils);
+export const UpdateAPIContext = React.createContext<APIUtilsContext>(
+    initialUtils
+);

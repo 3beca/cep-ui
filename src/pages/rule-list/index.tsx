@@ -6,15 +6,19 @@ import SearchBar from '../../components/search-bar';
 import {
     ListLoadingView,
     ListEmptyView
-} from '../../components/paginated-table';
+} from '../../components/paginated-table';
 import RuleCard from './rule-card';
-import {CreateRuleDialog} from './create-dialog';
-import {ENTITY} from '../../services/api-provider/use-api';
-import {useStyles} from './styles';
+import { CreateRuleDialog } from './create-dialog';
+import { ENTITY } from '../../services/api-provider/use-api';
+import { useStyles } from './styles';
 import { Rule } from '../../services/api';
-import {useGetListAccumulated} from '../../services/use-getlist-enhancer';
+import { useGetListAccumulated } from '../../services/use-getlist-enhancer';
 
-const LoadMoreButton: React.FC<{show: boolean; onClick: () => void;}> = ({show, onClick}) => {
+type LoadMoreButtonProps = {
+    show: boolean;
+    onClick: () => void;
+};
+const LoadMoreButton: React.FC<LoadMoreButtonProps> = ({ show, onClick }) => {
     const styles = useStyles();
     if (!show) return null;
     return (
@@ -26,8 +30,9 @@ const LoadMoreButton: React.FC<{show: boolean; onClick: () => void;}> = ({show, 
                 aria-label='load more rules'
                 color='secondary'
                 variant='contained'
-                title='Load More Rules'>
-                    Load More Rules
+                title='Load More Rules'
+            >
+                Load More Rules
             </Button>
         </div>
     );
@@ -47,10 +52,15 @@ export const RuleListPage: React.FC<{}> = () => {
         currentFilter,
         deleteItems
     } = useGetListAccumulated<Rule>(ENTITY.RULES, 1, 10);
-    const onDeleteRule = React.useCallback((ruleToDelete: Rule) => {
-        const indexToDelete = accumulated.findIndex(rule => rule.id === ruleToDelete.id);
-        deleteItems([indexToDelete]);
-    }, [deleteItems, accumulated]);
+    const onDeleteRule = React.useCallback(
+        (ruleToDelete: Rule) => {
+            const indexToDelete = accumulated.findIndex(
+                rule => rule.id === ruleToDelete.id
+            );
+            deleteItems([indexToDelete]);
+        },
+        [deleteItems, accumulated]
+    );
     const isEmpty = accumulated.length === 0;
     return (
         <div className={styles.root}>
@@ -58,34 +68,43 @@ export const RuleListPage: React.FC<{}> = () => {
                 <SearchBar
                     hint='Enter a rule name...'
                     minLength={0}
-                    onSearchFor={changeFilter}/>
+                    onSearchFor={changeFilter}
+                />
             </div>
             <Fab
                 color='primary'
                 aria-label='add rule'
                 className={styles.fabAddRule}
-                onClick={openDialog}>
+                onClick={openDialog}
+            >
                 <AddIcon />
             </Fab>
             <div className={styles.gridCards}>
-                {
-                    accumulated.map(rule => <RuleCard rule={rule} key={rule.id} onDelete={onDeleteRule}/>)
-                }
+                {accumulated.map(rule => (
+                    <RuleCard
+                        rule={rule}
+                        key={rule.id}
+                        onDelete={onDeleteRule}
+                    />
+                ))}
             </div>
             <LoadMoreButton
                 show={!isLoading && hasMoreElements}
-                onClick={nextPage}/>
-            <ListLoadingView show={isLoading}/>
+                onClick={nextPage}
+            />
+            <ListLoadingView show={isLoading} />
             <ListEmptyView
                 emptyMessage={
-                    !!currentFilter ?
-                        `There are no elements for "${currentFilter}"` : 'There are no RULES created yet!'
+                    !!currentFilter
+                        ? `There are no elements for "${currentFilter}"`
+                        : 'There are no RULES created yet!'
                 }
                 noMoreMessage='You reached the end of the list!'
                 show={!isLoading && !hasMoreElements}
                 isEmpty={isEmpty}
-                variant={isEmpty ? 'h4' : 'caption'}/>
-            <CreateRuleDialog isOpen={isOpen} onClose={closeDialog}/>
+                variant={isEmpty ? 'h4' : 'caption'}
+            />
+            <CreateRuleDialog isOpen={isOpen} onClose={closeDialog} />
         </div>
     );
 };

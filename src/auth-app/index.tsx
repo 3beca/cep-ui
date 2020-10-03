@@ -5,7 +5,7 @@ import App from '../app';
 import LoginPage from './login';
 import ServiceNotFoundPage from './service-notfound';
 import { useAPIProviderStatus } from '../services/api-provider';
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 
 export const AuthApp: React.FC<{}> = () => {
     const styles = useStyles();
@@ -18,13 +18,13 @@ export const AuthApp: React.FC<{}> = () => {
 
     if (showLoading) {
         return (
-            <div
-                aria-label='authapp validating'
-                className={styles.container}>
+            <div aria-label='authapp validating' className={styles.container}>
                 <div className={styles.dialog}>
-                    <CircularProgress size={180} color='inherit'/>
+                    <CircularProgress size={180} color='inherit' />
                     <div className={styles.message}>
-                        <Typography className={styles.messageText}>Checking API KEY, please wait a moment...</Typography>
+                        <Typography className={styles.messageText}>
+                            Checking API KEY, please wait a moment...
+                        </Typography>
                     </div>
                 </div>
             </div>
@@ -32,15 +32,13 @@ export const AuthApp: React.FC<{}> = () => {
     }
 
     if (showNoService) {
-        return (<ServiceNotFoundPage/>);
+        return <ServiceNotFoundPage />;
     }
 
     if (showLogin) {
-        return (
-            <LoginPage invalidReason={invalidReason}/>
-        );
+        return <LoginPage invalidReason={invalidReason} />;
     }
-    return (<App/>);
+    return <App />;
 };
 
 export default AuthApp;

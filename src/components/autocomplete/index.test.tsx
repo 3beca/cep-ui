@@ -1,25 +1,19 @@
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
-import {
-    render,
-    screen,
-    act
-} from '../../test-utils';
+import { render, screen, act } from '../../test-utils';
 
-import Autocomplete, {createCustomFilterOptions} from './index';
+import Autocomplete, { createCustomFilterOptions } from './index';
 
 beforeAll(() => jest.useFakeTimers());
 afterAll(() => jest.useRealTimers());
 
-test('Autocomplete should render with defaults placeholdres', async () => {
-    const options = [
-        {id: '1', name: 'element 1'}
-    ];
-    const selected: {id: string; name: string;}|null = null;
+test('Autocomplete should render with defaults placeholdres', async () => {
+    const options = [{ id: '1', name: 'element 1' }];
+    const selected: { id: string; name: string } | null = null;
     const setSelected = jest.fn();
     const changeFilter = jest.fn();
-    const emptyElement = {id: '', name: ''};
-    const {rerender} = render(
+    const emptyElement = { id: '', name: '' };
+    const { rerender } = render(
         <Autocomplete
             selected={selected}
             setSelected={setSelected}
@@ -48,15 +42,13 @@ test('Autocomplete should render with defaults placeholdres', async () => {
     await screen.findByLabelText(/loading elements/i);
 });
 
-test('Autocomplete should render with custom placeholdres', async () => {
-    const options = [
-        {id: '1', name: 'element 1'}
-    ];
-    const selected: {id: string; name: string;}|null = null;
+test('Autocomplete should render with custom placeholdres', async () => {
+    const options = [{ id: '1', name: 'element 1' }];
+    const selected: { id: string; name: string } | null = null;
     const setSelected = jest.fn();
     const changeFilter = jest.fn();
-    const emptyElement = {id: '', name: ''};
-    const {rerender} = render(
+    const emptyElement = { id: '', name: '' };
+    const { rerender } = render(
         <Autocomplete
             selected={selected}
             setSelected={setSelected}
@@ -91,15 +83,16 @@ test('Autocomplete should render with custom placeholdres', async () => {
     await screen.findByLabelText(/loading anything/i);
 });
 
-test('Autocomplete should render with custom filter function', async () => {
-    const options = [
-        {id: '1', name: 'element 1'}
-    ];
-    const selected: {id: string; name: string;}|null = null;
+test('Autocomplete should render with custom filter function', async () => {
+    const options = [{ id: '1', name: 'element 1' }];
+    const selected: { id: string; name: string } | null = null;
     const setSelected = jest.fn();
     const changeFilter = jest.fn();
-    const emptyElement = {id: '', name: ''};
-    const filterFunction = createCustomFilterOptions<{id: string; name: string;}>();
+    const emptyElement = { id: '', name: '' };
+    const filterFunction = createCustomFilterOptions<{
+        id: string;
+        name: string;
+    }>();
     render(
         <Autocomplete
             selected={selected}
@@ -116,21 +109,21 @@ test('Autocomplete should render with custom filter function', async () => {
     await screen.findByLabelText(/search a element/i);
 });
 
-test('Autocomplete should filter options, change filter and select one', async () => {
+test('Autocomplete should filter options, change filter and select one', async () => {
     const options = [
-        {id: '1', name: 'element 1'},
-        {id: '2', name: 'element 11'},
-        {id: '3', name: 'element 1111'},
-        {id: '4', name: 'element 2'},
-        {id: '5', name: 'element 12'},
-        {id: '6', name: 'element 23'},
-        {id: '7', name: 'element 3'},
-        {id: '8', name: 'element 4'}
+        { id: '1', name: 'element 1' },
+        { id: '2', name: 'element 11' },
+        { id: '3', name: 'element 1111' },
+        { id: '4', name: 'element 2' },
+        { id: '5', name: 'element 12' },
+        { id: '6', name: 'element 23' },
+        { id: '7', name: 'element 3' },
+        { id: '8', name: 'element 4' }
     ];
-    const selected: {id: string; name: string;}|null = null;
+    const selected: { id: string; name: string } | null = null;
     const setSelected = jest.fn();
     const changeFilter = jest.fn();
-    const emptyElement = {id: '', name: ''};
+    const emptyElement = { id: '', name: '' };
     render(
         <Autocomplete
             selected={selected}
@@ -168,22 +161,22 @@ test('Autocomplete should filter options, change filter and select one', async (
     expect(screen.queryAllByRole('option')).toHaveLength(0);
 });
 
-test('Autocomplete should filter all options, and create a new one', async () => {
+test('Autocomplete should filter all options, and create a new one', async () => {
     const options = [
-        {id: '1', name: 'element 1'},
-        {id: '2', name: 'element 11'},
-        {id: '3', name: 'element 1111'},
-        {id: '4', name: 'element 2'},
-        {id: '5', name: 'element 12'},
-        {id: '6', name: 'element 23'},
-        {id: '7', name: 'element 3'},
-        {id: '8', name: 'element 4'}
+        { id: '1', name: 'element 1' },
+        { id: '2', name: 'element 11' },
+        { id: '3', name: 'element 1111' },
+        { id: '4', name: 'element 2' },
+        { id: '5', name: 'element 12' },
+        { id: '6', name: 'element 23' },
+        { id: '7', name: 'element 3' },
+        { id: '8', name: 'element 4' }
     ];
-    const selected: {id: string; name: string;}|null = null;
+    const selected: { id: string; name: string } | null = null;
     const setSelected = jest.fn();
     const changeFilter = jest.fn();
-    const emptyElement = {id: 'customidfornewelements', name: ''};
-    const {rerender} = render(
+    const emptyElement = { id: 'customidfornewelements', name: '' };
+    const { rerender } = render(
         <Autocomplete
             selected={selected}
             setSelected={setSelected}
@@ -248,20 +241,21 @@ test('Autocomplete should filter all options, and create a new one', async () =>
     userEvent.click(newElement);
     act(() => void jest.runOnlyPendingTimers());
     expect(input).toHaveValue(prefix);
-    expect(setSelected).toHaveBeenNthCalledWith(1, {...emptyElement, name: prefix});
+    expect(setSelected).toHaveBeenNthCalledWith(1, {
+        ...emptyElement,
+        name: prefix
+    });
     expect(changeFilter).toHaveBeenCalledTimes(0);
     await screen.findAllByLabelText(/search a element/i);
     expect(screen.queryAllByRole('option')).toHaveLength(0);
 });
 
-test('Autocomplete should render disabled', async () => {
-    const options = [
-        {id: '1', name: 'element 1'}
-    ];
-    const selected: {id: string; name: string;}|null = null;
+test('Autocomplete should render disabled', async () => {
+    const options = [{ id: '1', name: 'element 1' }];
+    const selected: { id: string; name: string } | null = null;
     const setSelected = jest.fn();
     const changeFilter = jest.fn();
-    const emptyElement = {id: '', name: ''};
+    const emptyElement = { id: '', name: '' };
     render(
         <Autocomplete
             disabled={true}

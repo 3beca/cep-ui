@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 import { Typography } from '@material-ui/core';
 
 export const NotFoundPage: React.FC<{}> = () => {
@@ -7,7 +7,9 @@ export const NotFoundPage: React.FC<{}> = () => {
     return (
         <div className={styles.container}>
             <div aria-label='page not found'>
-                <Typography variant='h1' color='primary'>404 Page not found!</Typography>
+                <Typography variant='h1' color='primary'>
+                    404 Page not found!
+                </Typography>
             </div>
         </div>
     );

@@ -6,56 +6,74 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 import { useCreate, ENTITY } from '../../../../services/api-provider/use-api';
 import { APIError } from '../../../../utils/fetch-api';
-import {cutString} from '../../../../utils';
+import { cutString } from '../../../../utils';
 import { Target, ServiceError } from '../../../../services/api';
 
-const TargetCreatorLoader: React.FC<{show: boolean}> = ({show}) => {
+const TargetCreatorLoader: React.FC<{ show: boolean }> = ({ show }) => {
     const styles = useStyles();
     if (!show) return null;
     return (
         <div
             className={styles.detailsStatusLoading}
-            aria-label='target creating loading'>
-            <Typography variant='caption' className={styles.detailsStatusLoadingText}>Creating Target</Typography>
-            <CircularProgress color='primary' size={24}/>
+            aria-label='target creating loading'
+        >
+            <Typography
+                variant='caption'
+                className={styles.detailsStatusLoadingText}
+            >
+                Creating Target
+            </Typography>
+            <CircularProgress color='primary' size={24} />
         </div>
     );
 };
 
-const TargetCreatorError: React.FC<{error: APIError<ServiceError>|undefined}> = ({error}) => {
+const TargetCreatorError: React.FC<{
+    error: APIError<ServiceError> | undefined;
+}> = ({ error }) => {
     const styles = useStyles();
     if (!error) return null;
     return (
         <div
             className={styles.detailsStatusError}
-            aria-label='target creating error'>
+            aria-label='target creating error'
+        >
             <Typography variant='caption'>{error.error?.message}</Typography>
         </div>
     );
 };
 
-const TargetCreatorSuccess: React.FC<{target: Target|undefined}> = ({target}) => {
+const TargetCreatorSuccess: React.FC<{ target: Target | undefined }> = ({
+    target
+}) => {
     const styles = useStyles();
     if (!target) return null;
     return (
-        <div
-            className={styles.detailsURL}
-            aria-label='target creating url'>
-            <Typography variant='caption'>{cutString(target.url, 40)}</Typography>
+        <div className={styles.detailsURL} aria-label='target creating url'>
+            <Typography variant='caption'>
+                {cutString(target.url, 40)}
+            </Typography>
         </div>
     );
 };
 
-export const TargetCreateURL: React.FC<{show: boolean; url: string; setURL: (url: string) => void; createTarget: () => void;}> = ({show, url, setURL, createTarget}) => {
+export const TargetCreateURL: React.FC<{
+    show: boolean;
+    url: string;
+    setURL: (url: string) => void;
+    createTarget: () => void;
+}> = ({ show, url, setURL, createTarget }) => {
     const styles = useStyles();
-    const changeURL = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => {
-        setURL(ev.target.value);
-    }, [setURL]);
-    if(!show) return null;
+    const changeURL = React.useCallback(
+        (ev: React.ChangeEvent<HTMLInputElement>) => {
+            setURL(ev.target.value);
+        },
+        [setURL]
+    );
+    if (!show) return null;
     return (
         <div className={styles.detailsCreateURL}>
             <TextField
@@ -64,58 +82,76 @@ export const TargetCreateURL: React.FC<{show: boolean; url: string; setURL: (url
                 onChange={changeURL}
                 label='URL (http/https)'
                 helperText='URL to send events when rule matchs'
-                inputProps={{'aria-label': 'target creating input url'}}/>
+                inputProps={{ 'aria-label': 'target creating input url' }}
+            />
             <Button
                 className={styles.detailsCreateURLButton}
                 aria-label='target creating button url'
                 disabled={!url.startsWith('http')}
                 title='Create target'
-                onClick={createTarget}>
+                onClick={createTarget}
+            >
                 <Typography>Create</Typography>
             </Button>
         </div>
-
     );
 };
 
-const TargetCreator: React.FC<{targeteBody: Partial<Target>; resolve: (target: Target) => void; close: () => void;}> = ({targeteBody, resolve, close}) => {
+const TargetCreator: React.FC<{
+    targeteBody: Partial<Target>;
+    resolve: (target: Target) => void;
+    close: () => void;
+}> = ({ targeteBody, resolve, close }) => {
     const styles = useStyles();
     const [url, setURL] = React.useState('');
-    const {isLoading, response, error, request} = useCreate<Target>(ENTITY.TARGETS, {name: targeteBody.name, url}, false);
-
-    React.useEffect(
-        () => {
-            if(!isLoading && !error && !!response?.data) {
-                resolve(response.data);
-            }
-        }, [isLoading, error, response, resolve]
+    const { isLoading, response, error, request } = useCreate<Target>(
+        ENTITY.TARGETS,
+        { name: targeteBody.name, url },
+        false
     );
 
+    React.useEffect(() => {
+        if (!isLoading && !error && !!response?.data) {
+            resolve(response.data);
+        }
+    }, [isLoading, error, response, resolve]);
+
     return (
-        <div
-            className={styles.details}
-            aria-label='target creating block'>
+        <div className={styles.details} aria-label='target creating block'>
             <div className={styles.detailsActions}>
-                <Typography className={styles.detailsActionsType} variant='caption'>Target</Typography>
+                <Typography
+                    className={styles.detailsActionsType}
+                    variant='caption'
+                >
+                    Target
+                </Typography>
                 <IconButton
                     disabled={isLoading}
                     onClick={close}
-                    aria-label='target creating clear'>
-                    <IconClose fontSize='small'/>
+                    aria-label='target creating clear'
+                >
+                    <IconClose fontSize='small' />
                 </IconButton>
             </div>
             <div
                 className={styles.detailsName}
-                aria-label='target creating name'>
+                aria-label='target creating name'
+            >
                 <Typography variant='h5'>{targeteBody.name}</Typography>
             </div>
             <div
                 className={styles.detailsStatus}
-                aria-label='target creating action'>
-                <TargetCreateURL show={!isLoading && !response} url={url} setURL={setURL} createTarget={request}/>
-                <TargetCreatorLoader show={isLoading}/>
-                <TargetCreatorError error={error}/>
-                <TargetCreatorSuccess target={response?.data}/>
+                aria-label='target creating action'
+            >
+                <TargetCreateURL
+                    show={!isLoading && !response}
+                    url={url}
+                    setURL={setURL}
+                    createTarget={request}
+                />
+                <TargetCreatorLoader show={isLoading} />
+                <TargetCreatorError error={error} />
+                <TargetCreatorSuccess target={response?.data} />
             </div>
         </div>
     );
@@ -127,40 +163,56 @@ export type TargetCreateProps = {
     setTarget(target: Target): void;
     disabled?: boolean;
 };
-export const TargetCreate: React.FC<TargetCreateProps> = ({target, clearTarget, setTarget, disabled = false}) => {
+export const TargetCreate: React.FC<TargetCreateProps> = ({
+    target,
+    clearTarget,
+    setTarget,
+    disabled = false
+}) => {
     const styles = useStyles();
-    const targetBody = React.useRef<Partial<Target>>({name: target.name});
+    const targetBody = React.useRef<Partial<Target>>({ name: target.name });
     const [currentTarget, setCurrentTarget] = React.useState(target);
     React.useEffect(() => {
-        if(currentTarget.id) {
+        if (currentTarget.id) {
             setTarget(currentTarget);
         }
     }, [currentTarget, setTarget]);
-    if(!currentTarget.id && !disabled) {
-        return <TargetCreator targeteBody={targetBody.current} resolve={setCurrentTarget} close={clearTarget}/>
+    if (!currentTarget.id && !disabled) {
+        return (
+            <TargetCreator
+                targeteBody={targetBody.current}
+                resolve={setCurrentTarget}
+                close={clearTarget}
+            />
+        );
     }
     return (
-        <div
-            className={styles.details}
-            aria-label='target selected block'>
+        <div className={styles.details} aria-label='target selected block'>
             <div className={styles.detailsActions}>
-                <Typography className={styles.detailsActionsType} variant='caption'>Target</Typography>
+                <Typography
+                    className={styles.detailsActionsType}
+                    variant='caption'
+                >
+                    Target
+                </Typography>
                 <IconButton
                     disabled={disabled}
                     onClick={clearTarget}
-                    aria-label='target selected clear'>
-                    <IconClose fontSize='small'/>
+                    aria-label='target selected clear'
+                >
+                    <IconClose fontSize='small' />
                 </IconButton>
             </div>
             <div
                 className={styles.detailsName}
-                aria-label='target selected name'>
+                aria-label='target selected name'
+            >
                 <Typography variant='h5'>{currentTarget.name}</Typography>
             </div>
-            <div
-                className={styles.detailsURL}
-                aria-label='target selected url'>
-                <Typography variant='caption'>{cutString(currentTarget.url, 40)}</Typography>
+            <div className={styles.detailsURL} aria-label='target selected url'>
+                <Typography variant='caption'>
+                    {cutString(currentTarget.url, 40)}
+                </Typography>
             </div>
         </div>
     );

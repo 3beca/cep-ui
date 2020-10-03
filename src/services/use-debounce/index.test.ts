@@ -1,12 +1,18 @@
-import {renderHook, act} from '@testing-library/react-hooks';
-import {useDebounce, debounceProps} from './index';
+import { renderHook, act } from '@testing-library/react-hooks';
+import { useDebounce, debounceProps } from './index';
 
 beforeEach(() => jest.useFakeTimers());
 afterEach(() => jest.useRealTimers());
 
 test('useDebounde should receive 3 changes and fire only the last', async () => {
     const fireCallback = jest.fn();
-    const {result} = renderHook(useDebounce, {initialProps: {callback: fireCallback, initialValue: '', skipOnFirstRender: true}});
+    const { result } = renderHook(useDebounce, {
+        initialProps: {
+            callback: fireCallback,
+            initialValue: '',
+            skipOnFirstRender: true
+        }
+    });
     const [, setValue] = result.current;
 
     act(() => void jest.runOnlyPendingTimers());
@@ -38,7 +44,14 @@ test('useDebounde should receive 3 changes and fire only the last', async () => 
 
 test('useDebounde should receive 3 changes and fire only the last', async () => {
     const fireCallback = jest.fn();
-    const {rerender, result} = renderHook(useDebounce, {initialProps: {callback: fireCallback, delay: 500, initialValue: '', skipOnFirstRender: true}});
+    const { rerender, result } = renderHook(useDebounce, {
+        initialProps: {
+            callback: fireCallback,
+            delay: 500,
+            initialValue: '',
+            skipOnFirstRender: true
+        }
+    });
 
     act(() => void jest.runOnlyPendingTimers());
     expect(fireCallback).not.toHaveBeenCalled();
@@ -58,11 +71,21 @@ test('useDebounde should receive 3 changes and fire only the last', async () => 
     expect(fireCallback).toHaveBeenNthCalledWith(1, 'filter5');
     fireCallback.mockClear();
 
-    rerender({callback: fireCallback, delay: 0, initialValue: '', skipOnFirstRender: true});
+    rerender({
+        callback: fireCallback,
+        delay: 0,
+        initialValue: '',
+        skipOnFirstRender: true
+    });
     expect(fireCallback).toHaveBeenCalledTimes(1);
     fireCallback.mockClear();
 
-    rerender({callback: fireCallback, delay: 0, initialValue: '', skipOnFirstRender: true});
+    rerender({
+        callback: fireCallback,
+        delay: 0,
+        initialValue: '',
+        skipOnFirstRender: true
+    });
     expect(fireCallback).toHaveBeenCalledTimes(0);
     fireCallback.mockClear();
 
@@ -73,21 +96,28 @@ test('useDebounde should receive 3 changes and fire only the last', async () => 
 });
 
 test('useDebounde should do nothing if callback is invalid', async () => {
-    const {result} = renderHook(useDebounce, {initialProps: {callback: undefined as unknown as () => void, initialValue: ''}});
-    expect(() => result.current).toThrowError('callback param must be a function');
+    const { result } = renderHook(useDebounce, {
+        initialProps: {
+            callback: (undefined as unknown) as () => void,
+            initialValue: ''
+        }
+    });
+    expect(() => result.current).toThrowError(
+        'callback param must be a function'
+    );
 });
 
 test('useDebounde should fire with custom filter', async () => {
-    const fireCallback = jest.fn().mockImplementationOnce((value: string) => {});
+    const fireCallback = jest
+        .fn()
+        .mockImplementationOnce((value: string) => {});
     const props: debounceProps<string> = {
         callback: fireCallback,
         initialValue: '',
-        filterDispatch: (value: string|undefined) => !!value && value.length > 5
+        filterDispatch: (value: string | undefined) =>
+            !!value && value.length > 5
     };
-    const {result} = renderHook(
-        useDebounce,
-        {initialProps: props}
-    );
+    const { result } = renderHook(useDebounce, { initialProps: props });
     const [, setValue] = result.current;
 
     expect(fireCallback).not.toHaveBeenCalled();
@@ -103,7 +133,9 @@ test('useDebounde should fire with custom filter', async () => {
 
 test('useDebounde should fire callback in first render', async () => {
     const fireCallback = jest.fn();
-    renderHook(useDebounce, {initialProps: {callback: fireCallback, initialValue: ''}});
+    renderHook(useDebounce, {
+        initialProps: { callback: fireCallback, initialValue: '' }
+    });
 
     act(() => void jest.runOnlyPendingTimers());
     expect(fireCallback).toHaveBeenCalledTimes(1);

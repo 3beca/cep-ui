@@ -1,7 +1,4 @@
-import {
-    buildPayloadFromEventLogPayload,
-    EventPayload
-} from './models';
+import { buildPayloadFromEventLogPayload, EventPayload } from './models';
 
 test('buildPayloadFromEventLogPayload should return null when payload is undefined', () => {
     expect(buildPayloadFromEventLogPayload(undefined)).toEqual(null);
@@ -26,7 +23,7 @@ test('buildPayloadFromEventLogPayload should return null when payload is an empt
 
 test('buildPayloadFromEventLogPayload should return null when payload is an complex object', () => {
     const payloadDownloaded = {
-        invalidKey: { subkey: 'hi'},
+        invalidKey: { subkey: 'hi' },
         anotherInvalidKey: [],
         functionAsChild: () => {}
     };
@@ -43,7 +40,9 @@ test('buildPayloadFromEventLogPayload should filter invalid locations', () => {
         invalidLocation5: [[], []],
         validLocation: [10, 10]
     };
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual([{name: 'validLocation', type: 'location'}]);
+    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual([
+        { name: 'validLocation', type: 'location' }
+    ]);
 });
 
 test('buildPayloadFromEventLogPayload should return null when payload is an array', () => {
@@ -67,10 +66,12 @@ test('buildPayloadFromEventLogPayload should return a valid payload', () => {
     };
 
     const expected: EventPayload = [
-        {name: 'numericField', type: 'number'},
-        {name: 'stringfield', type: 'string'},
-        {name: 'locationField', type: 'location'}
+        { name: 'numericField', type: 'number' },
+        { name: 'stringfield', type: 'string' },
+        { name: 'locationField', type: 'location' }
     ];
 
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(expected);
+    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(
+        expected
+    );
 });
