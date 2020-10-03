@@ -14,10 +14,11 @@ import { useStyles } from './styles';
 import { Rule } from '../../services/api';
 import { useGetListAccumulated } from '../../services/use-getlist-enhancer';
 
-const LoadMoreButton: React.FC<{ show: boolean; onClick: () => void }> = ({
-    show,
-    onClick
-}) => {
+type LoadMoreButtonProps = {
+    show: boolean;
+    onClick: () => void;
+};
+const LoadMoreButton: React.FC<LoadMoreButtonProps> = ({ show, onClick }) => {
     const styles = useStyles();
     if (!show) return null;
     return (
