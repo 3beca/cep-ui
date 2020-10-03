@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {NOOP} from '../../utils';
+import { NOOP } from '../../utils';
 export type MainMenuToggleContext = {
     toggle: () => void;
     close: () => void;
@@ -12,21 +12,26 @@ const MainMenuToggleContext = React.createContext<MainMenuToggleContext>({
     open: NOOP
 });
 
-export const MainMenuProvider: React.FC<{}> = (props) => {
+export const MainMenuProvider: React.FC<{}> = props => {
     const [isOpen, setOpen] = React.useState(false);
     const toggle = React.useCallback(() => setOpen(isOpen => !isOpen), []);
     const open = React.useCallback(() => setOpen(true), []);
     const close = React.useCallback(() => setOpen(false), []);
-    const utils = React.useMemo(() => ({
-        toggle, open, close
-    }), [toggle, open, close]);
+    const utils = React.useMemo(
+        () => ({
+            toggle,
+            open,
+            close
+        }),
+        [toggle, open, close]
+    );
 
     return (
         <MainMenuToggleContext.Provider value={utils}>
-            <MainMenuStateContext.Provider value={isOpen} {...props}/>
+            <MainMenuStateContext.Provider value={isOpen} {...props} />
         </MainMenuToggleContext.Provider>
     );
-}
+};
 
 export const useMainMenuState = () => {
     return React.useContext(MainMenuStateContext);

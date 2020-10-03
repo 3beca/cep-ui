@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Delete from '@material-ui/icons/Delete';
-import {render, fireEvent} from '@testing-library/react';
-import IconDialog, {useIconDialog} from './index';
+import { render, fireEvent } from '@testing-library/react';
+import IconDialog, { useIconDialog } from './index';
 
 const DialogContent = () => {
     const close = useIconDialog();
@@ -18,9 +18,9 @@ const DialogContent = () => {
 
 test('DialogIcon should render null, no icon button, no dialog', () => {
     // Render null, no icon button, no dialog
-    const {queryByLabelText} = render(
-        <IconDialog show={false} icon={<Delete aria-label='delete-icon'/>}>
-            <DialogContent/>
+    const { queryByLabelText } = render(
+        <IconDialog show={false} icon={<Delete aria-label='delete-icon' />}>
+            <DialogContent />
         </IconDialog>
     );
     expect(queryByLabelText(/delete-icon/i)).not.toBeInTheDocument();
@@ -31,9 +31,14 @@ test('dialogIcon should render dialog when click in icon dialog and close when p
     const onOpen = jest.fn();
 
     // Render icon for dialog
-    const {getByLabelText, queryByLabelText, getByText} = render(
-        <IconDialog show={true} icon={<Delete aria-label='delete-icon'/>} onOpen={onOpen} onClose={onClose}>
-            <DialogContent/>
+    const { getByLabelText, queryByLabelText, getByText } = render(
+        <IconDialog
+            show={true}
+            icon={<Delete aria-label='delete-icon' />}
+            onOpen={onOpen}
+            onClose={onClose}
+        >
+            <DialogContent />
         </IconDialog>
     );
     getByLabelText(/delete-icon/i);

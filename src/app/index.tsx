@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { useStyles } from './styles';
 import TitleBar from './title-bar';
 import MenuDrawer from './menu-drawer';
@@ -15,34 +15,34 @@ export const App: React.FC<{}> = function App() {
     const styles = useStyles();
     return (
         <div className={styles.root}>
-            <TitleBar/>
-            <MenuDrawer/>
+            <TitleBar />
+            <MenuDrawer />
             CEP UI
             <Switch>
                 <Route exact path='/'>
-                    <RuleListPage/>
+                    <RuleListPage />
                 </Route>
                 <Route path='/rules/create/:type'>
-                    <RuleCreatePage/>
+                    <RuleCreatePage />
                 </Route>
                 <Route path='/rules/details/:ruleId'>
-                    <RuleDetailsPage/>
+                    <RuleDetailsPage />
                 </Route>
                 <Route path='/event-types'>
-                    <EventTypeListPage/>
+                    <EventTypeListPage />
                 </Route>
                 <Route path='/targets'>
-                    <TargetListPage/>
+                    <TargetListPage />
                 </Route>
                 <Route path='/event-logs'>
-                    <EventLogListPage/>
+                    <EventLogListPage />
                 </Route>
                 <Route>
-                    <NotFoundPage/>
+                    <NotFoundPage />
                 </Route>
             </Switch>
         </div>
     );
-}
+};
 
 export default App;

@@ -1,8 +1,7 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import TitleBar from './index';
-import {useMainMenuToggle} from '../../services/main-menu-provider';
-
+import { useMainMenuToggle } from '../../services/main-menu-provider';
 
 jest.mock('../../services/main-menu-provider', () => {
     const toggle = jest.fn();
@@ -15,7 +14,7 @@ jest.mock('../../services/main-menu-provider', () => {
 
 test('renders TitleBar withou crash and create snapshot', () => {
     const mainMenuToggle = useMainMenuToggle();
-    const {container, getByLabelText} = render(<TitleBar />);
+    const { container, getByLabelText } = render(<TitleBar />);
     const showMenuButton = getByLabelText(/toggle show menu/i);
     expect(showMenuButton).toBeInTheDocument();
 

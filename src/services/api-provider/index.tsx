@@ -3,11 +3,7 @@ import { APIRequestInfo, isAPIError } from '../../utils/fetch-api';
 import { buildApiService } from '../api';
 import { VersionInfo } from '../api/models';
 import { BASE_URL, VERSION_URL } from '../config';
-import {
-    loadApikey,
-    saveApikey,
-    clearApikey
-} from '../../utils';
+import { loadApikey, saveApikey, clearApikey } from '../../utils';
 import {
     APIContextState,
     ApiContextActions,
@@ -18,8 +14,11 @@ import {
 } from './api-context';
 
 // config = {method: 'GET', headers: {'authorization': 'apiKey ' + apiKey}};
-export const apiReducer = (state: APIContextState, action: ApiContextActions) => {
-    switch(action.type) {
+export const apiReducer = (
+    state: APIContextState,
+    action: ApiContextActions
+) => {
+    switch (action.type) {
         case 'VALIDATING': {
             return {
                 isValidating: true,
@@ -57,7 +56,10 @@ export const apiReducer = (state: APIContextState, action: ApiContextActions) =>
         case 'SET_APIKEY': {
             const apiKey = action.apiKey;
             const version = action.version;
-            const apiInfo: APIRequestInfo = {headers: {Authorization: 'apiKey ' + apiKey}, method: 'GET'};
+            const apiInfo: APIRequestInfo = {
+                headers: { Authorization: 'apiKey ' + apiKey },
+                method: 'GET'
+            };
             return {
                 isValidating: false,
                 isValidated: ValidationState.VALIDATED,
@@ -68,78 +70,94 @@ export const apiReducer = (state: APIContextState, action: ApiContextActions) =>
                 version
             };
         }
-        default: return state;
+        default:
+            return state;
     }
 };
-export const APIProvider: React.FC<{}> = (props) => {
+export const APIProvider: React.FC<{}> = props => {
     const [state, dispatch] = React.useReducer(apiReducer, initialContext);
 
     const checkApikey = React.useCallback(async (apiKey: string) => {
-        dispatch({type: 'VALIDATING'});
-        const apiInfo: APIRequestInfo = {headers: {Authorization: 'apiKey ' + apiKey}, method: 'GET'};
+        dispatch({ type: 'VALIDATING' });
+        const apiInfo: APIRequestInfo = {
+            headers: { Authorization: 'apiKey ' + apiKey },
+            method: 'GET'
+        };
         const api = buildApiService(BASE_URL, apiInfo);
-        const responseWithtoken = await api.getRequest<VersionInfo>(VERSION_URL);
+        const responseWithtoken = await api.getRequest<VersionInfo>(
+            VERSION_URL
+        );
         if (isAPIError(responseWithtoken)) {
             clearApikey();
-            dispatch({type: 'REQUIRE_APIKEY', reason: `ApiKey ${apiKey} is NOT valid`});
+            dispatch({
+                type: 'REQUIRE_APIKEY',
+                reason: `ApiKey ${apiKey} is NOT valid`
+            });
             return;
-        }
-        else {
+        } else {
             saveApikey(apiKey);
-            dispatch({type: 'SET_APIKEY', apiKey, version: responseWithtoken.data.version});
+            dispatch({
+                type: 'SET_APIKEY',
+                apiKey,
+                version: responseWithtoken.data.version
+            });
             return;
         }
     }, []);
 
-    const fireValidation = React.useCallback(
-        async () => {
-            dispatch({type: 'VALIDATING'});
-            let api = buildApiService(BASE_URL);
-            const response = await api.getRequest<VersionInfo>(VERSION_URL);
-            if (isAPIError(response)) {
-                if (response.errorCode === 500) {
-                    dispatch({type: 'SERVER_NOT_FOUND', url: BASE_URL});
-                    return;
-                }
-                const apiKey = loadApikey();
-                if (!apiKey) {
-                    dispatch({type: 'REQUIRE_APIKEY', reason: 'apiKey not found'});
-                    return;
-                }
-                checkApikey(apiKey);
+    const fireValidation = React.useCallback(async () => {
+        dispatch({ type: 'VALIDATING' });
+        let api = buildApiService(BASE_URL);
+        const response = await api.getRequest<VersionInfo>(VERSION_URL);
+        if (isAPIError(response)) {
+            if (response.errorCode === 500) {
+                dispatch({ type: 'SERVER_NOT_FOUND', url: BASE_URL });
+                return;
             }
-            else {
-                dispatch({type: 'NO_REQUIRE_APIKEY', version: response.data.version});
+            const apiKey = loadApikey();
+            if (!apiKey) {
+                dispatch({
+                    type: 'REQUIRE_APIKEY',
+                    reason: 'apiKey not found'
+                });
+                return;
             }
-        }, [checkApikey]
-    );
+            checkApikey(apiKey);
+        } else {
+            dispatch({
+                type: 'NO_REQUIRE_APIKEY',
+                version: response.data.version
+            });
+        }
+    }, [checkApikey]);
 
-    const invalidateApiKey = React.useCallback(
-        () => {
-            clearApikey();
-            fireValidation();
-        }, [fireValidation]
-    );
+    const invalidateApiKey = React.useCallback(() => {
+        clearApikey();
+        fireValidation();
+    }, [fireValidation]);
 
     const setApiKey = React.useCallback(
         (apiKey: string) => {
             checkApikey(apiKey);
-        }, [checkApikey]
+        },
+        [checkApikey]
     );
 
-    const utils = React.useMemo(() => ({
-        invalidateApiKey,
-        setApiKey
-    }), [invalidateApiKey, setApiKey]);
+    const utils = React.useMemo(
+        () => ({
+            invalidateApiKey,
+            setApiKey
+        }),
+        [invalidateApiKey, setApiKey]
+    );
 
     React.useEffect(() => {
         fireValidation();
     }, [fireValidation]);
 
-
     return (
         <APIContext.Provider value={state}>
-            <UpdateAPIContext.Provider value={utils} {...props}/>
+            <UpdateAPIContext.Provider value={utils} {...props} />
         </APIContext.Provider>
     );
 };
@@ -151,9 +169,15 @@ export const useUpdateAPIProvider = () => {
 export const useAPIProviderStatus = () => {
     const api = React.useContext(APIContext);
     return {
-        showLoading: api.isValidating || api.isValidated === ValidationState.PENDING,
-        showNoService: !api.isValidating && api.isValidated === ValidationState.NOT_FOUND,
-        showLogin: !api.isValidating && api.requireKey && api.isValidated === ValidationState.VALIDATED && !api.isValid,
+        showLoading:
+            api.isValidating || api.isValidated === ValidationState.PENDING,
+        showNoService:
+            !api.isValidating && api.isValidated === ValidationState.NOT_FOUND,
+        showLogin:
+            !api.isValidating &&
+            api.requireKey &&
+            api.isValidated === ValidationState.VALIDATED &&
+            !api.isValid,
         requireApikey: api.requireKey,
         invalidReason: api.invalidReason,
         apiKey: api.apiKey,

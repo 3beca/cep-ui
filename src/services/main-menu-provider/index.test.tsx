@@ -1,13 +1,9 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 
-import {
-    useMainMenuState,
-    useMainMenuToggle,
-    MainMenuProvider
-} from './index';
+import { useMainMenuState, useMainMenuToggle, MainMenuProvider } from './index';
 
-const TestComponent: React.FC<{}> = (props) => {
+const TestComponent: React.FC<{}> = props => {
     const isOpen = useMainMenuState();
     const utils = useMainMenuToggle();
     return (
@@ -21,7 +17,9 @@ const TestComponent: React.FC<{}> = (props) => {
 };
 
 test('Main Menu Provider should start as false and open, close and toggle swith its value', async () => {
-    const {getByTestId, getByText} = render(<TestComponent/>, {wrapper: MainMenuProvider});
+    const { getByTestId, getByText } = render(<TestComponent />, {
+        wrapper: MainMenuProvider
+    });
 
     getByTestId(/state/i);
     const toggle = getByText(/toggle/i);
@@ -31,14 +29,22 @@ test('Main Menu Provider should start as false and open, close and toggle swith 
     expect(getByTestId(/state/i)).toHaveTextContent('false');
 
     fireEvent.click(open);
-    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('true'));
+    await waitFor(() =>
+        expect(getByTestId(/state/i)).toHaveTextContent('true')
+    );
 
     fireEvent.click(close);
-    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('false'));
+    await waitFor(() =>
+        expect(getByTestId(/state/i)).toHaveTextContent('false')
+    );
 
     fireEvent.click(toggle);
-    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('true'));
+    await waitFor(() =>
+        expect(getByTestId(/state/i)).toHaveTextContent('true')
+    );
 
     fireEvent.click(toggle);
-    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('false'));
+    await waitFor(() =>
+        expect(getByTestId(/state/i)).toHaveTextContent('false')
+    );
 });

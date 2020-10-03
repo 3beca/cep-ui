@@ -7,85 +7,108 @@ import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { useClipboard } from '../../../../services/use-clipboard';
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 import { EventType, ServiceError } from '../../../../services/api';
 import { useCreate, ENTITY } from '../../../../services/api-provider/use-api';
 import { APIError } from '../../../../utils/fetch-api';
-import {cutString} from '../../../../utils';
+import { cutString } from '../../../../utils';
 
-const EventTypeCreatorLoader: React.FC<{show: boolean}> = ({show}) => {
+const EventTypeCreatorLoader: React.FC<{ show: boolean }> = ({ show }) => {
     const styles = useStyles();
     if (!show) return null;
     return (
         <div
             className={styles.detailsStatusLoading}
-            aria-label='eventtype creating loading'>
-            <Typography variant='caption' className={styles.detailsStatusLoadingText}>Creating Event Type</Typography>
-            <CircularProgress color='primary' size={24}/>
+            aria-label='eventtype creating loading'
+        >
+            <Typography
+                variant='caption'
+                className={styles.detailsStatusLoadingText}
+            >
+                Creating Event Type
+            </Typography>
+            <CircularProgress color='primary' size={24} />
         </div>
     );
 };
 
-const EventTypeCreatorError: React.FC<{error: APIError<ServiceError>|undefined}> = ({error}) => {
+const EventTypeCreatorError: React.FC<{
+    error: APIError<ServiceError> | undefined;
+}> = ({ error }) => {
     const styles = useStyles();
     if (!error) return null;
     return (
         <div
             className={styles.detailsStatusError}
-            aria-label='eventtype creating error'>
+            aria-label='eventtype creating error'
+        >
             <Typography variant='caption'>{error.error?.message}</Typography>
         </div>
     );
 };
 
-const EventTypeCreatorSuccess: React.FC<{eventType: EventType|undefined}> = ({eventType}) => {
+const EventTypeCreatorSuccess: React.FC<{
+    eventType: EventType | undefined;
+}> = ({ eventType }) => {
     const styles = useStyles();
     if (!eventType) return null;
     return (
-        <div
-            className={styles.detailsURL}
-            aria-label='eventtype creating url'>
-            <Typography variant='caption'>{cutString(eventType.url, 40)}</Typography>
+        <div className={styles.detailsURL} aria-label='eventtype creating url'>
+            <Typography variant='caption'>
+                {cutString(eventType.url, 40)}
+            </Typography>
         </div>
     );
 };
 
-const EventTypeCreator: React.FC<{eventTypeBody: Partial<EventType>; resolve: (eventType: EventType) => void; close: () => void;}> = ({eventTypeBody, resolve, close}) => {
+const EventTypeCreator: React.FC<{
+    eventTypeBody: Partial<EventType>;
+    resolve: (eventType: EventType) => void;
+    close: () => void;
+}> = ({ eventTypeBody, resolve, close }) => {
     const styles = useStyles();
-    const {isLoading, response, error} = useCreate(ENTITY.EVENT_TYPES, eventTypeBody, true);
-
-    React.useEffect(
-        () => {
-            if(!isLoading && !error && !!response?.data) {
-                resolve(response.data);
-            }
-        }, [isLoading, error, response, resolve]
+    const { isLoading, response, error } = useCreate(
+        ENTITY.EVENT_TYPES,
+        eventTypeBody,
+        true
     );
 
+    React.useEffect(() => {
+        if (!isLoading && !error && !!response?.data) {
+            resolve(response.data);
+        }
+    }, [isLoading, error, response, resolve]);
+
     return (
-        <div
-            className={styles.details}
-            aria-label='eventtype creating block'>
+        <div className={styles.details} aria-label='eventtype creating block'>
             <div className={styles.detailsActions}>
-                <Typography className={styles.detailsActionsType} variant='caption'>Event Type</Typography>
+                <Typography
+                    className={styles.detailsActionsType}
+                    variant='caption'
+                >
+                    Event Type
+                </Typography>
                 <IconButton
                     disabled={!error || isLoading}
                     onClick={close}
-                    aria-label='eventtype creating clear'>
-                    <IconClose fontSize='small'/>
+                    aria-label='eventtype creating clear'
+                >
+                    <IconClose fontSize='small' />
                 </IconButton>
             </div>
             <div
                 className={styles.detailsName}
-                aria-label='eventtype creating name'>
+                aria-label='eventtype creating name'
+            >
                 <Typography variant='h5'>{eventTypeBody.name}</Typography>
             </div>
             <div
                 className={styles.detailsStatus}
-                aria-label='eventtype creating action'>
-                <EventTypeCreatorLoader show={isLoading}/>
-                <EventTypeCreatorError error={error}/>
-                <EventTypeCreatorSuccess eventType={response?.data}/>
+                aria-label='eventtype creating action'
+            >
+                <EventTypeCreatorLoader show={isLoading} />
+                <EventTypeCreatorError error={error} />
+                <EventTypeCreatorSuccess eventType={response?.data} />
             </div>
         </div>
     );
@@ -97,49 +120,74 @@ export type EventTypeCreateProps = {
     setEventType: (eventType: EventType) => void;
     disabled?: boolean;
 };
-export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({eventType, clearEventType, setEventType, disabled = false}) => {
+export const EventTypeCreate: React.FC<EventTypeCreateProps> = ({
+    eventType,
+    clearEventType,
+    setEventType,
+    disabled = false
+}) => {
     const styles = useStyles();
-    const eventTypeBody = React.useRef<Partial<EventType>>({name: eventType.name});
+    const eventTypeBody = React.useRef<Partial<EventType>>({
+        name: eventType.name
+    });
     const [currentEvent, setCurrentEvent] = React.useState(eventType);
     // Clipboard
-    const {text, copy, clear} = useClipboard();
+    const { text, copy, clear } = useClipboard();
     React.useEffect(() => {
-        if(currentEvent.id) {
+        if (currentEvent.id) {
             setEventType(currentEvent);
         }
     }, [currentEvent, setEventType]);
-    if(!currentEvent.id && !disabled) {
-        return <EventTypeCreator eventTypeBody={eventTypeBody.current} resolve={setCurrentEvent} close={clearEventType}/>
+    if (!currentEvent.id && !disabled) {
+        return (
+            <EventTypeCreator
+                eventTypeBody={eventTypeBody.current}
+                resolve={setCurrentEvent}
+                close={clearEventType}
+            />
+        );
     }
     return (
         <>
             <div
                 className={styles.details}
-                aria-label='eventtype selected block'>
+                aria-label='eventtype selected block'
+            >
                 <div className={styles.detailsActions}>
-                    <Typography className={styles.detailsActionsType} variant='caption'>Event Type</Typography>
+                    <Typography
+                        className={styles.detailsActionsType}
+                        variant='caption'
+                    >
+                        Event Type
+                    </Typography>
                     <IconButton
                         disabled={disabled}
                         aria-label='eventtype selected copy'
-                        onClick={() => copy(currentEvent.url)}>
-                        <IconCopy fontSize='small'/>
+                        onClick={() => copy(currentEvent.url)}
+                    >
+                        <IconCopy fontSize='small' />
                     </IconButton>
                     <IconButton
                         disabled={disabled}
                         onClick={clearEventType}
-                        aria-label='eventtype selected clear'>
-                        <IconClose fontSize='small'/>
+                        aria-label='eventtype selected clear'
+                    >
+                        <IconClose fontSize='small' />
                     </IconButton>
                 </div>
                 <div
                     className={styles.detailsName}
-                    aria-label='eventtype selected name'>
+                    aria-label='eventtype selected name'
+                >
                     <Typography variant='h5'>{currentEvent.name}</Typography>
                 </div>
                 <div
                     className={styles.detailsURL}
-                    aria-label='eventtype selected url'>
-                    <Typography variant='caption'>{cutString(currentEvent.url, 40)}</Typography>
+                    aria-label='eventtype selected url'
+                >
+                    <Typography variant='caption'>
+                        {cutString(currentEvent.url, 40)}
+                    </Typography>
                 </div>
             </div>
             <Snackbar

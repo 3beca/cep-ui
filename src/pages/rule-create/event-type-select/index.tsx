@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { EventType } from '../../../services/api';
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 import { useGetListAccumulated } from '../../../services/use-getlist-enhancer';
 import { ENTITY } from '../../../services/api-provider/use-api';
 import EventTypeCreate from './event-type-create/index';
@@ -15,29 +15,44 @@ export const emptyEventType: EventType = {
     updatedAt: ''
 };
 export type EventTypeSelectorProps = {
-    selected: EventType|null;
-    onSelected: (eventType: EventType|null) => void;
+    selected: EventType | null;
+    onSelected: (eventType: EventType | null) => void;
     disabled?: boolean;
 };
-export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({selected, onSelected, disabled = false}) => {
+export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({
+    selected,
+    onSelected,
+    disabled = false
+}) => {
     const styles = useStyles();
-    const {accumulated, isLoading, changeFilter} = useGetListAccumulated<EventType>(ENTITY.EVENT_TYPES, 1, 10, '', !disabled && !selected);
-    const handleClearSelection = React.useCallback(() => onSelected(null), [onSelected]);
+    const { accumulated, isLoading, changeFilter } = useGetListAccumulated<
+        EventType
+    >(ENTITY.EVENT_TYPES, 1, 10, '', !disabled && !selected);
+    const handleClearSelection = React.useCallback(() => onSelected(null), [
+        onSelected
+    ]);
 
     // Render component
     if (selected) {
         return (
             <Paper
                 className={styles.container}
-                aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}>
-                <EventTypeCreate eventType={selected} clearEventType={handleClearSelection} setEventType={onSelected} disabled={disabled}/>
+                aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}
+            >
+                <EventTypeCreate
+                    eventType={selected}
+                    clearEventType={handleClearSelection}
+                    setEventType={onSelected}
+                    disabled={disabled}
+                />
             </Paper>
         );
     }
     return (
         <Paper
             className={styles.container}
-            aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}>
+            aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}
+        >
             <Autocomplete<EventType>
                 disabled={disabled}
                 options={accumulated}

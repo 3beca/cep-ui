@@ -24,8 +24,8 @@ export const initialUtils: APIUtilsContext = {
 };
 
 export type APIProviderMockProps = {
-    state?: APIContextState,
-    utils?: APIUtilsContext
+    state?: APIContextState;
+    utils?: APIUtilsContext;
 };
 export const APIProviderMock: React.FC<APIProviderMockProps> = ({
     state = initialContext,
@@ -34,7 +34,7 @@ export const APIProviderMock: React.FC<APIProviderMockProps> = ({
 }) => {
     return (
         <APIContext.Provider value={state}>
-            <UpdateAPIContext.Provider value={utils} {...props}/>
+            <UpdateAPIContext.Provider value={utils} {...props} />
         </APIContext.Provider>
     );
 };

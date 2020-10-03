@@ -10,23 +10,17 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 // import Divider from '@material-ui/core/Divider';
-import IconDialog, {useIconDialog} from '../icon-dialog';
+import IconDialog, { useIconDialog } from '../icon-dialog';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { EventPayload } from '../event-payload-creator/models';
 
-import {useStyles} from './styles';
+import { useStyles } from './styles';
 import { RuleTypes } from '../../services/api';
-import {
-    RuleGroupField,
-    RuleGroupPayload,
-    RuleGroupOperator
-} from './models';
-import {syncEventPayloadAndGroupPayload} from './utils';
+import { RuleGroupField, RuleGroupPayload, RuleGroupOperator } from './models';
+import { syncEventPayloadAndGroupPayload } from './utils';
 
-export const OperatosNoPayloadList = [
-    ['_sum', 'Summation']
-];
+export const OperatosNoPayloadList = [['_sum', 'Summation']];
 export const OperatorList = [
     ['_max', 'Max. Value'],
     ['_min', 'Min. Value'],
@@ -41,122 +35,151 @@ export type OperatorSelectorProps = {
     setOperator: (operator: RuleGroupOperator) => void;
     disabled?: boolean;
 };
-export const OperatorSelector: React.FC<OperatorSelectorProps> = ({operator, setOperator, displayOperators, disabled}) => {
+export const OperatorSelector: React.FC<OperatorSelectorProps> = ({
+    operator,
+    setOperator,
+    displayOperators,
+    disabled
+}) => {
     const [open, setOpen] = React.useState(false);
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
         setOperator(event.target.value as RuleGroupOperator);
     };
     const handleClose = () => {
-      setOpen(false);
+        setOpen(false);
     };
     const handleOpen = () => {
-      setOpen(true);
+        setOpen(true);
     };
     const operators = displayOperators ? OperatorList : OperatosNoPayloadList;
     return (
-         <Select
-            inputProps={
-                {'aria-label': 'rule group creator addfield dialog operators'}
-            }
+        <Select
+            inputProps={{
+                'aria-label': 'rule group creator addfield dialog operators'
+            }}
             open={open}
             onClose={handleClose}
             onOpen={handleOpen}
             value={operator || ''}
             onChange={handleChange}
-            disabled={disabled}>
-            {
-                operators.map((operatorItem) => (
-                    <MenuItem
-                        key={operatorItem[0]}
-                        aria-label={`rule group creator addfield dialog select operator ${operatorItem[0]}`}
-                        value={operatorItem[0]}>
-                        {operatorItem[1]}
-                    </MenuItem>
-                ))
-            }
-       </Select>
+            disabled={disabled}
+        >
+            {operators.map(operatorItem => (
+                <MenuItem
+                    key={operatorItem[0]}
+                    aria-label={`rule group creator addfield dialog select operator ${operatorItem[0]}`}
+                    value={operatorItem[0]}
+                >
+                    {operatorItem[1]}
+                </MenuItem>
+            ))}
+        </Select>
     );
 };
 
-export const isValidPayload = (payload: EventPayload|null|undefined) => Array.isArray(payload) ? payload.filter(field => field.type === 'number').length > 0 : false;
+export const isValidPayload = (payload: EventPayload | null | undefined) =>
+    Array.isArray(payload)
+        ? payload.filter(field => field.type === 'number').length > 0
+        : false;
 export type TargetSelectorFromPayloadProps = {
-    payload?: EventPayload|null;
-    target?: string|number;
+    payload?: EventPayload | null;
+    target?: string | number;
     setTarget: (operator: string) => void;
     disabled?: boolean;
 };
-export const TargetSelectorFromPayload: React.FC<TargetSelectorFromPayloadProps> = ({payload, target, setTarget, disabled}) => {
+export const TargetSelectorFromPayload: React.FC<TargetSelectorFromPayloadProps> = ({
+    payload,
+    target,
+    setTarget,
+    disabled
+}) => {
     const styles = useStyles();
     const [open, setOpen] = React.useState(false);
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
         setTarget(event.target.value as string);
     };
     const handleClose = () => {
-      setOpen(false);
+        setOpen(false);
     };
     const handleOpen = () => {
-      setOpen(true);
+        setOpen(true);
     };
 
     if (!payload || !isValidPayload(payload)) return null;
     return (
         <>
-            <Typography className={styles.addfieldTarget} variant='caption'>Select a field:</Typography>
+            <Typography className={styles.addfieldTarget} variant='caption'>
+                Select a field:
+            </Typography>
             <Select
-                inputProps={
-                    {'aria-label': 'rule group creator addfield dialog selector targets from payload'}
-                }
+                inputProps={{
+                    'aria-label':
+                        'rule group creator addfield dialog selector targets from payload'
+                }}
                 open={open}
                 onClose={handleClose}
                 onOpen={handleOpen}
                 value={typeof target === 'string' ? target : ''}
                 onChange={handleChange}
-                disabled={disabled}>
-                {
-                    payload.filter(field => field.type === 'number').map((field) => (
+                disabled={disabled}
+            >
+                {payload
+                    .filter(field => field.type === 'number')
+                    .map(field => (
                         <MenuItem
                             key={field.name}
                             aria-label={`rule group creator addfield dialog select target ${field.name}`}
-                            value={field.name}>
+                            value={field.name}
+                        >
                             {field.name}
                         </MenuItem>
-                    ))
-                }
-        </Select>
-       </>
+                    ))}
+            </Select>
+        </>
     );
 };
 
 export type TargetSelectorProps = {
-    payload?: EventPayload|null;
+    payload?: EventPayload | null;
     operator?: RuleGroupOperator;
-    target?: string|number;
-    setTarget: (operator: string|number|undefined) => void;
+    target?: string | number;
+    setTarget: (operator: string | number | undefined) => void;
     disabled?: boolean;
 };
-export const TargetSelector: React.FC<TargetSelectorProps> = ({payload, operator, target, setTarget, disabled}) => {
+export const TargetSelector: React.FC<TargetSelectorProps> = ({
+    payload,
+    operator,
+    target,
+    setTarget,
+    disabled
+}) => {
     return (
-         <div
-            aria-label='rule group creator addfield dialog targets'>
-             <TargetSelectorFromPayload
+        <div aria-label='rule group creator addfield dialog targets'>
+            <TargetSelectorFromPayload
                 payload={payload}
                 target={target}
                 setTarget={setTarget}
-                disabled={disabled}/>
+                disabled={disabled}
+            />
             <TargetValue
                 target={target}
                 setTarget={setTarget}
-                operator={operator}/>
-         </div>
+                operator={operator}
+            />
+        </div>
     );
 };
 
 export type TargetValueProps = {
     operator?: RuleGroupOperator;
-    target?: string|number;
-    setTarget: (value: number|undefined) => void;
+    target?: string | number;
+    setTarget: (value: number | undefined) => void;
 };
-export const TargetValue: React.FC<TargetValueProps> = ({operator, target, setTarget}) => {
+export const TargetValue: React.FC<TargetValueProps> = ({
+    operator,
+    target,
+    setTarget
+}) => {
     const [hasError, setHasError] = React.useState(false);
     const validateTarget = (ev: React.ChangeEvent<HTMLInputElement>) => {
         if (ev.target.value === '0') {
@@ -172,43 +195,54 @@ export const TargetValue: React.FC<TargetValueProps> = ({operator, target, setTa
         }
         setHasError(true);
     };
-    const value = React.useMemo(() => target === parseInt(target + '', 10) ? target : undefined, [target]);
+    const value = React.useMemo(
+        () => (target === parseInt(target + '', 10) ? target : undefined),
+        [target]
+    );
     if (operator !== '_sum') return null;
     return (
         <TextField
-            inputProps={
-                {'aria-label': 'rule group creator addfield dialog input value'}
-            }
+            inputProps={{
+                'aria-label': 'rule group creator addfield dialog input value'
+            }}
             value={value || ''}
             onChange={validateTarget}
             label=''
             error={hasError}
-            helperText={hasError && <span aria-label='rule group creator addfield dialog input error value'>Only positive integers</span>}
+            helperText={
+                hasError && (
+                    <span aria-label='rule group creator addfield dialog input error value'>
+                        Only positive integers
+                    </span>
+                )
+            }
         />
     );
 };
 
 export type GroupAddFieldProps = {
-    payload?: EventPayload|null;
+    payload?: EventPayload | null;
     updateGroupPayload: (field: RuleGroupField) => void;
     disabled?: boolean;
 };
-export const GroupAddField: React.FC<GroupAddFieldProps> = ({disabled, updateGroupPayload, payload}) => {
+export const GroupAddField: React.FC<GroupAddFieldProps> = ({
+    disabled,
+    updateGroupPayload,
+    payload
+}) => {
     const styles = useStyles();
     const closeDialog = useIconDialog();
     const [name, setName] = React.useState('');
     const [operator, setOperator] = React.useState<RuleGroupOperator>();
-    const [field, setField] = React.useState<string|number>();
+    const [field, setField] = React.useState<string | number>();
     const isDisabled = !name || !operator || !field;
-    const addField = React.useCallback(
-        () => {
-            const groupField = {name, operator, field} as RuleGroupField;
-            updateGroupPayload(groupField);
-            setName('');
-            setOperator(undefined);
-            setField('');
-        }, [name, operator, field, updateGroupPayload]
-    );
+    const addField = React.useCallback(() => {
+        const groupField = { name, operator, field } as RuleGroupField;
+        updateGroupPayload(groupField);
+        setName('');
+        setOperator(undefined);
+        setField('');
+    }, [name, operator, field, updateGroupPayload]);
     return (
         <>
             <DialogTitle id='groupcreator-addfield-icon-dialog-title'>
@@ -218,24 +252,33 @@ export const GroupAddField: React.FC<GroupAddFieldProps> = ({disabled, updateGro
                 aria-label='rule group creator addfield dialog container'
                 dividers={true}
                 id='icon-dialog-rule-group-content'
-                className={styles.addFieldDialogContent}>
+                className={styles.addFieldDialogContent}
+            >
                 <div className={styles.addFieldForm}>
                     <div className={styles.addFieldName}>
                         <TextField
                             value={name}
-                            onChange={(ev) => setName(ev.target.value)}
-                            inputProps={
-                                {'aria-label': 'rule group creator addfield dialog name'}
-                            }
-                            placeholder='Filed name'/>
+                            onChange={ev => setName(ev.target.value)}
+                            inputProps={{
+                                'aria-label':
+                                    'rule group creator addfield dialog name'
+                            }}
+                            placeholder='Filed name'
+                        />
                     </div>
                     <div className={styles.addFieldOperator}>
-                        <Typography className={styles.addfieldTarget} variant='caption'>Select an Operator:</Typography>
+                        <Typography
+                            className={styles.addfieldTarget}
+                            variant='caption'
+                        >
+                            Select an Operator:
+                        </Typography>
                         <OperatorSelector
                             displayOperators={isValidPayload(payload)}
                             operator={operator}
                             setOperator={setOperator}
-                            disabled={disabled}/>
+                            disabled={disabled}
+                        />
                     </div>
                     <div className={styles.addfieldTarget}>
                         <TargetSelector
@@ -243,41 +286,46 @@ export const GroupAddField: React.FC<GroupAddFieldProps> = ({disabled, updateGro
                             payload={payload}
                             operator={operator}
                             target={field}
-                            setTarget={setField}/>
+                            setTarget={setField}
+                        />
                     </div>
                 </div>
             </DialogContent>
             <DialogActions>
                 <Button
                     aria-label='rule group creator addfield dialog close'
-                    onClick={closeDialog}>
-                        Close
+                    onClick={closeDialog}
+                >
+                    Close
                 </Button>
                 <Button
                     onClick={addField}
                     disabled={isDisabled}
                     className={styles.selectButton}
-                    aria-label='rule group creator addfield dialog add'>
-                        Add
+                    aria-label='rule group creator addfield dialog add'
+                >
+                    Add
                 </Button>
             </DialogActions>
         </>
     );
 };
 
-
-
-export type GroupFieldViewDeleteButtonProps= {
+export type GroupFieldViewDeleteButtonProps = {
     removeGroupField?: () => void;
     disabled?: boolean;
 };
-export const GroupFieldViewDeleteButton: React.FC<GroupFieldViewDeleteButtonProps> = ({removeGroupField, disabled}) => {
+export const GroupFieldViewDeleteButton: React.FC<GroupFieldViewDeleteButtonProps> = ({
+    removeGroupField,
+    disabled
+}) => {
     return (
         <IconButton
             aria-label='rule group creator schema field button remove'
             onClick={removeGroupField}
-            disabled={disabled}>
-                <DeleteIcon/>
+            disabled={disabled}
+        >
+            <DeleteIcon />
         </IconButton>
     );
 };
@@ -287,14 +335,24 @@ export type GroupFieldViewProps = {
     removeGroupField?: () => void;
     disabled?: boolean;
 };
-export const GroupFieldView: React.FC<GroupFieldViewProps> = ({groupField, removeGroupField, disabled}) => {
+export const GroupFieldView: React.FC<GroupFieldViewProps> = ({
+    groupField,
+    removeGroupField,
+    disabled
+}) => {
     const styles = useStyles();
     return (
         <div
             aria-label='rule group creator payload schema field'
-            className={styles.paloadFieldView}>
-            <Typography className={styles.schemaGroupFieldViewText}>{groupField.name}</Typography>
-            <GroupFieldViewDeleteButton removeGroupField={removeGroupField} disabled={disabled}/>
+            className={styles.paloadFieldView}
+        >
+            <Typography className={styles.schemaGroupFieldViewText}>
+                {groupField.name}
+            </Typography>
+            <GroupFieldViewDeleteButton
+                removeGroupField={removeGroupField}
+                disabled={disabled}
+            />
         </div>
     );
 };
@@ -304,8 +362,11 @@ export type GroupSchemaFields = {
     group: RuleGroupPayload;
     setGroup: (group?: RuleGroupPayload) => void;
 };
-export const GropupSchemaFields: React.FC<GroupSchemaFields> = ({disabled, group, setGroup}) => {
-
+export const GropupSchemaFields: React.FC<GroupSchemaFields> = ({
+    disabled,
+    group,
+    setGroup
+}) => {
     const removeGroupField = React.useCallback(
         (index: number) => {
             const beforeIndex = group.slice(0, index);
@@ -316,18 +377,17 @@ export const GropupSchemaFields: React.FC<GroupSchemaFields> = ({disabled, group
     );
     return (
         <div aria-label='rule group creator payload schema container'>
-            {
-                group.map(
-                    (payloadField, idx) => (
-                        <div key={idx}>
-                            <GroupFieldView
-                                disabled={disabled}
-                                groupField={payloadField}
-                                removeGroupField={() => {removeGroupField(idx)}}/>
-                        </div>
-                    )
-                )
-            }
+            {group.map((payloadField, idx) => (
+                <div key={idx}>
+                    <GroupFieldView
+                        disabled={disabled}
+                        groupField={payloadField}
+                        removeGroupField={() => {
+                            removeGroupField(idx);
+                        }}
+                    />
+                </div>
+            ))}
         </div>
     );
 };
@@ -336,23 +396,37 @@ export type GroupSchema = {
     group?: RuleGroupPayload;
     setGroup: (group?: RuleGroupPayload) => void;
 };
-export const GroupSchema: React.FC<GroupSchema> = ({disabled, group, setGroup}) => {
+export const GroupSchema: React.FC<GroupSchema> = ({
+    disabled,
+    group,
+    setGroup
+}) => {
     const styles = useStyles();
     if (!group) {
         return (
             <div
                 aria-label='rule group creator info group payload message'
-                className={styles.info}>
-                <Typography className={styles.infoText}>A Group is required in order to create a Rule, please use add button (+).</Typography>
+                className={styles.info}
+            >
+                <Typography className={styles.infoText}>
+                    A Group is required in order to create a Rule, please use
+                    add button (+).
+                </Typography>
             </div>
         );
     }
-    return (<GropupSchemaFields disabled={disabled} group={group} setGroup={setGroup}/>);
+    return (
+        <GropupSchemaFields
+            disabled={disabled}
+            group={group}
+            setGroup={setGroup}
+        />
+    );
 };
 
 export type RuleGroupCreatorProps = {
     ruleTpe: RuleTypes;
-    payload: EventPayload|null;
+    payload: EventPayload | null;
     group?: RuleGroupPayload;
     setGroup: (group?: RuleGroupPayload) => void;
     disabled?: boolean;
@@ -367,37 +441,61 @@ export const RuleGroupCreator: React.FC<RuleGroupCreatorProps> = ({
     const styles = useStyles();
     React.useEffect(() => {
         if (ruleTpe !== 'realtime') {
-            const [needUpdate, newGroup] = syncEventPayloadAndGroupPayload(payload, group);
+            const [needUpdate, newGroup] = syncEventPayloadAndGroupPayload(
+                payload,
+                group
+            );
             if (needUpdate) setGroup(newGroup);
         }
     }, [ruleTpe, payload, group, setGroup]);
     if (ruleTpe === 'realtime') return null;
     return (
-        <div className={styles.container} aria-label='rule group creator container'>
+        <div
+            className={styles.container}
+            aria-label='rule group creator container'
+        >
             <div className={styles.groupCreatorHeader}>
-                <Typography variant='caption' className={styles.groupCreatorHeaderTitle}>Windowing Group</Typography>
-                <IconDialog aria-label='rule group creator addfield button open dialog' show={true} disabled={disabled} icon={<AddIcon aria-label='rule group creator addfield icon'/>}>
+                <Typography
+                    variant='caption'
+                    className={styles.groupCreatorHeaderTitle}
+                >
+                    Windowing Group
+                </Typography>
+                <IconDialog
+                    aria-label='rule group creator addfield button open dialog'
+                    show={true}
+                    disabled={disabled}
+                    icon={
+                        <AddIcon aria-label='rule group creator addfield icon' />
+                    }
+                >
                     <GroupAddField
                         disabled={disabled}
                         payload={payload}
-                        updateGroupPayload={(newPayloadField: RuleGroupField) => {
+                        updateGroupPayload={(
+                            newPayloadField: RuleGroupField
+                        ) => {
                             const currentGroup = !group ? [] : group;
-                            const sameFieldName = currentGroup.find(field => field.name === newPayloadField.name);
+                            const sameFieldName = currentGroup.find(
+                                field => field.name === newPayloadField.name
+                            );
                             if (sameFieldName) {
                                 sameFieldName.field = newPayloadField.field;
-                                sameFieldName.operator = newPayloadField.operator;
+                                sameFieldName.operator =
+                                    newPayloadField.operator;
                                 setGroup([...currentGroup]);
-                            }
-                            else {
+                            } else {
                                 setGroup([...currentGroup, newPayloadField]);
                             }
-                        }}/>
+                        }}
+                    />
                 </IconDialog>
             </div>
             <GroupSchema
                 disabled={disabled}
                 group={group}
-                setGroup={setGroup}/>
+                setGroup={setGroup}
+            />
         </div>
     );
 };

@@ -1,6 +1,6 @@
-import {makeStyles} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(theme => ({
     container: {
         display: 'flex',
         height: '90vh',
@@ -38,7 +38,7 @@ export const useStyles = makeStyles((theme) => ({
     content: {
         paddingLeft: 32,
         paddingRight: 32,
-        paddingTop: 32,
+        paddingTop: 32
     },
     divider: {
         marginTop: 10

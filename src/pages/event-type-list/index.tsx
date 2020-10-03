@@ -7,9 +7,9 @@ export const EventTypeListPage: React.FC<EventTypeListPageProps> = function Even
     const styles = useStyles();
     return (
         <div className={styles.root}>
-            <TableEventType/>
+            <TableEventType />
         </div>
     );
-}
+};
 
 export default EventTypeListPage;
