@@ -20,15 +20,16 @@ export const useStyles = makeStyles(theme => ({
     addFieldDialogContent: {
         display: 'flex',
         flex: 1,
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        overflowY: 'scroll',
-        maxHeight: '40vh'
+        minWidth: 320
     },
-    addFieldForm: {},
+    addFieldForm: {
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column'
+    },
     addFieldName: {},
     addfieldSelector: {
-        marginTop: 10
+        marginTop: 20
     },
     addfieldSelectorLabel: {
         fontWeight: 500
@@ -60,9 +61,9 @@ export const useStyles = makeStyles(theme => ({
         paddingLeft: 12,
         paddingRight: 6,
         minHeight: 50,
-        borderColor: theme.palette.primary.light,
-        borderWidth: 1,
-        borderStyle: 'solid'
+        borderBottomColor: theme.palette.primary.light,
+        borderBottomWidth: 1,
+        borderBottomStyle: 'solid'
     },
     payloadFieldViewIcon: {
         display: 'flex'

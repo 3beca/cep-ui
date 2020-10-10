@@ -25,27 +25,55 @@ export const useStyles = makeStyles(theme => ({
         overflowY: 'scroll',
         maxHeight: '40vh'
     },
-    addFieldForm: {},
+    addFieldForm: {
+        minWidth: 320
+    },
     addFieldName: {},
     addFieldOperator: {
-        marginTop: 10
+        marginTop: 20,
+        display: 'flex',
+        flexDirection: 'column'
     },
-    addfieldTarget: {},
+    addfieldOperatorTitle: {
+        fontWeight: 500
+    },
+    operatorField: {
+        minWidth: 130
+    },
+    addfieldTarget: {
+        display: 'flex',
+        marginTop: 20
+    },
+    targetSelector: {
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column'
+    },
+    targetValue: {
+        display: 'flex',
+        marginTop: 20
+    },
+    targetValueText: {
+        display: 'flex',
+        textAlign: 'center'
+    },
+    addfieldTargetSelectorTitle: {
+        fontWeight: 500
+    },
     selectButton: {
         color: theme.palette.warning.dark
     },
     // FieldView Styles
-    paloadFieldView: {
+    payloadFieldView: {
         display: 'flex',
         flex: 1,
         alignItems: 'center',
         margin: 6,
         paddingLeft: 12,
         paddingRight: 6,
-        minHeight: 50,
-        borderColor: theme.palette.primary.light,
-        borderWidth: 1,
-        borderStyle: 'solid'
+        borderBottomColor: theme.palette.primary.light,
+        borderBottomWidth: 1,
+        borderBottomStyle: 'solid'
     },
     groupFieldViewIcon: {
         display: 'flex'
@@ -63,7 +91,10 @@ export const useStyles = makeStyles(theme => ({
         fontSize: 14,
         color: theme.palette.info.dark
     },
-    schemaGroupFieldViewText: {}
+    schemaGroupFieldViewText: {
+        display: 'flex',
+        flex: 1
+    }
 }));
 
 export default useStyles;

@@ -20,16 +20,9 @@ import {
     isExpressionComparator,
     EComparatorLocation
 } from '../rule-filter/models';
-import {
-    EventPayload,
-    EventPayloadField
-} from '../event-payload-creator/models';
+import { EventPayload, EventPayloadField } from '../event-payload-creator/models';
 
-export const buildLocationExpression = (
-    name: string,
-    lng = 0,
-    lat = 0
-): EComparatorLocation => ({
+export const buildLocationExpression = (name: string, lng = 0, lat = 0): EComparatorLocation => ({
     type: 'GEO',
     model: 'EXPRESSION',
     field: name,
@@ -44,36 +37,29 @@ export type FieldSelectorProps = {
     selected?: EventPayloadField;
     onSelected: (field: EventPayloadField | undefined) => void;
 };
-export const FieldSelector: React.FC<FieldSelectorProps> = ({
-    payload,
-    selected,
-    onSelected
-}) => {
+export const FieldSelector: React.FC<FieldSelectorProps> = ({ payload, selected, onSelected }) => {
     const styles = useStyles();
     return (
-        <Select
-            variant='outlined'
-            className={styles.fieldSelector}
-            value={selected ? selected.name : ''}
-            onChange={ev =>
-                onSelected(
-                    payload.find(field => field.name === ev.target.value)
-                )
-            }
-            inputProps={{
-                'aria-label': 'config filter field selector'
-            }}
-        >
-            {payload.map((field: EventPayloadField) => (
-                <MenuItem
-                    aria-label='config filter options'
-                    key={field.name}
-                    value={field.name}
-                >
-                    {field.name}
-                </MenuItem>
-            ))}
-        </Select>
+        <div className={styles.fieldNameSelector}>
+            <Typography className={styles.fieldNameTitle} variant='caption'>
+                Select a field
+            </Typography>
+            <Select
+                fullWidth
+                className={styles.fieldSelector}
+                value={selected ? selected.name : ''}
+                onChange={ev => onSelected(payload.find(field => field.name === ev.target.value))}
+                inputProps={{
+                    'aria-label': 'config filter field selector'
+                }}
+            >
+                {payload.map((field: EventPayloadField) => (
+                    <MenuItem aria-label='config filter options' key={field.name} value={field.name}>
+                        {field.name}
+                    </MenuItem>
+                ))}
+            </Select>
+        </div>
     );
 };
 
@@ -81,34 +67,33 @@ export type FieldOperatorProps = {
     operator?: 'EQ' | 'GT' | 'GTE' | 'LT' | 'LTE';
     setOperator: (operator: 'EQ' | 'GT' | 'GTE' | 'LT' | 'LTE') => void;
 };
-export const FieldOperator: React.FC<FieldOperatorProps> = ({
-    operator,
-    setOperator
-}) => {
+export const FieldOperator: React.FC<FieldOperatorProps> = ({ operator, setOperator }) => {
+    const styles = useStyles();
     return (
-        <Select
-            variant='outlined'
-            value={operator}
-            onChange={ev =>
-                ev.target.value &&
-                setOperator(
-                    ev.target.value as 'EQ' | 'GT' | 'GTE' | 'LT' | 'LTE'
-                )
-            }
-            inputProps={{
-                'aria-label': 'config filter operator selector'
-            }}
-        >
-            {['EQ', 'GT', 'GTE', 'LT', 'LTE'].map((operator, index) => (
-                <MenuItem
-                    aria-label='config filter operators'
-                    key={index}
-                    value={operator}
-                >
-                    <Typography>{operator}</Typography>
-                </MenuItem>
-            ))}
-        </Select>
+        <div className={styles.fieldOperatorSelector}>
+            <Typography variant='caption' className={styles.fieldOperatorTitle}>
+                Select an operator
+            </Typography>
+            <Select
+                value={operator}
+                onChange={ev => ev.target.value && setOperator(ev.target.value as 'EQ' | 'GT' | 'GTE' | 'LT' | 'LTE')}
+                inputProps={{
+                    'aria-label': 'config filter operator selector'
+                }}
+            >
+                {[
+                    { operator: 'EQ', name: 'Equal to' },
+                    { operator: 'GT', name: 'Greater than' },
+                    { operator: 'GTE', name: 'Greater or Equal than' },
+                    { operator: 'LT', name: 'Less than' },
+                    { operator: 'LTE', name: 'Less or Equal than' }
+                ].map((operator, index) => (
+                    <MenuItem aria-label='config filter operators' key={index} value={operator.operator}>
+                        <Typography>{operator.name}</Typography>
+                    </MenuItem>
+                ))}
+            </Select>
+        </div>
     );
 };
 export type FieldValueProps = {
@@ -116,24 +101,17 @@ export type FieldValueProps = {
     value?: string | number;
     setValue: (value: number | string) => void;
 };
-export const FieldValue: React.FC<FieldValueProps> = ({
-    type,
-    value,
-    setValue
-}) => {
+export const FieldValue: React.FC<FieldValueProps> = ({ type, value, setValue }) => {
+    const styles = useStyles();
     return (
-        <div>
+        <div className={styles.fieldValueBox}>
             <TextField
+                fullWidth
                 type={type === 'number' ? 'number' : 'text'}
                 value={value !== undefined ? value : ''}
                 label={type === 'number' ? 'Numeric value' : 'String value'}
-                onChange={ev =>
-                    setValue(
-                        type === 'number' && ev.target.value !== ''
-                            ? Number(ev.target.value)
-                            : ev.target.value
-                    )
-                }
+                placeholder={type === 'number' ? 'Set a numeric value' : 'Set a string value'}
+                onChange={ev => setValue(type === 'number' && ev.target.value !== '' ? Number(ev.target.value) : ev.target.value)}
                 inputProps={{
                     'aria-label': 'config filter value'
                 }}
@@ -147,11 +125,7 @@ export type FieldExpressionComparatorProps = {
     expression: EComparator | EDefault | EPassthrow;
     updateExpression: (comaprator: EComparator | EDefault) => void;
 };
-export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps> = ({
-    field,
-    expression,
-    updateExpression
-}) => {
+export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps> = ({ field, expression, updateExpression }) => {
     const operator = (expression as EComparator).operator || '';
     const value = (expression as EComparator).value;
     const updateValue = (value: number | string) => {
@@ -178,11 +152,7 @@ export const FieldExpressionComparator: React.FC<FieldExpressionComparatorProps>
     return (
         <div>
             <FieldOperator operator={operator} setOperator={updateOperator} />
-            <FieldValue
-                type={field.type}
-                value={value}
-                setValue={updateValue}
-            />
+            <FieldValue type={field.type} value={value} setValue={updateValue} />
         </div>
     );
 };
@@ -226,10 +196,7 @@ export const generateComparatorLocation = (
         location.value._maxDistance = max;
     }
 
-    if (
-        (maxDistance === '' || maxDistance === undefined) &&
-        (minDistance === '' || minDistance === undefined)
-    ) {
+    if ((maxDistance === '' || maxDistance === undefined) && (minDistance === '' || minDistance === undefined)) {
         return { type: 'PASSTHROW', model: 'EXPRESSION', field: fieldName };
     }
     return location;
@@ -238,135 +205,91 @@ export type FieldExpressionLocationProps = {
     expression: EComparatorLocation;
     updateExpression: (comaprator: EComparatorLocation | EPassthrow) => void;
 };
-export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = ({
-    expression,
-    updateExpression
-}) => {
-    //const [location, setLocation] = React.useState<Geometry>(expression.value);
-    const [longitude, setLongitude] = React.useState(
-        expression.value._geometry.coordinates[0] + ''
-    );
-    const [latitude, setLatitude] = React.useState(
-        expression.value._geometry.coordinates[1] + ''
-    );
+export const FieldExpressionLocation: React.FC<FieldExpressionLocationProps> = ({ expression, updateExpression }) => {
+    const styles = useStyles();
+    const [longitude, setLongitude] = React.useState(expression.value._geometry.coordinates[0] + '');
+    const [latitude, setLatitude] = React.useState(expression.value._geometry.coordinates[1] + '');
     const [minDistance, setMindistance] = React.useState(
-        expression.value._minDistance !== undefined
-            ? expression.value._minDistance + ''
-            : ''
+        expression.value._minDistance !== undefined ? expression.value._minDistance + '' : ''
     );
     const [maxDistance, setMaxdistance] = React.useState(
-        expression.value._maxDistance !== undefined
-            ? expression.value._maxDistance + ''
-            : ''
+        expression.value._maxDistance !== undefined ? expression.value._maxDistance + '' : ''
     );
     React.useEffect(() => {
-        updateExpression(
-            generateComparatorLocation(
-                expression.field,
-                longitude,
-                latitude,
-                minDistance,
-                maxDistance
-            )
-        );
-    }, [
-        expression.field,
-        longitude,
-        latitude,
-        minDistance,
-        maxDistance,
-        updateExpression
-    ]);
-    const longitudeError =
-        Number.isNaN(Number(longitude)) ||
-        Number(longitude) < -180 ||
-        Number(longitude) > 180;
-    const latitudeError =
-        Number.isNaN(Number(latitude)) ||
-        Number(latitude) < -90 ||
-        Number(latitude) > 90;
-    const minDistanceError =
-        Number.isNaN(Number(minDistance)) || Number(minDistance) < 0;
-    const maxDistanceError =
-        Number.isNaN(Number(maxDistance)) || Number(maxDistance) < 0;
+        updateExpression(generateComparatorLocation(expression.field, longitude, latitude, minDistance, maxDistance));
+    }, [expression.field, longitude, latitude, minDistance, maxDistance, updateExpression]);
+    const longitudeError = Number.isNaN(Number(longitude)) || Number(longitude) < -180 || Number(longitude) > 180;
+    const latitudeError = Number.isNaN(Number(latitude)) || Number(latitude) < -90 || Number(latitude) > 90;
+    const minDistanceError = Number.isNaN(Number(minDistance)) || Number(minDistance) < 0;
+    const maxDistanceError = Number.isNaN(Number(maxDistance)) || Number(maxDistance) < 0;
     return (
-        <div>
-            <div>
-                <div>
-                    <Typography>Coordinates</Typography>
-                </div>
-                <div aria-label='config filter location component longitude'>
-                    <TextField
-                        inputProps={{
-                            'aria-label': 'config filter location longitude'
-                        }}
-                        value={longitude}
-                        error={longitudeError}
-                        label={'Longitude'}
-                        helperText={
-                            longitudeError ? 'Values between -180 and 180' : ''
-                        }
-                        onChange={ev => setLongitude(ev.target.value)}
-                        onFocus={ev => ev.target.select()}
-                        type='text'
-                    />
-                </div>
-                <div aria-label='config filter location component latitude'>
-                    <TextField
-                        inputProps={{
-                            'aria-label': 'config filter location latitude'
-                        }}
-                        value={latitude}
-                        error={latitudeError}
-                        label={'Latitude'}
-                        helperText={
-                            latitudeError ? 'Values between -90 and 90' : ''
-                        }
-                        onChange={ev => setLatitude(ev.target.value)}
-                        onFocus={ev => ev.target.select()}
-                        type='text'
-                    />
-                </div>
+        <div className={styles.addFieldCoordinatesContent}>
+            <Typography variant='caption' className={styles.addFieldCoordinatesTitle}>
+                Coordinates
+            </Typography>
+            <div aria-label='config filter location component longitude' className={styles.addFieldCoordinatesFields}>
+                <TextField
+                    inputProps={{
+                        'aria-label': 'config filter location longitude'
+                    }}
+                    value={longitude}
+                    error={longitudeError}
+                    fullWidth
+                    label={'Longitude'}
+                    placeholder='Set a longitude'
+                    helperText={longitudeError ? 'Values between -180 and 180' : ''}
+                    onChange={ev => setLongitude(ev.target.value)}
+                    onFocus={ev => ev.target.select()}
+                    type='text'
+                />
             </div>
-            <div>
-                <div aria-label='config filter location component min distance'>
-                    <TextField
-                        inputProps={{
-                            'aria-label': 'config filter location min distance'
-                        }}
-                        value={minDistance}
-                        onChange={ev => setMindistance(ev.target.value)}
-                        error={minDistanceError}
-                        helperText={
-                            minDistanceError
-                                ? 'Distance greater or equal to 0'
-                                : 'meters'
-                        }
-                        label={'Min. distance'}
-                        onFocus={ev => ev.target.select()}
-                        type='text'
-                    />
-                </div>
+            <div aria-label='config filter location component latitude' className={styles.addFieldCoordinatesFields}>
+                <TextField
+                    inputProps={{
+                        'aria-label': 'config filter location latitude'
+                    }}
+                    value={latitude}
+                    error={latitudeError}
+                    fullWidth
+                    label={'Latitude'}
+                    placeholder='Set a latitude'
+                    helperText={latitudeError ? 'Values between -90 and 90' : ''}
+                    onChange={ev => setLatitude(ev.target.value)}
+                    onFocus={ev => ev.target.select()}
+                    type='text'
+                />
             </div>
-            <div>
-                <div aria-label='config filter location component max distance'>
-                    <TextField
-                        inputProps={{
-                            'aria-label': 'config filter location max distance'
-                        }}
-                        value={maxDistance}
-                        onChange={ev => setMaxdistance(ev.target.value)}
-                        error={minDistanceError}
-                        helperText={
-                            maxDistanceError
-                                ? 'Distance greater or equal to 0'
-                                : 'meters'
-                        }
-                        label={'Max. distance'}
-                        onFocus={ev => ev.target.select()}
-                        type='text'
-                    />
-                </div>
+            <div aria-label='config filter location component min distance' className={styles.addFieldCoordinatesFields}>
+                <TextField
+                    inputProps={{
+                        'aria-label': 'config filter location min distance'
+                    }}
+                    value={minDistance}
+                    onChange={ev => setMindistance(ev.target.value)}
+                    error={minDistanceError}
+                    helperText={minDistanceError ? 'Distance greater or equal to 0' : 'meters'}
+                    label={'Min. distance'}
+                    fullWidth
+                    placeholder='Set minimum distance'
+                    onFocus={ev => ev.target.select()}
+                    type='text'
+                />
+            </div>
+            <div aria-label='config filter location component max distance' className={styles.addFieldCoordinatesFields}>
+                <TextField
+                    inputProps={{
+                        'aria-label': 'config filter location max distance'
+                    }}
+                    value={maxDistance}
+                    onChange={ev => setMaxdistance(ev.target.value)}
+                    error={minDistanceError}
+                    helperText={maxDistanceError ? 'Distance greater or equal to 0' : 'meters'}
+                    label={'Max. distance'}
+                    fullWidth
+                    placeholder='Set maximun distance'
+                    onFocus={ev => ev.target.select()}
+                    type='text'
+                />
             </div>
         </div>
     );
@@ -376,20 +299,12 @@ export type FieldExpressionProps = {
     expression: Expression;
     updateExpression: (comaprator: Expression) => void;
 };
-export const FieldExpression: React.FC<FieldExpressionProps> = ({
-    field,
-    expression,
-    updateExpression
-}) => {
+export const FieldExpression: React.FC<FieldExpressionProps> = ({ field, expression, updateExpression }) => {
     if (!field) return null;
     if (field.type === 'location') {
         return (
             <FieldExpressionLocation
-                expression={
-                    isExpressionLocation(expression)
-                        ? expression
-                        : buildLocationExpression(field.name)
-                }
+                expression={isExpressionLocation(expression) ? expression : buildLocationExpression(field.name)}
                 updateExpression={updateExpression}
             />
         );
@@ -423,9 +338,8 @@ export const ConfigFilterDialogExpression: React.FC<ConfigFilterDialogExpression
     updateFilter,
     payload
 }) => {
-    const [selected, setSelected] = React.useState<
-        EventPayloadField | undefined
-    >(payload.find(field => expression.field === field.name));
+    const styles = useStyles();
+    const [selected, setSelected] = React.useState<EventPayloadField | undefined>(payload.find(field => expression.field === field.name));
     const [comparator, setComparator] = React.useState<Expression>(expression);
     const updateExpression = React.useCallback(() => {
         expression.field = comparator.field;
@@ -457,45 +371,28 @@ export const ConfigFilterDialogExpression: React.FC<ConfigFilterDialogExpression
     const hasValidComparator = React.useCallback(() => {
         if (comparator && comparator.type !== 'PASSTHROW') {
             if (comparator.type !== 'GEO') {
-                return comparator.value !== '';
+                return comparator.value !== '' && comparator.value !== undefined;
             }
             return comparator.value._geometry.coordinates.length === 2;
         }
         return false;
     }, [comparator]);
     return (
-        <Dialog
-            fullWidth={true}
-            open={true}
-            onClose={() => updateFilter(filter)}
-            aria-label='config filter dialog'
-        >
-            <DialogTitle>Configure filter</DialogTitle>
-            <DialogContent>
-                <div>
-                    <FieldSelector
-                        payload={payload}
-                        selected={selected}
-                        onSelected={setSelected}
-                    />
-                    <FieldExpression
-                        field={selected}
-                        expression={comparator}
-                        updateExpression={setComparator}
-                    />
-                </div>
+        <Dialog open={true} onClose={() => updateFilter(filter)} aria-label='config filter dialog'>
+            <DialogTitle>Add new filter expression</DialogTitle>
+            <DialogContent className={styles.addExpressionContent}>
+                <FieldSelector payload={payload} selected={selected} onSelected={setSelected} />
+                <FieldExpression field={selected} expression={comparator} updateExpression={setComparator} />
             </DialogContent>
             <DialogActions>
-                <Button
-                    onClick={() => updateFilter(filter)}
-                    aria-label='config filter button cancel'
-                >
+                <Button onClick={() => updateFilter(filter)} aria-label='config filter button cancel'>
                     Cancel
                 </Button>
                 <Button
                     disabled={!selected || !comparator || !hasValidComparator()}
                     onClick={updateExpression}
                     aria-label='config filter button save'
+                    className={styles.addExpressionButton}
                 >
                     Save
                 </Button>
@@ -510,26 +407,14 @@ export type ConfigFilterExpressionProps = {
     updateFilter: (filter: RuleFilterContainer) => void;
     payload?: EventPayload | null;
 };
-export const ConfigFilterExpression: React.FC<ConfigFilterExpressionProps> = ({
-    filter,
-    expression,
-    updateFilter,
-    payload
-}) => {
+export const ConfigFilterExpression: React.FC<ConfigFilterExpressionProps> = ({ filter, expression, updateFilter, payload }) => {
     React.useEffect(() => {
         if (!expression && !!filter) updateFilter(filter);
     }, [updateFilter, filter, expression]);
     if (!expression || !filter || !payload) {
         return null;
     }
-    return (
-        <ConfigFilterDialogExpression
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-            payload={payload}
-        />
-    );
+    return <ConfigFilterDialogExpression filter={filter} expression={expression} updateFilter={updateFilter} payload={payload} />;
 };
 
 export default ConfigFilterExpression;
