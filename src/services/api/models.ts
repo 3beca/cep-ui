@@ -30,8 +30,17 @@ export type EventTypeList = ServiceList<EventType>;
 export type EventTypeError = ServiceError;
 export type EventTypeDeleted = ServiceDeleted;
 
+export type TargetHeader = {
+    [key: string]: string;
+};
+export type TargetBody = {
+    name: string;
+    url: string;
+    headers?: TargetHeader;
+};
 export type Target = {
     url: string;
+    headers?: TargetHeader;
 } & EntityWithName &
     WithDate;
 export type TargetList = ServiceList<Target>;
@@ -72,9 +81,7 @@ export type RuleFilter = {
 };
 
 type NullOrUndefinde = null | undefined;
-export const getRuleFilters = (
-    value: RuleFilter | NullOrUndefinde
-): RuleFilterField[] | null => {
+export const getRuleFilters = (value: RuleFilter | NullOrUndefinde): RuleFilterField[] | null => {
     if (!!value && typeof value === 'object') {
         const filters = Object.keys(value).map(key => ({
             field: key,
@@ -84,49 +91,31 @@ export const getRuleFilters = (
     }
     return null;
 };
-export const isRuleFilterOR = (
-    rff: RuleFilterField | NullOrUndefinde
-): boolean => {
+export const isRuleFilterOR = (rff: RuleFilterField | NullOrUndefinde): boolean => {
     return !!rff && Array.isArray(rff.value) && rff.field === '_or';
 };
-export const isRuleFilterAND = (
-    rff: RuleFilterField | NullOrUndefinde
-): boolean => {
+export const isRuleFilterAND = (rff: RuleFilterField | NullOrUndefinde): boolean => {
     return !!rff && Array.isArray(rff.value) && rff.field === '_and';
 };
-export const isRuleFilterValue = (
-    value: RuleFilterFieldValue | RuleFilter | RuleFilter[] | NullOrUndefinde
-): value is RuleFilterValue => {
+export const isRuleFilterValue = (value: RuleFilterFieldValue | RuleFilter | RuleFilter[] | NullOrUndefinde): value is RuleFilterValue => {
     return typeof value === 'number' || typeof value === 'string';
 };
-export const isRuleFilterComparatorLocation = (
-    value: RuleFilterComparator
-): value is RuleFilterComparatorLocation => {
+export const isRuleFilterComparatorLocation = (value: RuleFilterComparator): value is RuleFilterComparatorLocation => {
     return (value as RuleFilterComparatorLocation)._near !== undefined;
 };
-export const isRuleFilterComparatorEQ = (
-    value: RuleFilterComparator
-): value is RuleFilterComparatorEQ => {
+export const isRuleFilterComparatorEQ = (value: RuleFilterComparator): value is RuleFilterComparatorEQ => {
     return (value as RuleFilterComparatorEQ)._eq !== undefined;
 };
-export const isRuleFilterComparatorGT = (
-    value: RuleFilterComparator
-): value is RuleFilterComparatorGT => {
+export const isRuleFilterComparatorGT = (value: RuleFilterComparator): value is RuleFilterComparatorGT => {
     return (value as RuleFilterComparatorGT)._gt !== undefined;
 };
-export const isRuleFilterComparatorGTE = (
-    value: RuleFilterComparator
-): value is RuleFilterComparatorGTE => {
+export const isRuleFilterComparatorGTE = (value: RuleFilterComparator): value is RuleFilterComparatorGTE => {
     return (value as RuleFilterComparatorGTE)._gte !== undefined;
 };
-export const isRuleFilterComparatorLT = (
-    value: RuleFilterComparator
-): value is RuleFilterComparatorLT => {
+export const isRuleFilterComparatorLT = (value: RuleFilterComparator): value is RuleFilterComparatorLT => {
     return (value as RuleFilterComparatorLT)._lt !== undefined;
 };
-export const isRuleFilterComparatorLTE = (
-    value: RuleFilterComparator
-): value is RuleFilterComparatorLTE => {
+export const isRuleFilterComparatorLTE = (value: RuleFilterComparator): value is RuleFilterComparatorLTE => {
     return (value as RuleFilterComparatorLTE)._lte !== undefined;
 };
 export const isRuleFilterComparator = (
@@ -134,10 +123,7 @@ export const isRuleFilterComparator = (
 ): value is RuleFilterComparator => {
     if (!!value && !isRuleFilterValue(value) && typeof value === 'object') {
         const keys = Object.keys(value);
-        return (
-            keys.length === 1 &&
-            ['_eq', '_gt', '_gte', '_lt', '_lte', '_near'].includes(keys[0])
-        );
+        return keys.length === 1 && ['_eq', '_gt', '_gte', '_lt', '_lte', '_near'].includes(keys[0]);
     }
     return false;
 };
@@ -146,20 +132,10 @@ export const isRuleFilterFieldValue = (
 ): value is RuleFilterFieldValue => {
     return isRuleFilterValue(value) || isRuleFilterComparator(value);
 };
-export const isRuleFilter = (
-    value: RuleFilterFieldValue | RuleFilter | RuleFilter[] | NullOrUndefinde
-): value is RuleFilter => {
-    return (
-        !!value &&
-        !Array.isArray(value) &&
-        !isRuleFilterFieldValue(value) &&
-        typeof value === 'object' &&
-        Object.keys(value).length > 0
-    );
+export const isRuleFilter = (value: RuleFilterFieldValue | RuleFilter | RuleFilter[] | NullOrUndefinde): value is RuleFilter => {
+    return !!value && !Array.isArray(value) && !isRuleFilterFieldValue(value) && typeof value === 'object' && Object.keys(value).length > 0;
 };
-export const isRuleFilterArray = (
-    value: RuleFilterFieldValue | RuleFilter | RuleFilter[] | NullOrUndefinde
-): value is RuleFilter[] => {
+export const isRuleFilterArray = (value: RuleFilterFieldValue | RuleFilter | RuleFilter[] | NullOrUndefinde): value is RuleFilter[] => {
     return Array.isArray(value);
 };
 
@@ -224,19 +200,11 @@ export type RuleTypeTumbling = {
     group: RuleGroup;
     windowSize: WindowingSize;
 } & RuleBase;
-export type Rule =
-    | RuleTypeRealtime
-    | RuleTypeSliding
-    | RuleTypeHopping
-    | RuleTypeTumbling;
-export const isRuleTypeRealtime = (rule: Rule): rule is RuleTypeRealtime =>
-    rule.type === 'realtime';
-export const isRuleTypeSliding = (rule: Rule): rule is RuleTypeSliding =>
-    rule.type === 'sliding';
-export const isRuleTypeTumbling = (rule: Rule): rule is RuleTypeTumbling =>
-    rule.type === 'tumbling';
-export const isRuleTypeHopping = (rule: Rule): rule is RuleTypeHopping =>
-    rule.type === 'hopping';
+export type Rule = RuleTypeRealtime | RuleTypeSliding | RuleTypeHopping | RuleTypeTumbling;
+export const isRuleTypeRealtime = (rule: Rule): rule is RuleTypeRealtime => rule.type === 'realtime';
+export const isRuleTypeSliding = (rule: Rule): rule is RuleTypeSliding => rule.type === 'sliding';
+export const isRuleTypeTumbling = (rule: Rule): rule is RuleTypeTumbling => rule.type === 'tumbling';
+export const isRuleTypeHopping = (rule: Rule): rule is RuleTypeHopping => rule.type === 'hopping';
 export type RuleList = ServiceList<Rule>;
 export type RuleError = ServiceError;
 export type RuleDeleted = ServiceDeleted;

@@ -1,13 +1,9 @@
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
-import { renderWithAPI as render, screen } from '../../test-utils';
+import { renderWithAPI as render, screen, fireEvent } from '../../test-utils';
 import ConfigFilterExpression from './';
 import { EventPayload } from '../event-payload-creator/models';
-import {
-    EComparatorLocation,
-    Expression,
-    RuleFilterContainer
-} from '../rule-filter/models';
+import { EComparatorLocation, Expression, RuleFilterContainer } from '../rule-filter/models';
 
 // ConfigFilterExpression test
 test('ConfigFilterExpresion should close dialog when click outside', async () => {
@@ -21,12 +17,7 @@ test('ConfigFilterExpresion should close dialog when click outside', async () =>
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     const { rerender } = render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
+        <ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />
     );
 
     const dialog = await screen.findByLabelText(/config filter dialog/i);
@@ -34,12 +25,8 @@ test('ConfigFilterExpresion should close dialog when click outside', async () =>
     expect(updateFilter).toHaveBeenCalledTimes(1);
     expect(updateFilter).toHaveBeenNthCalledWith(1, filter);
 
-    rerender(
-        <ConfigFilterExpression payload={payload} updateFilter={updateFilter} />
-    );
-    expect(
-        screen.queryByLabelText(/config filter dialog/i)
-    ).not.toBeInTheDocument();
+    rerender(<ConfigFilterExpression payload={payload} updateFilter={updateFilter} />);
+    expect(screen.queryByLabelText(/config filter dialog/i)).not.toBeInTheDocument();
 });
 
 test('ConfigFilterExpresion should close dialog when click in cancel button', async () => {
@@ -53,29 +40,16 @@ test('ConfigFilterExpresion should close dialog when click in cancel button', as
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
     const { rerender } = render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
+        <ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />
     );
 
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
-    userEvent.click(
-        await screen.findByLabelText(/config filter button cancel/)
-    );
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
+    userEvent.click(await screen.findByLabelText(/config filter button cancel/));
     expect(updateFilter).toHaveBeenCalledTimes(1);
     expect(updateFilter).toHaveBeenNthCalledWith(1, filter);
 
-    rerender(
-        <ConfigFilterExpression payload={payload} updateFilter={updateFilter} />
-    );
-    expect(
-        screen.queryByLabelText(/config filter dialog/i)
-    ).not.toBeInTheDocument();
+    rerender(<ConfigFilterExpression payload={payload} updateFilter={updateFilter} />);
+    expect(screen.queryByLabelText(/config filter dialog/i)).not.toBeInTheDocument();
 });
 
 test('ConfigFilterExpresion should disable save button when delete value from comparator DEFAULT', async () => {
@@ -88,47 +62,19 @@ test('ConfigFilterExpresion should disable save button when delete value from co
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     // Set value to 25
-    await userEvent.type(
-        await screen.findByLabelText(/config filter value/),
-        '25'
-    );
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).not.toBeDisabled();
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '25');
+    expect(await screen.findByLabelText(/config filter button save/)).not.toBeDisabled();
     // Delete 5
-    await userEvent.type(
-        await screen.findByLabelText(/config filter value/),
-        '{backspace}'
-    );
-    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute(
-        'value',
-        '2'
-    );
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '{backspace}');
+    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute('value', '2');
     // Delete 2
-    await userEvent.type(
-        await screen.findByLabelText(/config filter value/),
-        '{backspace}'
-    );
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
-    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute(
-        'value',
-        ''
-    );
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '{backspace}');
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute('value', '');
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -143,59 +89,26 @@ test('ConfigFilterExpresion should disable save button when delete value from co
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     // Set comparator
-    userEvent.click(
-        await screen.findByLabelText(/config filter field selector/i)
-    );
+    userEvent.click(await screen.findByLabelText(/config filter field selector/i));
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     // Set value to 25
-    await userEvent.type(
-        await screen.findByLabelText(/config filter value/),
-        '25'
-    );
-    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute(
-        'value',
-        '25'
-    );
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).not.toBeDisabled();
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '25');
+    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute('value', '25');
+    expect(await screen.findByLabelText(/config filter button save/)).not.toBeDisabled();
     // Delete 5
-    await userEvent.type(
-        await screen.findByLabelText(/config filter value/),
-        '{backspace}'
-    );
-    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute(
-        'value',
-        '2'
-    );
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '{backspace}');
+    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute('value', '2');
     // Delete 2
-    await userEvent.type(
-        await screen.findByLabelText(/config filter value/),
-        '{backspace}'
-    );
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
-    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute(
-        'value',
-        ''
-    );
+    await userEvent.type(await screen.findByLabelText(/config filter value/), '{backspace}');
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter value/)).toHaveAttribute('value', '');
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -205,18 +118,9 @@ test('ConfigFilterExpresion should not show dialog when no expression', async ()
     const payload: EventPayload = [{ name: fieldName, type: 'string' }];
     const filter: RuleFilterContainer = [];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={undefined}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={undefined} updateFilter={updateFilter} />);
 
-    expect(
-        screen.queryByLabelText(/config filter dialog/i)
-    ).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/config filter dialog/i)).not.toBeInTheDocument();
     expect(updateFilter).toHaveBeenCalledTimes(1);
     expect(updateFilter).toHaveBeenNthCalledWith(1, filter);
 });
@@ -231,39 +135,23 @@ test('ConfigFilterExpresion should set operator GT to zero', async () => {
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const operatorSelector = await screen.findByLabelText(
-        /config filter operator selector/
-    );
+    const operatorSelector = await screen.findByLabelText(/config filter operator selector/);
     userEvent.click(operatorSelector);
-    const operators = await screen.findAllByLabelText(
-        /config filter operators/
-    );
+    const operators = await screen.findAllByLabelText(/config filter operators/);
     expect(operators).toHaveLength(5);
     userEvent.click(operators[1]);
     const valueField = await screen.findByLabelText(/config filter value/);
     await userEvent.type(valueField, '0');
-    expect(await screen.findByLabelText(/config filter value/)).toHaveProperty(
-        'value',
-        '0'
-    );
+    expect(await screen.findByLabelText(/config filter value/)).toHaveProperty('value', '0');
     userEvent.click(await screen.findByLabelText(/config filter button save/));
 
     const expectedFilter = [
@@ -289,31 +177,18 @@ test('ConfigFilterExpresion should set operator GT to numeric field', async () =
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const operatorSelector = await screen.findByLabelText(
-        /config filter operator selector/
-    );
+    const operatorSelector = await screen.findByLabelText(/config filter operator selector/);
     userEvent.click(operatorSelector);
-    const operators = await screen.findAllByLabelText(
-        /config filter operators/
-    );
+    const operators = await screen.findAllByLabelText(/config filter operators/);
     expect(operators).toHaveLength(5);
     userEvent.click(operators[1]);
     const valueField = await screen.findByLabelText(/config filter value/);
@@ -345,31 +220,18 @@ test('ConfigFilterExpresion should update operator LTE and numeric field', async
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const operatorSelector = await screen.findByLabelText(
-        /config filter operator selector/
-    );
+    const operatorSelector = await screen.findByLabelText(/config filter operator selector/);
     userEvent.click(operatorSelector);
-    const operators = await screen.findAllByLabelText(
-        /config filter operators/
-    );
+    const operators = await screen.findAllByLabelText(/config filter operators/);
     expect(operators).toHaveLength(5);
     userEvent.click(operators[3]);
     const valueField = await screen.findByLabelText(/config filter value/);
@@ -399,19 +261,10 @@ test('ConfigFilterExpresion should set a default operator with a string field', 
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
@@ -443,36 +296,21 @@ test('ConfigFilterExpresion should NOT set operator NEAR to GEO field without ma
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const lngField = await screen.findByLabelText(
-        /config filter location longitude/
-    );
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
     await userEvent.type(lngField, '100');
-    const latField = await screen.findByLabelText(
-        /config filter location latitude/
-    );
+    const latField = await screen.findByLabelText(/config filter location latitude/);
     await userEvent.type(latField, '200');
 
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -487,35 +325,20 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with maxDistan
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const lngField = await screen.findByLabelText(
-        /config filter location longitude/
-    );
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
     await userEvent.type(lngField, '100');
-    const latField = await screen.findByLabelText(
-        /config filter location latitude/
-    );
+    const latField = await screen.findByLabelText(/config filter location latitude/);
     await userEvent.type(latField, '80');
-    const maxField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(maxField, '300');
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
@@ -545,35 +368,20 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const lngField = await screen.findByLabelText(
-        /config filter location longitude/
-    );
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
     await userEvent.type(lngField, '100');
-    const latField = await screen.findByLabelText(
-        /config filter location latitude/
-    );
+    const latField = await screen.findByLabelText(/config filter location latitude/);
     await userEvent.type(latField, '{backspace}-80');
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, '300');
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
@@ -603,42 +411,25 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const lngField = await screen.findByLabelText(
-        /config filter location longitude/
-    );
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
     await userEvent.type(lngField, '100');
 
-    const latField = await screen.findByLabelText(
-        /config filter location latitude/
-    );
+    const latField = await screen.findByLabelText(/config filter location latitude/);
     await userEvent.type(latField, '{backspace}-40');
 
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, '300');
 
-    const maxField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(maxField, '600');
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
@@ -669,42 +460,25 @@ test('ConfigFilterExpresion should set operator NEAR to GEO field with minDistan
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const lngField = await screen.findByLabelText(
-        /config filter location longitude/
-    );
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
     await userEvent.type(lngField, '0');
 
-    const latField = await screen.findByLabelText(
-        /config filter location latitude/
-    );
+    const latField = await screen.findByLabelText(/config filter location latitude/);
     await userEvent.type(latField, '0');
 
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, '0');
 
-    const maxField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(maxField, '0');
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
@@ -741,47 +515,28 @@ test('ConfigFilterExpresion should NOT set operator NEAR to GEO field with minDi
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const lngField = await screen.findByLabelText(
-        /config filter location longitude/
-    );
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
     await userEvent.type(lngField, '{backspace}');
 
-    const latField = await screen.findByLabelText(
-        /config filter location latitude/
-    );
+    const latField = await screen.findByLabelText(/config filter location latitude/);
     await userEvent.type(latField, '{backspace}');
 
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, '{backspace}');
 
-    const maxField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(maxField, '{backspace}');
 
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     userEvent.click(await screen.findByLabelText(/config filter button save/));
 
     expect(updateFilter).toHaveBeenCalledTimes(0);
@@ -803,37 +558,22 @@ test('ConfigFilterExpresion should NOT set operator NEAR to GEO field with minDi
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, '{backspace}');
 
-    const maxField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(maxField, '{backspace}');
 
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -853,31 +593,18 @@ test('ConfigFilterExpresion should change location filter to passthorw when payl
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const operatorSelector = await screen.findByLabelText(
-        /config filter operator selector/
-    );
+    const operatorSelector = await screen.findByLabelText(/config filter operator selector/);
     userEvent.click(operatorSelector);
-    const operators = await screen.findAllByLabelText(
-        /config filter operators/
-    );
+    const operators = await screen.findAllByLabelText(/config filter operators/);
     expect(operators).toHaveLength(5);
     userEvent.click(operators[1]);
     const valueField = await screen.findByLabelText(/config filter value/);
@@ -913,37 +640,22 @@ test('ConfigFilterExpresion should NOT set operator NEAR to GEO field with min d
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, 'invalidmindistance');
 
-    expect(
-        await screen.findByLabelText(
-            /config filter location component min distance/
-        )
-    ).toHaveTextContent(/Min. distanceDistance greater or equal to 0/i);
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter location component min distance/)).toHaveTextContent(
+        /Min. distanceDistance greater or equal to 0/i
+    );
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -964,37 +676,22 @@ test('ConfigFilterExpresion should NOT set operator NEAR to GEO field with max d
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const minField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(minField, 'invalidmacdistance');
 
-    expect(
-        await screen.findByLabelText(
-            /config filter location component max distance/
-        )
-    ).toHaveTextContent(/Max. distanceDistance greater or equal to 0/i);
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter location component max distance/)).toHaveTextContent(
+        /Max. distanceDistance greater or equal to 0/i
+    );
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -1015,37 +712,22 @@ test('ConfigFilterExpresion should NOT set operator NEAR to GEO field with min d
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, '-100');
 
-    expect(
-        await screen.findByLabelText(
-            /config filter location component min distance/
-        )
-    ).toHaveTextContent(/Min. distanceDistance greater or equal to 0/i);
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter location component min distance/)).toHaveTextContent(
+        /Min. distanceDistance greater or equal to 0/i
+    );
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -1066,37 +748,22 @@ test('ConfigFilterExpresion should NOT set operator NEAR to GEO field with max d
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const minField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(minField, '-100');
 
-    expect(
-        await screen.findByLabelText(
-            /config filter location component max distance/
-        )
-    ).toHaveTextContent(/Max. distanceDistance greater or equal to 0/i);
-    expect(
-        await screen.findByLabelText(/config filter button save/)
-    ).toBeDisabled();
+    expect(await screen.findByLabelText(/config filter location component max distance/)).toHaveTextContent(
+        /Max. distanceDistance greater or equal to 0/i
+    );
+    expect(await screen.findByLabelText(/config filter button save/)).toBeDisabled();
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     expect(updateFilter).toHaveBeenCalledTimes(0);
 });
@@ -1111,97 +778,147 @@ test('ConfigFilterExpresion should warning invalid coordinates, Lat: [-90, 90] a
     };
     const filter: RuleFilterContainer = [expression];
     const updateFilter = jest.fn();
-    render(
-        <ConfigFilterExpression
-            payload={payload}
-            filter={filter}
-            expression={expression}
-            updateFilter={updateFilter}
-        />
-    );
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
 
     await screen.findByLabelText(/config filter dialog/i);
-    const selector = await screen.findByLabelText(
-        /config filter field selector/i
-    );
+    const selector = await screen.findByLabelText(/config filter field selector/i);
     userEvent.click(selector);
     const options = await screen.findAllByLabelText(/config filter options/i);
     expect(options).toHaveLength(1);
     userEvent.click(options[0]);
 
-    const lngField = await screen.findByLabelText(
-        /config filter location longitude/
-    );
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
     await userEvent.type(lngField, 'invalid');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component longitude/
-        )
-    ).toHaveTextContent(/LongitudeValues between -180 and 180/i);
+    expect(await screen.findByLabelText(/config filter location component longitude/)).toHaveTextContent(
+        /LongitudeValues between -180 and 180/i
+    );
     userEvent.clear(lngField);
     await userEvent.type(lngField, '200');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component longitude/
-        )
-    ).toHaveTextContent(/LongitudeValues between -180 and 180/i);
+    expect(await screen.findByLabelText(/config filter location component longitude/)).toHaveTextContent(
+        /LongitudeValues between -180 and 180/i
+    );
     userEvent.clear(lngField);
     await userEvent.type(lngField, '-200');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component longitude/
-        )
-    ).toHaveTextContent(/LongitudeValues between -180 and 180/i);
+    expect(await screen.findByLabelText(/config filter location component longitude/)).toHaveTextContent(
+        /LongitudeValues between -180 and 180/i
+    );
     userEvent.clear(lngField);
     await userEvent.type(lngField, '-37.123456');
     expect(lngField).toHaveAttribute('value', '-37.123456');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component longitude/
-        )
-    ).not.toHaveTextContent(/Values between -180 and 180/i);
-
-    const latField = await screen.findByLabelText(
-        /config filter location latitude/
+    expect(await screen.findByLabelText(/config filter location component longitude/)).not.toHaveTextContent(
+        /Values between -180 and 180/i
     );
+
+    const latField = await screen.findByLabelText(/config filter location latitude/);
     await userEvent.type(latField, 'invalid');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component latitude/
-        )
-    ).toHaveTextContent(/LatitudeValues between -90 and 90/i);
+    expect(await screen.findByLabelText(/config filter location component latitude/)).toHaveTextContent(
+        /LatitudeValues between -90 and 90/i
+    );
     userEvent.clear(latField);
     await userEvent.type(latField, '95');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component latitude/
-        )
-    ).toHaveTextContent(/LatitudeValues between -90 and 90/i);
+    expect(await screen.findByLabelText(/config filter location component latitude/)).toHaveTextContent(
+        /LatitudeValues between -90 and 90/i
+    );
     userEvent.clear(latField);
     await userEvent.type(latField, '-90.01');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component latitude/
-        )
-    ).toHaveTextContent(/LatitudeValues between -90 and 90/i);
+    expect(await screen.findByLabelText(/config filter location component latitude/)).toHaveTextContent(
+        /LatitudeValues between -90 and 90/i
+    );
     userEvent.clear(latField);
     await userEvent.type(latField, '-40');
     expect(latField).toHaveAttribute('value', '-40');
-    expect(
-        await screen.findByLabelText(
-            /config filter location component latitude/
-        )
-    ).not.toHaveTextContent(/Values between -90 and 90/i);
+    expect(await screen.findByLabelText(/config filter location component latitude/)).not.toHaveTextContent(/Values between -90 and 90/i);
 
-    const minField = await screen.findByLabelText(
-        /config filter location min distance/
-    );
+    const minField = await screen.findByLabelText(/config filter location min distance/);
     await userEvent.type(minField, '300');
 
-    const maxField = await screen.findByLabelText(
-        /config filter location max distance/
-    );
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
     await userEvent.type(maxField, '600');
+
+    userEvent.click(await screen.findByLabelText(/config filter button save/));
+    const expectedFilter: EComparatorLocation[] = [
+        {
+            model: 'EXPRESSION',
+            type: 'GEO',
+            operator: 'NEAR',
+            field: fieldName,
+            value: {
+                _geometry: { type: 'Point', coordinates: [-37.123456, -40] },
+                _minDistance: 300,
+                _maxDistance: 600
+            }
+        }
+    ];
+    expect(updateFilter).toHaveBeenCalledTimes(1);
+    expect(updateFilter).toHaveBeenNthCalledWith(1, expectedFilter);
+});
+
+test('ConfigFilterExpresion should warning invalid coordinates, Lat: [-90, 90] and Lng: [-180, 180]', async () => {
+    const fieldName = 'fieldLocation';
+    const payload: EventPayload = [{ name: fieldName, type: 'location' }];
+    const expression: Expression = {
+        type: 'PASSTHROW',
+        model: 'EXPRESSION',
+        field: fieldName
+    };
+    const filter: RuleFilterContainer = [expression];
+    const updateFilter = jest.fn();
+    render(<ConfigFilterExpression payload={payload} filter={filter} expression={expression} updateFilter={updateFilter} />);
+
+    await screen.findByLabelText(/config filter dialog/i);
+    const selector = await screen.findByLabelText(/config filter field selector/i);
+    userEvent.click(selector);
+    const options = await screen.findAllByLabelText(/config filter options/i);
+    expect(options).toHaveLength(1);
+    userEvent.click(options[0]);
+
+    const lngField = await screen.findByLabelText(/config filter location longitude/);
+    fireEvent.change(lngField, { target: { value: 'invalid' } });
+    expect(await screen.findByLabelText(/config filter location component longitude/)).toHaveTextContent(
+        /LongitudeValues between -180 and 180/i
+    );
+    userEvent.clear(lngField);
+    fireEvent.change(lngField, { target: { value: '200' } });
+    expect(await screen.findByLabelText(/config filter location component longitude/)).toHaveTextContent(
+        /LongitudeValues between -180 and 180/i
+    );
+    userEvent.clear(lngField);
+    fireEvent.change(lngField, { target: { value: '-200' } });
+    expect(await screen.findByLabelText(/config filter location component longitude/)).toHaveTextContent(
+        /LongitudeValues between -180 and 180/i
+    );
+    userEvent.clear(lngField);
+    fireEvent.change(lngField, { target: { value: '-37.123456' } });
+    expect(lngField).toHaveAttribute('value', '-37.123456');
+    expect(await screen.findByLabelText(/config filter location component longitude/)).not.toHaveTextContent(
+        /Values between -180 and 180/i
+    );
+
+    const latField = await screen.findByLabelText(/config filter location latitude/);
+    fireEvent.change(latField, { target: { value: 'invalid' } });
+    expect(await screen.findByLabelText(/config filter location component latitude/)).toHaveTextContent(
+        /LatitudeValues between -90 and 90/i
+    );
+    userEvent.clear(latField);
+    fireEvent.change(latField, { target: { value: '95' } });
+    expect(await screen.findByLabelText(/config filter location component latitude/)).toHaveTextContent(
+        /LatitudeValues between -90 and 90/i
+    );
+    userEvent.clear(latField);
+    fireEvent.change(latField, { target: { value: '-90.01' } });
+    expect(await screen.findByLabelText(/config filter location component latitude/)).toHaveTextContent(
+        /LatitudeValues between -90 and 90/i
+    );
+    userEvent.clear(latField);
+    fireEvent.change(latField, { target: { value: '-40' } });
+    expect(latField).toHaveAttribute('value', '-40');
+    expect(await screen.findByLabelText(/config filter location component latitude/)).not.toHaveTextContent(/Values between -90 and 90/i);
+
+    const minField = await screen.findByLabelText(/config filter location min distance/);
+    fireEvent.change(minField, { target: { value: '300' } });
+
+    const maxField = await screen.findByLabelText(/config filter location max distance/);
+    fireEvent.change(maxField, { target: { value: '600' } });
 
     userEvent.click(await screen.findByLabelText(/config filter button save/));
     const expectedFilter: EComparatorLocation[] = [
