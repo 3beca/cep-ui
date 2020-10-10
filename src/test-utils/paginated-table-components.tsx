@@ -9,9 +9,6 @@ export const runPaginatedTableTest = <R, E>(
     dataGenerator: (size: number, next: boolean, prev: boolean) => R,
     serverResponse: (page: number, pageSize: number, status: number, response: R | E) => nock.Scope | void
 ) => {
-    beforeAll(() => jest.useFakeTimers());
-    afterAll(() => jest.useRealTimers());
-
     test(`${title} loading first time`, async () => {
         // mock Empty server response
         serverResponse(1, 10, 200, dataGenerator(0, false, false));

@@ -42,8 +42,6 @@ beforeEach(() => {
     fakeUseParams.mockClear();
     fakeLink.linkAction.mockClear();
 });
-beforeAll(() => jest.useFakeTimers());
-afterAll(() => jest.useRealTimers());
 
 test('RuleCreatePage for realtime rules should render 3 sections, Manage EventTypes, Create rule and Manage Target and snapshot', async () => {
     serverGetEventTypeList(setupNock(BASE_URL), 1, 10, '', 200, generateEventTypeListWith(10, false, false));
