@@ -14,13 +14,8 @@ export const ServiceNotFoundPage: React.FC<{}> = () => {
                     </Typography>
                 </div>
                 <div className={styles.message}>
-                    <Typography
-                        variant='caption'
-                        color='textSecondary'
-                        className={styles.messageText}
-                    >
-                        CEP is not responding in {BASE_URL}, please visit our
-                        docs in order to configure it with a valid url.
+                    <Typography variant='caption' color='textSecondary' className={styles.messageText}>
+                        CEP is not responding in {BASE_URL}, please visit our docs in order to configure it with a valid url.
                     </Typography>
                 </div>
             </div>

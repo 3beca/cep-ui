@@ -64,13 +64,9 @@ test('PaginatedTable snapshot while loading without data', () => {
 
 test('PaginatedTable render without data should show the empty data message', async () => {
     // Render without data
-    const { getByTitle, getByTestId, getByLabelText } = render(
-        <PaginatedTable isLoading={false} isEmpty={true} page={1} size={5} />
-    );
+    const { getByTitle, getByTestId, getByLabelText } = render(<PaginatedTable isLoading={false} isEmpty={true} page={1} size={5} />);
     const noDataView = getByTestId(/empty-view-row/i);
-    expect(getByTestId(/empty-view-row/i)).toHaveTextContent(
-        /no elements created yet/i
-    );
+    expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/no elements created yet/i);
     const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
     const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
     const rowsPerPage = getByLabelText(/^rows:$/i);
@@ -84,13 +80,9 @@ test('PaginatedTable render without data should show the empty data message', as
 
 test('PaginatedTable render with all server data should show the no more data message', async () => {
     // Render without data
-    const { getByTitle, getByTestId, getByLabelText } = render(
-        <PaginatedTable isLoading={false} isEmpty={true} page={2} size={5} />
-    );
+    const { getByTitle, getByTestId, getByLabelText } = render(<PaginatedTable isLoading={false} isEmpty={true} page={2} size={5} />);
     const noDataView = getByTestId(/empty-view-row/i);
-    expect(getByTestId(/empty-view-row/i)).toHaveTextContent(
-        /there are no more elements/i
-    );
+    expect(getByTestId(/empty-view-row/i)).toHaveTextContent(/there are no more elements/i);
     const prevButton = getByTitle(/previous page/i) as HTMLButtonElement;
     const nextButton = getByTitle(/next page/i) as HTMLButtonElement;
     const rowsPerPage = getByLabelText(/^rows:$/i);
@@ -126,14 +118,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
     const onChangePage = jest.fn();
     // Render in first page
     const { getByTitle, getByLabelText, rerender } = render(
-        <PaginatedTable
-            isLoading={false}
-            page={1}
-            size={5}
-            hasNextPage={true}
-            hasPrevPage={false}
-            onChangePage={onChangePage}
-        >
+        <PaginatedTable isLoading={false} page={1} size={5} hasNextPage={true} hasPrevPage={false} onChangePage={onChangePage}>
             <SampleTable />
         </PaginatedTable>
     );
@@ -152,14 +137,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
 
     // Rerender in second page
     rerender(
-        <PaginatedTable
-            isLoading={false}
-            page={2}
-            size={5}
-            hasNextPage={true}
-            hasPrevPage={true}
-            onChangePage={onChangePage}
-        >
+        <PaginatedTable isLoading={false} page={2} size={5} hasNextPage={true} hasPrevPage={true} onChangePage={onChangePage}>
             <SampleTable />
         </PaginatedTable>
     );
@@ -175,14 +153,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
 
     // Rerender last page
     rerender(
-        <PaginatedTable
-            isLoading={false}
-            page={3}
-            size={5}
-            hasNextPage={false}
-            hasPrevPage={true}
-            onChangePage={onChangePage}
-        >
+        <PaginatedTable isLoading={false} page={3} size={5} hasNextPage={false} hasPrevPage={true} onChangePage={onChangePage}>
             <SampleTable />
         </PaginatedTable>
     );
@@ -198,14 +169,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
 
     // Rerender in last page
     rerender(
-        <PaginatedTable
-            isLoading={false}
-            page={2}
-            size={5}
-            hasNextPage={false}
-            hasPrevPage={true}
-            onChangePage={onChangePage}
-        >
+        <PaginatedTable isLoading={false} page={2} size={5} hasNextPage={false} hasPrevPage={true} onChangePage={onChangePage}>
             <SampleTable />
         </PaginatedTable>
     );
@@ -218,15 +182,7 @@ test('PaginatedTable render items and can navigate by pages', async () => {
 test('PaginatedTable render 10 elements when change pageSize to 20', async () => {
     // Render without data
     const onChangePageSize = jest.fn();
-    const { rerender } = render(
-        <PaginatedTable
-            isLoading={false}
-            isEmpty={false}
-            page={1}
-            size={5}
-            onChangePageSize={onChangePageSize}
-        />
-    );
+    const { rerender } = render(<PaginatedTable isLoading={false} isEmpty={false} page={1} size={5} onChangePageSize={onChangePageSize} />);
     const prevButton = screen.getByTitle(/Previous page/) as HTMLButtonElement;
     const nextButton = screen.getByTitle(/Next page/) as HTMLButtonElement;
     const rowsPerPage = screen.getByLabelText(/^rows:$/i);
@@ -246,13 +202,7 @@ test('PaginatedTable render 10 elements when change pageSize to 20', async () =>
     expect(onChangePageSize).toHaveBeenCalledWith(10);
 
     rerender(
-        <PaginatedTable
-            isLoading={false}
-            isEmpty={false}
-            page={1}
-            size={10}
-            onChangePageSize={onChangePageSize}
-        >
+        <PaginatedTable isLoading={false} isEmpty={false} page={1} size={10} onChangePageSize={onChangePageSize}>
             <SampleTable rows={10} />
         </PaginatedTable>
     );
@@ -270,13 +220,7 @@ test('PaginatedTable render 10 elements when change pageSize to 20', async () =>
     expect(onChangePageSize).toHaveBeenNthCalledWith(2, 20);
 
     rerender(
-        <PaginatedTable
-            isLoading={false}
-            isEmpty={false}
-            page={1}
-            size={20}
-            onChangePageSize={onChangePageSize}
-        >
+        <PaginatedTable isLoading={false} isEmpty={false} page={1} size={20} onChangePageSize={onChangePageSize}>
             <SampleTable rows={20} />
         </PaginatedTable>
     );

@@ -1,91 +1,52 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
-    details: {
+    // Target Selected
+    createDetails: {
         display: 'flex',
         flex: 1,
         flexDirection: 'column'
     },
-    detailsActions: {
+    createDetailsActions: {
         display: 'flex',
         justifyContent: 'flex-end'
     },
-    detailsActionsType: {
+    createDetailsActionsType: {
         display: 'flex',
         flex: 1,
         alignItems: 'flex-start',
         fontWeight: 700
     },
-    detailsName: {
+    createDetailsName: {
         display: 'flex'
     },
-    detailsMessage: {
+    createDetailsURL: {
         display: 'flex'
     },
-    detailsURL: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: 4
-    },
-    detailsURLHeader: {
-        fontWeight: 900
-    },
-    detailsURLText: {
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis'
-    },
-    detailsCreateURL: {
-        display: 'flex'
-    },
-    detailsCreateURLButton: {
+    createDetailsURLButton: {
         marginLeft: 10
     },
-    detailsStatus: {
+    createDetailsStatus: {
         display: 'flex',
         padding: 6,
         flexDirection: 'column'
     },
-    detailsStatusLoading: {
+    createDetailsStatusLoading: {
         display: 'flex',
         flex: 1,
         justifyContent: 'flex-end',
         marginRight: 12,
         color: theme.palette.primary.main
     },
-    detailsStatusLoadingText: {
+    createDetailsStatusLoadingText: {
         marginRight: 8
     },
-    detailsStatusError: {
+    createDetailsStatusError: {
         display: 'flex',
         flex: 1,
         justifyContent: 'center',
         marginRight: 12,
         color: theme.palette.error.dark
-    },
-
-    // Header List
-    targetHeaderList: {
-        display: 'flex',
-        flexDirection: 'column',
-        maxWidth: 320,
-        marginTop: 6,
-        marginBottom: 6
-    },
-    targetHeaderTitle: {
-        fontWeight: 900
-    },
-    targetHeaderListItem: {
-        display: 'flex'
-    },
-    targetHeaderListItemKey: {
-        fontWeight: 500
-    },
-    targetHeaderListItemValue: {
-        marginLeft: 4,
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis'
     },
 
     // Header List Edit

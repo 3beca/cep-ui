@@ -1,12 +1,4 @@
-import {
-    red,
-    orange,
-    blue,
-    grey,
-    cyan,
-    deepPurple,
-    blueGrey
-} from '@material-ui/core/colors';
+import { red, orange, blue, grey, cyan, deepPurple, blueGrey } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 
 export const EXTRA_COLORS = {

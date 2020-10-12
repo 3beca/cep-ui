@@ -15,8 +15,7 @@ export const useDebounce = <T>({
     filterDispatch = defaultFilter,
     skipOnFirstRender = false
 }: debounceProps<T>): [T, (value: T) => void] => {
-    if (typeof callback !== 'function')
-        throw new Error(`callback param must be a function`);
+    if (typeof callback !== 'function') throw new Error(`callback param must be a function`);
     const [value, setValue] = React.useState<T>(initialValue);
     const firstRender = React.useRef(true);
     React.useEffect(() => {

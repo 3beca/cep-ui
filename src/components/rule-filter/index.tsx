@@ -4,11 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import EditIcon from '@material-ui/icons/EditOutlined';
 
-import {
-    createANDContainer,
-    createORContainer,
-    createExpresion
-} from './utils';
+import { createANDContainer, createORContainer, createExpresion } from './utils';
 import {
     Geometry,
     RuleFilterContainer,
@@ -36,52 +32,29 @@ export type ExpresionComparatorProps = {
     operator: string;
     value: string | number;
 };
-export const ExpressionComparator: React.FC<ExpresionComparatorProps> = ({
-    field,
-    operator,
-    value
-}) => {
+export const ExpressionComparator: React.FC<ExpresionComparatorProps> = ({ field, operator, value }) => {
     const styles = useStyles();
     return (
-        <div
-            aria-label='filter expression comparator'
-            className={styles.ruleCardFilterExpression}
-        >
-            <Typography
-                aria-label='filter expression field'
-                className={styles.ruleCardFilterExpressionField}
-            >
+        <div aria-label='filter expression comparator' className={styles.ruleCardFilterExpression}>
+            <Typography aria-label='filter expression field' className={styles.ruleCardFilterExpressionField}>
                 {field}
             </Typography>
-            <Typography
-                aria-label='filter expression operator'
-                className={styles.ruleCardFilterExpressionOperator}
-            >
+            <Typography aria-label='filter expression operator' className={styles.ruleCardFilterExpressionOperator}>
                 {operator}
             </Typography>
-            <Typography
-                aria-label='filter expression value'
-                className={styles.ruleCardFilterExpressionValue}
-            >
+            <Typography aria-label='filter expression value' className={styles.ruleCardFilterExpressionValue}>
                 {value}
             </Typography>
         </div>
     );
 };
-const toKilometers = (distance: number) =>
-    distance >= 1000
-        ? (distance / 1000).toFixed(1) + ' kms.'
-        : distance + ' mts.';
+const toKilometers = (distance: number) => (distance >= 1000 ? (distance / 1000).toFixed(1) + ' kms.' : distance + ' mts.');
 export type ExpresionLocationProps = {
     field: string;
     operator: string;
     geometry: Geometry;
 };
-export const ExpresionLocation: React.FC<ExpresionLocationProps> = ({
-    field,
-    operator,
-    geometry
-}) => {
+export const ExpresionLocation: React.FC<ExpresionLocationProps> = ({ field, operator, geometry }) => {
     const styles = useStyles();
     const maxDistance = geometry._maxDistance;
     const minDistance = geometry._minDistance;
@@ -101,34 +74,19 @@ export const ExpresionLocation: React.FC<ExpresionLocationProps> = ({
             : `is to more than ${minDistanceText}`;
 
     return (
-        <div
-            aria-label='filter expression location'
-            className={styles.ruleCardFilterExpression}
-        >
-            <Typography
-                aria-label='filter expression field'
-                className={styles.ruleCardFilterExpressionField}
-            >
+        <div aria-label='filter expression location' className={styles.ruleCardFilterExpression}>
+            <Typography aria-label='filter expression field' className={styles.ruleCardFilterExpressionField}>
                 {field}
             </Typography>
-            <Typography
-                aria-label={`filter expression location distance`}
-                className={styles.ruleCardFilterExpressionDistance}
-            >
+            <Typography aria-label={`filter expression location distance`} className={styles.ruleCardFilterExpressionDistance}>
                 {nearDistanceText +
-                    ` from [${
-                        geometry._geometry.coordinates[0].toFixed(2) +
-                        ', ' +
-                        geometry._geometry.coordinates[1].toFixed(2)
-                    }]`}
+                    ` from [${geometry._geometry.coordinates[0].toFixed(2) + ', ' + geometry._geometry.coordinates[1].toFixed(2)}]`}
             </Typography>
         </div>
     );
 };
 
-export const DeleteButton: React.FC<{ onDelete?: () => void }> = ({
-    onDelete
-}) => {
+export const DeleteButton: React.FC<{ onDelete?: () => void }> = ({ onDelete }) => {
     if (!onDelete) return null;
     return (
         <IconButton aria-label='filter delete button' onClick={onDelete}>
@@ -144,10 +102,7 @@ export const EditButton: React.FC<{ onEdit?: () => void }> = ({ onEdit }) => {
         </IconButton>
     );
 };
-export const hasContainer = (
-    operator: ContainerType,
-    filter: RuleFilterContainer
-) => {
+export const hasContainer = (operator: ContainerType, filter: RuleFilterContainer) => {
     return filter.some(container => container.type === operator);
 };
 export type EditButtonsProps = {
@@ -158,21 +113,11 @@ export type EditButtonsProps = {
     onAddExpression: () => void;
     onDelete?: () => void;
 };
-export const EditButtons: React.FC<EditButtonsProps> = ({
-    show,
-    isRoot = false,
-    filter,
-    onAddContainer,
-    onAddExpression,
-    onDelete
-}) => {
+export const EditButtons: React.FC<EditButtonsProps> = ({ show, isRoot = false, filter, onAddContainer, onAddExpression, onDelete }) => {
     const styles = useStyles();
     if (!show) return null;
     return (
-        <div
-            aria-label='filter action buttons'
-            className={styles.ruleCardActionsButtons}
-        >
+        <div aria-label='filter action buttons' className={styles.ruleCardActionsButtons}>
             <IconButton
                 aria-label='filter add button and'
                 disabled={hasContainer('AND', filter) && isRoot}
@@ -187,10 +132,7 @@ export const EditButtons: React.FC<EditButtonsProps> = ({
             >
                 <Typography>OR</Typography>
             </IconButton>
-            <IconButton
-                aria-label='filter add button expression'
-                onClick={onAddExpression}
-            >
+            <IconButton aria-label='filter add button expression' onClick={onAddExpression}>
                 <Typography>EXP</Typography>
             </IconButton>
             <DeleteButton onDelete={onDelete} />
@@ -206,30 +148,17 @@ export type FilterExpressionProps = {
     editMode: boolean;
     onChange: (newFilter: RuleFilterContainer, expression?: Expression) => void;
 };
-export const FilterExpression: React.FC<FilterExpressionProps> = ({
-    expression,
-    editMode,
-    filter,
-    parent,
-    index,
-    onChange
-}) => {
+export const FilterExpression: React.FC<FilterExpressionProps> = ({ expression, editMode, filter, parent, index, onChange }) => {
     const styles = useStyles();
     const onDeleteExpression = React.useCallback(() => {
         if (!parent) {
-            const newFilter = [
-                ...filter.slice(0, index),
-                ...filter.slice(index + 1)
-            ];
+            const newFilter = [...filter.slice(0, index), ...filter.slice(index + 1)];
             if (newFilter.length === 0) {
                 newFilter.push(createExpresion());
             }
             onChange(newFilter);
         } else {
-            const newValues = [
-                ...parent.values.slice(0, index),
-                ...parent.values.slice(index + 1)
-            ];
+            const newValues = [...parent.values.slice(0, index), ...parent.values.slice(index + 1)];
             parent.values = newValues;
             // if (newValues.length === 0) {
             //     newValues.push(createExpresion());
@@ -240,71 +169,33 @@ export const FilterExpression: React.FC<FilterExpressionProps> = ({
     if (isExpressionDefault(expression)) {
         return (
             <div className={styles.ruleCardFilterExpressionLine}>
-                <ExpressionComparator
-                    field={expression.field}
-                    operator={OPERATORS['EQ']}
-                    value={expression.value}
-                />
-                <DeleteButton
-                    onDelete={editMode ? onDeleteExpression : undefined}
-                />
-                <EditButton
-                    onEdit={
-                        editMode
-                            ? () => onChange(filter, expression)
-                            : undefined
-                    }
-                />
+                <ExpressionComparator field={expression.field} operator={OPERATORS['EQ']} value={expression.value} />
+                <DeleteButton onDelete={editMode ? onDeleteExpression : undefined} />
+                <EditButton onEdit={editMode ? () => onChange(filter, expression) : undefined} />
             </div>
         );
     }
     if (isExpressionComparator(expression)) {
         return (
             <div className={styles.ruleCardFilterExpressionLine}>
-                <ExpressionComparator
-                    field={expression.field}
-                    operator={OPERATORS[expression.operator]}
-                    value={expression.value}
-                />
-                <DeleteButton
-                    onDelete={editMode ? onDeleteExpression : undefined}
-                />
-                <EditButton
-                    onEdit={
-                        editMode
-                            ? () => onChange(filter, expression)
-                            : undefined
-                    }
-                />
+                <ExpressionComparator field={expression.field} operator={OPERATORS[expression.operator]} value={expression.value} />
+                <DeleteButton onDelete={editMode ? onDeleteExpression : undefined} />
+                <EditButton onEdit={editMode ? () => onChange(filter, expression) : undefined} />
             </div>
         );
     }
     if (isExpressionLocation(expression)) {
         return (
             <div className={styles.ruleCardFilterExpressionLine}>
-                <ExpresionLocation
-                    field={expression.field}
-                    operator={expression.operator}
-                    geometry={expression.value}
-                />
-                <DeleteButton
-                    onDelete={editMode ? onDeleteExpression : undefined}
-                />
-                <EditButton
-                    onEdit={
-                        editMode
-                            ? () => onChange(filter, expression)
-                            : undefined
-                    }
-                />
+                <ExpresionLocation field={expression.field} operator={expression.operator} geometry={expression.value} />
+                <DeleteButton onDelete={editMode ? onDeleteExpression : undefined} />
+                <EditButton onEdit={editMode ? () => onChange(filter, expression) : undefined} />
             </div>
         );
     }
     return (
         <div aria-label='filter expression passthrow'>
-            <Typography className={styles.ruleCardFilterExpressionPassthrow}>
-                {expression.type}
-            </Typography>
+            <Typography className={styles.ruleCardFilterExpressionPassthrow}>{expression.type}</Typography>
         </div>
     );
 };
@@ -316,30 +207,17 @@ export type FilterContainerProps = {
     editMode: boolean;
     onChange: (newFilter: RuleFilterContainer, expression?: Expression) => void;
 };
-export const FilterContainer: React.FC<FilterContainerProps> = ({
-    filter,
-    parent,
-    container,
-    index,
-    editMode,
-    onChange
-}) => {
+export const FilterContainer: React.FC<FilterContainerProps> = ({ filter, parent, container, index, editMode, onChange }) => {
     const styles = useStyles();
     const onDelete = React.useCallback(() => {
         if (!parent) {
-            const newFilter = [
-                ...filter.slice(0, index),
-                ...filter.slice(index + 1)
-            ];
+            const newFilter = [...filter.slice(0, index), ...filter.slice(index + 1)];
             if (newFilter.length === 0) {
                 newFilter.push(createExpresion());
             }
             onChange(newFilter);
         } else {
-            const newValues = [
-                ...parent.values.slice(0, index),
-                ...parent.values.slice(index + 1)
-            ];
+            const newValues = [...parent.values.slice(0, index), ...parent.values.slice(index + 1)];
             parent.values = newValues;
             // if (newValues.length === 0) {
             //     newValues.push(createExpresion());
@@ -349,11 +227,8 @@ export const FilterContainer: React.FC<FilterContainerProps> = ({
     }, [parent, onChange, filter, index]);
     const onAddContainer = React.useCallback(
         (type: 'OR' | 'AND') => {
-            const containerWithoutPassthrow = container.values.filter(
-                expressions => expressions.type !== 'PASSTHROW'
-            );
-            const newContainer =
-                type === 'OR' ? createORContainer() : createANDContainer();
+            const containerWithoutPassthrow = container.values.filter(expressions => expressions.type !== 'PASSTHROW');
+            const newContainer = type === 'OR' ? createORContainer() : createANDContainer();
             containerWithoutPassthrow.push(newContainer);
             container.values = containerWithoutPassthrow;
             onChange([...filter]);
@@ -361,31 +236,17 @@ export const FilterContainer: React.FC<FilterContainerProps> = ({
         [filter, onChange, container]
     );
     const onAddExpression = React.useCallback(() => {
-        const containerWithoutPassthrow = container.values.filter(
-            expressions => expressions.type !== 'PASSTHROW'
-        );
+        const containerWithoutPassthrow = container.values.filter(expressions => expressions.type !== 'PASSTHROW');
         const newExpression = createExpresion();
         containerWithoutPassthrow.push(newExpression);
         container.values = containerWithoutPassthrow;
         onChange([...filter], newExpression);
     }, [filter, onChange, container]);
     return (
-        <div
-            aria-label='container expressions'
-            className={styles.ruleCardFilterContainer}
-        >
-            <div
-                aria-label='container expressions header'
-                className={styles.ruleCardFilterContainerHeader}
-            >
-                <Typography
-                    className={styles.ruleCardFilterContainerHeaderText}
-                >
-                    {container.type === CONTAINER_TYPES.OR
-                        ? 'One Of'
-                        : container.type === CONTAINER_TYPES.AND
-                        ? 'All Of'
-                        : container.field}
+        <div aria-label='container expressions' className={styles.ruleCardFilterContainer}>
+            <div aria-label='container expressions header' className={styles.ruleCardFilterContainerHeader}>
+                <Typography className={styles.ruleCardFilterContainerHeaderText}>
+                    {container.type === CONTAINER_TYPES.OR ? 'One Of' : container.type === CONTAINER_TYPES.AND ? 'All Of' : container.field}
                 </Typography>
             </div>
             <EditButtons
@@ -426,33 +287,20 @@ export type RuleFilterProps = {
     filter: RuleFilterContainer;
     disabled?: boolean;
     editMode?: boolean;
-    onChange?: (
-        newFilter: RuleFilterContainer,
-        expression?: Expression
-    ) => void;
+    onChange?: (newFilter: RuleFilterContainer, expression?: Expression) => void;
 };
-export const RuleFilter: React.FC<RuleFilterProps> = ({
-    filter,
-    disabled,
-    editMode = false,
-    onChange = NOOP
-}) => {
+export const RuleFilter: React.FC<RuleFilterProps> = ({ filter, disabled, editMode = false, onChange = NOOP }) => {
     const onAddContainer = React.useCallback(
         (type: 'OR' | 'AND') => {
-            const filterWithoutPassthrow = filter.filter(
-                container => container.type !== 'PASSTHROW'
-            );
-            const newContainer =
-                type === 'OR' ? createORContainer() : createANDContainer();
+            const filterWithoutPassthrow = filter.filter(container => container.type !== 'PASSTHROW');
+            const newContainer = type === 'OR' ? createORContainer() : createANDContainer();
             filterWithoutPassthrow.push(newContainer);
             onChange(filterWithoutPassthrow);
         },
         [filter, onChange]
     );
     const onAddExpression = React.useCallback(() => {
-        const filterWithoutPassthrow = filter.filter(
-            container => container.type !== 'PASSTHROW'
-        );
+        const filterWithoutPassthrow = filter.filter(container => container.type !== 'PASSTHROW');
         const newExpression = createExpresion();
         onChange([...filterWithoutPassthrow, newExpression], newExpression);
     }, [filter, onChange]);
@@ -467,14 +315,7 @@ export const RuleFilter: React.FC<RuleFilterProps> = ({
             />
             {filter.map((container, idx) => {
                 return isContainer(container) ? (
-                    <FilterContainer
-                        index={idx}
-                        container={container}
-                        key={idx}
-                        filter={filter}
-                        editMode={editMode}
-                        onChange={onChange}
-                    />
+                    <FilterContainer index={idx} container={container} key={idx} filter={filter} editMode={editMode} onChange={onChange} />
                 ) : (
                     <FilterExpression
                         index={idx}

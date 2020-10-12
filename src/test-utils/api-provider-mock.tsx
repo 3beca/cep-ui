@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { buildApiService } from '../services/api';
-import {
-    APIContext,
-    UpdateAPIContext,
-    APIUtilsContext,
-    ValidationState,
-    APIContextState
-} from '../services/api-provider/api-context';
+import { APIContext, UpdateAPIContext, APIUtilsContext, ValidationState, APIContextState } from '../services/api-provider/api-context';
 import { BASE_URL } from '../services/config';
 import { NOOP } from '../utils';
 
@@ -27,11 +21,7 @@ export type APIProviderMockProps = {
     state?: APIContextState;
     utils?: APIUtilsContext;
 };
-export const APIProviderMock: React.FC<APIProviderMockProps> = ({
-    state = initialContext,
-    utils = initialUtils,
-    ...props
-}) => {
+export const APIProviderMock: React.FC<APIProviderMockProps> = ({ state = initialContext, utils = initialUtils, ...props }) => {
     return (
         <APIContext.Provider value={state}>
             <UpdateAPIContext.Provider value={utils} {...props} />

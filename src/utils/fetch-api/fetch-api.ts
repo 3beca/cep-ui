@@ -16,11 +16,7 @@ export type APIResponseData<T> = {
     data: T;
 };
 export type APIResponseEmptyData = APIResponseData<undefined>;
-export const fetchApi = async <
-    B extends APIBody,
-    R extends APIBody,
-    E extends APIBody
->(
+export const fetchApi = async <B extends APIBody, R extends APIBody, E extends APIBody>(
     url: string,
     config: APIRequestData<B>
 ): Promise<APIResponseData<R> | APIError<E>> => {
@@ -58,9 +54,7 @@ export const fetchApi = async <
     }
 };
 
-export const isAPIError = <T, E>(
-    error: APIResponseData<T> | APIError<E>
-): error is APIError<E> => {
+export const isAPIError = <T, E>(error: APIResponseData<T> | APIError<E>): error is APIError<E> => {
     return (error as APIError<E>).errorCode !== undefined;
 };
 

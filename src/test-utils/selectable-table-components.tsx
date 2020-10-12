@@ -5,39 +5,22 @@ import { ComponentWithUseSelectableProps } from '../services/use-selectable-list
 import { ServiceList } from '../services/api';
 
 const expectMUICheckboxChecked = (e: HTMLElement) =>
-    expect(e.parentElement!.parentElement!).toHaveAttribute(
-        'class',
-        expect.stringContaining('Mui-checked')
-    );
+    expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.stringContaining('Mui-checked'));
 const expectMUICheckboxNotChecked = (e: HTMLElement) =>
-    expect(e.parentElement!.parentElement!).toHaveAttribute(
-        'class',
-        expect.not.stringContaining('Mui-checked')
-    );
+    expect(e.parentElement!.parentElement!).toHaveAttribute('class', expect.not.stringContaining('Mui-checked'));
 
 export const runSelectableTableTest = <R, E>(
     title: string,
     SelectableTable: React.FC<ComponentWithUseSelectableProps<R>>,
-    dataGenerator: (
-        size: number,
-        next: boolean,
-        prev: boolean
-    ) => ServiceList<R>,
-    serverResponse: (
-        page: number,
-        pageSize: number,
-        status: number,
-        response: ServiceList<R> | E
-    ) => nock.Scope | void,
+    dataGenerator: (size: number, next: boolean, prev: boolean) => ServiceList<R>,
+    serverResponse: (page: number, pageSize: number, status: number, response: ServiceList<R> | E) => nock.Scope | void,
     checkInternals: boolean = true
 ) => {
     test(`${title} snapshot when no element selected`, async () => {
         const events = dataGenerator(5, true, false);
         serverResponse(1, 10, 200, events);
         render(<SelectableTable />);
-        await waitFor(() =>
-            expect(screen.getAllByLabelText('element name')).toHaveLength(5)
-        );
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
         const elements = await screen.findAllByRole(/element-selector$/);
 
@@ -49,9 +32,7 @@ export const runSelectableTableTest = <R, E>(
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
         render(<SelectableTable />);
-        await waitFor(() =>
-            expect(screen.getAllByLabelText('element name')).toHaveLength(5)
-        );
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
         const elements = await screen.findAllByRole(/element-selector$/);
 
@@ -64,12 +45,8 @@ export const runSelectableTableTest = <R, E>(
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
         render(<SelectableTable />);
-        await waitFor(() =>
-            expect(screen.getAllByLabelText('element name')).toHaveLength(5)
-        );
-        const selectorAll = await screen.findByLabelText(
-            /element-selector-all$/
-        );
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
+        const selectorAll = await screen.findByLabelText(/element-selector-all$/);
 
         fireEvent.click(selectorAll, { target: { value: true } });
     });
@@ -80,9 +57,7 @@ export const runSelectableTableTest = <R, E>(
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
         render(<SelectableTable onSelected={onSelected} />);
-        await waitFor(() =>
-            expect(screen.getAllByLabelText('element name')).toHaveLength(5)
-        );
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
         const elements = await screen.findAllByRole(/element-selector$/);
 
@@ -114,19 +89,12 @@ export const runSelectableTableTest = <R, E>(
         fireEvent.click(elements[2], { target: { value: true } });
         if (checkInternals) {
             expect(onSelected).toHaveBeenCalledTimes(4);
-            expect(onSelected).toHaveBeenNthCalledWith(4, [
-                events.results[0],
-                events.results[2]
-            ]);
+            expect(onSelected).toHaveBeenNthCalledWith(4, [events.results[0], events.results[2]]);
         }
         fireEvent.click(elements[4], { target: { value: true } });
         if (checkInternals) {
             expect(onSelected).toHaveBeenCalledTimes(5);
-            expect(onSelected).toHaveBeenNthCalledWith(5, [
-                events.results[0],
-                events.results[2],
-                events.results[4]
-            ]);
+            expect(onSelected).toHaveBeenNthCalledWith(5, [events.results[0], events.results[2], events.results[4]]);
         }
         [first, thrid, fifth].map(e => expectMUICheckboxChecked(e));
         [second, fourth].map(e => expectMUICheckboxNotChecked(e));
@@ -135,10 +103,7 @@ export const runSelectableTableTest = <R, E>(
         fireEvent.click(elements[2], { target: { value: false } });
         if (checkInternals) {
             expect(onSelected).toHaveBeenCalledTimes(6);
-            expect(onSelected).toHaveBeenNthCalledWith(6, [
-                events.results[0],
-                events.results[4]
-            ]);
+            expect(onSelected).toHaveBeenNthCalledWith(6, [events.results[0], events.results[4]]);
         }
         [first, fifth].map(e => expectMUICheckboxChecked(e));
         [second, thrid, fourth].map(e => expectMUICheckboxNotChecked(e));
@@ -146,13 +111,9 @@ export const runSelectableTableTest = <R, E>(
         // Forward page should reset selecteds
         const secondPageOfEvents = dataGenerator(5, false, true);
         serverResponse(2, 10, 200, secondPageOfEvents);
-        const nextButton = (await screen.findByTitle(
-            /next page/i
-        )) as HTMLButtonElement;
+        const nextButton = (await screen.findByTitle(/next page/i)) as HTMLButtonElement;
         fireEvent.click(nextButton);
-        await waitFor(() =>
-            expect(() => screen.getByTestId(/loading-view-row/)).toThrowError()
-        );
+        await waitFor(() => expect(() => screen.getByTestId(/loading-view-row/)).toThrowError());
 
         // Expect new elements to be unchecked
         // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar
@@ -168,13 +129,9 @@ export const runSelectableTableTest = <R, E>(
         serverResponse(1, 10, 200, events);
         // First load, nothing selected
         render(<SelectableTable onSelected={onSelected} />);
-        await waitFor(() =>
-            expect(screen.getAllByLabelText('element name')).toHaveLength(5)
-        );
+        await waitFor(() => expect(screen.getAllByLabelText('element name')).toHaveLength(5));
 
-        const selectAllChecker = await screen.findByLabelText(
-            /element-selector-all/
-        );
+        const selectAllChecker = await screen.findByLabelText(/element-selector-all/);
         const elements = await screen.findAllByRole(/element-selector$/);
 
         // Check All elements
@@ -206,13 +163,9 @@ export const runSelectableTableTest = <R, E>(
         fireEvent.click(selectAllChecker, { target: { value: true } });
         const secondPageOfEvents = dataGenerator(5, false, true);
         serverResponse(2, 10, 200, secondPageOfEvents);
-        const nextButton = (await screen.findByTitle(
-            /next page/i
-        )) as HTMLButtonElement;
+        const nextButton = (await screen.findByTitle(/next page/i)) as HTMLButtonElement;
         fireEvent.click(nextButton);
-        await waitFor(() =>
-            expect(() => screen.getByTestId(/loading-view-row/)).toThrowError()
-        );
+        await waitFor(() => expect(() => screen.getByTestId(/loading-view-row/)).toThrowError());
 
         // Expect new elements to be unchecked
         // TODO: Test muy peligroso pq depende de un estilo, pendiente de buscar una forma mejor de identificar

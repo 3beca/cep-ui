@@ -19,40 +19,27 @@ export type EventTypeSelectorProps = {
     onSelected: (eventType: EventType | null) => void;
     disabled?: boolean;
 };
-export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({
-    selected,
-    onSelected,
-    disabled = false
-}) => {
+export const EventTypeSelector: React.FC<EventTypeSelectorProps> = ({ selected, onSelected, disabled = false }) => {
     const styles = useStyles();
-    const { accumulated, isLoading, changeFilter } = useGetListAccumulated<
-        EventType
-    >(ENTITY.EVENT_TYPES, 1, 10, '', !disabled && !selected);
-    const handleClearSelection = React.useCallback(() => onSelected(null), [
-        onSelected
-    ]);
+    const { accumulated, isLoading, changeFilter } = useGetListAccumulated<EventType>(
+        ENTITY.EVENT_TYPES,
+        1,
+        10,
+        '',
+        !disabled && !selected
+    );
+    const handleClearSelection = React.useCallback(() => onSelected(null), [onSelected]);
 
     // Render component
     if (selected) {
         return (
-            <Paper
-                className={styles.container}
-                aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}
-            >
-                <EventTypeCreate
-                    eventType={selected}
-                    clearEventType={handleClearSelection}
-                    setEventType={onSelected}
-                    disabled={disabled}
-                />
+            <Paper className={styles.container} aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}>
+                <EventTypeCreate eventType={selected} clearEventType={handleClearSelection} setEventType={onSelected} disabled={disabled} />
             </Paper>
         );
     }
     return (
-        <Paper
-            className={styles.container}
-            aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}
-        >
+        <Paper className={styles.container} aria-label={`eventtype selector${disabled ? ' disabled' : ''}`}>
             <Autocomplete<EventType>
                 disabled={disabled}
                 options={accumulated}

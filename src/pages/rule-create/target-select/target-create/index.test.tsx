@@ -10,58 +10,15 @@ import {
 } from '../../../../test-utils';
 import userEvent from '@testing-library/user-event';
 
-import TargetCreate from './index';
+import TargetCreate from './';
 import { Target, TargetError } from '../../../../services/api';
-
-test('TargetCreate should show a target, and close', async () => {
-    const target = generateTarget(1, 'test', 'test');
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={target} clearTarget={clearTarget} setTarget={setTarget} />);
-
-    // Cancel selection
-    const clearButton = await screen.findByLabelText(/target selected clear/i);
-    userEvent.click(clearButton);
-    expect(clearTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, target);
-});
-
-test('TargetCreate can be cancelled before create a new target', async () => {
-    const target = generateTarget(1, 'newEV', 'testNewEv');
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    const targetEmpty: Target = {
-        id: '',
-        name: target.name,
-        url: target.url,
-        createdAt: '',
-        updatedAt: ''
-    };
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} />);
-
-    await screen.findByLabelText(/target creating block/i);
-    await screen.findByLabelText(/target creating name/i);
-    await screen.findByLabelText(/target creating action/i);
-    userEvent.click(await screen.findByLabelText(/target creating clear/i));
-
-    expect(clearTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenCalledTimes(0);
-});
 
 test('TargetCreate should create a new Target', async () => {
     const target = generateTarget(1, 'newEV', 'testNewEv');
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    const targetEmpty: Target = {
-        id: '',
-        name: target.name,
-        url: target.url,
-        createdAt: '',
-        updatedAt: ''
-    };
+    const close = jest.fn();
+    const onCreate = jest.fn();
     serverCreateTarget(setupNock(BASE_URL), { name: target.name, url: target.url }, 201, target);
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} />);
+    const { unmount } = render(<TargetCreate targetName={target.name} close={close} onCreate={onCreate} />);
 
     await screen.findByLabelText(/target creating block/i);
     await screen.findByLabelText(/target creating name/i);
@@ -83,31 +40,24 @@ test('TargetCreate should create a new Target', async () => {
 
     userEvent.click(createButton);
     await screen.findByLabelText(/target creating loading/i);
-    await screen.findByLabelText(/target selected block/i);
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, target);
-    expect(await screen.findByLabelText(/target selected name/i)).toHaveTextContent(target.name);
-    expect(await screen.findByLabelText(/target selected url/i)).toHaveTextContent(target.url);
+    await screen.findByLabelText(/target creating url/i);
+    expect(onCreate).toHaveBeenCalledTimes(1);
+    expect(onCreate).toHaveBeenNthCalledWith(1, target);
+
+    unmount();
 });
 
 test('TargetCreate should show error when cannot create the target', async () => {
     const target = generateTarget(1, 'newEV', 'testNewEv');
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    const targetEmpty: Target = {
-        id: '',
-        name: target.name,
-        url: target.url,
-        createdAt: '',
-        updatedAt: ''
-    };
+    const close = jest.fn();
+    const onCreate = jest.fn();
     const targetError: TargetError = {
         statusCode: 409,
         error: 'Bad request',
         message: 'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
     };
     serverCreateTarget(setupNock(BASE_URL), { name: target.name, url: target.url }, 409, targetError);
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} />);
+    render(<TargetCreate targetName={target.name} close={close} onCreate={onCreate} />);
 
     await screen.findByLabelText(/target creating block/i);
     await screen.findByLabelText(/target creating name/i);
@@ -130,50 +80,35 @@ test('TargetCreate should show error when cannot create the target', async () =>
     expect(await screen.findByLabelText(/target creating name/i)).toHaveTextContent(target.name);
     expect(await screen.findByLabelText(/target creating input url/)).toHaveValue(target.url);
     expect(await screen.findByLabelText(/target creating error/i)).toHaveTextContent(targetError.message);
-    expect(setTarget).toHaveBeenCalledTimes(0);
+    expect(onCreate).toHaveBeenCalledTimes(0);
 });
 
-test('TargetCreate should show a Target disabled', async () => {
+test('TargetCreate should disable create headers and url', async () => {
     const target = generateTarget(1, 'test', 'test');
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={target} clearTarget={clearTarget} setTarget={setTarget} disabled={true} />);
+    const close = jest.fn();
+    const onCreate = jest.fn();
+    const { unmount } = render(<TargetCreate targetName={target.name} close={close} onCreate={onCreate} disabled={true} />);
 
-    // Cancel selection
-    const clearButton = await screen.findByLabelText(/target selected clear/i);
+    // Disable cannot create headers
+    expect(await screen.findByLabelText(/open dialog/i)).toBeDisabled();
+    // Disabled cannot create target
+    await userEvent.type(await screen.findByLabelText(/target creating input url/), 'http://myurlevent.io');
+    const createButton = await screen.findByLabelText(/target creating button url/);
+    expect(createButton).toBeDisabled();
+    userEvent.click(createButton);
+    expect(screen.queryByLabelText(/target creating loading/i)).not.toBeInTheDocument();
+    const clearButton = await screen.findByLabelText(/target creating clear/i);
     userEvent.click(clearButton);
-    expect(clearTarget).toHaveBeenCalledTimes(0);
-});
+    expect(onCreate).toHaveBeenCalledTimes(0);
 
-test('TargetCreate should show a Target disabled even when its not created', async () => {
-    const targetEmpty: Target = {
-        id: '',
-        name: 'Empty event type',
-        url: '',
-        createdAt: '',
-        updatedAt: ''
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={true} />);
-
-    // Cancel selection
-    const clearButton = await screen.findByLabelText(/target selected clear/i);
-    userEvent.click(clearButton);
-    expect(clearTarget).toHaveBeenCalledTimes(0);
+    unmount();
 });
 
 test('TargetCreate should show and close add headers dialog', async () => {
-    const targetEmpty: Target = {
-        id: '',
-        name: 'Empty event type',
-        url: '',
-        createdAt: '',
-        updatedAt: ''
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={false} />);
+    const targetName = 'Empty event type';
+    const close = jest.fn();
+    const onCreate = jest.fn();
+    render(<TargetCreate targetName={targetName} close={close} onCreate={onCreate} disabled={false} />);
 
     // Create target
     const targetURL = 'https://somewhere.io';
@@ -194,16 +129,9 @@ test('TargetCreate should show and close add headers dialog', async () => {
 
 test('TargetCreate can add two headers to the target', async () => {
     const targetName = 'My new target with headers';
-    const targetEmpty: Target = {
-        id: '',
-        name: targetName,
-        url: '',
-        createdAt: '',
-        updatedAt: ''
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={false} />);
+    const close = jest.fn();
+    const onCreate = jest.fn();
+    render(<TargetCreate targetName={targetName} close={close} onCreate={onCreate} disabled={false} />);
 
     // Create target
     const targetURL = 'https://somewhere.io';
@@ -250,33 +178,17 @@ test('TargetCreate can add two headers to the target', async () => {
     serverCreateTarget(setupNock(BASE_URL), { name: targetName, url: targetURL, headers }, 201, newTarget);
     userEvent.click(await screen.findByLabelText(/target creating button url/i));
     expect(await screen.findByLabelText(/target creating loading/i)).toHaveTextContent(/creating target/i);
-    await screen.findByLabelText(/target selected block/i);
-    await screen.findByLabelText(/target selected headers list/i);
-    const headersKeyInTarget = await screen.findAllByLabelText(/target selected key header/i);
-    expect(headersKeyInTarget).toHaveLength(2);
-    expect(headersKeyInTarget[0]).toHaveTextContent(authHeaderKey);
-    expect(headersKeyInTarget[1]).toHaveTextContent(appidHeaderKey);
-    const headersValueInTarget = await screen.findAllByLabelText(/target selected value header/i);
-    expect(headersValueInTarget).toHaveLength(2);
-    expect(headersValueInTarget[0]).toHaveTextContent(authHeaderValue);
-    expect(headersValueInTarget[1]).toHaveTextContent(appidHeaderValue);
+    await screen.findByLabelText(/target creating url/i);
 
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, newTarget);
+    expect(onCreate).toHaveBeenCalledTimes(1);
+    expect(onCreate).toHaveBeenNthCalledWith(1, newTarget);
 });
 
 test('TargetCreate can create target without headers', async () => {
     const targetName = 'My new target with headers';
-    const targetEmpty: Target = {
-        id: '',
-        name: targetName,
-        url: '',
-        createdAt: '',
-        updatedAt: ''
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={false} />);
+    const close = jest.fn();
+    const onCreate = jest.fn();
+    render(<TargetCreate targetName={targetName} close={close} onCreate={onCreate} disabled={false} />);
 
     // Create target
     const targetURL = 'https://somewhere.io';
@@ -290,25 +202,18 @@ test('TargetCreate can create target without headers', async () => {
     serverCreateTarget(setupNock(BASE_URL), { name: targetName, url: targetURL }, 201, newTarget);
     userEvent.click(await screen.findByLabelText(/target creating button url/i));
     expect(await screen.findByLabelText(/target creating loading/i)).toHaveTextContent(/creating target/i);
-    await screen.findByLabelText(/target selected block/i);
-    expect(screen.queryByLabelText(/target selected headers/i)).not.toBeInTheDocument();
+    await screen.findByLabelText(/target creating url/i);
+    expect(screen.queryByLabelText(/target creating headers list/i)).not.toBeInTheDocument();
 
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, newTarget);
+    expect(onCreate).toHaveBeenCalledTimes(1);
+    expect(onCreate).toHaveBeenNthCalledWith(1, newTarget);
 });
 
 test('TargetCreate do not accept content-type nor content-length nor spaces as headers', async () => {
     const targetName = 'My new target with headers';
-    const targetEmpty: Target = {
-        id: '',
-        name: targetName,
-        url: '',
-        createdAt: '',
-        updatedAt: ''
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={false} />);
+    const close = jest.fn();
+    const onCreate = jest.fn();
+    render(<TargetCreate targetName={targetName} close={close} onCreate={onCreate} disabled={false} />);
 
     // Create target
     const targetURL = 'https://somewhere.io';
@@ -374,24 +279,17 @@ test('TargetCreate do not accept content-type nor content-length nor spaces as h
     serverCreateTarget(setupNock(BASE_URL), { name: targetName, url: targetURL, headers: { headerwithspaces: '123' } }, 201, newTarget);
     userEvent.click(await screen.findByLabelText(/target creating button url/i));
     expect(await screen.findByLabelText(/target creating loading/i)).toHaveTextContent(/creating target/i);
-    await screen.findByLabelText(/target selected block/i);
+    await screen.findByLabelText(/target creating url/i);
 
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, newTarget);
+    expect(onCreate).toHaveBeenCalledTimes(1);
+    expect(onCreate).toHaveBeenNthCalledWith(1, newTarget);
 });
 
 test('TargetCreate can delete a header before create target', async () => {
     const targetName = 'My new target with headers';
-    const targetEmpty: Target = {
-        id: '',
-        name: targetName,
-        url: '',
-        createdAt: '',
-        updatedAt: ''
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={false} />);
+    const close = jest.fn();
+    const onCreate = jest.fn();
+    render(<TargetCreate targetName={targetName} close={close} onCreate={onCreate} disabled={false} />);
 
     // Create target
     const targetURL = 'https://somewhere.io';
@@ -444,24 +342,17 @@ test('TargetCreate can delete a header before create target', async () => {
     serverCreateTarget(setupNock(BASE_URL), { name: targetName, url: targetURL, headers }, 201, newTarget);
     userEvent.click(await screen.findByLabelText(/target creating button url/i));
     expect(await screen.findByLabelText(/target creating loading/i)).toHaveTextContent(/creating target/i);
-    await screen.findByLabelText(/target selected block/i);
+    await screen.findByLabelText(/target creating url/i);
 
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, newTarget);
+    expect(onCreate).toHaveBeenCalledTimes(1);
+    expect(onCreate).toHaveBeenNthCalledWith(1, newTarget);
 });
 
 test('TargetCreate merge duplicate headers', async () => {
     const targetName = 'My new target with headers';
-    const targetEmpty: Target = {
-        id: '',
-        name: targetName,
-        url: '',
-        createdAt: '',
-        updatedAt: ''
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={targetEmpty} clearTarget={clearTarget} setTarget={setTarget} disabled={false} />);
+    const close = jest.fn();
+    const onCreate = jest.fn();
+    render(<TargetCreate targetName={targetName} close={close} onCreate={onCreate} disabled={false} />);
 
     // Create target
     const targetURL = 'https://somewhere.io';
@@ -509,29 +400,8 @@ test('TargetCreate merge duplicate headers', async () => {
     serverCreateTarget(setupNock(BASE_URL), { name: targetName, url: targetURL, headers }, 201, newTarget);
     userEvent.click(await screen.findByLabelText(/target creating button url/i));
     expect(await screen.findByLabelText(/target creating loading/i)).toHaveTextContent(/creating target/i);
-    await screen.findByLabelText(/target selected block/i);
+    await screen.findByLabelText(/target creating url/i);
 
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, newTarget);
-});
-
-test('TargetCreate do not show invalid headers', async () => {
-    const targetName = 'My new target with headers';
-    const target: Target = {
-        id: 'mynewtarget',
-        name: targetName,
-        headers: {},
-        url: 'https://myurl.io/123456',
-        createdAt: '2020-01-01T10:10:00.000Z',
-        updatedAt: '2020-01-01T10:15:00.000Z'
-    };
-    const clearTarget = jest.fn();
-    const setTarget = jest.fn();
-    render(<TargetCreate target={target} clearTarget={clearTarget} setTarget={setTarget} disabled={false} />);
-
-    await screen.findByLabelText(/target selected block/i);
-    expect(screen.queryByLabelText(/target selected headers/i)).not.toBeInTheDocument();
-
-    expect(setTarget).toHaveBeenCalledTimes(1);
-    expect(setTarget).toHaveBeenNthCalledWith(1, target);
+    expect(onCreate).toHaveBeenCalledTimes(1);
+    expect(onCreate).toHaveBeenNthCalledWith(1, newTarget);
 });

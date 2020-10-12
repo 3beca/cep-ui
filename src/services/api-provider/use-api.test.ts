@@ -34,9 +34,7 @@ describe('useGetList', () => {
         const expectedResult = generateEventTypeListWith(3, true, false);
         serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-        const { result, waitForNextUpdate, rerender } = renderHook(() =>
-            useGetList(ENTITY.EVENT_TYPES, page, size)
-        );
+        const { result, waitForNextUpdate, rerender } = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size));
 
         expect(result.current.isLoading).toBe(true);
         expect(result.current.error).toBe(undefined);
@@ -54,14 +52,7 @@ describe('useGetList', () => {
         page = 2;
         size = 3;
         const expectedResultPage2 = generateEventTypeListWith(3, true, true);
-        serverGetEventTypeList(
-            server,
-            page,
-            size,
-            '',
-            200,
-            expectedResultPage2
-        );
+        serverGetEventTypeList(server, page, size, '', 200, expectedResultPage2);
 
         rerender();
 
@@ -88,14 +79,7 @@ describe('useGetList', () => {
             error: 'Error query',
             message: 'Error message'
         };
-        serverGetEventTypeList(
-            server,
-            page,
-            size,
-            '',
-            500,
-            expectedResultPageError
-        );
+        serverGetEventTypeList(server, page, size, '', 500, expectedResultPageError);
 
         rerender();
 
@@ -126,9 +110,7 @@ describe('useGetList', () => {
         const expectedResult = generateEventTypeListWith(3, true, false);
         serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useGetList(ENTITY.EVENT_TYPES, page, size)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size));
 
         expect(result.current.isLoading).toBe(true);
         expect(result.current.error).toBe(undefined);
@@ -170,9 +152,7 @@ describe('useGetList', () => {
         const expectedResult = generateEventTypeListWith(3, true, false);
         serverGetEventTypeList(server, page, size, filter, 200, expectedResult);
 
-        const { result, rerender, waitForNextUpdate } = renderHook(() =>
-            useGetList(ENTITY.EVENT_TYPES, page, size, filter)
-        );
+        const { result, rerender, waitForNextUpdate } = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, filter));
 
         expect(result.current.isLoading).toBe(true);
         expect(result.current.error).toBe(undefined);
@@ -214,9 +194,7 @@ describe('useGetList', () => {
         const expectedResult = generateEventTypeListWith(3, true, false);
         serverGetEventTypeList(server, page, size, '', 200, expectedResult);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useGetList(ENTITY.EVENT_TYPES, page, size, '', false)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useGetList(ENTITY.EVENT_TYPES, page, size, '', false));
 
         expect(result.current.isLoading).toBe(false);
         expect(result.current.error).toBe(undefined);
@@ -262,18 +240,9 @@ describe('useGetList', () => {
         const size = 1;
         const eventTypeId = 'eventtypeid';
         const expectedResult = generateEventLogListWith(3, true, false);
-        serverGetEventLogList(
-            server,
-            page,
-            size,
-            eventTypeId,
-            200,
-            expectedResult
-        );
+        serverGetEventLogList(server, page, size, eventTypeId, 200, expectedResult);
         const filter = { eventTypeId };
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useGetList(ENTITY.EVENTS_LOG, page, size, filter)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useGetList(ENTITY.EVENTS_LOG, page, size, filter));
 
         expect(result.current.isLoading).toBe(true);
         expect(result.current.error).toBe(undefined);
@@ -295,9 +264,7 @@ describe('useDelete', () => {
         const eventTypeId = '123456789098';
         serverDeleteEventType(server, eventTypeId);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useDelete(ENTITY.EVENT_TYPES, eventTypeId)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useDelete(ENTITY.EVENT_TYPES, eventTypeId));
         expect(result.current.response).toBe(undefined);
         expect(result.current.error).toBe(undefined);
         expect(result.current.isLoading).toBe(false);
@@ -322,9 +289,7 @@ describe('useDelete', () => {
         const eventTypeId = (undefined as unknown) as string;
         serverDeleteEventType(server, eventTypeId);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useDelete(ENTITY.EVENT_TYPES, eventTypeId)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useDelete(ENTITY.EVENT_TYPES, eventTypeId));
         expect(result.current.response).toBe(undefined);
         expect(result.current.error).toBe(undefined);
         expect(result.current.isLoading).toBe(false);
@@ -361,9 +326,7 @@ describe('useDelete', () => {
         serverDeleteEventType(server, eventTypeIds[1], 500, errorResponse);
         serverDeleteEventType(server, eventTypeIds[2]);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useDelete(ENTITY.EVENT_TYPES, eventTypeIds)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useDelete(ENTITY.EVENT_TYPES, eventTypeIds));
         expect(result.current.response).toBe(undefined);
         expect(result.current.error).toBe(undefined);
         expect(result.current.isLoading).toBe(false);
@@ -403,9 +366,7 @@ describe('useCreate', () => {
         const eventBody: Partial<EventType> = { name: eventType.name };
         serverCreateEventType(server, eventBody, 201, eventType);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useCreate(ENTITY.EVENT_TYPES, eventBody)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useCreate(ENTITY.EVENT_TYPES, eventBody));
 
         expect(result.current.error).toBe(undefined);
         expect(result.current.isLoading).toBe(false);
@@ -431,9 +392,7 @@ describe('useCreate', () => {
         };
         serverCreateTarget(server, targetBody, 201, target);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useCreate(ENTITY.TARGETS, targetBody)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useCreate(ENTITY.TARGETS, targetBody));
 
         expect(result.current.error).toBe(undefined);
         expect(result.current.isLoading).toBe(false);
@@ -459,14 +418,11 @@ describe('useCreate', () => {
         const targetError: TargetError = {
             statusCode: 409,
             error: 'Bad request',
-            message:
-                'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
+            message: 'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
         };
         serverCreateTarget(server, targetBody, 409, targetError);
 
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useCreate(ENTITY.TARGETS, targetBody)
-        );
+        const { result, waitForNextUpdate } = renderHook(() => useCreate(ENTITY.TARGETS, targetBody));
 
         expect(result.current.error).toBe(undefined);
         expect(result.current.isLoading).toBe(false);
@@ -496,9 +452,7 @@ describe('useCreate', () => {
         };
         serverCreateTarget(server, targetBody, 201, target);
 
-        const { result, waitForNextUpdate, rerender } = renderHook(() =>
-            useCreate(ENTITY.TARGETS, targetBody, true)
-        );
+        const { result, waitForNextUpdate, rerender } = renderHook(() => useCreate(ENTITY.TARGETS, targetBody, true));
 
         expect(result.current.response).toBe(undefined);
         expect(result.current.error).toBe(undefined);

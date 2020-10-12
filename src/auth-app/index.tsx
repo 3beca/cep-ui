@@ -9,12 +9,7 @@ import { useStyles } from './styles';
 
 export const AuthApp: React.FC<{}> = () => {
     const styles = useStyles();
-    const {
-        showLoading,
-        showLogin,
-        showNoService,
-        invalidReason
-    } = useAPIProviderStatus();
+    const { showLoading, showLogin, showNoService, invalidReason } = useAPIProviderStatus();
 
     if (showLoading) {
         return (
@@ -22,9 +17,7 @@ export const AuthApp: React.FC<{}> = () => {
                 <div className={styles.dialog}>
                     <CircularProgress size={180} color='inherit' />
                     <div className={styles.message}>
-                        <Typography className={styles.messageText}>
-                            Checking API KEY, please wait a moment...
-                        </Typography>
+                        <Typography className={styles.messageText}>Checking API KEY, please wait a moment...</Typography>
                     </div>
                 </div>
             </div>

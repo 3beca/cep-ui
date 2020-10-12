@@ -23,8 +23,8 @@ const TargetCreatorLoader: React.FC<{ show: boolean }> = ({ show }) => {
     const styles = useStyles();
     if (!show) return null;
     return (
-        <div className={styles.detailsStatusLoading} aria-label='target creating loading'>
-            <Typography variant='caption' className={styles.detailsStatusLoadingText}>
+        <div className={styles.createDetailsStatusLoading} aria-label='target creating loading'>
+            <Typography variant='caption' className={styles.createDetailsStatusLoadingText}>
                 Creating Target
             </Typography>
             <CircularProgress color='primary' size={24} />
@@ -38,7 +38,7 @@ const TargetCreatorError: React.FC<{
     const styles = useStyles();
     if (!error) return null;
     return (
-        <div className={styles.detailsStatusError} aria-label='target creating error'>
+        <div className={styles.createDetailsStatusError} aria-label='target creating error'>
             <Typography variant='caption'>{error.error?.message}</Typography>
         </div>
     );
@@ -48,7 +48,7 @@ const TargetCreatorSuccess: React.FC<{ target: Target | undefined }> = ({ target
     const styles = useStyles();
     if (!target) return null;
     return (
-        <div className={styles.detailsURL} aria-label='target creating url'>
+        <div className={styles.createDetailsURL} aria-label='target creating url'>
             <Typography variant='caption'>{cutString(target.url, 40)}</Typography>
         </div>
     );
@@ -144,11 +144,12 @@ export const HeaderEditList: React.FC<HeaderEditListProps> = ({ headers, deleteH
     );
 };
 export type TargetCreateHeadersProps = {
+    disabled?: boolean;
     addHeader: (key: string, value: string) => void;
     deleteHeader: (key: string) => void;
     headers: ArrayHeader;
 };
-export const TargetCreateHeaders: React.FC<TargetCreateHeadersProps> = ({ headers, addHeader, deleteHeader }) => {
+export const TargetCreateHeaders: React.FC<TargetCreateHeadersProps> = ({ headers, addHeader, deleteHeader, disabled = false }) => {
     const styles = useStyles();
     return (
         <div aria-label='target creating headers block' className={styles.targetHeaderEditList}>
@@ -157,7 +158,11 @@ export const TargetCreateHeaders: React.FC<TargetCreateHeadersProps> = ({ header
                 <Typography variant='caption' className={styles.targetHeaderEditTitle}>
                     Headers
                 </Typography>
-                <IconDialog show={true} icon={<IconAdd aria-label='target creating headers add button' fontSize='small' />}>
+                <IconDialog
+                    show={true}
+                    disabled={disabled}
+                    icon={<IconAdd aria-label='target creating headers add button' fontSize='small' />}
+                >
                     <TargetCreateHeaderDialog setHeader={addHeader} />
                 </IconDialog>
             </div>
@@ -168,11 +173,12 @@ export const TargetCreateHeaders: React.FC<TargetCreateHeadersProps> = ({ header
 };
 
 export const TargetCreateURL: React.FC<{
+    disabled?: boolean;
     show: boolean;
     url: string;
     setURL: (url: string) => void;
     createTarget: () => void;
-}> = ({ show, url, setURL, createTarget }) => {
+}> = ({ show, url, setURL, createTarget, disabled = false }) => {
     const styles = useStyles();
     const changeURL = React.useCallback(
         (ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -182,8 +188,9 @@ export const TargetCreateURL: React.FC<{
     );
     if (!show) return null;
     return (
-        <div className={styles.detailsCreateURL}>
+        <div className={styles.createDetailsURL}>
             <TextField
+                disabled={disabled}
                 fullWidth={true}
                 value={url}
                 onChange={changeURL}
@@ -192,9 +199,9 @@ export const TargetCreateURL: React.FC<{
                 inputProps={{ 'aria-label': 'target creating input url' }}
             />
             <Button
-                className={styles.detailsCreateURLButton}
+                className={styles.createDetailsURLButton}
                 aria-label='target creating button url'
-                disabled={!url.startsWith('http')}
+                disabled={!url.startsWith('http') || disabled}
                 title='Create target'
                 onClick={createTarget}
             >
@@ -215,11 +222,13 @@ export const parseTargetHeaders = (headers: ArrayHeader): TargetHeader | undefin
         };
     }, {});
 };
-export const TargetCreator: React.FC<{
+export type TarrgetCreateProps = {
+    disabled?: boolean;
     targetName: string;
-    resolve: (target: Target) => void;
+    onCreate: (target: Target) => void;
     close: () => void;
-}> = ({ targetName, resolve, close }) => {
+};
+export const TargetCreate: React.FC<TarrgetCreateProps> = ({ targetName, onCreate, close, disabled = false }) => {
     const styles = useStyles();
     const [url, setURL] = React.useState('');
     const [headers, setHeaders] = React.useState<ArrayHeader>([]);
@@ -235,112 +244,29 @@ export const TargetCreator: React.FC<{
     }, []);
     React.useEffect(() => {
         if (!isLoading && !error && !!response?.data) {
-            resolve(response.data);
+            onCreate(response.data);
         }
-    }, [isLoading, error, response, resolve]);
+    }, [isLoading, error, response, onCreate]);
 
     return (
-        <div className={styles.details} aria-label='target creating block'>
-            <div className={styles.detailsActions}>
-                <Typography className={styles.detailsActionsType} variant='caption'>
+        <div className={styles.createDetails} aria-label='target creating block'>
+            <div className={styles.createDetailsActions}>
+                <Typography className={styles.createDetailsActionsType} variant='caption'>
                     Target
                 </Typography>
                 <IconButton disabled={isLoading} onClick={close} aria-label='target creating clear'>
                     <IconClose fontSize='small' />
                 </IconButton>
             </div>
-            <div className={styles.detailsName} aria-label='target creating name'>
+            <div className={styles.createDetailsName} aria-label='target creating name'>
                 <Typography variant='h5'>{targetName}</Typography>
             </div>
-            <div className={styles.detailsStatus} aria-label='target creating action'>
-                <TargetCreateHeaders addHeader={addHeader} deleteHeader={deleteHeader} headers={headers} />
-                <TargetCreateURL show={!isLoading && !response} url={url} setURL={setURL} createTarget={request} />
+            <div className={styles.createDetailsStatus} aria-label='target creating action'>
+                <TargetCreateHeaders addHeader={addHeader} deleteHeader={deleteHeader} headers={headers} disabled={disabled} />
+                <TargetCreateURL show={!isLoading && !response} url={url} setURL={setURL} createTarget={request} disabled={disabled} />
                 <TargetCreatorLoader show={isLoading} />
                 <TargetCreatorError error={error} />
                 <TargetCreatorSuccess target={response?.data} />
-            </div>
-        </div>
-    );
-};
-
-export type HeaderItemProps = {
-    headerKey: String;
-    headerValue: string;
-};
-export const HeaderItem: React.FC<HeaderItemProps> = ({ headerKey, headerValue }) => {
-    const styles = useStyles();
-    return (
-        <div aria-label='target creating headers item' className={styles.targetHeaderListItem}>
-            <Typography aria-label='target selected key header' variant='caption' className={styles.targetHeaderListItemKey}>
-                {headerKey}
-            </Typography>
-            <Typography variant='caption'>{' : '}</Typography>
-            <Typography aria-label='target selected value header' variant='caption' className={styles.targetHeaderListItemValue}>
-                {headerValue}
-            </Typography>
-        </div>
-    );
-};
-export type HeaderListProps = {
-    headers?: TargetHeader;
-};
-export const HeaderList: React.FC<HeaderListProps> = ({ headers }) => {
-    const styles = useStyles();
-    if (!headers) return null;
-    const headersKey = Object.keys(headers);
-    if (!Array.isArray(headersKey) || headersKey.length === 0) return null;
-    return (
-        <div aria-label='target selected headers list' className={styles.targetHeaderList}>
-            <Divider />
-            <Typography variant='caption' className={styles.targetHeaderTitle}>
-                Headers
-            </Typography>
-            {headersKey.map(header => (
-                <HeaderItem key={header} headerKey={header} headerValue={headers[header]} />
-            ))}
-            <Divider />
-        </div>
-    );
-};
-
-export type TargetCreateProps = {
-    target: Target;
-    clearTarget: () => void;
-    setTarget(target: Target): void;
-    disabled?: boolean;
-};
-export const TargetCreate: React.FC<TargetCreateProps> = ({ target, clearTarget, setTarget, disabled = false }) => {
-    const styles = useStyles();
-    const [currentTarget, setCurrentTarget] = React.useState(target);
-    React.useEffect(() => {
-        if (currentTarget.id) {
-            setTarget(currentTarget);
-        }
-    }, [currentTarget, setTarget]);
-    if (!currentTarget.id && !disabled) {
-        return <TargetCreator targetName={target.name} resolve={setCurrentTarget} close={clearTarget} />;
-    }
-    return (
-        <div className={styles.details} aria-label='target selected block'>
-            <div className={styles.detailsActions}>
-                <Typography className={styles.detailsActionsType} variant='caption'>
-                    Target
-                </Typography>
-                <IconButton disabled={disabled} onClick={clearTarget} aria-label='target selected clear'>
-                    <IconClose fontSize='small' />
-                </IconButton>
-            </div>
-            <div className={styles.detailsName} aria-label='target selected name'>
-                <Typography variant='h5'>{currentTarget.name}</Typography>
-            </div>
-            <HeaderList headers={currentTarget.headers} />
-            <div className={styles.detailsURL} aria-label='target selected url'>
-                <Typography variant='caption' className={styles.detailsURLHeader}>
-                    URL
-                </Typography>
-                <Typography variant='caption' className={styles.detailsURLText}>
-                    {cutString(currentTarget.url, 40)}
-                </Typography>
             </div>
         </div>
     );

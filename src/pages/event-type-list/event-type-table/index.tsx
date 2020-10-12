@@ -20,21 +20,13 @@ import { EventType } from '../../../services/api';
 import { RowsSizes } from '../../../components/paginated-table';
 import { ENTITY } from '../../../services/api-provider/use-api';
 import { useGetListFilteredAndPaginated } from '../../../services/use-getlist-enhancer';
-import {
-    useSelectableList,
-    ComponentWithUseSelectableProps
-} from '../../../services/use-selectable-list';
+import { useSelectableList, ComponentWithUseSelectableProps } from '../../../services/use-selectable-list';
 import { ComponentWithUsePaginationProps } from '../../../services/use-pagination';
 import { useClipboard } from '../../../services/use-clipboard';
 import { NOOP } from '../../../utils';
 
-export type EventTypeTableProps = ComponentWithUseSelectableProps<EventType> &
-    ComponentWithUsePaginationProps;
-export const TableEventType: React.FC<EventTypeTableProps> = ({
-    initialPage = 1,
-    initialPageSize = 10,
-    onSelected = NOOP
-}) => {
+export type EventTypeTableProps = ComponentWithUseSelectableProps<EventType> & ComponentWithUsePaginationProps;
+export const TableEventType: React.FC<EventTypeTableProps> = ({ initialPage = 1, initialPageSize = 10, onSelected = NOOP }) => {
     const styles = useStyles();
     const {
         isLoading,
@@ -44,25 +36,15 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
         changePage,
         currentPageSize: pageSize,
         changePageSize
-    } = useGetListFilteredAndPaginated<EventType>(
-        ENTITY.EVENT_TYPES,
-        initialPage,
-        initialPageSize
-    );
+    } = useGetListFilteredAndPaginated<EventType>(ENTITY.EVENT_TYPES, initialPage, initialPageSize);
 
     const eventTypeList = response?.data;
-    const events =
-        eventTypeList && Array.isArray(eventTypeList?.results)
-            ? eventTypeList.results
-            : [];
+    const events = eventTypeList && Array.isArray(eventTypeList?.results) ? eventTypeList.results : [];
     const isEmpty = response?.data ? response.data.results.length <= 0 : true;
     const hasNextPage = !!eventTypeList?.next;
     const hasPrevPage = !!eventTypeList?.prev;
     // Selector
-    const { selectOne, selectAll, selecteds } = useSelectableList(
-        eventTypeList?.results,
-        onSelected
-    );
+    const { selectOne, selectAll, selecteds } = useSelectableList(eventTypeList?.results, onSelected);
     const show = selecteds.size > 0;
     // Clipboard
     const { text, copy, clear } = useClipboard();
@@ -73,12 +55,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                 <IconDialog
                     show={show}
                     aria-label='delete selecteds dialog'
-                    icon={
-                        <DeleteIcon
-                            className={styles.deleteIcon}
-                            aria-label='delete selecteds icon'
-                        />
-                    }
+                    icon={<DeleteIcon className={styles.deleteIcon} aria-label='delete selecteds icon' />}
                 >
                     <DeleteDialog
                         title='Delete Event Types'
@@ -109,73 +86,45 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                                     inputProps={{
                                         'aria-label': 'element-selector-all'
                                     }}
-                                    checked={
-                                        selecteds.size ===
-                                        eventTypeList?.results.length
-                                    }
-                                    onChange={(ev, checked) =>
-                                        selectAll(checked)
-                                    }
+                                    checked={selecteds.size === eventTypeList?.results.length}
+                                    onChange={(ev, checked) => selectAll(checked)}
                                 />
                             </TableCell>
                             <TableCell align='left'>
-                                <Typography className={styles.headText}>
-                                    Name
-                                </Typography>
+                                <Typography className={styles.headText}>Name</Typography>
                             </TableCell>
                             <TableCell align='right'>
-                                <Typography className={styles.headText}>
-                                    Created
-                                </Typography>
+                                <Typography className={styles.headText}>Created</Typography>
                             </TableCell>
                             <TableCell align='right'>
-                                <Typography className={styles.headText}>
-                                    Actions
-                                </Typography>
+                                <Typography className={styles.headText}>Actions</Typography>
                             </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {events.map((eventType: EventType) => (
-                            <TableRow
-                                key={eventType.id}
-                                aria-label='element row eventtype'
-                            >
+                            <TableRow key={eventType.id} aria-label='element row eventtype'>
                                 <TableCell padding='checkbox'>
                                     <Checkbox
                                         inputProps={{
                                             role: 'element-selector'
                                         }}
                                         checked={selecteds.has(eventType)}
-                                        onChange={(ev, checked) =>
-                                            selectOne(checked, eventType)
-                                        }
+                                        onChange={(ev, checked) => selectOne(checked, eventType)}
                                     />
                                 </TableCell>
-                                <TableCell
-                                    align='left'
-                                    aria-label='element name'
-                                >
+                                <TableCell align='left' aria-label='element name'>
                                     {eventType.name}
                                 </TableCell>
+                                <TableCell align='right'>{new Date(eventType.createdAt).toLocaleString()}</TableCell>
                                 <TableCell align='right'>
-                                    {new Date(
-                                        eventType.createdAt
-                                    ).toLocaleString()}
-                                </TableCell>
-                                <TableCell align='right'>
-                                    <IconButton
-                                        aria-label='copy-icon'
-                                        onClick={() => copy(eventType.url)}
-                                    >
+                                    <IconButton aria-label='copy-icon' onClick={() => copy(eventType.url)}>
                                         <CopyIcon fontSize='small' />
                                     </IconButton>
                                     <IconDialog
                                         show={true}
                                         aria-label='delete one dialog'
-                                        icon={
-                                            <DeleteIcon aria-label='delete one icon' />
-                                        }
+                                        icon={<DeleteIcon aria-label='delete one icon' />}
                                     >
                                         <DeleteDialog
                                             title='Delete Event Types'
@@ -190,12 +139,7 @@ export const TableEventType: React.FC<EventTypeTableProps> = ({
                     </TableBody>
                 </Table>
             </PaginatedTable>
-            <Snackbar
-                open={!!text}
-                onClose={clear}
-                autoHideDuration={1500}
-                message={`EventType URL copied!`}
-            />
+            <Snackbar open={!!text} onClose={clear} autoHideDuration={1500} message={`EventType URL copied!`} />
         </>
     );
 };

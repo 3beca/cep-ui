@@ -13,29 +13,13 @@ import PayloadCreator from '../../components/event-payload-creator';
 import { EventPayload } from '../../components/event-payload-creator/models';
 import RuleGroupCreator from '../../components/rule-group-creator';
 import RuleWindowSize from '../../components/rule-windowsize';
-import {
-    buildEventPayloadFromGroupPayload,
-    parseRuleGroupPayloadToRuleGroup
-} from '../../components/rule-group-creator/utils';
+import { buildEventPayloadFromGroupPayload, parseRuleGroupPayloadToRuleGroup } from '../../components/rule-group-creator/utils';
 import ConfigFilterExpression from '../../components/config-filter-expression';
-import {
-    EventType,
-    Target,
-    Rule,
-    RuleTypes,
-    WindowingSize
-} from '../../services/api';
+import { EventType, Target, Rule, RuleTypes, WindowingSize } from '../../services/api';
 import { useCreate, ENTITY } from '../../services/api-provider/use-api';
 import { useStyles } from './styles';
-import {
-    parseFilterContainer,
-    synchronizeRuleFilterContainerAndEventPayload
-} from '../../components/rule-filter/utils';
-import {
-    RuleFilterContainer,
-    Expression,
-    DEFAULT_RULEFILTERCONTAINER
-} from '../../components/rule-filter/models';
+import { parseFilterContainer, synchronizeRuleFilterContainerAndEventPayload } from '../../components/rule-filter/utils';
+import { RuleFilterContainer, Expression, DEFAULT_RULEFILTERCONTAINER } from '../../components/rule-filter/models';
 import { RuleGroupPayload } from '../../components/rule-group-creator/models';
 import { isRuleTypeRealtime } from '../../services/api/models';
 
@@ -44,11 +28,7 @@ const RuleCreateError: React.FC<{ message?: string }> = ({ message }) => {
     if (!message) return null;
     return (
         <Paper aria-label='rule create error' className={styles.elementItem}>
-            <Typography
-                variant='caption'
-                className={styles.errorText}
-                aria-label='rule create error message'
-            >
+            <Typography variant='caption' className={styles.errorText} aria-label='rule create error message'>
                 {message}
             </Typography>
         </Paper>
@@ -61,12 +41,7 @@ export type RuleCreatorSuccessProps = {
     clear: () => void;
     setDialogState: (isOpen: boolean) => void;
 };
-const RuleCreatorSuccess: React.FC<RuleCreatorSuccessProps> = ({
-    rule,
-    show,
-    clear,
-    setDialogState
-}) => {
+const RuleCreatorSuccess: React.FC<RuleCreatorSuccessProps> = ({ rule, show, clear, setDialogState }) => {
     const styles = useStyles();
     React.useEffect(() => {
         setDialogState(!!(rule && show));
@@ -74,18 +49,11 @@ const RuleCreatorSuccess: React.FC<RuleCreatorSuccessProps> = ({
     if (!rule || !show) return null;
     return (
         <Paper aria-label='rule create success' className={styles.elementItem}>
-            <Typography
-                className={styles.successText}
-                aria-label='rule create success message'
-            >
+            <Typography className={styles.successText} aria-label='rule create success message'>
                 Rule {rule?.name} created successfully
             </Typography>
             <div className={styles.successButtons}>
-                <Button
-                    aria-label='rule create success button more'
-                    className={styles.moreButton}
-                    onClick={clear}
-                >
+                <Button aria-label='rule create success button more' className={styles.moreButton} onClick={clear}>
                     Create more
                 </Button>
                 <Button
@@ -111,12 +79,8 @@ export const RuleCreatePage: React.FC<{}> = () => {
     const type: RuleTypes = ruleType ? ruleType : 'realtime';
     const [eventType, setEventType] = React.useState<EventType | null>(null);
     const [target, setTarget] = React.useState<Target | null>(null);
-    const [eventPayload, setEventPayload] = React.useState<EventPayload | null>(
-        null
-    );
-    const [ruleGroupPayload, setRuleGroupPayload] = React.useState<
-        RuleGroupPayload
-    >();
+    const [eventPayload, setEventPayload] = React.useState<EventPayload | null>(null);
+    const [ruleGroupPayload, setRuleGroupPayload] = React.useState<RuleGroupPayload>();
     const [windowSize, setWindowSize] = React.useState<WindowingSize>();
     const [ruleHeader, updateRuleHeader] = React.useReducer(
         (state: RuleHeader, update: Partial<RuleHeader>) => ({
@@ -126,31 +90,21 @@ export const RuleCreatePage: React.FC<{}> = () => {
         initialRuleState
     );
     const [isResponseDialogOpen, setResponseDialogOpen] = React.useState(false);
-    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<
-        RuleFilterContainer
-    >(DEFAULT_RULEFILTERCONTAINER);
+    const [ruleFilterContainer, setRuleFilterContainer] = React.useState<RuleFilterContainer>(DEFAULT_RULEFILTERCONTAINER);
     const [mutateFilterContainer, setMutateFilterContainer] = React.useState<{
         filter: RuleFilterContainer;
         expression?: Expression;
     }>();
-    const updateRuleFilter = React.useCallback(
-        (filter: RuleFilterContainer) => {
-            setMutateFilterContainer(undefined);
-            setRuleFilterContainer(filter);
-        },
-        []
-    );
+    const updateRuleFilter = React.useCallback((filter: RuleFilterContainer) => {
+        setMutateFilterContainer(undefined);
+        setRuleFilterContainer(filter);
+    }, []);
     const filterPayload = React.useMemo(() => {
         if (type === 'realtime') return eventPayload;
         return buildEventPayloadFromGroupPayload(ruleGroupPayload);
     }, [type, eventPayload, ruleGroupPayload]);
     React.useEffect(() => {
-        setRuleFilterContainer(ruleFilterContainer =>
-            synchronizeRuleFilterContainerAndEventPayload(
-                filterPayload,
-                ruleFilterContainer
-            )
-        );
+        setRuleFilterContainer(ruleFilterContainer => synchronizeRuleFilterContainerAndEventPayload(filterPayload, ruleFilterContainer));
     }, [filterPayload]);
 
     // Request create Rule
@@ -169,40 +123,13 @@ export const RuleCreatePage: React.FC<{}> = () => {
             windowSize && (newRule.windowSize = windowSize);
         }
         return newRule;
-    }, [
-        ruleHeader,
-        target,
-        eventType,
-        type,
-        ruleFilterContainer,
-        ruleGroupPayload,
-        windowSize
-    ]);
-    const { request, isLoading, error, response, reset } = useCreate<Rule>(
-        ENTITY.RULES,
-        bodyRule,
-        false
-    );
+    }, [ruleHeader, target, eventType, type, ruleFilterContainer, ruleGroupPayload, windowSize]);
+    const { request, isLoading, error, response, reset } = useCreate<Rule>(ENTITY.RULES, bodyRule, false);
     const isCreateRuleDisabled = React.useCallback(() => {
-        if (
-            !bodyRule.targetId ||
-            !bodyRule.eventTypeId ||
-            !bodyRule.name ||
-            isLoading ||
-            isResponseDialogOpen
-        )
-            return true;
-        if (type !== 'realtime' && (!ruleGroupPayload || !windowSize))
-            return true;
+        if (!bodyRule.targetId || !bodyRule.eventTypeId || !bodyRule.name || isLoading || isResponseDialogOpen) return true;
+        if (type !== 'realtime' && (!ruleGroupPayload || !windowSize)) return true;
         return false;
-    }, [
-        bodyRule,
-        isLoading,
-        isResponseDialogOpen,
-        ruleGroupPayload,
-        windowSize,
-        type
-    ]);
+    }, [bodyRule, isLoading, isResponseDialogOpen, ruleGroupPayload, windowSize, type]);
 
     // Clear Rule when change EventTypeId
     const eventTypeId = bodyRule.eventTypeId;
@@ -212,40 +139,16 @@ export const RuleCreatePage: React.FC<{}> = () => {
         setRuleFilterContainer(DEFAULT_RULEFILTERCONTAINER);
     }, [eventTypeId]);
     return (
-        <div
-            className={styles.container}
-            aria-label={`create ${type} rule page`}
-        >
+        <div className={styles.container} aria-label={`create ${type} rule page`}>
             <div className={styles.sectionSearch}>
-                <div
-                    aria-label='create rule section'
-                    className={styles.sections}
-                >
-                    <RuleCreator
-                        disabled={isLoading}
-                        ruleHeader={ruleHeader}
-                        updateRuleHeader={updateRuleHeader}
-                    />
+                <div aria-label='create rule section' className={styles.sections}>
+                    <RuleCreator disabled={isLoading} ruleHeader={ruleHeader} updateRuleHeader={updateRuleHeader} />
                 </div>
-                <div
-                    aria-label='manage eventtype section'
-                    className={styles.sections}
-                >
-                    <EventTypeSelector
-                        disabled={isLoading}
-                        selected={eventType}
-                        onSelected={setEventType}
-                    />
+                <div aria-label='manage eventtype section' className={styles.sections}>
+                    <EventTypeSelector disabled={isLoading} selected={eventType} onSelected={setEventType} />
                 </div>
-                <div
-                    aria-label='manage target section'
-                    className={styles.sections}
-                >
-                    <TargetSelector
-                        disabled={isLoading}
-                        selected={target}
-                        onSelected={setTarget}
-                    />
+                <div aria-label='manage target section' className={styles.sections}>
+                    <TargetSelector disabled={isLoading} selected={target} onSelected={setTarget} />
                 </div>
             </div>
             <div className={styles.sections}>
@@ -266,30 +169,14 @@ export const RuleCreatePage: React.FC<{}> = () => {
                         group={ruleGroupPayload}
                         setGroup={setRuleGroupPayload}
                     />
-                    <RuleWindowSize
-                        disabled={isLoading}
-                        type={type}
-                        windowSize={windowSize}
-                        updateWindowSize={setWindowSize}
-                    />
+                    <RuleWindowSize disabled={isLoading} type={type} windowSize={windowSize} updateWindowSize={setWindowSize} />
                     <Divider />
-                    {!!filterPayload && (
-                        <Typography variant='caption'>
-                            Use AND, OR and EXP to create your custom filter.
-                        </Typography>
-                    )}
+                    {!!filterPayload && <Typography variant='caption'>Use AND, OR and EXP to create your custom filter.</Typography>}
                     <div aria-label='manage filter section'>
                         <RuleFilter
                             filter={ruleFilterContainer}
-                            onChange={(filter, expression) =>
-                                setMutateFilterContainer({ filter, expression })
-                            }
-                            editMode={
-                                !isLoading &&
-                                !!eventTypeId &&
-                                !!filterPayload &&
-                                filterPayload.length > 0
-                            }
+                            onChange={(filter, expression) => setMutateFilterContainer({ filter, expression })}
+                            editMode={!isLoading && !!eventTypeId && !!filterPayload && filterPayload.length > 0}
                             disabled={isLoading}
                         />
                         <ConfigFilterExpression
@@ -302,12 +189,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
                 </Paper>
             </div>
             <div aria-label='submit rule section' className={styles.sections}>
-                <RuleCreatorSuccess
-                    rule={response?.data}
-                    show={true}
-                    clear={reset}
-                    setDialogState={setResponseDialogOpen}
-                />
+                <RuleCreatorSuccess rule={response?.data} show={true} clear={reset} setDialogState={setResponseDialogOpen} />
                 <RuleCreateError message={error?.error?.message} />
                 <Button
                     className={styles.submitButton}
@@ -318,15 +200,7 @@ export const RuleCreatePage: React.FC<{}> = () => {
                     color='primary'
                     onClick={request}
                 >
-                    {isLoading ? (
-                        <CircularProgress
-                            color='primary'
-                            aria-label='rule create loading'
-                            size={26}
-                        />
-                    ) : (
-                        'Create New Rule'
-                    )}
+                    {isLoading ? <CircularProgress color='primary' aria-label='rule create loading' size={26} /> : 'Create New Rule'}
                 </Button>
             </div>
         </div>

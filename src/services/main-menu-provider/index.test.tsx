@@ -29,22 +29,14 @@ test('Main Menu Provider should start as false and open, close and toggle swith 
     expect(getByTestId(/state/i)).toHaveTextContent('false');
 
     fireEvent.click(open);
-    await waitFor(() =>
-        expect(getByTestId(/state/i)).toHaveTextContent('true')
-    );
+    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('true'));
 
     fireEvent.click(close);
-    await waitFor(() =>
-        expect(getByTestId(/state/i)).toHaveTextContent('false')
-    );
+    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('false'));
 
     fireEvent.click(toggle);
-    await waitFor(() =>
-        expect(getByTestId(/state/i)).toHaveTextContent('true')
-    );
+    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('true'));
 
     fireEvent.click(toggle);
-    await waitFor(() =>
-        expect(getByTestId(/state/i)).toHaveTextContent('false')
-    );
+    await waitFor(() => expect(getByTestId(/state/i)).toHaveTextContent('false'));
 });

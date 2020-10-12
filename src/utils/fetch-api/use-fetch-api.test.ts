@@ -1,12 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { fetchApi } from './fetch-api';
-import {
-    useFetchApi,
-    APIFetchQuery,
-    neverForgetAnAction,
-    apiReducer,
-    ApiActions
-} from './use-fetch-api';
+import { useFetchApi, APIFetchQuery, neverForgetAnAction, apiReducer, ApiActions } from './use-fetch-api';
 import { nextTick } from 'process';
 import { setupNock } from '../../test-utils';
 
@@ -15,17 +9,9 @@ describe('useFetchData', () => {
     const server = setupNock(url);
 
     it('should receive a valid response and a error and keep last good response', async () => {
-        const req: APIFetchQuery<
-            { response: string },
-            { message: string }
-        > = () =>
-            fetchApi<undefined, { response: string }, { message: string }>(
-                'https://use-fetch-api/hooktest',
-                { method: 'GET' }
-            );
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useFetchApi(req)
-        );
+        const req: APIFetchQuery<{ response: string }, { message: string }> = () =>
+            fetchApi<undefined, { response: string }, { message: string }>('https://use-fetch-api/hooktest', { method: 'GET' });
+        const { result, waitForNextUpdate } = renderHook(() => useFetchApi(req));
 
         expect(result.current.isLoading).toBe(false);
         expect(result.current.error).toBe(undefined);
@@ -82,17 +68,9 @@ describe('useFetchData', () => {
     });
 
     it('should receive a valid response and a error and clear last execution', async () => {
-        const req: APIFetchQuery<
-            { response: string },
-            { message: string }
-        > = () =>
-            fetchApi<undefined, { response: string }, { message: string }>(
-                'https://use-fetch-api/hooktest',
-                { method: 'GET' }
-            );
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useFetchApi(req)
-        );
+        const req: APIFetchQuery<{ response: string }, { message: string }> = () =>
+            fetchApi<undefined, { response: string }, { message: string }>('https://use-fetch-api/hooktest', { method: 'GET' });
+        const { result, waitForNextUpdate } = renderHook(() => useFetchApi(req));
 
         expect(result.current.isLoading).toBe(false);
         expect(result.current.error).toBe(undefined);
@@ -132,17 +110,9 @@ describe('useFetchData', () => {
     });
 
     it('should return an error when query fails to fetch api', async () => {
-        const req: APIFetchQuery<
-            { response: string },
-            { message: string }
-        > = () =>
-            fetchApi<undefined, { response: string }, { message: string }>(
-                'https://unknownserver',
-                { method: 'GET' }
-            );
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useFetchApi(req)
-        );
+        const req: APIFetchQuery<{ response: string }, { message: string }> = () =>
+            fetchApi<undefined, { response: string }, { message: string }>('https://unknownserver', { method: 'GET' });
+        const { result, waitForNextUpdate } = renderHook(() => useFetchApi(req));
 
         expect(result.current.isLoading).toBe(false);
         expect(result.current.error).toBe(undefined);
@@ -164,8 +134,7 @@ describe('useFetchData', () => {
         expect(result.current.isLoading).toBe(false);
         expect(result.current.error).toEqual({
             errorCode: 500,
-            errorMessage:
-                'Error in query Network request failed: https://unknownserver'
+            errorMessage: 'Error in query Network request failed: https://unknownserver'
         });
         expect(result.current.response).toBe(undefined);
         expect(console.error).toHaveBeenCalledTimes(1);
@@ -173,10 +142,7 @@ describe('useFetchData', () => {
     });
 
     it('should not update when receive a query function that return undefined', async () => {
-        const req: APIFetchQuery<
-            { response: string },
-            { message: string }
-        > = () => undefined;
+        const req: APIFetchQuery<{ response: string }, { message: string }> = () => undefined;
         const { result } = renderHook(() => useFetchApi(req));
 
         expect(result.current.isLoading).toBe(false);
@@ -194,10 +160,7 @@ describe('useFetchData', () => {
     });
 
     it('should not update when receive a query function that return null', async () => {
-        const req: APIFetchQuery<
-            { response: string },
-            { message: string }
-        > = () => null;
+        const req: APIFetchQuery<{ response: string }, { message: string }> = () => null;
         const { result } = renderHook(() => useFetchApi(req));
 
         expect(result.current.isLoading).toBe(false);
@@ -220,13 +183,8 @@ describe('useFetchData', () => {
     };
 
     it('should update to same state when receive a query thar resolve in undefined', async () => {
-        const req: APIFetchQuery<
-            { response: string },
-            { message: string }
-        > = () => fakeFetch();
-        const { result, waitForNextUpdate } = renderHook(() =>
-            useFetchApi(req)
-        );
+        const req: APIFetchQuery<{ response: string }, { message: string }> = () => fakeFetch();
+        const { result, waitForNextUpdate } = renderHook(() => useFetchApi(req));
 
         expect(result.current.isLoading).toBe(false);
         expect(result.current.error).toBe(undefined);
@@ -251,19 +209,12 @@ describe('useFetchData', () => {
 });
 
 test('neverForgetAnAction fails when forget implement an action', () => {
-    expect(() =>
-        neverForgetAnAction((undefined as unknown) as never)
-    ).toThrowError();
+    expect(() => neverForgetAnAction((undefined as unknown) as never)).toThrowError();
 });
 
 test('reducer throw error when action is not defiend', () => {
     const undefinedAction = ({
         type: 'undefinedaction'
     } as unknown) as ApiActions<undefined, undefined>;
-    expect(() =>
-        apiReducer<undefined, undefined>(
-            { status: 'IDLE', data: undefined, error: undefined },
-            undefinedAction
-        )
-    ).toThrowError();
+    expect(() => apiReducer<undefined, undefined>({ status: 'IDLE', data: undefined, error: undefined }, undefinedAction)).toThrowError();
 });

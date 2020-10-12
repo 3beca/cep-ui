@@ -10,10 +10,7 @@ import EventLogIcon from '@material-ui/icons/ListAltOutlined';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import { Link, useLocation } from 'react-router-dom';
-import {
-    useMainMenuState,
-    useMainMenuToggle
-} from '../../services/main-menu-provider';
+import { useMainMenuState, useMainMenuToggle } from '../../services/main-menu-provider';
 import IMGLogo from '../../images/logo.jpg';
 
 import { useStyles } from './styles';
@@ -32,11 +29,7 @@ export const MenuDrawer: React.FC<{}> = () => {
         <Drawer aria-label='drawer menu' open={isOpen} onClose={close}>
             <List className={styles.container} onClick={close}>
                 <ListItem alignItems='center'>
-                    <Avatar
-                        alt='logo CEP'
-                        src={IMGLogo}
-                        className={styles.avatar}
-                    />
+                    <Avatar alt='logo CEP' src={IMGLogo} className={styles.avatar} />
                 </ListItem>
                 <Divider />
                 <ListItem
@@ -45,20 +38,10 @@ export const MenuDrawer: React.FC<{}> = () => {
                     to='/'
                     aria-label='menu rules list page'
                     selected={isSelected('/', location)}
-                    className={
-                        isSelected('/', location)
-                            ? styles.selected
-                            : styles.unselected
-                    }
+                    className={isSelected('/', location) ? styles.selected : styles.unselected}
                 >
                     <ListItemIcon>
-                        <EventIcon
-                            color={
-                                isSelected('/', location)
-                                    ? 'secondary'
-                                    : 'inherit'
-                            }
-                        />
+                        <EventIcon color={isSelected('/', location) ? 'secondary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary='Rules' />
                 </ListItem>
@@ -68,20 +51,10 @@ export const MenuDrawer: React.FC<{}> = () => {
                     to='/event-types'
                     aria-label='menu event type list page'
                     selected={isSelected('/event-types', location)}
-                    className={
-                        isSelected('/event-types', location)
-                            ? styles.selected
-                            : styles.unselected
-                    }
+                    className={isSelected('/event-types', location) ? styles.selected : styles.unselected}
                 >
                     <ListItemIcon>
-                        <EventIcon
-                            color={
-                                isSelected('/event-types', location)
-                                    ? 'secondary'
-                                    : 'inherit'
-                            }
-                        />
+                        <EventIcon color={isSelected('/event-types', location) ? 'secondary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary='Event Types' />
                 </ListItem>
@@ -91,20 +64,10 @@ export const MenuDrawer: React.FC<{}> = () => {
                     to='/targets'
                     aria-label='menu target list page'
                     selected={isSelected('/targets', location)}
-                    className={
-                        isSelected('/targets', location)
-                            ? styles.selected
-                            : styles.unselected
-                    }
+                    className={isSelected('/targets', location) ? styles.selected : styles.unselected}
                 >
                     <ListItemIcon>
-                        <TargetIcon
-                            color={
-                                isSelected('/targets', location)
-                                    ? 'secondary'
-                                    : 'inherit'
-                            }
-                        />
+                        <TargetIcon color={isSelected('/targets', location) ? 'secondary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary='Targets' />
                 </ListItem>
@@ -115,20 +78,10 @@ export const MenuDrawer: React.FC<{}> = () => {
                     to='/event-logs'
                     aria-label='menu event logs list page'
                     selected={isSelected('/event-logs', location)}
-                    className={
-                        isSelected('/event-logs', location)
-                            ? styles.selected
-                            : styles.unselected
-                    }
+                    className={isSelected('/event-logs', location) ? styles.selected : styles.unselected}
                 >
                     <ListItemIcon>
-                        <EventLogIcon
-                            color={
-                                isSelected('/event-logs', location)
-                                    ? 'secondary'
-                                    : 'inherit'
-                            }
-                        />
+                        <EventLogIcon color={isSelected('/event-logs', location) ? 'secondary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary='Events Log' />
                 </ListItem>

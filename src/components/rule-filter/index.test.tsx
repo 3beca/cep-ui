@@ -1,17 +1,8 @@
 import * as React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import RuleFilterView from './index';
-import {
-    RuleFilter,
-    Geometry,
-    RuleFilterComparatorLocation
-} from '../../services/api';
-import {
-    parseRuleFilter,
-    createANDContainer,
-    createORContainer,
-    createExpresion
-} from './utils';
+import { RuleFilter, Geometry, RuleFilterComparatorLocation } from '../../services/api';
+import { parseRuleFilter, createANDContainer, createORContainer, createExpresion } from './utils';
 import userEvent from '@testing-library/user-event';
 
 test('Render RuleFilter with Passthrow when no filter received', async () => {
@@ -19,9 +10,7 @@ test('Render RuleFilter with Passthrow when no filter received', async () => {
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findByLabelText(/filter expression passthrow/i)
-    ).toHaveTextContent(/passthrow/i);
+    expect(await screen.findByLabelText(/filter expression passthrow/i)).toHaveTextContent(/passthrow/i);
 });
 
 test('Render RuleFilter with Passthrow when filter in undefined', async () => {
@@ -29,9 +18,7 @@ test('Render RuleFilter with Passthrow when filter in undefined', async () => {
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findByLabelText(/filter expression passthrow/i)
-    ).toHaveTextContent(/passthrow/i);
+    expect(await screen.findByLabelText(/filter expression passthrow/i)).toHaveTextContent(/passthrow/i);
 });
 
 test('Render RuleFilter with Passthrow when filter in null', async () => {
@@ -39,9 +26,7 @@ test('Render RuleFilter with Passthrow when filter in null', async () => {
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findByLabelText(/filter expression passthrow/i)
-    ).toHaveTextContent(/passthrow/i);
+    expect(await screen.findByLabelText(/filter expression passthrow/i)).toHaveTextContent(/passthrow/i);
 });
 
 test('Render RuleFilter with Passthrow when filter in []', async () => {
@@ -49,9 +34,7 @@ test('Render RuleFilter with Passthrow when filter in []', async () => {
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findByLabelText(/filter expression passthrow/i)
-    ).toHaveTextContent(/passthrow/i);
+    expect(await screen.findByLabelText(/filter expression passthrow/i)).toHaveTextContent(/passthrow/i);
 });
 
 test('Render RuleFilter with FilterComparator when received an filter expression default', async () => {
@@ -62,18 +45,14 @@ test('Render RuleFilter with FilterComparator when received an filter expression
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(2);
+    expect(await screen.findAllByLabelText(/filter expression comparator/i)).toHaveLength(2);
 
     const fields = await screen.findAllByLabelText(/filter expression field/i);
     expect(fields).toHaveLength(2);
     expect(fields[0]).toHaveTextContent(/temperature/i);
     expect(fields[1]).toHaveTextContent(/humidity/i);
 
-    const operators = await screen.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const operators = await screen.findAllByLabelText(/filter expression operator/i);
     expect(operators).toHaveLength(2);
     expect(operators[0]).toHaveTextContent(/=/i);
     expect(operators[1]).toHaveTextContent(/=/i);
@@ -95,9 +74,7 @@ test('Render RuleFilter with FilterComparator when received an filter expression
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(5);
+    expect(await screen.findAllByLabelText(/filter expression comparator/i)).toHaveLength(5);
 
     const fields = await screen.findAllByLabelText(/filter expression field/i);
     expect(fields).toHaveLength(5);
@@ -107,9 +84,7 @@ test('Render RuleFilter with FilterComparator when received an filter expression
     expect(fields[3]).toHaveTextContent(/field4/i);
     expect(fields[4]).toHaveTextContent(/field5/i);
 
-    const operators = await screen.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const operators = await screen.findAllByLabelText(/filter expression operator/i);
     expect(operators).toHaveLength(5);
     expect(operators[0]).toHaveTextContent(/=/i);
     expect(operators[1]).toHaveTextContent(/>/i);
@@ -142,14 +117,12 @@ test('Render RuleFilter with FilterComparator when received an filter expression
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression location$/i)
-    ).toHaveLength(1);
+    expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
 
     await screen.findByLabelText(/filter expression field/i);
-    expect(
-        await screen.findByLabelText(/filter expression location distance/i)
-    ).toHaveTextContent('is to less than 6.5 kms. from [37.12, -1.12]');
+    expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent(
+        'is to less than 6.5 kms. from [37.12, -1.12]'
+    );
 });
 
 test('Render RuleFilter with FilterComparator when received an filter expression location comparator with min distance', async () => {
@@ -168,14 +141,12 @@ test('Render RuleFilter with FilterComparator when received an filter expression
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression location$/i)
-    ).toHaveLength(1);
+    expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
 
     await screen.findByLabelText(/filter expression field/i);
-    expect(
-        await screen.findByLabelText(/filter expression location distance/i)
-    ).toHaveTextContent('is to more than 6.5 kms. from [37.12, -1.12]');
+    expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent(
+        'is to more than 6.5 kms. from [37.12, -1.12]'
+    );
 });
 
 test('Render RuleFilter with FilterComparator when received an filter expression location comparator with min and max distance', async () => {
@@ -195,14 +166,12 @@ test('Render RuleFilter with FilterComparator when received an filter expression
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression location$/i)
-    ).toHaveLength(1);
+    expect(await screen.findAllByLabelText(/filter expression location$/i)).toHaveLength(1);
 
     await screen.findByLabelText(/filter expression field/i);
-    expect(
-        await screen.findByLabelText(/filter expression location distance/i)
-    ).toHaveTextContent('is between 500 mts. and 1.5 kms. from [37.12, -1.12]');
+    expect(await screen.findByLabelText(/filter expression location distance/i)).toHaveTextContent(
+        'is between 500 mts. and 1.5 kms. from [37.12, -1.12]'
+    );
 });
 
 test('Do not render RuleFilter with FilterComparator when received an invalid filter expression location comparator', async () => {
@@ -220,29 +189,19 @@ test('Do not render RuleFilter with FilterComparator when received an invalid fi
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    expect(
-        screen.queryByLabelText(/filter expression location$/i)
-    ).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/filter expression location$/i)).not.toBeInTheDocument();
 });
 
 test('Render RuleFilter with FilterComparator when received a container AND', async () => {
     const filter: RuleFilter = {
-        _and: [
-            { field1: 10 },
-            { field2: { _gt: 50 } },
-            { field2: { _lte: 50 } }
-        ]
+        _and: [{ field1: 10 }, { field2: { _gt: 50 } }, { field2: { _lte: 50 } }]
     };
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
     await screen.findByLabelText(/container expressions$/i);
-    expect(
-        await screen.findByLabelText(/container expressions header/)
-    ).toHaveTextContent(/all of/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(3);
+    expect(await screen.findByLabelText(/container expressions header/)).toHaveTextContent(/all of/i);
+    expect(await screen.findAllByLabelText(/filter expression comparator/i)).toHaveLength(3);
 
     const fields = await screen.findAllByLabelText(/filter expression field/i);
     expect(fields).toHaveLength(3);
@@ -250,9 +209,7 @@ test('Render RuleFilter with FilterComparator when received a container AND', as
     expect(fields[1]).toHaveTextContent(/field2/i);
     expect(fields[2]).toHaveTextContent(/field2/i);
 
-    const operators = await screen.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const operators = await screen.findAllByLabelText(/filter expression operator/i);
     expect(operators).toHaveLength(3);
     expect(operators[0]).toHaveTextContent(/=/i);
     expect(operators[1]).toHaveTextContent(/>/i);
@@ -273,12 +230,8 @@ test('Render RuleFilter with FilterComparator when received a container OR', asy
 
     await screen.findByLabelText(/filters container/i);
     await screen.findByLabelText(/container expressions$/i);
-    expect(
-        await screen.findByLabelText(/container expressions header/)
-    ).toHaveTextContent(/one of/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(3);
+    expect(await screen.findByLabelText(/container expressions header/)).toHaveTextContent(/one of/i);
+    expect(await screen.findAllByLabelText(/filter expression comparator/i)).toHaveLength(3);
 
     const fields = await screen.findAllByLabelText(/filter expression field/i);
     expect(fields).toHaveLength(3);
@@ -286,9 +239,7 @@ test('Render RuleFilter with FilterComparator when received a container OR', asy
     expect(fields[1]).toHaveTextContent(/field2/i);
     expect(fields[2]).toHaveTextContent(/field2/i);
 
-    const operators = await screen.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const operators = await screen.findAllByLabelText(/filter expression operator/i);
     expect(operators).toHaveLength(3);
     expect(operators[0]).toHaveTextContent(/=/i);
     expect(operators[1]).toHaveTextContent(/>/i);
@@ -303,22 +254,14 @@ test('Render RuleFilter with FilterComparator when received a container OR', asy
 
 test('Render RuleFilter with FilterComparator when received a container UNKNOWN', async () => {
     const filter: RuleFilter = {
-        anyfield: [
-            { field1: 10 },
-            { field2: { _gt: 50 } },
-            { field2: { _lte: 50 } }
-        ]
+        anyfield: [{ field1: 10 }, { field2: { _gt: 50 } }, { field2: { _lte: 50 } }]
     };
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
     await screen.findByLabelText(/container expressions$/i);
-    expect(
-        await screen.findByLabelText(/container expressions header/)
-    ).toHaveTextContent(/anyfield/i);
-    expect(
-        await screen.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(3);
+    expect(await screen.findByLabelText(/container expressions header/)).toHaveTextContent(/anyfield/i);
+    expect(await screen.findAllByLabelText(/filter expression comparator/i)).toHaveLength(3);
 
     const fields = await screen.findAllByLabelText(/filter expression field/i);
     expect(fields).toHaveLength(3);
@@ -326,9 +269,7 @@ test('Render RuleFilter with FilterComparator when received a container UNKNOWN'
     expect(fields[1]).toHaveTextContent(/field2/i);
     expect(fields[2]).toHaveTextContent(/field2/i);
 
-    const operators = await screen.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const operators = await screen.findAllByLabelText(/filter expression operator/i);
     expect(operators).toHaveLength(3);
     expect(operators[0]).toHaveTextContent(/=/i);
     expect(operators[1]).toHaveTextContent(/>/i);
@@ -349,59 +290,39 @@ test('Render RuleFilter with FilterComparator when received an AND and OR contai
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    const containers = await screen.findAllByLabelText(
-        /container expressions$/i
-    );
-    const containersHeaders = await screen.findAllByLabelText(
-        /container expressions header/
-    );
+    const containers = await screen.findAllByLabelText(/container expressions$/i);
+    const containersHeaders = await screen.findAllByLabelText(/container expressions header/);
     expect(containers).toHaveLength(2);
     expect(containersHeaders).toHaveLength(2);
     expect(containersHeaders[0]).toHaveTextContent(/all of/i);
     expect(containersHeaders[1]).toHaveTextContent(/one of/i);
 
     const andContainer = within(containers[0]);
-    expect(
-        await andContainer.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(2);
-    const andFields = await andContainer.findAllByLabelText(
-        /filter expression field/i
-    );
+    expect(await andContainer.findAllByLabelText(/filter expression comparator/i)).toHaveLength(2);
+    const andFields = await andContainer.findAllByLabelText(/filter expression field/i);
     expect(andFields).toHaveLength(2);
     expect(andFields[0]).toHaveTextContent(/p1/i);
     expect(andFields[1]).toHaveTextContent(/p2/i);
-    const andOperators = await andContainer.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const andOperators = await andContainer.findAllByLabelText(/filter expression operator/i);
     expect(andOperators).toHaveLength(2);
     expect(andOperators[0]).toHaveTextContent(/=/i);
     expect(andOperators[1]).toHaveTextContent(/=/i);
-    const andValues = await andContainer.findAllByLabelText(
-        /filter expression value/i
-    );
+    const andValues = await andContainer.findAllByLabelText(/filter expression value/i);
     expect(andValues).toHaveLength(2);
     expect(andValues[0]).toHaveTextContent(/10/i);
     expect(andValues[1]).toHaveTextContent(/20/i);
 
     const orContainer = within(containers[1]);
-    expect(
-        await orContainer.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(2);
-    const orFields = await orContainer.findAllByLabelText(
-        /filter expression field/i
-    );
+    expect(await orContainer.findAllByLabelText(/filter expression comparator/i)).toHaveLength(2);
+    const orFields = await orContainer.findAllByLabelText(/filter expression field/i);
     expect(orFields).toHaveLength(2);
     expect(orFields[0]).toHaveTextContent(/p3/i);
     expect(orFields[1]).toHaveTextContent(/p4/i);
-    const orOperators = await orContainer.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const orOperators = await orContainer.findAllByLabelText(/filter expression operator/i);
     expect(orOperators).toHaveLength(2);
     expect(orOperators[0]).toHaveTextContent(/=/i);
     expect(orOperators[1]).toHaveTextContent(/=/i);
-    const orValues = await orContainer.findAllByLabelText(
-        /filter expression value/i
-    );
+    const orValues = await orContainer.findAllByLabelText(/filter expression value/i);
     expect(orValues).toHaveLength(2);
     expect(orValues[0]).toHaveTextContent(/30/i);
     expect(orValues[1]).toHaveTextContent(/40/i);
@@ -414,67 +335,45 @@ test('Render RuleFilter with FilterComparator when received an AND container wit
     render(<RuleFilterView filter={parseRuleFilter(filter)} />);
 
     await screen.findByLabelText(/filters container/i);
-    const containers = await screen.findAllByLabelText(
-        /container expressions$/i
-    );
-    const containersHeaders = await screen.findAllByLabelText(
-        /container expressions header/
-    );
+    const containers = await screen.findAllByLabelText(/container expressions$/i);
+    const containersHeaders = await screen.findAllByLabelText(/container expressions header/);
     expect(containers).toHaveLength(2);
     expect(containersHeaders).toHaveLength(2);
     expect(containersHeaders[0]).toHaveTextContent(/all of/i);
     expect(containersHeaders[1]).toHaveTextContent(/one of/i);
 
     const andContainer = within(containers[0]);
-    expect(
-        await andContainer.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(4);
-    const andFields = await andContainer.findAllByLabelText(
-        /filter expression field/i
-    );
+    expect(await andContainer.findAllByLabelText(/filter expression comparator/i)).toHaveLength(4);
+    const andFields = await andContainer.findAllByLabelText(/filter expression field/i);
     expect(andFields).toHaveLength(4);
     expect(andFields[0]).toHaveTextContent(/p1/i);
     expect(andFields[1]).toHaveTextContent(/p2/i);
     expect(andFields[2]).toHaveTextContent(/p3/i);
     expect(andFields[3]).toHaveTextContent(/p4/i);
-    const andOperators = await andContainer.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const andOperators = await andContainer.findAllByLabelText(/filter expression operator/i);
     expect(andOperators).toHaveLength(4);
     expect(andOperators[0]).toHaveTextContent(/=/i);
     expect(andOperators[1]).toHaveTextContent(/=/i);
     expect(andOperators[3]).toHaveTextContent(/=/i);
     expect(andOperators[3]).toHaveTextContent(/=/i);
-    const andValues = await andContainer.findAllByLabelText(
-        /filter expression value/i
-    );
+    const andValues = await andContainer.findAllByLabelText(/filter expression value/i);
     expect(andValues).toHaveLength(4);
     expect(andValues[0]).toHaveTextContent(/10/i);
     expect(andValues[1]).toHaveTextContent(/20/i);
     expect(andValues[2]).toHaveTextContent(/30/i);
     expect(andValues[3]).toHaveTextContent(/40/i);
 
-    const orContainer = within(
-        await andContainer.findByLabelText(/container expressions$/i)
-    );
-    expect(
-        await orContainer.findAllByLabelText(/filter expression comparator/i)
-    ).toHaveLength(2);
-    const orFields = await orContainer.findAllByLabelText(
-        /filter expression field/i
-    );
+    const orContainer = within(await andContainer.findByLabelText(/container expressions$/i));
+    expect(await orContainer.findAllByLabelText(/filter expression comparator/i)).toHaveLength(2);
+    const orFields = await orContainer.findAllByLabelText(/filter expression field/i);
     expect(orFields).toHaveLength(2);
     expect(orFields[0]).toHaveTextContent(/p3/i);
     expect(orFields[1]).toHaveTextContent(/p4/i);
-    const orOperators = await orContainer.findAllByLabelText(
-        /filter expression operator/i
-    );
+    const orOperators = await orContainer.findAllByLabelText(/filter expression operator/i);
     expect(orOperators).toHaveLength(2);
     expect(orOperators[0]).toHaveTextContent(/=/i);
     expect(orOperators[1]).toHaveTextContent(/=/i);
-    const orValues = await orContainer.findAllByLabelText(
-        /filter expression value/i
-    );
+    const orValues = await orContainer.findAllByLabelText(/filter expression value/i);
     expect(orValues).toHaveLength(2);
     expect(orValues[0]).toHaveTextContent(/30/i);
     expect(orValues[1]).toHaveTextContent(/40/i);
@@ -484,17 +383,9 @@ test('Render RuleFilter in editMode show Passthrow when no filter received and c
     const filter = {} as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findByLabelText(/filter expression passthrow/i)
-    ).toHaveTextContent(/passthrow/i);
+    expect(await screen.findByLabelText(/filter expression passthrow/i)).toHaveTextContent(/passthrow/i);
     const addRootAnd = await screen.findByLabelText(/filter add button and/i);
     const addRootOr = await screen.findByLabelText(/filter add button or/i);
     await screen.findByLabelText(/filter add button expression/i);
@@ -514,17 +405,9 @@ test('Render RuleFilter in editMode cannot add AND when there is one in Root', a
     const filter = { _and: [{ temperature: 25 }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const addButtons = await screen.findAllByLabelText(
-        /filter add button and/i
-    );
+    const addButtons = await screen.findAllByLabelText(/filter add button and/i);
     expect(addButtons).toHaveLength(2);
     expect(addButtons[0]).toBeDisabled();
     expect(addButtons[1]).not.toBeDisabled();
@@ -534,13 +417,7 @@ test('Render RuleFilter in editMode cannot add OR when there is one in Root', as
     const filter = { _or: [{ temperature: 25 }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
     const addButtons = await screen.findAllByLabelText(/filter add button or/i);
     expect(addButtons).toHaveLength(2);
@@ -552,48 +429,26 @@ test('Render RuleFilter in editMode show Passthrow when no filter received and c
     const filter = {} as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    expect(
-        await screen.findByLabelText(/filter expression passthrow/i)
-    ).toHaveTextContent(/passthrow/i);
+    expect(await screen.findByLabelText(/filter expression passthrow/i)).toHaveTextContent(/passthrow/i);
     await screen.findByLabelText(/filter add button and/i);
     await screen.findByLabelText(/filter add button or/i);
-    const expressionButton = await screen.findByLabelText(
-        /filter add button expression/i
-    );
+    const expressionButton = await screen.findByLabelText(/filter add button expression/i);
 
     const expecttedExpression = createExpresion();
     userEvent.click(expressionButton);
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenNthCalledWith(
-        1,
-        [expecttedExpression],
-        expecttedExpression
-    );
+    expect(onChange).toHaveBeenNthCalledWith(1, [expecttedExpression], expecttedExpression);
 });
 
 test('Render RuleFilter in editMode can delete first container', async () => {
     const filter = { _and: [{ teperature: 5 }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
 
     const expectedExpression = createExpresion();
     userEvent.click(deleteButtons[0]);
@@ -605,17 +460,9 @@ test('Render RuleFilter in editMode can delete first container with more element
     const filter = { _and: [{ teperature: 5 }], temperature: 10 } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
 
     const expectedExpression = createExpresion('temperature', 10);
     userEvent.click(deleteButtons[0]);
@@ -627,17 +474,9 @@ test('Render RuleFilter in editMode can delete an INNER AND container', async ()
     const filter = { _and: [{ _and: [{ teperature: 5 }] }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(3);
 
     const expectedContainer = parseRuleFilter({ _and: [] });
@@ -657,17 +496,9 @@ test('Render RuleFilter in editMode can delete an INNER AND container and other 
     } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(4);
 
     const expectedContainer = parseRuleFilter({ _and: [{ humidity: 45 }] });
@@ -687,17 +518,9 @@ test('Render RuleFilter in editMode can delete an INNER AND container and comple
     } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(5);
 
     const expectedContainer = parseRuleFilter({ _and: [{ humidity: 45 }] });
@@ -715,17 +538,9 @@ test('Render RuleFilter can create an INNER empty AND container', async () => {
     const filter = { _or: [] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const addAndButtons = await screen.findAllByLabelText(
-        /filter add button and/i
-    );
+    const addAndButtons = await screen.findAllByLabelText(/filter add button and/i);
     expect(addAndButtons).toHaveLength(2);
 
     userEvent.click(addAndButtons[1]);
@@ -738,17 +553,9 @@ test('Render RuleFilter can create an INNER AND container with passthrow', async
     const filter = { _or: [{}] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const addAndButtons = await screen.findAllByLabelText(
-        /filter add button and/i
-    );
+    const addAndButtons = await screen.findAllByLabelText(/filter add button and/i);
     expect(addAndButtons).toHaveLength(2);
 
     userEvent.click(addAndButtons[1]);
@@ -761,17 +568,9 @@ test('Render RuleFilter can create an INNER OR container', async () => {
     const filter = { _and: [] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const addORButtons = await screen.findAllByLabelText(
-        /filter add button or/i
-    );
+    const addORButtons = await screen.findAllByLabelText(/filter add button or/i);
     expect(addORButtons).toHaveLength(2);
 
     userEvent.click(addORButtons[1]);
@@ -784,73 +583,41 @@ test('Render RuleFilter in editMode can create a INNER expression', async () => 
     const filter = { _and: [] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
     await screen.findAllByLabelText(/filter add button and/i);
     await screen.findAllByLabelText(/filter add button or/i);
-    const expressionButtons = await screen.findAllByLabelText(
-        /filter add button expression/i
-    );
+    const expressionButtons = await screen.findAllByLabelText(/filter add button expression/i);
     expect(expressionButtons).toHaveLength(2);
     const expectedFilter = parseRuleFilter({ _and: [{}] });
     userEvent.click(expressionButtons[1]);
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenNthCalledWith(
-        1,
-        expectedFilter,
-        createExpresion()
-    );
+    expect(onChange).toHaveBeenNthCalledWith(1, expectedFilter, createExpresion());
 });
 
 test('Render RuleFilter in editMode can create a INNER expression passthrow', async () => {
     const filter = { _and: [{}] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
     await screen.findAllByLabelText(/filter add button and/i);
     await screen.findAllByLabelText(/filter add button or/i);
-    const expressionButtons = await screen.findAllByLabelText(
-        /filter add button expression/i
-    );
+    const expressionButtons = await screen.findAllByLabelText(/filter add button expression/i);
     expect(expressionButtons).toHaveLength(2);
     const expectedFilter = parseRuleFilter({ _and: [{}] });
     userEvent.click(expressionButtons[1]);
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenNthCalledWith(
-        1,
-        expectedFilter,
-        createExpresion()
-    );
+    expect(onChange).toHaveBeenNthCalledWith(1, expectedFilter, createExpresion());
 });
 
 test('Render RuleFilter in editMode can delete an expression', async () => {
     const filter = { humidity: 45 } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(1);
     const expectedFilter = parseRuleFilter({});
     userEvent.click(deleteButtons[0]);
@@ -862,17 +629,9 @@ test('Render RuleFilter in editMode can delete an expression when more root expr
     const filter = { humidity: 45, temperature: 12 } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(2);
     const expectedFilter = parseRuleFilter({ humidity: 45 });
     userEvent.click(deleteButtons[1]);
@@ -884,17 +643,9 @@ test('Render RuleFilter in editMode can delete an INNER expression', async () =>
     const filter = { _and: [{ humidity: 25 }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(2);
     const expectedFilter = parseRuleFilter({ _and: [] });
     userEvent.click(deleteButtons[1]);
@@ -908,17 +659,9 @@ test('Render RuleFilter in editMode can delete an INNER expression inside contai
     } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(4);
     const expectedFilter = parseRuleFilter({
         _and: [{ _or: [{ pressure: 1000 }] }]
@@ -934,17 +677,9 @@ test('Render RuleFilter in editMode can delete an INNER expression comparator in
     } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(3);
     const expectedFilter = parseRuleFilter({ _and: [{ humidity: 25 }] });
     userEvent.click(deleteButtons[2]);
@@ -962,17 +697,9 @@ test('Render RuleFilter in editMode can delete an INNER expression location insi
     const filter = { _and: [{ humidity: 25, location }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const deleteButtons = await screen.findAllByLabelText(
-        /filter delete button/i
-    );
+    const deleteButtons = await screen.findAllByLabelText(/filter delete button/i);
     expect(deleteButtons).toHaveLength(3);
     const expectedFilter = parseRuleFilter({ _and: [{ humidity: 25 }] });
     userEvent.click(deleteButtons[2]);
@@ -990,23 +717,13 @@ test('Render RuleFilter in editMode can edit an location expression', async () =
     const filter = { _and: [{ humidity: 25 }, { location }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
     const editButtons = await screen.findAllByLabelText(/filter edit button/i);
     expect(editButtons).toHaveLength(2);
     userEvent.click(editButtons[1]);
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenNthCalledWith(
-        1,
-        ruleContainer,
-        parseRuleFilter({ location })[0]
-    );
+    expect(onChange).toHaveBeenNthCalledWith(1, ruleContainer, parseRuleFilter({ location })[0]);
 });
 
 test('Render RuleFilter in editMode can edit an string expression', async () => {
@@ -1014,23 +731,13 @@ test('Render RuleFilter in editMode can edit an string expression', async () => 
     const filter = { _and: [stringFilter] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
     const editButtons = await screen.findAllByLabelText(/filter edit button/i);
     expect(editButtons).toHaveLength(1);
     userEvent.click(editButtons[0]);
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenNthCalledWith(
-        1,
-        ruleContainer,
-        parseRuleFilter(stringFilter)[0]
-    );
+    expect(onChange).toHaveBeenNthCalledWith(1, ruleContainer, parseRuleFilter(stringFilter)[0]);
 });
 
 test('Render RuleFilter in editMode can edit an numeric expression', async () => {
@@ -1038,40 +745,22 @@ test('Render RuleFilter in editMode can edit an numeric expression', async () =>
     const filter = { _and: [numericFilter] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
     const editButtons = await screen.findAllByLabelText(/filter edit button/i);
     expect(editButtons).toHaveLength(1);
     userEvent.click(editButtons[0]);
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenNthCalledWith(
-        1,
-        ruleContainer,
-        parseRuleFilter(numericFilter)[0]
-    );
+    expect(onChange).toHaveBeenNthCalledWith(1, ruleContainer, parseRuleFilter(numericFilter)[0]);
 });
 
 test('Render RuleFilter in editMode CAN add more than one AND inside a parent AND', async () => {
     const filter = { _and: [{ _and: [{ a: 1 }, { b: 2 }] }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const addButtons = await screen.findAllByLabelText(
-        /filter add button and/i
-    );
+    const addButtons = await screen.findAllByLabelText(/filter add button and/i);
     expect(addButtons).toHaveLength(3);
     expect(addButtons[0]).toBeDisabled();
     expect(addButtons[1]).not.toBeDisabled();
@@ -1092,13 +781,7 @@ test('Render RuleFilter in editMode CAN add more than one OR inside a parent OR'
     const filter = { _or: [{ _or: [{ a: 1 }, { b: 2 }] }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
     const addButtons = await screen.findAllByLabelText(/filter add button or/i);
     expect(addButtons).toHaveLength(3);
@@ -1121,20 +804,10 @@ test('Render RuleFilter in editMode CAN add more than one OR inside a parent AND
     const filter = { _and: [{ _or: [{ a: 1 }, { b: 2 }] }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const addORButtons = await screen.findAllByLabelText(
-        /filter add button or/i
-    );
-    const addAndButtons = await screen.findAllByLabelText(
-        /filter add button and/i
-    );
+    const addORButtons = await screen.findAllByLabelText(/filter add button or/i);
+    const addAndButtons = await screen.findAllByLabelText(/filter add button and/i);
     expect(addAndButtons).toHaveLength(3);
     expect(addORButtons).toHaveLength(3);
     expect(addAndButtons[0]).toBeDisabled();
@@ -1157,20 +830,10 @@ test('Render RuleFilter in editMode CAN add more than one AND inside a parent OR
     const filter = { _or: [{ _and: [{ a: 1 }, { b: 2 }] }] } as RuleFilter;
     const ruleContainer = parseRuleFilter(filter);
     const onChange = jest.fn();
-    render(
-        <RuleFilterView
-            filter={ruleContainer}
-            editMode={true}
-            onChange={onChange}
-        />
-    );
+    render(<RuleFilterView filter={ruleContainer} editMode={true} onChange={onChange} />);
     await screen.findByLabelText(/filters container/i);
-    const addANDButtons = await screen.findAllByLabelText(
-        /filter add button and/i
-    );
-    const addORButtons = await screen.findAllByLabelText(
-        /filter add button or/i
-    );
+    const addANDButtons = await screen.findAllByLabelText(/filter add button and/i);
+    const addORButtons = await screen.findAllByLabelText(/filter add button or/i);
     expect(addORButtons).toHaveLength(3);
     expect(addANDButtons).toHaveLength(3);
     expect(addORButtons[0]).toBeDisabled();

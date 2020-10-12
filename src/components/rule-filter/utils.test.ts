@@ -7,25 +7,12 @@ import {
     parseFilterContainer,
     synchronizeRuleFilterContainerAndEventPayload
 } from './utils';
-import {
-    RuleFilter,
-    RuleFilterComparator,
-    Geometry,
-    RuleFilterComparatorLocation
-} from '../../services/api/models';
-import {
-    Container,
-    DEFAULT_RULEFILTERCONTAINER,
-    DEFAULT_RULEFILTEREXPRESSION,
-    Expression,
-    RuleFilterContainer
-} from './models';
+import { RuleFilter, RuleFilterComparator, Geometry, RuleFilterComparatorLocation } from '../../services/api/models';
+import { Container, DEFAULT_RULEFILTERCONTAINER, DEFAULT_RULEFILTEREXPRESSION, Expression, RuleFilterContainer } from './models';
 import { EventPayload } from '../event-payload-creator/models';
 
 test('getComparatorValue shuold return each type of Comparator', () => {
-    expect(
-        getComparatorValue(({ _hs: 10 } as unknown) as RuleFilterComparator)
-    ).toEqual({ name: 'EQ', value: '' });
+    expect(getComparatorValue(({ _hs: 10 } as unknown) as RuleFilterComparator)).toEqual({ name: 'EQ', value: '' });
     expect(getComparatorValue({ _eq: 10 })).toEqual({ name: 'EQ', value: 10 });
     expect(getComparatorValue({ _eq: '10' })).toEqual({
         name: 'EQ',
@@ -596,18 +583,10 @@ test('parseFilterContainer should return an nested rule filter from a filter nes
     const filter: RuleFilter = {
         _or: [
             {
-                _and: [
-                    { type: 'temperature' },
-                    { value: { _lte: 0 } },
-                    { location }
-                ]
+                _and: [{ type: 'temperature' }, { value: { _lte: 0 } }, { location }]
             },
             {
-                _or: [
-                    { type: 'temperature' },
-                    { value: { _lte: 0 } },
-                    { location }
-                ]
+                _or: [{ type: 'temperature' }, { value: { _lte: 0 } }, { location }]
             }
         ]
     };
@@ -627,18 +606,10 @@ test('parseFilterContainer should return an nested rule filter with expressions 
         _or: [
             { type: 'windspeed' },
             {
-                _and: [
-                    { type: 'temperature' },
-                    { value: { _lte: 0 } },
-                    { location }
-                ]
+                _and: [{ type: 'temperature' }, { value: { _lte: 0 } }, { location }]
             },
             {
-                _or: [
-                    { type: 'temperature' },
-                    { value: { _lte: 0 } },
-                    { location }
-                ]
+                _or: [{ type: 'temperature' }, { value: { _lte: 0 } }, { location }]
             }
         ]
     };
@@ -648,27 +619,14 @@ test('parseFilterContainer should return an nested rule filter with expressions 
 test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFilterContainer when no EventPayload', () => {
     const defaultRulefilterContainer: RuleFilterContainer = DEFAULT_RULEFILTERCONTAINER;
 
-    expect(synchronizeRuleFilterContainerAndEventPayload(null, [])).toEqual(
-        defaultRulefilterContainer
-    );
+    expect(synchronizeRuleFilterContainerAndEventPayload(null, [])).toEqual(defaultRulefilterContainer);
     expect(
-        synchronizeRuleFilterContainerAndEventPayload(
-            (undefined as unknown) as EventPayload,
-            (null as unknown) as RuleFilterContainer
-        )
+        synchronizeRuleFilterContainerAndEventPayload((undefined as unknown) as EventPayload, (null as unknown) as RuleFilterContainer)
     ).toEqual(defaultRulefilterContainer);
     expect(
-        synchronizeRuleFilterContainerAndEventPayload(
-            (undefined as unknown) as EventPayload,
-            (undefined as unknown) as RuleFilterContainer
-        )
+        synchronizeRuleFilterContainerAndEventPayload((undefined as unknown) as EventPayload, (undefined as unknown) as RuleFilterContainer)
     ).toEqual(defaultRulefilterContainer);
-    expect(
-        synchronizeRuleFilterContainerAndEventPayload(
-            null,
-            defaultRulefilterContainer
-        )
-    ).toEqual(defaultRulefilterContainer);
+    expect(synchronizeRuleFilterContainerAndEventPayload(null, defaultRulefilterContainer)).toEqual(defaultRulefilterContainer);
 });
 
 test('synchronizeRuleFilterContainerAndEventPayload should return the same RuleFilterContainer', () => {
@@ -723,12 +681,7 @@ test('synchronizeRuleFilterContainerAndEventPayload should return the same RuleF
         }
     ];
 
-    expect(
-        synchronizeRuleFilterContainerAndEventPayload(
-            payload,
-            expectedRuleFilter
-        )
-    ).toEqual(expectedRuleFilter);
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, expectedRuleFilter)).toEqual(expectedRuleFilter);
 });
 
 test('synchronizeRuleFilterContainerAndEventPayload should remove temperature from RuleFilterContainer', () => {
@@ -813,9 +766,7 @@ test('synchronizeRuleFilterContainerAndEventPayload should remove temperature fr
         }
     ];
 
-    expect(
-        synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)
-    ).toEqual(expectedRuleFilter);
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
 });
 
 test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFilterContainer when RuleFilterContainer synced is empty', () => {
@@ -843,9 +794,7 @@ test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFi
 
     const expectedRuleFilter: RuleFilterContainer = DEFAULT_RULEFILTERCONTAINER;
 
-    expect(
-        synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)
-    ).toEqual(expectedRuleFilter);
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
 });
 
 test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFilterContainer when nested RuleFilterContainer synced is empty', () => {
@@ -887,9 +836,7 @@ test('synchronizeRuleFilterContainerAndEventPayload should return default RuleFi
         }
     ];
 
-    expect(
-        synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)
-    ).toEqual(expectedRuleFilter);
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
 });
 
 test('synchronizeRuleFilterContainerAndEventPayload should remove temperature from RuleFilterContainer', () => {
@@ -1084,7 +1031,5 @@ test('synchronizeRuleFilterContainerAndEventPayload should remove temperature fr
         }
     ];
 
-    expect(
-        synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)
-    ).toEqual(expectedRuleFilter);
+    expect(synchronizeRuleFilterContainerAndEventPayload(payload, ruleFilter)).toEqual(expectedRuleFilter);
 });

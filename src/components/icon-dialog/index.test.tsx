@@ -32,12 +32,7 @@ test('dialogIcon should render dialog when click in icon dialog and close when p
 
     // Render icon for dialog
     const { getByLabelText, queryByLabelText, getByText } = render(
-        <IconDialog
-            show={true}
-            icon={<Delete aria-label='delete-icon' />}
-            onOpen={onOpen}
-            onClose={onClose}
-        >
+        <IconDialog show={true} icon={<Delete aria-label='delete-icon' />} onOpen={onOpen} onClose={onClose}>
             <DialogContent />
         </IconDialog>
     );

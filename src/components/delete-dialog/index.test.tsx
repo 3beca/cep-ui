@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { renderWithAPI as render, screen } from '../../test-utils';
 import userEvent from '@testing-library/user-event';
-import {
-    generateEventTypeListWith,
-    setupNock,
-    serverDeleteEventType
-} from '../../test-utils';
+import { generateEventTypeListWith, setupNock, serverDeleteEventType } from '../../test-utils';
 import { useIconDialog } from '../../components/icon-dialog';
 import { BASE_URL } from '../../services/config';
 import DeleteDialog from './index';
@@ -28,9 +24,7 @@ test('Should render a dialog with empty message and snapshot', async () => {
     await screen.findByLabelText(/title/);
     await screen.findByLabelText(/actions/);
     await screen.findByLabelText(/empty message/i);
-    expect(
-        screen.queryByLabelText(/elements to delete/i)
-    ).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/elements to delete/i)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(/^delete button$/i)).toBeDisabled();
     const closeButton = await screen.findByLabelText(/close button/i);
 
@@ -41,13 +35,7 @@ test('Should render a dialog with empty message and snapshot', async () => {
 test('Should render a dialog with a list of EventTypes to delete and snapshot', async () => {
     const eventTypeList = generateEventTypeListWith(3, false, false);
     const closeCallback = mockUseIconDialog();
-    render(
-        <DeleteDialog
-            title='Dialog title'
-            entity={ENTITY.EVENT_TYPES}
-            elementsSelecteds={eventTypeList.results}
-        />
-    );
+    render(<DeleteDialog title='Dialog title' entity={ENTITY.EVENT_TYPES} elementsSelecteds={eventTypeList.results} />);
 
     await screen.findByLabelText(/title/);
     await screen.findByLabelText(/actions/);
@@ -65,12 +53,7 @@ test('Should render a dialog with a list of EventTypes to delete and delete all 
     const onDelete = jest.fn();
 
     render(
-        <DeleteDialog
-            title='Dialog title'
-            entity={ENTITY.EVENT_TYPES}
-            elementsSelecteds={eventTypeList.results}
-            onDeleted={onDelete}
-        />
+        <DeleteDialog title='Dialog title' entity={ENTITY.EVENT_TYPES} elementsSelecteds={eventTypeList.results} onDeleted={onDelete} />
     );
 
     await screen.findByLabelText(/title/);
@@ -80,21 +63,9 @@ test('Should render a dialog with a list of EventTypes to delete and delete all 
     const closeButton = await screen.findByLabelText(/close button/i);
     const deleteButton = await screen.findByLabelText(/^delete button$/i);
 
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[0].id,
-        200
-    );
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[1].id,
-        200
-    );
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[2].id,
-        200
-    );
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[0].id, 200);
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[1].id, 200);
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[2].id, 200);
     userEvent.click(deleteButton);
 
     await screen.findByLabelText(/deleting element/);
@@ -103,11 +74,7 @@ test('Should render a dialog with a list of EventTypes to delete and delete all 
     expect(await screen.findAllByLabelText(/success message/i)).toHaveLength(3);
     expect(deleteButton).toBeDisabled();
     expect(onDelete).toHaveBeenCalledTimes(1);
-    expect(onDelete).toHaveBeenNthCalledWith(1, [
-        eventTypeList.results[0].id,
-        eventTypeList.results[1].id,
-        eventTypeList.results[2].id
-    ]);
+    expect(onDelete).toHaveBeenNthCalledWith(1, [eventTypeList.results[0].id, eventTypeList.results[1].id, eventTypeList.results[2].id]);
 
     // Close dialog
     userEvent.click(closeButton);
@@ -120,12 +87,7 @@ test('Should render a dialog with a list of 4 EventTypes to delete and fail to d
     const onDelete = jest.fn();
 
     render(
-        <DeleteDialog
-            title='Dialog title'
-            entity={ENTITY.EVENT_TYPES}
-            elementsSelecteds={eventTypeList.results}
-            onDeleted={onDelete}
-        />
+        <DeleteDialog title='Dialog title' entity={ENTITY.EVENT_TYPES} elementsSelecteds={eventTypeList.results} onDeleted={onDelete} />
     );
 
     await screen.findByLabelText(/title/);
@@ -135,31 +97,14 @@ test('Should render a dialog with a list of 4 EventTypes to delete and fail to d
     const closeButton = await screen.findByLabelText(/close button/i);
     const deleteButton = await screen.findByLabelText(/^delete button$/i);
 
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[0].id,
-        200
-    );
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[1].id,
-        500,
-        {
-            error: 'invalid id',
-            message: 'cannot delete eventtype',
-            statusCode: 400
-        }
-    );
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[2].id,
-        400
-    );
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[3].id,
-        200
-    );
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[0].id, 200);
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[1].id, 500, {
+        error: 'invalid id',
+        message: 'cannot delete eventtype',
+        statusCode: 400
+    });
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[2].id, 400);
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[3].id, 200);
     userEvent.click(deleteButton);
 
     await screen.findByLabelText(/deleting element/);
@@ -169,10 +114,7 @@ test('Should render a dialog with a list of 4 EventTypes to delete and fail to d
     expect(await screen.findAllByLabelText(/success message/i)).toHaveLength(2);
     expect(deleteButton).toBeDisabled();
     expect(onDelete).toHaveBeenCalledTimes(1);
-    expect(onDelete).toHaveBeenNthCalledWith(1, [
-        eventTypeList.results[0].id,
-        eventTypeList.results[3].id
-    ]);
+    expect(onDelete).toHaveBeenNthCalledWith(1, [eventTypeList.results[0].id, eventTypeList.results[3].id]);
     // Close dialog
     userEvent.click(closeButton);
     expect(closeCallback).toHaveBeenCalledTimes(1);
@@ -184,12 +126,7 @@ test('Should render a dialog with a list of 2 EventTypes to delete and fail to d
     const onDelete = jest.fn();
 
     render(
-        <DeleteDialog
-            title='Dialog title'
-            entity={ENTITY.EVENT_TYPES}
-            elementsSelecteds={eventTypeList.results}
-            onDeleted={onDelete}
-        />
+        <DeleteDialog title='Dialog title' entity={ENTITY.EVENT_TYPES} elementsSelecteds={eventTypeList.results} onDeleted={onDelete} />
     );
 
     await screen.findByLabelText(/title/);
@@ -199,26 +136,16 @@ test('Should render a dialog with a list of 2 EventTypes to delete and fail to d
     const closeButton = await screen.findByLabelText(/close button/i);
     const deleteButton = await screen.findByLabelText(/^delete button$/i);
 
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[0].id,
-        500,
-        {
-            error: 'invalid id',
-            message: 'cannot delete eventtype',
-            statusCode: 400
-        }
-    );
-    serverDeleteEventType(
-        setupNock(BASE_URL),
-        eventTypeList.results[1].id,
-        500,
-        {
-            error: 'invalid id',
-            message: 'cannot delete eventtype',
-            statusCode: 400
-        }
-    );
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[0].id, 500, {
+        error: 'invalid id',
+        message: 'cannot delete eventtype',
+        statusCode: 400
+    });
+    serverDeleteEventType(setupNock(BASE_URL), eventTypeList.results[1].id, 500, {
+        error: 'invalid id',
+        message: 'cannot delete eventtype',
+        statusCode: 400
+    });
     userEvent.click(deleteButton);
 
     await screen.findByLabelText(/deleting element/);
@@ -237,14 +164,7 @@ test('Should render a dialog with error when evettypes is invalid and snapshot',
     const closeCallback = mockUseIconDialog();
     const onDelete = jest.fn();
     const invalidEventType = ({ id: null } as unknown) as EventType;
-    render(
-        <DeleteDialog
-            title='Dialog title'
-            entity={ENTITY.EVENT_TYPES}
-            elementsSelecteds={[invalidEventType]}
-            onDeleted={onDelete}
-        />
-    );
+    render(<DeleteDialog title='Dialog title' entity={ENTITY.EVENT_TYPES} elementsSelecteds={[invalidEventType]} onDeleted={onDelete} />);
 
     await screen.findByLabelText(/title/);
     await screen.findByLabelText(/actions/);

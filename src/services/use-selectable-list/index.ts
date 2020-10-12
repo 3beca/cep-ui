@@ -4,10 +4,7 @@ import { NOOP } from '../../utils';
 export type ComponentWithUseSelectableProps<T> = {
     onSelected?(selecteds: T[]): void;
 };
-export const useSelectableList = <T>(
-    list: T[] | undefined,
-    onSelected: (selecteds: T[]) => void = NOOP
-) => {
+export const useSelectableList = <T>(list: T[] | undefined, onSelected: (selecteds: T[]) => void = NOOP) => {
     const [selecteds, setSelecteds] = React.useState(new Set<T>());
     React.useEffect(() => {
         setSelecteds(new Set<T>());

@@ -19,9 +19,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ invalidReason }) => {
     return (
         <div className={styles.container} aria-label='login container'>
             <div className={styles.dialog}>
-                <Typography className={styles.title}>
-                    API KEY Required
-                </Typography>
+                <Typography className={styles.title}>API KEY Required</Typography>
                 <div className={styles.content}>
                     <TextField
                         value={newApikey}
@@ -33,33 +31,17 @@ export const LoginPage: React.FC<LoginPageProps> = ({ invalidReason }) => {
                         variant='outlined'
                         label='API Key'
                         placeholder='Your APIKEY goes here!'
-                        error={
-                            !!invalidReason &&
-                            !invalidReason.match(/not found/i)
-                        }
+                        error={!!invalidReason && !invalidReason.match(/not found/i)}
                     />
                     <div
-                        className={
-                            !!invalidReason &&
-                            !invalidReason.match(/not found/i)
-                                ? styles.errorMessage
-                                : styles.infoMessage
-                        }
+                        className={!!invalidReason && !invalidReason.match(/not found/i) ? styles.errorMessage : styles.infoMessage}
                         aria-label='login reason'
                     >
-                        <Typography variant='caption'>
-                            {invalidReason}
-                        </Typography>
+                        <Typography variant='caption'>{invalidReason}</Typography>
                     </div>
                 </div>
                 <Divider className={styles.divider} />
-                <Button
-                    aria-label='login submit'
-                    disabled={newApikey.length < 6}
-                    fullWidth={true}
-                    color='primary'
-                    onClick={submitApikey}
-                >
+                <Button aria-label='login submit' disabled={newApikey.length < 6} fullWidth={true} color='primary' onClick={submitApikey}>
                     Submit API KEY
                 </Button>
             </div>

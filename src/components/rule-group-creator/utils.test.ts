@@ -1,20 +1,14 @@
 import { RuleGroup } from '../../services/api';
 import { EventPayload } from '../event-payload-creator/models';
 import { RuleGroupPayload } from './models';
-import {
-    buildEventPayloadFromGroupPayload,
-    syncEventPayloadAndGroupPayload,
-    parseRuleGroupPayloadToRuleGroup
-} from './utils';
+import { buildEventPayloadFromGroupPayload, syncEventPayloadAndGroupPayload, parseRuleGroupPayloadToRuleGroup } from './utils';
 
 test('buildEventPayloadFromGroupPayload should return null when GroupPayload not defined', () => {
     expect(buildEventPayloadFromGroupPayload()).toBeNull();
 });
 
 test('buildEventPayloadFromGroupPayload should return null when GroupPayload is null', () => {
-    expect(
-        buildEventPayloadFromGroupPayload((null as unknown) as RuleGroupPayload)
-    ).toBeNull();
+    expect(buildEventPayloadFromGroupPayload((null as unknown) as RuleGroupPayload)).toBeNull();
 });
 
 test('buildEventPayloadFromGroupPayload should return null when GroupPayload is empty array', () => {
@@ -53,46 +47,25 @@ test('buildEventPayloadFromGroupPayload should return a valid Payload', () => {
 });
 
 test('syncEventPayloadAndGroupPayload should return that renders with empty group no need update', () => {
-    expect(syncEventPayloadAndGroupPayload(null, undefined)).toEqual([
-        false,
-        undefined
-    ]);
-    expect(
-        syncEventPayloadAndGroupPayload(
-            [{ name: 'temperature', type: 'number' }],
-            undefined
-        )
-    ).toEqual([false, undefined]);
+    expect(syncEventPayloadAndGroupPayload(null, undefined)).toEqual([false, undefined]);
+    expect(syncEventPayloadAndGroupPayload([{ name: 'temperature', type: 'number' }], undefined)).toEqual([false, undefined]);
 });
 
 test('syncEventPayloadAndGroupPayload should return that renders with null payload and group with no payload fields do not need be synced', () => {
-    const groupWithoutFields: RuleGroupPayload = [
-        { field: 1, name: 'countEvents', operator: '_sum' }
-    ];
-    expect(syncEventPayloadAndGroupPayload(null, groupWithoutFields)).toEqual([
-        false,
-        groupWithoutFields
-    ]);
+    const groupWithoutFields: RuleGroupPayload = [{ field: 1, name: 'countEvents', operator: '_sum' }];
+    expect(syncEventPayloadAndGroupPayload(null, groupWithoutFields)).toEqual([false, groupWithoutFields]);
 });
 
 test('syncEventPayloadAndGroupPayload should return that renders with null payload and group with payload fields needs be synced', () => {
-    const groupWithTemperatureField: RuleGroupPayload = [
-        { field: 'temperature', name: 'countEvents', operator: '_sum' }
-    ];
-    expect(
-        syncEventPayloadAndGroupPayload(null, groupWithTemperatureField)
-    ).toEqual([true, undefined]);
+    const groupWithTemperatureField: RuleGroupPayload = [{ field: 'temperature', name: 'countEvents', operator: '_sum' }];
+    expect(syncEventPayloadAndGroupPayload(null, groupWithTemperatureField)).toEqual([true, undefined]);
 
     const groupWithSumAnTemperature: RuleGroupPayload = [
         { field: 1, name: 'countEvents', operator: '_sum' },
         { field: 'temperature', name: 'countEvents', operator: '_sum' }
     ];
-    const expectedGroup: RuleGroupPayload = [
-        { field: 1, name: 'countEvents', operator: '_sum' }
-    ];
-    expect(
-        syncEventPayloadAndGroupPayload(null, groupWithSumAnTemperature)
-    ).toEqual([true, expectedGroup]);
+    const expectedGroup: RuleGroupPayload = [{ field: 1, name: 'countEvents', operator: '_sum' }];
+    expect(syncEventPayloadAndGroupPayload(null, groupWithSumAnTemperature)).toEqual([true, expectedGroup]);
 });
 
 test('syncEventPayloadAndGroupPayload should return that renders with same payload fields and group fields do not need to be synced', () => {
@@ -106,9 +79,7 @@ test('syncEventPayloadAndGroupPayload should return that renders with same paylo
         { field: 1, name: 'countEvents', operator: '_sum' },
         { field: 'temperature', name: 'countEvents', operator: '_sum' }
     ];
-    expect(
-        syncEventPayloadAndGroupPayload(payload, groupWithSumAndTemperature)
-    ).toEqual([false, expectedGroup]);
+    expect(syncEventPayloadAndGroupPayload(payload, groupWithSumAndTemperature)).toEqual([false, expectedGroup]);
 });
 
 test('syncEventPayloadAndGroupPayload should return that renders with complex payload fields and complex group fields with diferent fields needs to be synced', () => {
@@ -139,27 +110,14 @@ test('syncEventPayloadAndGroupPayload should return that renders with complex pa
         { field: 1, operator: '_sum', name: 'countTemperature' },
         { field: 'humidity', operator: '_stdDevPop', name: 'devPopTemperature' }
     ];
-    expect(syncEventPayloadAndGroupPayload(payload, group)).toEqual([
-        true,
-        expectedGroup
-    ]);
+    expect(syncEventPayloadAndGroupPayload(payload, group)).toEqual([true, expectedGroup]);
 });
 
 test('parseRuleGroupPayloadToRuleGroup should parse a RuleGroupPayload and return a RuleGroup', () => {
-    expect(
-        parseRuleGroupPayloadToRuleGroup(
-            (undefined as unknown) as RuleGroupPayload
-        )
-    ).toBe(undefined);
-    expect(
-        parseRuleGroupPayloadToRuleGroup((null as unknown) as RuleGroupPayload)
-    ).toBe(undefined);
+    expect(parseRuleGroupPayloadToRuleGroup((undefined as unknown) as RuleGroupPayload)).toBe(undefined);
+    expect(parseRuleGroupPayloadToRuleGroup((null as unknown) as RuleGroupPayload)).toBe(undefined);
     expect(parseRuleGroupPayloadToRuleGroup([])).toBe(undefined);
-    expect(
-        parseRuleGroupPayloadToRuleGroup([
-            { field: 1, operator: '_sum', name: '' }
-        ])
-    ).toBe(undefined);
+    expect(parseRuleGroupPayloadToRuleGroup([{ field: 1, operator: '_sum', name: '' }])).toBe(undefined);
 
     const group: RuleGroupPayload = [
         { field: 'temperature', operator: '_max', name: 'maxTemperature' },

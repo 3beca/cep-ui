@@ -7,13 +7,7 @@ import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 import { useIconDialog } from '../../components/icon-dialog';
-import {
-    EventType,
-    ServiceError,
-    Target,
-    ServiceDeleted,
-    Rule
-} from '../../services/api';
+import { EventType, ServiceError, Target, ServiceDeleted, Rule } from '../../services/api';
 import { useDelete, ENTITY } from '../../services/api-provider/use-api';
 import { useStyles } from './styles';
 
@@ -21,16 +15,12 @@ const EmptyMessage: React.FC<{ show: boolean }> = ({ show }) => {
     if (!show) return null;
     return (
         <div aria-label='empty message'>
-            <Typography variant='h6'>
-                There are NOT Elements selected to be deleted!
-            </Typography>
+            <Typography variant='h6'>There are NOT Elements selected to be deleted!</Typography>
         </div>
     );
 };
 
-const ErrorMessage: React.FC<{ error: ServiceError | undefined }> = ({
-    error
-}) => {
+const ErrorMessage: React.FC<{ error: ServiceError | undefined }> = ({ error }) => {
     if (!error) return null;
     return (
         <div aria-label='error message'>
@@ -48,19 +38,10 @@ const Actions: React.FC<{
     const styles = useStyles();
     return (
         <DialogActions aria-label='actions'>
-            <Button
-                onClick={close}
-                disabled={disableClose}
-                aria-label='close button'
-            >
+            <Button onClick={close} disabled={disableClose} aria-label='close button'>
                 Close
             </Button>
-            <Button
-                onClick={deleteElements}
-                disabled={disableDelete}
-                className={styles.deleteButton}
-                aria-label='delete button'
-            >
+            <Button onClick={deleteElements} disabled={disableDelete} className={styles.deleteButton} aria-label='delete button'>
                 Delete
             </Button>
         </DialogActions>
@@ -71,11 +52,7 @@ const LoadingView: React.FC<{ show: boolean }> = ({ show }) => {
     if (!show)
         return (
             <div aria-label='element loader'>
-                <LinearProgress
-                    variant='determinate'
-                    value={100}
-                    color='primary'
-                />
+                <LinearProgress variant='determinate' value={100} color='primary' />
             </div>
         );
     return (
@@ -97,19 +74,12 @@ const DeleteList: React.FC<{
     return (
         <div aria-label='elements to delete' className={styles.elementList}>
             {elements!.map(e => (
-                <div
-                    key={e.id}
-                    aria-label='element to delete'
-                    className={styles.elementItem}
-                >
+                <div key={e.id} aria-label='element to delete' className={styles.elementItem}>
                     <div>
                         <Typography variant='h5'>{e.name}</Typography>
                     </div>
                     <div>
-                        <Typography
-                            variant='caption'
-                            className={styles.captionText}
-                        >
+                        <Typography variant='caption' className={styles.captionText}>
                             {e.id}
                         </Typography>
                     </div>
@@ -131,35 +101,20 @@ const DeletedList: React.FC<{
             {responses.map((event, idx) => {
                 //if(event.state === 'DELETED') return null;
                 return (
-                    <div
-                        key={event.id}
-                        aria-label='element to delete'
-                        className={styles.elementItem}
-                    >
+                    <div key={event.id} aria-label='element to delete' className={styles.elementItem}>
                         <div aria-label='deleted element'>
-                            <Typography variant='h5'>
-                                {elements[idx].name}
-                            </Typography>
+                            <Typography variant='h5'>{elements[idx].name}</Typography>
                         </div>
                         {event.state === 'DELETED' ? (
                             <div aria-label='success message'>
-                                <Typography
-                                    variant='caption'
-                                    className={styles.successText}
-                                >
+                                <Typography variant='caption' className={styles.successText}>
                                     This entity has been deleted successfuly
                                 </Typography>
                             </div>
                         ) : (
                             <div aria-label='error message'>
-                                <Typography
-                                    variant='caption'
-                                    className={styles.errorText}
-                                >
-                                    Error:{' '}
-                                    {event.error
-                                        ? event.error.message
-                                        : 'This element cannot be deleted'}
+                                <Typography variant='caption' className={styles.errorText}>
+                                    Error: {event.error ? event.error.message : 'This element cannot be deleted'}
                                 </Typography>
                             </div>
                         )}
@@ -182,18 +137,10 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(
         const styles = useStyles();
         const [elements] = React.useState(elementsSelecteds);
         const closeIconDialog = useIconDialog();
-        const events = React.useMemo(
-            () => (elements ? elements?.map(e => e.id) : []),
-            [elements]
-        );
-        const { isLoading, response, error, request } = useDelete(
-            entity,
-            events
-        );
+        const events = React.useMemo(() => (elements ? elements?.map(e => e.id) : []), [elements]);
+        const { isLoading, response, error, request } = useDelete(entity, events);
         const hasElements = Array.isArray(elements) && elements.length > 0;
-        const hasResponse = !(
-            !Array.isArray(response?.data) || response?.data?.length === 0
-        );
+        const hasResponse = !(!Array.isArray(response?.data) || response?.data?.length === 0);
         const closeDialog = React.useCallback(() => {
             closeIconDialog?.();
             onCloseDialog?.();
@@ -201,9 +148,7 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(
         React.useEffect(() => {
             // TODO: Si hay alguna respuesta con delete, recargar el listado de elements
             if (!!response && hasResponse) {
-                const itemsDeleted = response.data
-                    .filter(ruleDelete => ruleDelete.state === 'DELETED')
-                    .map(rule => rule.id);
+                const itemsDeleted = response.data.filter(ruleDelete => ruleDelete.state === 'DELETED').map(rule => rule.id);
                 if (itemsDeleted.length > 0) onDeleted?.(itemsDeleted);
             }
         }, [hasResponse, response, onDeleted]);
@@ -212,23 +157,10 @@ export const DeleteDialog: React.FC<DeleteDialogProps> = React.memo(
                 <DialogTitle aria-label='title' id='icon-dialog-title'>
                     {title}
                 </DialogTitle>
-                <DialogContent
-                    dividers={true}
-                    className={styles.dialogContent}
-                    id='icon-dialog-content'
-                >
-                    <EmptyMessage
-                        show={!hasElements && !hasResponse && !error}
-                    />
-                    <DeleteList
-                        show={hasElements && !hasResponse && !error}
-                        elements={elements}
-                        isLoading={isLoading}
-                    />
-                    <DeletedList
-                        elements={elements}
-                        responses={response?.data}
-                    />
+                <DialogContent dividers={true} className={styles.dialogContent} id='icon-dialog-content'>
+                    <EmptyMessage show={!hasElements && !hasResponse && !error} />
+                    <DeleteList show={hasElements && !hasResponse && !error} elements={elements} isLoading={isLoading} />
+                    <DeletedList elements={elements} responses={response?.data} />
                     <ErrorMessage error={error && error.error} />
                 </DialogContent>
                 <LoadingView show={isLoading} />

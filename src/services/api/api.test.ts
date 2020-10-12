@@ -53,30 +53,20 @@ import {
     isRuleTypeTumbling,
     isRuleTypeHopping
 } from './models';
-import {
-    generateEventType,
-    generateTarget,
-    generateEventLogListWith,
-    generateRule,
-    generateEntity
-} from '../../test-utils/api';
+import { generateEventType, generateTarget, generateEventLogListWith, generateRule, generateEntity } from '../../test-utils/api';
 
 test('paserFilters should return a valid string', () => {
     expect(parseFilters('')).toEqual(null);
     expect(parseFilters('helloworld')).toEqual('search=helloworld');
     expect(!!parseFilters({})).toEqual(false);
-    expect(parseFilters({ eventTypeId: '5e4aa7370c20ff3faab7c7d2' })).toEqual(
-        'eventTypeId=5e4aa7370c20ff3faab7c7d2'
-    );
+    expect(parseFilters({ eventTypeId: '5e4aa7370c20ff3faab7c7d2' })).toEqual('eventTypeId=5e4aa7370c20ff3faab7c7d2');
     expect(
         parseFilters({
             eventTypeId: '5e4aa7370c20ff3faab7c7d2',
             search: 'anyfilter'
         })
     ).toEqual('eventTypeId=5e4aa7370c20ff3faab7c7d2&search=anyfilter');
-    expect(parseFilters({ field1: 'hello', field2: 'world' })).toEqual(
-        'field1=hello&field2=world'
-    );
+    expect(parseFilters({ field1: 'hello', field2: 'world' })).toEqual('field1=hello&field2=world');
 });
 
 describe('RuleFilter', () => {
@@ -130,36 +120,12 @@ describe('RuleFilter', () => {
         expect(isRuleFilterFieldValue(filterOR2Field1.value)).toBe(true);
         expect(isRuleFilterComparator(filterOR2Field1.value)).toBe(true);
         expect(isRuleFilterValue(filterOR2Field1.value)).toBe(false);
-        expect(
-            isRuleFilterComparatorLocation(
-                filterOR2Field1.value as RuleFilterComparator
-            )
-        ).toBe(false);
-        expect(
-            isRuleFilterComparatorEQ(
-                filterOR2Field1.value as RuleFilterComparator
-            )
-        ).toBe(true);
-        expect(
-            isRuleFilterComparatorGT(
-                filterOR2Field1.value as RuleFilterComparator
-            )
-        ).toBe(false);
-        expect(
-            isRuleFilterComparatorGTE(
-                filterOR2Field1.value as RuleFilterComparator
-            )
-        ).toBe(false);
-        expect(
-            isRuleFilterComparatorLT(
-                filterOR2Field1.value as RuleFilterComparator
-            )
-        ).toBe(false);
-        expect(
-            isRuleFilterComparatorLTE(
-                filterOR2Field1.value as RuleFilterComparator
-            )
-        ).toBe(false);
+        expect(isRuleFilterComparatorLocation(filterOR2Field1.value as RuleFilterComparator)).toBe(false);
+        expect(isRuleFilterComparatorEQ(filterOR2Field1.value as RuleFilterComparator)).toBe(true);
+        expect(isRuleFilterComparatorGT(filterOR2Field1.value as RuleFilterComparator)).toBe(false);
+        expect(isRuleFilterComparatorGTE(filterOR2Field1.value as RuleFilterComparator)).toBe(false);
+        expect(isRuleFilterComparatorLT(filterOR2Field1.value as RuleFilterComparator)).toBe(false);
+        expect(isRuleFilterComparatorLTE(filterOR2Field1.value as RuleFilterComparator)).toBe(false);
         expect(filterOR2Field1.value).toEqual({ _eq: 5 });
 
         // filterOR 3
@@ -248,9 +214,7 @@ describe('RuleFilter', () => {
         expect(isRuleFilterFieldValue(filters![0].value)).toBe(true);
         expect(isRuleFilterValue(filters![0].value)).toBe(false);
         expect(isRuleFilterComparator(filters![0].value)).toBe(true);
-        expect(
-            isRuleFilterComparatorEQ(filters![0].value as RuleFilterComparator)
-        ).toBe(true);
+        expect(isRuleFilterComparatorEQ(filters![0].value as RuleFilterComparator)).toBe(true);
 
         expect(filters![1].field).toEqual('fgt');
         expect(isRuleFilter(filters![1].value)).toBe(false);
@@ -258,9 +222,7 @@ describe('RuleFilter', () => {
         expect(isRuleFilterFieldValue(filters![1].value)).toBe(true);
         expect(isRuleFilterValue(filters![1].value)).toBe(false);
         expect(isRuleFilterComparator(filters![1].value)).toBe(true);
-        expect(
-            isRuleFilterComparatorGT(filters![1].value as RuleFilterComparator)
-        ).toBe(true);
+        expect(isRuleFilterComparatorGT(filters![1].value as RuleFilterComparator)).toBe(true);
 
         expect(filters![2].field).toEqual('fgte');
         expect(isRuleFilter(filters![2].value)).toBe(false);
@@ -268,9 +230,7 @@ describe('RuleFilter', () => {
         expect(isRuleFilterFieldValue(filters![2].value)).toBe(true);
         expect(isRuleFilterValue(filters![2].value)).toBe(false);
         expect(isRuleFilterComparator(filters![2].value)).toBe(true);
-        expect(
-            isRuleFilterComparatorGTE(filters![2].value as RuleFilterComparator)
-        ).toBe(true);
+        expect(isRuleFilterComparatorGTE(filters![2].value as RuleFilterComparator)).toBe(true);
 
         expect(filters![3].field).toEqual('flt');
         expect(isRuleFilter(filters![3].value)).toBe(false);
@@ -278,9 +238,7 @@ describe('RuleFilter', () => {
         expect(isRuleFilterFieldValue(filters![3].value)).toBe(true);
         expect(isRuleFilterValue(filters![3].value)).toBe(false);
         expect(isRuleFilterComparator(filters![3].value)).toBe(true);
-        expect(
-            isRuleFilterComparatorLT(filters![3].value as RuleFilterComparator)
-        ).toBe(true);
+        expect(isRuleFilterComparatorLT(filters![3].value as RuleFilterComparator)).toBe(true);
 
         expect(filters![4].field).toEqual('flte');
         expect(isRuleFilter(filters![4].value)).toBe(false);
@@ -288,9 +246,7 @@ describe('RuleFilter', () => {
         expect(isRuleFilterFieldValue(filters![4].value)).toBe(true);
         expect(isRuleFilterValue(filters![4].value)).toBe(false);
         expect(isRuleFilterComparator(filters![4].value)).toBe(true);
-        expect(
-            isRuleFilterComparatorLTE(filters![4].value as RuleFilterComparator)
-        ).toBe(true);
+        expect(isRuleFilterComparatorLTE(filters![4].value as RuleFilterComparator)).toBe(true);
 
         expect(filters![5].field).toEqual('fnear');
         expect(isRuleFilter(filters![5].value)).toBe(false);
@@ -298,11 +254,7 @@ describe('RuleFilter', () => {
         expect(isRuleFilterFieldValue(filters![5].value)).toBe(true);
         expect(isRuleFilterValue(filters![5].value)).toBe(false);
         expect(isRuleFilterComparator(filters![5].value)).toBe(true);
-        expect(
-            isRuleFilterComparatorLocation(
-                filters![5].value as RuleFilterComparator
-            )
-        ).toBe(true);
+        expect(isRuleFilterComparatorLocation(filters![5].value as RuleFilterComparator)).toBe(true);
     });
 });
 
@@ -459,15 +411,7 @@ describe('CEP API', () => {
         const page = 1;
         const size = 1;
         const expectedResult = generateEventLogListWith(1, false, false);
-        serverGetList(
-            server,
-            PATH,
-            page,
-            size,
-            '5e4aa7370c20ff3faab7c7d2',
-            200,
-            expectedResult
-        );
+        serverGetList(server, PATH, page, size, '5e4aa7370c20ff3faab7c7d2', 200, expectedResult);
         const result = await api.getListRequest<EventLog>(PATH, page, size, {
             search: '5e4aa7370c20ff3faab7c7d2'
         });
@@ -523,8 +467,7 @@ describe('CEP API', () => {
         const error = result as APIError<ServiceError>;
         expect(error).toEqual({
             errorCode: 400,
-            errorMessage:
-                'Error from https://localhost:123/anypath/?page=1&pageSize=ten',
+            errorMessage: 'Error from https://localhost:123/anypath/?page=1&pageSize=ten',
             error: {
                 statusCode: 400,
                 error: 'Bad Request',
@@ -538,8 +481,7 @@ describe('CEP API', () => {
         const response = {
             statusCode: 500,
             error: 'Internal Server Error',
-            message:
-                'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+            message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
         };
         serverDelete(server, PATH, id, 500, response);
 
@@ -555,8 +497,7 @@ describe('CEP API', () => {
             error: {
                 statusCode: 500,
                 error: 'Internal Server Error',
-                message:
-                    'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
             }
         });
     });
@@ -584,8 +525,7 @@ describe('CEP API', () => {
         const response = {
             statusCode: 500,
             error: 'Internal Server Error',
-            message:
-                'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+            message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
         };
         serverDelete(server, PATH, ids[0], 500, response);
         serverDelete(server, PATH, ids[1], 500, response);
@@ -604,8 +544,7 @@ describe('CEP API', () => {
             error: {
                 statusCode: 500,
                 error: 'Internal Server Error',
-                message:
-                    'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
             }
         });
 
@@ -616,8 +555,7 @@ describe('CEP API', () => {
             error: {
                 statusCode: 500,
                 error: 'Internal Server Error',
-                message:
-                    'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
             }
         });
     });
@@ -639,10 +577,7 @@ describe('CEP API', () => {
     });
 
     it('deleteRequest should return two 204 empty response when eventTypeIds are valid ', async () => {
-        const eventTypeIds = [
-            '5e8dffc9c906fefd9e7b2486',
-            '5e8dffd0c906fe54737b2487'
-        ];
+        const eventTypeIds = ['5e8dffc9c906fefd9e7b2486', '5e8dffd0c906fe54737b2487'];
         serverDelete(server, PATH, eventTypeIds[0], 204);
         serverDelete(server, PATH, eventTypeIds[1], 204);
 
@@ -671,8 +606,7 @@ describe('CEP API', () => {
         const responseError = {
             statusCode: 500,
             error: 'Internal Server Error',
-            message:
-                'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+            message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
         };
         serverDelete(server, PATH, eventTypeIds[0], 204);
         serverDelete(server, PATH, eventTypeIds[1], 500, responseError);
@@ -697,8 +631,7 @@ describe('CEP API', () => {
             error: {
                 statusCode: 500,
                 error: 'Internal Server Error',
-                message:
-                    'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
+                message: 'Argument passed in must be a single String of 12 bytes or a string of 24 hex characters'
             }
         });
     });
@@ -706,8 +639,7 @@ describe('CEP API', () => {
     it('createRequest should return error when eventtype name exists in server', async () => {
         const eventTypeBody: Partial<EventType> = { name: 'new entity' };
         serverCreate(server, PATH, JSON.stringify(eventTypeBody), 409, {
-            message:
-                'Event type name must be unique and is already taken by event type with id 5ec39c6f118b4dbbe07b1cbb'
+            message: 'Event type name must be unique and is already taken by event type with id 5ec39c6f118b4dbbe07b1cbb'
         });
 
         const result = await api.createRequest(PATH, eventTypeBody);
@@ -715,12 +647,9 @@ describe('CEP API', () => {
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<ServiceError>;
         expect(response.errorCode).toBe(409);
-        expect(response.errorMessage).toEqual(
-            'Error from https://localhost:123/anypath'
-        );
+        expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
         expect(response.error).toEqual({
-            message:
-                'Event type name must be unique and is already taken by event type with id 5ec39c6f118b4dbbe07b1cbb'
+            message: 'Event type name must be unique and is already taken by event type with id 5ec39c6f118b4dbbe07b1cbb'
         });
     });
 
@@ -729,8 +658,7 @@ describe('CEP API', () => {
         const errorRespponse: ServiceError = {
             statusCode: 400,
             error: 'Bad Request',
-            message:
-                "FST_ERR_CTP_EMPTY_JSON_BODY: Body cannot be empty when content-type is set to 'application/json'"
+            message: "FST_ERR_CTP_EMPTY_JSON_BODY: Body cannot be empty when content-type is set to 'application/json'"
         };
         serverCreate(server, PATH, '', 400, errorRespponse);
 
@@ -739,14 +667,11 @@ describe('CEP API', () => {
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<ServiceError>;
         expect(response.errorCode).toBe(400);
-        expect(response.errorMessage).toEqual(
-            'Error from https://localhost:123/anypath'
-        );
+        expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
         expect(response.error).toEqual({
             error: 'Bad Request',
             statusCode: 400,
-            message:
-                "FST_ERR_CTP_EMPTY_JSON_BODY: Body cannot be empty when content-type is set to 'application/json'"
+            message: "FST_ERR_CTP_EMPTY_JSON_BODY: Body cannot be empty when content-type is set to 'application/json'"
         });
     });
 
@@ -764,9 +689,7 @@ describe('CEP API', () => {
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<ServiceError>;
         expect(response.errorCode).toBe(400);
-        expect(response.errorMessage).toEqual(
-            'Error from https://localhost:123/anypath'
-        );
+        expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
         expect(response.error).toEqual({
             error: 'Bad Request',
             statusCode: 400,
@@ -779,13 +702,7 @@ describe('CEP API', () => {
         const eventTypeBody: Partial<EventType> = {
             name: eventTypeResponse.name
         };
-        serverCreate(
-            server,
-            PATH,
-            JSON.stringify(eventTypeBody),
-            201,
-            eventTypeResponse
-        );
+        serverCreate(server, PATH, JSON.stringify(eventTypeBody), 201, eventTypeResponse);
         const result = await api.createRequest(PATH, eventTypeBody);
 
         expect(isAPIError(result)).toBe(false);
@@ -800,27 +717,17 @@ describe('CEP API', () => {
             url: 'https://whateveryouwant.com'
         };
         const errorResponse = {
-            message:
-                'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
+            message: 'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
         };
-        serverCreate(
-            server,
-            PATH,
-            JSON.stringify(targetBody),
-            409,
-            errorResponse
-        );
+        serverCreate(server, PATH, JSON.stringify(targetBody), 409, errorResponse);
         const result = await api.createRequest(PATH, targetBody);
 
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<ServiceError>;
         expect(response.errorCode).toBe(409);
-        expect(response.errorMessage).toEqual(
-            'Error from https://localhost:123/anypath'
-        );
+        expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
         expect(response.error).toEqual({
-            message:
-                'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
+            message: 'Target name must be unique and is already taken by target with id 5ec39c6f118b4dbbe07b1cbb'
         });
     });
 
@@ -842,8 +749,7 @@ describe('CEP API', () => {
         const error = {
             statusCode: 400,
             error: 'Bad Request',
-            message:
-                'body/targetId should be a valid ObjectId, body/eventTypeId should be a valid ObjectId'
+            message: 'body/targetId should be a valid ObjectId, body/eventTypeId should be a valid ObjectId'
         };
         const ruleBody = {
             name: rule.name,
@@ -856,9 +762,7 @@ describe('CEP API', () => {
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<RuleError>;
         expect(response.errorCode).toBe(400);
-        expect(response.errorMessage).toEqual(
-            'Error from https://localhost:123/anypath'
-        );
+        expect(response.errorMessage).toEqual('Error from https://localhost:123/anypath');
         expect(response.error).toEqual(error);
     });
 });
@@ -881,9 +785,7 @@ describe('CEP API with NO Authorization when it is required', () => {
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<ServiceError>;
         expect(response.errorCode).toBe(401);
-        expect(response.errorMessage).toEqual(
-            expect.stringContaining(`${BASE_URL}${PATH}`)
-        );
+        expect(response.errorMessage).toEqual(expect.stringContaining(`${BASE_URL}${PATH}`));
         expect(response.error).toEqual({
             error: 'missing authorization header'
         });
@@ -917,9 +819,7 @@ describe('CEP API with NO Authorization when it is required', () => {
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<ServiceError>;
         expect(response.errorCode).toBe(401);
-        expect(response.errorMessage).toEqual(
-            expect.stringContaining(`${BASE_URL}${PATH}`)
-        );
+        expect(response.errorMessage).toEqual(expect.stringContaining(`${BASE_URL}${PATH}`));
         expect(response.error).toEqual({
             error: 'missing authorization header'
         });
@@ -933,9 +833,7 @@ describe('CEP API with NO Authorization when it is required', () => {
         expect(isAPIError(result)).toBe(true);
         const response = result as APIError<ServiceError>;
         expect(response.errorCode).toBe(401);
-        expect(response.errorMessage).toEqual(
-            expect.stringContaining(`${BASE_URL}${PATH}`)
-        );
+        expect(response.errorMessage).toEqual(expect.stringContaining(`${BASE_URL}${PATH}`));
         expect(response.error).toEqual({
             error: 'missing authorization header'
         });
@@ -973,16 +871,7 @@ describe('CEP API with Authorization when it is required', () => {
         const page = 1;
         const size = 10;
         const expectedResult = generateListWith();
-        serverGetListAuth(
-            server,
-            PATH,
-            apiKey,
-            page,
-            size,
-            undefined,
-            200,
-            expectedResult
-        );
+        serverGetListAuth(server, PATH, apiKey, page, size, undefined, 200, expectedResult);
 
         const result = await api.getListRequest<Entity>(PATH, page, size);
 
@@ -1011,14 +900,7 @@ describe('CEP API with Authorization when it is required', () => {
     it('createRequest should return 200 and a Entity Target when create corrected', async () => {
         const target = generateTarget(1, 'test', 'test');
         const targetBody = { name: target.name, url: target.url };
-        serverCreateAuth(
-            server,
-            PATH,
-            apiKey,
-            JSON.stringify(targetBody),
-            201,
-            target
-        );
+        serverCreateAuth(server, PATH, apiKey, JSON.stringify(targetBody), 201, target);
 
         const result = await api.createRequest(PATH, targetBody);
 

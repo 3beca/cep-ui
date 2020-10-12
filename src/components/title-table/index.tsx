@@ -3,10 +3,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from './styles';
 
-export const TitleTable: React.FC<{ title: string }> = ({
-    title,
-    children
-}) => {
+export const TitleTable: React.FC<{ title: string }> = ({ title, children }) => {
     const styles = useStyles();
     return (
         <div className={styles.tabletitle} aria-label='table title'>

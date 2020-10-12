@@ -5,12 +5,7 @@ test('NOOP do no operation', () => {
 });
 
 test('cutString', () => {
-    expect(
-        cutString(
-            'hiiiiiiiperlarrrrgetextwithoooooooutanyelementwheretobreak',
-            10
-        )
-    ).toBe('hiiiiiiipe...');
+    expect(cutString('hiiiiiiiperlarrrrgetextwithoooooooutanyelementwheretobreak', 10)).toBe('hiiiiiiipe...');
     expect(cutString('12345', 10)).toBe('12345');
     expect(cutString((undefined as unknown) as string, 10)).toBe('');
 });

@@ -3,10 +3,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Button from '@material-ui/core/Button';
 import SearchBar from '../../components/search-bar';
-import {
-    ListLoadingView,
-    ListEmptyView
-} from '../../components/paginated-table';
+import { ListLoadingView, ListEmptyView } from '../../components/paginated-table';
 import RuleCard from './rule-card';
 import { CreateRuleDialog } from './create-dialog';
 import { ENTITY } from '../../services/api-provider/use-api';
@@ -43,20 +40,14 @@ export const RuleListPage: React.FC<{}> = () => {
     const [isOpen, setOpen] = React.useState(false);
     const openDialog = React.useCallback(() => setOpen(true), []);
     const closeDialog = React.useCallback(() => setOpen(false), []);
-    const {
-        isLoading,
-        accumulated,
-        hasMoreElements,
-        nextPage,
-        changeFilter,
-        currentFilter,
-        deleteItems
-    } = useGetListAccumulated<Rule>(ENTITY.RULES, 1, 10);
+    const { isLoading, accumulated, hasMoreElements, nextPage, changeFilter, currentFilter, deleteItems } = useGetListAccumulated<Rule>(
+        ENTITY.RULES,
+        1,
+        10
+    );
     const onDeleteRule = React.useCallback(
         (ruleToDelete: Rule) => {
-            const indexToDelete = accumulated.findIndex(
-                rule => rule.id === ruleToDelete.id
-            );
+            const indexToDelete = accumulated.findIndex(rule => rule.id === ruleToDelete.id);
             deleteItems([indexToDelete]);
         },
         [deleteItems, accumulated]
@@ -65,40 +56,20 @@ export const RuleListPage: React.FC<{}> = () => {
     return (
         <div className={styles.root}>
             <div aria-label='rule search bar' className={styles.searchBar}>
-                <SearchBar
-                    hint='Enter a rule name...'
-                    minLength={0}
-                    onSearchFor={changeFilter}
-                />
+                <SearchBar hint='Enter a rule name...' minLength={0} onSearchFor={changeFilter} />
             </div>
-            <Fab
-                color='primary'
-                aria-label='add rule'
-                className={styles.fabAddRule}
-                onClick={openDialog}
-            >
+            <Fab color='primary' aria-label='add rule' className={styles.fabAddRule} onClick={openDialog}>
                 <AddIcon />
             </Fab>
             <div className={styles.gridCards}>
                 {accumulated.map(rule => (
-                    <RuleCard
-                        rule={rule}
-                        key={rule.id}
-                        onDelete={onDeleteRule}
-                    />
+                    <RuleCard rule={rule} key={rule.id} onDelete={onDeleteRule} />
                 ))}
             </div>
-            <LoadMoreButton
-                show={!isLoading && hasMoreElements}
-                onClick={nextPage}
-            />
+            <LoadMoreButton show={!isLoading && hasMoreElements} onClick={nextPage} />
             <ListLoadingView show={isLoading} />
             <ListEmptyView
-                emptyMessage={
-                    !!currentFilter
-                        ? `There are no elements for "${currentFilter}"`
-                        : 'There are no RULES created yet!'
-                }
+                emptyMessage={!!currentFilter ? `There are no elements for "${currentFilter}"` : 'There are no RULES created yet!'}
                 noMoreMessage='You reached the end of the list!'
                 show={!isLoading && !hasMoreElements}
                 isEmpty={isEmpty}

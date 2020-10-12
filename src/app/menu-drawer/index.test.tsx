@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { renderInsideApp, fireEvent } from '../../test-utils';
 import MenuDrawer from './index';
-import {
-    useMainMenuToggle,
-    useMainMenuState
-} from '../../services/main-menu-provider';
+import { useMainMenuToggle, useMainMenuState } from '../../services/main-menu-provider';
 
 const mockMainMenuStatus = (useMainMenuState as unknown) as jest.Mock;
 const mockClose = (useMainMenuToggle().close as unknown) as jest.Mock;
@@ -57,13 +54,7 @@ test('MenuDrawer should render menu when open in / with Rules selected and snaps
 });
 
 test('MenuDrawer should render menu when open in / and navigate to targets, snapshot and back', () => {
-    const {
-        container,
-        history,
-        menuTargets,
-        menuRules,
-        queryByLabelText
-    } = renderMenuOpenedInRoute();
+    const { container, history, menuTargets, menuRules, queryByLabelText } = renderMenuOpenedInRoute();
     mockMainMenuStatus.mockReturnValueOnce(true);
     fireEvent.click(menuTargets);
     expect(history.location.pathname).toEqual('/targets');
@@ -78,13 +69,7 @@ test('MenuDrawer should render menu when open in / and navigate to targets, snap
 });
 
 test('MenuDrawer should render menu when open in / and navigate to Event Types, snapshot and back', () => {
-    const {
-        container,
-        history,
-        menuRules,
-        menuEventTypes,
-        queryByLabelText
-    } = renderMenuOpenedInRoute();
+    const { container, history, menuRules, menuEventTypes, queryByLabelText } = renderMenuOpenedInRoute();
     mockMainMenuStatus.mockReturnValueOnce(true);
     fireEvent.click(menuEventTypes);
     expect(history.location.pathname).toEqual('/event-types');
@@ -99,13 +84,7 @@ test('MenuDrawer should render menu when open in / and navigate to Event Types, 
 });
 
 test('MenuDrawer should render menu when open in / and navigate to Events, snapshot and back', () => {
-    const {
-        container,
-        history,
-        menuRules,
-        menuEvents,
-        queryByLabelText
-    } = renderMenuOpenedInRoute();
+    const { container, history, menuRules, menuEvents, queryByLabelText } = renderMenuOpenedInRoute();
     mockMainMenuStatus.mockReturnValueOnce(true);
     fireEvent.click(menuEvents);
     expect(history.location.pathname).toEqual('/event-logs');

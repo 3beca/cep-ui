@@ -8,30 +8,15 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
     title: string,
     DeletableTable: React.FC<{}>,
     ariaElementRow: string | RegExp,
-    dataGenerator: (
-        size: number,
-        next: boolean,
-        prev: boolean
-    ) => ServiceList<R>,
-    serverDataResponse: (
-        page: number,
-        pageSize: number,
-        status: number,
-        response: ServiceList<R> | E
-    ) => nock.Scope | void,
-    serverDeleteResponse: (
-        id: string,
-        status: number,
-        response?: ServiceError
-    ) => nock.Scope | void
+    dataGenerator: (size: number, next: boolean, prev: boolean) => ServiceList<R>,
+    serverDataResponse: (page: number, pageSize: number, status: number, response: ServiceList<R> | E) => nock.Scope | void,
+    serverDeleteResponse: (id: string, status: number, response?: ServiceError) => nock.Scope | void
 ) => {
     test(`${title} should show delete dialog when click in its delete icon`, async () => {
         const response = dataGenerator(10, false, false);
         serverDataResponse(1, 10, 200, response);
         render(<DeletableTable />);
-        expect(await screen.findAllByLabelText(ariaElementRow)).toHaveLength(
-            10
-        );
+        expect(await screen.findAllByLabelText(ariaElementRow)).toHaveLength(10);
         const elements = await screen.findAllByLabelText('delete one dialog');
         expect(elements.length).toBe(10);
         userEvent.click(elements[0]);
@@ -39,9 +24,7 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
         const dialog = within(document.getElementById('icon-dialog')!);
         await dialog.findByLabelText(/title/i);
         await dialog.findByLabelText(/elements to delete/i);
-        expect(
-            await await dialog.findAllByLabelText(/element to delete/i)
-        ).toHaveLength(1);
+        expect(await await dialog.findAllByLabelText(/element to delete/i)).toHaveLength(1);
         const closeButton = await dialog.findByLabelText(/^close button$/i);
         const deleteButton = await dialog.findByLabelText(/^delete button$/i);
 
@@ -51,20 +34,12 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
 
         userEvent.click(deleteButton);
 
-        expect(await dialog.findAllByLabelText(/deleted element/)).toHaveLength(
-            1
-        );
-        expect(
-            await dialog.findAllByLabelText(/success message/i)
-        ).toHaveLength(1);
+        expect(await dialog.findAllByLabelText(/deleted element/)).toHaveLength(1);
+        expect(await dialog.findAllByLabelText(/success message/i)).toHaveLength(1);
         expect(deleteButton).toBeDisabled();
 
         await screen.findByTestId(/loading-view-row/);
-        await waitFor(() =>
-            expect(
-                screen.queryByTestId(/loading-view-row/)
-            ).not.toBeInTheDocument()
-        );
+        await waitFor(() => expect(screen.queryByTestId(/loading-view-row/)).not.toBeInTheDocument());
         expect(await screen.findAllByLabelText(ariaElementRow)).toHaveLength(5);
         // Close dialog
         userEvent.click(closeButton);
@@ -75,33 +50,21 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
         const response = dataGenerator(10, false, false);
         serverDataResponse(1, 10, 200, response);
         render(<DeletableTable />);
-        expect(await screen.findAllByLabelText(ariaElementRow)).toHaveLength(
-            10
-        );
+        expect(await screen.findAllByLabelText(ariaElementRow)).toHaveLength(10);
         const elements = await screen.findAllByRole(/element-selector$/);
-        await waitFor(() =>
-            expect(
-                screen.queryByLabelText('delete selecteds icon')
-            ).not.toBeInTheDocument()
-        );
+        await waitFor(() => expect(screen.queryByLabelText('delete selecteds icon')).not.toBeInTheDocument());
 
         // Select second and third element
         userEvent.click(elements[1]);
         userEvent.click(elements[2]);
-        expect(
-            await screen.findByLabelText('delete selecteds icon')
-        ).toBeInTheDocument();
+        expect(await screen.findByLabelText('delete selecteds icon')).toBeInTheDocument();
 
         // Click on delete icon should open a delete dialog
-        userEvent.click(
-            await screen.findByLabelText('delete selecteds dialog')
-        );
+        userEvent.click(await screen.findByLabelText('delete selecteds dialog'));
         const dialog = within(document.getElementById('icon-dialog')!);
         await dialog.findByLabelText(/title/i);
         await dialog.findByLabelText(/elements to delete/i);
-        expect(
-            await dialog.findAllByLabelText(/element to delete/i)
-        ).toHaveLength(2);
+        expect(await dialog.findAllByLabelText(/element to delete/i)).toHaveLength(2);
         const closeButton = await dialog.findByLabelText(/^close button$/i);
         const deleteButton = await dialog.findByLabelText(/^delete button$/i);
 
@@ -116,22 +79,12 @@ export const runDeletableTableTest = <R extends Entity, E extends ServiceError>(
 
         userEvent.click(deleteButton);
 
-        expect(await dialog.findAllByLabelText(/deleted element/)).toHaveLength(
-            2
-        );
-        expect(
-            await dialog.findAllByLabelText(/success message/i)
-        ).toHaveLength(1);
-        expect(await dialog.findAllByLabelText(/error message/i)).toHaveLength(
-            1
-        );
+        expect(await dialog.findAllByLabelText(/deleted element/)).toHaveLength(2);
+        expect(await dialog.findAllByLabelText(/success message/i)).toHaveLength(1);
+        expect(await dialog.findAllByLabelText(/error message/i)).toHaveLength(1);
         expect(deleteButton).toBeDisabled();
         await screen.findByTestId(/loading-view-row/);
-        await waitFor(() =>
-            expect(
-                screen.queryByTestId(/loading-view-row/)
-            ).not.toBeInTheDocument()
-        );
+        await waitFor(() => expect(screen.queryByTestId(/loading-view-row/)).not.toBeInTheDocument());
         expect(await screen.findAllByLabelText(ariaElementRow)).toHaveLength(5);
         // Close dialog
         userEvent.click(closeButton);

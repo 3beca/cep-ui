@@ -60,6 +60,4 @@ export const initialUtils = {
     setApiKey: NOOP
 };
 export const APIContext = React.createContext<APIContextState>(initialContext);
-export const UpdateAPIContext = React.createContext<APIUtilsContext>(
-    initialUtils
-);
+export const UpdateAPIContext = React.createContext<APIUtilsContext>(initialUtils);

@@ -4,20 +4,10 @@ import { buildApiService } from '../api';
 import { VersionInfo } from '../api/models';
 import { BASE_URL, VERSION_URL } from '../config';
 import { loadApikey, saveApikey, clearApikey } from '../../utils';
-import {
-    APIContextState,
-    ApiContextActions,
-    ValidationState,
-    initialContext,
-    APIContext,
-    UpdateAPIContext
-} from './api-context';
+import { APIContextState, ApiContextActions, ValidationState, initialContext, APIContext, UpdateAPIContext } from './api-context';
 
 // config = {method: 'GET', headers: {'authorization': 'apiKey ' + apiKey}};
-export const apiReducer = (
-    state: APIContextState,
-    action: ApiContextActions
-) => {
+export const apiReducer = (state: APIContextState, action: ApiContextActions) => {
     switch (action.type) {
         case 'VALIDATING': {
             return {
@@ -84,9 +74,7 @@ export const APIProvider: React.FC<{}> = props => {
             method: 'GET'
         };
         const api = buildApiService(BASE_URL, apiInfo);
-        const responseWithtoken = await api.getRequest<VersionInfo>(
-            VERSION_URL
-        );
+        const responseWithtoken = await api.getRequest<VersionInfo>(VERSION_URL);
         if (isAPIError(responseWithtoken)) {
             clearApikey();
             dispatch({
@@ -169,15 +157,9 @@ export const useUpdateAPIProvider = () => {
 export const useAPIProviderStatus = () => {
     const api = React.useContext(APIContext);
     return {
-        showLoading:
-            api.isValidating || api.isValidated === ValidationState.PENDING,
-        showNoService:
-            !api.isValidating && api.isValidated === ValidationState.NOT_FOUND,
-        showLogin:
-            !api.isValidating &&
-            api.requireKey &&
-            api.isValidated === ValidationState.VALIDATED &&
-            !api.isValid,
+        showLoading: api.isValidating || api.isValidated === ValidationState.PENDING,
+        showNoService: !api.isValidating && api.isValidated === ValidationState.NOT_FOUND,
+        showLogin: !api.isValidating && api.requireKey && api.isValidated === ValidationState.VALIDATED && !api.isValid,
         requireApikey: api.requireKey,
         invalidReason: api.invalidReason,
         apiKey: api.apiKey,

@@ -35,25 +35,15 @@ import {
     DEFAULT_RULEFILTERCONTAINER
 } from './models';
 
-export const getComparatorValue = (
-    comparator: RuleFilterComparator
-): ComparatorValue | ComparatorLocation => {
-    if (isRuleFilterComparatorGT(comparator))
-        return { name: 'GT', value: comparator._gt };
-    if (isRuleFilterComparatorGTE(comparator))
-        return { name: 'GTE', value: comparator._gte };
-    if (isRuleFilterComparatorLT(comparator))
-        return { name: 'LT', value: comparator._lt };
-    if (isRuleFilterComparatorLTE(comparator))
-        return { name: 'LTE', value: comparator._lte };
-    if (isRuleFilterComparatorLocation(comparator))
-        return { name: 'NEAR', value: comparator._near };
+export const getComparatorValue = (comparator: RuleFilterComparator): ComparatorValue | ComparatorLocation => {
+    if (isRuleFilterComparatorGT(comparator)) return { name: 'GT', value: comparator._gt };
+    if (isRuleFilterComparatorGTE(comparator)) return { name: 'GTE', value: comparator._gte };
+    if (isRuleFilterComparatorLT(comparator)) return { name: 'LT', value: comparator._lt };
+    if (isRuleFilterComparatorLTE(comparator)) return { name: 'LTE', value: comparator._lte };
+    if (isRuleFilterComparatorLocation(comparator)) return { name: 'NEAR', value: comparator._near };
     return { name: 'EQ', value: comparator._eq || '' };
 };
-export const processValues = (
-    field: RuleFilterField,
-    value: RuleFilterFieldValue
-): EComparator | EDefault | EComparatorLocation => {
+export const processValues = (field: RuleFilterField, value: RuleFilterFieldValue): EComparator | EDefault | EComparatorLocation => {
     if (isRuleFilterComparator(value)) {
         const comparator = value;
         const operator = getComparatorValue(comparator);
@@ -96,16 +86,10 @@ export const parseRuleFilter = (filter: RuleFilter): RuleFilterContainer => {
                 };
             } else if (isRuleFilterArray(field.value)) {
                 const results: RuleFilterContainer = [];
-                field.value.forEach(rulefilter =>
-                    results.push(...parseRuleFilter(rulefilter))
-                );
+                field.value.forEach(rulefilter => results.push(...parseRuleFilter(rulefilter)));
                 return {
                     model: 'CONTAINER',
-                    type: isRuleFilterOR(field)
-                        ? 'OR'
-                        : isRuleFilterAND(field)
-                        ? 'AND'
-                        : 'DEFAULT',
+                    type: isRuleFilterOR(field) ? 'OR' : isRuleFilterAND(field) ? 'AND' : 'DEFAULT',
                     field: field.field,
                     values: results
                 };
@@ -139,10 +123,7 @@ export const createORContainer = (): Container => {
         values: []
     };
 };
-export const createExpresion = (
-    fieldName = 'root',
-    value?: RuleFilterValue
-): Expression => {
+export const createExpresion = (fieldName = 'root', value?: RuleFilterValue): Expression => {
     if (value === undefined) {
         return {
             model: 'EXPRESSION',
@@ -158,9 +139,7 @@ export const createExpresion = (
     };
 };
 
-export const parseContainerValue = (
-    value: Expression | Container
-): RuleFilter => {
+export const parseContainerValue = (value: Expression | Container): RuleFilter => {
     if (value.model === 'EXPRESSION') {
         if (isExpressionDefault(value)) {
             return { [value.field]: value.value };
@@ -178,71 +157,41 @@ export const parseContainerValue = (
     return { [value.field]: value.values.map(parseContainerValue) };
 };
 const emptyFilter: RuleFilter = {};
-export const parseFilterContainer = (
-    container: RuleFilterContainer
-): RuleFilter => {
+export const parseFilterContainer = (container: RuleFilterContainer): RuleFilter => {
     if (!Array.isArray(container)) return {};
     return container.reduce<RuleFilter>((filter, container) => {
         return { ...filter, ...parseContainerValue(container) };
     }, emptyFilter);
 };
 
-const synchronizeExpression = (
-    payloadNames: string[],
-    expression: Expression
-): Expression | null => {
+const synchronizeExpression = (payloadNames: string[], expression: Expression): Expression | null => {
     return payloadNames.includes(expression.field) ? expression : null;
 };
-const synchronizeContainer = (
-    payloadNames: string[],
-    container: Container
-): Container | null => {
+const synchronizeContainer = (payloadNames: string[], container: Container): Container | null => {
     const syncedContainerValues: (Expression | Container)[] = [];
     for (const containerElement of container.values) {
         if (isContainer(containerElement)) {
-            const container = synchronizeContainer(
-                payloadNames,
-                containerElement
-            );
+            const container = synchronizeContainer(payloadNames, containerElement);
             container && syncedContainerValues.push(container);
         } else {
-            const expression = synchronizeExpression(
-                payloadNames,
-                containerElement
-            );
+            const expression = synchronizeExpression(payloadNames, containerElement);
             expression && syncedContainerValues.push(expression);
         }
     }
     return { ...container, values: syncedContainerValues };
 };
-export const synchronizeRuleFilterContainerAndEventPayload = (
-    payload: EventPayload | null,
-    ruleFilter: RuleFilterContainer
-) => {
-    if (
-        !Array.isArray(payload) ||
-        payload.length < 1 ||
-        !Array.isArray(ruleFilter)
-    )
-        return DEFAULT_RULEFILTERCONTAINER;
+export const synchronizeRuleFilterContainerAndEventPayload = (payload: EventPayload | null, ruleFilter: RuleFilterContainer) => {
+    if (!Array.isArray(payload) || payload.length < 1 || !Array.isArray(ruleFilter)) return DEFAULT_RULEFILTERCONTAINER;
     const syncedRuleFilterContainer: RuleFilterContainer = [];
     const payloadNames = payload.map(payloadItem => payloadItem.name);
     for (const ruleFilterElement of ruleFilter) {
         if (isContainer(ruleFilterElement)) {
-            const container = synchronizeContainer(
-                payloadNames,
-                ruleFilterElement
-            );
+            const container = synchronizeContainer(payloadNames, ruleFilterElement);
             container && syncedRuleFilterContainer.push(container);
         } else {
-            const expression = synchronizeExpression(
-                payloadNames,
-                ruleFilterElement
-            );
+            const expression = synchronizeExpression(payloadNames, ruleFilterElement);
             expression && syncedRuleFilterContainer.push(expression);
         }
     }
-    return syncedRuleFilterContainer.length > 0
-        ? syncedRuleFilterContainer
-        : DEFAULT_RULEFILTERCONTAINER;
+    return syncedRuleFilterContainer.length > 0 ? syncedRuleFilterContainer : DEFAULT_RULEFILTERCONTAINER;
 };

@@ -102,20 +102,15 @@ test('useDebounde should do nothing if callback is invalid', async () => {
             initialValue: ''
         }
     });
-    expect(() => result.current).toThrowError(
-        'callback param must be a function'
-    );
+    expect(() => result.current).toThrowError('callback param must be a function');
 });
 
 test('useDebounde should fire with custom filter', async () => {
-    const fireCallback = jest
-        .fn()
-        .mockImplementationOnce((value: string) => {});
+    const fireCallback = jest.fn().mockImplementationOnce((value: string) => {});
     const props: debounceProps<string> = {
         callback: fireCallback,
         initialValue: '',
-        filterDispatch: (value: string | undefined) =>
-            !!value && value.length > 5
+        filterDispatch: (value: string | undefined) => !!value && value.length > 5
     };
     const { result } = renderHook(useDebounce, { initialProps: props });
     const [, setValue] = result.current;

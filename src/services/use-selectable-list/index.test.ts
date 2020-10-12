@@ -2,17 +2,9 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { useSelectableList } from './index';
 
 test('useSelectableList should select and deselect elements from a list without duplicate elements', async () => {
-    let listOfElements = [
-        'Elemento1',
-        'Elemento2',
-        'Elemento3',
-        'Elemento4',
-        'Elemento5'
-    ];
+    let listOfElements = ['Elemento1', 'Elemento2', 'Elemento3', 'Elemento4', 'Elemento5'];
     const selectedCallback = jest.fn();
-    const { result, rerender } = renderHook(() =>
-        useSelectableList(listOfElements, selectedCallback)
-    );
+    const { result, rerender } = renderHook(() => useSelectableList(listOfElements, selectedCallback));
 
     expect(result.current.selecteds.size).toBe(0);
     expect(selectedCallback).toHaveBeenCalledTimes(0);
@@ -25,67 +17,35 @@ test('useSelectableList should select and deselect elements from a list without 
 
     act(() => result.current.selectOne(true, listOfElements[2]));
     expect(result.current.selecteds.size).toBe(2);
-    expect([...result.current.selecteds]).toEqual([
-        listOfElements[0],
-        listOfElements[2]
-    ]);
+    expect([...result.current.selecteds]).toEqual([listOfElements[0], listOfElements[2]]);
     expect(selectedCallback).toHaveBeenCalledTimes(2);
-    expect(selectedCallback).toHaveBeenNthCalledWith(2, [
-        listOfElements[0],
-        listOfElements[2]
-    ]);
+    expect(selectedCallback).toHaveBeenNthCalledWith(2, [listOfElements[0], listOfElements[2]]);
 
     act(() => result.current.selectOne(true, listOfElements[3]));
     expect(result.current.selecteds.size).toBe(3);
-    expect([...result.current.selecteds]).toEqual([
-        listOfElements[0],
-        listOfElements[2],
-        listOfElements[3]
-    ]);
+    expect([...result.current.selecteds]).toEqual([listOfElements[0], listOfElements[2], listOfElements[3]]);
     expect(selectedCallback).toHaveBeenCalledTimes(3);
-    expect(selectedCallback).toHaveBeenNthCalledWith(3, [
-        listOfElements[0],
-        listOfElements[2],
-        listOfElements[3]
-    ]);
+    expect(selectedCallback).toHaveBeenNthCalledWith(3, [listOfElements[0], listOfElements[2], listOfElements[3]]);
 
     act(() => result.current.selectOne(false, listOfElements[2]));
     expect(result.current.selecteds.size).toBe(2);
-    expect([...result.current.selecteds]).toEqual([
-        listOfElements[0],
-        listOfElements[3]
-    ]);
+    expect([...result.current.selecteds]).toEqual([listOfElements[0], listOfElements[3]]);
     expect(selectedCallback).toHaveBeenCalledTimes(4);
-    expect(selectedCallback).toHaveBeenNthCalledWith(4, [
-        listOfElements[0],
-        listOfElements[3]
-    ]);
+    expect(selectedCallback).toHaveBeenNthCalledWith(4, [listOfElements[0], listOfElements[3]]);
 
     // Remove only once
     act(() => result.current.selectOne(false, listOfElements[2]));
     expect(result.current.selecteds.size).toBe(2);
-    expect([...result.current.selecteds]).toEqual([
-        listOfElements[0],
-        listOfElements[3]
-    ]);
+    expect([...result.current.selecteds]).toEqual([listOfElements[0], listOfElements[3]]);
     expect(selectedCallback).toHaveBeenCalledTimes(5);
-    expect(selectedCallback).toHaveBeenNthCalledWith(5, [
-        listOfElements[0],
-        listOfElements[3]
-    ]);
+    expect(selectedCallback).toHaveBeenNthCalledWith(5, [listOfElements[0], listOfElements[3]]);
 
     // Do not duplicate elements
     act(() => result.current.selectOne(true, listOfElements[3]));
     expect(result.current.selecteds.size).toBe(2);
-    expect([...result.current.selecteds]).toEqual([
-        listOfElements[0],
-        listOfElements[3]
-    ]);
+    expect([...result.current.selecteds]).toEqual([listOfElements[0], listOfElements[3]]);
     expect(selectedCallback).toHaveBeenCalledTimes(6);
-    expect(selectedCallback).toHaveBeenNthCalledWith(6, [
-        listOfElements[0],
-        listOfElements[3]
-    ]);
+    expect(selectedCallback).toHaveBeenNthCalledWith(6, [listOfElements[0], listOfElements[3]]);
 
     act(() => result.current.selectOne(false, listOfElements[0]));
     expect(result.current.selecteds.size).toBe(1);
@@ -94,13 +54,7 @@ test('useSelectableList should select and deselect elements from a list without 
     expect(selectedCallback).toHaveBeenNthCalledWith(7, [listOfElements[3]]);
 
     selectedCallback.mockClear();
-    listOfElements = [
-        'ElementoN1',
-        'ElementoN2',
-        'ElementoN3',
-        'ElementoN4',
-        'ElementoN5'
-    ];
+    listOfElements = ['ElementoN1', 'ElementoN2', 'ElementoN3', 'ElementoN4', 'ElementoN5'];
     rerender();
 
     expect(result.current.selecteds.size).toBe(0);
@@ -131,13 +85,7 @@ test('useSelectableList should select and deselect elements from a list without 
     expect(selectedCallback).toHaveBeenNthCalledWith(4, listOfElements);
 
     selectedCallback.mockClear();
-    listOfElements = [
-        'ElementoN1',
-        'ElementoN2',
-        'ElementoN3',
-        'ElementoN4',
-        'ElementoN5'
-    ];
+    listOfElements = ['ElementoN1', 'ElementoN2', 'ElementoN3', 'ElementoN4', 'ElementoN5'];
     rerender();
 
     expect(result.current.selecteds.size).toBe(0);
@@ -153,9 +101,7 @@ test('useSelectableList should select and deselect elements from a list without 
 test('useSelectableList should fire selectAll(true) with empty array when list is null', async () => {
     const selectedCallback = jest.fn();
     let listOfElements = (null as unknown) as string[];
-    const { result } = renderHook(() =>
-        useSelectableList(listOfElements, selectedCallback)
-    );
+    const { result } = renderHook(() => useSelectableList(listOfElements, selectedCallback));
 
     expect(result.current.selecteds.size).toBe(0);
     expect(selectedCallback).toHaveBeenCalledTimes(0);
@@ -175,9 +121,7 @@ test('useSelectableList should fire selectAll(true) with empty array when list i
 
 test('useSelectableList should fire selectAll(true) with empty array when list is undefined', async () => {
     const selectedCallback = jest.fn();
-    const { result } = renderHook(() =>
-        useSelectableList(undefined, selectedCallback)
-    );
+    const { result } = renderHook(() => useSelectableList(undefined, selectedCallback));
 
     expect(result.current.selecteds.size).toBe(0);
     expect(selectedCallback).toHaveBeenCalledTimes(0);

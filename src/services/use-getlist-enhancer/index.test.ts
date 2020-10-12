@@ -1,11 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { ENTITY } from '../api-provider/use-api';
 import { BASE_URL } from '../config';
-import {
-    setupNock,
-    serverGetEventTypeList,
-    generateEventTypeListWith
-} from '../../test-utils';
+import { setupNock, serverGetEventTypeList, generateEventTypeListWith } from '../../test-utils';
 import { useGetListFilteredAndPaginated, useGetListAccumulated } from './index';
 import { Entity, EventType, ServiceList } from '../api';
 
@@ -21,11 +17,7 @@ jest.mock('../api-provider', () => {
 const url = BASE_URL;
 const server = setupNock(url);
 
-const renderHookIntheNextPage = async (
-    initialPage: number,
-    initialPageSize: number,
-    initialFilter: string
-) => {
+const renderHookIntheNextPage = async (initialPage: number, initialPageSize: number, initialFilter: string) => {
     serverGetEventTypeList(
         server,
         initialPage,
@@ -34,24 +26,14 @@ const renderHookIntheNextPage = async (
         200,
         generateEventTypeListWith(initialPageSize, true, false)
     );
-    const hookApi = renderHook(() =>
-        useGetListFilteredAndPaginated(
-            ENTITY.EVENT_TYPES,
-            initialPage,
-            initialPageSize,
-            initialFilter,
-            true
-        )
-    );
+    const hookApi = renderHook(() => useGetListFilteredAndPaginated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, initialFilter, true));
 
     expect(hookApi.result.current.isLoading).toBe(true);
     expect(hookApi.result.current.currentPage).toBe(initialPage);
     expect(hookApi.result.current.currentPageSize).toBe(initialPageSize);
 
     await hookApi.waitForNextUpdate();
-    expect(hookApi.result.current.response?.data.results).toHaveLength(
-        initialPageSize
-    );
+    expect(hookApi.result.current.response?.data.results).toHaveLength(initialPageSize);
     expect(hookApi.result.current.hasMoreElements).toBe(true);
 
     serverGetEventTypeList(
@@ -66,9 +48,7 @@ const renderHookIntheNextPage = async (
 
     await hookApi.waitForNextUpdate();
     expect(hookApi.result.current.currentPage).toBe(initialPage + 1);
-    expect(hookApi.result.current.response?.data.results).toHaveLength(
-        initialPageSize
-    );
+    expect(hookApi.result.current.response?.data.results).toHaveLength(initialPageSize);
     expect(hookApi.result.current.currentPageSize).toBe(initialPageSize);
     expect(hookApi.result.current.hasMoreElements).toBe(true);
 
@@ -76,17 +56,8 @@ const renderHookIntheNextPage = async (
 };
 
 test('useGetListFilteredAndPaginated should use 20 pageSize with defaults', async () => {
-    serverGetEventTypeList(
-        server,
-        1,
-        20,
-        '',
-        200,
-        generateEventTypeListWith(10, true, false)
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListFilteredAndPaginated(ENTITY.EVENT_TYPES)
-    );
+    serverGetEventTypeList(server, 1, 20, '', 200, generateEventTypeListWith(10, true, false));
+    const { result, waitForNextUpdate } = renderHook(() => useGetListFilteredAndPaginated(ENTITY.EVENT_TYPES));
 
     expect(result.current.isLoading).toBe(true);
     expect(result.current.currentPage).toBe(1);
@@ -101,21 +72,10 @@ test('useGetListFilteredAndPaginated should block next page when reach last page
     const initialPageSize = 10;
     const initialFilter = '';
 
-    const { result, waitForNextUpdate } = await renderHookIntheNextPage(
-        initialPage,
-        initialPageSize,
-        initialFilter
-    );
+    const { result, waitForNextUpdate } = await renderHookIntheNextPage(initialPage, initialPageSize, initialFilter);
 
     const nextPage = result.current.currentPage + 1;
-    serverGetEventTypeList(
-        server,
-        nextPage,
-        initialPageSize,
-        result.current.currentFilter,
-        200,
-        generateEventTypeListWith(5, false, true)
-    );
+    serverGetEventTypeList(server, nextPage, initialPageSize, result.current.currentFilter, 200, generateEventTypeListWith(5, false, true));
     act(() => result.current.nextPage());
 
     await waitForNextUpdate();
@@ -150,11 +110,7 @@ test('useGetListFilteredAndPaginated should block prev page when reach first pag
     const initialPageSize = 10;
     const initialFilter = '';
 
-    const { result, waitForNextUpdate } = await renderHookIntheNextPage(
-        initialPage,
-        initialPageSize,
-        initialFilter
-    );
+    const { result, waitForNextUpdate } = await renderHookIntheNextPage(initialPage, initialPageSize, initialFilter);
 
     const prevPage = result.current.currentPage - 1;
     serverGetEventTypeList(
@@ -183,21 +139,10 @@ test('useGetListFilteredAndPaginated should change initialPageSize and reset to 
     const initialPageSize = 10;
     const initialFilter = '';
 
-    const { result, waitForNextUpdate } = await renderHookIntheNextPage(
-        initialPage,
-        initialPageSize,
-        initialFilter
-    );
+    const { result, waitForNextUpdate } = await renderHookIntheNextPage(initialPage, initialPageSize, initialFilter);
 
     const newPageSize = 20;
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        newPageSize,
-        initialFilter,
-        200,
-        generateEventTypeListWith(newPageSize, true, false)
-    );
+    serverGetEventTypeList(server, initialPage, newPageSize, initialFilter, 200, generateEventTypeListWith(newPageSize, true, false));
     act(() => result.current.changePageSize(newPageSize));
     await waitForNextUpdate();
     expect(result.current.currentPage).toBe(initialPage);
@@ -206,28 +151,14 @@ test('useGetListFilteredAndPaginated should change initialPageSize and reset to 
     expect(result.current.hasMoreElements).toBe(true);
 
     // Load next page with new pagination size
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        newPageSize,
-        initialFilter,
-        200,
-        generateEventTypeListWith(newPageSize, true, false)
-    );
+    serverGetEventTypeList(server, initialPage + 1, newPageSize, initialFilter, 200, generateEventTypeListWith(newPageSize, true, false));
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.currentPage).toBe(initialPage + 1);
     expect(result.current.currentPageSize).toBe(newPageSize);
 
     // reset pagination size
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        initialFilter,
-        200,
-        generateEventTypeListWith(newPageSize, true, false)
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, initialFilter, 200, generateEventTypeListWith(newPageSize, true, false));
     act(() => result.current.resetPageSize());
     await waitForNextUpdate();
     expect(result.current.currentPage).toBe(initialPage);
@@ -239,21 +170,10 @@ test('useGetListFilteredAndPaginated should next and prev page filtered and rese
     const initialPageSize = 10;
     const initialFilter = 'initialfilter';
 
-    const { result, waitForNextUpdate } = await renderHookIntheNextPage(
-        initialPage,
-        initialPageSize,
-        initialFilter
-    );
+    const { result, waitForNextUpdate } = await renderHookIntheNextPage(initialPage, initialPageSize, initialFilter);
 
     const filter = 'new-search-condition';
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(10, true, false)
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(10, true, false));
     act(() => result.current.changeFilter(filter));
 
     await waitForNextUpdate();
@@ -264,14 +184,7 @@ test('useGetListFilteredAndPaginated should next and prev page filtered and rese
 
     // Next filtered page
     const nextPage = initialPage + 1;
-    serverGetEventTypeList(
-        server,
-        nextPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(5, false, true)
-    );
+    serverGetEventTypeList(server, nextPage, initialPageSize, filter, 200, generateEventTypeListWith(5, false, true));
     act(() => result.current.nextPage());
 
     await waitForNextUpdate();
@@ -283,14 +196,7 @@ test('useGetListFilteredAndPaginated should next and prev page filtered and rese
 
     // Prev filtered page
     const prevPage = result.current.currentPage - 1;
-    serverGetEventTypeList(
-        server,
-        prevPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, true)
-    );
+    serverGetEventTypeList(server, prevPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, true));
     act(() => result.current.prevPage());
 
     await waitForNextUpdate();
@@ -323,42 +229,19 @@ test('useGetListAcumulated should get 20 elements by default', async () => {
     const initialPage = 1;
     const initialPageSize = 20;
     const filter = '';
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, false)
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListAccumulated(ENTITY.EVENT_TYPES)
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
+    const { result, waitForNextUpdate } = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(20);
     expect(result.current.hasMoreElements).toBe(true);
 
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, true)
-    );
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, true));
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(40);
     expect(result.current.hasMoreElements).toBe(true);
 
-    serverGetEventTypeList(
-        server,
-        initialPage + 2,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(10, false, true)
-    );
+    serverGetEventTypeList(server, initialPage + 2, initialPageSize, filter, 200, generateEventTypeListWith(10, false, true));
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(50);
@@ -369,47 +252,19 @@ test('useGetListAcumulated should get 20 elements, nextPage and accumulate +20 a
     const initialPage = 1;
     const initialPageSize = 20;
     const filter = '';
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, false)
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListAccumulated(
-            ENTITY.EVENT_TYPES,
-            initialPage,
-            initialPageSize,
-            filter
-        )
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
+    const { result, waitForNextUpdate } = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(20);
     expect(result.current.hasMoreElements).toBe(true);
 
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, true)
-    );
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, true));
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(40);
     expect(result.current.hasMoreElements).toBe(true);
 
-    serverGetEventTypeList(
-        server,
-        initialPage + 2,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(10, false, true)
-    );
+    serverGetEventTypeList(server, initialPage + 2, initialPageSize, filter, 200, generateEventTypeListWith(10, false, true));
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(50);
@@ -420,48 +275,20 @@ test('useGetListAcumulated should get 20 elements, nextPage and filter accumulat
     const initialPage = 1;
     const initialPageSize = 20;
     const filter = '';
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, false)
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListAccumulated(
-            ENTITY.EVENT_TYPES,
-            initialPage,
-            initialPageSize,
-            filter
-        )
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
+    const { result, waitForNextUpdate } = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(20);
     expect(result.current.hasMoreElements).toBe(true);
 
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, true)
-    );
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, true));
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(40);
     expect(result.current.hasMoreElements).toBe(true);
 
     const newFilter = 'new-search-condition';
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        newFilter,
-        200,
-        generateEventTypeListWith(10, false, false)
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, newFilter, 200, generateEventTypeListWith(10, false, false));
     act(() => result.current.changeFilter(newFilter));
 
     await waitForNextUpdate();
@@ -470,14 +297,7 @@ test('useGetListAcumulated should get 20 elements, nextPage and filter accumulat
     expect(result.current.hasMoreElements).toBe(false);
 
     // Reset filtered page
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, false)
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
     act(() => result.current.resetFilter());
 
     await waitForNextUpdate();
@@ -490,48 +310,20 @@ test('useGetListAcumulated get 20 elements, nextPage and reuest should return th
     const initialPage = 1;
     const initialPageSize = 20;
     const filter = '';
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, false)
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListAccumulated(
-            ENTITY.EVENT_TYPES,
-            initialPage,
-            initialPageSize,
-            filter
-        )
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
+    const { result, waitForNextUpdate } = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(20);
     expect(result.current.hasMoreElements).toBe(true);
 
     const secondPage = generateEventTypeListWith(initialPageSize, true, true);
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        secondPage
-    );
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, secondPage);
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(40);
     expect(result.current.hasMoreElements).toBe(true);
 
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        secondPage
-    );
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, secondPage);
     act(() => result.current.request());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(40);
@@ -543,34 +335,13 @@ test('useGetListAcumulated get 20 elements, nextPage and reuest after delete one
     const initialPage = 1;
     const initialPageSize = 20;
     const filter = '';
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, false)
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListAccumulated(
-            ENTITY.EVENT_TYPES,
-            initialPage,
-            initialPageSize,
-            filter
-        )
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, false));
+    const { result, waitForNextUpdate } = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(20);
     expect(result.current.hasMoreElements).toBe(true);
 
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        generateEventTypeListWith(initialPageSize, true, true)
-    );
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, generateEventTypeListWith(initialPageSize, true, true));
     act(() => result.current.nextPage());
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(40);
@@ -621,51 +392,14 @@ test('useGetListAcumulated should remove 3 elements and refresh accumulated', as
     ];
     const itemsToDelete = [3, 8, 13];
     const itemsAcumulatedBeforeDelete = items.slice(0, 20);
-    const itemsAcumulatedAferDelete = items.filter(
-        (_, index) => !itemsToDelete.includes(index)
-    );
+    const itemsAcumulatedAferDelete = items.filter((_, index) => !itemsToDelete.includes(index));
 
     // Iterate 4 pages
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[0]
-    );
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[1]
-    );
-    serverGetEventTypeList(
-        server,
-        initialPage + 2,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[2]
-    );
-    serverGetEventTypeList(
-        server,
-        initialPage + 3,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[3]
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListAccumulated(
-            ENTITY.EVENT_TYPES,
-            initialPage,
-            initialPageSize,
-            filter
-        )
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, serverPages[0]);
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, serverPages[1]);
+    serverGetEventTypeList(server, initialPage + 2, initialPageSize, filter, 200, serverPages[2]);
+    serverGetEventTypeList(server, initialPage + 3, initialPageSize, filter, 200, serverPages[3]);
+    const { result, waitForNextUpdate } = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(5);
     expect(result.current.hasMoreElements).toBe(true);
@@ -685,14 +419,7 @@ test('useGetListAcumulated should remove 3 elements and refresh accumulated', as
     expect(result.current.currentFilter).toEqual(filter);
 
     // Delete 3 items
-    serverGetEventTypeList(
-        server,
-        initialPage + 3,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[4]
-    );
+    serverGetEventTypeList(server, initialPage + 3, initialPageSize, filter, 200, serverPages[4]);
     act(() => result.current.deleteItems(itemsToDelete));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(20);
@@ -722,51 +449,14 @@ test('useGetListAcumulated should remove 3 elements from a ended list and DO NOT
     ];
     const itemsToDelete = [3, 8, 13];
     const itemsAcumulatedBeforeDelete = items.slice(0, 17);
-    const itemsAcumulatedAferDelete = items.filter(
-        (_, index) => !itemsToDelete.includes(index)
-    );
+    const itemsAcumulatedAferDelete = items.filter((_, index) => !itemsToDelete.includes(index));
 
     // Iterate 4 pages
-    serverGetEventTypeList(
-        server,
-        initialPage,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[0]
-    );
-    serverGetEventTypeList(
-        server,
-        initialPage + 1,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[1]
-    );
-    serverGetEventTypeList(
-        server,
-        initialPage + 2,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[2]
-    );
-    serverGetEventTypeList(
-        server,
-        initialPage + 3,
-        initialPageSize,
-        filter,
-        200,
-        serverPages[3]
-    );
-    const { result, waitForNextUpdate } = renderHook(() =>
-        useGetListAccumulated(
-            ENTITY.EVENT_TYPES,
-            initialPage,
-            initialPageSize,
-            filter
-        )
-    );
+    serverGetEventTypeList(server, initialPage, initialPageSize, filter, 200, serverPages[0]);
+    serverGetEventTypeList(server, initialPage + 1, initialPageSize, filter, 200, serverPages[1]);
+    serverGetEventTypeList(server, initialPage + 2, initialPageSize, filter, 200, serverPages[2]);
+    serverGetEventTypeList(server, initialPage + 3, initialPageSize, filter, 200, serverPages[3]);
+    const { result, waitForNextUpdate } = renderHook(() => useGetListAccumulated(ENTITY.EVENT_TYPES, initialPage, initialPageSize, filter));
     await waitForNextUpdate();
     expect(result.current.accumulated).toHaveLength(5);
     expect(result.current.hasMoreElements).toBe(true);

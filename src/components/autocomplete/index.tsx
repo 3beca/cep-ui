@@ -1,7 +1,5 @@
 import * as React from 'react';
-import MUIAutocomplete, {
-    createFilterOptions
-} from '@material-ui/lab/Autocomplete';
+import MUIAutocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { EntityWithName } from '../../services/api';
@@ -51,9 +49,7 @@ export function Autocomplete<T extends EntityWithName>({
     }, []);
     const handleRenderOptions = React.useCallback(
         (option: T) => {
-            return (
-                (option.id !== emptyElement.id ? '' : 'Create ') + option.name
-            );
+            return (option.id !== emptyElement.id ? '' : 'Create ') + option.name;
         },
         [emptyElement]
     );
@@ -61,12 +57,7 @@ export function Autocomplete<T extends EntityWithName>({
         (options: T[], params: FilterOptionsState<T>) => {
             const filtered = defaultFilter(options, params);
             // If there are not matchs...
-            if (
-                !isLoading &&
-                options.length === 0 &&
-                filtered.length === 0 &&
-                params.inputValue !== ''
-            ) {
+            if (!isLoading && options.length === 0 && filtered.length === 0 && params.inputValue !== '') {
                 const newElement = { ...emptyElement, name: params.inputValue };
                 filtered.push(newElement);
             }
@@ -113,12 +104,7 @@ export function Autocomplete<T extends EntityWithName>({
                             ...params.InputProps,
                             endAdornment: (
                                 <React.Fragment>
-                                    {isLoading ? (
-                                        <CircularProgress
-                                            color='primary'
-                                            size={20}
-                                        />
-                                    ) : null}
+                                    {isLoading ? <CircularProgress color='primary' size={20} /> : null}
                                     {params.InputProps.endAdornment}
                                 </React.Fragment>
                             )

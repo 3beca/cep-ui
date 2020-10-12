@@ -19,21 +19,14 @@ export const SearchBar: React.FC<SearchBarProps> = function SearchBar({
     minLength = 3
 }) {
     const styles = useStyles();
-    const filter = React.useCallback(
-        value => !!value && value.length >= minLength,
-        [minLength]
-    );
+    const filter = React.useCallback(value => !!value && value.length >= minLength, [minLength]);
     const [searchText, setSearchText] = useDebounce({
         callback: onSearchFor,
         initialValue: '',
         delay: delay,
         filterDispatch: filter
     });
-    const onTextChange = React.useCallback(
-        (ev: React.ChangeEvent<HTMLInputElement>) =>
-            setSearchText(ev.target.value),
-        [setSearchText]
-    );
+    const onTextChange = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => setSearchText(ev.target.value), [setSearchText]);
     return (
         <Paper component='div' className={styles.searchContainer}>
             <InputBase

@@ -5,21 +5,11 @@ export type EventPayload = EventPayloadField[];
 const isValidPayloadField = (field: any): EventPayloadFieldTypes | null => {
     if (typeof field === 'number') return 'number';
     if (typeof field === 'string') return 'string';
-    if (
-        Array.isArray(field) &&
-        field.length === 2 &&
-        typeof field[0] === 'number' &&
-        typeof field[1] === 'number'
-    )
-        return 'location';
+    if (Array.isArray(field) && field.length === 2 && typeof field[0] === 'number' && typeof field[1] === 'number') return 'location';
     return null;
 };
-const filterEmptyPayloads = (
-    payload: EventPayloadField | null
-): payload is EventPayloadField => !!payload;
-export const buildPayloadFromEventLogPayload = (
-    eventLogPayload: any
-): EventPayload | null => {
+const filterEmptyPayloads = (payload: EventPayloadField | null): payload is EventPayloadField => !!payload;
+export const buildPayloadFromEventLogPayload = (eventLogPayload: any): EventPayload | null => {
     if (!eventLogPayload) return null;
     if (typeof eventLogPayload !== 'object') return null;
     if (Array.isArray(eventLogPayload)) return null;

@@ -40,9 +40,7 @@ test('buildPayloadFromEventLogPayload should filter invalid locations', () => {
         invalidLocation5: [[], []],
         validLocation: [10, 10]
     };
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual([
-        { name: 'validLocation', type: 'location' }
-    ]);
+    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual([{ name: 'validLocation', type: 'location' }]);
 });
 
 test('buildPayloadFromEventLogPayload should return null when payload is an array', () => {
@@ -71,7 +69,5 @@ test('buildPayloadFromEventLogPayload should return a valid payload', () => {
         { name: 'locationField', type: 'location' }
     ];
 
-    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(
-        expected
-    );
+    expect(buildPayloadFromEventLogPayload(payloadDownloaded)).toEqual(expected);
 });

@@ -36,52 +36,22 @@ const subtitles: RuleTypesText = {
 };
 const samples: RuleTypesSamples = {
     realtime: [
-        [
-            'temperature > 10',
-            'Checks temperature is great than 10 for each temperature received'
-        ],
-        [
-            'distance(location) > 50',
-            'Checks a locations is great than 5 meters'
-        ],
-        [
-            'battery < 30 and windSpeed > 5',
-            'Checks battery is less than 30 and windSpeed great than 5'
-        ]
+        ['temperature > 10', 'Checks temperature is great than 10 for each temperature received'],
+        ['distance(location) > 50', 'Checks a locations is great than 5 meters'],
+        ['battery < 30 and windSpeed > 5', 'Checks battery is less than 30 and windSpeed great than 5']
     ],
     sliding: [
-        [
-            'avg(temperature) > 35 last hour',
-            'Checks temperature average is greater than 35 degrees on the last hour'
-        ],
-        [
-            'sum(count) > 100 last 30 seconds',
-            'Checks count sum is greater than 100 on the last 30 seconds'
-        ],
-        [
-            'max(prints) < 10 last 90 minutes',
-            'Checks max prints is less than 10 on the last 90 minutes'
-        ]
+        ['avg(temperature) > 35 last hour', 'Checks temperature average is greater than 35 degrees on the last hour'],
+        ['sum(count) > 100 last 30 seconds', 'Checks count sum is greater than 100 on the last 30 seconds'],
+        ['max(prints) < 10 last 90 minutes', 'Checks max prints is less than 10 on the last 90 minutes']
     ],
     tumbling: [
-        [
-            'count(temperature) = 0 last 5 minutes',
-            'Checks no events of temperature has arrived every 5 minutes'
-        ],
-        [
-            'avg(temperature) > 30 last 5 minutes',
-            'Checks average of temperature of temperature is great than 30 every 5 minutes'
-        ],
-        [
-            'max(temperature) > 10 last 5 minutes',
-            'Checks max value of temperature is great than 30 every 5 minutes'
-        ]
+        ['count(temperature) = 0 last 5 minutes', 'Checks no events of temperature has arrived every 5 minutes'],
+        ['avg(temperature) > 30 last 5 minutes', 'Checks average of temperature of temperature is great than 30 every 5 minutes'],
+        ['max(temperature) > 10 last 5 minutes', 'Checks max value of temperature is great than 30 every 5 minutes']
     ],
     hopping: [
-        [
-            'count(temperature) = 0 each 5 minutes in 10 minutes',
-            'Checks no events of temperature has arrived every 5 minutes'
-        ],
+        ['count(temperature) = 0 each 5 minutes in 10 minutes', 'Checks no events of temperature has arrived every 5 minutes'],
         [
             'avg(temperature) > 30 each 15 minutes in 1 hour',
             'Checks average of temperature of temperature is great than 30 every 15 minutes in a 1 hour window'
@@ -99,49 +69,26 @@ export type RuleTypeCardProp = {
     ariaLabel: string;
     onClick(): void;
 };
-const RuleTypeCard: React.FC<RuleTypeCardProp> = ({
-    selected,
-    type,
-    ariaLabel,
-    onClick
-}) => {
+const RuleTypeCard: React.FC<RuleTypeCardProp> = ({ selected, type, ariaLabel, onClick }) => {
     const styles = useStyles();
     const stylesCard = useCardStyles();
     return (
-        <div
-            className={selected ? styles.cardButtonSelected : styles.cardButton}
-            aria-label={ariaLabel}
-            onClick={onClick}
-        >
+        <div className={selected ? styles.cardButtonSelected : styles.cardButton} aria-label={ariaLabel} onClick={onClick}>
             <div className={styles.rulesTypeHeader}>
-                <Avatar
-                    aria-label='avatar rule type'
-                    className={`${styles.ruleAvatar} ${colorTypeSelector(
-                        type,
-                        stylesCard
-                    )}`}
-                >
+                <Avatar aria-label='avatar rule type' className={`${styles.ruleAvatar} ${colorTypeSelector(type, stylesCard)}`}>
                     {mapRuleTypeName(type).slice(0, 1).toUpperCase()}
                 </Avatar>
-                <Typography className={styles.ruleTypeTextTitle}>
-                    {mapRuleTypeName(type).toUpperCase()}
-                </Typography>
+                <Typography className={styles.ruleTypeTextTitle}>{mapRuleTypeName(type).toUpperCase()}</Typography>
             </div>
         </div>
     );
 };
 
 export type CreateRuleDialogProps = { isOpen: boolean; onClose?(): void };
-export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({
-    isOpen,
-    onClose = NOOP
-}) => {
+export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({ isOpen, onClose = NOOP }) => {
     const styles = useStyles();
     const [type, setType] = React.useState<RuleTypes | null>(null);
-    const selectType = React.useCallback(
-        (type: RuleTypes) => setType(type),
-        []
-    );
+    const selectType = React.useCallback((type: RuleTypes) => setType(type), []);
     const history = useHistory();
     const fireSelected = React.useCallback(() => {
         history.push(`/rules/create/${type}`);
@@ -158,14 +105,8 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({
             scroll='paper'
             aria-label='create rule dialog'
         >
-            <DialogTitle aria-label='title create rule'>
-                What kind of rule do you need?
-            </DialogTitle>
-            <DialogContent
-                dividers={true}
-                className={styles.dialogContent}
-                aria-label='kind of rules description'
-            >
+            <DialogTitle aria-label='title create rule'>What kind of rule do you need?</DialogTitle>
+            <DialogContent dividers={true} className={styles.dialogContent} aria-label='kind of rules description'>
                 <RuleTypeCard
                     type='realtime'
                     ariaLabel='create rule real time card'
@@ -195,45 +136,22 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({
                 <div className={styles.samplesBox}>
                     {type != null && (
                         <div>
-                            <Typography className={styles.ruleTypeTextSubtitle}>
-                                {subtitles[type][0]}
-                            </Typography>
-                            <Typography
-                                className={styles.ruleTypeTextDescription}
-                            >
-                                {subtitles[type][1]}
-                            </Typography>
+                            <Typography className={styles.ruleTypeTextSubtitle}>{subtitles[type][0]}</Typography>
+                            <Typography className={styles.ruleTypeTextDescription}>{subtitles[type][1]}</Typography>
                         </div>
                     )}
                     {type != null &&
                         samples[type].map((text, idx) => (
                             <div className={styles.ruleSample} key={idx}>
-                                <Typography
-                                    className={styles.ruleTypeTextSampleTitle}
-                                >
-                                    {text[0]}
-                                </Typography>
-                                <Typography
-                                    className={
-                                        styles.ruleTypeTextSampleDescription
-                                    }
-                                >
-                                    {text[1]}
-                                </Typography>
+                                <Typography className={styles.ruleTypeTextSampleTitle}>{text[0]}</Typography>
+                                <Typography className={styles.ruleTypeTextSampleDescription}>{text[1]}</Typography>
                             </div>
                         ))}
                     {type === null && (
                         <div className={styles.ruleSample}>
-                            <Typography
-                                className={styles.ruleTypeTextSampleTitle}
-                            >
-                                You need to select one type of Rule.
-                            </Typography>
-                            <Typography
-                                className={styles.ruleTypeTextSampleDescription}
-                            >
-                                Each type of rule has a diferent behaivior and
-                                can supply diferent use cases.
+                            <Typography className={styles.ruleTypeTextSampleTitle}>You need to select one type of Rule.</Typography>
+                            <Typography className={styles.ruleTypeTextSampleDescription}>
+                                Each type of rule has a diferent behaivior and can supply diferent use cases.
                             </Typography>
                         </div>
                     )}
@@ -244,12 +162,7 @@ export const CreateRuleDialog: React.FC<CreateRuleDialogProps> = ({
                 <Button onClick={onClose} aria-label='close button'>
                     Close
                 </Button>
-                <Button
-                    onClick={fireSelected}
-                    disabled={!type}
-                    className={styles.selectButton}
-                    aria-label='select button'
-                >
+                <Button onClick={fireSelected} disabled={!type} className={styles.selectButton} aria-label='select button'>
                     Select
                 </Button>
             </DialogActions>

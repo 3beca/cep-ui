@@ -13,10 +13,7 @@ import {
 import userEvent from '@testing-library/user-event';
 import { BASE_URL, VERSION_URL } from '../services/config';
 import { AuthApp } from './index';
-import {
-    APIContextState,
-    ValidationState
-} from '../services/api-provider/api-context';
+import { APIContextState, ValidationState } from '../services/api-provider/api-context';
 import { VersionInfo } from '../services/api';
 import { clearApikey, saveApikey } from '../utils';
 
@@ -42,24 +39,13 @@ test('AuthApp render App', async () => {
     apiState.invalidReason = 'apiKey not found';
     rerender(<AuthApp />);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /apikey not found/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/apikey not found/i);
 });
 
 test('AuthApp render App', async () => {
-    serverGetRuleList(
-        setupNock(BASE_URL),
-        1,
-        10,
-        '',
-        200,
-        generateRuleListWith(10, false, false)
-    );
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
     renderInsideApp(<AuthApp />, { route: '/' });
-    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(
-        10
-    );
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 
     // Menu starts closed
     expect(screen.queryByLabelText(/^drawer menu$/i)).not.toBeInTheDocument();
@@ -67,20 +53,11 @@ test('AuthApp render App', async () => {
 
 test('AuthApp should start checking and show App when server NO require apikey', async () => {
     serverGet(setupNock(BASE_URL), VERSION_URL, 200, versionInfo);
-    serverGetRuleList(
-        setupNock(BASE_URL),
-        1,
-        10,
-        '',
-        200,
-        generateRuleListWith(10, false, false)
-    );
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
     renderInsideRealApp(<AuthApp />);
 
     await screen.findByLabelText(/authapp validating/);
-    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(
-        10
-    );
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 });
 
 test('AuthApp should start checking and show app when apiKey is stored and valid', async () => {
@@ -89,20 +66,11 @@ test('AuthApp should start checking and show app when apiKey is stored and valid
     saveApikey(apikey);
     serverGet401(setupNock(BASE_URL), VERSION_URL);
     serverGetAuth(setupNock(BASE_URL), VERSION_URL, apikey, 200, versionInfo);
-    serverGetRuleList(
-        setupNock(BASE_URL),
-        1,
-        10,
-        '',
-        200,
-        generateRuleListWith(10, false, false)
-    );
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
     renderInsideRealApp(<AuthApp />);
 
     await screen.findByLabelText(/authapp validating/);
-    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(
-        10
-    );
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 });
 
 test('AuthApp should start checking and show login when apiKey is stored and invalid', async () => {
@@ -115,9 +83,7 @@ test('AuthApp should start checking and show login when apiKey is stored and inv
 
     await screen.findByLabelText(/authapp validating/);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /ApiKey 1234567890 is NOT valid/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/ApiKey 1234567890 is NOT valid/i);
 });
 
 test('AuthApp should login with new apikey', async () => {
@@ -127,31 +93,18 @@ test('AuthApp should login with new apikey', async () => {
 
     await screen.findByLabelText(/authapp validating/);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /ApiKey not found/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/ApiKey not found/i);
 
     const apikey = '1234567891';
     serverGetAuth(setupNock(BASE_URL), VERSION_URL, apikey, 200, versionInfo);
-    serverGetRuleList(
-        setupNock(BASE_URL),
-        1,
-        10,
-        '',
-        200,
-        generateRuleListWith(10, false, false)
-    );
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
     await userEvent.type(await screen.findByTestId(/login input/i), apikey);
-    const inputApikey = (await screen.findByTestId(
-        /login input/
-    )) as HTMLInputElement;
+    const inputApikey = (await screen.findByTestId(/login input/)) as HTMLInputElement;
     expect(inputApikey.value).toEqual(apikey);
     userEvent.click(await screen.findByLabelText(/login submit/i));
 
     await screen.findByLabelText(/authapp validating/);
-    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(
-        10
-    );
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 });
 
 test('ApiProvider should fails login with invalid apikey', async () => {
@@ -161,24 +114,18 @@ test('ApiProvider should fails login with invalid apikey', async () => {
 
     await screen.findByLabelText(/authapp validating/);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /ApiKey not found/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/ApiKey not found/i);
 
     const apikey = '1234567891';
     serverGet401(setupNock(BASE_URL), VERSION_URL);
     await userEvent.type(await screen.findByTestId(/login input/i), apikey);
-    const inputApikey = (await screen.findByTestId(
-        /login input/
-    )) as HTMLInputElement;
+    const inputApikey = (await screen.findByTestId(/login input/)) as HTMLInputElement;
     expect(inputApikey.value).toEqual(apikey);
     userEvent.click(await screen.findByLabelText(/login submit/i));
 
     await screen.findByLabelText(/authapp validating/);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /ApiKey 1234567891 is NOT valid/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/ApiKey 1234567891 is NOT valid/i);
 });
 
 test('ApiProvider should fails login with invalid apikey stored and login with a valid one', async () => {
@@ -191,31 +138,18 @@ test('ApiProvider should fails login with invalid apikey stored and login with a
 
     await screen.findByLabelText(/authapp validating/);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /ApiKey 1234567890 is NOT valid/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/ApiKey 1234567890 is NOT valid/i);
 
     const apikey = '1234567891';
     serverGetAuth(setupNock(BASE_URL), VERSION_URL, apikey, 200, versionInfo);
-    serverGetRuleList(
-        setupNock(BASE_URL),
-        1,
-        10,
-        '',
-        200,
-        generateRuleListWith(10, false, false)
-    );
+    serverGetRuleList(setupNock(BASE_URL), 1, 10, '', 200, generateRuleListWith(10, false, false));
     await userEvent.type(await screen.findByTestId(/login input/i), apikey);
-    const inputApikey = (await screen.findByTestId(
-        /login input/
-    )) as HTMLInputElement;
+    const inputApikey = (await screen.findByTestId(/login input/)) as HTMLInputElement;
     expect(inputApikey.value).toEqual(apikey);
     userEvent.click(await screen.findByLabelText(/login submit/i));
 
     await screen.findByLabelText(/authapp validating/);
-    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(
-        10
-    );
+    expect(await screen.findAllByLabelText(/element card rule/)).toHaveLength(10);
 });
 
 test('ApiProvider should fails login with invalid apikey stored and login fails again with a invalid one', async () => {
@@ -228,22 +162,16 @@ test('ApiProvider should fails login with invalid apikey stored and login fails 
 
     await screen.findByLabelText(/authapp validating/);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /ApiKey 1234567890 is NOT valid/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/ApiKey 1234567890 is NOT valid/i);
 
     const apikey = '1234567891';
     serverGet401(setupNock(BASE_URL), VERSION_URL);
     await userEvent.type(await screen.findByTestId(/login input/i), apikey);
-    const inputApikey = (await screen.findByTestId(
-        /login input/
-    )) as HTMLInputElement;
+    const inputApikey = (await screen.findByTestId(/login input/)) as HTMLInputElement;
     expect(inputApikey.value).toEqual(apikey);
     userEvent.click(await screen.findByLabelText(/login submit/i));
 
     await screen.findByLabelText(/authapp validating/);
     await screen.findByLabelText(/login container/);
-    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(
-        /ApiKey 1234567891 is NOT valid/i
-    );
+    expect(await screen.findByLabelText(/login reason/)).toHaveTextContent(/ApiKey 1234567891 is NOT valid/i);
 });

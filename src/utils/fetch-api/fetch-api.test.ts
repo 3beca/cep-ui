@@ -1,13 +1,5 @@
 import { setupNock } from '../../test-utils';
-import {
-    fetchApi,
-    APIRequestGetData,
-    APIRequestData,
-    isAPIError,
-    APIResponseEmptyData,
-    APIResponseData,
-    APIError
-} from './fetch-api';
+import { fetchApi, APIRequestGetData, APIRequestData, isAPIError, APIResponseEmptyData, APIResponseData, APIError } from './fetch-api';
 
 describe('fetchApi should', () => {
     const url = 'https://testserver';
@@ -18,17 +10,12 @@ describe('fetchApi should', () => {
         const url = (undefined as unknown) as string;
         const req: APIRequestGetData = ({} as unknown) as APIRequestGetData;
 
-        const response = await fetchApi<undefined, undefined, undefined>(
-            url,
-            req
-        );
+        const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
         expect(isAPIError(response)).toBe(true);
         const error = (response as unknown) as APIError<undefined>;
         expect(error.errorCode).toBe(500);
-        expect(error.errorMessage).toEqual(
-            'Error in query Network request failed: undefined'
-        );
+        expect(error.errorMessage).toEqual('Error in query Network request failed: undefined');
         expect(error.error).toBe(undefined);
         expect(console.error).toHaveBeenCalledTimes(1);
         (console.error as jest.Mock).mockRestore();
@@ -39,17 +26,12 @@ describe('fetchApi should', () => {
         const url = 'invalidurl';
         const req: APIRequestGetData = ({} as unknown) as APIRequestGetData;
 
-        const response = await fetchApi<undefined, undefined, undefined>(
-            url,
-            req
-        );
+        const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
         expect(isAPIError(response)).toBe(true);
         const error = (response as unknown) as APIError<undefined>;
         expect(error.errorCode).toBe(500);
-        expect(error.errorMessage).toEqual(
-            'Error in query Network request failed: invalidurl'
-        );
+        expect(error.errorMessage).toEqual('Error in query Network request failed: invalidurl');
         expect(error.error).toBe(undefined);
         expect(console.error).toHaveBeenCalledTimes(1);
         (console.error as jest.Mock).mockRestore();
@@ -60,10 +42,7 @@ describe('fetchApi should', () => {
         const url = 'https://testserver/oknomethod';
         const req: APIRequestGetData = ({} as unknown) as APIRequestGetData;
 
-        const response = await fetchApi<undefined, undefined, undefined>(
-            url,
-            req
-        );
+        const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
         expect(isAPIError(response)).toBe(false);
         const data = (response as unknown) as APIResponseEmptyData;
@@ -79,10 +58,7 @@ describe('fetchApi should', () => {
             headers: { 'content-type': 'application/json' }
         };
 
-        const response = await fetchApi<undefined, undefined, undefined>(
-            url,
-            req
-        );
+        const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
         expect(isAPIError(response)).toBe(false);
         const data = (response as unknown) as APIResponseEmptyData;
@@ -98,10 +74,7 @@ describe('fetchApi should', () => {
             headers: { 'content-type': 'application/json' }
         };
 
-        const response = await fetchApi<undefined, undefined, undefined>(
-            url,
-            req
-        );
+        const response = await fetchApi<undefined, undefined, undefined>(url, req);
 
         expect(isAPIError(response)).toBe(false);
         const data = (response as unknown) as APIResponseData<{ test: string }>;
@@ -171,16 +144,11 @@ describe('fetchApi should', () => {
             headers: { 'content-type': 'application/json' }
         };
 
-        const response = await fetchApi<{}, {}, typeof serverResponse>(
-            url,
-            req
-        );
+        const response = await fetchApi<{}, {}, typeof serverResponse>(url, req);
         expect(isAPIError(response)).toBe(true);
         const error = (response as unknown) as APIError<typeof serverResponse>;
         expect(error.errorCode).toBe(400);
-        expect(error.errorMessage).toEqual(
-            'Error from https://testserver/error400'
-        );
+        expect(error.errorMessage).toEqual('Error from https://testserver/error400');
         expect(error.error).toEqual({
             status: 400,
             error: 'Error400',
@@ -201,9 +169,7 @@ describe('fetchApi should', () => {
         expect(isAPIError(response)).toBe(true);
         const error = (response as unknown) as APIError<undefined>;
         expect(error.errorCode).toBe(400);
-        expect(error.errorMessage).toEqual(
-            'Error from https://testserver/error400'
-        );
+        expect(error.errorMessage).toEqual('Error from https://testserver/error400');
         expect(error.error).toBe(undefined);
     });
 
@@ -220,16 +186,11 @@ describe('fetchApi should', () => {
             headers: { 'content-type': 'application/json' }
         };
 
-        const response = await fetchApi<{}, {}, typeof serverResponse>(
-            url,
-            req
-        );
+        const response = await fetchApi<{}, {}, typeof serverResponse>(url, req);
         expect(isAPIError(response)).toBe(true);
         const error = (response as unknown) as APIError<typeof serverResponse>;
         expect(error.errorCode).toBe(500);
-        expect(error.errorMessage).toEqual(
-            'Error from https://testserver/error500'
-        );
+        expect(error.errorMessage).toEqual('Error from https://testserver/error500');
         expect(error.error).toEqual({
             status: 500,
             error: 'Error500',
@@ -249,9 +210,7 @@ describe('fetchApi should', () => {
         expect(isAPIError(response)).toBe(true);
         const error = (response as unknown) as APIError<undefined>;
         expect(error.errorCode).toBe(500);
-        expect(error.errorMessage).toEqual(
-            'Error from https://testserver/error500'
-        );
+        expect(error.errorMessage).toEqual('Error from https://testserver/error500');
         expect(error.error).toEqual(undefined);
     });
 
@@ -267,9 +226,7 @@ describe('fetchApi should', () => {
         expect(isAPIError(response)).toBe(true);
         const error = (response as unknown) as APIError<undefined>;
         expect(error.errorCode).toBe(500);
-        expect(error.errorMessage).toEqual(
-            'Error in query Network request failed: https://testserver2/unregisterendpoint'
-        );
+        expect(error.errorMessage).toEqual('Error in query Network request failed: https://testserver2/unregisterendpoint');
         expect(error.error).toBe(undefined);
         expect(console.error).toHaveBeenCalledTimes(1);
         (console.error as jest.Mock).mockRestore();

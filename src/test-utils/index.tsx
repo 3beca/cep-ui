@@ -5,10 +5,7 @@ import { render } from '@testing-library/react';
 import { MainMenuProvider } from '../services/main-menu-provider';
 import { APIProviderMock } from './api-provider-mock';
 import { APIProvider } from '../services/api-provider';
-import {
-    APIContextState,
-    APIUtilsContext
-} from '../services/api-provider/api-context';
+import { APIContextState, APIUtilsContext } from '../services/api-provider/api-context';
 export * from '@testing-library/react';
 export * from './api';
 
@@ -45,11 +42,7 @@ export function renderInsideApp(
 
 export function renderInsideRealApp(
     ui: React.ReactElement,
-    {
-        route = '/',
-        history = createMemoryHistory({ initialEntries: [route] }),
-        ...renderOptions
-    }: OptionsRenderRouter = {}
+    { route = '/', history = createMemoryHistory({ initialEntries: [route] }), ...renderOptions }: OptionsRenderRouter = {}
 ) {
     const Wrapper: React.FC<{}> = function Wrapper(props) {
         return (
@@ -66,10 +59,7 @@ export function renderInsideRealApp(
     };
 }
 
-export function renderWithAPI(
-    ui: React.ReactElement,
-    { apiState, apiUtils, ...renderOptions }: OptionsRenderRouter = {}
-) {
+export function renderWithAPI(ui: React.ReactElement, { apiState, apiUtils, ...renderOptions }: OptionsRenderRouter = {}) {
     const Wrapper: React.FC<{}> = function Wrapper(props) {
         return (
             <APIProviderMock state={apiState} utils={apiUtils}>

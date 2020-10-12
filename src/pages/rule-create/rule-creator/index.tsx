@@ -15,17 +15,10 @@ export type RuleCreatorProps = {
     updateRuleHeader(rule: Partial<RuleHeader>): void;
     disabled?: boolean;
 };
-export const RuleCreator: React.FC<RuleCreatorProps> = ({
-    ruleHeader,
-    updateRuleHeader,
-    disabled = false
-}) => {
+export const RuleCreator: React.FC<RuleCreatorProps> = ({ ruleHeader, updateRuleHeader, disabled = false }) => {
     const styles = useStyles();
     return (
-        <Paper
-            className={styles.container}
-            aria-label={`rule creator${disabled ? ' disabled' : ''}`}
-        >
+        <Paper className={styles.container} aria-label={`rule creator${disabled ? ' disabled' : ''}`}>
             <TextField
                 disabled={disabled}
                 required={true}
@@ -43,11 +36,7 @@ export const RuleCreator: React.FC<RuleCreatorProps> = ({
                             disabled={disabled}
                             size='medium'
                             color='primary'
-                            checked={
-                                ruleHeader.skipOnConsecutivesMatches
-                                    ? true
-                                    : false
-                            }
+                            checked={ruleHeader.skipOnConsecutivesMatches ? true : false}
                             onChange={ev =>
                                 updateRuleHeader({
                                     skipOnConsecutivesMatches: ev.target.checked

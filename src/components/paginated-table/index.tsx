@@ -36,11 +36,7 @@ export const ListEmptyView: React.FC<ListEmptyViewProps> = ({
     if (!show) return null;
     return (
         <div className={styles.emptyView} data-testid='empty-view-row'>
-            <Typography
-                align='center'
-                className={styles.emptyViewText}
-                variant={variant}
-            >
+            <Typography align='center' className={styles.emptyViewText} variant={variant}>
                 {isEmpty ? emptyMessage : noMoreMessage}
             </Typography>
         </div>
@@ -73,10 +69,7 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
         return (
             <>
                 <TableContainer>{children}</TableContainer>
-                <ListEmptyView
-                    show={!isLoading && isEmpty}
-                    isEmpty={page === 1}
-                />
+                <ListEmptyView show={!isLoading && isEmpty} isEmpty={page === 1} />
                 <div className={styles.paginatorRow}>
                     <ListLoadingView show={isLoading} />
                     <TablePagination
@@ -89,11 +82,7 @@ export const PaginatedTable: React.FC<PaginatedTableProps> = React.memo(
                         nextIconButtonProps={{ disabled: !hasNextPage }}
                         backIconButtonProps={{ disabled: !hasPrevPage }}
                         onChangePage={(ev, page) => onChangePage(page + 1)}
-                        onChangeRowsPerPage={ev =>
-                            onChangePageSize(
-                                Number(ev.target.value) as RowsSizes
-                            )
-                        }
+                        onChangeRowsPerPage={ev => onChangePageSize(Number(ev.target.value) as RowsSizes)}
                         labelDisplayedRows={({ page }) => `Page ${page + 1}`}
                         labelRowsPerPage='Rows:'
                         SelectProps={{ 'aria-label': 'pageSelector' }}

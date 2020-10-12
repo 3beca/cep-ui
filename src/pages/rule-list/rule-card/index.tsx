@@ -25,10 +25,7 @@ import DeleteDialog from '../../../components/delete-dialog';
 import { ENTITY } from '../../../services/api-provider/use-api';
 import { useStyles } from './styles';
 
-export const colorTypeSelector = (
-    type: RuleTypes,
-    styles: ReturnType<typeof useStyles>
-) => {
+export const colorTypeSelector = (type: RuleTypes, styles: ReturnType<typeof useStyles>) => {
     switch (type) {
         case 'hopping':
             return styles.ruleCardAvatarRed;
@@ -64,12 +61,7 @@ export type DeleteRuleDialogProps = {
     rule: Rule;
     onDelete: () => void;
 };
-export const DeleteRuleDialog: React.FC<DeleteRuleDialogProps> = ({
-    isOpen,
-    close,
-    rule,
-    onDelete
-}) => {
+export const DeleteRuleDialog: React.FC<DeleteRuleDialogProps> = ({ isOpen, close, rule, onDelete }) => {
     return (
         <Dialog
             open={isOpen}
@@ -95,54 +87,28 @@ export type RuleCardMenuProps = {
     rule: Rule;
     onDelete?: (rule: Rule) => void;
 };
-export const RuleCardMenu: React.FC<RuleCardMenuProps> = ({
-    rule,
-    onDelete
-}) => {
-    const [
-        anchorElement,
-        setAnchorElement
-    ] = React.useState<HTMLElement | null>(null);
+export const RuleCardMenu: React.FC<RuleCardMenuProps> = ({ rule, onDelete }) => {
+    const [anchorElement, setAnchorElement] = React.useState<HTMLElement | null>(null);
     const open = Boolean(anchorElement);
-    const openContextMenu = React.useCallback(
-        (event: React.MouseEvent<HTMLElement>) =>
-            setAnchorElement(event.currentTarget),
-        []
-    );
-    const closeContextMenu = React.useCallback(
-        () => setAnchorElement(null),
-        []
-    );
+    const openContextMenu = React.useCallback((event: React.MouseEvent<HTMLElement>) => setAnchorElement(event.currentTarget), []);
+    const closeContextMenu = React.useCallback(() => setAnchorElement(null), []);
     const [isDeleteDialogOpen, setIsOpenDialogOpen] = React.useState(false);
     const openDeleteDialog = React.useCallback(() => {
         closeContextMenu();
         setIsOpenDialogOpen(true);
     }, [closeContextMenu, setIsOpenDialogOpen]);
-    const closeDeleteDialog = React.useCallback(
-        () => setIsOpenDialogOpen(false),
-        []
-    );
+    const closeDeleteDialog = React.useCallback(() => setIsOpenDialogOpen(false), []);
     const onDeleteRule = React.useCallback(() => {
         onDelete?.(rule);
     }, [onDelete, rule]);
     return (
         <>
-            <DeleteRuleDialog
-                isOpen={isDeleteDialogOpen}
-                close={closeDeleteDialog}
-                rule={rule}
-                onDelete={onDeleteRule}
-            />
-            <IconButton
-                aria-label='settings card rule'
-                onClick={openContextMenu}
-            >
+            <DeleteRuleDialog isOpen={isDeleteDialogOpen} close={closeDeleteDialog} rule={rule} onDelete={onDeleteRule} />
+            <IconButton aria-label='settings card rule' onClick={openContextMenu}>
                 <MoreVertIcon />
             </IconButton>
             <Menu
-                aria-label={`setting dialog card rule ${
-                    open ? 'visible' : 'hidden'
-                }`}
+                aria-label={`setting dialog card rule ${open ? 'visible' : 'hidden'}`}
                 keepMounted={true}
                 open={open}
                 anchorEl={anchorElement}
@@ -173,10 +139,7 @@ export const RuleCardMenu: React.FC<RuleCardMenuProps> = ({
                     </ListItemIcon>
                     <Typography variant='inherit'>Clone</Typography>
                 </MenuItem>
-                <MenuItem
-                    onClick={openDeleteDialog}
-                    aria-label='setting dialog delete card rule'
-                >
+                <MenuItem onClick={openDeleteDialog} aria-label='setting dialog delete card rule'>
                     <ListItemIcon>
                         <DeleteIcon fontSize='small' />
                     </ListItemIcon>
@@ -204,12 +167,7 @@ const RuleCard: React.FC<RuleCardProp> = ({ rule, onDelete }) => {
                 aria-label='header card rule'
                 className={styles.ruleCardHeader}
                 avatar={
-                    <Avatar
-                        aria-label='avatar icon'
-                        className={`${
-                            styles.ruleCardAvatar
-                        } ${colorTypeSelector(rule.type, styles)}`}
-                    >
+                    <Avatar aria-label='avatar icon' className={`${styles.ruleCardAvatar} ${colorTypeSelector(rule.type, styles)}`}>
                         {mapRuleTypeName(rule.type).slice(0, 1).toUpperCase()}
                     </Avatar>
                 }
@@ -218,58 +176,29 @@ const RuleCard: React.FC<RuleCardProp> = ({ rule, onDelete }) => {
                 subheader={new Date(rule.createdAt).toLocaleString()}
             />
             <Divider />
-            <div
-                aria-label='content card rule'
-                className={styles.ruleCardContent}
-            >
-                <div
-                    aria-label='eventType name card rule'
-                    className={styles.ruleCardBody}
-                >
-                    <Typography className={styles.ruleCardBodyLabel}>
-                        Event Type:
-                    </Typography>
-                    <Typography
-                        className={styles.ruleCardBodyName}
-                        aria-label='eventType name'
-                    >
+            <div aria-label='content card rule' className={styles.ruleCardContent}>
+                <div aria-label='eventType name card rule' className={styles.ruleCardBody}>
+                    <Typography className={styles.ruleCardBodyLabel}>Event Type:</Typography>
+                    <Typography className={styles.ruleCardBodyName} aria-label='eventType name'>
                         {rule.eventTypeName}
                     </Typography>
                 </div>
                 {/*<Divider/>*/}
-                <div
-                    aria-label='target name card rule'
-                    className={styles.ruleCardBody}
-                >
-                    <Typography className={styles.ruleCardBodyLabel}>
-                        Target:
-                    </Typography>
-                    <Typography
-                        className={styles.ruleCardBodyName}
-                        aria-label='target name'
-                    >
+                <div aria-label='target name card rule' className={styles.ruleCardBody}>
+                    <Typography className={styles.ruleCardBodyLabel}>Target:</Typography>
+                    <Typography className={styles.ruleCardBodyName} aria-label='target name'>
                         {rule.targetName}
                     </Typography>
                 </div>
                 <Divider />
-                <div
-                    className={styles.ruleCardFilters}
-                    aria-label='filters card rule'
-                >
-                    <Typography className={styles.ruleCardBodyLabel}>
-                        Filters:
-                    </Typography>
+                <div className={styles.ruleCardFilters} aria-label='filters card rule'>
+                    <Typography className={styles.ruleCardBodyLabel}>Filters:</Typography>
                     {filters}
                 </div>
                 <Divider />
-                <div
-                    className={styles.ruleCardStatus}
-                    aria-label='status card rule'
-                >
+                <div className={styles.ruleCardStatus} aria-label='status card rule'>
                     <div className={styles.ruleCardStatusDate}>
-                        <Typography variant='caption'>
-                            {/*mapRuleTypeName(rule.type)*/}
-                        </Typography>
+                        <Typography variant='caption'>{/*mapRuleTypeName(rule.type)*/}</Typography>
                     </div>
                     <div className={styles.ruleCardStatusOneShot}>
                         <FormGroup>
@@ -278,22 +207,14 @@ const RuleCard: React.FC<RuleCardProp> = ({ rule, onDelete }) => {
                                     <Switch
                                         size='small'
                                         color='primary'
-                                        checked={
-                                            rule.skipOnConsecutivesMatches
-                                                ? true
-                                                : false
-                                        }
+                                        checked={rule.skipOnConsecutivesMatches ? true : false}
                                         readOnly
                                         arial-label='skip consecutives input'
                                     />
                                 }
                                 label='Skip Consecutives'
                                 labelPlacement='start'
-                                aria-label={`skip consecutives ${
-                                    rule.skipOnConsecutivesMatches
-                                        ? 'enable'
-                                        : 'disable'
-                                }`}
+                                aria-label={`skip consecutives ${rule.skipOnConsecutivesMatches ? 'enable' : 'disable'}`}
                                 aria-readonly={true}
                             />
                         </FormGroup>

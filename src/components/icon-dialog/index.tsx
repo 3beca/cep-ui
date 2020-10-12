@@ -16,15 +16,7 @@ export type IconDialogProps = {
     onClose?(): void;
     disabled?: boolean;
 };
-export const IconDialog: React.FC<IconDialogProps> = ({
-    show,
-    icon,
-    disabled,
-    onOpen = NOOP,
-    onClose = NOOP,
-    children,
-    ...props
-}) => {
+export const IconDialog: React.FC<IconDialogProps> = ({ show, icon, disabled, onOpen = NOOP, onClose = NOOP, children, ...props }) => {
     const [open, setOpen] = React.useState(false);
     const closeDialog = React.useCallback(() => {
         setOpen(false);
@@ -45,20 +37,12 @@ export const IconDialog: React.FC<IconDialogProps> = ({
                 aria-labelledby='icon-dialog-title'
                 aria-describedby='icon-dialog-content'
             >
-                <IconDialogContext.Provider
-                    value={closeDialog}
-                    children={children}
-                />
+                <IconDialogContext.Provider value={closeDialog} children={children} />
             </Dialog>
         );
     }
     return (
-        <IconButton
-            aria-label='open dialog'
-            onClick={openDialog}
-            disabled={disabled}
-            {...props}
-        >
+        <IconButton aria-label='open dialog' onClick={openDialog} disabled={disabled} {...props}>
             {icon}
         </IconButton>
     );
