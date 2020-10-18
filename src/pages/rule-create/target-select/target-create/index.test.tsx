@@ -11,34 +11,72 @@ import {
 import userEvent from '@testing-library/user-event';
 
 import TargetCreate from './';
-import { Target, TargetError } from '../../../../services/api';
+import { TargetError, TargetHeader } from '../../../../services/api';
 
-test('TargetCreate should create a new Target', async () => {
-    const target = generateTarget(1, 'newEV', 'testNewEv');
+test.only('TargetCreate should create a passthrow target', async () => {
+    const headers: TargetHeader = {
+        Authorization: 'Bearer 1234567890987654',
+        'X-APPID': '123456789'
+    };
+    const target = generateTargetWithHeaders('newEV', 'testNewEv', 'https://notifier.tribeca.ovh/email', headers);
     const close = jest.fn();
     const onCreate = jest.fn();
     serverCreateTarget(setupNock(BASE_URL), { name: target.name, url: target.url }, 201, target);
     const { unmount } = render(<TargetCreate targetName={target.name} close={close} onCreate={onCreate} />);
 
-    await screen.findByLabelText(/target creating block/i);
-    await screen.findByLabelText(/target creating name/i);
-    await screen.findByLabelText(/target creating action/i);
-    const inputUrl = await screen.findByLabelText(/target creating input url/);
-    const createButton = await screen.findByLabelText(/target creating button url/);
-    expect(inputUrl).toHaveValue('');
-    expect(createButton).toBeDisabled();
+    // Select a Passthrow target
+    await screen.findByTestId('target-create-wizzard');
+    expect(await screen.findByTestId('target-create-button-next')).toBeDisabled();
+    await screen.findByTestId('target-create-type-selector');
+    await screen.findByTestId('target-create-type--details');
+    expect(screen.queryByTestId('target-template-container')).not.toBeInTheDocument();
+    userEvent.click(await screen.findByTestId('target-create-type-passthrow'));
+    await screen.findByTestId('target-create-type-passthrow-details');
+    userEvent.click(await screen.findByTestId('target-create-button-next'));
+    expect(screen.queryByTestId('target-create-type-selector')).not.toBeInTheDocument();
+    await screen.findByTestId('target-template-container');
 
-    await userEvent.type(inputUrl, 'nohttpschema');
-    expect(inputUrl).toHaveValue('nohttpschema');
-    expect(createButton).toBeDisabled();
+    // Add URL
+    expect(await screen.findByTestId('target-create-button-next')).toBeDisabled();
+    await userEvent.type(await screen.findByTestId('target-template-url-input'), target.url);
+    expect(await screen.findByTestId('target-template-url-input')).toHaveValue(target.url);
+    expect(await screen.findByTestId('target-create-button-next')).not.toBeDisabled();
 
-    const validUrl = target.url;
-    userEvent.clear(inputUrl);
-    await userEvent.type(inputUrl, validUrl);
-    expect(inputUrl).toHaveValue(validUrl);
-    expect(createButton).not.toBeDisabled();
+    // Add headers
+    // Open dialog add headers
+    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText(/target creating headers add button/));
+    await screen.findByLabelText(/target creating headers add dialog/);
+    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await screen.findByLabelText(/target creating headers key input dialog/);
+    await screen.findByLabelText(/target creating headers value input dialog/);
 
-    userEvent.click(createButton);
+    // Set header Authorization to bearer 123456
+    const authHeaderKey = 'Authorization';
+    const authHeaderValue = 'Bearer 123456';
+    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), authHeaderKey);
+    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), authHeaderValue);
+    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    // Dialog do not close when add new header, only clean fields
+    await screen.findByLabelText(/target creating headers add dialog/);
+    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+
+    // Set headers X-APPID
+    const appidHeaderKey = 'X-APPID';
+    const appidHeaderValue = '123456';
+    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), appidHeaderKey);
+    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), appidHeaderValue);
+    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+
+    // Close dialog add headers
+    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
+    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+
+    // Create Target
+    userEvent.click(await screen.findByTestId('target-create-button-next'));
     await screen.findByLabelText(/target creating loading/i);
     await screen.findByLabelText(/target creating url/i);
     expect(onCreate).toHaveBeenCalledTimes(1);

@@ -7,6 +7,7 @@ import IconDelete from '@material-ui/icons/DeleteOutline';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -54,131 +55,13 @@ const TargetCreatorSuccess: React.FC<{ target: Target | undefined }> = ({ target
     );
 };
 
-export type TargetCreateHeaderDialogProps = {
-    setHeader: (key: string, value: string) => void;
-};
-export const TargetCreateHeaderDialog: React.FC<TargetCreateHeaderDialogProps> = ({ setHeader }) => {
-    const styles = useStyles();
-    const close = useIconDialog();
-    const [headerName, setHeaderName] = React.useState('');
-    const [headerValue, setHeaderValue] = React.useState('');
-    const addHeader = React.useCallback(() => {
-        setHeader(headerName, headerValue);
-        setHeaderName('');
-        setHeaderValue('');
-    }, [headerName, headerValue, setHeader]);
-    const isInvalidHeader = !headerName || headerName.toLowerCase() === 'content-type' || headerName.toLowerCase() === 'content-length';
-    const isDisabled = isInvalidHeader || !headerValue;
-    return (
-        <div aria-label='target creating headers add dialog'>
-            <DialogTitle>Add new header</DialogTitle>
-            <DialogContent className={styles.targetHeaderAddDialog}>
-                <TextField
-                    className={styles.targetHeaderAddDialogKey}
-                    inputProps={{ 'aria-label': 'target creating headers key input dialog' }}
-                    placeholder='Add header key'
-                    label='Header key'
-                    value={headerName.trim()}
-                    onChange={ev => setHeaderName(ev.target.value)}
-                    error={isInvalidHeader && headerName !== ''}
-                />
-                <TextField
-                    className={styles.targetHeaderAddDialogValue}
-                    inputProps={{ 'aria-label': 'target creating headers value input dialog' }}
-                    placeholder='Add header value'
-                    label='Header value'
-                    value={headerValue}
-                    onChange={ev => setHeaderValue(ev.target.value)}
-                />
-            </DialogContent>
-            <DialogActions>
-                <Button onClick={close} aria-label='target creating headers close dialog'>
-                    Close
-                </Button>
-                <Button
-                    aria-label='target creating headers add button dialog'
-                    disabled={isDisabled}
-                    onClick={addHeader}
-                    className={styles.targetHeaderDialogAddButton}
-                >
-                    Add
-                </Button>
-            </DialogActions>
-        </div>
-    );
-};
-
-export type HeaderEditItemProps = {
-    deleteHeader: (key: string) => void;
-    header: KeyValueString;
-};
-export const HeaderEditItem: React.FC<HeaderEditItemProps> = ({ header, deleteHeader }) => {
-    const styles = useStyles();
-    return (
-        <div aria-label='target creating headers item' className={styles.targetHeaderEditListItem}>
-            <Typography variant='caption' className={styles.targetHeaderEditListItemKey}>
-                {header.name}
-            </Typography>
-            <Typography variant='caption'>:</Typography>
-            <Typography variant='caption' className={styles.targetHeaderEditListItemValue}>
-                {header.value}
-            </Typography>
-            <IconButton aria-label='target creating headers delete buttom' onClick={() => deleteHeader(header.name)}>
-                <IconDelete fontSize='small' />
-            </IconButton>
-        </div>
-    );
-};
-export type HeaderEditListProps = {
-    deleteHeader: (key: string) => void;
-    headers: ArrayHeader;
-};
-export const HeaderEditList: React.FC<HeaderEditListProps> = ({ headers, deleteHeader }) => {
-    if (!headers || headers.length === 0) return null;
-    return (
-        <div aria-label='target creating headers list'>
-            {headers.map(header => (
-                <HeaderEditItem key={header.name} header={header} deleteHeader={deleteHeader} />
-            ))}
-        </div>
-    );
-};
-export type TargetCreateHeadersProps = {
-    disabled?: boolean;
-    addHeader: (key: string, value: string) => void;
-    deleteHeader: (key: string) => void;
-    headers: ArrayHeader;
-};
-export const TargetCreateHeaders: React.FC<TargetCreateHeadersProps> = ({ headers, addHeader, deleteHeader, disabled = false }) => {
-    const styles = useStyles();
-    return (
-        <div aria-label='target creating headers block' className={styles.targetHeaderEditList}>
-            <Divider />
-            <div className={styles.targetHeaderEditHeader}>
-                <Typography variant='caption' className={styles.targetHeaderEditTitle}>
-                    Headers
-                </Typography>
-                <IconDialog
-                    show={true}
-                    disabled={disabled}
-                    icon={<IconAdd aria-label='target creating headers add button' fontSize='small' />}
-                >
-                    <TargetCreateHeaderDialog setHeader={addHeader} />
-                </IconDialog>
-            </div>
-            <HeaderEditList headers={headers} deleteHeader={deleteHeader} />
-            <Divider />
-        </div>
-    );
-};
-
-export const TargetCreateURL: React.FC<{
+export type TargetTemplateURLProps = {
     disabled?: boolean;
     show: boolean;
     url: string;
     setURL: (url: string) => void;
-    createTarget: () => void;
-}> = ({ show, url, setURL, createTarget, disabled = false }) => {
+};
+export const TargetTemplateURL: React.FC<TargetTemplateURLProps> = ({ show, url, setURL, disabled = false }) => {
     const styles = useStyles();
     const changeURL = React.useCallback(
         (ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -188,7 +71,7 @@ export const TargetCreateURL: React.FC<{
     );
     if (!show) return null;
     return (
-        <div className={styles.createDetailsURL}>
+        <div className={styles.createDetailsURL} data-testid='target-template-url'>
             <TextField
                 disabled={disabled}
                 fullWidth={true}
@@ -196,79 +79,148 @@ export const TargetCreateURL: React.FC<{
                 onChange={changeURL}
                 label='URL (http/https)'
                 helperText='URL to send events when rule matchs'
-                inputProps={{ 'aria-label': 'target creating input url' }}
+                inputProps={{ 'data-testid': 'target-template-url-input' }}
             />
-            <Button
-                className={styles.createDetailsURLButton}
-                aria-label='target creating button url'
-                disabled={!url.startsWith('http') || disabled}
-                title='Create target'
-                onClick={createTarget}
-            >
-                <Typography>Create</Typography>
-            </Button>
         </div>
     );
 };
 
-export type KeyValueString = { name: string; value: string };
-export type ArrayHeader = KeyValueString[];
-export const parseTargetHeaders = (headers: ArrayHeader): TargetHeader | undefined => {
-    if (!Array.isArray(headers) || headers.length === 0) return undefined;
-    return headers.reduce((header: TargetHeader, entry: KeyValueString) => {
-        return {
-            ...header,
-            [entry.name]: entry.value
-        };
-    }, {});
+export type TargetType = 'passthrow' | 'custom' | 'template';
+export type TargetTypeSelectorProps = {
+    show: boolean;
+    type?: TargetType;
+    setType: (type: TargetType) => void;
 };
-export type TarrgetCreateProps = {
+const TargetTypeSelector: React.FC<TargetTypeSelectorProps> = ({ show, type, setType }) => {
+    if (!show) return null;
+    return (
+        <div>
+            <div data-testid='target-create-type-selector'>
+                <div data-testid='target-create-type-passthrow' onClick={() => setType('passthrow')}>
+                    Passthrow
+                </div>
+            </div>
+            <div data-testid={`target-create-type-${type ? type : ''}-details`}></div>
+        </div>
+    );
+};
+
+export type TargetTemplatePassthrowProps = {
+    show: boolean;
+};
+export const TargetTemplatePassthrow: React.FC<TargetTemplatePassthrowProps> = ({ show }) => {
+    const [url, setURL] = React.useState('');
+    if (!show) return null;
+    return (
+        <div>
+            <TargetTemplateURL url={url} setURL={setURL} show={true} />
+        </div>
+    );
+};
+export type TargetTemplateProps = {
+    show: boolean;
+    type?: TargetType;
+};
+export const TargetTemplate: React.FC<TargetTemplateProps> = ({ show, type }) => {
+    if (!type || !show) return null;
+    return (
+        <div data-testid='target-template-container'>
+            {type === 'passthrow' ? 'PASSTHROW Target' : type === 'custom' ? 'CUSTOM Target Template' : 'Predefined Target Template'}
+            <TargetTemplatePassthrow show={type === 'passthrow'} />
+        </div>
+    );
+};
+export type WizzardSections = 'wizzard_section_select' | 'wizzard_section_template' | 'wizzard_section_create';
+export type WizzardActionNext = {
+    type: 'next';
+};
+export type WizzardActionPrev = {
+    type: 'prev';
+};
+export type WizzardActionSetType = {
+    type: 'set_type';
+    payload: TargetType | undefined;
+};
+
+export type WizzardActions = WizzardActionNext | WizzardActionPrev | WizzardActionSetType;
+export type WizzardState = {
+    section: WizzardSections;
+    sectionCompleted: boolean;
+    action: string;
+    type?: TargetType;
+};
+export const wizzardReducer = (state: WizzardState, action: WizzardActions): WizzardState => {
+    switch (action.type) {
+        case 'next': {
+            return {
+                ...state,
+                section: state.section === 'wizzard_section_select' ? 'wizzard_section_template' : state.section,
+                sectionCompleted: false
+            };
+        }
+        case 'prev': {
+            return state;
+        }
+        case 'set_type': {
+            if (state.section === 'wizzard_section_select') {
+                return {
+                    ...state,
+                    sectionCompleted: !!action.payload ? true : false,
+                    type: action.payload
+                };
+            }
+            return state;
+        }
+        default:
+            return state;
+    }
+};
+export const initialWizzardState: WizzardState = { section: 'wizzard_section_select', sectionCompleted: false, action: 'next' };
+export type TargetCreateProps = {
     disabled?: boolean;
     targetName: string;
     onCreate: (target: Target) => void;
     close: () => void;
 };
-export const TargetCreate: React.FC<TarrgetCreateProps> = ({ targetName, onCreate, close, disabled = false }) => {
+export const TargetCreate: React.FC<TargetCreateProps> = ({ targetName, onCreate, close, disabled = false }) => {
     const styles = useStyles();
-    const [url, setURL] = React.useState('');
-    const [headers, setHeaders] = React.useState<ArrayHeader>([]);
-    const newBody = React.useMemo((): TargetBody => {
-        return { name: targetName, url, headers: parseTargetHeaders(headers) };
-    }, [targetName, url, headers]);
-    const { isLoading, response, error, request } = useCreate<Target>(ENTITY.TARGETS, newBody, false);
-    const addHeader = React.useCallback((name: string, value: string) => {
-        setHeaders(headers => [...headers.filter(header => header.name !== name), { name, value }]);
+    // const [url, setURL] = React.useState('');
+    // const [headers, setHeaders] = React.useState<ArrayHeader>([]);
+    // const newBody = React.useMemo((): TargetBody => {
+    //     return { name: targetName, url, headers: parseTargetHeaders(headers) };
+    // }, [targetName, url, headers]);
+    // const { isLoading, response, error, request } = useCreate<Target>(ENTITY.TARGETS, newBody, false);
+    // const addHeader = React.useCallback((name: string, value: string) => {
+    //     setHeaders(headers => [...headers.filter(header => header.name !== name), { name, value }]);
+    // }, []);
+    // const deleteHeader = React.useCallback((name: string) => {
+    //     setHeaders(headers => headers.filter(header => header.name !== name));
+    // }, []);
+    // React.useEffect(() => {
+    //     if (!isLoading && !error && !!response?.data) {
+    //         onCreate(response.data);
+    //     }
+    // }, [isLoading, error, response, onCreate]);
+    const [wizzardState, dispatchWizzardAction] = React.useReducer(wizzardReducer, initialWizzardState);
+    const next = React.useCallback(() => {
+        dispatchWizzardAction({ type: 'next' });
     }, []);
-    const deleteHeader = React.useCallback((name: string) => {
-        setHeaders(headers => headers.filter(header => header.name !== name));
+    const setType = React.useCallback((type: TargetType) => {
+        dispatchWizzardAction({ type: 'set_type', payload: type });
     }, []);
-    React.useEffect(() => {
-        if (!isLoading && !error && !!response?.data) {
-            onCreate(response.data);
-        }
-    }, [isLoading, error, response, onCreate]);
 
     return (
-        <div className={styles.createDetails} aria-label='target creating block'>
-            <div className={styles.createDetailsActions}>
-                <Typography className={styles.createDetailsActionsType} variant='caption'>
-                    Target
-                </Typography>
-                <IconButton disabled={isLoading} onClick={close} aria-label='target creating clear'>
-                    <IconClose fontSize='small' />
-                </IconButton>
-            </div>
-            <div className={styles.createDetailsName} aria-label='target creating name'>
-                <Typography variant='h5'>{targetName}</Typography>
-            </div>
-            <div className={styles.createDetailsStatus} aria-label='target creating action'>
-                <TargetCreateHeaders addHeader={addHeader} deleteHeader={deleteHeader} headers={headers} disabled={disabled} />
-                <TargetCreateURL show={!isLoading && !response} url={url} setURL={setURL} createTarget={request} disabled={disabled} />
-                <TargetCreatorLoader show={isLoading} />
-                <TargetCreatorError error={error} />
-                <TargetCreatorSuccess target={response?.data} />
-            </div>
-        </div>
+        <Dialog open={true} fullWidth={true}>
+            <DialogContent data-testid='target-create-wizzard' className={styles.container}>
+                <TargetTypeSelector type={wizzardState.type} setType={setType} show={wizzardState.section === 'wizzard_section_select'} />
+                <TargetTemplate type={wizzardState.type} show={wizzardState.section === 'wizzard_section_template'} />
+            </DialogContent>
+            <DialogActions>
+                <Button disabled={disabled || !wizzardState.sectionCompleted} onClick={next} data-testid='target-create-button-next'>
+                    <Typography>{wizzardState.action}</Typography>
+                </Button>
+            </DialogActions>
+        </Dialog>
     );
 };
 
