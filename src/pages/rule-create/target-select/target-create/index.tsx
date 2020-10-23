@@ -20,6 +20,9 @@ import { Target, ServiceError, TargetBody, TargetHeader } from '../../../../serv
 import IconDialog, { useIconDialog } from '../../../../components/icon-dialog';
 import { Divider } from '@material-ui/core';
 
+import { ArrayHeader } from './target-edit-headers';
+import TargetEditURL from './target-edit-url';
+
 const TargetCreatorLoader: React.FC<{ show: boolean }> = ({ show }) => {
     const styles = useStyles();
     if (!show) return null;
@@ -55,36 +58,6 @@ const TargetCreatorSuccess: React.FC<{ target: Target | undefined }> = ({ target
     );
 };
 
-export type TargetTemplateURLProps = {
-    disabled?: boolean;
-    show: boolean;
-    url: string;
-    setURL: (url: string) => void;
-};
-export const TargetTemplateURL: React.FC<TargetTemplateURLProps> = ({ show, url, setURL, disabled = false }) => {
-    const styles = useStyles();
-    const changeURL = React.useCallback(
-        (ev: React.ChangeEvent<HTMLInputElement>) => {
-            setURL(ev.target.value);
-        },
-        [setURL]
-    );
-    if (!show) return null;
-    return (
-        <div className={styles.createDetailsURL} data-testid='target-template-url'>
-            <TextField
-                disabled={disabled}
-                fullWidth={true}
-                value={url}
-                onChange={changeURL}
-                label='URL (http/https)'
-                helperText='URL to send events when rule matchs'
-                inputProps={{ 'data-testid': 'target-template-url-input' }}
-            />
-        </div>
-    );
-};
-
 export type TargetType = 'passthrow' | 'custom' | 'template';
 export type TargetTypeSelectorProps = {
     show: boolean;
@@ -105,28 +78,37 @@ const TargetTypeSelector: React.FC<TargetTypeSelectorProps> = ({ show, type, set
     );
 };
 
-export type TargetTemplatePassthrowProps = {
+export type TargetTemplateEditPassthrowProps = {
     show: boolean;
+    template?: TargetTemplate;
+    setTemplate: (template: TargetTemplate) => void;
 };
-export const TargetTemplatePassthrow: React.FC<TargetTemplatePassthrowProps> = ({ show }) => {
-    const [url, setURL] = React.useState('');
+export const TargetTemplateEditPassthrow: React.FC<TargetTemplateEditPassthrowProps> = ({ show, template, setTemplate }) => {
+    const handleURL = React.useCallback(
+        (url: string) => {
+            setTemplate({ url });
+        },
+        [setTemplate]
+    );
     if (!show) return null;
     return (
         <div>
-            <TargetTemplateURL url={url} setURL={setURL} show={true} />
+            <TargetEditURL url={template?.url} onURLChanged={handleURL} show={true} />
         </div>
     );
 };
-export type TargetTemplateProps = {
+export type TargetTemplateEditorProps = {
     show: boolean;
     type?: TargetType;
+    template?: TargetTemplate;
+    setTemplate: (template: TargetTemplate) => void;
 };
-export const TargetTemplate: React.FC<TargetTemplateProps> = ({ show, type }) => {
+export const TargetTemplateEditor: React.FC<TargetTemplateEditorProps> = ({ show, type, template, setTemplate }) => {
     if (!type || !show) return null;
     return (
         <div data-testid='target-template-container'>
             {type === 'passthrow' ? 'PASSTHROW Target' : type === 'custom' ? 'CUSTOM Target Template' : 'Predefined Target Template'}
-            <TargetTemplatePassthrow show={type === 'passthrow'} />
+            <TargetTemplateEditPassthrow show={type === 'passthrow'} setTemplate={setTemplate} template={template} />
         </div>
     );
 };
@@ -141,13 +123,22 @@ export type WizzardActionSetType = {
     type: 'set_type';
     payload: TargetType | undefined;
 };
+export type WizzardActionSetTemplate = {
+    type: 'set_template';
+    payload: TargetTemplate;
+};
 
-export type WizzardActions = WizzardActionNext | WizzardActionPrev | WizzardActionSetType;
+export type WizzardActions = WizzardActionNext | WizzardActionPrev | WizzardActionSetType | WizzardActionSetTemplate;
+export type TargetTemplate = {
+    url: string;
+    headers?: ArrayHeader;
+};
 export type WizzardState = {
     section: WizzardSections;
     sectionCompleted: boolean;
     action: string;
     type?: TargetType;
+    template?: TargetTemplate;
 };
 export const wizzardReducer = (state: WizzardState, action: WizzardActions): WizzardState => {
     switch (action.type) {
@@ -167,6 +158,16 @@ export const wizzardReducer = (state: WizzardState, action: WizzardActions): Wiz
                     ...state,
                     sectionCompleted: !!action.payload ? true : false,
                     type: action.payload
+                };
+            }
+            return state;
+        }
+        case 'set_template': {
+            if (state.section === 'wizzard_section_template') {
+                return {
+                    ...state,
+                    template: action.payload,
+                    sectionCompleted: true
                 };
             }
             return state;
@@ -208,12 +209,20 @@ export const TargetCreate: React.FC<TargetCreateProps> = ({ targetName, onCreate
     const setType = React.useCallback((type: TargetType) => {
         dispatchWizzardAction({ type: 'set_type', payload: type });
     }, []);
+    const setTemplate = React.useCallback((template: TargetTemplate) => {
+        dispatchWizzardAction({ type: 'set_template', payload: template });
+    }, []);
 
     return (
         <Dialog open={true} fullWidth={true}>
             <DialogContent data-testid='target-create-wizzard' className={styles.container}>
                 <TargetTypeSelector type={wizzardState.type} setType={setType} show={wizzardState.section === 'wizzard_section_select'} />
-                <TargetTemplate type={wizzardState.type} show={wizzardState.section === 'wizzard_section_template'} />
+                <TargetTemplateEditor
+                    type={wizzardState.type}
+                    show={wizzardState.section === 'wizzard_section_template'}
+                    template={wizzardState.template}
+                    setTemplate={setTemplate}
+                />
             </DialogContent>
             <DialogActions>
                 <Button disabled={disabled || !wizzardState.sectionCompleted} onClick={next} data-testid='target-create-button-next'>

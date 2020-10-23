@@ -38,8 +38,8 @@ test.only('TargetCreate should create a passthrow target', async () => {
 
     // Add URL
     expect(await screen.findByTestId('target-create-button-next')).toBeDisabled();
-    await userEvent.type(await screen.findByTestId('target-template-url-input'), target.url);
-    expect(await screen.findByTestId('target-template-url-input')).toHaveValue(target.url);
+    await userEvent.type(await screen.findByTestId('target-edit-url-input'), target.url);
+    expect(await screen.findByTestId('target-edit-url-input')).toHaveValue(target.url);
     expect(await screen.findByTestId('target-create-button-next')).not.toBeDisabled();
 
     // Add headers
