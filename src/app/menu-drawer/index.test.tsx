@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { renderInsideApp, fireEvent } from '../../test-utils';
 import MenuDrawer from './index';
-import { useMainMenuToggle, useMainMenuState } from '../../services/main-menu-provider';
+import { useMainMenuToggle as mockMainMenuToggle, useMainMenuState as mockMainMenuState } from '../../services/main-menu-provider';
 
-const mockMainMenuStatus = (useMainMenuState as unknown) as jest.Mock;
-const mockClose = (useMainMenuToggle().close as unknown) as jest.Mock;
+const mockMainMenuStatus = (mockMainMenuState as unknown) as jest.Mock;
+const mockClose = (mockMainMenuToggle().close as unknown) as jest.Mock;
 jest.mock('../../services/main-menu-provider', () => {
     const close = jest.fn();
     return {

@@ -3,7 +3,7 @@ import { ENTITY } from '../api-provider/use-api';
 import { BASE_URL } from '../config';
 import { setupNock, serverGetEventTypeList, generateEventTypeListWith } from '../../test-utils';
 import { useGetListFilteredAndPaginated, useGetListAccumulated } from './index';
-import { Entity, EventType, ServiceList } from '../api';
+import { EventType, ServiceList } from '../api';
 
 jest.mock('../api-provider', () => {
     const apiService = require('../api');
