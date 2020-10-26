@@ -2,9 +2,9 @@ import * as React from 'react';
 import { render, screen } from '../../test-utils';
 import userEvent from '@testing-library/user-event';
 import Login from './index';
-import { useUpdateAPIProvider } from '../../services/api-provider';
+import { useUpdateAPIProvider as mockUpdateAPIProvider } from '../../services/api-provider';
 
-const { setApiKey } = useUpdateAPIProvider();
+const { setApiKey } = mockUpdateAPIProvider();
 const setApiKeyFake = (setApiKey as unknown) as jest.Mock;
 jest.mock('../../services/api-provider', () => {
     const setApiKey = jest.fn();

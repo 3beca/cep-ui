@@ -2,10 +2,10 @@ import * as React from 'react';
 import { render, waitFor, screen } from '../../../test-utils';
 import CreateRuleDialog from './index';
 import { RuleTypes } from '../../../services/api';
-import { useHistory } from 'react-router-dom';
+import { useHistory as mockRRHistory } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
-const mockHistory = useHistory();
+const mockHistory = mockRRHistory();
 const mockPush = mockHistory.push as jest.Mock;
 jest.mock('react-router-dom', () => {
     const pushMock = jest.fn();
