@@ -15,8 +15,8 @@ import TargetSelector, { emptyTarget, TargetSelected } from './';
 import { serverCreateTarget } from '../../../test-utils/api';
 import { Target, TargetError } from '../../../services/api';
 
-beforeAll(() => jest.useFakeTimers());
-afterAll(() => jest.useRealTimers());
+beforeEach(() => jest.useFakeTimers());
+afterEach(() => jest.useRealTimers());
 
 const nockServer = setupNock(BASE_URL);
 test('TargetSelector should render a filtered by element options when type element and close keep selection', async () => {

@@ -325,12 +325,12 @@ export const GropupSchemaFields: React.FC<GroupSchemaFields> = ({ disabled, grou
         </div>
     );
 };
-export type GroupSchema = {
+export type GroupSchemaProps = {
     disabled?: boolean;
     group?: RuleGroupPayload;
     setGroup: (group?: RuleGroupPayload) => void;
 };
-export const GroupSchema: React.FC<GroupSchema> = ({ disabled, group, setGroup }) => {
+export const GroupSchema: React.FC<GroupSchemaProps> = ({ disabled, group, setGroup }) => {
     const styles = useStyles();
     if (!group) {
         return (

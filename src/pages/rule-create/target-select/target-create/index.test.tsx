@@ -11,7 +11,7 @@ import {
 import userEvent from '@testing-library/user-event';
 
 import TargetCreate from './';
-import { Target, TargetError } from '../../../../services/api';
+import { TargetError } from '../../../../services/api';
 
 test('TargetCreate should create a new Target', async () => {
     const target = generateTarget(1, 'newEV', 'testNewEv');
