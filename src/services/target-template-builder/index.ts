@@ -4,10 +4,10 @@ import { FS } from 'liquidjs/dist/fs/fs';
 const templateEngine = new Liquid({
     strictFilters: false,
     strictVariables: false,
-    fs: {
+    fs: ({
         exists: () => Promise.resolve(false),
         resolve: () => ''
-    } as unknown as FS
+    } as unknown) as FS
 });
 
 async function renderObject(object: object, model: any, baseKey: string = ''): Promise<object> {
@@ -15,7 +15,7 @@ async function renderObject(object: object, model: any, baseKey: string = ''): P
         throw Error('template object must be an object');
     }
     const keys = Object.keys(object);
-    const result: {[key: string]: any } = {};
+    const result: { [key: string]: any } = {};
     for (const key of keys) {
         result[key] = await renderValue(object[key], model, `${baseKey}/${key}`);
     }
@@ -58,6 +58,6 @@ function canBeConvertedToFloat(value: string): boolean {
 export async function buildTargetFromTemplate(name: string, template: object, model: object): Promise<object> {
     return {
         name,
-        ...await renderObject(template, model)
+        ...(await renderObject(template, model))
     };
 }
