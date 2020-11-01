@@ -16,9 +16,6 @@ import RuleListPage from './index';
 import { BASE_URL } from '../../services/config';
 import { Rule, ServiceError, ServiceList } from '../../services/api';
 
-beforeAll(() => jest.useFakeTimers());
-afterAll(() => jest.useRealTimers());
-
 export const selectCreateRule = async (ariaLabel: 'real time' | 'hopping' | 'sliding' | 'tumbling') => {
     const addButton = await screen.findByLabelText(/add rule/i);
     userEvent.click(addButton);
@@ -41,6 +38,7 @@ test('RuleListPage should render loading component', async () => {
 
     await screen.findByTestId(/loading-view-row/i);
     await screen.findByLabelText(/add rule/i);
+
     expect(container).toMatchSnapshot();
 
     expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(initialPageSize);
@@ -111,9 +109,7 @@ test('RuleListPage should render a searchbar  and find rules that contains rule'
     const searchText = 'rule-name';
     serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(5, false, false));
     await userEvent.type(input, searchText);
-    act(() => {
-        jest.runOnlyPendingTimers();
-    });
+    act(() => void jest.runOnlyPendingTimers());
     await screen.findByTestId(/loading-view-row/i);
     await waitFor(() => expect(screen.queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
     expect(await screen.findAllByLabelText(/^element card rule$/i)).toHaveLength(5);
@@ -133,9 +129,7 @@ test('RuleListPage should render Empty List whith filter when no elements and sn
     const input = (await screen.findByLabelText(/search input/i)) as HTMLInputElement;
     serverGetRuleList(setupNock(BASE_URL), initialPage, initialPageSize, searchText, 200, generateRuleListWith(0, false, false));
     await userEvent.type(input, searchText);
-    act(() => {
-        jest.runOnlyPendingTimers();
-    });
+    act(() => void jest.runOnlyPendingTimers());
     await waitFor(() => expect(screen.queryByTestId(/loading-view-row/i)).not.toBeInTheDocument());
     expect(await screen.findByTestId(/empty-view-row/i)).toBeInTheDocument();
     expect(await screen.findByTestId(/empty-view-row/i)).toHaveTextContent(/There are no elements for "rule-name"/i);

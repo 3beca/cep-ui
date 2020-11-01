@@ -13,9 +13,9 @@ jest.mock('@material-ui/core/Snackbar', () => {
     };
 });
 
-beforeAll(() => jest.useFakeTimers());
-afterAll(() => jest.useRealTimers());
+beforeEach(() => jest.useFakeTimers());
 afterEach(() => {
+    jest.useRealTimers();
     (navigator.clipboard.writeText as jest.Mock).mockClear();
     (navigator.clipboard.readText as jest.Mock).mockClear();
 });

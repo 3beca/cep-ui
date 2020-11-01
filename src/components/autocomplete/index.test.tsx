@@ -4,8 +4,8 @@ import { render, screen, act } from '../../test-utils';
 
 import Autocomplete, { createCustomFilterOptions } from './index';
 
-beforeAll(() => jest.useFakeTimers());
-afterAll(() => jest.useRealTimers());
+beforeEach(() => jest.useFakeTimers());
+afterEach(() => jest.useRealTimers());
 
 test('Autocomplete should render with defaults placeholdres', async () => {
     const options = [{ id: '1', name: 'element 1' }];

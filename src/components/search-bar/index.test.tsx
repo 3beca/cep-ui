@@ -3,8 +3,8 @@ import { render, act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import SearchBar from './index';
 
-beforeAll(() => jest.useFakeTimers());
-afterAll(() => jest.useRealTimers());
+beforeEach(() => jest.useFakeTimers());
+afterEach(() => jest.useRealTimers());
 
 test('SearchBar should render with a default hint text and snap', async () => {
     const { rerender, container } = render(<SearchBar />);

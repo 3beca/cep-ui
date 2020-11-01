@@ -21,9 +21,11 @@ jest.mock('@material-ui/core/Snackbar', () => {
     };
 });
 
-beforeAll(() => jest.useFakeTimers());
-afterAll(() => jest.useRealTimers());
-afterEach(() => (navigator.clipboard.writeText as jest.Mock).mockClear());
+beforeEach(() => jest.useFakeTimers());
+afterEach(() => {
+    jest.useRealTimers();
+    (navigator.clipboard.writeText as jest.Mock).mockClear();
+});
 
 const nockServer = setupNock(BASE_URL);
 test('EventTypeSelector should render a filtered by element options when type element and close keep selection', async () => {

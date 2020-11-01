@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { NOOP } from '../../utils';
-export type MainMenuToggleContext = {
+export type MainMenuToggleContextValue = {
     toggle: () => void;
     close: () => void;
     open: () => void;
 };
 const MainMenuStateContext = React.createContext(false);
-const MainMenuToggleContext = React.createContext<MainMenuToggleContext>({
+const MainMenuToggleContext = React.createContext<MainMenuToggleContextValue>({
     toggle: NOOP,
     close: NOOP,
     open: NOOP
