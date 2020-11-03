@@ -13,7 +13,7 @@ import userEvent from '@testing-library/user-event';
 import TargetCreate from './';
 import { TargetError, TargetHeader } from '../../../../services/api';
 
-test.only('TargetCreate should create a passthrow target', async () => {
+test('TargetCreate should create a passthrow target', async () => {
     const headers: TargetHeader = {
         Authorization: 'Bearer 1234567890987654',
         'X-APPID': '123456789'

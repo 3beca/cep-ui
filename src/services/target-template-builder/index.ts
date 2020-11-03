@@ -9,8 +9,11 @@ const templateEngine = new Liquid({
         resolve: () => ''
     } as unknown) as FS
 });
-
-async function renderObject(object: object, model: any, baseKey: string = ''): Promise<object> {
+export type RenderableType = RenderableObject | string | number | RenderableType[];
+export type RenderableObject = {
+    [key: string]: RenderableType;
+};
+async function renderObject(object: RenderableObject, model: any, baseKey: string = ''): Promise<RenderableObject> {
     if (!object || typeof object !== 'object') {
         throw Error('template object must be an object');
     }
@@ -22,7 +25,7 @@ async function renderObject(object: object, model: any, baseKey: string = ''): P
     return result;
 }
 
-async function renderValue(value: object | string | number | [], model: any, baseKey: string): Promise<object | string | number | []> {
+async function renderValue(value: RenderableType, model: any, baseKey: string): Promise<RenderableType> {
     if (typeof value === 'string' && value) {
         return renderString(value, model, baseKey);
     } else if (Array.isArray(value)) {
@@ -46,7 +49,7 @@ async function renderString(value: string, model: object, baseKey: string): Prom
     }
 }
 
-function renderArray(values: [], model: object, baseKey: string): Promise<(string | number | object | [])[]> {
+function renderArray(values: RenderableType[], model: object, baseKey: string): Promise<RenderableType> {
     return Promise.all(values.map((value, i) => renderValue(value, model, `${baseKey}/${i}`)));
 }
 
@@ -55,7 +58,7 @@ function canBeConvertedToFloat(value: string): boolean {
     return !isNaN(number) && number.toString() === value;
 }
 
-export async function buildTargetFromTemplate(name: string, template: object, model: object): Promise<object> {
+export async function buildTargetFromTemplate(name: string, template: RenderableObject, model: object): Promise<object> {
     return {
         name,
         ...(await renderObject(template, model))
