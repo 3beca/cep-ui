@@ -1,9 +1,9 @@
-import { buildTargetFromTemplate } from '.';
+import { buildTargetFromTemplate, RenderableObject } from '.';
 
 test('buildTargetFromTemplate should throw an error if template object is null', async () => {
     expect.assertions(1);
     try {
-        await buildTargetFromTemplate('My Target', null as unknown as object, {});
+        await buildTargetFromTemplate('My Target', (null as unknown) as RenderableObject, {});
     } catch (error) {
         expect(error.message).toBe('template object must be an object');
     }
@@ -12,7 +12,7 @@ test('buildTargetFromTemplate should throw an error if template object is null',
 test('buildTargetFromTemplate should throw an error if template object is undefined', async () => {
     expect.assertions(1);
     try {
-        await buildTargetFromTemplate('My Target', undefined as unknown as object, {});
+        await buildTargetFromTemplate('My Target', (undefined as unknown) as RenderableObject, {});
     } catch (error) {
         expect(error.message).toBe('template object must be an object');
     }
@@ -21,7 +21,7 @@ test('buildTargetFromTemplate should throw an error if template object is undefi
 test('buildTargetFromTemplate should throw an error if template object is not an object', async () => {
     expect.assertions(1);
     try {
-        await buildTargetFromTemplate('My Target', 1 as unknown as object, {});
+        await buildTargetFromTemplate('My Target', (1 as unknown) as RenderableObject, {});
     } catch (error) {
         expect(error.message).toBe('template object must be an object');
     }
@@ -41,7 +41,7 @@ test('buildTargetFromTemplate should return a target from Telegram Template', as
         token: '123abc',
         chatId: '123',
         text: 'Hi!! I am a bot. Here is your sensor value {{ event.value }}'
-    })
+    });
 
     expect(result).toStrictEqual({
         name: 'Telegram target',
@@ -61,24 +61,30 @@ test('buildTargetFromTemplate should return a target from SendGrid Template', as
             authorization: 'Bearer {{apiKey}}'
         },
         body: {
-            personalizations: [{
-                    to: [{
-                        email: '{{toEmail}}'
-                    }]
-                }],
-                from: {
-                    email: '{{fromEmail}}',
-                    name: '{{fromName}}'
-                },
-                reply_to: {
+            personalizations: [
+                {
+                    to: [
+                        {
+                            email: '{{toEmail}}'
+                        }
+                    ]
+                }
+            ],
+            from: {
+                email: '{{fromEmail}}',
+                name: '{{fromName}}'
+            },
+            reply_to: {
                 email: '{{replyToEmail}}',
                 name: '{{replyToName}}'
             },
             subject: '{{subject}}',
-            content: [{
-                type: 'text/html',
-                value: '{{htmlBody}}'
-            }]
+            content: [
+                {
+                    type: 'text/html',
+                    value: '{{htmlBody}}'
+                }
+            ]
         }
     };
 
@@ -91,7 +97,7 @@ test('buildTargetFromTemplate should return a target from SendGrid Template', as
         replyToName: 'no-reply',
         subject: 'Hello! Here is your email',
         htmlBody: '<h1>Hi!! your sensor value is {{ event.value }}</h1>'
-    })
+    });
 
     expect(result).toStrictEqual({
         name: 'SendGrid target',
@@ -100,24 +106,30 @@ test('buildTargetFromTemplate should return a target from SendGrid Template', as
             authorization: 'Bearer 123abc'
         },
         body: {
-            personalizations: [{
-                    to: [{
-                        email: 'to@example.org'
-                    }]
-                }],
-                from: {
-                    email: 'from@example.org',
-                    name: 'tester'
-                },
-                reply_to: {
+            personalizations: [
+                {
+                    to: [
+                        {
+                            email: 'to@example.org'
+                        }
+                    ]
+                }
+            ],
+            from: {
+                email: 'from@example.org',
+                name: 'tester'
+            },
+            reply_to: {
                 email: 'no-reply@example.org',
                 name: 'no-reply'
             },
             subject: 'Hello! Here is your email',
-            content: [{
-                type: 'text/html',
-                value: '<h1>Hi!! your sensor value is {{ event.value }}</h1>'
-            }]
+            content: [
+                {
+                    type: 'text/html',
+                    value: '<h1>Hi!! your sensor value is {{ event.value }}</h1>'
+                }
+            ]
         }
     });
 });
@@ -137,7 +149,7 @@ test('buildTargetFromTemplate should throw an error if template makes use of inc
             token: '123abc',
             chatId: '123',
             text: 'Hi!! I am a bot. Here is your sensor value {{ event.value }}'
-        })
+        });
     } catch (error) {
         expect(error.message).toBe('/body/text partials and layouts are not supported, line:1, col:4');
     }
