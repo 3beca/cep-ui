@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { findByTestId, render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import TargetEditURL from './index';
 import user from '@testing-library/user-event';
 
@@ -11,7 +11,7 @@ test('TargetEditURL should NOT render when no show', async () => {
     const { unmount } = render(<TargetEditURL onURLChanged={onURLChanged} />);
 
     expect(screen.queryByTestId('target-edit-url')).not.toBeInTheDocument();
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     unmount();
 });
 
@@ -23,7 +23,7 @@ test('TargetEditURL should render empty when no url in props', async () => {
 
     const inputURL = screen.getByTestId('target-edit-url-input');
     expect(inputURL).toHaveValue('');
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     unmount();
 });
 
@@ -36,7 +36,7 @@ test('TargetEditURL should render the url in props', async () => {
 
     const inputURL = screen.getByTestId('target-edit-url-input');
     expect(inputURL).toHaveValue(url);
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     unmount();
 });
 
@@ -51,12 +51,12 @@ test('TargetEditURL should render empty url and change it to valid url', async (
     const inputURL = screen.getByTestId('target-edit-url-input');
     expect(inputURL).toHaveValue('');
     await user.type(inputURL, validURL);
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     expect(onURLChanged).toHaveBeenCalledTimes(1);
     expect(onURLChanged).toHaveBeenCalledWith(validURL);
 
     rerender(<TargetEditURL onURLChanged={onURLChanged} url={validURL} show={true} />);
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     unmount();
 });
 
@@ -74,10 +74,10 @@ test('TargetEditURL should render a url and change it to a empty url', async () 
         .map(() => '{backspace}')
         .join('');
     await user.type(inputURL, emptyURL);
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     expect(onURLChanged).toHaveBeenCalledTimes(1);
     expect(onURLChanged).toHaveBeenCalledWith('');
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     unmount();
 });
 
@@ -92,7 +92,7 @@ test('TargetEditURL should render a url and change it to a empty url with range'
     expect(inputURL).toHaveValue(url);
     inputURL.setSelectionRange(0, url.length);
     await user.type(inputURL, '{backspace}');
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     expect(onURLChanged).toHaveBeenCalledTimes(1);
     expect(onURLChanged).toHaveBeenCalledWith('');
     unmount();
@@ -109,21 +109,24 @@ test('TargetEditURL should render error message when write a invalid url', async
     const inputURL = screen.getByTestId('target-edit-url-input') as HTMLInputElement;
     expect(inputURL).toHaveValue('');
     await user.type(inputURL, invalidURL);
-    jest.runOnlyPendingTimers();
-    expect(onURLChanged).toHaveBeenCalledTimes(0);
+    act(() => void jest.runOnlyPendingTimers());
+    expect(onURLChanged).toHaveBeenCalledTimes(1);
+
+    rerender(<TargetEditURL onURLChanged={onURLChanged} url={invalidURL} show={true} />);
     await screen.findByTestId('target-edit-url-error');
 
     // Fix URL
+    onURLChanged.mockClear();
     inputURL.setSelectionRange(0, 1);
     await user.type(inputURL, 'https://c');
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     const validURL = 'https://' + invalidURL;
     expect(onURLChanged).toHaveBeenCalledTimes(1);
     expect(onURLChanged).toHaveBeenCalledWith(validURL);
-    expect(screen.queryByTestId('target-edit-url-error')).not.toBeInTheDocument();
 
     rerender(<TargetEditURL onURLChanged={onURLChanged} url={validURL} show={true} />);
-    jest.runOnlyPendingTimers();
+    expect(screen.queryByTestId('target-edit-url-error')).not.toBeInTheDocument();
+    act(() => void jest.runOnlyPendingTimers());
     unmount();
 });
 
@@ -143,13 +146,13 @@ test('TargetEditURL should render error message when receive a invalid url', asy
     // Fix URL
     inputURL.setSelectionRange(0, 1);
     await user.type(inputURL, 'https://c');
-    jest.runOnlyPendingTimers();
+    act(() => void jest.runOnlyPendingTimers());
     const validURL = 'https://' + invalidURL;
     expect(onURLChanged).toHaveBeenCalledTimes(1);
     expect(onURLChanged).toHaveBeenCalledWith(validURL);
-    expect(screen.queryByTestId('target-edit-url-error')).not.toBeInTheDocument();
 
     rerender(<TargetEditURL onURLChanged={onURLChanged} url={validURL} show={true} />);
-    jest.runOnlyPendingTimers();
+    expect(screen.queryByTestId('target-edit-url-error')).not.toBeInTheDocument();
+    act(() => void jest.runOnlyPendingTimers());
     unmount();
 });

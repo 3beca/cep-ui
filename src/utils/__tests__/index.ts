@@ -1,4 +1,4 @@
-import { NOOP, cutString, loadApikey, clearApikey, saveApikey } from '../index';
+import { NOOP, cutString, loadApikey, clearApikey, saveApikey, isValidURL } from '../index';
 
 test('NOOP do no operation', () => {
     expect(NOOP()).toBe(undefined);
@@ -30,4 +30,13 @@ test('save apikey to storage', () => {
     localStorage.setItem('APIKEY', '999999999');
     saveApikey('123456789');
     expect(loadApikey()).toBe('123456789');
+});
+
+test('Check if is a valir URL', () => {
+    expect(isValidURL((null as unknown) as string)).toBe(false);
+    expect(isValidURL('')).toBe(true); // use case to do not show error when no url specified
+    expect(isValidURL('http://juajnofp.com')).toBe(true);
+    expect(isValidURL('https://juanjofp.com')).toBe(true);
+    expect(isValidURL('juanjofp.com')).toBe(false);
+    expect(isValidURL('http://juanjofp')).toBe(false);
 });

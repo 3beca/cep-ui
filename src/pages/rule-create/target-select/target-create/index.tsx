@@ -22,6 +22,7 @@ import { Divider } from '@material-ui/core';
 
 import { ArrayHeader } from './target-edit-headers';
 import TargetEditURL from './target-edit-url';
+import { isValidURL } from '../../../../utils';
 
 const TargetCreatorLoader: React.FC<{ show: boolean }> = ({ show }) => {
     const styles = useStyles();
@@ -167,7 +168,7 @@ export const wizzardReducer = (state: WizzardState, action: WizzardActions): Wiz
                 return {
                     ...state,
                     template: action.payload,
-                    sectionCompleted: true
+                    sectionCompleted: !!action.payload.url && isValidURL(action.payload.url)
                 };
             }
             return state;
