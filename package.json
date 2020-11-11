@@ -52,7 +52,7 @@
         "@testing-library/user-event": "^12.2.0",
         "@types/react-router-dom": "^5.1.6",
         "jest-environment-jsdom-sixteen": "^1.0.3",
-        "nock": "^13.0.4",
+        "nock": "^13.0.5",
         "prettier": "^2.1.2"
     },
     "jest": {
