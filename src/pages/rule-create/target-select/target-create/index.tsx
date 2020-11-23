@@ -23,6 +23,7 @@ import { Divider } from '@material-ui/core';
 import { ArrayHeader } from './target-edit-headers';
 import TargetEditURL from './target-edit-url';
 import { isValidURL } from '../../../../utils';
+import TargetEditHeaders from './target-edit-headers';
 
 const TargetCreatorLoader: React.FC<{ show: boolean }> = ({ show }) => {
     const styles = useStyles();
@@ -64,18 +65,30 @@ export type TargetTypeSelectorProps = {
     show: boolean;
     type?: TargetType;
     setType: (type: TargetType) => void;
+    onComplete: () => void;
+    onCancel: () => void;
 };
-const TargetTypeSelector: React.FC<TargetTypeSelectorProps> = ({ show, type, setType }) => {
+const TargetTypeSelector: React.FC<TargetTypeSelectorProps> = ({ show, type, setType, onComplete, onCancel }) => {
+    const styles = useStyles();
     if (!show) return null;
     return (
-        <div>
-            <div data-testid='target-create-type-selector'>
-                <div data-testid='target-create-type-passthrow' onClick={() => setType('passthrow')}>
-                    Passthrow
+        <>
+            <DialogContent data-testid='target-create-wizzard' className={styles.container}>
+                <div>
+                    <div data-testid='target-create-type-selector'>
+                        <div data-testid='target-create-type-passthrow' onClick={() => setType('passthrow')}>
+                            Passthrow
+                        </div>
+                    </div>
+                    <div data-testid={`target-create-type-${type ? type : ''}-details`}></div>
                 </div>
-            </div>
-            <div data-testid={`target-create-type-${type ? type : ''}-details`}></div>
-        </div>
+            </DialogContent>
+            <DialogActions>
+                <Button disabled={false} onClick={onComplete} data-testid='target-create-button-next'>
+                    <Typography>SELECT</Typography>
+                </Button>
+            </DialogActions>
+        </>
     );
 };
 
@@ -87,13 +100,21 @@ export type TargetTemplateEditPassthrowProps = {
 export const TargetTemplateEditPassthrow: React.FC<TargetTemplateEditPassthrowProps> = ({ show, template, setTemplate }) => {
     const handleURL = React.useCallback(
         (url: string) => {
-            setTemplate({ url });
+            setTemplate({ ...template, url });
         },
-        [setTemplate]
+        [setTemplate, template]
+    );
+    const handleHeaders = React.useCallback(
+        (headers: ArrayHeader) => {
+            const url = template?.url ? template.url : '';
+            setTemplate({ url, headers });
+        },
+        [setTemplate, template]
     );
     if (!show) return null;
     return (
         <div>
+            <TargetEditHeaders onChange={handleHeaders} headers={template?.headers} />
             <TargetEditURL url={template?.url} onURLChanged={handleURL} show={true} />
         </div>
     );
@@ -103,22 +124,70 @@ export type TargetTemplateEditorProps = {
     type?: TargetType;
     template?: TargetTemplate;
     setTemplate: (template: TargetTemplate) => void;
+    onComplete: () => void;
+    onPrevious: () => void;
+    onCancel: () => void;
 };
 export const TargetTemplateEditor: React.FC<TargetTemplateEditorProps> = ({ show, type, template, setTemplate }) => {
+    const styles = useStyles();
     if (!type || !show) return null;
     return (
-        <div data-testid='target-template-container'>
-            {type === 'passthrow' ? 'PASSTHROW Target' : type === 'custom' ? 'CUSTOM Target Template' : 'Predefined Target Template'}
-            <TargetTemplateEditPassthrow show={type === 'passthrow'} setTemplate={setTemplate} template={template} />
-        </div>
+        <>
+            <DialogContent data-testid='target-create-wizzard' className={styles.container}>
+                <div data-testid='target-template-container'>
+                    {type === 'passthrow'
+                        ? 'PASSTHROW Target'
+                        : type === 'custom'
+                        ? 'CUSTOM Target Template'
+                        : 'Predefined Target Template'}
+                    <TargetTemplateEditPassthrow show={type === 'passthrow'} setTemplate={setTemplate} template={template} />
+                </div>
+            </DialogContent>
+            <DialogActions>
+                <Button disabled={false} onClick={() => {}} data-testid='target-create-button-next'>
+                    <Typography>EDIT</Typography>
+                </Button>
+            </DialogActions>
+        </>
     );
 };
-export type WizzardSections = 'wizzard_section_select' | 'wizzard_section_template' | 'wizzard_section_create';
-export type WizzardActionNext = {
-    type: 'next';
+export type TargetResumeProps = {
+    show: boolean;
+    target?: TargetBody;
+    onComplete: () => void;
+    onPrevious: () => void;
+    onCancel: () => void;
 };
-export type WizzardActionPrev = {
-    type: 'prev';
+export const TargetResume: React.FC<TargetResumeProps> = ({ show, target }) => {
+    const styles = useStyles();
+    if (!target || !show) return null;
+    return (
+        <>
+            <DialogContent data-testid='target-create-wizzard' className={styles.container}>
+                <div data-testid='target-resume-container'>Create Target now?</div>
+            </DialogContent>
+            <DialogActions>
+                <Button disabled={false} onClick={() => {}} data-testid='target-create-button-next'>
+                    <Typography>CREATE</Typography>
+                </Button>
+            </DialogActions>
+        </>
+    );
+};
+export type WizzardSections = {
+    wizzard_section_select: TargetType;
+    wizzard_section_template: TargetTemplate;
+    wizzard_section_create: Target;
+};
+export type WizzardSection = keyof WizzardSections;
+export type WizzardActionNext<S extends WizzardSection> = {
+    type: S;
+    payload: WizzardSections[S];
+    action: 'next';
+};
+export type WizzardActionPrev<S extends WizzardSection> = {
+    type: S;
+    action: 'prev';
 };
 export type WizzardActionSetType = {
     type: 'set_type';
@@ -129,35 +198,31 @@ export type WizzardActionSetTemplate = {
     payload: TargetTemplate;
 };
 
-export type WizzardActions = WizzardActionNext | WizzardActionPrev | WizzardActionSetType | WizzardActionSetTemplate;
+export type WizzardActions<S extends WizzardSection> = WizzardActionNext<S> | WizzardActionPrev<S>;
 export type TargetTemplate = {
     url: string;
     headers?: ArrayHeader;
 };
 export type WizzardState = {
-    section: WizzardSections;
+    name: string;
+    section: keyof WizzardSections;
     sectionCompleted: boolean;
     action: string;
     type?: TargetType;
     template?: TargetTemplate;
+    target?: TargetBody;
 };
-export const wizzardReducer = (state: WizzardState, action: WizzardActions): WizzardState => {
+export const wizzardReducer = <S extends WizzardSection>(
+    state: WizzardState,
+    action: WizzardActions<S> | WizzardActionSetType | WizzardActionSetTemplate
+): WizzardState => {
     switch (action.type) {
-        case 'next': {
-            return {
-                ...state,
-                section: state.section === 'wizzard_section_select' ? 'wizzard_section_template' : state.section,
-                sectionCompleted: false
-            };
-        }
-        case 'prev': {
-            return state;
-        }
         case 'set_type': {
             if (state.section === 'wizzard_section_select') {
+                const acc = action as WizzardActionSetType;
                 return {
                     ...state,
-                    sectionCompleted: !!action.payload ? true : false,
+                    sectionCompleted: !!acc.payload ? true : false,
                     type: action.payload
                 };
             }
@@ -177,7 +242,12 @@ export const wizzardReducer = (state: WizzardState, action: WizzardActions): Wiz
             return state;
     }
 };
-export const initialWizzardState: WizzardState = { section: 'wizzard_section_select', sectionCompleted: false, action: 'next' };
+export const initialWizzardState = (name: string): WizzardState => ({
+    name,
+    section: 'wizzard_section_select',
+    sectionCompleted: false,
+    action: 'next'
+});
 export type TargetCreateProps = {
     disabled?: boolean;
     targetName: string;
@@ -185,51 +255,40 @@ export type TargetCreateProps = {
     close: () => void;
 };
 export const TargetCreate: React.FC<TargetCreateProps> = ({ targetName, onCreate, close, disabled = false }) => {
-    const styles = useStyles();
-    // const [url, setURL] = React.useState('');
-    // const [headers, setHeaders] = React.useState<ArrayHeader>([]);
-    // const newBody = React.useMemo((): TargetBody => {
-    //     return { name: targetName, url, headers: parseTargetHeaders(headers) };
-    // }, [targetName, url, headers]);
-    // const { isLoading, response, error, request } = useCreate<Target>(ENTITY.TARGETS, newBody, false);
-    // const addHeader = React.useCallback((name: string, value: string) => {
-    //     setHeaders(headers => [...headers.filter(header => header.name !== name), { name, value }]);
-    // }, []);
-    // const deleteHeader = React.useCallback((name: string) => {
-    //     setHeaders(headers => headers.filter(header => header.name !== name));
-    // }, []);
-    // React.useEffect(() => {
-    //     if (!isLoading && !error && !!response?.data) {
-    //         onCreate(response.data);
-    //     }
-    // }, [isLoading, error, response, onCreate]);
-    const [wizzardState, dispatchWizzardAction] = React.useReducer(wizzardReducer, initialWizzardState);
-    const next = React.useCallback(() => {
-        dispatchWizzardAction({ type: 'next' });
+    const [wizzardState, dispatchWizzardAction] = React.useReducer(wizzardReducer, initialWizzardState(targetName));
+
+    const next = React.useCallback(<S extends WizzardSection>(section: S, payload: WizzardSections[S]) => {
+        dispatchWizzardAction({ type: section, payload, action: 'next' });
     }, []);
-    const setType = React.useCallback((type: TargetType) => {
-        dispatchWizzardAction({ type: 'set_type', payload: type });
-    }, []);
-    const setTemplate = React.useCallback((template: TargetTemplate) => {
-        dispatchWizzardAction({ type: 'set_template', payload: template });
+
+    const prev = React.useCallback(<S extends WizzardSection>(section: S) => {
+        dispatchWizzardAction({ type: section, action: 'prev' });
     }, []);
 
     return (
         <Dialog open={true} fullWidth={true}>
-            <DialogContent data-testid='target-create-wizzard' className={styles.container}>
-                <TargetTypeSelector type={wizzardState.type} setType={setType} show={wizzardState.section === 'wizzard_section_select'} />
-                <TargetTemplateEditor
-                    type={wizzardState.type}
-                    show={wizzardState.section === 'wizzard_section_template'}
-                    template={wizzardState.template}
-                    setTemplate={setTemplate}
-                />
-            </DialogContent>
-            <DialogActions>
-                <Button disabled={disabled || !wizzardState.sectionCompleted} onClick={next} data-testid='target-create-button-next'>
-                    <Typography>{wizzardState.action}</Typography>
-                </Button>
-            </DialogActions>
+            <TargetTypeSelector
+                type={wizzardState.type}
+                show={wizzardState.section === 'wizzard_section_select'}
+                onComplete={() => next('wizzard_section_template')}
+                onCancel={close}
+            />
+            <TargetTemplateEditor
+                type={wizzardState.type}
+                show={wizzardState.section === 'wizzard_section_template'}
+                template={wizzardState.template}
+                setTemplate={setTemplate}
+                onComplete={() => next('wizzard_section_create')}
+                onPrevious={() => prev('wizzard_section_select')}
+                onCancel={close}
+            />
+            <TargetResume
+                show={wizzardState.section === 'wizzard_section_create'}
+                target={wizzardState.target}
+                onComplete={(target: Target) => onCreate(target)}
+                onPrevious={() => prev('wizzard_section_template')}
+                onCancel={close}
+            />
         </Dialog>
     );
 };

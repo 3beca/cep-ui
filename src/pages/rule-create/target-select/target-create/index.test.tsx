@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BASE_URL } from '../../../../services/config';
 import {
     renderWithAPI as render,
+    act,
     generateTarget,
     screen,
     serverCreateTarget,
@@ -13,7 +14,14 @@ import userEvent from '@testing-library/user-event';
 import TargetCreate from './';
 import { TargetError, TargetHeader } from '../../../../services/api';
 
-test('TargetCreate should create a passthrow target', async () => {
+beforeEach(() => {
+    jest.useFakeTimers();
+});
+afterEach(() => {
+    jest.useRealTimers();
+});
+
+test.only('TargetCreate should create a passthrow target', async () => {
     const headers: TargetHeader = {
         Authorization: 'Bearer 1234567890987654',
         'X-APPID': '123456789'
@@ -40,45 +48,51 @@ test('TargetCreate should create a passthrow target', async () => {
     expect(await screen.findByTestId('target-create-button-next')).toBeDisabled();
     await userEvent.type(await screen.findByTestId('target-edit-url-input'), target.url);
     expect(await screen.findByTestId('target-edit-url-input')).toHaveValue(target.url);
+    act(() => void jest.runOnlyPendingTimers());
     expect(await screen.findByTestId('target-create-button-next')).not.toBeDisabled();
 
     // Add headers
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button/));
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
-    await screen.findByLabelText(/target creating headers key input dialog/);
-    await screen.findByLabelText(/target creating headers value input dialog/);
+    expect(screen.queryByTestId('target-edit-headers-dialog')).not.toBeInTheDocument();
+    userEvent.click(await screen.findByTestId('target-edit-headers-button-add'));
+    await screen.findByTestId('target-edit-headers-dialog');
+    expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).toBeDisabled();
+    await screen.findByTestId('target-edit-headers-dialog-input-key');
+    await screen.findByTestId('target-edit-headers-dialog-input-value');
 
     // Set header Authorization to bearer 123456
     const authHeaderKey = 'Authorization';
     const authHeaderValue = 'Bearer 123456';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), authHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), authHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-key'), authHeaderKey);
+    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-value'), authHeaderValue);
+    expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByTestId('target-edit-headers-dialog-button-add'));
     // Dialog do not close when add new header, only clean fields
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await screen.findByTestId('target-edit-headers-dialog');
+    expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Set headers X-APPID
     const appidHeaderKey = 'X-APPID';
     const appidHeaderValue = '123456';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), appidHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), appidHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-key'), appidHeaderKey);
+    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-value'), appidHeaderValue);
+    expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByTestId('target-edit-headers-dialog-button-add'));
+    expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByTestId('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByTestId('target-edit-headers-dialog')).not.toBeInTheDocument();
+
+    // Go to resume screen
+    userEvent.click(await screen.findByTestId('target-create-button-next'));
+    await screen.findByTestId('target-resume-container');
 
     // Create Target
+    expect(await screen.findByTestId('target-create-button-next')).toHaveTextContent(/create/i);
     userEvent.click(await screen.findByTestId('target-create-button-next'));
-    await screen.findByLabelText(/target creating loading/i);
-    await screen.findByLabelText(/target creating url/i);
+    await screen.findByTestId(/target creating loading/i);
+    await screen.findByTestId(/target creating url/i);
     expect(onCreate).toHaveBeenCalledTimes(1);
     expect(onCreate).toHaveBeenNthCalledWith(1, target);
 
@@ -156,13 +170,13 @@ test('TargetCreate should show and close add headers dialog', async () => {
     await screen.findByLabelText(/target creating headers add button/);
 
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
     userEvent.click(await screen.findByLabelText(/target creating headers add button/));
-    await screen.findByLabelText(/target creating headers add dialog/);
+    await screen.findByLabelText('target-edit-headers-dialog');
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
 });
 
 test('TargetCreate can add two headers to the target', async () => {
@@ -179,36 +193,36 @@ test('TargetCreate can add two headers to the target', async () => {
     await screen.findByLabelText(/target creating headers add button/);
 
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
     userEvent.click(await screen.findByLabelText(/target creating headers add button/));
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
-    await screen.findByLabelText(/target creating headers key input dialog/);
-    await screen.findByLabelText(/target creating headers value input dialog/);
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog-input-key');
+    await screen.findByLabelText('target-edit-headers-dialog-input-value');
 
     // Set header Authorization to bearer 123456
     const authHeaderKey = 'Authorization';
     const authHeaderValue = 'Bearer 123456';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), authHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), authHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), authHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), authHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
     // Dialog do not close when add new header, only clean fields
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Set headers X-APPID
     const appidHeaderKey = 'X-APPID';
     const appidHeaderValue = '123456';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), appidHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), appidHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), appidHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), appidHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
 
     // Create Target
     const headers = { [authHeaderKey]: authHeaderValue, [appidHeaderKey]: appidHeaderValue };
@@ -261,56 +275,56 @@ test('TargetCreate do not accept content-type nor content-length nor spaces as h
     await screen.findByLabelText(/target creating headers add button/);
 
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
     userEvent.click(await screen.findByLabelText(/target creating headers add button/));
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
-    await screen.findByLabelText(/target creating headers key input dialog/);
-    await screen.findByLabelText(/target creating headers value input dialog/);
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog-input-key');
+    await screen.findByLabelText('target-edit-headers-dialog-input-value');
 
     // Set header Content-Type
     const typeHeaderKey = 'Content-Type';
     const typeHeaderValue = 'application/json';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), typeHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), typeHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), typeHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), typeHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
 
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
     userEvent.click(await screen.findByLabelText(/target creating headers add button/));
 
     // Set headers Content-Length
     const lengthHeaderKey = 'Content-Length';
     const lengthHeaderValue = '123';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), lengthHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), lengthHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), lengthHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), lengthHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
 
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
     userEvent.click(await screen.findByLabelText(/target creating headers add button/));
 
     // Set headers Content-Length
     const spacesHeaderKey = 'header with spaces';
     const spacesHeaderValue = '123';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), spacesHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), spacesHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), spacesHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), spacesHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
 
     // Create Target
     const newTarget = generateTargetWithHeaders('mynewtargetid', targetName, targetURL, { headerwithspaces: '123' });
@@ -337,36 +351,36 @@ test('TargetCreate can delete a header before create target', async () => {
     await screen.findByLabelText(/target creating headers add button/);
 
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
     userEvent.click(await screen.findByLabelText(/target creating headers add button/));
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
-    await screen.findByLabelText(/target creating headers key input dialog/);
-    await screen.findByLabelText(/target creating headers value input dialog/);
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog-input-key');
+    await screen.findByLabelText('target-edit-headers-dialog-input-value');
 
     // Set header Authorization to bearer 123456
     const authHeaderKey = 'Authorization';
     const authHeaderValue = 'Bearer 123456';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), authHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), authHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), authHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), authHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
     // Dialog do not close when add new header, only clean fields
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Set headers X-APPID
     const appidHeaderKey = 'X-APPID';
     const appidHeaderValue = '123456';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), appidHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), appidHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), appidHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), appidHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
 
     // Delete header X-APPID
     const deleteButtons = await screen.findAllByLabelText(/target creating headers delete buttom/i);
@@ -400,37 +414,37 @@ test('TargetCreate merge duplicate headers', async () => {
     await screen.findByLabelText(/target creating headers add button/);
 
     // Open dialog add headers
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
     userEvent.click(await screen.findByLabelText(/target creating headers add button/));
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
-    await screen.findByLabelText(/target creating headers key input dialog/);
-    await screen.findByLabelText(/target creating headers value input dialog/);
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog-input-key');
+    await screen.findByLabelText('target-edit-headers-dialog-input-value');
 
     // Set header Authorization to bearer 123456
     const authHeaderKey = 'Authorization';
     const authHeaderValue = 'Bearer 123456';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), authHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), authHeaderValue);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), authHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), authHeaderValue);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
     // Dialog do not close when add new header, only clean fields
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Set header Authorization to bearer 123456
     const authHeaderValue2 = 'Bearer 654321';
-    await userEvent.type(await screen.findByLabelText(/target creating headers key input dialog/), authHeaderKey);
-    await userEvent.type(await screen.findByLabelText(/target creating headers value input dialog/), authHeaderValue2);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).not.toBeDisabled();
-    userEvent.click(await screen.findByLabelText(/target creating headers add button dialog/));
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-key'), authHeaderKey);
+    await userEvent.type(await screen.findByLabelText('target-edit-headers-dialog-input-value'), authHeaderValue2);
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).not.toBeDisabled();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-add'));
     // Dialog do not close when add new header, only clean fields
-    await screen.findByLabelText(/target creating headers add dialog/);
-    expect(await screen.findByLabelText(/target creating headers add button dialog/)).toBeDisabled();
+    await screen.findByLabelText('target-edit-headers-dialog');
+    expect(await screen.findByLabelText('target-edit-headers-dialog-button-add')).toBeDisabled();
 
     // Close dialog add headers
-    userEvent.click(await screen.findByLabelText(/target creating headers close dialog/));
-    expect(screen.queryByLabelText(/target creating headers add dialog/)).not.toBeInTheDocument();
+    userEvent.click(await screen.findByLabelText('target-edit-headers-dialog-button-close'));
+    expect(screen.queryByLabelText('target-edit-headers-dialog')).not.toBeInTheDocument();
 
     // Create Target
     const headers = { [authHeaderKey]: authHeaderValue2 };
