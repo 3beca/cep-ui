@@ -73,7 +73,12 @@ const RuleTypeCard: React.FC<RuleTypeCardProp> = ({ selected, type, ariaLabel, o
     const styles = useStyles();
     const stylesCard = useCardStyles();
     return (
-        <div className={selected ? styles.cardButtonSelected : styles.cardButton} aria-label={ariaLabel} onClick={onClick}>
+        <div
+            data-testid={`create ${type} card`}
+            className={selected ? styles.cardButtonSelected : styles.cardButton}
+            aria-label={ariaLabel}
+            onClick={onClick}
+        >
             <div className={styles.rulesTypeHeader}>
                 <Avatar aria-label='avatar rule type' className={`${styles.ruleAvatar} ${colorTypeSelector(type, stylesCard)}`}>
                     {mapRuleTypeName(type).slice(0, 1).toUpperCase()}
