@@ -16,7 +16,7 @@ import { Divider } from '@material-ui/core';
 
 export type KeyValueString = { name: string; value: string };
 export type ArrayHeader = KeyValueString[];
-export const parseTargetHeaders = (headers: ArrayHeader): TargetHeader | undefined => {
+export const parseTargetHeaders = (headers?: ArrayHeader): TargetHeader | undefined => {
     if (!Array.isArray(headers) || headers.length === 0) return undefined;
     return headers.reduce((header: TargetHeader, entry: KeyValueString) => {
         return {

@@ -15,7 +15,7 @@ export type TargetEditURLProps = {
 };
 export const TargetEditURL: React.FC<TargetEditURLProps> = ({ show = false, url = '', onURLChanged, disabled = false }) => {
     const styles = useStyles();
-    const [inputURL, setInputURL] = useDebounce({ callback: onURLChanged, initialValue: url, delay: 500 });
+    const [inputURL, setInputURL] = useDebounce({ callback: onURLChanged, initialValue: url, delay: 500, skipOnFirstRender: true });
     const changeURL = React.useCallback(
         (ev: React.ChangeEvent<HTMLInputElement>) => {
             setInputURL(ev.target.value);

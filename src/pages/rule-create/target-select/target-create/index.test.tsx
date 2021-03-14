@@ -44,10 +44,17 @@ test.only('TargetCreate should create a passthrow target', async () => {
     expect(screen.queryByTestId('target-create-type-selector')).not.toBeInTheDocument();
     await screen.findByTestId('target-template-container');
 
-    // Add URL
+    // Add invalid URL
     expect(await screen.findByTestId('target-create-button-next')).toBeDisabled();
-    await userEvent.type(await screen.findByTestId('target-edit-url-input'), target.url);
-    expect(await screen.findByTestId('target-edit-url-input')).toHaveValue(target.url);
+    const urlInput = (await screen.findByTestId('target-edit-url-input')) as HTMLInputElement;
+    userEvent.type(urlInput, 'juanjo');
+    expect(urlInput).toHaveValue('juanjo');
+    act(() => void jest.runOnlyPendingTimers());
+    expect(await screen.findByTestId('target-create-button-next')).toBeDisabled();
+    // Add valid URL
+    urlInput.setSelectionRange(0, 6);
+    userEvent.type(urlInput, target.url);
+    expect(urlInput).toHaveValue(target.url);
     act(() => void jest.runOnlyPendingTimers());
     expect(await screen.findByTestId('target-create-button-next')).not.toBeDisabled();
 
@@ -63,8 +70,8 @@ test.only('TargetCreate should create a passthrow target', async () => {
     // Set header Authorization to bearer 123456
     const authHeaderKey = 'Authorization';
     const authHeaderValue = 'Bearer 123456';
-    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-key'), authHeaderKey);
-    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-value'), authHeaderValue);
+    userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-key'), authHeaderKey);
+    userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-value'), authHeaderValue);
     expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).not.toBeDisabled();
     userEvent.click(await screen.findByTestId('target-edit-headers-dialog-button-add'));
     // Dialog do not close when add new header, only clean fields
@@ -74,8 +81,8 @@ test.only('TargetCreate should create a passthrow target', async () => {
     // Set headers X-APPID
     const appidHeaderKey = 'X-APPID';
     const appidHeaderValue = '123456';
-    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-key'), appidHeaderKey);
-    await userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-value'), appidHeaderValue);
+    userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-key'), appidHeaderKey);
+    userEvent.type(await screen.findByTestId('target-edit-headers-dialog-input-value'), appidHeaderValue);
     expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).not.toBeDisabled();
     userEvent.click(await screen.findByTestId('target-edit-headers-dialog-button-add'));
     expect(await screen.findByTestId('target-edit-headers-dialog-button-add')).toBeDisabled();
@@ -85,6 +92,7 @@ test.only('TargetCreate should create a passthrow target', async () => {
     expect(screen.queryByTestId('target-edit-headers-dialog')).not.toBeInTheDocument();
 
     // Go to resume screen
+    expect(await screen.findByTestId('target-create-button-next')).not.toBeDisabled();
     userEvent.click(await screen.findByTestId('target-create-button-next'));
     await screen.findByTestId('target-resume-container');
 
