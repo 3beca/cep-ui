@@ -11,7 +11,6 @@ jobs:
 
     env:
       CI: true
-      SERVICE_NAME: tribeca-cep-ui
       DOCKER_IMAGE: francescorivola/tribeca-cep-ui
       DOCKER_PLATFORMS: linux/x86-64,linux/arm64
 
