@@ -49,7 +49,7 @@
     },
     "devDependencies": {
         "@testing-library/react-hooks": "^7.0.1",
-        "@testing-library/user-event": "^13.0.16",
+        "@testing-library/user-event": "^13.1.9",
         "@types/react-router-dom": "^5.1.8",
         "jest-environment-jsdom-sixteen": "^2.0.0",
         "nock": "^13.1.1",
